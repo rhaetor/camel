@@ -251,7 +251,7 @@ public class WeatherConfiguration {
     }
 
     /**
-     * Zip-code, e.g. 94040,us
+     * Zip-code, for example, 94040,us
      */
     public void setZip(String zip) {
         this.zip = zip;

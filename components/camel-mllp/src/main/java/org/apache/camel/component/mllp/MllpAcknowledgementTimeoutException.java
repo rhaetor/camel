@@ -62,7 +62,7 @@ public class MllpAcknowledgementTimeoutException extends MllpAcknowledgementExce
      *
      * @return If the timeout occurred while attempting to receive an HL7 Message, this will be null. If the timeout
      *         occurred while attempting to receive an HL7 Acknowledgement, this will be the HL7 Message. If the timeout
-     *         occurred while attempting to complete the read of an HL7 message (i.e. part of the message has already
+     *         occurred while attempting to complete the read of an HL7 message (that is, part of the message has already
      *         been read), this will be the partial acknowledgement payload that was read before the timeout.
      */
     public byte[] getHl7Acknowledgement() {

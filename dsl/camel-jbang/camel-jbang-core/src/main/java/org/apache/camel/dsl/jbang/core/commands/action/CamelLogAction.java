@@ -325,6 +325,8 @@ public class CamelLogAction extends ActionBaseCommand {
                 } else if (t2 == null) {
                     return 1;
                 }
+                lastTimestamp.put(n1, t1);
+                lastTimestamp.put(n2, t2);
                 return t1.compareTo(t2);
             });
         }

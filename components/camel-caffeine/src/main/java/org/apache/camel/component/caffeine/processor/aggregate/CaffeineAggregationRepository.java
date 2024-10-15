@@ -134,12 +134,12 @@ public class CaffeineAggregationRepository extends ServiceSupport implements Rec
 
         cache.put(key, newHolder);
 
-        return unmarshallExchange(camelContext, oldHolder);
+        return unmarshalExchange(camelContext, oldHolder);
     }
 
     @Override
     public Exchange get(CamelContext camelContext, String key) {
-        return unmarshallExchange(camelContext, cache.getIfPresent(key));
+        return unmarshalExchange(camelContext, cache.getIfPresent(key));
     }
 
     @Override
@@ -172,7 +172,7 @@ public class CaffeineAggregationRepository extends ServiceSupport implements Rec
     @Override
     public Exchange recover(CamelContext camelContext, String exchangeId) {
         LOG.trace("Recovering an Exchange with ID {}.", exchangeId);
-        return useRecovery ? unmarshallExchange(camelContext, cache.getIfPresent(exchangeId)) : null;
+        return useRecovery ? unmarshalExchange(camelContext, cache.getIfPresent(exchangeId)) : null;
     }
 
     @Override
@@ -194,7 +194,7 @@ public class CaffeineAggregationRepository extends ServiceSupport implements Rec
     protected void doStop() throws Exception {
     }
 
-    public static Exchange unmarshallExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
+    public static Exchange unmarshalExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
         Exchange exchange = null;
         if (holder != null) {
             exchange = new DefaultExchange(camelContext);

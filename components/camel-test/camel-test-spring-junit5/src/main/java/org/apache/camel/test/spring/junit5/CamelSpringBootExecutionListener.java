@@ -117,7 +117,7 @@ public class CamelSpringBootExecutionListener extends AbstractTestExecutionListe
         if (context != null && context.isRunning()) {
             // dump route coverage for each test method so its accurate
             // statistics
-            // even if spring application context is running (i.e. its not
+            // even if spring application context is running (that is, its not
             // dirtied per test method)
             CamelAnnotationsHandler.handleRouteCoverageDump(context, testClass, s -> testName);
         }

@@ -42,7 +42,7 @@ import org.apache.commons.net.ftp.parser.VMSVersioningFTPEntryParser;
 public class CamelFTPParserFactory extends DefaultFTPFileEntryParserFactory {
     // Match a plain Java Identifier
     private static final String JAVA_IDENTIFIER = "\\p{javaJavaIdentifierStart}(\\p{javaJavaIdentifierPart})*";
-    // Match a qualified name, e.g. a.b.c.Name - but don't allow the default
+    // Match a qualified name, for example, a.b.c.Name - but don't allow the default
     // package as that would allow "VMS"/"UNIX" etc.
     private static final String JAVA_QUALIFIED_NAME = "(" + JAVA_IDENTIFIER + "\\.)+" + JAVA_IDENTIFIER;
     // Create the pattern, as it will be reused many times

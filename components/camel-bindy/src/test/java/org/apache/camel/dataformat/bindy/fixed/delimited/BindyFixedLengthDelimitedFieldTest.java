@@ -37,15 +37,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * This test validates the marshalling / unmarshalling of delimited, variable-length fields within a 'fixed-length'
+ * This test validates the marshaling / unmarshaling of delimited, variable-length fields within a 'fixed-length'
  * record.
  */
 public class BindyFixedLengthDelimitedFieldTest extends CamelTestSupport {
 
-    public static final String URI_DIRECT_MARSHALL = "direct:marshall";
-    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshall";
-    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshall-result";
-    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshall-result";
+    public static final String URI_DIRECT_MARSHALL = "direct:marshal";
+    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshal";
+    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshal-result";
+    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshal-result";
 
     private static final String TEST_RECORD = "10A9Pauline^M^ISINXD12345678BUYShare000002500.45USD01-08-2009\r\n";
     private static final String TEST_RECORD_WITH_EXTRA_CHARS
@@ -56,35 +56,35 @@ public class BindyFixedLengthDelimitedFieldTest extends CamelTestSupport {
             = "10A9Pauline^M^ISINXD12345678BUYShare000002500.45USD01-08-2009   x\r\n";
 
     @EndpointInject(URI_MOCK_MARSHALL_RESULT)
-    private MockEndpoint marshallResult;
+    private MockEndpoint marshalResult;
 
     @EndpointInject(URI_MOCK_UNMARSHALL_RESULT)
-    private MockEndpoint unmarshallResult;
+    private MockEndpoint unmarshalResult;
 
     // *************************************************************************
     // TESTS
     // *************************************************************************
     @Test
-    public void testUnmarshallMessage() throws Exception {
+    public void testUnmarshalMessage() throws Exception {
 
-        unmarshallResult.expectedMessageCount(1);
+        unmarshalResult.expectedMessageCount(1);
         template.sendBody(URI_DIRECT_UNMARSHALL, TEST_RECORD);
 
-        unmarshallResult.assertIsSatisfied();
+        unmarshalResult.assertIsSatisfied();
 
         // check the model
         BindyFixedLengthDelimitedFieldTest.Order order
-                = (BindyFixedLengthDelimitedFieldTest.Order) unmarshallResult.getReceivedExchanges().get(0).getIn().getBody();
+                = (BindyFixedLengthDelimitedFieldTest.Order) unmarshalResult.getReceivedExchanges().get(0).getIn().getBody();
         assertEquals(10, order.getOrderNr());
         assertEquals("Pauline", order.getFirstName());
         assertEquals("M", order.getLastName());
     }
 
     @Test
-    public void testFailWhenUnmarshallMessageWithUnmappedChars() {
+    public void testFailWhenUnmarshalMessageWithUnmappedChars() {
 
-        unmarshallResult.reset();
-        unmarshallResult.expectedMessageCount(0);
+        unmarshalResult.reset();
+        unmarshalResult.expectedMessageCount(0);
         try {
             template.sendBody(URI_DIRECT_UNMARSHALL, TEST_RECORD_WITH_EXTRA_CHARS);
         } catch (Exception e) {
@@ -97,10 +97,10 @@ public class BindyFixedLengthDelimitedFieldTest extends CamelTestSupport {
     }
 
     @Test
-    public void testFailWhenUnmarshallMessageWithWhitespaceThenUnmappedChar() {
+    public void testFailWhenUnmarshalMessageWithWhitespaceThenUnmappedChar() {
 
-        unmarshallResult.reset();
-        unmarshallResult.expectedMessageCount(0);
+        unmarshalResult.reset();
+        unmarshalResult.expectedMessageCount(0);
         try {
             template.sendBody(URI_DIRECT_UNMARSHALL, TEST_RECORD_WITH_WHITSPACE_THEN_EXTRA_CHAR);
         } catch (Exception e) {
@@ -113,10 +113,10 @@ public class BindyFixedLengthDelimitedFieldTest extends CamelTestSupport {
     }
 
     @Test
-    public void testFailWhenUnmarshallMessageWithUnmappedChar() {
+    public void testFailWhenUnmarshalMessageWithUnmappedChar() {
 
-        unmarshallResult.reset();
-        unmarshallResult.expectedMessageCount(0);
+        unmarshalResult.reset();
+        unmarshalResult.expectedMessageCount(0);
         try {
             template.sendBody(URI_DIRECT_UNMARSHALL, TEST_RECORD_WITH_SINGLE_EXTRA_CHAR);
         } catch (Exception e) {
@@ -129,7 +129,7 @@ public class BindyFixedLengthDelimitedFieldTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         BindyFixedLengthDelimitedFieldTest.Order order = new Order();
         order.setOrderNr(10);
         order.setOrderType("BUY");
@@ -145,10 +145,10 @@ public class BindyFixedLengthDelimitedFieldTest extends CamelTestSupport {
         calendar.set(2009, 7, 1);
         order.setOrderDate(calendar.getTime());
 
-        marshallResult.expectedMessageCount(1);
-        marshallResult.expectedBodiesReceived(Arrays.asList(new String[] { TEST_RECORD }));
+        marshalResult.expectedMessageCount(1);
+        marshalResult.expectedBodiesReceived(Arrays.asList(new String[] { TEST_RECORD }));
         template.sendBody(URI_DIRECT_MARSHALL, order);
-        marshallResult.assertIsSatisfied();
+        marshalResult.assertIsSatisfied();
     }
 
     // *************************************************************************

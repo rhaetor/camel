@@ -200,7 +200,7 @@ public class ServiceBusConfiguration implements Cloneable, HeaderFilterStrategyA
     }
 
     /**
-     * Sets the receiverAsyncClient in order to consume messages by the consumer
+     * Sets the receiverAsyncClient to consume messages by the consumer
      */
     public ServiceBusReceiverAsyncClient getReceiverAsyncClient() {
         return receiverAsyncClient;

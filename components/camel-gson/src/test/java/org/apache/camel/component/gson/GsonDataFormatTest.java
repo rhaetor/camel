@@ -58,11 +58,11 @@ public class GsonDataFormatTest {
     }
 
     private void testJson(String json, Object expected) throws Exception {
-        Object unmarshalled;
+        Object unmarshaled;
         try (GsonDataFormat gsonDataFormat = new GsonDataFormat()) {
             gsonDataFormat.doStart();
-            unmarshalled = gsonDataFormat.unmarshal(exchange, json);
-            assertEquals(expected, unmarshalled);
+            unmarshaled = gsonDataFormat.unmarshal(exchange, json);
+            assertEquals(expected, unmarshaled);
         }
     }
 }

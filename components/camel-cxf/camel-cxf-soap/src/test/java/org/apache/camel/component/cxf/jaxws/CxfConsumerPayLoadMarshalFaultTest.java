@@ -47,7 +47,7 @@ public class CxfConsumerPayLoadMarshalFaultTest extends CxfConsumerPayloadFaultT
                         Element details = StaxUtils.read(new StringReader(DETAILS)).getDocumentElement();
                         UnknownPersonFault unknowPersonFault = new UnknownPersonFault();
                         unknowPersonFault.setPersonId("");
-                        context.createMarshaller().marshal(unknowPersonFault, details);
+                        context.createMarshaler().marshal(unknowPersonFault, details);
                         fault.setDetail(details);
                         exchange.getMessage().setBody(fault);
                     }

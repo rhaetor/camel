@@ -40,7 +40,7 @@ import org.apache.camel.util.IOHelper;
  * <tr>
  * <td>As a byte[] or String</td>
  * <td>The attachments are split into new messages as the body. This allows the split messages to be easily used by
- * other processors / routes, as many other camel components can work on the byte[] or String, e.g. it can be written to
+ * other processors / routes, as many other camel components can work on the byte[] or String, for example, it can be written to
  * disk using camel-file.</td>
  * </tr>
  * </table>

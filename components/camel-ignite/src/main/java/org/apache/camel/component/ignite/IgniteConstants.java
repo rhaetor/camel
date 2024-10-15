@@ -52,7 +52,7 @@ public final class IgniteConstants {
     public static final String IGNITE_CACHE_EVENT_TYPE = "CamelIgniteCacheEventType";
     @Metadata(label = "consumer",
               description = "This header carries the cache name for which a continuous query event was received (consumer).\n" +
-                            "It does not allow you to dynamically change the cache against which a producer operation is performed. Use EIPs for that (e.g. recipient list, dynamic router).",
+                            "It does not allow you to dynamically change the cache against which a producer operation is performed. Use EIPs for that (for example, recipient list, dynamic router).",
               javaType = "String", applicableFor = SCHEME_CACHE)
     public static final String IGNITE_CACHE_NAME = "CamelIgniteCacheName";
     @Metadata(description = "(producer) The old cache value to be replaced when invoking the REPLACE operation. \n" +

@@ -56,7 +56,7 @@ public class BindySimpleKeyValuePairFixTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
         mock.expectedMessageCount(FIX_RESPONSES.length);
         mock.expectedBodiesReceived(FIX_RESPONSES);
 

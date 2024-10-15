@@ -299,7 +299,7 @@ public class SedaEndpoint extends DefaultEndpoint implements AsyncEndpoint, Brow
     }
 
     /**
-     * The maximum capacity of the SEDA queue (i.e., the number of messages it can hold). Will by default use the
+     * The maximum capacity of the SEDA queue (that is, the number of messages it can hold). Will by default use the
      * defaultSize set on the SEDA component.
      */
     public void setSize(int size) {

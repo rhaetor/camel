@@ -50,7 +50,7 @@ public class SoapToSoapSingleDataFormatterTest extends CamelTestSupport {
         soapjaxbModel = new SoapDataFormat("com.example.contact:com.example.soapheaders");
         soapjaxbModel.setNamespacePrefix(namespacePrefixMap);
         soapjaxbModel.setPrettyPrint(true);
-        soapjaxbModel.setIgnoreUnmarshalledHeaders(false);
+        soapjaxbModel.setIgnoreUnmarshaledHeaders(false);
         soapjaxbModel.setIgnoreJAXBElement(false);
         soapjaxbModel.setElementNameStrategy(new TypeNameStrategy());
     }

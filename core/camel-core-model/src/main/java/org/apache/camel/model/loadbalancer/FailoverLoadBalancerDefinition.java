@@ -114,7 +114,7 @@ public class FailoverLoadBalancerDefinition extends LoadBalancerDefinition {
 
     /**
      * A value to indicate after X failover attempts we should exhaust (give up). Use -1 to indicate never give up and
-     * continuously try to failover. Use 0 to never failover. And use e.g. 3 to failover at most 3 times before giving
+     * continuously try to failover. Use 0 to never failover. And use for example, 3 to failover at most 3 times before giving
      * up. his option can be used whether or not roundRobin is enabled or not.
      */
     public void setMaximumFailoverAttempts(String maximumFailoverAttempts) {

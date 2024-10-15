@@ -44,7 +44,7 @@ include::partial$component-endpoint-headers.adoc[]
 
 == Examples
 
-A *bean:* endpoint cannot be defined as the input to the route; i.e., you
+A *bean:* endpoint cannot be defined as the input to the route; that is, you
 cannot consume from it, you can only route from some inbound message
 Endpoint to the bean endpoint as output, such as the *direct* endpoint as input.
 
@@ -100,7 +100,7 @@ in the xref:manual::registry.adoc[Registry] instead of using the class name.
 
 Java DSL comes with syntactic sugar for the xref:bean-component.adoc[Bean]
 component. Instead of specifying the bean explicitly as the endpoint
-(i.e., `to("bean:beanName")`) you can use the following syntax:
+(that is, `to("bean:beanName")`) you can use the following syntax:
 
 [source,java]
 -------------------------------------------------------
@@ -114,7 +114,7 @@ from("direct:start").bean("beanName", "methodName");
 -------------------------------------------------------
 
 Instead of passing the name of the reference to the bean (so that Camel will
-look up for it in the xref:manual::registry.adoc[Registry]), you can specify the bean itself:
+look for it in the xref:manual::registry.adoc[Registry]), you can specify the bean itself:
 
 [source,java]
 ---------------------------------------------------------------

@@ -253,7 +253,7 @@ public class JsltEndpoint extends ResourceEndpoint {
                     // Use Jackson to convert value to JsonNode
                     mapNode.set(entry.getKey(), OBJECT_MAPPER.valueToTree(entry.getValue()));
                 } catch (IllegalArgumentException e) {
-                    //If Jackson cannot convert the value to json (e.g. infinite recursion in the value to serialize)
+                    //If Jackson cannot convert the value to json (for example, infinite recursion in the value to serialize)
                     log.debug("Value could not be converted to JsonNode", e);
                 }
             }

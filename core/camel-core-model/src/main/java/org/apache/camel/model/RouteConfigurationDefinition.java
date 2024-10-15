@@ -137,7 +137,7 @@ public class RouteConfigurationDefinition extends OptionalIdentifiedDefinition<R
     }
 
     /**
-     * The predicate of the precondition in simple language to evaluate in order to determine if this route
+     * The predicate of the precondition in simple language to evaluate to determine if this route
      * configuration should be included or not.
      */
     @Override
@@ -146,7 +146,7 @@ public class RouteConfigurationDefinition extends OptionalIdentifiedDefinition<R
     }
 
     /**
-     * The predicate of the precondition in simple language to evaluate in order to determine if this route
+     * The predicate of the precondition in simple language to evaluate to determine if this route
      * configuration should be included or not.
      */
     @Override
@@ -184,7 +184,7 @@ public class RouteConfigurationDefinition extends OptionalIdentifiedDefinition<R
     }
 
     /**
-     * Sets the predicate of the precondition in simple language to evaluate in order to determine if this route
+     * Sets the predicate of the precondition in simple language to evaluate to determine if this route
      * configuration should be included or not.
      *
      * @param  precondition the predicate corresponding to the test to evaluate.

@@ -288,10 +288,13 @@ from("direct:start")
     .to("log:book");
 ----
 
-IMPORTANT: Notice how we specify `List.class` as the result-type. This is because if there is only
+[IMPORTANT]
+====
+Notice how we specify `List.class` as the result-type. This is because if there is only
 a single element (only 1 book), then jsonpath will return the single entity as a `Map` instead of `List<Map>`.
 Therefore, we tell Camel that the result should always be a `List`, and Camel will then automatic wrap the
 single element into a new `List` object.
+====
 
 Then each book is logged, however the message body is a `Map` instance. Sometimes
 you may want to output this as plain String JSON value instead, which can be done

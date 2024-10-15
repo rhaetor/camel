@@ -134,10 +134,10 @@ public class ASN1DataFormatWithStreamIteratorClassTest extends CamelTestSupport 
         List<Exchange> exchangesFirst = getMockEndpoint(firstMockEnpointName).getExchanges();
 
         assertEquals(1, exchangesFirst.size());
-        SmsCdr firstUnmarshalledCdr = null;
+        SmsCdr firstUnmarshaledCdr = null;
         for (Exchange exchange : exchangesFirst) {
             assertTrue(exchange.getIn().getBody() instanceof SmsCdr);
-            firstUnmarshalledCdr = exchange.getIn().getBody(SmsCdr.class);
+            firstUnmarshaledCdr = exchange.getIn().getBody(SmsCdr.class);
         }
 
         Thread.sleep(100);
@@ -145,13 +145,13 @@ public class ASN1DataFormatWithStreamIteratorClassTest extends CamelTestSupport 
         List<Exchange> exchangesSecond = getMockEndpoint(secondMockEnpointName).getExchanges();
 
         assertEquals(1, exchangesSecond.size());
-        SmsCdr secondUnmarshalledCdr = null;
+        SmsCdr secondUnmarshaledCdr = null;
         for (Exchange exchange : exchangesSecond) {
             assertTrue(exchange.getIn().getBody() instanceof SmsCdr);
-            secondUnmarshalledCdr = exchange.getIn().getBody(SmsCdr.class);
+            secondUnmarshaledCdr = exchange.getIn().getBody(SmsCdr.class);
         }
 
-        assertEquals(secondUnmarshalledCdr.toString(), firstUnmarshalledCdr.toString());
+        assertEquals(secondUnmarshaledCdr.toString(), firstUnmarshaledCdr.toString());
 
         MockEndpoint.assertIsSatisfied(context);
     }

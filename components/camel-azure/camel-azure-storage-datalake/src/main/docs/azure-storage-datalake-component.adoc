@@ -15,7 +15,7 @@
 
 *{component-header}*
 
-The Azure storage datalake component is used for storing and retrieving file from Azure Storage Data Lake Service using the *Azure APIs v12*.
+The Azure storage data lake component is used for storing and retrieving file from Azure Storage Data Lake Service using the *Azure APIs v12*.
 
 Prerequisites
 

@@ -57,7 +57,7 @@ from("direct:list").
 
 This operation returns a List of pvc from your cluster
 
-- listPersistentVolumesClaimsByLabels:  this operation lists the pvc by labels on a kubernetes cluster
+- listPersistentVolumesClaimsByLabels: this operation lists the pvc by labels on a kubernetes cluster
 
 [source,java]
 --------------------------------------------------------------------------------

@@ -26,7 +26,7 @@ package org.apache.camel.resume;
 public interface Resumable {
 
     /**
-     * Gets the offset key (i.e.: the addressable part of the resumable object)
+     * Gets the offset key (that is:  the addressable part of the resumable object)
      *
      * @return An OffsetKey instance with the addressable part of the object. May return null or an EmptyOffset
      *         depending on the type of the resumable

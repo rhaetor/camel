@@ -122,7 +122,7 @@ YAML::
 The example above defines the xref:transform-eip.adoc[Transform] EIP that uses a target data type `myDataType`.
 The given data type may reference a xref:manual::transformer.adoc[Transformer] that is able to handle the data type transformation.
 
-Users may also specify `fromType` in order to reference a very specific transformation from a given data type to a given data type.
+Users may also specify `fromType` to reference a very specific transformation from a given data type to a given data type.
 
 == What is the difference between Transform and Set Body?
 

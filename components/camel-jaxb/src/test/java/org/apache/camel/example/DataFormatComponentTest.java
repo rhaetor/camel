@@ -24,9 +24,9 @@ public class DataFormatComponentTest extends DataFormatTest {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-                from("direct:start").to("dataformat:jaxb:marshal?contextPath=org.apache.camel.example").to("direct:marshalled");
+                from("direct:start").to("dataformat:jaxb:marshal?contextPath=org.apache.camel.example").to("direct:marshaled");
 
-                from("direct:marshalled").to("dataformat:jaxb:unmarshal?contextPath=org.apache.camel.example")
+                from("direct:marshaled").to("dataformat:jaxb:unmarshal?contextPath=org.apache.camel.example")
                         .to("mock:result");
 
                 from("direct:prettyPrint").to("dataformat:jaxb:marshal?contextPath=org.apache.camel.foo.bar&prettyPrint=true")

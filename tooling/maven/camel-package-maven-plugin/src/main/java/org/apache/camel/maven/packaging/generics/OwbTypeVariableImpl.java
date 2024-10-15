@@ -28,10 +28,10 @@ public class OwbTypeVariableImpl {
     private static final Class<?>[] TYPE_VARIABLE_TYPES = new Class<?>[] { TypeVariable.class };
 
     /**
-     * Java TypeVariable is different in various JDK versions. Thus it is not possible to e.g. write a custom
+     * Java TypeVariable is different in various JDK versions. Thus it is not possible to for example, write a custom
      * TypeVariable which works in either Java7 and Java8 as they introduced new methods in Java8 which have return
      * generics which only exist in Java8 :( As workaround we dynamically crate a proxy to wrap this and do the
-     * delegation manually. This is of course slower, but as we do not use it often it might not have much impact.
+     * delegation manually. This is slower, but as we do not use it often it might not have much impact.
      *
      * @param  typeVariable
      * @param  bounds

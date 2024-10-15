@@ -231,7 +231,7 @@ This allows us to have full control, very easily, of the naming for both
 the `CamelContext` id in the Registry and the JMX MBeans in the `JMXMBeanRegistry`.
 
 So if we want to explicitly name both the `CamelContext` and to use fixed
-MBean names that do not change (i.e. without counters), then we can use
+MBean names that do not change (that is, without counters), then we can use
 the `managementNamePattern` attribute:
 
 [source,xml]

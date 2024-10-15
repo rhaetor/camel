@@ -89,7 +89,7 @@ public class Athena2Configuration implements Cloneable {
     @UriParam(label = "producer",
               defaultValue = "never",
               description = "Optional comma separated list of error types to retry the query for. Use: "
-                            + "'retryable' to retry all retryable failure conditions (e.g. generic errors and resources exhausted), "
+                            + "'retryable' to retry all retryable failure conditions (for example, generic errors and resources exhausted), "
                             + "'generic' to retry 'GENERIC_INTERNAL_ERROR' failures, "
                             + "'exhausted' to retry queries that have exhausted resource limits, "
                             + "'always' to always retry regardless of failure condition, or "
@@ -405,7 +405,7 @@ public class Athena2Configuration implements Cloneable {
 
     /**
      * Optional comma separated list of error types to retry the query for. Use "retryable" to retry all retryable
-     * failure conditions (e.g. generic errors and resources exhausted), "generic" to retry "GENERIC_INTERNAL_ERROR"
+     * failure conditions (for example, generic errors and resources exhausted), "generic" to retry "GENERIC_INTERNAL_ERROR"
      * failures, "exhausted" to retry queries that have exhausted resource limits, "always" to always retry regardless
      * of failure condition, or "never" or null to never retry (default). See the section 'Waiting for Query Completion
      * and Retrying Failed Queries' to learn more.

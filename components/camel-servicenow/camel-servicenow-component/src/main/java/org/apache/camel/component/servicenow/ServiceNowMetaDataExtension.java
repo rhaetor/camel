@@ -381,8 +381,8 @@ final class ServiceNowMetaDataExtension extends AbstractMetaDataExtension {
                     // if both include/exclude list is provided check if the
                     // fields ie either explicit included or not excluded.
                     //
-                    // This is useful if you want to exclude all the i.e. sys_
-                    // fields but want some i.e. the sys_id to be included
+                    // This is useful if you want to exclude all the that is, sys_
+                    // fields but want some that is, the sys_id to be included
                     included = isIncluded || !isExcluded;
                 } else if (ObjectHelper.isNotEmpty(fields)) {
                     // Only include fields that are explicit included

@@ -18,7 +18,10 @@ Apache Thrift is language-neutral and
 platform-neutral, so messages produced by your Camel routes may be
 consumed by other language implementations.
 
-NOTE: Check the https://github.com/apache/thrift[Apache Thrift Implementation] for additional details.
+[NOTE]
+====
+Check the https://github.com/apache/thrift[Apache Thrift Implementation] for additional details.
+====
 
 == Thrift Options
 
@@ -55,7 +58,7 @@ This is defined in a .thrift file as so:
 
 *tutorial.thrift*
 
-[source,text]
+[source,java]
 ----
 namespace java org.apache.camel.dataformat.thrift.generated
 
@@ -84,7 +87,7 @@ You can also run the compiler for any additional supported languages you require
 `thrift -r --gen java -out ../java/ ./tutorial-dataformat.thrift`
 
 This will generate separate Java class for each type defined in .thrift 
-file, i.e., struct or enum.
+file, that is, struct or enum.
 The generated classes implement org.apache.thrift.TBase which is required
 by the serialization mechanism.
 For this reason, it is important that only
@@ -111,7 +114,7 @@ default instance class name like this.
 
 [source,java]
 ----
-   // You don't need to specify the default instance for the thrift marshaling               
+   // You don't need to specify the default instance for the thrift marshaling
    from("direct:marshal").marshal().thrift();
    from("direct:unmarshalA").unmarshal()
        .thrift("org.apache.camel.dataformat.thrift.generated.Work")

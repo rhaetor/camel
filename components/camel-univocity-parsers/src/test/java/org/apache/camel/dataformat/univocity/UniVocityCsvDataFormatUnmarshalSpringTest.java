@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * This class tests the unmarshalling of {@link org.apache.camel.dataformat.univocity.UniVocityCsvDataFormat} using the
+ * This class tests the unmarshaling of {@link org.apache.camel.dataformat.univocity.UniVocityCsvDataFormat} using the
  * Spring DSL.
  */
 public final class UniVocityCsvDataFormatUnmarshalSpringTest extends CamelSpringTestSupport {
@@ -45,7 +45,7 @@ public final class UniVocityCsvDataFormatUnmarshalSpringTest extends CamelSpring
     MockEndpoint result;
 
     /**
-     * Tests that we can unmarshal CSV with the default configuration.
+     * Tests that we can unmarshalCSV with the default configuration.
      */
     @Test
     public void shouldUnmarshalWithDefaultConfiguration() throws Exception {
@@ -62,7 +62,7 @@ public final class UniVocityCsvDataFormatUnmarshalSpringTest extends CamelSpring
     }
 
     /**
-     * Tests that we can unmarshal CSV and produce maps for each row
+     * Tests that we can unmarshalCSV and produce maps for each row
      */
     @Test
     public void shouldUnmarshalAsMap() throws Exception {
@@ -78,7 +78,7 @@ public final class UniVocityCsvDataFormatUnmarshalSpringTest extends CamelSpring
     }
 
     /**
-     * Tests that we can unmarshal CSV and produce maps for each row with the given header
+     * Tests that we can unmarshalCSV and produce maps for each row with the given header
      */
     @Test
     public void shouldUnmarshalAsMapWithHeaders() throws Exception {
@@ -94,7 +94,7 @@ public final class UniVocityCsvDataFormatUnmarshalSpringTest extends CamelSpring
     }
 
     /**
-     * Tests that we can unmarshal CSV and produce an Iterator that lazily reads the input
+     * Tests that we can unmarshalCSV and produce an Iterator that lazily reads the input
      */
     @Test
     public void shouldUnmarshalUsingIterator() throws Exception {
@@ -134,7 +134,7 @@ public final class UniVocityCsvDataFormatUnmarshalSpringTest extends CamelSpring
     }
 
     /**
-     * Tests that we can unmarshal CSV that has lots of configuration options
+     * Tests that we can unmarshalCSV that has lots of configuration options
      */
     @Test
     public void shouldUnmarshalUsingAdvancedConfiguration() throws Exception {

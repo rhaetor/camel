@@ -81,7 +81,7 @@ public class PatternBasedPackageScanFilter implements PackageScanFilter {
      * an exclude pattern.
      * <p>
      * if this contains both include and exclude filters, then the above rules apply with excludes taking precedence
-     * over includes i.e. an include pattern of java.util.* and an exclude pattern of java.util.jar.* will include a
+     * over includes that is, an include pattern of java.util.* and an exclude pattern of java.util.jar.* will include a
      * file only if it is in the util pkg and not in the util.jar package.
      *
      * @return true if candidate class matches according to the above rules

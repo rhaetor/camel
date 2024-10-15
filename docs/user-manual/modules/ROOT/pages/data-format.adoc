@@ -1,6 +1,6 @@
 = Data Format
 
-Camel supports a pluggable `DataFormat` to allow messages to be marshalled
+Camel supports a pluggable `DataFormat` to allow messages to be marshaled
 to and from binary or text formats to support a kind of
 xref:components:eips:message-translator.adoc[Message Translator].
 

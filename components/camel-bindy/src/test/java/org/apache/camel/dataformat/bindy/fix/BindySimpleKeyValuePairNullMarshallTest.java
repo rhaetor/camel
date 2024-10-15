@@ -37,7 +37,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleKeyValuePairNullMarshallTest {
+public class BindySimpleKeyValuePairNullMarshalTest {
 
     @Produce("direct:start")
     private ProducerTemplate template;
@@ -47,7 +47,7 @@ public class BindySimpleKeyValuePairNullMarshallTest {
 
     @Test
     @DirtiesContext
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
 
         String result
                 = "1=BE.CHM.0018=FIX 4.19=2010=22011=CHM0001-0122=434=148=BE000124567849=INVMGR54=156=BRKR58=this is a camel - bindy test\r\n";

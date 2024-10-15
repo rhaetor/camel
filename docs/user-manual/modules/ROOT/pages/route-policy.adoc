@@ -33,7 +33,7 @@ Camel provides the following policies out of the box:
 * `org.apache.camel.throttling.ThrottlingInflightRoutePolicy` - a throttling
 based policy that automatic suspends/resumes route(s) based on metrics
 from the current in flight exchanges. You can use this to dynamically
-throttle e.g. a xref:components::jms-component.adoc[JMS] consumer, to avoid it consuming too
+throttle for example, a xref:components::jms-component.adoc[JMS] consumer, to avoid it consuming too
 fast.
 
 * `org.apache.camel.throttling.ThrottlingExceptionRoutePolicy` - a throttling

@@ -49,21 +49,21 @@ public class JobResponseTest {
 
     @Test
     public void unmarshalTest() {
-        JobResponse unmarshalledMessage1
+        JobResponse unmarshaledMessage1
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_1, JobResponse.class));
 
         JobResponse message = new JobResponse();
         message.setSuccess(true);
 
-        assertEquals(message, unmarshalledMessage1);
+        assertEquals(message, unmarshaledMessage1);
 
-        JobResponse unmarshalledMessage2
+        JobResponse unmarshaledMessage2
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_2, JobResponse.class));
 
         message.setSuccess(false);
         message.setErrorMessage("Test Error");
         message.setErrorCode("TestCode");
 
-        assertEquals(message, unmarshalledMessage2);
+        assertEquals(message, unmarshaledMessage2);
     }
 }

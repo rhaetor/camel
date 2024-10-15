@@ -39,7 +39,7 @@ exec://executable[?options]
 ---------------------------
 
 Where `executable` is the name, or file path, of the system command that
-will be executed. If executable name is used (e.g. `exec:java`), the
+will be executed. If executable name is used (for example, `exec:java`), the
 executable must in the system path.
 
 // component-configure options: START

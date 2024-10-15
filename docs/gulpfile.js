@@ -256,7 +256,7 @@ const sources = {
 // that strips base directory and for examples that perserves it
 const sourcesMap = new Map(Object.entries(sources))
 // type is 'components', 'dataformats', ...
-// definition is the value under that key, e.g.:
+// definition is the value under that key, for example: 
 // {
 //   asciidoc: {
 //     source: ...
@@ -272,7 +272,7 @@ const tasks = Array.from(sourcesMap).flatMap(([type, definition]) => {
   // so we don't want to remove it
   const clean = (destination, keep) => {
     const deleteAry = [`${destination}/*`] // files in destination needs to be deleted
-    // append any exceptions, i.e. files to keep at the destination
+    // append any exceptions, that is, files to keep at the destination
     deleteAry.push(...(keep || ['index.adoc']).map((file) => `!${destination}/${file}`))
     return deleteAsync(deleteAry, {
       force: true,
@@ -280,7 +280,7 @@ const tasks = Array.from(sourcesMap).flatMap(([type, definition]) => {
   }
 
   // creates symlinks from source to destination that satisfy the
-  // given filter removing the basedir from a path, i.e. symlinking
+  // given filter removing the basedir from a path, that is, symlinking
   // from a flat hiearchy
   const createSymlinks = (source, destination, filter) => {
     const filterFn = through2.obj((file, enc, done) => {
@@ -346,7 +346,7 @@ const tasks = Array.from(sourcesMap).flatMap(([type, definition]) => {
 
   // creates symlinks from source to destination for every example
   // file referenced from .adoc file in the source maintaining the
-  // basedir from the file path, i.e. symlinking from a deep hiearchy
+  // basedir from the file path, that is, symlinking from a deep hiearchy
   const createExampleSymlinks = (source, destination) => {
     const extractExamples = function (file, enc, done) {
       const asciidoc = file.contents.toString()
@@ -356,7 +356,7 @@ const tasks = Array.from(sourcesMap).flatMap(([type, definition]) => {
         const filePath = example[1]
         // filePath points from the root of the repository, our CWD
         // is within `/docs`, so to get the correct path we need to
-        // resolve against `..` (`/docs/..`), i.e. root of the
+        // resolve against `..` (`/docs/..`), that is, root of the
         // repository
         const resolved = path.resolve(path.join('..', example[1]))
         const file = new File({
@@ -374,7 +374,7 @@ const tasks = Array.from(sourcesMap).flatMap(([type, definition]) => {
 
     return gulp.src(source) // asciidoc files
       .pipe(through2.obj(extractExamples)) // extracted example files
-      // symlink links from a fixed directory, i.e. we could link to
+      // symlink links from a fixed directory, that is, we could link to
       // the example files from `destination`, that would not work for
       // us as same-named files would overwrite each other, and also
       // the `:include::` for the example includes the full path. So

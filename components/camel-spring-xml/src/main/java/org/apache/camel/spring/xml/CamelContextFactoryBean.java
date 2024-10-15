@@ -728,7 +728,7 @@ public class CamelContextFactoryBean extends AbstractCamelContextFactoryBean<Spr
 
     /**
      * Sets the package scanning information. Package scanning allows for the automatic discovery of certain camel
-     * classes at runtime for inclusion e.g. {@link org.apache.camel.builder.RouteBuilder} implementations
+     * classes at runtime for inclusion for example, {@link org.apache.camel.builder.RouteBuilder} implementations
      *
      * @param packageScan the package scan
      */
@@ -744,7 +744,7 @@ public class CamelContextFactoryBean extends AbstractCamelContextFactoryBean<Spr
 
     /**
      * Sets the context scanning (eg Spring's ApplicationContext) information. Context scanning allows for the automatic
-     * discovery of Camel routes runtime for inclusion e.g. {@link org.apache.camel.builder.RouteBuilder}
+     * discovery of Camel routes runtime for inclusion for example, {@link org.apache.camel.builder.RouteBuilder}
      * implementations
      *
      * @param contextScan the context scan

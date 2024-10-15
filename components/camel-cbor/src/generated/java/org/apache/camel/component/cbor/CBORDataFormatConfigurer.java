@@ -24,8 +24,8 @@ public class CBORDataFormatConfigurer extends PropertyConfigurerSupport implemen
         case "unmarshalType": dataformat.setUnmarshalType(property(camelContext, java.lang.Class.class, value)); return true;
         case "usedefaultobjectmapper":
         case "useDefaultObjectMapper": dataformat.setUseDefaultObjectMapper(property(camelContext, boolean.class, value)); return true;
-        case "allowunmarshalltype":
-        case "allowUnmarshallType": dataformat.setAllowUnmarshallType(property(camelContext, boolean.class, value)); return true;
+        case "allowunmarshaltype":
+        case "allowUnmarshalType": dataformat.setAllowUnmarshalType(property(camelContext, boolean.class, value)); return true;
         case "collectiontype":
         case "collectionType": dataformat.setCollectionType(property(camelContext, java.lang.Class.class, value)); return true;
         case "uselist":

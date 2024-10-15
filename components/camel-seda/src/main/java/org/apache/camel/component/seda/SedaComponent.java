@@ -60,7 +60,7 @@ public class SedaComponent extends DefaultComponent {
     }
 
     /**
-     * Sets the default maximum capacity of the SEDA queue (i.e., the number of messages it can hold).
+     * Sets the default maximum capacity of the SEDA queue (that is, the number of messages it can hold).
      */
     public void setQueueSize(int size) {
         queueSize = size;

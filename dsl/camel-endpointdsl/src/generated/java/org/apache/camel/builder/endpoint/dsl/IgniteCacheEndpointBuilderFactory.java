@@ -970,7 +970,7 @@ public interface IgniteCacheEndpointBuilderFactory {
          * This header carries the cache name for which a continuous query event
          * was received (consumer). It does not allow you to dynamically change
          * the cache against which a producer operation is performed. Use EIPs
-         * for that (e.g. recipient list, dynamic router).
+         * for that (for example, recipient list, dynamic router).
          * 
          * The option is a: {@code String} type.
          * 

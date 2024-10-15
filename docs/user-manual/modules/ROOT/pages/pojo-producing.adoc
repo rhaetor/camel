@@ -39,7 +39,7 @@ the `ProducerTemplate`. The next section describes how to remove this
 dependency.
 
 TIP: See xref:pojo-consuming.adoc[POJO Consuming] for how to use a property
-on the bean as endpoint configuration, e.g., using the `property`
+on the bean as endpoint configuration, for example, using the `property`
 attribute on `@Produce` or `@EndpointInject`.
 
 == Hiding the Camel APIs From Your Code

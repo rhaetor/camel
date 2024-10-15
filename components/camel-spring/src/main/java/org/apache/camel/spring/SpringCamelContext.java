@@ -138,7 +138,7 @@ public class SpringCamelContext extends DefaultCamelContext
         if (event instanceof ContextRefreshedEvent
                 && ((ContextRefreshedEvent) event).getApplicationContext() == this.applicationContext) {
             // nominally we would prefer to use Lifecycle interface that
-            // would invoke start() method, but in order to do that
+            // would invoke start() method, but to do that
             // SpringCamelContext needs to implement SmartLifecycle
             // (look at DefaultLifecycleProcessor::startBeans), but it
             // cannot implement it as it already implements
@@ -287,7 +287,7 @@ public class SpringCamelContext extends DefaultCamelContext
         // invoking the method, for instance CamelContextFactoryBean
         // is using that to start the context, _so_ here we want to
         // have maximum priority as the getPhase() will be used only
-        // for stopping, in order to be used for starting we would
+        // for stopping, to be used for starting we would
         // need to implement SmartLifecycle which we cannot
         // (explained in comment in the onApplicationEvent method)
         // we use LOWEST_PRECEDENCE here as this is taken into account

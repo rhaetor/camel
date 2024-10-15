@@ -136,19 +136,19 @@ public @interface DataField {
 
     /**
      * Grouping Separator to be used with BigDecimal number when we would like to format/parse to number with grouping
-     * e.g. 123,456.789
+     * for example, 123,456.789
      */
     String groupingSeparator() default "";
 
     /**
      * Round mode to be used to round/scale a BigDecimal Values : UP, DOWN, CEILING, FLOOR, HALF_UP,
-     * HALF_DOWN,HALF_EVEN, UNNECESSARY e.g : Number = 123456.789, Precision = 2, Rounding = CEILING Result : 123456.79
+     * HALF_DOWN,HALF_EVEN, UNNECESSARY , for example: : Number = 123456.789, Precision = 2, Rounding = CEILING Result : 123456.79
      */
     String rounding() default "CEILING";
 
     /**
      * Method name to call to apply such customization on DataField. This must be the method on the datafield itself or
-     * you must provide static fully qualified name of the class's method e.g: see unit test
+     * you must provide static fully qualified name of the class's method for example, see unit test
      * org.apache.camel.dataformat.bindy.csv.BindySimpleCsvFunctionWithExternalMethodTest.replaceToBar
      */
     String method() default "";

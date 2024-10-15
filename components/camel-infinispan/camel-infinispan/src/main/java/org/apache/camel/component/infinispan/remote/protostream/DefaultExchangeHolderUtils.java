@@ -26,7 +26,7 @@ import org.apache.camel.support.DefaultExchangeHolder;
 import org.apache.camel.util.ClassLoadingAwareObjectInputStream;
 
 /**
- * Utilities for {@link DefaultExchangeHolder} and the Infinispan Protostream marshaller.
+ * Utilities for {@link DefaultExchangeHolder} and the Infinispan Protostream marshaler.
  */
 final class DefaultExchangeHolderUtils {
 

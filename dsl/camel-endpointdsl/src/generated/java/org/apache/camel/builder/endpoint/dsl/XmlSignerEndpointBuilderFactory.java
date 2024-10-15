@@ -42,7 +42,7 @@ public interface XmlSignerEndpointBuilderFactory {
             return (AdvancedXmlSignerEndpointBuilder) this;
         }
         /**
-         * In order to protect the KeyInfo element from tampering you can add a
+         * To protect the KeyInfo element from tampering you can add a
          * reference to the signed info element so that it is protected via the
          * signature value. The default value is true. Only relevant when a
          * KeyInfo is returned by KeyAccessor. and KeyInfo#getId() is not null.
@@ -61,7 +61,7 @@ public interface XmlSignerEndpointBuilderFactory {
             return this;
         }
         /**
-         * In order to protect the KeyInfo element from tampering you can add a
+         * To protect the KeyInfo element from tampering you can add a
          * reference to the signed info element so that it is protected via the
          * signature value. The default value is true. Only relevant when a
          * KeyInfo is returned by KeyAccessor. and KeyInfo#getId() is not null.

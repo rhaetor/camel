@@ -179,8 +179,8 @@ public class CsvDataFormatDsl {
     def.trailingDelimiter = trailingDelimiter
   }
 
-  public fun marshallerFactoryRef(marshallerFactoryRef: String) {
-    def.marshallerFactoryRef = marshallerFactoryRef
+  public fun marshalerFactoryRef(marshalerFactoryRef: String) {
+    def.marshalerFactoryRef = marshalerFactoryRef
   }
 
   public fun lazyLoad(lazyLoad: Boolean) {

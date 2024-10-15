@@ -46,7 +46,7 @@ import org.apache.camel.util.ObjectHelper;
 @Dataformat("avro")
 @Metadata(excludeProperties = "library,objectMapper,useDefaultObjectMapper,jsonViewTypeName,jsonView,include,allowJmsType," +
                               "collectionTypeName,collectionType,useList,moduleClassNames,moduleRefs,enableFeatures," +
-                              "disableFeatures,allowUnmarshallType,timezone,autoDiscoverObjectMapper," +
+                              "disableFeatures,allowUnmarshalType,timezone,autoDiscoverObjectMapper," +
                               "contentTypeHeader,schemaResolver,autoDiscoverSchemaResolver,unmarshalType,unmarshalTypeName")
 public class AvroDataFormat extends ServiceSupport implements DataFormat, DataFormatName, CamelContextAware {
 

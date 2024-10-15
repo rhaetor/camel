@@ -58,7 +58,7 @@ from("direct:list").
 
 This operation returns a List of namespaces from your cluster
 
-- listNamespacesByLabels:  this operation lists the namespaces by labels on a kubernetes cluster
+- listNamespacesByLabels: this operation lists the namespaces by labels on a kubernetes cluster
 
 [source,java]
 --------------------------------------------------------------------------------

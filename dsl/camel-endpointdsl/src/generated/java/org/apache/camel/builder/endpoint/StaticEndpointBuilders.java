@@ -3138,7 +3138,7 @@ public class StaticEndpointBuilders {
      * 
      * Path parameter: cryptoOperation (required)
      * Set the Crypto operation from that supplied after the crypto scheme in
-     * the endpoint uri e.g. crypto:sign sets sign as the operation.
+     * the endpoint uri for example, crypto:sign sets sign as the operation.
      * There are 2 enums and the value can be one of: sign, verify
      * 
      * Path parameter: name (required)
@@ -3164,7 +3164,7 @@ public class StaticEndpointBuilders {
      * 
      * Path parameter: cryptoOperation (required)
      * Set the Crypto operation from that supplied after the crypto scheme in
-     * the endpoint uri e.g. crypto:sign sets sign as the operation.
+     * the endpoint uri for example, crypto:sign sets sign as the operation.
      * There are 2 enums and the value can be one of: sign, verify
      * 
      * Path parameter: name (required)
@@ -3707,12 +3707,12 @@ public class StaticEndpointBuilders {
      * Syntax: <code>dhis2:apiName/methodName</code>
      * 
      * Path parameter: apiName (required)
-     * API operation (e.g., get)
+     * API operation (for example, get)
      * There are 5 enums and the value can be one of: POST, RESOURCE_TABLES,
      * GET, DELETE, PUT
      * 
      * Path parameter: methodName (required)
-     * Subject of the API operation (e.g., resource)
+     * Subject of the API operation (for example, resource)
      * 
      * @param path apiName/methodName
      * @return the dsl builder
@@ -3733,12 +3733,12 @@ public class StaticEndpointBuilders {
      * Syntax: <code>dhis2:apiName/methodName</code>
      * 
      * Path parameter: apiName (required)
-     * API operation (e.g., get)
+     * API operation (for example, get)
      * There are 5 enums and the value can be one of: POST, RESOURCE_TABLES,
      * GET, DELETE, PUT
      * 
      * Path parameter: methodName (required)
-     * Subject of the API operation (e.g., resource)
+     * Subject of the API operation (for example, resource)
      * 
      * @param componentName to use a custom component name for the endpoint
      * instead of the default name
@@ -12441,7 +12441,7 @@ public class StaticEndpointBuilders {
      * tries to load openapi.json resource from the classpath. Note that the
      * host defined on the component and endpoint of this Component should
      * contain the scheme, hostname and optionally the port in the URI syntax
-     * (i.e. http://api.example.com:8080). Overrides component configuration.
+     * (that is, http://api.example.com:8080). Overrides component configuration.
      * The OpenApi specification can be loaded from different sources by
      * prefixing with file: classpath: http: https:. Support for https is
      * limited to using the JDK installed UrlHandler, and as such it can be
@@ -12479,7 +12479,7 @@ public class StaticEndpointBuilders {
      * tries to load openapi.json resource from the classpath. Note that the
      * host defined on the component and endpoint of this Component should
      * contain the scheme, hostname and optionally the port in the URI syntax
-     * (i.e. http://api.example.com:8080). Overrides component configuration.
+     * (that is, http://api.example.com:8080). Overrides component configuration.
      * The OpenApi specification can be loaded from different sources by
      * prefixing with file: classpath: http: https:. Support for https is
      * limited to using the JDK installed UrlHandler, and as such it can be
@@ -13635,7 +13635,7 @@ public class StaticEndpointBuilders {
     }
     /**
      * Splunk HEC (camel-splunk-hec)
-     * The splunk component allows publishing events in Splunk using the HTTP
+     * The splunk component allows you to publish events in Splunk using the HTTP
      * Event Collector.
      * 
      * Category: monitoring
@@ -13656,7 +13656,7 @@ public class StaticEndpointBuilders {
     }
     /**
      * Splunk HEC (camel-splunk-hec)
-     * The splunk component allows publishing events in Splunk using the HTTP
+     * The splunk component allows you to publish events in Splunk using the HTTP
      * Event Collector.
      * 
      * Category: monitoring
@@ -13969,13 +13969,13 @@ public class StaticEndpointBuilders {
      * option to map web service requests based on the qualified name of the
      * root element contained in the message. soapaction - Used to map web
      * service requests based on the SOAP action specified in the header of the
-     * message. uri - In order to map web service requests that target a
+     * message. uri - To map web service requests that target a
      * specific URI. xpathresult - Used to map web service requests based on the
      * evaluation of an XPath expression against the incoming message. The
      * result of the evaluation should match the XPath result specified in the
      * endpoint URI. beanname - Allows you to reference an
      * org.apache.camel.component.spring.ws.bean.CamelEndpointDispatcher object
-     * in order to integrate with existing (legacy) endpoint mappings like
+     * to integrate with existing (legacy) endpoint mappings like
      * PayloadRootQNameEndpointMapping, SoapActionEndpointMapping, etc
      * There are 8 enums and the value can be one of: ROOT_QNAME, ACTION, TO,
      * SOAP_ACTION, XPATHRESULT, URI, URI_PATH, BEANNAME
@@ -14008,13 +14008,13 @@ public class StaticEndpointBuilders {
      * option to map web service requests based on the qualified name of the
      * root element contained in the message. soapaction - Used to map web
      * service requests based on the SOAP action specified in the header of the
-     * message. uri - In order to map web service requests that target a
+     * message. uri - To map web service requests that target a
      * specific URI. xpathresult - Used to map web service requests based on the
      * evaluation of an XPath expression against the incoming message. The
      * result of the evaluation should match the XPath result specified in the
      * endpoint URI. beanname - Allows you to reference an
      * org.apache.camel.component.spring.ws.bean.CamelEndpointDispatcher object
-     * in order to integrate with existing (legacy) endpoint mappings like
+     * to integrate with existing (legacy) endpoint mappings like
      * PayloadRootQNameEndpointMapping, SoapActionEndpointMapping, etc
      * There are 8 enums and the value can be one of: ROOT_QNAME, ACTION, TO,
      * SOAP_ACTION, XPATHRESULT, URI, URI_PATH, BEANNAME

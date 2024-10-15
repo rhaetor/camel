@@ -50,8 +50,8 @@ public class ParquetAvroMarshalCompressionCodecTest extends CamelTestSupport {
         template.requestBody("direct:default", in);
         mock.assertIsSatisfied();
 
-        byte[] marshalled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
-        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshalled);
+        byte[] marshaled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
+        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshaled);
         try (ParquetFileReader reader = new ParquetFileReader(inputStream, readOptions)) {
             CompressionCodecName codecName = reader.getRowGroups().get(0).getColumns().get(0).getCodec();
             assertEquals(GZIP, codecName);
@@ -66,8 +66,8 @@ public class ParquetAvroMarshalCompressionCodecTest extends CamelTestSupport {
         template.requestBody("direct:gzip", in);
         mock.assertIsSatisfied();
 
-        byte[] marshalled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
-        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshalled);
+        byte[] marshaled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
+        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshaled);
         try (ParquetFileReader reader = new ParquetFileReader(inputStream, readOptions)) {
             CompressionCodecName codecName = reader.getRowGroups().get(0).getColumns().get(0).getCodec();
             assertEquals(GZIP, codecName);
@@ -82,8 +82,8 @@ public class ParquetAvroMarshalCompressionCodecTest extends CamelTestSupport {
         template.requestBody("direct:snappy", in);
         mock.assertIsSatisfied();
 
-        byte[] marshalled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
-        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshalled);
+        byte[] marshaled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
+        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshaled);
         try (ParquetFileReader reader = new ParquetFileReader(inputStream, readOptions)) {
             CompressionCodecName codecName = reader.getRowGroups().get(0).getColumns().get(0).getCodec();
             assertEquals(SNAPPY, codecName);
@@ -98,8 +98,8 @@ public class ParquetAvroMarshalCompressionCodecTest extends CamelTestSupport {
         template.requestBody("direct:uncompressed", in);
         mock.assertIsSatisfied();
 
-        byte[] marshalled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
-        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshalled);
+        byte[] marshaled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
+        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshaled);
         try (ParquetFileReader reader = new ParquetFileReader(inputStream, readOptions)) {
             CompressionCodecName codecName = reader.getRowGroups().get(0).getColumns().get(0).getCodec();
             assertEquals(UNCOMPRESSED, codecName);
@@ -114,8 +114,8 @@ public class ParquetAvroMarshalCompressionCodecTest extends CamelTestSupport {
         template.requestBody("direct:zstd", in);
         mock.assertIsSatisfied();
 
-        byte[] marshalled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
-        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshalled);
+        byte[] marshaled = mock.getExchanges().get(0).getIn().getBody(byte[].class);
+        ParquetInputStream inputStream = new ParquetInputStream(uuidGenerator.generateUuid(), marshaled);
         try (ParquetFileReader reader = new ParquetFileReader(inputStream, readOptions)) {
             CompressionCodecName codecName = reader.getRowGroups().get(0).getColumns().get(0).getCodec();
             assertEquals(ZSTD, codecName);

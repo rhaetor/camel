@@ -27,7 +27,7 @@ import org.apache.camel.spi.annotations.Component;
 /**
  * An implementation of the <a href="http://camel.apache.org/vm.html">VM components</a> for asynchronous SEDA exchanges
  * on a <a href="https://github.com/LMAX-Exchange/disruptor">LMAX Disruptor</a> within the classloader tree containing
- * the camel-disruptor.jar. i.e. to handle communicating across CamelContext instances and possibly across web
+ * the camel-disruptor.jar. that is, to handle communicating across CamelContext instances and possibly across web
  * application contexts, providing that camel-disruptor.jar is on the system classpath.
  */
 @Component("disruptor-vm")

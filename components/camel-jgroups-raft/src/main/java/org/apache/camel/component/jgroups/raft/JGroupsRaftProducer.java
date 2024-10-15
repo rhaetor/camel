@@ -74,7 +74,7 @@ public class JGroupsRaftProducer extends DefaultProducer {
                 LOG.debug("Calling set(byte[] {}, int {}, int {}) method on raftHandle.", body, setOffset, setLength);
                 result = endpoint.getResolvedRaftHandle().set(body, setOffset, setLength);
             } else {
-                LOG.debug("Calling set(byte[] {}, int {}, int {} (i.e. body.length)) method on raftHandle.", body, 0,
+                LOG.debug("Calling set(byte[] {}, int {}, int {} (that is, body.length)) method on raftHandle.", body, 0,
                         body.length);
                 result = endpoint.getResolvedRaftHandle().set(body, 0, body.length);
             }

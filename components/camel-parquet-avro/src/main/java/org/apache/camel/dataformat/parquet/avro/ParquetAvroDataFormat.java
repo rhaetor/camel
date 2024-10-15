@@ -65,7 +65,7 @@ public class ParquetAvroDataFormat extends ServiceSupport implements DataFormat,
 
     @Override
     public void marshal(Exchange exchange, Object graph, OutputStream stream) throws Exception {
-        // marshal from the Java object or GenericRecord (graph) to the parquet-avro type
+        // marshalfrom the Java object or GenericRecord (graph) to the parquet-avro type
         Configuration conf = new Configuration();
 
         FileSystem.get(conf).setWriteChecksum(false);
@@ -84,7 +84,7 @@ public class ParquetAvroDataFormat extends ServiceSupport implements DataFormat,
                 schema = ReflectData.AllowNull.get().getSchema(unmarshalType); // generate nullable fields
                 model = ReflectData.get();
             } catch (AvroRuntimeException e) {
-                LOG.warn("Fallback to use GenericRecord instead of POJO for marshalling", e);
+                LOG.warn("Fallback to use GenericRecord instead of POJO for marshaling", e);
             }
         }
         if (schema == null) {
@@ -107,7 +107,7 @@ public class ParquetAvroDataFormat extends ServiceSupport implements DataFormat,
 
     @Override
     public Object unmarshal(Exchange exchange, InputStream stream) throws Exception {
-        // unmarshal from the input stream of parquet-avro to Java object or GenericRecord (graph)
+        // unmarshalfrom the input stream of parquet-avro to Java object or GenericRecord (graph)
         Configuration conf = new Configuration();
 
         ParquetInputStream parquetInputStream = new ParquetInputStream(
@@ -158,7 +158,7 @@ public class ParquetAvroDataFormat extends ServiceSupport implements DataFormat,
     }
 
     /**
-     * Compression codec to use when marshalling. You can find the supported codecs at
+     * Compression codec to use when marshaling. You can find the supported codecs at
      * https://github.com/apache/parquet-format/blob/master/Compression.md#codecs. Note that some codecs may require you
      * to include additional libraries into the classpath.
      */
@@ -171,21 +171,21 @@ public class ParquetAvroDataFormat extends ServiceSupport implements DataFormat,
     }
 
     /**
-     * Class to use when unmarshalling.
+     * Class to use when unmarshaling.
      */
     public void setUnmarshalType(Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
     }
 
     /**
-     * Indicates whether the unmarshalling should produce an iterator of records or read all the records at once.
+     * Indicates whether the unmarshaling should produce an iterator of records or read all the records at once.
      */
     public boolean isLazyLoad() {
         return lazyLoad;
     }
 
     /**
-     * Sets whether the unmarshalling should produce an iterator of records or read all the records at once.
+     * Sets whether the unmarshaling should produce an iterator of records or read all the records at once.
      */
     public ParquetAvroDataFormat setLazyLoad(boolean lazyLoad) {
         this.lazyLoad = lazyLoad;

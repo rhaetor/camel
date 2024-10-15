@@ -50,7 +50,7 @@ public class BindySimpleCsvFunctionWithExternalMethodTest extends CamelTestSuppo
     }
 
     @Test
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
 
         mockEndPointMarshal1.expectedMessageCount(1);
         mockEndPointMarshal1

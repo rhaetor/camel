@@ -36,8 +36,8 @@ public class ${name}DataFormatTest extends CamelTestSupport {
       MockEndpoint mock = getMockEndpoint("mock:reverse");
       mock.message(0).body().isEqualTo(in);
 
-      Object marshalled = template.requestBody("direct:in", in);
-      template.sendBody("direct:back", marshalled);
+      Object marshaled = template.requestBody("direct:in", in);
+      template.sendBody("direct:back", marshaled);
       mock.assertIsSatisfied();
   }
 

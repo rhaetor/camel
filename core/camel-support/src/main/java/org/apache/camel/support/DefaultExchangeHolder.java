@@ -123,7 +123,7 @@ public class DefaultExchangeHolder implements Serializable {
         Object body = exchange.getIn().getBody();
         if (body instanceof WrappedFile || body instanceof File) {
             throw new RuntimeExchangeException(
-                    "Message body of type " + body.getClass().getCanonicalName() + " is not supported by this marshaller.",
+                    "Message body of type " + body.getClass().getCanonicalName() + " is not supported by this marshaler.",
                     exchange);
         }
 

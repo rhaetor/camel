@@ -29,6 +29,6 @@
 		<routeBuilder ref="myBuilder" /> 
 	</camelContext>
 	
-	<bean id="myBuilder" class="org.apache.camel.dataformat.bindy.model.date.BindyDatePatternCsvUnmarshallTest$ContextConfig"/>
+	<bean id="myBuilder" class="org.apache.camel.dataformat.bindy.model.date.BindyDatePatternCsvUnmarshalTest$ContextConfig"/>
 	
 </beans>

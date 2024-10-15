@@ -35,8 +35,8 @@ import org.apache.camel.spi.MimeType;
 import org.apache.camel.spi.Transformer;
 
 /**
- * Data type uses Protobuf Jackson data format to unmarshal Exchange body to generic JsonNode. Uses given Protobuf
- * schema from the Exchange properties when unmarshalling the payload (usually already resolved via schema resolver).
+ * Data type uses Protobuf Jackson data format to unmarshalExchange body to generic JsonNode. Uses given Protobuf
+ * schema from the Exchange properties when unmarshaling the payload (usually already resolved via schema resolver).
  */
 @DataTypeTransformer(name = "protobuf-x-struct")
 public class ProtobufStructDataTypeTransformer extends Transformer {
@@ -50,21 +50,21 @@ public class ProtobufStructDataTypeTransformer extends Transformer {
         }
 
         try {
-            Object unmarshalled;
+            Object unmarshaled;
             String contentClass = SchemaHelper.resolveContentClass(message.getExchange(), null);
             if (contentClass != null) {
                 Class<?> contentType
                         = message.getExchange().getContext().getClassResolver().resolveMandatoryClass(contentClass);
-                unmarshalled = Protobuf.mapper().reader().forType(JsonNode.class).with(schema)
+                unmarshaled = Protobuf.mapper().reader().forType(JsonNode.class).with(schema)
                         .readValue(Protobuf.mapper().writerFor(contentType).with(schema).writeValueAsBytes(message.getBody()));
             } else if (message.getBody() instanceof String jsonString && Json.isJson(jsonString)) {
-                unmarshalled = Json.mapper().readTree(getBodyAsStream(message));
+                unmarshaled = Json.mapper().readTree(getBodyAsStream(message));
             } else {
-                unmarshalled
+                unmarshaled
                         = Protobuf.mapper().reader().forType(JsonNode.class).with(schema).readValue(getBodyAsStream(message));
             }
 
-            message.setBody(unmarshalled);
+            message.setBody(unmarshaled);
 
             message.setHeader(Exchange.CONTENT_TYPE, MimeType.STRUCT.type());
         } catch (InvalidPayloadException | IOException | ClassNotFoundException e) {

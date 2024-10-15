@@ -32,7 +32,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
-public class BindySimpleCsvMarshallPositionModifiedTest extends CommonBindyTest {
+public class BindySimpleCsvMarshalPositionModifiedTest extends CommonBindyTest {
 
     private List<Map<String, Object>> models = new ArrayList<>();
     private String expected;

@@ -421,7 +421,7 @@ public class NettyServerBootstrapConfiguration implements Cloneable {
     }
 
     /**
-     * Password setting to use in order to encrypt/decrypt payloads sent using SSH
+     * Password setting to use to encrypt/decrypt payloads sent using SSH
      */
     public void setPassphrase(String passphrase) {
         this.passphrase = passphrase;

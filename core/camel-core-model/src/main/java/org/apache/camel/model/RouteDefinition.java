@@ -516,7 +516,7 @@ public class RouteDefinition extends OutputDefinition<RouteDefinition>
     }
 
     /**
-     * Sets the predicate of the precondition in simple language to evaluate in order to determine if this route should
+     * Sets the predicate of the precondition in simple language to evaluate to determine if this route should
      * be included or not.
      *
      * @param  precondition the predicate corresponding to the test to evaluate.
@@ -1010,7 +1010,7 @@ public class RouteDefinition extends OutputDefinition<RouteDefinition>
     }
 
     /**
-     * The predicate of the precondition in simple language to evaluate in order to determine if this route should be
+     * The predicate of the precondition in simple language to evaluate to determine if this route should be
      * included or not.
      */
     @Override
@@ -1019,7 +1019,7 @@ public class RouteDefinition extends OutputDefinition<RouteDefinition>
     }
 
     /**
-     * The predicate of the precondition in simple language to evaluate in order to determine if this route should be
+     * The predicate of the precondition in simple language to evaluate to determine if this route should be
      * included or not.
      */
     @XmlAttribute

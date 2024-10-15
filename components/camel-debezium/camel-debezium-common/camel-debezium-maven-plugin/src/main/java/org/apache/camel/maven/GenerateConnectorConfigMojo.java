@@ -39,7 +39,7 @@ public class GenerateConnectorConfigMojo extends AbstractMojo {
     private File generatedSrcDir;
 
     /**
-     * Debezium connector's class name, this has to be fully name with the package, e.g:
+     * Debezium connector's class name, this has to be fully name with the package, for example:
      * 'io.debezium.connector.mysql.MySqlConnector'
      */
     @Parameter(
@@ -48,7 +48,7 @@ public class GenerateConnectorConfigMojo extends AbstractMojo {
     private String connectorClassName;
 
     /**
-     * Debezium connector's config class name, this has to be fully name with the package, e.g:
+     * Debezium connector's config class name, this has to be fully name with the package, for example:
      * 'io.debezium.connector.mysql.MySqlConnectorConfig'
      */
     @Parameter(

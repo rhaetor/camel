@@ -19,20 +19,20 @@ package org.apache.camel.dataformat.csv;
 import org.apache.commons.csv.CSVFormat;
 
 /**
- * A {@link CsvMarshaller} factory.
+ * A {@link CsvMarshaler} factory.
  */
-public interface CsvMarshallerFactory {
+public interface CsvMarshalerFactory {
 
-    CsvMarshallerFactory DEFAULT = (CSVFormat format, CsvDataFormat dataFormat) -> {
-        return CsvMarshaller.create(format, dataFormat);
+    CsvMarshalerFactory DEFAULT = (CSVFormat format, CsvDataFormat dataFormat) -> {
+        return CsvMarshaler.create(format, dataFormat);
     };
 
     /**
-     * Creates and returns a new {@link CsvMarshaller}.
+     * Creates and returns a new {@link CsvMarshaler}.
      *
      * @param  format     the <b>CSV</b> format. Can NOT be <code>null</code>.
      * @param  dataFormat the <b>CSV</b> data format. Can NOT be <code>null</code>.
-     * @return            a new {@link CsvMarshaller}. Never <code>null</code>.
+     * @return            a new {@link CsvMarshaler}. Never <code>null</code>.
      */
-    CsvMarshaller create(CSVFormat format, CsvDataFormat dataFormat);
+    CsvMarshaler create(CSVFormat format, CsvDataFormat dataFormat);
 }

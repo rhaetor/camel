@@ -521,7 +521,7 @@ public class IrcConfiguration implements Cloneable {
 
     /**
      * Sends <code>NAMES</code> command to channel after joining it.<br>
-     * {@link #onReply} has to be <code>true</code> in order to process the result which will have the header value
+     * {@link #onReply} has to be <code>true</code> to process the result which will have the header value
      * <code>irc.num = '353'</code>.
      */
     public void setNamesOnJoin(boolean namesOnJoin) {

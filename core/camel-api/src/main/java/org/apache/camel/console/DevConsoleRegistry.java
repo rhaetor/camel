@@ -91,7 +91,7 @@ public interface DevConsoleRegistry extends CamelContextAware, StaticService, Id
 
     /**
      * Returns an optional {@link DevConsoleRegistry}, by default no registry is present, and it must be explicit
-     * activated. Components can register/unregister dev consoles in response to life-cycle events (i.e. start/stop).
+     * activated. Components can register/unregister dev consoles in response to life-cycle events (that is, start/stop).
      *
      * This registry is not used by the camel context, but it is up to the implementation to properly use it.
      */

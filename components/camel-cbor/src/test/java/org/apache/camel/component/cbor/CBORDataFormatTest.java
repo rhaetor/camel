@@ -38,9 +38,9 @@ public class CBORDataFormatTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(Map.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:in", in);
+        Object marshaled = template.requestBody("direct:in", in);
 
-        template.sendBody("direct:back", marshalled);
+        template.sendBody("direct:back", marshaled);
 
         mock.assertIsSatisfied();
     }
@@ -55,9 +55,9 @@ public class CBORDataFormatTest extends CamelTestSupport {
         mock.expectedMessageCount(1);
         mock.message(0).body().isInstanceOf(Author.class);
 
-        Object marshalled = template.requestBody("direct:in-auth", auth);
+        Object marshaled = template.requestBody("direct:in-auth", auth);
 
-        template.sendBody("direct:back-auth", marshalled);
+        template.sendBody("direct:back-auth", marshaled);
 
         Author authReturned = mock.getExchanges().get(0).getIn().getBody(Author.class);
         assertEquals("Don", authReturned.getName());

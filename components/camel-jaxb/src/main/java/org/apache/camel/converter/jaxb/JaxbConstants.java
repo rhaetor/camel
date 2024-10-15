@@ -22,7 +22,7 @@ package org.apache.camel.converter.jaxb;
 public interface JaxbConstants {
 
     /**
-     * Key to identify custom marshaller properties in the exchange specific to JAX-RI implementation
+     * Key to identify custom marshaler properties in the exchange specific to JAX-RI implementation
      */
     String JAXB_PROVIDER_PROPERTIES = "CamelJaxbProviderProperties";
 

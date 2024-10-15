@@ -88,7 +88,7 @@ by these properties on the Camel exchange:
 |`CamelMllpAcknowledgement` | byte[] | If present, this property will be sent to the client as the MLLP Acknowledgement
 |`CamelMllpAcknowledgementString` | String | If present and `CamelMllpAcknowledgement` is not present, this property will we sent to the client as the MLLP Acknowledgement
 |`CamelMllpAcknowledgementMsaText` | String | If neither `CamelMllpAcknowledgement` or `CamelMllpAcknowledgementString` are present and autoAck is true, this property can be used to specify the contents of MSA-3 in the generated HL7 acknowledgement
-|`CamelMllpAcknowledgementType` | String  | If neither `CamelMllpAcknowledgement` or `CamelMllpAcknowledgementString` are present and autoAck is true, this property can be used to specify the HL7 acknowledgement type (i.e. AA, AE, AR)
+|`CamelMllpAcknowledgementType` | String  | If neither `CamelMllpAcknowledgement` or `CamelMllpAcknowledgementString` are present and autoAck is true, this property can be used to specify the HL7 acknowledgement type (that is, AA, AE, AR)
 |`CamelMllpAutoAcknowledge` | Boolean | Overrides the autoAck query parameter
 
 |`CamelMllpCloseConnectionBeforeSend` | Boolean | If true, the Socket will be closed before sending data

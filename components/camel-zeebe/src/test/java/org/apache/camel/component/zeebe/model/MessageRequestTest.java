@@ -58,7 +58,7 @@ public class MessageRequestTest {
 
     @Test
     public void unmarshalTest() {
-        MessageRequest unmarshalledMessage1
+        MessageRequest unmarshaledMessage1
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_1, MessageRequest.class));
 
         MessageRequest message = new MessageRequest();
@@ -67,9 +67,9 @@ public class MessageRequestTest {
         message.setMessageId("message");
         message.setTimeToLive(100);
 
-        assertEquals(message, unmarshalledMessage1);
+        assertEquals(message, unmarshaledMessage1);
 
-        MessageRequest unmarshalledMessage2
+        MessageRequest unmarshaledMessage2
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_2, MessageRequest.class));
 
         HashMap<String, Object> variables = new HashMap<>();
@@ -78,6 +78,6 @@ public class MessageRequestTest {
         variables.put("varC", Collections.emptyMap());
         message.setVariables(variables);
 
-        assertEquals(message, unmarshalledMessage2);
+        assertEquals(message, unmarshaledMessage2);
     }
 }

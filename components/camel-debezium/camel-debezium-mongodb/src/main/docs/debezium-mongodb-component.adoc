@@ -36,6 +36,7 @@ the application will resume from the last recorded offset,
 which may result in receiving duplicate events immediately after the restart.
 Therefore, your downstream routes should be tolerant enough of such a case and deduplicate events if needed.
 ====
+
 Maven users will need to add the following dependency to their `pom.xml`
 for this component.
 
@@ -80,7 +81,8 @@ include::partial$component-endpoint-headers.adoc[]
 *Note*: Debezium Mongodb uses MongoDB’s oplog to populate the CDC events, the update events in MongoDB’s oplog don’t have the before or after states of the changed document, so there’s no way for the Debezium connector to provide this information, therefore header key `CamelDebeziumBefore` is not available in this component.
 
 == Message body
-The message body if is not `null` (in case of tombstones), it contains the state of the row after the event occurred as `String` JSON format, and you can unmarshal using Camel JSON Data Format.
+
+The message body if is not `null` (in case of tombstones), it contains the state of the row after the event occurred as `String` JSON format, and you can unmarshalusing Camel JSON Data Format.
 
 == Samples
 
@@ -106,7 +108,7 @@ from("debezium-mongodb:dbz-test-1?offsetStorageFileName=/usr/offset-file-1.dat&m
 ----
 
 By default, the component will emit the events in the body String JSON format in case of `u`, `c` or `r` operations.
-This can be easily converted to JSON using Camel JSON Data Format e.g.: `.unmarshal().json()` like the above example.
+This can be easily converted to JSON using Camel JSON Data Format for example, `.unmarshal().json()` like the above example.
 In case of operation `d`, the body will be `null`.
 
 [IMPORTANT]

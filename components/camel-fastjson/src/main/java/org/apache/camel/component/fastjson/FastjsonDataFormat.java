@@ -229,7 +229,7 @@ public class FastjsonDataFormat extends ServiceSupport
     }
 
     /**
-     * If enabled then JSON will set the Content-Type header to <tt>application/json</tt> when marshalling.
+     * If enabled then JSON will set the Content-Type header to <tt>application/json</tt> when marshaling.
      */
     public void setContentTypeHeader(boolean contentTypeHeader) {
         this.contentTypeHeader = contentTypeHeader;

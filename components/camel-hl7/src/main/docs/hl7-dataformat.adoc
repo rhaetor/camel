@@ -193,7 +193,7 @@ QRD|200612211200|R|I|GetPatient|||1^RD|0101701234|DEM||
 ----
 
 Using the HL7 model, you can work with a `ca.uhn.hl7v2.model.Message`
-object, e.g., to retrieve a patient ID:
+object, for example, to retrieve a patient ID:
 
 [source,java]
 ----
@@ -240,7 +240,7 @@ marshal or unmarshal operation in the route builder:
     .to("jms:queue:hl7out");
 ----
 
-In the sample above, the HL7 is marshalled from a HAPI Message object to
+In the sample above, the HL7 is marshaled from a HAPI Message object to
 a byte stream and put on a JMS queue. +
  The next example is the opposite:
 
@@ -258,7 +258,7 @@ passed to our patient lookup service.
 
 === Segment separators
 
-Unmarshalling does not automatically fix segment
+Unmarshaling does not automatically fix segment
 separators anymore by converting `\n` to `\r`. If you  +
  need this conversion,
 `org.apache.camel.component.hl7.HL7#convertLFToCR` provides a handy

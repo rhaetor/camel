@@ -312,7 +312,7 @@ service PubSub {
    *
    * The server returns a PublishResponse for each PublishRequest when publish is
    * complete for the batch. A client does not have to wait for a PublishResponse
-   * before sending a new PublishRequest, i.e. multiple publish batches can be queued
+   * before sending a new PublishRequest, that is, multiple publish batches can be queued
    * up, which allows for higher publish rate as a client can asynchronously
    * publish more events while publishes are still in flight on the server side.
    *

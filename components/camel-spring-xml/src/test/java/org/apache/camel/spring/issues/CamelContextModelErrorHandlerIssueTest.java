@@ -20,8 +20,8 @@ import java.io.File;
 import java.io.StringWriter;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Marshaler;
+import jakarta.xml.bind.Unmarshaler;
 
 import org.apache.camel.spring.xml.CamelContextFactoryBean;
 import org.apache.camel.spring.xml.SpringModelJAXBContextFactory;
@@ -44,8 +44,8 @@ public class CamelContextModelErrorHandlerIssueTest {
     public void testCamelContextModel() throws Exception {
         JAXBContext jaxbContext = new SpringModelJAXBContextFactory().newJAXBContext();
 
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        Object obj = unmarshaller.unmarshal(
+        Unmarshaler unmarshaler = jaxbContext.createUnmarshaler();
+        Object obj = unmarshaler.unmarshal(
                 new File("src/test/resources/org/apache/camel/spring/issues/CamelContextModelErrorHandlerIssueTest.xml"));
         assertNotNull(obj);
 
@@ -55,9 +55,9 @@ public class CamelContextModelErrorHandlerIssueTest {
         assertEquals("dlc", context.getErrorHandlerRef());
         assertEquals(1, context.getRoutes().size());
 
-        Marshaller marshaller = jaxbContext.createMarshaller();
+        Marshaler marshaler = jaxbContext.createMarshaler();
         StringWriter writer = new StringWriter();
-        marshaller.marshal(context, writer);
+        marshaler.marshal(context, writer);
 
         String s = writer.getBuffer().toString();
         LOG.info(s);

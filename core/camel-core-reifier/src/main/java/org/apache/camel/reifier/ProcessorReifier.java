@@ -550,7 +550,7 @@ public abstract class ProcessorReifier<T extends ProcessorDefinition<?>> extends
      * Is used for check if the route output has any real outputs (non abstracts)
      *
      * @param  outputs         the outputs
-     * @param  excludeAbstract whether or not to exclude abstract outputs (e.g. skip onException etc.)
+     * @param  excludeAbstract whether or not to exclude abstract outputs (for example, skip onException etc.)
      * @return                 <tt>true</tt> if has outputs, otherwise <tt>false</tt> is returned
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })

@@ -35,7 +35,7 @@ public class CBORDataFormatReifier extends DataFormatReifier<CBORDataFormat> {
         properties.put("unmarshalType", or(definition.getUnmarshalType(), definition.getUnmarshalTypeName()));
         properties.put("collectionType", or(definition.getCollectionType(), definition.getCollectionTypeName()));
         properties.put("useList", definition.getUseList());
-        properties.put("allowUnmarshallType", definition.getAllowUnmarshallType());
+        properties.put("allowUnmarshalType", definition.getAllowUnmarshalType());
         properties.put("prettyPrint", definition.getPrettyPrint());
         properties.put("allowJmsType", definition.getAllowJmsType());
         properties.put("enableFeatures", definition.getEnableFeatures());

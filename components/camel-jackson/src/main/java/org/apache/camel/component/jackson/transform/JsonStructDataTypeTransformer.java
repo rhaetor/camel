@@ -34,7 +34,7 @@ import org.apache.camel.spi.MimeType;
 import org.apache.camel.spi.Transformer;
 
 /**
- * Data type uses Jackson data format to unmarshal Exchange body to a generic JsonNode representation.
+ * Data type uses Jackson data format to unmarshalExchange body to a generic JsonNode representation.
  */
 @DataTypeTransformer(name = "application-x-struct")
 public class JsonStructDataTypeTransformer extends Transformer {
@@ -46,18 +46,18 @@ public class JsonStructDataTypeTransformer extends Transformer {
         }
 
         try {
-            Object unmarshalled;
+            Object unmarshaled;
             String contentClass = SchemaHelper.resolveContentClass(message.getExchange(), null);
             if (contentClass != null) {
                 Class<?> contentType
                         = message.getExchange().getContext().getClassResolver().resolveMandatoryClass(contentClass);
-                unmarshalled = Json.mapper().reader().forType(JsonNode.class)
+                unmarshaled = Json.mapper().reader().forType(JsonNode.class)
                         .readValue(Json.mapper().writerFor(contentType).writeValueAsString(message.getBody()));
             } else {
-                unmarshalled = Json.mapper().reader().forType(JsonNode.class).readValue(getBodyAsStream(message));
+                unmarshaled = Json.mapper().reader().forType(JsonNode.class).readValue(getBodyAsStream(message));
             }
 
-            message.setBody(unmarshalled);
+            message.setBody(unmarshaled);
 
             message.setHeader(Exchange.CONTENT_TYPE, MimeType.STRUCT.type());
         } catch (InvalidPayloadException | IOException | ClassNotFoundException e) {

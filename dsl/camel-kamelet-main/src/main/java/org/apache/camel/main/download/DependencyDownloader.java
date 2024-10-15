@@ -69,7 +69,7 @@ public interface DependencyDownloader extends CamelContextAware, StaticService {
     boolean isFresh();
 
     /**
-     * Make sure we use fresh (i.e. non-cached) resources.
+     * Make sure we use fresh (that is, non-cached) resources.
      */
     void setFresh(boolean fresh);
 

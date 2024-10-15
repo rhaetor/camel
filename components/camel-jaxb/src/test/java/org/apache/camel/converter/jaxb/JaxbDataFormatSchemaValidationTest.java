@@ -38,15 +38,15 @@ public class JaxbDataFormatSchemaValidationTest extends CamelTestSupport {
 
     private static final Logger LOG = LoggerFactory.getLogger(JaxbDataFormatPartClassTest.class);
 
-    @EndpointInject("mock:marshall")
-    private MockEndpoint mockMarshall;
+    @EndpointInject("mock:marshal")
+    private MockEndpoint mockMarshal;
 
-    @EndpointInject("mock:unmarshall")
-    private MockEndpoint mockUnmarshall;
+    @EndpointInject("mock:unmarshal")
+    private MockEndpoint mockUnmarshal;
 
     @Test
-    public void testMarshallSuccess() throws Exception {
-        mockMarshall.expectedMessageCount(1);
+    public void testMarshalSuccess() throws Exception {
+        mockMarshal.expectedMessageCount(1);
 
         Address address = new Address();
         address.setAddressLine1("Hauptstr. 1; 01129 Entenhausen");
@@ -56,11 +56,11 @@ public class JaxbDataFormatSchemaValidationTest extends CamelTestSupport {
         person.setAge(Integer.valueOf(36));
         person.setAddress(address);
 
-        template.sendBody("direct:marshall", person);
+        template.sendBody("direct:marshal", person);
 
         MockEndpoint.assertIsSatisfied(context);
 
-        String payload = mockMarshall.getExchanges().get(0).getIn().getBody(String.class);
+        String payload = mockMarshal.getExchanges().get(0).getIn().getBody(String.class);
         LOG.info(payload);
 
         assertTrue(payload.startsWith("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"));
@@ -76,11 +76,11 @@ public class JaxbDataFormatSchemaValidationTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshallWithValidationException() {
+    public void testMarshalWithValidationException() {
         Person person = new Person();
 
         Exception ex = assertThrows(CamelExecutionException.class,
-                () -> template.sendBody("direct:marshall", person));
+                () -> template.sendBody("direct:marshal", person));
 
         Throwable cause = ex.getCause();
         assertIsInstanceOf(IOException.class, cause);
@@ -90,8 +90,8 @@ public class JaxbDataFormatSchemaValidationTest extends CamelTestSupport {
     }
 
     @Test
-    public void testUnmarshallSuccess() throws Exception {
-        mockUnmarshall.expectedMessageCount(1);
+    public void testUnmarshalSuccess() throws Exception {
+        mockUnmarshal.expectedMessageCount(1);
 
         String xml = new StringBuilder("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>")
                 .append("<person xmlns=\"person.jaxb.converter.camel.apache.org\" xmlns:ns2=\"address.jaxb.converter.camel.apache.org\">")
@@ -103,11 +103,11 @@ public class JaxbDataFormatSchemaValidationTest extends CamelTestSupport {
                 .append("</address>")
                 .append("</person>")
                 .toString();
-        template.sendBody("direct:unmarshall", xml);
+        template.sendBody("direct:unmarshal", xml);
 
         MockEndpoint.assertIsSatisfied(context);
 
-        Person person = mockUnmarshall.getExchanges().get(0).getIn().getBody(Person.class);
+        Person person = mockUnmarshal.getExchanges().get(0).getIn().getBody(Person.class);
 
         assertEquals("Christian", person.getFirstName());
         assertEquals("Mueller", person.getLastName());
@@ -115,13 +115,13 @@ public class JaxbDataFormatSchemaValidationTest extends CamelTestSupport {
     }
 
     @Test
-    public void testUnmarshallWithValidationException() {
+    public void testUnmarshalWithValidationException() {
         String xml = new StringBuilder("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>")
                 .append("<person xmlns=\"person.jaxb.converter.camel.apache.org\" />")
                 .toString();
 
         Exception ex = assertThrows(CamelExecutionException.class,
-                () -> template.sendBody("direct:unmarshall", xml));
+                () -> template.sendBody("direct:unmarshal", xml));
 
         Throwable cause = ex.getCause();
         assertIsInstanceOf(IOException.class, cause);
@@ -140,13 +140,13 @@ public class JaxbDataFormatSchemaValidationTest extends CamelTestSupport {
                 jaxbDataFormat.setSchema("classpath:person.xsd,classpath:address.xsd");
                 jaxbDataFormat.setAccessExternalSchemaProtocols("file");
 
-                from("direct:marshall")
+                from("direct:marshal")
                         .marshal(jaxbDataFormat)
-                        .to("mock:marshall");
+                        .to("mock:marshal");
 
-                from("direct:unmarshall")
+                from("direct:unmarshal")
                         .unmarshal(jaxbDataFormat)
-                        .to("mock:unmarshall");
+                        .to("mock:unmarshal");
             }
         };
     }

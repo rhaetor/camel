@@ -206,7 +206,7 @@ public class KameletMain extends MainCommandLineSupport {
     }
 
     /**
-     * Make sure we use fresh (i.e. non-cached) resources.
+     * Make sure we use fresh (that is, non-cached) resources.
      */
     public void setFresh(boolean fresh) {
         this.fresh = fresh;

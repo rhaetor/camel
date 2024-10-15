@@ -15,9 +15,9 @@ The xref:ROOT:flatpack-component.adoc[Flatpack] component ships with the Flatpac
 format that can be used to format between fixed width or delimited text
 messages to a `List` of rows as `Map`.
 
-* marshal = from `List<Map<String, Object>>` to `OutputStream` (can be
+* marshal= from `List<Map<String, Object>>` to `OutputStream` (can be
 converted to `String`)
-* unmarshal = from `java.io.InputStream` (such as a `File` or `String`)
+* unmarshal= from `java.io.InputStream` (such as a `File` or `String`)
 to a `java.util.List` as an
 `org.apache.camel.component.flatpack.DataSetList` instance. +
  The result of the operation will contain all the data. If you need to
@@ -64,7 +64,7 @@ from("seda:people").marshal(df).convertBodyTo(String.class).to("jms:queue:people
 In the code above we marshal the data from a Object representation as a
 `List` of rows as `Maps`. The rows as `Map` contains the column name as
 the key, and the corresponding value. This structure can be created
-in Java code from e.g. a processor. We marshal the data according to the
+in Java code from for example, a processor. We marshal the data according to the
 Flatpack format and convert the result as a `String` object and store it
 on a JMS queue.
 

@@ -813,7 +813,7 @@ public interface SmppEndpointBuilderFactory {
          * Defines the maximum period of inactivity allowed after a transaction,
          * after which an SMPP entity may assume that the session is no longer
          * active. This timer may be active on either communicating SMPP entity
-         * (i.e. SMSC or ESME).
+         * (that is, SMSC or ESME).
          * 
          * The option is a: &lt;code&gt;java.lang.Integer&lt;/code&gt; type.
          * 
@@ -832,7 +832,7 @@ public interface SmppEndpointBuilderFactory {
          * Defines the maximum period of inactivity allowed after a transaction,
          * after which an SMPP entity may assume that the session is no longer
          * active. This timer may be active on either communicating SMPP entity
-         * (i.e. SMSC or ESME).
+         * (that is, SMSC or ESME).
          * 
          * The option will be converted to a
          * &lt;code&gt;java.lang.Integer&lt;/code&gt; type.
@@ -1155,7 +1155,7 @@ public interface SmppEndpointBuilderFactory {
             return this;
         }
         /**
-         * Set this on producer in order to benefit from transceiver (TRX)
+         * Set this on producer to benefit from transceiver (TRX)
          * binding type. So once set, you don't need to define an 'SMTPP
          * consumer' endpoint anymore. You would set this to a 'Direct consumer'
          * endpoint instead. DISCALIMER: This feature is only tested with
@@ -2005,7 +2005,7 @@ public interface SmppEndpointBuilderFactory {
          * Defines the maximum period of inactivity allowed after a transaction,
          * after which an SMPP entity may assume that the session is no longer
          * active. This timer may be active on either communicating SMPP entity
-         * (i.e. SMSC or ESME).
+         * (that is, SMSC or ESME).
          * 
          * The option is a: &lt;code&gt;java.lang.Integer&lt;/code&gt; type.
          * 
@@ -2024,7 +2024,7 @@ public interface SmppEndpointBuilderFactory {
          * Defines the maximum period of inactivity allowed after a transaction,
          * after which an SMPP entity may assume that the session is no longer
          * active. This timer may be active on either communicating SMPP entity
-         * (i.e. SMSC or ESME).
+         * (that is, SMSC or ESME).
          * 
          * The option will be converted to a
          * &lt;code&gt;java.lang.Integer&lt;/code&gt; type.
@@ -2678,7 +2678,7 @@ public interface SmppEndpointBuilderFactory {
          * Defines the maximum period of inactivity allowed after a transaction,
          * after which an SMPP entity may assume that the session is no longer
          * active. This timer may be active on either communicating SMPP entity
-         * (i.e. SMSC or ESME).
+         * (that is, SMSC or ESME).
          * 
          * The option is a: &lt;code&gt;java.lang.Integer&lt;/code&gt; type.
          * 
@@ -2697,7 +2697,7 @@ public interface SmppEndpointBuilderFactory {
          * Defines the maximum period of inactivity allowed after a transaction,
          * after which an SMPP entity may assume that the session is no longer
          * active. This timer may be active on either communicating SMPP entity
-         * (i.e. SMSC or ESME).
+         * (that is, SMSC or ESME).
          * 
          * The option will be converted to a
          * &lt;code&gt;java.lang.Integer&lt;/code&gt; type.

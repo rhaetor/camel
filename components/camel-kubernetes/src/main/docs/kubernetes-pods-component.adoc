@@ -57,7 +57,7 @@ from("direct:list").
 
 This operation returns a List of Pods from your cluster
 
-- listPodsByLabels:  this operation lists the pods by labels on a kubernetes cluster
+- listPodsByLabels: this operation lists the pods by labels on a kubernetes cluster
 
 [source,java]
 --------------------------------------------------------------------------------

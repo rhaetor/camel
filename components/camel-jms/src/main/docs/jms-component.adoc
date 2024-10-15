@@ -156,6 +156,10 @@ or for https://activemq.apache.org/virtual-destinations.html[ActiveMQ Classic] f
 You can find more details about durable messaging for ActiveMQ Classic http://activemq.apache.org/how-do-durable-queues-and-topics-work.html[here].
 ====
 
+==== Durable Subscriptions with JMS 2.0
+
+If you wish to use durable topic subscriptions, you need to specify the `durableSubscriptionName`.
+
 === Message Header Mapping
 
 When using message headers, the JMS specification states that header
@@ -821,7 +825,7 @@ from(xxx)
 In this example, the fixed reply queue named "bar" is used. By default,
 Camel assumes the queue is shared when using fixed reply queues, and
 therefore it uses a `JMSSelector` to only pick up the expected reply
-messages (e.g., based on the `JMSCorrelationID`). See the next section for
+messages (for example, based on the `JMSCorrelationID`). See the next section for
 exclusive fixed reply queues. That means it's not as fast as temporary
 queues. You can speed up how often Camel will pull for reply messages
 using the `receiveTimeout` option. By default, its 1000 milliseconds. So to

@@ -20,7 +20,7 @@ import java.net.URL;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Unmarshaler;
 
 import org.apache.camel.TestSupport;
 import org.apache.camel.model.rest.RestContainer;
@@ -50,10 +50,10 @@ public abstract class XmlTestSupport extends TestSupport {
     }
 
     protected Object parseUri(String uri) throws JAXBException {
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        Unmarshaler unmarshaler = jaxbContext.createUnmarshaler();
         URL resource = getClass().getResource(uri);
         assertNotNull(resource, "Cannot find resource on the classpath: " + uri);
-        return unmarshaller.unmarshal(resource);
+        return unmarshaler.unmarshal(resource);
     }
 
     @Override

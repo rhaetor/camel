@@ -77,7 +77,7 @@ https://hapifhir.github.io/hapi-hl7v2/base/apidocs/ca/uhn/hl7v2/validation/Valid
 https://hapifhir.github.io/hapi-hl7v2/base/apidocs/ca/uhn/hl7v2/validation/builder/ValidationRuleBuilder.html[ValidationRuleBuilder]),
 so you can access the validation rules indirectly.
 
-Furthermore, when unmarshalling the HL7 data format forwards the configured HAPI context in
+Furthermore, when unmarshaling the HL7 data format forwards the configured HAPI context in
 the `CamelHL7Context` header, and the validation rules of this context can be reused:
 
 [source,java]
@@ -88,7 +88,7 @@ import static org.apache.camel.component.hl7.HL7.messageConforms;
 HapiContext hapiContext = new DefaultHapiContext();
 hapiContext.getParserConfiguration().setValidating(false); // don't validate during parsing
 
-// customize HapiContext some more ... e.g., enforce that PID-8 in ADT_A01 messages of version 2.4 is not empty
+// customize HapiContext some more ... for example, enforce that PID-8 in ADT_A01 messages of version 2.4 is not empty
 ValidationRuleBuilder builder = new ValidationRuleBuilder() {
    @Override
    protected void configure() {
@@ -112,7 +112,7 @@ from("direct:test1")
 == HL7 Acknowledgement expression
 
 A common task in HL7v2 processing is to generate an acknowledgement
-message as a response to an incoming HL7v2 message, e.g., based on a
+message as a response to an incoming HL7v2 message, for example, based on a
 validation result. The `ack` expression lets us accomplish this very
 elegantly:
 

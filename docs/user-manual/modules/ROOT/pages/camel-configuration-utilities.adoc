@@ -2,7 +2,7 @@
 
 The JSSE Utility allows you to easily configure aspects of the
 https://docs.oracle.com/en/java/javase/11/security/java-secure-socket-extension-jsse-reference-guide.html[Java
-Secure Socket Extension] (JSSE) API in order to greatly simplify the use
+Secure Socket Extension] (JSSE) API to greatly simplify the use
 of custom transport layer security (TLS) settings on Camel components.
 
 == Supported JSSE Components
@@ -27,7 +27,7 @@ The JSSE configuration utility provides an easy-to-use builder for configuring
 these JSSE components, among others, in a manner that allows you to provide all
 configuration options up front during the initialization of your
 application such that you don't have to customize library code or dig
-though the inner workings of a third-party library in order to inject
+though the inner workings of a third-party library to inject
 hooks for the configuration of each component in the JSSE API.  The
 central builder in the JSSE configuration utility is the
 SSLContextParameters. This class serves as the entry point for most
@@ -92,7 +92,7 @@ Excludes .*_NULL_.*, .\*_anon_.*, .\*DES.*, .\*EXPORT.*, .\*MD5, .*RC4.*
 
 secureSocketProtocols::
 This optional property represents a collection of explicitly named
-secure socket protocols, such as SSLv3/TLS/etc., to enable on both the
+secure socket protocols, such as SSLv3/TLS/and so on, to enable on both the
 client and server side as well as in the SSLEngine. These values take
 precedence over filters supplied in secureSocketProtocolsFilter.  The
 utility attempts to enable the listed protocols regardless of whether

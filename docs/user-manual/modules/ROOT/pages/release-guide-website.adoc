@@ -24,10 +24,10 @@ For instance, `camel:docs/components/antora.yml` for the `docs/components/antora
 == After new release branches are created in all affected content repositories
 
 These will always be branches from `main`.
-Changes to all the new branches, e.g. `camel-3.13.x`, will be needed.
+Changes to all the new branches, for example, `camel-3.13.x`, will be needed.
 The changes are almost the same whether the new branch is LTS or not.
 
-=== Changes to the new branches ( e.g. `camel-3.13.x`) in affected content repositories
+=== Changes to the new branches ( for example, `camel-3.13.x`) in affected content repositories
 
 . Examine the `content:sources` key of the `camel-website:antora-playbook.yml` and locate the URLs of the repositories.
 . For each URL, locate the `start_path` or `start_paths` key.
@@ -54,9 +54,9 @@ asciidoc:
     camel-kamelets-version: 0.3.0
     prerelease: true
 ----
-. Set the version to the documentation version for the new release, e.g. `0.11.0`.
+. Set the version to the documentation version for the new release, for example, `0.11.0`.
 . Remove the top level `prerelease` key.
-. If the new release is LTS, set the `display-version` appropriately, e.g. `0.11.0 (LTS)`: otherwise remove the `display-version` key.
+. If the new release is LTS, set the `display-version` appropriately, for example, `0.11.0 (LTS)`: otherwise remove the `display-version` key.
 . Consider the versions listed in `asciidoc/attributes`.
 These represent the other camel subprojects this one depends on.
 ** For subprojects outside the current release set, these will not change on release.
@@ -79,8 +79,8 @@ It will look something like this:
               mapped-branch: HEAD
 ----
 --
-Change the `- branch: main` to specify the branch being released, e.g. `- branch: 0.6.x`.
-. Build each project (e.g. `mvn clean install -Pfastinstall`) and check for generated changes that need to be committed (or undone if there are tooling problems).
+Change the `- branch: main` to specify the branch being released, for example, `- branch: 0.6.x`.
+. Build each project (for example, `mvn clean install -Pfastinstall`) and check for generated changes that need to be committed (or undone if there are tooling problems).
 . There will also be `local-build.sh`, `source-map.yml`, and `source-watch.yml` files in the docs directory of the subproject.
 These files support xref:improving-the-documentation.adoc#_local_build_instructions[local partial builds of the subproject].
 In `source-map.yml`, change the `branch` value from `main` to the new git branch name for the release.
@@ -109,7 +109,7 @@ change
 [source,java]
 private final static String CAMEL_VERSION = "next";`
 +
-to e.g.
+to for example
 +
 [source,java]
 private final static String CAMEL_VERSION = "3.13.x";

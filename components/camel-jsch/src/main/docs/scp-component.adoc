@@ -62,7 +62,7 @@ include::partial$component-endpoint-options.adoc[]
 
 Currently, camel-jsch only supports a
 https://www.javadoc.io/doc/org.apache.camel/camel-api/current/org/apache/camel/Producer.html[Producer]
-(i.e., copy files to another host).
+(that is, copy files to another host).
 
 
 include::spring-boot:partial$starter.adoc[]

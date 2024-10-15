@@ -45,7 +45,7 @@ public final class HttpUtil {
      * Given an exchange handling HTTP, determines the status response code to return for the caller
      *
      * @param  camelExchange the exchange to evaluate
-     * @param  body          an optional payload (i.e.: the message body) carrying a response code
+     * @param  body          an optional payload (that is:  the message body) carrying a response code
      * @return               An integer value with the response code
      */
     public static int determineResponseCode(Exchange camelExchange, Object body) {
@@ -170,7 +170,7 @@ public final class HttpUtil {
     /**
      * Parse a HTTP status range and passes the values to the consumer method
      *
-     * @param  range    the HTTP status range in the format "XXX-YYY" (i.e.: 200-299)
+     * @param  range    the HTTP status range in the format "XXX-YYY" (that is:  200-299)
      * @param  consumer a consumer method to receive the parse ranges
      * @return          true if the range was parsed or false otherwise
      */

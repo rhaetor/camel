@@ -49,7 +49,7 @@ The following exchange properties are set on each `Exchange` participating in a 
 [width="100%",cols="4m,2m,5",options="header"]
 |===
 | Property | Type | Description
-| `Long-Running-Action` | `String` | A globally unique identifier for the Saga that can be propagated to remote systems using transport-level headers (e.g., HTTP).
+| `Long-Running-Action` | `String` | A globally unique identifier for the Saga that can be propagated to remote systems using transport-level headers (for example, HTTP).
 |===
 
 == Saga Service Configuration
@@ -65,7 +65,7 @@ Camel currently supports the following Saga Services:
 
 The in-memory Saga service is not recommended for production environments.
 It does not support the persistence of the Saga status (it is kept only in-memory),
-so it cannot guarantee the consistency of Sagas in case of application failure (e.g., JVM crash).
+so it cannot guarantee the consistency of Sagas in case of application failure (for example, JVM crash).
 
 Also, when using an in-memory Saga service, Saga contexts cannot be propagated to remote services using transport-level headers (it can be done with other implementations).
 
@@ -241,7 +241,7 @@ For instance, due to an error in a parallel route or a timeout at Saga level.
 
 So, when the compensating action `direct:cancelOrder` is called, it may not find the Order record that should be canceled.
 It is important to guarantee full global consistency, so that *any main action and its corresponding compensating action are commutative*,
-i.e., if compensation occurs before the main action, it should have the same effect.
+that is, if compensation occurs before the main action, it should have the same effect.
 
 Another possible approach, when using a commutative behavior is not possible,
 is to consistently fail in the compensating action until data produced by the main action is found (or the maximum number of retries is exhausted):
@@ -377,7 +377,7 @@ from("direct:newOrder")
     .log("Order ${body} created");
 ----
 
-All participants, e.g., credit service, order service, can set their own timeout.
+All participants, for example, credit service, order service, can set their own timeout.
 When a participant joins an existing transaction, the timeout of the already active saga can be influenced.
 It should calculate the moment in time
 the saga would become eligible for cancellation based on the time which the request enters the method and the timeout.
@@ -416,7 +416,7 @@ These propagation modes map 1:1 the equivalent modes used in transactional conte
 
 === Using Manual Completion (Advanced)
 
-When a Saga cannot be all executed in a synchronous way, but it requires e.g. communication with external services using asynchronous communication channels,
+When a Saga cannot be all executed in a synchronous way, but it requires for example, communication with external services using asynchronous communication channels,
 the completion mode cannot be set to `AUTO` (default).
 That is because the saga is not completed when the exchange that creates it is done.
 

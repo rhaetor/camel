@@ -30,6 +30,8 @@ An example of a
 https://svn.apache.org/repos/asf/camel/trunk/components/camel-beanio/src/test/resources/org/apache/camel/dataformat/beanio/mappings.xml[mapping
 file is here].
 
+=== Using Java DSL
+
 To use the `BeanIODataFormat` you need to configure the data format with the mapping file, as well the name of the stream.
 
 This can be done as shown below. The streamName is `employeeFile`.

@@ -13,7 +13,7 @@ hiding all the low-level details about how those connections are implemented.
 By default, calling kamelets should be done as xref:message-endpoint.adoc[endpoints] with
 the xref:components::kamelet-component.adoc[kamelet] component, such as `to("kamelet:mykamelet")`.
 
-The Kamelet EIP allows calling Kamelets (i.e., xref:manual::route-template.adoc[Route Template]),
+The Kamelet EIP allows calling Kamelets (that is, xref:manual::route-template.adoc[Route Template]),
 **for special use-cases**.
 
 When a Kamelet is designed for a special use-case such as aggregating messages, and returning

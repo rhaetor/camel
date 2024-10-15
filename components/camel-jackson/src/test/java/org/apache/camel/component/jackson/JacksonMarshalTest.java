@@ -38,11 +38,11 @@ public class JacksonMarshalTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(Map.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:in", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals("{\"name\":\"Camel\"}", marshalledAsString);
+        Object marshaled = template.requestBody("direct:in", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals("{\"name\":\"Camel\"}", marshaledAsString);
 
-        template.sendBody("direct:back", marshalled);
+        template.sendBody("direct:back", marshaled);
 
         mock.assertIsSatisfied();
     }
@@ -57,12 +57,12 @@ public class JacksonMarshalTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(Map.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:inPretty", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
+        Object marshaled = template.requestBody("direct:inPretty", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
         String expected = String.format("{%s  \"name\" : \"Camel\"%s}", System.lineSeparator(), System.lineSeparator());
-        assertEquals(expected, marshalledAsString);
+        assertEquals(expected, marshaledAsString);
 
-        template.sendBody("direct:backPretty", marshalled);
+        template.sendBody("direct:backPretty", marshaled);
 
         mock.assertIsSatisfied();
     }
@@ -77,11 +77,11 @@ public class JacksonMarshalTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(TestPojo.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:inPojo", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals("{\"name\":\"Camel\"}", marshalledAsString);
+        Object marshaled = template.requestBody("direct:inPojo", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals("{\"name\":\"Camel\"}", marshaledAsString);
 
-        template.sendBody("direct:backPojo", marshalled);
+        template.sendBody("direct:backPojo", marshaled);
 
         mock.assertIsSatisfied();
     }

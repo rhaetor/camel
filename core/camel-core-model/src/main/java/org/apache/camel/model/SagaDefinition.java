@@ -188,8 +188,8 @@ public class SagaDefinition extends OutputDefinition<SagaDefinition> {
     }
 
     /**
-     * Allows to save properties of the current exchange in order to re-use them in a compensation/completion callback
-     * route. Options are usually helpful e.g. to store and retrieve identifiers of objects that should be deleted in
+     * Allows to save properties of the current exchange to re-use them in a compensation/completion callback
+     * route. Options are usually helpful for example, to store and retrieve identifiers of objects that should be deleted in
      * compensating actions. Option values will be transformed into input headers of the compensation/completion
      * exchange.
      */

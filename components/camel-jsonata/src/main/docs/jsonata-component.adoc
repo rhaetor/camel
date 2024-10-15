@@ -40,7 +40,7 @@ jsonata:specName[?options]
 
 Where *specName* is the classpath-local URI of the specification to
 invoke; or the complete URL of the remote specification
-(e.g.: `\file://folder/myfile.vm`).
+(for example, `\file://folder/myfile.vm`).
 
 
 // component-configure options: START

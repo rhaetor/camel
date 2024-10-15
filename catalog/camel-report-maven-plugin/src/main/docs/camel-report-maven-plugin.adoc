@@ -67,7 +67,7 @@ changed accordingly to `process-test-classes` as shown below:
 === Running the goal on any Maven project
 
 You can also run the validate goal on any Maven project without having to add the plugin to the `pom.xml` file.
-Doing so requires to specify the plugin using its fully qualified name. For example to run the goal on
+Doing so requires you to specify the plugin using its fully qualified name. For example to run the goal on
 the `camel-example-cdi` from Apache Camel you can run
 
 ----
@@ -156,7 +156,7 @@ The maven plugin *validate* goal supports the following options which can be con
 | extraMavenRepositories | | List of extra maven repositories.
 |===
 
-For example to turn on ignoring usage of deprecated options from the command line, you can run:
+For example, to turn on ignoring usage of deprecated options from the command line, you can run:
 
 ----
 $mvn camel-report:validate -Dcamel.ignoreDeprecated=true
@@ -177,7 +177,7 @@ $mvn org.apache.camel:camel-report-maven-plugin:3.0.0:validate -Dcamel.includeTe
 === Validate Apache Camel routes in transitive dependencies
 
 If your routes use `direct` or `seda` endpoints that are not present in the current project, but the routes are declared into a dependency of your project, you can edit the plugin configuration accordingly so that these routes can be taken into account by the Camel validate plugin.
-In particular, in order to use the validate plugin with transitive dependencies, *sources jars are needed*, for example:
+In particular, to use the validate plugin with transitive dependencies, *sources jars are needed*, for example:
 
 * Given the following Camel route `from("direct:in").to("direct:out")` defined in the current project
 * The route `from("direct:out")` is declared into a dependency of your project, for example `my.company:routes-dependency:1.0`

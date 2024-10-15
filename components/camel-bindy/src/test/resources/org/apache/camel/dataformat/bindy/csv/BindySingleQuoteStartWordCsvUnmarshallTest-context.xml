@@ -29,6 +29,6 @@
 		<routeBuilder ref="myBuilder" /> 
 	</camelContext>
 	
-	<bean id="myBuilder" class="org.apache.camel.dataformat.bindy.csv.BindySingleQuoteStartWordCsvUnmarshallTest$ContextConfig"/>
+	<bean id="myBuilder" class="org.apache.camel.dataformat.bindy.csv.BindySingleQuoteStartWordCsvUnmarshalTest$ContextConfig"/>
 	
 </beans>

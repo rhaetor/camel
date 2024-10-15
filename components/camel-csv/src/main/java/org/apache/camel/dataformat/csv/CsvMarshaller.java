@@ -34,12 +34,12 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
 /**
- * This class marshal data into a CSV format.
+ * This class marshaldata into a CSV format.
  */
-public abstract class CsvMarshaller {
+public abstract class CsvMarshaler {
     private final CSVFormat format;
 
-    protected CsvMarshaller(CSVFormat format) {
+    protected CsvMarshaler(CSVFormat format) {
         this.format = format;
     }
 
@@ -50,7 +50,7 @@ public abstract class CsvMarshaller {
      * @param  dataFormat Camel CSV data format
      * @return            New instance
      */
-    public static CsvMarshaller create(CSVFormat format, CsvDataFormat dataFormat) {
+    public static CsvMarshaler create(CSVFormat format, CsvDataFormat dataFormat) {
         org.apache.camel.util.ObjectHelper.notNull(format, "CSV format");
         org.apache.camel.util.ObjectHelper.notNull(dataFormat, "CSV data format");
         // If we don't want the header record, clear it
@@ -61,9 +61,9 @@ public abstract class CsvMarshaller {
         String header = dataFormat.getHeader();
         if (header != null && !header.isEmpty()) {
             String[] columns = header.split(",");
-            return new FixedColumnsMarshaller(format, columns);
+            return new FixedColumnsMarshaler(format, columns);
         }
-        return new DynamicColumnsMarshaller(format);
+        return new DynamicColumnsMarshaler(format);
     }
 
     /**
@@ -128,12 +128,12 @@ public abstract class CsvMarshaller {
     //region Implementations
 
     /**
-     * This marshaller has fixed columns
+     * This marshaler has fixed columns
      */
-    private static final class FixedColumnsMarshaller extends CsvMarshaller {
+    private static final class FixedColumnsMarshaler extends CsvMarshaler {
         private final String[] fixedColumns;
 
-        private FixedColumnsMarshaller(CSVFormat format, String[] fixedColumns) {
+        private FixedColumnsMarshaler(CSVFormat format, String[] fixedColumns) {
             super(format);
             this.fixedColumns = Arrays.copyOf(fixedColumns, fixedColumns.length);
         }
@@ -149,10 +149,10 @@ public abstract class CsvMarshaller {
     }
 
     /**
-     * This marshaller adapts the columns but always keep them in the same order
+     * This marshaler adapts the columns but always keep them in the same order
      */
-    private static final class DynamicColumnsMarshaller extends CsvMarshaller {
-        private DynamicColumnsMarshaller(CSVFormat format) {
+    private static final class DynamicColumnsMarshaler extends CsvMarshaler {
+        private DynamicColumnsMarshaler(CSVFormat format) {
             super(format);
         }
 

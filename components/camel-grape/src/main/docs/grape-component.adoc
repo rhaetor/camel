@@ -53,8 +53,7 @@ import static org.apache.camel.component.grape.GrapeComponent.grapeCamelContext;
 CamelContext camelContext = grapeCamelContext(new DefaultCamelContext());
 --------------------------------------------------------------------------------
 
-You can also set up the Groovy class loader used by the Camel context by
-yourself:
+You can also set up the Groovy class loader used by the Camel context by yourself:
 
 [source,java]
 ------------------------------------------------------------------------------------

@@ -194,7 +194,10 @@ For User tokens, you'll need the following permissions:
 The `naturalOrder` option allows consuming messages from the oldest to the newest.
 Originally, you would get the newest first and consume backward (`message 3 -> message 2 -> message 1`)
 
-IMPORTANT: The channel / conversation doesn't need to be public to read the history and messages.
+[IMPORTANT]
+====
+The channel / conversation doesn't need to be public to read the history and messages.
 Use the `conversationType` option to specify the type of the conversation (`PUBLIC_CHANNEL`,`PRIVATE_CHANNEL`, `MPIM`, `IM`).
+====
 
 include::spring-boot:partial$starter.adoc[]

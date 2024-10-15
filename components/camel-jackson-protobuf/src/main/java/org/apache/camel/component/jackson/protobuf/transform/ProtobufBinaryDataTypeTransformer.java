@@ -35,8 +35,8 @@ import org.apache.camel.spi.MimeType;
 import org.apache.camel.spi.Transformer;
 
 /**
- * Data type uses Jackson Protobuf data format to marshal given JsonNode in Exchange body to a binary (byte array)
- * representation. Uses given Protobuf schema from the Exchange properties when marshalling the payload (usually already
+ * Data type uses Jackson Protobuf data format to marshalgiven JsonNode in Exchange body to a binary (byte array)
+ * representation. Uses given Protobuf schema from the Exchange properties when marshaling the payload (usually already
  * resolved via schema resolver).
  */
 @DataTypeTransformer(name = "protobuf-binary")
@@ -51,20 +51,20 @@ public class ProtobufBinaryDataTypeTransformer extends Transformer {
         }
 
         try {
-            byte[] marshalled;
+            byte[] marshaled;
 
             String contentClass = SchemaHelper.resolveContentClass(message.getExchange(), null);
             if (contentClass != null) {
                 Class<?> contentType
                         = message.getExchange().getContext().getClassResolver().resolveMandatoryClass(contentClass);
-                marshalled = Protobuf.mapper().writer().forType(contentType).with(schema)
+                marshaled = Protobuf.mapper().writer().forType(contentType).with(schema)
                         .writeValueAsBytes(message.getBody());
             } else {
-                marshalled = Protobuf.mapper().writer().forType(JsonNode.class).with(schema)
+                marshaled = Protobuf.mapper().writer().forType(JsonNode.class).with(schema)
                         .writeValueAsBytes(getBodyAsJsonNode(message, schema));
             }
 
-            message.setBody(marshalled);
+            message.setBody(marshaled);
 
             message.setHeader(Exchange.CONTENT_TYPE, MimeType.PROTOBUF_BINARY.type());
             message.setHeader(SchemaHelper.CONTENT_SCHEMA, schema.getSource().toString());

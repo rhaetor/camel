@@ -108,7 +108,7 @@ public class BarcodeDataFormat extends ServiceSupport implements DataFormat, Dat
     /**
      * Create instance with custom {@link BarcodeImageType}. The other values are default.
      *
-     * @param type the type (format) of the image. e.g. PNG
+     * @param type the type (format) of the image. for example, PNG
      */
     public BarcodeDataFormat(final BarcodeImageType type) {
         this.setDefaultParameters();
@@ -121,7 +121,7 @@ public class BarcodeDataFormat extends ServiceSupport implements DataFormat, Dat
      *
      * @param height the image height
      * @param width  the image width
-     * @param type   the type (format) of the image. e.g. PNG
+     * @param type   the type (format) of the image. for example, PNG
      * @param format the barcode format
      */
     public BarcodeDataFormat(final int width, final int height, final BarcodeImageType type, final BarcodeFormat format) {
@@ -139,7 +139,7 @@ public class BarcodeDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * Marshall a {@link String} payload to a code image.
+     * Marshal a {@link String} payload to a code image.
      */
     @Override
     public void marshal(final Exchange exchange, final Object graph, final OutputStream stream) throws Exception {
@@ -147,7 +147,7 @@ public class BarcodeDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * Unmarshall a code image to a {@link String} payload.
+     * Unmarshal a code image to a {@link String} payload.
      */
     @Override
     public Object unmarshal(final Exchange exchange, final InputStream stream) throws Exception {

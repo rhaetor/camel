@@ -44,7 +44,7 @@ public interface Cacheable {
      *
      * @param  key    the key to add
      * @param  offset the offset to add
-     * @return        true if added successfully (i.e.: the cache is not full) or false otherwise
+     * @return        true if added successfully (that is:  the cache is not full) or false otherwise
      */
     boolean add(OffsetKey<?> key, Offset<?> offset);
 

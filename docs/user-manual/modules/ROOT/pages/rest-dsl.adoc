@@ -315,10 +315,10 @@ value.
 The binding from POJO to JSon/JAXB will only happen if the `content-type`
 header includes the word `json` or `xml` representatively. This allows you
 to specify a custom content-type if the message body should not attempt to be
-marshalled using the binding. For example if the message body is a
+marshaled using the binding. For example if the message body is a
 custom binary payload etc.
 
-When automatic binding from POJO to JSon/JAXB takes place the existing `content-type` header will by default be replaced with either `application/json` or `application/xml`. To disable the default behavior and be able to produce JSon/JAXB responses with custom `content-type` headers (e.g. `application/user.v2+json`) you configure this in Java DSL as shown below:
+When automatic binding from POJO to JSon/JAXB takes place the existing `content-type` header will by default be replaced with either `application/json` or `application/xml`. To disable the default behavior and be able to produce JSon/JAXB responses with custom `content-type` headers (for example, `application/user.v2+json`) you configure this in Java DSL as shown below:
 
 [source,java]
 ----
@@ -595,7 +595,7 @@ classes
 * com.fasterxml.jackson.databind.DeserializationFeature
 * com.fasterxml.jackson.databind.MapperFeature
 
-The rest configuration is of course also possible using XML DSL:
+The rest configuration is also possible using XML DSL:
 
 [source,xml]
 ----

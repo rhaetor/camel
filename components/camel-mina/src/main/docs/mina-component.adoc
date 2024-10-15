@@ -23,8 +23,11 @@ Favor using xref:netty-component.adoc[Netty] as Netty is a much more active
 maintained and popular project than Apache Mina currently is.
 ====
 
-WARNING: Be careful with `sync=false` on consumer endpoints. In camel-mina, all
+[WARNING]
+====
+Be careful with `sync=false` on consumer endpoints. In camel-mina, all
 consumer exchanges are `InOut`. This is different to camel-mina.
+====
 
 Maven users will need to add the following dependency to their `pom.xml`
 for this component:
@@ -62,7 +65,7 @@ JVM.
 A Mina producer has a default timeout value of 30 seconds, while it
 waits for a response from the remote server.
 
-In normal use, `camel-mina` only supports marshalling the body
+In normal use, `camel-mina` only supports marshaling the body
 content—message headers and exchange properties are not sent. +
  However, the option, *transferExchange*, does allow you to transfer the
 exchange itself over the wire. See options below.

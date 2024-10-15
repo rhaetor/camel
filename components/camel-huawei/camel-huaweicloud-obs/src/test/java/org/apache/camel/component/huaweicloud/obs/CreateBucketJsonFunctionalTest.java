@@ -66,7 +66,7 @@ public class CreateBucketJsonFunctionalTest extends CamelTestSupport {
     public void testCreateBucket() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:create_bucket_result");
         mock.expectedMinimumMessageCount(1);
-        // More parameters can be added to the Json string below. E.g. acl, availableZone, storageClass
+        // More parameters can be added to the Json string below. For example, acl, availableZone, storageClass
         String newBucket = "{\"bucketName\":\"" + BUCKET_NAME + "\",\"location\":\"" + BUCKET_LOCATION + "\"}";
         template.sendBody("direct:create_bucket", newBucket);
         Exchange responseExchange = mock.getExchanges().get(0);

@@ -154,12 +154,12 @@ public class EhcacheAggregationRepository extends ServiceSupport implements Reco
 
         cache.put(key, newHolder);
 
-        return unmarshallExchange(camelContext, oldHolder);
+        return unmarshalExchange(camelContext, oldHolder);
     }
 
     @Override
     public Exchange get(CamelContext camelContext, String key) {
-        return unmarshallExchange(camelContext, cache.get(key));
+        return unmarshalExchange(camelContext, cache.get(key));
     }
 
     @Override
@@ -193,7 +193,7 @@ public class EhcacheAggregationRepository extends ServiceSupport implements Reco
     @Override
     public Exchange recover(CamelContext camelContext, String exchangeId) {
         LOG.trace("Recovering an Exchange with ID {}.", exchangeId);
-        return useRecovery ? unmarshallExchange(camelContext, cache.get(exchangeId)) : null;
+        return useRecovery ? unmarshalExchange(camelContext, cache.get(exchangeId)) : null;
     }
 
     @Override
@@ -215,7 +215,7 @@ public class EhcacheAggregationRepository extends ServiceSupport implements Reco
     protected void doStop() throws Exception {
     }
 
-    public static Exchange unmarshallExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
+    public static Exchange unmarshalExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
         Exchange exchange = null;
         if (holder != null) {
             exchange = new DefaultExchange(camelContext);

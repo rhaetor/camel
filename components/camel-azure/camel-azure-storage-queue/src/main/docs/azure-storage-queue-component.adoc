@@ -47,7 +47,7 @@ azure-storage-queue://accountName[/queueName][?options]
 In the case of consumer, `accountName` and `queueName` are required.
 
 In the case of producer, it depends on the operation that being requested, for example, if operation is on a service level, e.b: `listQueues`, only `accountName` is required, but in the case
-of operation being requested on the queue level, e.g.: `createQueue, `sendMessage`, etc., both `accountName` and `queueName` are required.
+of operation being requested on the queue level, for example, `createQueue, `sendMessage`, and so on, both `accountName` and `queueName` are required.
 
 The queue will be created if it does not already exist.
 You can append query options to the URI in the following format: `?options=value&option2=value&...`
@@ -73,7 +73,7 @@ include::partial$component-endpoint-options.adoc[]
 To use this component, you have multiple options to provide the required Azure authentication information:
 
 - By providing your own QueueServiceClient instance which can be injected into `serviceClient`.
-- Via Azure Identity, when specifying `credentialType=AZURE_IDENTITY` and providing required https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/identity/azure-identity#environment-variables[environment variables]. This enables service principal (e.g. app registration) authentication with secret/certificate as well as username password. 
+- Via Azure Identity, when specifying `credentialType=AZURE_IDENTITY` and providing required https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/identity/azure-identity#environment-variables[environment variables]. This enables service principal (for example, app registration) authentication with secret/certificate as well as username password.
 - Via shared storage account key, when specifying `credentialType=SHARED_ACCOUNT_KEY` and providing `accountName` and `accessKey` for your Azure account, this is the simplest way to get started. The accessKey can be generated through your Azure portal. Note that this is the default authentication strategy.
 - Via shared storage account key, when specifying `credentialType=SHARED_KEY_CREDENTIAL` and providing a https://azuresdkartifacts.blob.core.windows.net/azure-sdk-for-java/staging/apidocs/com/azure/storage/common/StorageSharedKeyCredential.html[StorageSharedKeyCredential] instance which can be injected into `credentials` option.
 
@@ -176,7 +176,7 @@ from("direct:start")
     .process(exchange -> {
       // set the header you want the producer to evaluate, refer to the previous
       // section to learn about the headers that can be set
-      // e.g., to only returns a list of queues with 'awesome' prefix:
+      // for example, to only returns a list of queues with 'awesome' prefix:
       exchange.getIn().setHeader(QueueConstants.QUEUES_SEGMENT_OPTIONS, new QueuesSegmentOptions().setPrefix("awesome"));
      })
     .to("azure-storage-queue://cameldev?serviceClient=#client&operation=listQueues")
@@ -193,7 +193,7 @@ from("direct:start")
     .process(exchange -> {
       // set the header you want the producer to evaluate, refer to the previous
       // section to learn about the headers that can be set
-      // e.g.:
+      // For example:
       exchange.getIn().setHeader(QueueConstants.QUEUE_NAME, "overrideName");
      })
     .to("azure-storage-queue://cameldev/test?serviceClient=#client&operation=createQueue");
@@ -207,7 +207,7 @@ from("direct:start")
     .process(exchange -> {
       // set the header you want the producer to evaluate, refer to the previous
       // section to learn about the headers that can be set
-      // e.g.:
+      // For example:
       exchange.getIn().setHeader(QueueConstants.QUEUE_NAME, "overrideName");
      })
     .to("azure-storage-queue://cameldev/test?serviceClient=#client&operation=deleteQueue");
@@ -221,7 +221,7 @@ from("direct:start")
     .process(exchange -> {
       // set the header you want the producer to evaluate, refer to the previous
       // section to learn about the headers that can be set
-      // e.g.:
+      // For example:
       exchange.getIn().setHeader(QueueConstants.QUEUE_NAME, "overrideName");
      })
     .to("azure-storage-queue://cameldev/test?serviceClient=#client&operation=clearQueue");
@@ -235,7 +235,7 @@ from("direct:start")
     .process(exchange -> {
       // set the header you want the producer to evaluate, refer to the previous
       // section to learn about the headers that can be set
-      // e.g.:
+      // For example:
       exchange.getIn().setBody("message to send");
       // we set a visibility of 1min
       exchange.getIn().setHeader(QueueConstants.VISIBILITY_TIMEOUT, Duration.ofMinutes(1));
@@ -251,7 +251,7 @@ from("direct:start")
     .process(exchange -> {
       // set the header you want the producer to evaluate, refer to the previous
       // section to learn about the headers that can be set
-      // e.g.:
+      // For example:
       // Mandatory header:
       exchange.getIn().setHeader(QueueConstants.MESSAGE_ID, "1");
       // Mandatory header:
@@ -294,7 +294,7 @@ from("direct:start")
    .process(exchange -> {
        // set the header you want the producer to evaluate, refer to the previous
        // section to learn about the headers that can be set
-       // e.g.:
+       // For example:
        exchange.getIn().setBody("new message text");
        // Mandatory header:
        exchange.getIn().setHeader(QueueConstants.MESSAGE_ID, "1");

@@ -38,9 +38,9 @@ Since Camel is an integration framework, which by definition depends on external
 
 Tests must follow the following naming convention:
 
-* `*Test.java` (i.e.: MyComponentTest.java) for unit tests.
-* `*IT.java` (i.e.: MyComponentIT.java) for integration tests.
-* `*ManualTest.java` (i.e.: MyComponentManualTest.java) for manual tests.
+* `*Test.java` (that is:  MyComponentTest.java) for unit tests.
+* `*IT.java` (that is:  MyComponentIT.java) for integration tests.
+* `*ManualTest.java` (that is:  MyComponentManualTest.java) for manual tests.
 
 == Implementing new tests
 

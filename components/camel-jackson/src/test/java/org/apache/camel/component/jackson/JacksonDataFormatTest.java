@@ -45,13 +45,13 @@ public class JacksonDataFormatTest {
     }
 
     private void testJson(String json, Object expected) throws Exception {
-        Object unmarshalled;
+        Object unmarshaled;
         JacksonDataFormat jacksonDataFormat = new JacksonDataFormat();
         jacksonDataFormat.doStart();
         try (InputStream in = new ByteArrayInputStream(json.getBytes())) {
-            unmarshalled = jacksonDataFormat.unmarshal(new DefaultExchange(new DefaultCamelContext()), in);
+            unmarshaled = jacksonDataFormat.unmarshal(new DefaultExchange(new DefaultCamelContext()), in);
         }
 
-        assertEquals(expected, unmarshalled);
+        assertEquals(expected, unmarshaled);
     }
 }

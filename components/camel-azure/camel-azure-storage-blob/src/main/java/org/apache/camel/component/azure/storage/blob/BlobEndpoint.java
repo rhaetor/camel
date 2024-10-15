@@ -59,7 +59,7 @@ public class BlobEndpoint extends ScheduledPollEndpoint {
 
     @Override
     public Consumer createConsumer(Processor processor) throws Exception {
-        // we need blobname as well as blob container in order to create it
+        // we need blobname as well as blob container to create it
         if (ObjectHelper.isEmpty(configuration.getContainerName())) {
             throw new IllegalArgumentException("Container name must be set.");
         }

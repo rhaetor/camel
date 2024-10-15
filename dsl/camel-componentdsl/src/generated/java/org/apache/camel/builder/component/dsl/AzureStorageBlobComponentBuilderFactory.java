@@ -83,7 +83,7 @@ public interface AzureStorageBlobComponentBuilderFactory {
             return this;
         }
         /**
-         * The blob type in order to initiate the appropriate settings for each
+         * The blob type to initiate the appropriate settings for each
          * blob type.
          * 
          * The option is a:

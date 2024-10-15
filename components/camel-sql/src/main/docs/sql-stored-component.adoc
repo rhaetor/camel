@@ -124,7 +124,7 @@ Type can be postfixed by scale for example DECIMAL(10) would mean `java.sql.Type
 Type name is optional and must be given between quotes(').
 
 Value source is required. Value source populates the parameter value from the Exchange.
-It can be either a Simple expression or header location i.e. `:#<header name>`. For example,
+It can be either a Simple expression or header location that is, `:#<header name>`. For example,
 the Simple expression `${header.val}` would mean that parameter value will be read from the header `val`.
 Header location expression `:#val` would have identical effect.
 

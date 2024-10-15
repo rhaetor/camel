@@ -27,7 +27,7 @@ public interface OpensearchConstants {
     String PARAM_INDEX_ID = "indexId";
     @Metadata(description = "The name of the index to act against", javaType = "String")
     String PARAM_INDEX_NAME = "indexName";
-    @Metadata(description = "The full qualified name of the class of the document to unmarshall", javaType = "Class",
+    @Metadata(description = "The full qualified name of the class of the document to unmarshal", javaType = "Class",
               defaultValue = "ObjectNode")
     String PARAM_DOCUMENT_CLASS = "documentClass";
     @Metadata(description = "The index creation waits for the write consistency number of shards to be available",

@@ -55,7 +55,7 @@ public class CBORDataFormat extends DataFormatDefinition {
     private String useList;
     @XmlAttribute
     @Metadata(defaultValue = "false", javaType = "java.lang.Boolean")
-    private String allowUnmarshallType;
+    private String allowUnmarshalType;
     @XmlAttribute
     @Metadata(defaultValue = "false", javaType = "java.lang.Boolean")
     private String prettyPrint;
@@ -80,7 +80,7 @@ public class CBORDataFormat extends DataFormatDefinition {
         this.unmarshalTypeName = builder.unmarshalTypeName;
         this.collectionTypeName = builder.collectionTypeName;
         this.useList = builder.useList;
-        this.allowUnmarshallType = builder.allowUnmarshallType;
+        this.allowUnmarshalType = builder.allowUnmarshalType;
         this.prettyPrint = builder.prettyPrint;
         this.allowJmsType = builder.allowJmsType;
         this.enableFeatures = builder.enableFeatures;
@@ -114,7 +114,7 @@ public class CBORDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class name of the java type to use when unmarshalling
+     * Class name of the java type to use when unmarshaling
      */
     public void setUnmarshalTypeName(String unmarshalTypeName) {
         this.unmarshalTypeName = unmarshalTypeName;
@@ -150,7 +150,7 @@ public class CBORDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class of the java type to use when unmarshalling
+     * Class of the java type to use when unmarshaling
      */
     public void setUnmarshalType(Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
@@ -187,18 +187,18 @@ public class CBORDataFormat extends DataFormatDefinition {
         this.useList = useList;
     }
 
-    public String getAllowUnmarshallType() {
-        return allowUnmarshallType;
+    public String getAllowUnmarshalType() {
+        return allowUnmarshalType;
     }
 
     /**
      * If enabled then Jackson CBOR is allowed to attempt to use the CamelCBORUnmarshalType header during the
-     * unmarshalling.
+     * unmarshaling.
      * <p/>
      * This should only be enabled when desired to be used.
      */
-    public void setAllowUnmarshallType(String allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public void setAllowUnmarshalType(String allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
     }
 
     public String getEnableFeatures() {
@@ -250,7 +250,7 @@ public class CBORDataFormat extends DataFormatDefinition {
         private String unmarshalTypeName;
         private String collectionTypeName;
         private String useList;
-        private String allowUnmarshallType;
+        private String allowUnmarshalType;
         private String prettyPrint;
         private String allowJmsType;
         private String enableFeatures;
@@ -281,7 +281,7 @@ public class CBORDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class name of the java type to use when unmarshalling
+         * Class name of the java type to use when unmarshaling
          */
         public Builder unmarshalTypeName(String unmarshalTypeName) {
             this.unmarshalTypeName = unmarshalTypeName;
@@ -327,7 +327,7 @@ public class CBORDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class of the java type to use when unmarshalling
+         * Class of the java type to use when unmarshaling
          */
         public Builder unmarshalType(Class<?> unmarshalType) {
             this.unmarshalType = unmarshalType;
@@ -366,23 +366,23 @@ public class CBORDataFormat extends DataFormatDefinition {
 
         /**
          * If enabled then Jackson CBOR is allowed to attempt to use the CamelCBORUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(String allowUnmarshallType) {
-            this.allowUnmarshallType = allowUnmarshallType;
+        public Builder allowUnmarshalType(String allowUnmarshalType) {
+            this.allowUnmarshalType = allowUnmarshalType;
             return this;
         }
 
         /**
          * If enabled then Jackson CBOR is allowed to attempt to use the CamelCBORUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(boolean allowUnmarshallType) {
-            this.allowUnmarshallType = Boolean.toString(allowUnmarshallType);
+        public Builder allowUnmarshalType(boolean allowUnmarshalType) {
+            this.allowUnmarshalType = Boolean.toString(allowUnmarshalType);
             return this;
         }
 

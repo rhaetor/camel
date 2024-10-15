@@ -43,7 +43,7 @@ import org.beanio.BeanReader;
 import org.beanio.BeanReaderErrorHandler;
 import org.beanio.BeanWriter;
 import org.beanio.StreamFactory;
-import org.beanio.Unmarshaller;
+import org.beanio.Unmarshaler;
 
 import static org.apache.camel.dataformat.beanio.BeanIOHelper.getOrCreateBeanReaderErrorHandler;
 
@@ -220,8 +220,8 @@ public class BeanIODataFormat extends ServiceSupport implements DataFormat, Data
         BufferedReader streamReader = IOHelper.buffered(new InputStreamReader(stream, getEncoding()));
         try {
             String data = exchange.getContext().getTypeConverter().mandatoryConvertTo(String.class, exchange, streamReader);
-            Unmarshaller unmarshaller = factory.createUnmarshaller(getStreamName());
-            return unmarshaller.unmarshal(data);
+            Unmarshaler unmarshaler = factory.createUnmarshaler(getStreamName());
+            return unmarshaler.unmarshal(data);
         } finally {
             IOHelper.close(stream);
         }

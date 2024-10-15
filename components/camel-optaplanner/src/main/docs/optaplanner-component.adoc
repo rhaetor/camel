@@ -16,7 +16,7 @@
 
 The Optaplanner component solves the planning problem contained in a
 message with http://www.optaplanner.org/[OptaPlanner]. +
- For example, feed it an unsolved Vehicle Routing problem and it solves
+For example, feed it an unsolved Vehicle Routing problem and it solves
 it.
 
 The component supports consumer listening for SloverManager results and

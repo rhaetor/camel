@@ -160,7 +160,7 @@ public final class CamelJavaRestDslParserHelper {
     private String findRootMethodName(Expression exp) {
         String rootMethodName = null;
 
-        // find out if this is from a Camel route (e.g. from, route etc.)
+        // find out if this is from a Camel route (for example, from, route etc.)
         Expression sub = exp;
         while (sub instanceof MethodInvocation methodInvocation) {
             sub = methodInvocation.getExpression();

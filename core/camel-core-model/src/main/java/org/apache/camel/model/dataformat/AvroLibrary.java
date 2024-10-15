@@ -20,7 +20,7 @@ import jakarta.xml.bind.annotation.XmlEnum;
 import jakarta.xml.bind.annotation.XmlType;
 
 /**
- * Supported Avro marshallers.
+ * Supported Avro marshalers.
  */
 @XmlType
 @XmlEnum

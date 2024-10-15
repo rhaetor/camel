@@ -29,7 +29,7 @@ public class RssDataFormatTest extends CamelTestSupport {
     private SyndFeed feed;
 
     @Test
-    public void testMarshalling() throws Exception {
+    public void testMarshaling() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:marshal");
         mock.expectedMessageCount(1);
         mock.message(0).body(String.class).contains(feedXml);
@@ -37,7 +37,7 @@ public class RssDataFormatTest extends CamelTestSupport {
     }
 
     @Test
-    public void testUnmarshalling() throws Exception {
+    public void testUnmarshaling() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:unmarshal");
         mock.expectedMessageCount(1);
         mock.message(0).body().isInstanceOf(SyndFeed.class);

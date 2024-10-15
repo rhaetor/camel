@@ -87,7 +87,7 @@ public enum HL7Charset {
     }
 
     /**
-     * Returns the charset to be used for marshalling HL7 messages. If MSH-18 is empty, the charset configured in
+     * Returns the charset to be used for marshaling HL7 messages. If MSH-18 is empty, the charset configured in
      * Camel's charset properties/headers is returned.
      *
      * @param  message  HL7 message
@@ -101,7 +101,7 @@ public enum HL7Charset {
     }
 
     /**
-     * Returns the charset to be used for unmarshalling HL7 messages. If MSH-18 is empty, the temporary charset name is
+     * Returns the charset to be used for unmarshaling HL7 messages. If MSH-18 is empty, the temporary charset name is
      * returned.
      *
      * @param  bytes              HL7 message as byte array

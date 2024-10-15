@@ -59,7 +59,7 @@ public class ProcessRequestTest {
 
     @Test
     public void unmarshalTest() {
-        ProcessRequest unmarshalledMessage1
+        ProcessRequest unmarshaledMessage1
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_1, ProcessRequest.class));
 
         ProcessRequest message = new ProcessRequest();
@@ -68,9 +68,9 @@ public class ProcessRequestTest {
         message.setProcessVersion(1);
         message.setProcessKey(1);
 
-        assertEquals(message, unmarshalledMessage1);
+        assertEquals(message, unmarshaledMessage1);
 
-        ProcessRequest unmarshalledMessage2
+        ProcessRequest unmarshaledMessage2
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_2, ProcessRequest.class));
 
         HashMap<String, Object> variables = new HashMap<>();
@@ -79,6 +79,6 @@ public class ProcessRequestTest {
         variables.put("varC", Collections.emptyMap());
         message.setVariables(variables);
 
-        assertEquals(message, unmarshalledMessage2);
+        assertEquals(message, unmarshaledMessage2);
     }
 }

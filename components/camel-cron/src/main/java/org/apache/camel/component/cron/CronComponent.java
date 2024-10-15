@@ -91,7 +91,7 @@ public class CronComponent extends DefaultComponent {
 
             if (this.service == null) {
                 throw new RuntimeCamelException(
-                        "Cannot find any CamelCronService: please add a valid implementation, such as 'camel-quartz', in order to use the 'camel-cron' component");
+                        "Cannot find any CamelCronService: please add a valid implementation, such as 'camel-quartz', to use the 'camel-cron' component");
             }
 
             try {

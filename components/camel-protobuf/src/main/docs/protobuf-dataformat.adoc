@@ -59,7 +59,7 @@ do so, it will fall back to retrieve it as proto `Message`.
 == Output data type
 As mentioned above, you can define the content type format to choose from JSON or native to serialize/deserialize data from/to.
 In addition, you can also obtain the data as `Map` and let this component do the heavy lifting to parse the
-data from proto `Message` to `Map`, you will need to set the `contentTypeFormat` to *native* and explicitly define the data type `Map` when you obtain body of the exchange, e.g.: `exchange.getMessage().getBody(Map.class)`.
+data from proto `Message` to `Map`, you will need to set the `contentTypeFormat` to *native* and explicitly define the data type `Map` when you obtain body of the exchange, for example, `exchange.getMessage().getBody(Map.class)`.
 
 == Protobuf overview
 
@@ -164,7 +164,7 @@ domain classes.
 == Java DSL
 
 You can use create the ProtobufDataFormat instance and pass it to Camel
-DataFormat marshal and unmarshal API like this.
+DataFormat marshal and unmarshal API like this:
 
 [source,java]
 -----------------------------------------------------------------------------------

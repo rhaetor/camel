@@ -38,7 +38,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleKeyValuePairWithoutSectionMarshallDslTest {
+public class BindySimpleKeyValuePairWithoutSectionMarshalDslTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_MOCK_ERROR = "mock:error";
@@ -56,7 +56,7 @@ public class BindySimpleKeyValuePairWithoutSectionMarshallDslTest {
     private MockEndpoint error;
 
     @Test
-    public void testMarshallWithoutSection() throws Exception {
+    public void testMarshalWithoutSection() throws Exception {
 
         template.sendBody(generateModel());
 

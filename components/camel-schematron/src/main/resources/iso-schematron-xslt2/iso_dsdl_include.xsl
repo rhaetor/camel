@@ -37,7 +37,7 @@
 		Ids in fragment identifiers or xpointers will be sought in the following
 		order:
 		    * @xml:id
-		    * id() for typed schemas (e.g. from DTD) [NOTE: XInclude does not support this]
+		    * id() for typed schemas (for example, from DTD) [NOTE: XInclude does not support this]
 		    * untyped @id 
 		    
 	The proposed behaviour for the update to ISO Schematron has been implemented. If an

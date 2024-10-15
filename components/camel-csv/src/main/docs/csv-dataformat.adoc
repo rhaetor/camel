@@ -37,7 +37,7 @@ The following headers are supported by this component:
 
 |===
 
-== Marshalling a Map to CSV
+== Marshaling a Map to CSV
 
 The component allows you to marshal a Java Map (or any other message
 type that can be converted in a Map) into a
@@ -86,9 +86,9 @@ then it will produce
 abc,123
 ----
 
-== Unmarshalling a CSV message into a Java List
+== Unmarshaling a CSV message into a Java List
 
-Unmarshalling will transform a CSV message into a Java List with CSV
+Unmarshaling will transform a CSV message into a Java List with CSV
 file lines (containing another List with all the field values).
 
 An example: we have a CSV file with names of persons, their IQ and their
@@ -122,11 +122,11 @@ for (List<String> line : data) {
 }
 --------------------------------------------------------------------------------------------------------------
 
-== Marshalling a List<Map> to CSV
+== Marshaling a List<Map> to CSV
 
 *Since Camel 2.1*
 
-If you have multiple rows of data you want to be marshalled into CSV
+If you have multiple rows of data you want to be marshaled into CSV
 format, you can now store the message payload as a
 `List<Map<String, Object>>` object where the list contains a Map for
 each row.
@@ -176,16 +176,16 @@ And this Java route definition:
 Java::
 +
 [source,java]
--------------------------------------------------------
+----
 from("direct:start")
     .marshal(new CsvDataFormat().setDelimiter(&#39;|&#39;))
     .to("mock:result")
-------------------------------------------------------- 
+----
 
 XML::
 +
 [source,xml]
--------------------------------------------------------
+----
 <route>
   <from uri="direct:start" />
   <marshal>
@@ -193,7 +193,7 @@ XML::
   </marshal>
   <to uri="mock:result" />
 </route>
-------------------------------------------------------- 
+----
 
 ====
 
@@ -311,10 +311,7 @@ XML::
 
 ====
 
-
-
 == Unmarshaling with a pipe as delimiter
-
 
 [tabs]
 ====
@@ -358,7 +355,6 @@ Spring XML::
 ---------------------------------------------------
 
 ====
-
 
 *Issue in CSVConfig*
 

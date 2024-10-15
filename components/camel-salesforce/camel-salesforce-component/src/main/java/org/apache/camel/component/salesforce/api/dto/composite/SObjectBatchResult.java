@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Contains the individual result of Composite API batch request. As batch requests can partially succeed or fail make
  * sure you check the {@link #getStatusCode()} for status of the specific request. The result of the request can vary
  * from API to API so here it is given as {@link Object}, in most cases it will be a {@link Map} with string keys and
- * values or other {@link Map} as value. Requests are made in JSON format hold some type information (i.e. it is known
+ * values or other {@link Map} as value. Requests are made in JSON format hold some type information (that is, it is known
  * what values are strings and what values are numbers).
  * <p>
  * For example response for SObject record creation in JSON will be: <blockquote>

@@ -105,7 +105,7 @@ public final class TypeConvertible<F, T> {
 
         /* Try interfaces:
          * Try to resolve a TypeConverter by looking at the interfaces implemented by a given "from" type. It looks at the
-         * type hierarchy of the target "from type" trying to match a suitable converter (i.e.: Integer -> Number). It will
+         * type hierarchy of the target "from type" trying to match a suitable converter (that is:  Integer -> Number). It will
          * recursively analyze the whole hierarchy.
          */
         final Class<?>[] interfaceTypes = thatFrom.getInterfaces();
@@ -117,7 +117,7 @@ public final class TypeConvertible<F, T> {
 
         /*
          * Try to resolve a TypeConverter by looking at the parent class of a given "from" type. It looks at the type
-         * hierarchy of the "from type" trying to match a suitable converter (i.e.: Integer -> Number). It will recursively
+         * hierarchy of the "from type" trying to match a suitable converter (that is:  Integer -> Number). It will recursively
          * analyze the whole hierarchy, and it will also evaluate the interfaces implemented by such type.
          */
         return match(thisFrom, thisTo, thatFrom.getSuperclass(), thatTo);
@@ -147,7 +147,7 @@ public final class TypeConvertible<F, T> {
     }
 
     /**
-     * Try a direct match conversion (i.e.: those which the type conversion pair have a direct entry on the converters)
+     * Try a direct match conversion (that is:  those which the type conversion pair have a direct entry on the converters)
      *
      * @param  thisFrom The class instance that defines the source "from" type (that is: Class&lt;F&gt;.class)
      * @param  thisTo   The class instance that defines the source "to" type (that is: Class&lt;F&gt;.class)

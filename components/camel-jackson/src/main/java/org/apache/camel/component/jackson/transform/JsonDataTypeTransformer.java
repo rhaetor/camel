@@ -31,7 +31,7 @@ import org.apache.camel.spi.MimeType;
 import org.apache.camel.spi.Transformer;
 
 /**
- * Data type uses Jackson data format to marshal given Exchange payload to a Json (binary byte array representation).
+ * Data type uses Jackson data format to marshalgiven Exchange payload to a Json (binary byte array representation).
  * Requires Exchange payload as JsonNode representation.
  */
 @DataTypeTransformer(name = "application-json")
@@ -40,17 +40,17 @@ public class JsonDataTypeTransformer extends Transformer {
     @Override
     public void transform(Message message, DataType fromType, DataType toType) {
         try {
-            byte[] marshalled;
+            byte[] marshaled;
             if (message.getBody() instanceof String jsonString && Json.isJson(jsonString)) {
-                marshalled = jsonString.getBytes(StandardCharsets.UTF_8);
+                marshaled = jsonString.getBytes(StandardCharsets.UTF_8);
             } else {
                 String contentClass = SchemaHelper.resolveContentClass(message.getExchange(), JsonNode.class.getName());
                 Class<?> contentType
                         = message.getExchange().getContext().getClassResolver().resolveMandatoryClass(contentClass);
 
-                marshalled = Json.mapper().writer().forType(contentType).writeValueAsBytes(message.getBody());
+                marshaled = Json.mapper().writer().forType(contentType).writeValueAsBytes(message.getBody());
             }
-            message.setBody(marshalled);
+            message.setBody(marshaled);
 
             message.setHeader(Exchange.CONTENT_TYPE, MimeType.JSON.type());
 

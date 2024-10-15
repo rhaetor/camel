@@ -23,7 +23,7 @@ public final class FhirSearchEndpointConfiguration extends FhirConfiguration {
     @ApiParam(optional = true, apiMethods = {@ApiMethod(methodName = "searchByUrl", description="See ExtraParameters for a full list of parameters that can be passed, may be NULL")})
     private java.util.Map<org.apache.camel.component.fhir.api.ExtraParameters, Object> extraParameters;
     @UriParam
-    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "searchByUrl", description="The URL to search for. Note that this URL may be complete (e.g. http://example.com/base/Patientname=foo) in which case the client's base URL will be ignored. Or it can be relative (e.g. Patientname=foo) in which case the client's base URL will be used.")})
+    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "searchByUrl", description="The URL to search for. Note that this URL may be complete (for example, http://example.com/base/Patientname=foo) in which case the client's base URL will be ignored. Or it can be relative (for example, Patientname=foo) in which case the client's base URL will be used.")})
     private String url;
 
     public java.util.Map<org.apache.camel.component.fhir.api.ExtraParameters, Object> getExtraParameters() {

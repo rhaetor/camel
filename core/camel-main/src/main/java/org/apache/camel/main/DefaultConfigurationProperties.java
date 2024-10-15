@@ -445,7 +445,7 @@ public abstract class DefaultConfigurationProperties<T> {
      * Sets whether stream caching is enabled or not.
      *
      * While stream types (like StreamSource, InputStream and Reader) are commonly used in messaging for performance
-     * reasons, they also have an important drawback: they can only be read once. In order to be able to work with
+     * reasons, they also have an important drawback: they can only be read once. To be able to work with
      * message content multiple times, the stream needs to be cached.
      *
      * Streams are cached in memory only (by default).
@@ -1796,7 +1796,7 @@ public abstract class DefaultConfigurationProperties<T> {
      * Sets whether stream caching is enabled or not.
      *
      * While stream types (like StreamSource, InputStream and Reader) are commonly used in messaging for performance
-     * reasons, they also have an important drawback: they can only be read once. In order to be able to work with
+     * reasons, they also have an important drawback: they can only be read once. To be able to work with
      * message content multiple times, the stream needs to be cached.
      *
      * Streams are cached in memory only (by default).

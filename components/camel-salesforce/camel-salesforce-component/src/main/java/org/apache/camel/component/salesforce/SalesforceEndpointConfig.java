@@ -1131,7 +1131,7 @@ public class SalesforceEndpointConfig implements Cloneable {
     }
 
     /**
-     * The portion of the endpoint URL after the domain name. E.g., " + "'/services/data/v52.0/sobjects/Account/'
+     * The portion of the endpoint URL after the domain name. For example,  " + "'/services/data/v52.0/sobjects/Account/'
      *
      * @param rawPath the path
      */

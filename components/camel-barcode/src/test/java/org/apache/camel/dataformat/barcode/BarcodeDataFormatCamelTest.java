@@ -166,11 +166,11 @@ public class BarcodeDataFormatCamelTest extends BarcodeTestBase {
                 //
                 // read file and route it
                 from(TestSupport.fileUri(testDirectory, "?noop=true&initialDelay=0&delay=10"))
-                        .multicast().to("direct:unmarshall", "mock:image");
+                        .multicast().to("direct:unmarshal", "mock:image");
 
                 // get the message from code
-                from("direct:unmarshall")
-                        .unmarshal(code1) // for unmarshalling, the instance doesn't matter
+                from("direct:unmarshal")
+                        .unmarshal(code1) // for unmarshaling, the instance doesn't matter
                         .to("log:OUT")
                         .to("mock:out");
 

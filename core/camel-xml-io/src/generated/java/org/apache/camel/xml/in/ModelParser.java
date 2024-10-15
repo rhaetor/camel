@@ -2121,7 +2121,7 @@ public class ModelParser extends BaseParser {
         return doParse(new AvroDataFormat(), (def, key, val) -> {
             switch (key) {
                 case "allowJmsType": def.setAllowJmsType(val); break;
-                case "allowUnmarshallType": def.setAllowUnmarshallType(val); break;
+                case "allowUnmarshalType": def.setAllowUnmarshalType(val); break;
                 case "autoDiscoverObjectMapper": def.setAutoDiscoverObjectMapper(val); break;
                 case "autoDiscoverSchemaResolver": def.setAutoDiscoverSchemaResolver(val); break;
                 case "collectionType": def.setCollectionTypeName(val); break;
@@ -2201,7 +2201,7 @@ public class ModelParser extends BaseParser {
         return doParse(new CBORDataFormat(), (def, key, val) -> {
             switch (key) {
                 case "allowJmsType": def.setAllowJmsType(val); break;
-                case "allowUnmarshallType": def.setAllowUnmarshallType(val); break;
+                case "allowUnmarshalType": def.setAllowUnmarshalType(val); break;
                 case "collectionType": def.setCollectionTypeName(val); break;
                 case "disableFeatures": def.setDisableFeatures(val); break;
                 case "enableFeatures": def.setEnableFeatures(val); break;
@@ -2249,7 +2249,7 @@ public class ModelParser extends BaseParser {
                 case "ignoreHeaderCase": def.setIgnoreHeaderCase(val); break;
                 case "ignoreSurroundingSpaces": def.setIgnoreSurroundingSpaces(val); break;
                 case "lazyLoad": def.setLazyLoad(val); break;
-                case "marshallerFactoryRef": def.setMarshallerFactoryRef(val); break;
+                case "marshalerFactoryRef": def.setMarshalerFactoryRef(val); break;
                 case "nullString": def.setNullString(val); break;
                 case "nullStringDisabled": def.setNullStringDisabled(val); break;
                 case "quote": def.setQuote(val); break;
@@ -2382,7 +2382,7 @@ public class ModelParser extends BaseParser {
         return doParse(new JacksonXMLDataFormat(), (def, key, val) -> {
             switch (key) {
                 case "allowJmsType": def.setAllowJmsType(val); break;
-                case "allowUnmarshallType": def.setAllowUnmarshallType(val); break;
+                case "allowUnmarshalType": def.setAllowUnmarshalType(val); break;
                 case "collectionType": def.setCollectionTypeName(val); break;
                 case "contentTypeHeader": def.setContentTypeHeader(val); break;
                 case "disableFeatures": def.setDisableFeatures(val); break;
@@ -2444,7 +2444,7 @@ public class ModelParser extends BaseParser {
         return doParse(new JsonDataFormat(), (def, key, val) -> {
             switch (key) {
                 case "allowJmsType": def.setAllowJmsType(val); break;
-                case "allowUnmarshallType": def.setAllowUnmarshallType(val); break;
+                case "allowUnmarshalType": def.setAllowUnmarshalType(val); break;
                 case "autoDiscoverObjectMapper": def.setAutoDiscoverObjectMapper(val); break;
                 case "autoDiscoverSchemaResolver": def.setAutoDiscoverSchemaResolver(val); break;
                 case "collectionType": def.setCollectionTypeName(val); break;
@@ -2529,7 +2529,7 @@ public class ModelParser extends BaseParser {
         return doParse(new ProtobufDataFormat(), (def, key, val) -> {
             switch (key) {
                 case "allowJmsType": def.setAllowJmsType(val); break;
-                case "allowUnmarshallType": def.setAllowUnmarshallType(val); break;
+                case "allowUnmarshalType": def.setAllowUnmarshalType(val); break;
                 case "autoDiscoverObjectMapper": def.setAutoDiscoverObjectMapper(val); break;
                 case "autoDiscoverSchemaResolver": def.setAutoDiscoverSchemaResolver(val); break;
                 case "collectionType": def.setCollectionTypeName(val); break;

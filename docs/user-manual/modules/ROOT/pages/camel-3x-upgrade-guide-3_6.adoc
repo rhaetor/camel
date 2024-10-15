@@ -175,7 +175,7 @@ There is a new abstract `org.apache.camel.support.component.SendDynamicAwareSupp
 === Stream Caching
 
 If stream caching is enabled and an exception is thrown while converting the message payload to `StreamCache` then the error handler
-can now handle this exception (e.g. `onException`). The exception is regarded as non-recoverable and redelivery is not in use.
+can now handle this exception (for example, `onException`). The exception is regarded as non-recoverable and redelivery is not in use.
 
 === Camel Caffeine
 

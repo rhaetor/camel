@@ -72,7 +72,7 @@ To use this component, you have three options to provide the required Azure auth
 
 *TOKEN_CREDENTIAL*:
 
-- Provide an implementation of `com.azure.core.credential.TokenCredential` into the Camel's Registry, e.g., using the `com.azure.identity.DefaultAzureCredentialBuilder().build();` API.
+- Provide an implementation of `com.azure.core.credential.TokenCredential` into the Camel's Registry, for example, using the `com.azure.identity.DefaultAzureCredentialBuilder().build();` API.
 See the documentation https://docs.microsoft.com/en-us/azure/active-directory/authentication/overview-authentication[here about Azure-AD authentication].
 
 *AZURE_IDENTITY*:

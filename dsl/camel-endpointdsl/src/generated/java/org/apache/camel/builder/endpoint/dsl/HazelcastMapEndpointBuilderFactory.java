@@ -759,7 +759,7 @@ public interface HazelcastMapEndpointBuilderFactory {
         }
 
         /**
-         * The name of the cache - e.g. foo.
+         * The name of the cache - for example, foo.
          * 
          * The option is a: {@code String} type.
          * 

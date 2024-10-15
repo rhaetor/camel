@@ -12,9 +12,9 @@
 *Since Camel {since}*
 
 The Tar File Data Format is a message compression
-and decompression format. Messages can be marshalled (compressed) to
+and decompression format. Messages can be marshaled (compressed) to
 Tar Files containing a single entry, and Tar Files containing a single
-entry can be unmarshalled (decompressed) to the original file contents.
+entry can be unmarshaled (decompressed) to the original file contents.
 
 There is also an aggregation strategy that can
 aggregate multiple messages into a single Tar File.
@@ -76,7 +76,7 @@ the `UnTarpedMessageProcessor`.
 
 [source,java]
 -----------------------------------------------------------------------------------------------
-from("activemq:queue:MY_QUEUE").unmarshal().tarFile().process(new UnTarpedMessageProcessor()); 
+from("activemq:queue:MY_QUEUE").unmarshal().tarFile().process(new UnTarpedMessageProcessor());
 -----------------------------------------------------------------------------------------------
 
 If the Tar File has more than one entry, the usingIterator option of

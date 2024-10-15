@@ -86,11 +86,11 @@ public interface RestApiComponentBuilderFactory {
          * integrates with the Rest DSL, or if a
          * org.apache.camel.spi.RestApiConsumerFactory is registered in the
          * registry. If either one is found, then that is being used.
-         * 
+         *
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
-         * 
+         *
          * Group: consumer
-         * 
+         *
          * @param consumerComponentName the value to set
          * @return the dsl builder
          */

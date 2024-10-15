@@ -34,7 +34,7 @@ public class ServerOptions extends BaseOptions<ServerOptions> {
     private DataModuleOptions.Builder dataModuleOptions;
 
     /**
-     * A time period in "ms" the protocol layer will buffer change events in order to send out aggregated change
+     * A time period in "ms" the protocol layer will buffer change events to send out aggregated change
      * messages
      */
     @UriParam(label = "data")

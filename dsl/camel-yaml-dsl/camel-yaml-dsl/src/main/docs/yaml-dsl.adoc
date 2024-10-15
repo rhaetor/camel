@@ -184,7 +184,7 @@ The `beans` elements can only be used as the root element
 
 When beans must be created with constructor arguments, then this is made easier in Camel 4.1 onwards.
 
-For example as shown below:
+For example, as shown below:
 
 [source,yaml]
 ----

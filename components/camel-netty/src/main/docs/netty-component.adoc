@@ -57,8 +57,7 @@ netty:udp://remotehost:99999/[?options]
 ----
 
 
-This component supports producer and consumer endpoints for both TCP and
-UDP.
+This component supports producer and consumer endpoints for both TCP and UDP.
 
 // component-configure options: START
 
@@ -112,7 +111,7 @@ different systems.
 |`sslHandler` |Reference to a class that could be used to return an SSL Handler
 
 |`encoder` |A custom `ChannelHandler` class that can be used to perform special
-marshalling of outbound payloads. Must override
+marshaling of outbound payloads. Must override
 `io.netty.channel.ChannelInboundHandlerAdapter`.
 
 |`encoders` |A list of encoders to be used. You can use a string that has values
@@ -120,7 +119,7 @@ separated by comma, and have the values be looked up in the
 Registry. Remember to prefix the value with `#` so Camel knows it should look up.
 
 |`decoder` |A custom `ChannelHandler` class that can be used to perform special
-marshalling of inbound payloads. Must override
+marshaling of inbound payloads. Must override
 `io.netty.channel.ChannelOutboundHandlerAdapter`.
 
 |`decoders` |A list of decoders to be used. You can use a string that has values
@@ -137,7 +136,7 @@ Read below about using non-shareable encoders/decoders.
 [[Netty-NonShareableEncodersOrDecoders]]
 === Using non-shareable encoders or decoders
 
-If your encoders or decoders are not shareable (e.g., they don't have the
+If your encoders or decoders are not shareable (for example, they don't have the
 @Shareable class annotation), then your encoder/decoder must implement
 the `org.apache.camel.component.netty.ChannelHandlerFactory` interface,
 and return a new instance in the `newChannelHandler` method. This is to
@@ -169,6 +168,11 @@ object-based payloads and
 
 The consumer mode supports both one-way and request-response based
 operations.
+
+
+
+
+
 
 === Using Multiple Codecs
 
@@ -255,7 +259,7 @@ lists in an application context
 ----
 
 The bean names can then be used in netty endpoint definitions either as
-a comma-separated list or contained in a list, e.g.:
+a comma-separated list or contained in a list, for example:
 
 [tabs]
 ====
@@ -641,7 +645,7 @@ context.addRoutes(new RouteBuilder() {
 [[Netty-GettingaccesstoSSLSessionandtheclientcertificate]]
 Getting access to SSLSession and the client certificate
 
-You can get access to the `javax.net.ssl.SSLSession` if you e.g., need to
+You can get access to the `javax.net.ssl.SSLSession` if you for example, need to
 get details about the client certificate. When `ssl=true` then the
 xref:netty-component.adoc[Netty] component will store the `SSLSession` as a
 header on the Camel Message as shown below:

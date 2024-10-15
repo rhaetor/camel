@@ -34,8 +34,8 @@ import org.apache.camel.spi.MimeType;
 import org.apache.camel.spi.Transformer;
 
 /**
- * Data type uses Avro Jackson data format to unmarshal Exchange body to generic JsonNode. Uses given Avro schema from
- * the Exchange properties when unmarshalling the payload (usually already resolved via schema resolver).
+ * Data type uses Avro Jackson data format to unmarshalExchange body to generic JsonNode. Uses given Avro schema from
+ * the Exchange properties when unmarshaling the payload (usually already resolved via schema resolver).
  */
 @DataTypeTransformer(name = "avro-x-struct")
 public class AvroStructDataTypeTransformer extends Transformer {
@@ -49,18 +49,18 @@ public class AvroStructDataTypeTransformer extends Transformer {
         }
 
         try {
-            Object unmarshalled;
+            Object unmarshaled;
             String contentClass = SchemaHelper.resolveContentClass(message.getExchange(), null);
             if (contentClass != null) {
                 Class<?> contentType
                         = message.getExchange().getContext().getClassResolver().resolveMandatoryClass(contentClass);
-                unmarshalled = Avro.mapper().reader().forType(JsonNode.class).with(schema)
+                unmarshaled = Avro.mapper().reader().forType(JsonNode.class).with(schema)
                         .readValue(Avro.mapper().writerFor(contentType).with(schema).writeValueAsBytes(message.getBody()));
             } else {
-                unmarshalled = Avro.mapper().reader().forType(JsonNode.class).with(schema).readValue(getBodyAsStream(message));
+                unmarshaled = Avro.mapper().reader().forType(JsonNode.class).with(schema).readValue(getBodyAsStream(message));
             }
 
-            message.setBody(unmarshalled);
+            message.setBody(unmarshaled);
 
             message.setHeader(Exchange.CONTENT_TYPE, MimeType.STRUCT.type());
         } catch (InvalidPayloadException | IOException | ClassNotFoundException e) {

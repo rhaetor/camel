@@ -30,7 +30,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * This class tests the creation of the proper {@link org.apache.commons.csv.CSVFormat} based on the properties of
- * {@link org.apache.camel.dataformat.csv.CsvDataFormat}. It doesn't test the marshalling and unmarshalling based on the
+ * {@link org.apache.camel.dataformat.csv.CsvDataFormat}. It doesn't test the marshaling and unmarshaling based on the
  * CSV format.
  */
 public class CsvDataFormatTest {

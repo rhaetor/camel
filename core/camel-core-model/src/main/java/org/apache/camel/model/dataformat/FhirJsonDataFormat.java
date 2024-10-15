@@ -24,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlTransient;
 import org.apache.camel.spi.Metadata;
 
 /**
- * Marshall and unmarshall FHIR objects to/from JSON.
+ * Marshal and unmarshal FHIR objects to/from JSON.
  */
 @Metadata(firstVersion = "2.21.0", label = "dataformat,transformation,hl7,json", title = "FHIR JSon")
 @XmlRootElement(name = "fhirJson")

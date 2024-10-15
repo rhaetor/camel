@@ -136,7 +136,7 @@ public class MyBatisEndpoint extends BaseMyBatisEndpoint {
     /**
      * This option is intended to split results returned by the database pool into the batches and deliver them in
      * multiple exchanges. This integer defines the maximum messages to deliver in single exchange. By default, no
-     * maximum is set. Can be used to set a limit of e.g. 1000 to avoid when starting up the server that there are
+     * maximum is set. Can be used to set a limit of for example, 1000 to avoid when starting up the server that there are
      * thousands of files. Set a value of 0 or negative to disable it.
      */
     public void setMaxMessagesPerPoll(int maxMessagesPerPoll) {

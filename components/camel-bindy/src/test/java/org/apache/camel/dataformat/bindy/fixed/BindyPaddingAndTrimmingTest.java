@@ -31,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BindyPaddingAndTrimmingTest extends CamelTestSupport {
 
-    private static final String URI_DIRECT_UNMARSHAL = "direct:unmarshall";
+    private static final String URI_DIRECT_UNMARSHAL = "direct:unmarshal";
     private static final String URI_MOCK_UNMARSHAL_RESULT = "mock:unmarshal_result";
 
     @EndpointInject(URI_MOCK_UNMARSHAL_RESULT)

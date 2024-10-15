@@ -51,7 +51,7 @@ public class ConsulConfiguration extends ConsulClientConfiguration {
     }
 
     /**
-     * Default to transform values retrieved from Consul i.e. on KV endpoint to string.
+     * Default to transform values retrieved from Consul that is, on KV endpoint to string.
      */
     public void setValueAsString(boolean valueAsString) {
         this.valueAsString = valueAsString;

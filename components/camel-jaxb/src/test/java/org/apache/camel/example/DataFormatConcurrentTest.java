@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Marshaler;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
@@ -69,10 +69,10 @@ public class DataFormatConcurrentTest extends CamelTestSupport {
 
     @Test
     public void testUnmarshalFallbackConcurrent() {
-        assertDoesNotThrow(() -> runUnmarshallFallbackConcurrent());
+        assertDoesNotThrow(() -> runUnmarshalFallbackConcurrent());
     }
 
-    private void runUnmarshallFallbackConcurrent() throws Exception {
+    private void runUnmarshalFallbackConcurrent() throws Exception {
         template.setDefaultEndpointUri("direct:unmarshalFallback");
         final CountDownLatch latch = new CountDownLatch(warmupCount + testCycleCount);
 
@@ -89,11 +89,11 @@ public class DataFormatConcurrentTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshallConcurrent() {
-        assertDoesNotThrow(() -> runMarshallConcurrent());
+    public void testMarshalConcurrent() {
+        assertDoesNotThrow(() -> runMarshalConcurrent());
     }
 
-    private void runMarshallConcurrent() throws Exception {
+    private void runMarshalConcurrent() throws Exception {
         template.setDefaultEndpointUri("direct:marshal");
         final CountDownLatch latch = new CountDownLatch(warmupCount + testCycleCount);
 
@@ -110,11 +110,11 @@ public class DataFormatConcurrentTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshallFallbackConcurrent() {
-        assertDoesNotThrow(() -> runMarshallFallbackConcurrent());
+    public void testMarshalFallbackConcurrent() {
+        assertDoesNotThrow(() -> runMarshalFallbackConcurrent());
     }
 
-    private void runMarshallFallbackConcurrent() throws Exception {
+    private void runMarshalFallbackConcurrent() throws Exception {
         template.setDefaultEndpointUri("direct:marshalFallback");
         final CountDownLatch latch = new CountDownLatch(warmupCount + testCycleCount);
 
@@ -141,7 +141,7 @@ public class DataFormatConcurrentTest extends CamelTestSupport {
         ExecutorService executor = Executors.newCachedThreadPool();
         for (int i = 0; i < size; i++) {
 
-            // sleep a little so we interleave with the marshaller
+            // sleep a little so we interleave with the marshaler
             Thread.sleep(1, 500);
 
             executor.execute(new Runnable() {
@@ -247,7 +247,7 @@ public class DataFormatConcurrentTest extends CamelTestSupport {
             bar.setValue("value: " + x);
             foo.getBarRefs().add(bar);
         }
-        Marshaller m = JAXBContext.newInstance(Foo.class, Bar.class).createMarshaller();
+        Marshaler m = JAXBContext.newInstance(Foo.class, Bar.class).createMarshaler();
         StringWriter writer = new StringWriter();
         m.marshal(foo, writer);
 

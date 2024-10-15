@@ -56,8 +56,8 @@ public class AvroGenericMarshalAndUnmarshalTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(GenericRecord.class);
         mock.message(0).body().isEqualTo(input);
 
-        Object marshalled = template.requestBody(inURI, input);
-        template.sendBody(outURI, marshalled);
+        Object marshaled = template.requestBody(inURI, input);
+        template.sendBody(outURI, marshaled);
         mock.assertIsSatisfied();
 
         GenericRecord output = mock.getReceivedExchanges().get(0).getIn().getBody(GenericRecord.class);

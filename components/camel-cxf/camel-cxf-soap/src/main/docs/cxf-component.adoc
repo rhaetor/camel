@@ -541,7 +541,7 @@ assertEquals("Get the wrong wsdl operation name", "{http://apache.org/hello_worl
 
 Message Transmission Optimization Mechanism (MTOM) is supported if enabled - check
 the example in Payload Mode for enabling MTOM.
-Since attachments are marshalled and unmarshalled into POJOs, the attachments should be
+Since attachments are marshaled and unmarshaled into POJOs, the attachments should be
 retrieved from the Apache Camel message body (as a parameter list), and it isn't
 possible to retrieve attachments by Camel Message API
 
@@ -732,7 +732,7 @@ Attachments are not supported as it does not process the message at all.
 
 ===  CXF_MESSAGE Mode
 
-MTOM is supported, and Attachments can be retrieved by Camel Message APIs mentioned above. Note that when receiving a multipart (i.e., MTOM) message, the default `SOAPMessag`e to `String` converter will provide the complete multipart payload on the body.
+MTOM is supported, and Attachments can be retrieved by Camel Message APIs mentioned above. Note that when receiving a multipart (that is, MTOM) message, the default `SOAPMessag`e to `String` converter will provide the complete multipart payload on the body.
 If you require just the SOAP XML as a String, you can set the message body
 with `message.getSOAPPart()`, and the Camel converter can do the rest of the work
 for you.
@@ -771,7 +771,7 @@ will override this value for that endpoint.
 == Using the generic CXF Dispatch mode
 
 The Camel CXF component supports the generic
-https://cxf.apache.org/docs/jax-ws-dispatch-api.html[CXF dispatch mode] that can transport messages of arbitrary structures (i.e., not bound to a specific XML schema).
+https://cxf.apache.org/docs/jax-ws-dispatch-api.html[CXF dispatch mode] that can transport messages of arbitrary structures (that is, not bound to a specific XML schema).
 To use this mode, you omit specifying the `wsdlURL` and `serviceClass` attributes of the CXF endpoint.
 
 [tabs]

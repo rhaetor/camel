@@ -249,7 +249,7 @@ public class DefaultPackageScanClassResolver extends BasePackageScanResolver
      * structure.
      *
      * @param test     a Test used to filter the classes that are discovered
-     * @param parent   the package name up to this directory in the package hierarchy. E.g. if /classes is in the
+     * @param parent   the package name up to this directory in the package hierarchy. For example, if /classes is in the
      *                 classpath and we wish to examine files in /classes/org/apache then the values of <i>parent</i>
      *                 would be <i>org/apache</i>
      * @param location a File object representing a directory
@@ -282,7 +282,7 @@ public class DefaultPackageScanClassResolver extends BasePackageScanResolver
      * File is not a JarFile or does not exist a warning will be logged, but no error will be raised.
      *
      * @param test     a Test used to filter the classes that are discovered
-     * @param parent   the parent package under which classes must be in order to be considered
+     * @param parent   the parent package under which classes must be to be considered
      * @param stream   the inputstream of the jar file to be examined for classes
      * @param urlPath  the url of the jar file to be examined for classes
      * @param classes  to add found and matching classes
@@ -341,7 +341,7 @@ public class DefaultPackageScanClassResolver extends BasePackageScanResolver
      * Adds all the matching implementations from from the JAR entries to the classes.
      *
      * @param test    a Test used to filter the classes that are discovered
-     * @param parent  the parent package under which classes must be in order to be considered
+     * @param parent  the parent package under which classes must be to be considered
      * @param entries the .class entries from the JAR
      * @param classes to add found and matching classes
      */

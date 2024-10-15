@@ -91,7 +91,7 @@ public class PgReplicationSlotConsumer extends ScheduledPollConsumer {
     protected int poll() throws Exception {
         PGReplicationStream stream = getStream();
 
-        // If the stream is null, this means the slot is active, i.e. used by another connection. We'll try
+        // If the stream is null, this means the slot is active, that is, used by another connection. We'll try
         // again on the next poll.
         if (stream == null) {
             return 0;

@@ -467,7 +467,7 @@ public class XPathBuilder extends ServiceSupport
      * Namespaces are printed in Hashmap style <code>{xmlns:prefix=[namespaceURI], xmlns:prefix=[namespaceURI]}</code>.
      * <p/>
      * The implicit XML namespace is omitted (http://www.w3.org/XML/1998/namespace). XML allows for namespace prefixes
-     * to be redefined/overridden due to hierarchical scoping, i.e. prefix abc can be mapped to http://abc.com, and
+     * to be redefined/overridden due to hierarchical scoping, that is, prefix abc can be mapped to http://abc.com, and
      * deeper in the document it can be mapped to http://def.com. When two prefixes are detected which are equal but are
      * mapped to different namespace URIs, Camel will show all namespaces URIs it is mapped to in an array-style.
      * <p/>

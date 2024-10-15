@@ -24,7 +24,7 @@ import java.util.List;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Marshaler;
 
 import javax.management.AttributeChangeNotification;
 import javax.management.MBeanServerNotification;
@@ -131,9 +131,9 @@ public class NotificationXmlFormatter extends ServiceSupport {
 
             StringWriter sw = new StringWriter();
 
-            // must create a new marshaller as its not thread safe
-            Marshaller marshaller = jaxbContext.createMarshaller();
-            marshaller.marshal(bean, sw);
+            // must create a new marshaler as its not thread safe
+            Marshaler marshaler = jaxbContext.createMarshaler();
+            marshaler.marshal(bean, sw);
 
             return sw.toString();
         } catch (DatatypeConfigurationException | JAXBException e) {

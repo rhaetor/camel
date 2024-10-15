@@ -28,7 +28,7 @@ import org.junit.jupiter.api.Test;
 public class DataFormatDataSetTest extends CamelTestSupport {
 
     @Test
-    public void testConcurrentMarshall() throws Exception {
+    public void testConcurrentMarshal() throws Exception {
         MockEndpoint.assertIsSatisfied(context);
     }
 
@@ -52,7 +52,7 @@ public class DataFormatDataSetTest extends CamelTestSupport {
             public void configure() {
                 DataFormat jaxb = new JaxbDataFormat("org.apache.camel.example");
 
-                // use 5 concurrent threads to do marshalling
+                // use 5 concurrent threads to do marshaling
                 from("dataset:beer").marshal(jaxb).to("dataset:beer");
             }
         };

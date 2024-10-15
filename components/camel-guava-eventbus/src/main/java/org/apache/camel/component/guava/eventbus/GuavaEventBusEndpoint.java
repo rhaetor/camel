@@ -97,7 +97,7 @@ public class GuavaEventBusEndpoint extends DefaultEndpoint implements MultipleCo
     /**
      * If used on the consumer side of the route, will filter events received from the EventBus to the instances of the
      * class and superclasses of eventClass. Null value of this option is equal to setting it to the java.lang.Object
-     * i.e. the consumer will capture all messages incoming to the event bus. This option cannot be used together with
+     * that is, the consumer will capture all messages incoming to the event bus. This option cannot be used together with
      * listenerInterface option.
      */
     public void setEventClass(Class<?> eventClass) {

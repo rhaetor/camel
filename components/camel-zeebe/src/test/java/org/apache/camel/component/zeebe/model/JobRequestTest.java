@@ -55,16 +55,16 @@ public class JobRequestTest {
 
     @Test
     public void unmarshalTest() {
-        JobRequest unmarshalledMessage1
+        JobRequest unmarshaledMessage1
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_1, JobRequest.class));
 
         JobRequest message = new JobRequest();
         message.setJobKey(1);
         message.setRetries(2);
 
-        assertEquals(message, unmarshalledMessage1);
+        assertEquals(message, unmarshaledMessage1);
 
-        JobRequest unmarshalledMessage2
+        JobRequest unmarshaledMessage2
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_2, JobRequest.class));
 
         HashMap<String, Object> variables = new HashMap<>();
@@ -73,6 +73,6 @@ public class JobRequestTest {
         variables.put("varC", Collections.emptyMap());
         message.setVariables(variables);
 
-        assertEquals(message, unmarshalledMessage2);
+        assertEquals(message, unmarshaledMessage2);
     }
 }

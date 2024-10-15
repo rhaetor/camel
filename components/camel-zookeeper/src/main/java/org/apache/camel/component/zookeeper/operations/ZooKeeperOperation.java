@@ -59,7 +59,7 @@ public abstract class ZooKeeperOperation<ResultType> {
     }
 
     /**
-     * Gets the result of this zookeeper operation, i.e. some data and the associated node stats
+     * Gets the result of this zookeeper operation, that is, some data and the associated node stats
      */
     public abstract OperationResult<ResultType> getResult();
 

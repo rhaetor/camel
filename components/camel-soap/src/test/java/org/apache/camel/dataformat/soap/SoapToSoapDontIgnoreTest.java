@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SoapToSoapDontIgnoreTest extends CamelTestSupport {
     private static SoapDataFormat soapjaxbModel;
-    private static SoapDataFormat soapjaxbModelDontIgnoreUnmarshalled;
+    private static SoapDataFormat soapjaxbModelDontIgnoreUnmarshaled;
     private static Map<String, String> namespacePrefixMap;
 
     @BeforeAll
@@ -51,15 +51,15 @@ public class SoapToSoapDontIgnoreTest extends CamelTestSupport {
         soapjaxbModel = new SoapDataFormat("com.example.contact:com.example.soapheaders");
         soapjaxbModel.setNamespacePrefix(namespacePrefixMap);
         soapjaxbModel.setPrettyPrint(true);
-        soapjaxbModel.setIgnoreUnmarshalledHeaders(false);
+        soapjaxbModel.setIgnoreUnmarshaledHeaders(false);
         soapjaxbModel.setIgnoreJAXBElement(false);
         soapjaxbModel.setElementNameStrategy(new TypeNameStrategy());
-        soapjaxbModelDontIgnoreUnmarshalled = new SoapDataFormat(
+        soapjaxbModelDontIgnoreUnmarshaled = new SoapDataFormat(
                 "com.example.contact:com.example.soapheaders");
-        soapjaxbModelDontIgnoreUnmarshalled.setNamespacePrefix(namespacePrefixMap);
-        soapjaxbModelDontIgnoreUnmarshalled.setPrettyPrint(true);
-        soapjaxbModelDontIgnoreUnmarshalled.setIgnoreUnmarshalledHeaders(false);
-        soapjaxbModelDontIgnoreUnmarshalled.setElementNameStrategy(new TypeNameStrategy());
+        soapjaxbModelDontIgnoreUnmarshaled.setNamespacePrefix(namespacePrefixMap);
+        soapjaxbModelDontIgnoreUnmarshaled.setPrettyPrint(true);
+        soapjaxbModelDontIgnoreUnmarshaled.setIgnoreUnmarshaledHeaders(false);
+        soapjaxbModelDontIgnoreUnmarshaled.setElementNameStrategy(new TypeNameStrategy());
     }
 
     @AfterAll
@@ -98,7 +98,7 @@ public class SoapToSoapDontIgnoreTest extends CamelTestSupport {
 
         return new RouteBuilder() {
             public void configure() {
-                from("direct:start").unmarshal(soapjaxbModel).marshal(soapjaxbModelDontIgnoreUnmarshalled)
+                from("direct:start").unmarshal(soapjaxbModel).marshal(soapjaxbModelDontIgnoreUnmarshaled)
                         .to("mock:end");
             }
         };

@@ -185,9 +185,9 @@ Flowable.just("hello", "world")
 
 Routes defined in some Camel DSL can be used within a reactive stream framework to perform a
 specific transformation.
-The same mechanism can be also used to e.g., send data to an _http_ endpoint and continue.
+The same mechanism can be also used to for example, send data to an _http_ endpoint and continue.
 
-The following snippet shows how RxJava functional code can request the task of loading and marshalling files to Camel.
+The following snippet shows how RxJava functional code can request the task of loading and marshaling files to Camel.
 
 [source,java]
 ---------------------------------------------------------
@@ -240,7 +240,7 @@ from("direct:process")
 == Process Camel data into the reactive framework
 
 While a reactive streams _Publisher_ allows exchanging data in a unidirectional way,
-Camel routes often use an in-out exchange pattern (e.g., to define REST endpoints and, in general,
+Camel routes often use an in-out exchange pattern (for example, to define REST endpoints and, in general,
 where a reply is needed for each request).
 
 In these circumstances, users can add a reactive processing step to the flow, to enhance a Camel route or to
@@ -321,9 +321,9 @@ When more than `10` messages are in flight, the route is suspended, waiting for 
 With this mechanism, the subscriber controls the route suspension/resume automatically, through backpressure.
 When multiple subscribers are consuming items from the same stream, the slowest one controls the route status automatically.
 
-In other circumstances, e.g., when using a `http` consumer, the route suspension makes the http service unavailable, so
+In other circumstances, for example, when using a `http` consumer, the route suspension makes the http service unavailable, so
 using the default configuration (no policy, unbounded buffer) should be preferable. Users should try to avoid memory issues
-by limiting the number of requests to the http service (e.g., scaling out).
+by limiting the number of requests to the http service (for example, scaling out).
 
 In contexts where a certain amount of data loss is acceptable, setting a backpressure strategy other than `BUFFER` can
  be a solution for dealing with fast sources.

@@ -14,8 +14,8 @@
 The
 LZF xref:manual::data-format.adoc[Data Format] is a message compression
 and decompression format. It uses the
-LZF deflate algorithm. Messages marshalled using LZF compression can be
-unmarshalled using LZF decompression just prior to being consumed at the
+LZF deflate algorithm. Messages marshaled using LZF compression can be
+unmarshaled using LZF decompression just prior to being consumed at the
 endpoint. The compression capability is quite useful when you deal with
 large XML and text-based payloads or when you read messages previously
 compressed using LZF algorithm.

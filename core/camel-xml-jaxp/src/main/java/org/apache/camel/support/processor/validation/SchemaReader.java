@@ -74,7 +74,7 @@ public class SchemaReader {
     }
 
     /**
-     * Specify a camel context and a schema resource URI in order to read the schema via the class resolver specified in
+     * Specify a camel context and a schema resource URI to read the schema via the class resolver specified in
      * the Camel context.
      */
     public SchemaReader(CamelContext camelContext, String schemaResourceUri) {

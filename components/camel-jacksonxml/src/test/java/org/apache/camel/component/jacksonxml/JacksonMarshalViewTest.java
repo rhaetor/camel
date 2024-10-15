@@ -35,11 +35,11 @@ public class JacksonMarshalViewTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(TestPojoView.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:inPojoAgeView", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals("<TestPojoView><age>30</age><height>190</height></TestPojoView>", marshalledAsString);
+        Object marshaled = template.requestBody("direct:inPojoAgeView", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals("<TestPojoView><age>30</age><height>190</height></TestPojoView>", marshaledAsString);
 
-        template.sendBody("direct:backPojoAgeView", marshalled);
+        template.sendBody("direct:backPojoAgeView", marshaled);
 
         mock.assertIsSatisfied();
     }
@@ -54,11 +54,11 @@ public class JacksonMarshalViewTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(TestPojoView.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:inPojoWeightView", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals("<TestPojoView><height>190</height><weight>70</weight></TestPojoView>", marshalledAsString);
+        Object marshaled = template.requestBody("direct:inPojoWeightView", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals("<TestPojoView><height>190</height><weight>70</weight></TestPojoView>", marshaledAsString);
 
-        template.sendBody("direct:backPojoWeightView", marshalled);
+        template.sendBody("direct:backPojoWeightView", marshaled);
 
         mock.assertIsSatisfied();
     }

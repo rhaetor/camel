@@ -188,7 +188,7 @@ public class KubernetesLeadershipController implements Service {
                 LOG.info("{} Unable to acquire the leadership, it may have been acquired by another pod", logPrefix);
             }
         } else if (this.latestLeaderInfo.isValidLeader(this.lockConfiguration.getPodName())) {
-            // We are leaders for some reason (e.g. pod restart on failure)
+            // We are leaders for some reason (for example, pod restart on failure)
             LOG.info("{} Leadership is already owned by current pod", logPrefix);
             this.currentState = State.BECOMING_LEADER;
             this.serializedExecutor.execute(this::refreshStatus);

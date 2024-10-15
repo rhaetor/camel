@@ -94,9 +94,9 @@ public class JavadocHelperTest {
                 s2);
 
         s = " * Provides methods to interact with {@link Transaction Transactions}.\n"
-            + " * E.g. sales, credits, refunds, searches, etc.\n";
+            + " * For example, sales, credits, refunds, searches, etc.\n";
         String s3 = JavadocHelper.sanitizeDescription(s, false);
-        Assertions.assertEquals("Provides methods to interact with Transactions. E.g. sales, credits, refunds, searches, etc.",
+        Assertions.assertEquals("Provides methods to interact with Transactions. For example, sales, credits, refunds, searches, etc.",
                 s3);
     }
 }

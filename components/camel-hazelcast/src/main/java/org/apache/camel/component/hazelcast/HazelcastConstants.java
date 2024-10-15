@@ -98,7 +98,7 @@ public final class HazelcastConstants {
     @Metadata(label = "consumer", description = "The port number of the instance", javaType = "Integer",
               applicableFor = SCHEME_INSTANCE)
     public static final String INSTANCE_PORT = "CamelHazelcastInstancePort";
-    @Metadata(label = "consumer", description = "The name of the cache - e.g. \"foo\"", javaType = "String", applicableFor = {
+    @Metadata(label = "consumer", description = "The name of the cache - for example, \"foo\"", javaType = "String", applicableFor = {
             SCHEME_MULTIMAP, SCHEME_REPLICATED_MAP, SCHEME_LIST, SCHEME_QUEUE, SCHEME_SET, SCHEME_MAP, SCHEME_TOPIC })
     public static final String CACHE_NAME = "CamelHazelcastCacheName";
     @Metadata(description = "The type of the cache - here multimap", javaType = "String", applicableFor = SCHEME_MULTIMAP)

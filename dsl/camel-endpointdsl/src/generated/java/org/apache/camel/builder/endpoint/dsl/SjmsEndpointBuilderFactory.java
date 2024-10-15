@@ -1037,7 +1037,7 @@ public interface SjmsEndpointBuilderFactory {
             return this;
         }
         /**
-         * Specifies the interval between recovery attempts, i.e. when a
+         * Specifies the interval between recovery attempts, that is, when a
          * connection is being refreshed, in milliseconds. The default is 5000
          * ms, that is, 5 seconds.
          * 
@@ -1055,7 +1055,7 @@ public interface SjmsEndpointBuilderFactory {
             return this;
         }
         /**
-         * Specifies the interval between recovery attempts, i.e. when a
+         * Specifies the interval between recovery attempts, that is, when a
          * connection is being refreshed, in milliseconds. The default is 5000
          * ms, that is, 5 seconds.
          * 
@@ -2230,7 +2230,7 @@ public interface SjmsEndpointBuilderFactory {
             return this;
         }
         /**
-         * Specifies the interval between recovery attempts, i.e. when a
+         * Specifies the interval between recovery attempts, that is, when a
          * connection is being refreshed, in milliseconds. The default is 5000
          * ms, that is, 5 seconds.
          * 
@@ -2248,7 +2248,7 @@ public interface SjmsEndpointBuilderFactory {
             return this;
         }
         /**
-         * Specifies the interval between recovery attempts, i.e. when a
+         * Specifies the interval between recovery attempts, that is, when a
          * connection is being refreshed, in milliseconds. The default is 5000
          * ms, that is, 5 seconds.
          * 
@@ -2929,7 +2929,7 @@ public interface SjmsEndpointBuilderFactory {
             return this;
         }
         /**
-         * Specifies the interval between recovery attempts, i.e. when a
+         * Specifies the interval between recovery attempts, that is, when a
          * connection is being refreshed, in milliseconds. The default is 5000
          * ms, that is, 5 seconds.
          * 
@@ -2947,7 +2947,7 @@ public interface SjmsEndpointBuilderFactory {
             return this;
         }
         /**
-         * Specifies the interval between recovery attempts, i.e. when a
+         * Specifies the interval between recovery attempts, that is, when a
          * connection is being refreshed, in milliseconds. The default is 5000
          * ms, that is, 5 seconds.
          * 

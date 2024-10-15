@@ -55,7 +55,7 @@ public class CamelJaxbFallbackConverterTest extends ExchangeTestSupport {
 
         String value = converter.convertTo(String.class, exchange, foo);
 
-        assertTrue(value.indexOf("<bar name=\"myName\" value=\"myValue\"/>") > 0, "Should get a right marshalled string");
+        assertTrue(value.indexOf("<bar name=\"myName\" value=\"myValue\"/>") > 0, "Should get a right marshaled string");
     }
 
     @Test
@@ -89,7 +89,7 @@ public class CamelJaxbFallbackConverterTest extends ExchangeTestSupport {
         exchange.setProperty(Exchange.CHARSET_NAME, "UTF-8");
 
         String value = converter.convertTo(String.class, exchange, person);
-        assertTrue(value.indexOf("<lastName>BAR</lastName>") > 0, "Should get a right marshalled string");
+        assertTrue(value.indexOf("<lastName>BAR</lastName>") > 0, "Should get a right marshaled string");
 
         byte[] buffers = "<Person><firstName>FOO</firstName><lastName>BAR\u0008</lastName></Person>".getBytes("UTF-8");
         InputStream is = new ByteArrayInputStream(buffers);

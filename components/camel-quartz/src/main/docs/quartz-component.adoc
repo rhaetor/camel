@@ -100,13 +100,16 @@ This option is set to true by default, unless explicitly disabled.
 
 == Clustering
 
-If you use Quartz in clustered mode, e.g., the `JobStore` is clustered.
+If you use Quartz in clustered mode, for example, the `JobStore` is clustered.
 Then the xref:quartz-component.adoc[Quartz] component will *not* pause/remove
 triggers when a node is being stopped/shutdown. This allows the trigger
 to keep running on the other nodes in the cluster.
 
-NOTE: When running in clustered node, no checking is done to ensure
+[NOTE]
+====
+When running in clustered node, no checking is done to ensure
 unique job name/group for endpoints.
+====
 
 == Message Headers
 

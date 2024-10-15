@@ -383,7 +383,7 @@ public interface Athena2EndpointBuilderFactory {
         }
         /**
          * Optional comma separated list of error types to retry the query for.
-         * Use: 'retryable' to retry all retryable failure conditions (e.g.
+         * Use: 'retryable' to retry all retryable failure conditions (for example
          * generic errors and resources exhausted), 'generic' to retry
          * 'GENERIC_INTERNAL_ERROR' failures, 'exhausted' to retry queries that
          * have exhausted resource limits, 'always' to always retry regardless
@@ -1217,7 +1217,7 @@ public interface Athena2EndpointBuilderFactory {
 
         /**
          * Optional comma separated list of error types to retry the query for.
-         * Use 'retryable' to retry all retryable failure conditions (e.g.
+         * Use 'retryable' to retry all retryable failure conditions (for example
          * generic errors and resources exhausted), 'generic' to retry
          * 'GENERIC_INTERNAL_ERROR' failures, 'exhausted' to retry queries that
          * have exhausted resource limits, 'always' to always retry regardless

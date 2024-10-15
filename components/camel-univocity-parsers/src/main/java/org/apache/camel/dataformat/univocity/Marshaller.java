@@ -29,12 +29,12 @@ import static org.apache.camel.support.ExchangeHelper.convertToMandatoryType;
 import static org.apache.camel.support.ExchangeHelper.convertToType;
 
 /**
- * This class marshalls the exchange body using an uniVocity writer. It can automatically generates headers and keep
+ * This class marshals the exchange body using an uniVocity writer. It can automatically generates headers and keep
  * their order in memory.
  *
  * @param <W> Writer class
  */
-final class Marshaller<W extends AbstractWriter<?>> {
+final class Marshaler<W extends AbstractWriter<?>> {
     private final LinkedHashSet<String> headers = new LinkedHashSet<>();
     private final boolean adaptHeaders;
 
@@ -44,7 +44,7 @@ final class Marshaller<W extends AbstractWriter<?>> {
      * @param headers      the base headers to use
      * @param adaptHeaders whether or not we can add headers on the fly depending on the data
      */
-    Marshaller(String[] headers, boolean adaptHeaders) {
+    Marshaler(String[] headers, boolean adaptHeaders) {
         if (headers != null) {
             this.headers.addAll(Arrays.asList(headers));
         }

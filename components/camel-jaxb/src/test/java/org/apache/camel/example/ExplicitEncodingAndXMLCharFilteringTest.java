@@ -24,7 +24,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Unmarshaler;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
@@ -57,10 +57,10 @@ public class ExplicitEncodingAndXMLCharFilteringTest extends CamelTestSupport {
         MockEndpoint.assertIsSatisfied(context);
 
         JAXBContext jaxbContext = JAXBContext.newInstance("org.apache.camel.example");
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        Unmarshaler unmarshaler = jaxbContext.createUnmarshaler();
         InputStream inputStream = new FileInputStream(testDirectory.resolve("output.xml").toFile());
         Reader reader = new InputStreamReader(inputStream, StandardCharsets.ISO_8859_1);
-        PurchaseOrder obj = (PurchaseOrder) unmarshaller.unmarshal(reader);
+        PurchaseOrder obj = (PurchaseOrder) unmarshaler.unmarshal(reader);
         assertEquals(expected, obj.getName());
     }
 

@@ -262,7 +262,7 @@ public final class ComponentVerifierExtension {
              */
             StandardCode ILLEGAL_PARAMETER_VALUE = new StandardErrorCode("ILLEGAL_PARAMETER_VALUE");
             /**
-             * A group of parameters is not complete in order to be valid
+             * A group of parameters is not complete to be valid
              */
             StandardCode INCOMPLETE_PARAMETER_GROUP = new StandardErrorCode("INCOMPLETE_PARAMETER_GROUP");
             /**
@@ -314,7 +314,7 @@ public final class ComponentVerifierExtension {
 
             /**
              * The exception object that has been thrown. Note that this can be a complex object and can cause large
-             * content when e.g. serialized as JSON
+             * content when for example, serialized as JSON
              */
             ExceptionAttribute EXCEPTION_INSTANCE = new ExceptionErrorAttribute("EXCEPTION_INSTANCE");
 

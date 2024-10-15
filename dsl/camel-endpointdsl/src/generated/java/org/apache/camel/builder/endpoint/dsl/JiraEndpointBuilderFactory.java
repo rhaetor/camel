@@ -910,7 +910,7 @@ public interface JiraEndpointBuilderFactory {
         }
 
         /**
-         * The name of the updated field (i.e Status).
+         * The name of the updated field (that is, Status).
          * 
          * The option is a: {@code String} type.
          * 

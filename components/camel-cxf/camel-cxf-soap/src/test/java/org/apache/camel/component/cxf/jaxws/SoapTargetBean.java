@@ -83,7 +83,7 @@ public class SoapTargetBean {
         return response;
     }
 
-    //Simulates a stream based processor or producer (e.g., file EP)
+    //Simulates a stream based processor or producer (for example, file EP)
     public SOAPMessage invokeStream(InputStream in) {
         SOAPMessage response = null;
         try {

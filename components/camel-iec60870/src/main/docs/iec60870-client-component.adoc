@@ -57,7 +57,7 @@ The final connection options will be evaluated in the following order:
 * Otherwise, the `defaultConnectionOptions` instance is copied and customized in the following steps
 * Apply `protocolOptions` if present
 * Apply `dataModuleOptions` if present
-* Apply all explicit connection parameters (e.g. `timeZone`)
+* Apply all explicit connection parameters (for example, `timeZone`)
 
 // component-configure options: START
 

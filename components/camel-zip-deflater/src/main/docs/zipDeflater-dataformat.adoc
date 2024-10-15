@@ -14,7 +14,7 @@
 
 The Zip Deflater Data Format is a message compression and
 decompression format. Messages marshaled using Zip compression can be
-unmarshalled using Zip decompression just prior to being consumed at the
+unmarshaled using Zip decompression just prior to being consumed at the
 endpoint. The compression capability is quite useful when you deal with
 large XML and Text based payloads. It facilitates more optimal use of
 network bandwidth while incurring a small cost to compress and
@@ -57,11 +57,11 @@ In this example, we unmarshal a zipped payload from an ActiveMQ queue
 called MY_QUEUE to its original format, and forward it for processing to
 the UnZippedMessageProcessor. Note that the compression Level employed
 during the marshaling should be identical to the one employed during
-unmarshalling to avoid errors.
+unmarshaling to avoid errors.
 
 [source,java]
 ----
-from("activemq:queue:MY_QUEUE").unmarshal().zipDeflater().process(new UnZippedMessageProcessor()); 
+from("activemq:queue:MY_QUEUE").unmarshal().zipDeflater().process(new UnZippedMessageProcessor());
 ----
 
 == Dependencies

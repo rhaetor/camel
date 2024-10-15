@@ -85,7 +85,7 @@ public final class XmlLineNumberParser {
      *                               example camelContext to start parsing when Camel is discovered. Multiple names can
      *                               be defined separated by comma
      * @param  forceNamespace        an optional namespace to force assign to each node. This may be needed for JAXB
-     *                               unmarshalling from XML -> POJO.
+     *                               unmarshaling from XML -> POJO.
      * @return                       the DOM model
      * @throws RuntimeCamelException is thrown if error parsing (wraps the underlying exception)
      */

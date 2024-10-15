@@ -46,7 +46,7 @@ public interface MinioConstants {
     @Metadata(description = "*Producer:* The content encoding of this object. " +
                             "*Consumer:* The *optional* Content-Encoding HTTP header specifying what content\n" +
                             "encodings have been applied to the object and what decoding mechanisms\n" +
-                            "must be applied in order to obtain the media-type referenced by the\n" +
+                            "must be applied to obtain the media-type referenced by the\n" +
                             "Content-Type field.",
               javaType = "String")
     String CONTENT_ENCODING = "CamelMinioContentEncoding";

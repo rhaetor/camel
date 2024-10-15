@@ -49,7 +49,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Marshal and unmarshal between POJOs and Comma separated values (CSV) format using Camel Bindy
+ * Marshal and unmarshalbetween POJOs and Comma separated values (CSV) format using Camel Bindy
  */
 @Dataformat("bindyCsv")
 public class BindyCsvDataFormat extends BindyAbstractDataFormat {
@@ -124,7 +124,7 @@ public class BindyCsvDataFormat extends BindyAbstractDataFormat {
 
     /**
      * check emptyStream and if CVSRecord is allow to process emptyStreams avoid IllegalArgumentException and return
-     * empty list when unmarshalling
+     * empty list when unmarshaling
      */
     private boolean checkEmptyStream(BindyCsvFactory factory, InputStream inputStream) throws IOException {
         boolean allowEmptyStream = factory.isAllowEmptyStream();

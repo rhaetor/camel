@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvUnmarshallUnicodeNextLineTest {
+public class BindySimpleCsvUnmarshalUnicodeNextLineTest {
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";
 

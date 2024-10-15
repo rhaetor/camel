@@ -305,7 +305,7 @@ defined in the XML schema (see option `schemaResourceUri`). You
 specify a list of XPATH expressions pointing to attributes of type ID
 (see option `xpathsToIdAttributes`). These attributes determine the
 elements to be signed. The elements are signed by the same key given by
-the `keyAccessor` bean. Elements with higher (i.e. deeper) hierarchy level
+the `keyAccessor` bean. Elements with higher (that is, deeper) hierarchy level
 are signed first. In the example, the element `C` is signed before the
 element `A`.
 

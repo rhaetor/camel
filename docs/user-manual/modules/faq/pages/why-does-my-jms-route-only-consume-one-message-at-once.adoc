@@ -6,7 +6,8 @@ concurrently at any point in time. To change this to make things more
 concurrent, just configure this value; either at the JMS component level
 or endpoint level.
 
-E.g.
+For example:
+
 
 [source,java]
 ----

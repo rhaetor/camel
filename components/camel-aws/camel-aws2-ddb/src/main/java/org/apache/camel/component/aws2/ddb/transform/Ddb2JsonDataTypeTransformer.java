@@ -73,7 +73,7 @@ import software.amazon.awssdk.services.dynamodb.model.ReturnValue;
  * </pre>
  *
  * The transformer will extract the objects and set respective attribute value maps as header entries. This is a
- * comfortable way to define different key and item attribute value maps e.g. on UpdateItem operation.
+ * comfortable way to define different key and item attribute value maps for example, on UpdateItem operation.
  *
  * In case key and item attribute value maps are identical you can omit the special top level properties completely. The
  * transformer will map the whole Json body as is then and use it as source for the attribute value map.

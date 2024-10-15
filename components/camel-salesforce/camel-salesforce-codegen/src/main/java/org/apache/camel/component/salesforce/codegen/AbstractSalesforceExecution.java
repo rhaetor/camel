@@ -116,7 +116,7 @@ public abstract class AbstractSalesforceExecution {
     String httpProxyUsername;
 
     /**
-     * Is HTTP Proxy secure, i.e. using secure sockets, true by default.
+     * Is HTTP Proxy secure, that is, using secure sockets, true by default.
      */
     boolean isHttpProxySecure = true;
 

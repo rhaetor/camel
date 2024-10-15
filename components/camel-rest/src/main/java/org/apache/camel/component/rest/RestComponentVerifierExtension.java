@@ -131,7 +131,7 @@ public class RestComponentVerifierExtension extends DefaultComponentVerifierExte
 
                     // restParameters now should contains rest-component related
                     // properties with "rest." prefix and all the remaining can
-                    // be used to customize the underlying component (i.e. http
+                    // be used to customize the underlying component (that is, http
                     // proxies, auth, etc)
                     Result result = verifier.verify(scope, restParameters);
 

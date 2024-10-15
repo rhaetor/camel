@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BindyCsvClassTypeAsStringTest extends CamelTestSupport {
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         String expected = "1,B2,Keira,Knightley,ISIN,XX23456789,BUY,Share,400.25,EUR,14-01-2009,11-02-2010 23:21:59\r\n";
 
         getMockEndpoint("mock:in").expectedBodiesReceived(expected);
@@ -48,7 +48,7 @@ public class BindyCsvClassTypeAsStringTest extends CamelTestSupport {
     }
 
     @Test
-    public void testUnmarshallMessage() throws Exception {
+    public void testUnmarshalMessage() throws Exception {
         String data = "1,B2,Keira,Knightley,ISIN,XX23456789,BUY,Share,400.25,EUR,14-01-2009,03-02-2010 23:21:59\r\n";
 
         getMockEndpoint("mock:out").expectedMessageCount(1);

@@ -70,7 +70,7 @@ XML::
 ====
 
 The value of the header ("whereTo") should be a comma-delimited string of endpoint URIs you wish the message to be routed to.
-The message will be routed in a xref:pipeline-eip.adoc[pipeline] fashion, i.e., one after the other.
+The message will be routed in a xref:pipeline-eip.adoc[pipeline] fashion, that is, one after the other.
 
 The Routing Slip sets a property, `Exchange.SLIP_ENDPOINT`, on the `Exchange` which contains the
 current endpoint as it advanced though the slip. This allows you to _know_ how far we have processed in the slip.

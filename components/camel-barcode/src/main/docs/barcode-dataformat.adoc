@@ -77,7 +77,7 @@ code.addToHintMap(DecodeHintType.TRY_HARDER, Boolean.true);
 
 For possible hints, please consult the xzing documentation.
 
-=== Marshalling
+=== Marshaling
 
 [source,java]
 ----------------------------
@@ -97,16 +97,16 @@ You should find inside the 'barcode_out' folder this image:
 
 image::ROOT:qr-code.png[image]
 
-=== Unmarshalling
+=== Unmarshaling
 
-The unmarshaller is generic.
-For unmarshalling, you can use any BarcodeDataFormat instance.
+The unmarshaler is generic.
+For unmarshaling, you can use any BarcodeDataFormat instance.
 If you've two instances, one for (generating) QR-Code and one for PDF417, it doesn't matter which one will be used.
 
 [source,java]
 --------------------------------------------------------------------
 from("file://barcode_in?noop=true")
-  .unmarshal(code) // for unmarshalling, the instance doesn't matter
+  .unmarshal(code) // for unmarshaling, the instance doesn't matter
   .to("mock:out");
 --------------------------------------------------------------------
 

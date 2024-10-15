@@ -780,7 +780,7 @@ public class OracleConnectorEmbeddedDebeziumConfiguration
     }
 
     /**
-     * Specify how failures during processing of events (i.e. when encountering
+     * Specify how failures during processing of events (that is, when encountering
      * a corrupted event) should be handled, including: 'fail' (the default) an
      * exception indicating the problematic event and its position is raised,
      * causing the connector to be stopped; 'warn' the problematic event and its

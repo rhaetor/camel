@@ -3679,7 +3679,7 @@ public interface AWS2S3EndpointBuilderFactory {
         /**
          * The optional Content-Encoding HTTP header specifying what content
          * encodings have been applied to the object and what decoding
-         * mechanisms must be applied in order to obtain the media-type
+         * mechanisms must be applied to obtain the media-type
          * referenced by the Content-Type field.
          * 
          * The option is a: {@code String} type.

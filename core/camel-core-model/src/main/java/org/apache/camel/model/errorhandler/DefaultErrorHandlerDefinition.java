@@ -532,7 +532,7 @@ public class DefaultErrorHandlerDefinition extends BaseErrorHandlerDefinition {
 
     /**
      * Will allow asynchronous delayed redeliveries. The route, in particular the consumer's component, must support the
-     * Asynchronous Routing Engine (e.g. seda)
+     * Asynchronous Routing Engine (for example, seda)
      *
      * @see    RedeliveryPolicy#setAsyncDelayedRedelivery(boolean)
      * @return the builder

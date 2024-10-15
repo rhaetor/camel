@@ -22,11 +22,11 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
-public class BindySimpleCsvUnmarshallDslTest extends CommonBindyTest {
+public class BindySimpleCsvUnmarshalDslTest extends CommonBindyTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
 
         String message = "01,,Albert,Einstein,ISIN,BE12345678,SELL,,1500,EUR,08-01-2009\r\n"
                          + "02,A1,,Preud'Homme,ISIN,XD12345678,BUY,,2500,USD,08-01-2009\r\n"

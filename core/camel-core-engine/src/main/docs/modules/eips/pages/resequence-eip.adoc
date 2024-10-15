@@ -339,7 +339,7 @@ and moves to the next expected number.
 === How streaming mode works?
 
 The stream-processing resequencer algorithm is based on the detection of gaps in a message stream rather than on a fixed batch size.
-Gap detection in combination with timeouts removes the constraint of having to know the number of messages of a sequence (i.e.,
+Gap detection in combination with timeouts removes the constraint of having to know the number of messages of a sequence (that is, ,
 the batch size) in advance.
 Messages must contain a unique sequence number for which a predecessor and a successor are known.
 

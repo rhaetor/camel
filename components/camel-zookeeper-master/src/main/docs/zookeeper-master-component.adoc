@@ -15,15 +15,15 @@
 *{component-header}*
 
 The **zookeeper-master:** endpoint provides a way to ensure only a single consumer in a cluster consumes from a given endpoint;
-with automatic fails over if that JVM dies.
+with automatic failover if that JVM dies.
 
-This can be beneficial if you need to consume from some legacy back end that either doesn't support concurrent
-consumption or due to commercial or stability reasons, you can only have a single connection at any point in time.
+This can be very useful if you need to consume from some legacy back end which either doesn't support concurrent
+consumption or due to commercial or stability reasons you can only have a single connection at any point in time.
 
 == Using the master endpoint
 
 Prefix any camel endpoint with **zookeeper-master:someName:** where _someName_ is a logical name and is
-used to acquire the master lock. e.g.
+used to acquire the master lock. for example
 
 [source,java]
 ----
@@ -31,7 +31,7 @@ from("zookeeper-master:cheese:jms:foo").to("activemq:wine");
 ----
 
 The above simulates the [Exclusive Consumers](http://activemq.apache.org/exclusive-consumer.html) type feature in
-ActiveMQ; but on any third party JMS provider that maybe doesn't support exclusive consumers.
+ActiveMQ; but on any third party JMS provider which maybe doesn't support exclusive consumers.
 
 
 == URI format
@@ -40,7 +40,7 @@ ActiveMQ; but on any third party JMS provider that maybe doesn't support exclusi
 zookeeper-master:name:endpoint[?options]
 ----
 
-Where endpoint is any Camel endpoint, you want to run in master/slave mode.
+Where endpoint is any Camel endpoint you want to run in master/slave mode.
 
 
 
@@ -112,7 +112,7 @@ A little example
     master.setGroupName("myGroup");
 
     // its import to set the route to not auto startup
-    // as we let the route policy start/stop the routes when it becomes a master/slave, etc.
+    // as we let the route policy start/stop the routes when it becomes a master/slave, and so on
     from("file:target/inbox?delete=true").noAutoStartup()
         // use the zookeeper master route policy in the clustered group
         // to run this route in master/slave mode

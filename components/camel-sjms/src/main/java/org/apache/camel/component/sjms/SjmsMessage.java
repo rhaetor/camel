@@ -187,7 +187,7 @@ public class SjmsMessage extends DefaultMessage {
         Object answer = null;
 
         // we will exclude using JMS-prefixed headers here to avoid strangeness with some JMS providers
-        // e.g. ActiveMQ returns the String not the Destination type for "JMSReplyTo"!
+        // For example, ActiveMQ returns the String not the Destination type for "JMSReplyTo"!
         // only look in jms message directly if we have not populated headers
         if (jmsMessage != null && !hasPopulatedHeaders() && !name.startsWith("JMS")) {
             try {

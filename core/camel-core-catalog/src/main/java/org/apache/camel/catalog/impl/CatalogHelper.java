@@ -151,7 +151,7 @@ public final class CatalogHelper {
 
     /**
      * Parses the query part of the uri (eg the parameters) manually. This method is mostly used by the CamelCatalog in
-     * order to be able to handle certain special characters markers (i.e.: "{{" and "}}"). It should not be used
+     * order to be able to handle certain special characters markers (that is:  "{{" and "}}"). It should not be used
      * anywhere else.
      * <p/>
      * The URI parameters will by default be URI encoded. However, you can define a parameter values with the syntax:

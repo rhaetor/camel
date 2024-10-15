@@ -33,7 +33,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindyDoubleQuotesCsvUnmarshallTest {
+public class BindyDoubleQuotesCsvUnmarshalTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";
@@ -48,7 +48,7 @@ public class BindyDoubleQuotesCsvUnmarshallTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
 
         expected = "\"10\",\"A9\",\"Pauline\",\"M\",\"ISIN\",\"XD12345678\",\"BUY\",\"Share\",\"2500.45\",\"USD\",\"08-01-2009\"";
 

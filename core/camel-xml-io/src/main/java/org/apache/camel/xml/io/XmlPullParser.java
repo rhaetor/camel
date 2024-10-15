@@ -357,7 +357,7 @@ public interface XmlPullParser {
      * handling. This method must be called before the first call to next or nextToken. Otherwise, an exception is
      * thrown.
      * <p>
-     * Example: call setFeature(FEATURE_PROCESS_NAMESPACES, true) in order to switch on namespace processing. The
+     * Example: call setFeature(FEATURE_PROCESS_NAMESPACES, true) to switch on namespace processing. The
      * initial settings correspond to the properties requested from the XML Pull Parser factory. If none were requested,
      * all features are deactivated by default.
      *
@@ -517,7 +517,7 @@ public interface XmlPullParser {
      * return null;
      * </pre>
      * <p>
-     * <strong>Please note:</strong> parser implementations may provide more efficient lookup, e.g. using a Hashtable.
+     * <strong>Please note:</strong> parser implementations may provide more efficient lookup, for example, using a Hashtable.
      * The 'xml' prefix is bound to "http://www.w3.org/XML/1998/namespace", as defined in the
      * <a href="http://www.w3.org/TR/REC-xml-names/#ns-using">Namespaces in XML</a> specification. Analogous, the
      * 'xmlns' prefix is resolved to <a href="http://www.w3.org/2000/xmlns/">http://www.w3.org/2000/xmlns/</a>
@@ -556,7 +556,7 @@ public interface XmlPullParser {
 
     /**
      * Returns the line number that a tag starts from (starting from 1). When the parser does not know the current line
-     * number or can not determine it, -1 is returned (e.g. for WBXML).
+     * number or can not determine it, -1 is returned (for example, for WBXML).
      *
      * @return starting line number or -1 if unknown.
      */
@@ -564,7 +564,7 @@ public interface XmlPullParser {
 
     /**
      * Returns the current line number, starting from 1. When the parser does not know the current line number or can
-     * not determine it, -1 is returned (e.g. for WBXML).
+     * not determine it, -1 is returned (for example, for WBXML).
      *
      * @return current line number or -1 if unknown.
      */
@@ -572,7 +572,7 @@ public interface XmlPullParser {
 
     /**
      * Returns the current column number, starting from 0. When the parser does not know the current column number or
-     * can not determine it, -1 is returned (e.g. for WBXML).
+     * can not determine it, -1 is returned (for example, for WBXML).
      *
      * @return current column number or -1 if unknown.
      */
@@ -660,7 +660,7 @@ public interface XmlPullParser {
     String getPrefix();
 
     /**
-     * Returns true if the current event is START_TAG and the tag is degenerated (e.g. &lt;foobar/&gt;).
+     * Returns true if the current event is START_TAG and the tag is degenerated (for example, &lt;foobar/&gt;).
      * <p>
      * <b>NOTE:</b> if the parser is not on START_TAG, an exception will be thrown.
      */

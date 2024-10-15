@@ -469,7 +469,7 @@ public class BlobOperations {
         // we try to get the size from the page range if exists
         final PageRange pageRange = configurationProxy.getPageRange(exchange);
         if (pageRange != null) {
-            return pageRange.getEnd() - pageRange.getStart() + 1; //e.g: 1023-0+1 = 1024 size
+            return pageRange.getEnd() - pageRange.getStart() + 1; //for example, 1023-0+1 = 1024 size
         }
         // now we try the page size
         final Long pageSize = configurationProxy.getPageBlobSize(exchange);

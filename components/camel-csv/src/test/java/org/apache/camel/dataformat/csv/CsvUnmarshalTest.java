@@ -35,7 +35,7 @@ import static org.apache.camel.test.junit5.TestSupport.assertIsInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * This class tests standard unmarshalling
+ * This class tests standard unmarshaling
  */
 public class CsvUnmarshalTest extends CamelTestSupport {
     private static final String CSV_SAMPLE = "A,B,C\r1,2,3\rone,two,three";

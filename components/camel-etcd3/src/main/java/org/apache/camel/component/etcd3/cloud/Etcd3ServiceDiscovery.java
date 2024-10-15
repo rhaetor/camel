@@ -50,7 +50,7 @@ abstract class Etcd3ServiceDiscovery extends DefaultServiceDiscovery {
      */
     private static final Logger LOGGER = LoggerFactory.getLogger(Etcd3ServiceDiscovery.class);
     /**
-     * The object mapper used to unmarshall the service definitions.
+     * The object mapper used to unmarshal the service definitions.
      */
     private static final ObjectMapper MAPPER = Etcd3Helper.createObjectMapper();
 
@@ -142,10 +142,10 @@ abstract class Etcd3ServiceDiscovery extends DefaultServiceDiscovery {
     }
 
     /**
-     * Unmarshalls the given value into a service definition.
+     * Unmarshals the given value into a service definition.
      *
      * @param  value the json payload representing a service definition.
-     * @return       the corresponding service definition if it could be unmarshalled, {@code null} otherwise.
+     * @return       the corresponding service definition if it could be unmarshaled, {@code null} otherwise.
      */
     private Etcd3ServiceDefinition nodeFromString(String value) {
         Etcd3ServiceDefinition server = null;

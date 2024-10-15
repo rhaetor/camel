@@ -40,7 +40,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ContextConfiguration
 @CamelSpringTest
-public class ConsumerMarshallingRouteTest extends CamelTestSupport {
+public class ConsumerMarshalingRouteTest extends CamelTestSupport {
 
     @Autowired
     private CamelEndpointMapping endpointMapping;
@@ -65,7 +65,7 @@ public class ConsumerMarshallingRouteTest extends CamelTestSupport {
 
     @Test
     public void consumeWebserviceWithPojoRequest() throws Exception {
-        consumePojoRequestStringResponseWithEnpoint("direct:webservice-marshall");
+        consumePojoRequestStringResponseWithEnpoint("direct:webservice-marshal");
     }
 
     @Test
@@ -74,7 +74,7 @@ public class ConsumerMarshallingRouteTest extends CamelTestSupport {
         QuoteRequest request = new QuoteRequest();
         request.setSymbol("GOOG");
 
-        Object result = template.requestBody("direct:webservice-marshall-unmarshall", request);
+        Object result = template.requestBody("direct:webservice-marshal-unmarshal", request);
 
         assertNotNull(result);
         assertTrue(result instanceof QuoteResponse);
@@ -87,14 +87,14 @@ public class ConsumerMarshallingRouteTest extends CamelTestSupport {
         QuoteRequest request = new QuoteRequest();
         request.setSymbol("GOOG");
 
-        Object result = template.requestBody("direct:webservice-marshall-asinonly", request);
+        Object result = template.requestBody("direct:webservice-marshal-asinonly", request);
 
         assertNull(result);
     }
 
     @Test
     public void consumeWebserviceWithPojoRequestAsIn() throws Exception {
-        consumePojoRequestStringResponseWithEnpoint("direct:webservice-marshall-asin");
+        consumePojoRequestStringResponseWithEnpoint("direct:webservice-marshal-asin");
     }
 
     private void consumePojoRequestStringResponseWithEnpoint(String endpoint) {
@@ -119,13 +119,13 @@ public class ConsumerMarshallingRouteTest extends CamelTestSupport {
                 jaxb.setContextPath("org.apache.camel.component.spring.ws.jaxb");
 
                 // request webservice
-                from("direct:webservice-marshall")
+                from("direct:webservice-marshal")
                         .marshal(jaxb)
                         .to("spring-ws:http://localhost/?soapAction=http://www.stockquotes.edu/GetQuote&webServiceTemplate=#webServiceTemplate")
                         .convertBodyTo(String.class);
 
                 // request webservice
-                from("direct:webservice-marshall-unmarshall")
+                from("direct:webservice-marshal-unmarshal")
                         .marshal(jaxb)
                         .to("spring-ws:http://localhost/?soapAction=http://www.stockquotes.edu/GetQuote&webServiceTemplate=#webServiceTemplate")
                         .unmarshal(jaxb);
@@ -135,7 +135,7 @@ public class ConsumerMarshallingRouteTest extends CamelTestSupport {
                         new StockQuoteResponseProcessor());
 
                 // request webservice
-                from("direct:webservice-marshall-asinonly")
+                from("direct:webservice-marshal-asinonly")
                         .marshal(jaxb)
                         .to("spring-ws:http://localhost/?soapAction=http://www.stockquotes.edu/GetQuoteAsInOnly&webServiceTemplate=#webServiceTemplate")
                         .convertBodyTo(String.class);
@@ -146,7 +146,7 @@ public class ConsumerMarshallingRouteTest extends CamelTestSupport {
                         .process(new StockQuoteResponseProcessor());
 
                 // request webservice
-                from("direct:webservice-marshall-asin")
+                from("direct:webservice-marshal-asin")
                         .marshal(jaxb)
                         .to("spring-ws:http://localhost/?soapAction=http://www.stockquotes.edu/GetQuoteAsIn&webServiceTemplate=#webServiceTemplate")
                         .convertBodyTo(String.class);

@@ -38,11 +38,11 @@ public class FastjsonMarshalTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(Map.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:in", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals("{\"name\":\"Camel\"}", marshalledAsString);
+        Object marshaled = template.requestBody("direct:in", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals("{\"name\":\"Camel\"}", marshaledAsString);
 
-        template.sendBody("direct:back", marshalled);
+        template.sendBody("direct:back", marshaled);
 
         mock.assertIsSatisfied();
     }
@@ -57,11 +57,11 @@ public class FastjsonMarshalTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(TestPojo.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:inPojo", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals("{\"name\":\"Camel\"}", marshalledAsString);
+        Object marshaled = template.requestBody("direct:inPojo", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals("{\"name\":\"Camel\"}", marshaledAsString);
 
-        template.sendBody("direct:backPojo", marshalled);
+        template.sendBody("direct:backPojo", marshaled);
 
         mock.assertIsSatisfied();
     }

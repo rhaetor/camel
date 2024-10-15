@@ -705,7 +705,7 @@ public interface FileEndpointBuilderFactory {
         }
         /**
          * To define a maximum messages to gather per poll. By default no
-         * maximum is set. Can be used to set a limit of e.g. 1000 to avoid when
+         * maximum is set. Can be used to set a limit of for example, 1000 to avoid when
          * starting up the server that there are thousands of files. Set a value
          * of 0 or negative to disabled it. Notice: If this option is in use
          * then the File and FTP components will limit before any sorting. For
@@ -728,7 +728,7 @@ public interface FileEndpointBuilderFactory {
         }
         /**
          * To define a maximum messages to gather per poll. By default no
-         * maximum is set. Can be used to set a limit of e.g. 1000 to avoid when
+         * maximum is set. Can be used to set a limit of for example, 1000 to avoid when
          * starting up the server that there are thousands of files. Set a value
          * of 0 or negative to disabled it. Notice: If this option is in use
          * then the File and FTP components will limit before any sorting. For
@@ -835,7 +835,7 @@ public interface FileEndpointBuilderFactory {
         }
         /**
          * Used by consumer, to only poll the files if it has exclusive
-         * read-lock on the file (i.e. the file is not in-progress or being
+         * read-lock on the file (that is, the file is not in-progress or being
          * written). Camel will wait until the file lock is granted. This option
          * provides the build in strategies: - none - No read lock is in use -
          * markerFile - Camel creates a marker file (fileName.camelLock) and
@@ -2668,7 +2668,7 @@ public interface FileEndpointBuilderFactory {
         /**
          * Perform rename operations using a copy and delete strategy. This is
          * primarily used in environments where the regular rename operation is
-         * unreliable (e.g. across different file systems or networks). This
+         * unreliable (for example, across different file systems or networks). This
          * option takes precedence over the copyAndDeleteOnRenameFail parameter
          * that will automatically fall back to the copy and delete strategy,
          * but only after additional delays.
@@ -2689,7 +2689,7 @@ public interface FileEndpointBuilderFactory {
         /**
          * Perform rename operations using a copy and delete strategy. This is
          * primarily used in environments where the regular rename operation is
-         * unreliable (e.g. across different file systems or networks). This
+         * unreliable (for example, across different file systems or networks). This
          * option takes precedence over the copyAndDeleteOnRenameFail parameter
          * that will automatically fall back to the copy and delete strategy,
          * but only after additional delays.
@@ -3493,7 +3493,7 @@ public interface FileEndpointBuilderFactory {
         /**
          * Perform rename operations using a copy and delete strategy. This is
          * primarily used in environments where the regular rename operation is
-         * unreliable (e.g. across different file systems or networks). This
+         * unreliable (for example, across different file systems or networks). This
          * option takes precedence over the copyAndDeleteOnRenameFail parameter
          * that will automatically fall back to the copy and delete strategy,
          * but only after additional delays.
@@ -3514,7 +3514,7 @@ public interface FileEndpointBuilderFactory {
         /**
          * Perform rename operations using a copy and delete strategy. This is
          * primarily used in environments where the regular rename operation is
-         * unreliable (e.g. across different file systems or networks). This
+         * unreliable (for example, across different file systems or networks). This
          * option takes precedence over the copyAndDeleteOnRenameFail parameter
          * that will automatically fall back to the copy and delete strategy,
          * but only after additional delays.
@@ -3774,7 +3774,7 @@ public interface FileEndpointBuilderFactory {
         /**
          * Perform rename operations using a copy and delete strategy. This is
          * primarily used in environments where the regular rename operation is
-         * unreliable (e.g. across different file systems or networks). This
+         * unreliable (for example, across different file systems or networks). This
          * option takes precedence over the copyAndDeleteOnRenameFail parameter
          * that will automatically fall back to the copy and delete strategy,
          * but only after additional delays.
@@ -3795,7 +3795,7 @@ public interface FileEndpointBuilderFactory {
         /**
          * Perform rename operations using a copy and delete strategy. This is
          * primarily used in environments where the regular rename operation is
-         * unreliable (e.g. across different file systems or networks). This
+         * unreliable (for example, across different file systems or networks). This
          * option takes precedence over the copyAndDeleteOnRenameFail parameter
          * that will automatically fall back to the copy and delete strategy,
          * but only after additional delays.

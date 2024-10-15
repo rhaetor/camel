@@ -66,7 +66,7 @@ public final class GoogleCloudStorageConstants {
     @Metadata(label = "consumer", description = "The Custom-Time metadata is a user-specified date and time represented " +
                                                 "in the RFC 3339 format YYYY-MM-DD'T'HH:MM:SS.SS'Z' or YYYY-MM-DD'T'HH:MM:SS'Z' when milliseconds are zero. "
                                                 +
-                                                "This metadata is typically set in order to use the DaysSinceCustomTime condition in Object Lifecycle Management.",
+                                                "This metadata is typically set to use the DaysSinceCustomTime condition in Object Lifecycle Management.",
               javaType = "Long")
     public static final String METADATA_CUSTOM_TIME = "CamelGoogleCloudStorageCustomTime";
     @Metadata(label = "consumer", description = "The CRC32c of the object", javaType = "String")

@@ -132,7 +132,7 @@ header (see below), this allows selecting the meter depending on exchange data.
 
 The optional `tags` URI parameter is a comma-separated string, consisting of `key=value` expressions. Both
 `key` and `value` are strings that are also evaluated as `Simple` expression.
-E.g., the URI parameter `tags=X=${header.Y}` would assign the current value of header `Y` to the key `X`.
+That is, the URI parameter `tags=X=${header.Y}` would assign the current value of header `Y` to the key `X`.
 
 
 === Headers
@@ -174,7 +174,7 @@ micrometer:counter:name[?options]
 |decrement |- |Double value to subtract from the counter
 |=====================================================
 
-If neither `increment` or `decrement` is defined then value of the counter will
+If neither `increment` or `decrement` is defined, the value of the counter will
 be incremented by one. If `increment` and `decrement` are both defined
 only increment operation is called.
 
@@ -194,7 +194,7 @@ from("direct:in")
     .to("direct:out");
 ----
 
-Both `increment` and `decrement` values are evaluated as `Simple` expressions with a Double result, e.g.,
+Both `increment` and `decrement` values are evaluated as `Simple` expressions with a Double result, for example:
 if header `X` contains a value that evaluates to 3.0, the `simple.counter` counter is decremented by 3.0:
 
 [source,java]
@@ -271,7 +271,7 @@ from("direct:in")
 
 ----
 
-`value` is evaluated as `Simple` expressions with a Double result, e.g.,
+`value` is evaluated as `Simple` expressions with a Double result, for example:
 if header `X` contains a value that evaluates to 3.0, this value is registered with the `simple.histogram`:
 
 [source,java]
@@ -474,7 +474,7 @@ If JMX is enabled in the CamelContext, the MBean is registered in the `type=serv
 There is a `MicrometerRouteEventNotifier` (counting added and running routes) and a
 `MicrometerExchangeEventNotifier` (timing exchanges from their creation to their completion).
 
-EventNotifiers can be added to the CamelContext, e.g.:
+EventNotifiers can be added to the CamelContext, for example:
 
 [source,java]
 ----

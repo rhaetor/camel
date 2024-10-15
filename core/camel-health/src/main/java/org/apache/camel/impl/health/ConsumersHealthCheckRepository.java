@@ -76,7 +76,7 @@ public class ConsumersHealthCheckRepository extends ServiceSupport
     public Stream<HealthCheck> stream() {
         // This is not really efficient as getRoutes() creates a copy of the routes
         // array for each invocation. It would be nice to have more stream oriented
-        // operation on CamelContext i.e.
+        // operation on CamelContext that is,
         //
         // interface CamelContext {
         //

@@ -25,8 +25,8 @@ import java.lang.annotation.RetentionPolicy;
  * be described in the model, we will use this annotation. The key pair separator (mandatory) defines the separator
  * between the key and the value The pair separator (mandatory) allows to define which character separate the pairs from
  * each other The name is optional and could be used in the future to bind a property which a different name The type
- * (optional) allow to define the type of the message (e.g. FIX, EMX, ...) The version (optional) defines the version of
- * the message (e.g. 4.1, ...) The crlf (optional) is used to add a new line after a record. By default, the value is
+ * (optional) allow to define the type of the message (for example, FIX, EMX, ...) The version (optional) defines the version of
+ * the message (for example, 4.1, ...) The crlf (optional) is used to add a new line after a record. By default, the value is
  * WINDOWS The isOrdered (optional) boolean is used to ordered the message generated in output (line feed and carriage
  * return on windows
  */
@@ -57,12 +57,12 @@ public @interface Message {
     String keyValuePairSeparator();
 
     /**
-     * type is used to define the type of the message (e.g. FIX, EMX, ...) (optional)
+     * type is used to define the type of the message (for example, FIX, EMX, ...) (optional)
      */
     String type() default "FIX";
 
     /**
-     * version defines the version of the message (e.g. 4.1, ...) (optional)
+     * version defines the version of the message (for example, 4.1, ...) (optional)
      */
     String version() default "4.1";
 

@@ -27,6 +27,7 @@ Control Bus uses the same messaging mechanism used by the application
 data, but uses separate channels to transmit data that is relevant to
 the management of components involved in the message flow.
 
+
 In Camel, you can manage and monitor the application:
 
 * using JMX.

@@ -39,8 +39,8 @@ public class SpringParquetAvroDataFormatRouteTest extends CamelSpringTestSupport
         MockEndpoint mock = getMockEndpoint("mock:reverse");
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:marshal", in);
-        template.sendBody("direct:unmarshal", marshalled);
+        Object marshaled = template.requestBody("direct:marshal", in);
+        template.sendBody("direct:unmarshal", marshaled);
         mock.assertIsSatisfied();
         List<Exchange> receivedExchanges = mock.getReceivedExchanges();
         assertArrayEquals(in.toArray(), receivedExchanges.get(0).getIn().getBody(List.class).toArray());

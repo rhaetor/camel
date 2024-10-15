@@ -20,6 +20,10 @@ SFTP protocols.
 When consuming from remote FTP server, make sure you read the section <<FTP-DefaultWhenConsumingFiles,Default when consuming files>>
 further below for details related to consuming files.
 
+Absolute path is *not* supported. Camel translates absolute path to relative by trimming all
+leading slashes from `directoryname`. There'll be WARN message printed
+in the logs.
+
 Maven users will need to add the following dependency to their `pom.xml`
 for this component:
 
@@ -150,6 +154,17 @@ url.
 from("ftp://foo@myserver?password=secret&ftpClientConfig=#myConfig").to("bean:foo");
 ----
 
+
+== Examples
+
+----
+ftp://someone@someftpserver.com/public/upload/images/holiday2008?password=secret&binary=true
+
+ftp://someoneelse@someotherftpserver.co.uk:12049/reports/2008/password=secret&binary=false
+
+ftp://publicftpserver.com/download
+----
+
 == Concurrency
 
 The FTP consumer (with the same endpoint) does not support concurrency
@@ -173,7 +188,7 @@ default move files to a `.camel` sub directory. The reason Camel does
 *not* do this by default for the FTP consumer is that it may lack
 permissions by default to be able to move or delete files.
 
-=== limitations
+=== Limitations
 
 The option `readLock` can be used to force Camel *not* to consume files
 that are currently in the progress of being written. However, this option
@@ -246,8 +261,8 @@ As Camel knows it's a local work file, it can optimize and use a rename instead 
 == Stepwise changing directories
 
 Camel FTP can operate in two modes in terms of
-traversing directories when consuming files (e.g., downloading) or
-producing files (e.g., uploading)
+traversing directories when consuming files (for example, downloading) or
+producing files (for example, uploading)
 
 * stepwise
 * not stepwise

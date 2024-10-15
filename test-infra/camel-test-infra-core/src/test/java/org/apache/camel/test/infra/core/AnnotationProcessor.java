@@ -42,7 +42,7 @@ public interface AnnotationProcessor {
 
     /**
      * Evaluates the methods in the test instance, invoking them if the given annotation is present. This can be used to
-     * invoke methods annotated with the fixture annotations (i.e., RouteFixture, etc).
+     * invoke methods annotated with the fixture annotations (that is, RouteFixture, etc).
      *
      * @param extensionContext JUnit's extension context
      * @param annotationClass  the annotation class that may indicate that a method should be invoked
@@ -54,7 +54,7 @@ public interface AnnotationProcessor {
             CamelContext context);
 
     /**
-     * Evaluates the fields in the test instance, handling them in accordance with the given annotation (i.e., binding
+     * Evaluates the fields in the test instance, handling them in accordance with the given annotation (that is, binding
      * to the registry, adding endpoints, etc)
      *
      * @param extensionContext JUnit's extension context

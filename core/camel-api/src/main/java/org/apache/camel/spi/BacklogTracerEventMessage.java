@@ -102,7 +102,7 @@ public interface BacklogTracerEventMessage {
     boolean isDone();
 
     /**
-     * Did the message fail during processing (i.e. was an exception thrown)
+     * Did the message fail during processing (that is, was an exception thrown)
      */
     boolean isFailed();
 

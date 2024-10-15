@@ -53,7 +53,7 @@ public class ForegroundTask implements BlockingTask {
         }
 
         /**
-         * Sets an iteration budget for the task (i.e.: the task will not run more than the given number of iterations)
+         * Sets an iteration budget for the task (that is:  the task will not run more than the given number of iterations)
          *
          * @param  budget the budget
          * @return        an instance of this builder

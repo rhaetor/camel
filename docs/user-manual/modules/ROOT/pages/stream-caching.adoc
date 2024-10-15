@@ -1,6 +1,6 @@
 = Stream caching
 
-While stream types (like `StreamSource`, `InputStream` and `Reader`) are commonly used in messaging for performance reasons, they also have an important drawback: they can only be read once. In order to be able to work with message content multiple times, the stream needs to be cached.
+While stream types (like `StreamSource`, `InputStream` and `Reader`) are commonly used in messaging for performance reasons, they also have an important drawback: they can only be read once. To be able to work with message content multiple times, the stream needs to be cached.
 
 Streams are cached in memory. However, for large stream messages, you can set `spoolEnabled=true`
 and then large message (over 128 KB) will be cached in a temporary file instead.
@@ -49,7 +49,7 @@ The strategy has the following options:
 | Base directory where temporary files for spooled streams should be stored. This option supports naming patterns as documented below.
 
 | spoolCipher | null
-| If set, the temporary files are encrypted using the specified cipher transformation (i.e., a valid stream or 8-bit cipher name such as "RC4", "AES/CTR/NoPadding". An empty name "" is treated as null).
+| If set, the temporary files are encrypted using the specified cipher transformation (that is, a valid stream or 8-bit cipher name such as "RC4", "AES/CTR/NoPadding". An empty name "" is treated as null).
 
 | spoolThreshold | 128 KB
 | Size in bytes when the stream should be spooled to disk instead of keeping in memory. Use a value of 0 or negative to disable it all together so streams is always kept in memory regardless of their size.
@@ -78,7 +78,7 @@ The strategy has the following options:
 The following patterns is supported:
 
 * `\#uuid#` = a random UUID
-* `\#camelId#` = the CamelContext id (e.g. the name)
+* `\#camelId#` = the CamelContext id (for example, the name)
 * `\#name#` = same as `\#camelId#`
 * `\#counter#` = an incrementing counter
 * `\#bundleId#` = the OSGi bundle id (only for OSGi environments)
@@ -162,9 +162,9 @@ For example with:
 <streamCaching id="myCacheConfig" spoolEnabled="true" spoolDirectory="/tmp/cachedir" spoolUsedHeapMemoryThreshold="70"/>
 ----
 
-Then notice that as `spoolThreshold` is default enabled with 128 KB, then we have both thresholds in use (`spoolThreshold` and `spoolUsedHeapMemoryThreshold`). And in this example then we only spool to disk if payload is > 128 KB and that used heap memory is > 70%. The reason is that we have the option `anySpoolRules` as default `false`. That means both rules must be `true` (e.g. AND).
+Then notice that as `spoolThreshold` is default enabled with 128 KB, then we have both thresholds in use (`spoolThreshold` and `spoolUsedHeapMemoryThreshold`). And in this example then we only spool to disk if payload is > 128 KB and that used heap memory is > 70%. The reason is that we have the option `anySpoolRules` as default `false`. That means both rules must be `true` (for example, AND).
 
-If we want to spool to disk if either of the rules (e.g. OR), then we can do:
+If we want to spool to disk if either of the rules (for example, OR), then we can do:
 
 [source,xml]
 ----

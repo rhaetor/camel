@@ -32,7 +32,7 @@ Where `directoryName` represents the underlying file directory.
 Camel supports only endpoints configured with a starting directory. So
 the `directoryName` *must be* a directory.
  If you want to consume a single file only, you can use the `fileName`
-option, e.g., by setting `fileName=thefilename`.
+option, for example, by setting `fileName=thefilename`.
  Also, the starting directory must not contain dynamic expressions with
 `${ }` placeholders. Again use the `fileName` option to specify the
 dynamic part of the filename.
@@ -116,7 +116,7 @@ The `move` and the `preMove` options are considered as a directory name.
 Though, if you use an expression such as xref:languages:file-language.adoc[File Language],
 or xref:languages:simple-language.adoc[Simple], then the result of the expression
 evaluation is the file name to be used.
-E.g., if you set:
+For example,  if you set:
 
 ----
 move=../backup/copy-of-${file:name}
@@ -473,11 +473,57 @@ Will, for example, create a file named `foo.done` if the target file was
 
 ====
 
+== Samples
+
+=== Read from a directory and write to another directory
+
+[source,java]
+----
+from("file://inputdir/?delete=true").to("file://outputdir")
+----
+
+=== Read from a directory and write to another directory using a dynamic name
+
+[source,java]
+----
+from("file://inputdir/?delete=true").to("file://outputdir?fileName=copy-of-${file:name}")
+----
+
+Listen on a directory and create a message for each file dropped there.
+Copy the contents to the `outputdir` and delete the file in the
+`inputdir`.
+
+=== Reading recursively from a directory and writing to another
+
+[source,java]
+----
+from("file://inputdir/?recursive=true&delete=true").to("file://outputdir")
+----
+
+Listen on a directory and create a message for each file dropped there.
+Copy the contents to the `outputdir` and delete the file in the
+`inputdir`. Will scan recursively into sub-directories. Will lay out the
+files in the same directory structure in the `outputdir` as the
+`inputdir`, including any sub-directories.
+
+[source]
+----
+inputdir/foo.txt
+inputdir/sub/bar.txt
+----
+
+Will result in the following output layout:
+
+----
+outputdir/foo.txt
+outputdir/sub/bar.txt
+----
+
 [[File2-Usingflatten]]
 == Using flatten
 
 If you want to store the files in the `outputdir` directory in the same
-directory, disregarding the source directory layout (e.g., to flatten out
+directory, disregarding the source directory layout (for example, to flatten out
 the path), you add the `flatten=true` option on the file producer
 side:
 
@@ -495,7 +541,7 @@ outputdir/bar.txt
 
 == Writing to files
 
-Camel is also able to write files, i.e., produce files.
+Camel is also able to write files, that is, produce files.
 In the sample below, we receive some reports on the SEDA queue that we process
 before they are being written to a directory.
 

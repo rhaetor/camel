@@ -79,7 +79,7 @@ public class StitchConfiguration implements Cloneable {
     }
 
     /**
-     * Stitch account region, e.g: europe
+     * Stitch account region, for example, europe
      */
     public StitchRegion getRegion() {
         return region;

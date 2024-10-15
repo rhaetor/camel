@@ -14,8 +14,8 @@
 The PGP Data Format integrates the Java
 Cryptographic Extension into Camel, allowing simple and flexible
 encryption and decryption of messages using Camel's familiar marshal
-and unmarshal formatting mechanism. It assumes marshalling to mean
-encryption to ciphertext and unmarshalling to mean decryption back to
+and unmarshal formatting mechanism. It assumes marshaling to mean
+encryption to ciphertext and unmarshaling to mean decryption back to
 the original plaintext. This data format implements only symmetric
 (shared-key) encryption and decryption.
 
@@ -116,10 +116,8 @@ Spring XML::
 
 === Working with the previous example
 
-* A public keyring file which contains the public keys used to encrypt
-the data
-* A private keyring file which contains the keys used to decrypt the
-data
+* A public keyring file which contains the public keys used to encrypt the data
+* A private keyring file which contains the keys used to decrypt the data
 * The keyring password
 
 === Managing your keyring
@@ -209,7 +207,7 @@ public key which was used to encrypt the data. This Key ID can be used
 to locate the private key in the secret keyring to decrypt the data. The
 same mechanism is also used to locate the public key for verifying a
 signature. Therefore, you no longer must specify User IDs for the
-unmarshalling.
+unmarshaling.
 
 == Restricting the Signer Identities during PGP Signature Verification
 
@@ -274,7 +272,7 @@ from("direct:start")
         ...      
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-== Support for Sub-Keys and Key Flags in PGP Data Format Marshaller
+== Support for Sub-Keys and Key Flags in PGP Data Format Marshaler
 
 An https://tools.ietf.org/html/rfc4880#section-12.1[OpenPGP V4 key] can
 have a primary key and sub-keys. The usage of the keys is indicated by
@@ -284,7 +282,7 @@ primary key shall only be used for certifying other keys (Key Flag
 0x01), the first sub-key  shall only be used for signing (Key Flag
 0x02), and the second sub-key shall only be used for encryption (Key
 Flag 0x04 or 0x08). The PGP Data Format marshaler takes into account
-these Key Flags of the primary key and sub-keys in order to determine
+these Key Flags of the primary key and sub-keys to determine
 the right key for signing and encryption. This is necessary because the
 primary key and its sub-keys have the same User IDs.
 

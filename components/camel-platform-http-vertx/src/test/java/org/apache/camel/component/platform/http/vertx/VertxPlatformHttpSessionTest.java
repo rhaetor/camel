@@ -186,14 +186,14 @@ public class VertxPlatformHttpSessionTest {
             // initial call establishes session
             ProducerTemplate template = context.createProducerTemplate();
             Exchange exchange = template.request("direct:session", null);
-            // 'set-cookie' header for new session, e.g. 'vertx-web.session=735944d69685aaf63421fb5b3c116b84; Path=/; SameSite=Strict'
+            // 'set-cookie' header for new session, for example, 'vertx-web.session=735944d69685aaf63421fb5b3c116b84; Path=/; SameSite=Strict'
             String sessionCookie = getHeader("set-cookie", exchange);
             assertNotNull(getHeader("set-cookie", exchange));
             assertEquals(getHeader("hitcount", exchange), "1");
 
             // subsequent call reuses session
             exchange = template.request("direct:session", null);
-            // 'cookie' header for existing session, e.g. 'vertx-web.session=735944d69685aaf63421fb5b3c116b84'
+            // 'cookie' header for existing session, for example, 'vertx-web.session=735944d69685aaf63421fb5b3c116b84'
             String cookieHeader = getHeader("cookie", exchange);
             assertEquals(cookieHeader, sessionCookie.substring(0, sessionCookie.indexOf(';')));
             assertNull(getHeader("set-cookie", exchange));

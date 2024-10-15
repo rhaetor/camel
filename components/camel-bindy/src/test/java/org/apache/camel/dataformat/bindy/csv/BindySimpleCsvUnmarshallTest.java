@@ -38,7 +38,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvUnmarshallTest {
+public class BindySimpleCsvUnmarshalTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_MOCK_ERROR = "mock:error";
@@ -57,7 +57,7 @@ public class BindySimpleCsvUnmarshallTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
 
         expected = "01,,Albert,Cartier,ISIN,BE12345678,SELL,,1500,EUR,08-01-2009\r\n"
                    + "02,A1,,Preud'Homme,ISIN,XD12345678,BUY,,2500,USD,08-01-2009\r\n"
@@ -113,7 +113,7 @@ public class BindySimpleCsvUnmarshallTest {
     @SuppressWarnings("unchecked")
     @Test
     @DirtiesContext
-    public void testUnMarshallMessageWithMissingFields() throws Exception {
+    public void testUnMarshalMessageWithMissingFields() throws Exception {
 
         // We suppress the firstName field of the first record
         expected = "01,,,Cartier,ISIN,BE12345678,SELL,,1500,EUR\r\n"

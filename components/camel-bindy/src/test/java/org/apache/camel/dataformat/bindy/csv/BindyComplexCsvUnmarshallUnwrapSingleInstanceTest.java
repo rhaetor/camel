@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindyComplexCsvUnmarshallUnwrapSingleInstanceTest {
+public class BindyComplexCsvUnmarshalUnwrapSingleInstanceTest {
 
     private static final Class<?> TYPE = org.apache.camel.dataformat.bindy.model.complex.twoclassesandonelink.Order.class;
 
@@ -45,7 +45,7 @@ public class BindyComplexCsvUnmarshallUnwrapSingleInstanceTest {
     private MockEndpoint resultEndpoint;
 
     @Test
-    public void testUnMarshallSingleMessage() throws Exception {
+    public void testUnMarshalSingleMessage() throws Exception {
         resultEndpoint.expectedMessageCount(1);
         // should still be a list as we turned off unwrap
         resultEndpoint.message(0).body().isInstanceOf(List.class);

@@ -237,7 +237,7 @@ public class KubernetesClusterService extends AbstractCamelClusterService<Kubern
     }
 
     /**
-     * A jitter factor to apply in order to prevent all pods to call Kubernetes APIs in the same instant.
+     * A jitter factor to apply to prevent all pods to call Kubernetes APIs in the same instant.
      */
     public void setJitterFactor(double jitterFactor) {
         lockConfiguration.setJitterFactor(jitterFactor);

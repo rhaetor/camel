@@ -101,7 +101,7 @@ public abstract class MessageSupport implements Message, CamelContextAware, Data
                 return answer;
             }
 
-            // fallback and try the message itself (e.g. used in camel-http)
+            // fallback and try the message itself (for example, used in camel-http)
             answer = typeConverter.tryConvertTo(type, e, this);
             if (answer != null) {
                 return answer;

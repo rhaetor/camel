@@ -144,7 +144,7 @@ In addition to the parameters above, the {name} API can also use any of the <<#_
 
 Any of the parameters can be provided in either the endpoint URI, or dynamically in a message header.
 The message header name must be of the format `Camel{pascalcasescheme}.parameter`.
-The `inBody` parameter overrides message header, i.e., the endpoint parameter `inBody=myParameterNameHere`
+The `inBody` parameter overrides message header, that is, the endpoint parameter `inBody=myParameterNameHere`
 would override a `Camel{pascalcasescheme}.myParameterNameHere` header.
 
 %endif::[]

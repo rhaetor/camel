@@ -530,7 +530,7 @@ public class QuartzComponent extends DefaultComponent implements ExtendedStartup
         if (scheduler == null) {
             createAndInitScheduler();
         } else {
-            // in case custom scheduler was injected (i.e. created elsewhere), we may need to add
+            // in case custom scheduler was injected (that is, created elsewhere), we may need to add
             // current camel context to quartz context so jobs have access
             storeCamelContextInQuartzContext();
         }

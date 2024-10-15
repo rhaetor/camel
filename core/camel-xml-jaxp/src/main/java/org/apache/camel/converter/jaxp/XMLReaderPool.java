@@ -54,7 +54,7 @@ public class XMLReaderPool {
 
     /**
      * Returns an XMLReader that can be used exactly once. Calling one of the {@code parse} methods returns the reader
-     * to the pool. This is useful for e.g. SAXSource which bundles an XMLReader with an InputSource that can also be
+     * to the pool. This is useful for for example, SAXSource which bundles an XMLReader with an InputSource that can also be
      * consumed just once.
      *
      * @return                              the XMLReader

@@ -52,10 +52,10 @@ public interface DebeziumPostgresComponentBuilderFactory {
                 ComponentBuilder<DebeziumPostgresComponent> {
         /**
          * Additional properties for debezium components in case they can't be
-         * set directly on the camel configurations (e.g: setting Kafka Connect
+         * set directly on the camel configurations (for example, setting Kafka Connect
          * properties needed by Debezium engine, for example setting
          * KafkaOffsetBackingStore), the properties have to be prefixed with
-         * additionalProperties.. E.g:
+         * additionalProperties.. For example:
          * additionalProperties.transactional.id=12345&amp;amp;additionalProperties.schema.registry.url=http://localhost:8811/avro.
          * 
          * The option is a: &lt;code&gt;java.util.Map&amp;lt;java.lang.String,
@@ -690,7 +690,7 @@ public interface DebeziumPostgresComponentBuilderFactory {
             return this;
         }
         /**
-         * Specify how failures during processing of events (i.e. when
+         * Specify how failures during processing of events (that is, when
          * encountering a corrupted event) should be handled, including: 'fail'
          * (the default) an exception indicating the problematic event and its
          * position is raised, causing the connector to be stopped; 'warn' the
@@ -1110,7 +1110,7 @@ public interface DebeziumPostgresComponentBuilderFactory {
          * exists, the connector will create a new publication for all those
          * tables matchingthe current filter configuration (see table/database
          * include/exclude list properties). If the publication already exists,
-         * it will be used. i.e CREATE PUBLICATION FOR TABLE.
+         * it will be used. that is, CREATE PUBLICATION FOR TABLE.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
          * 
@@ -1441,7 +1441,8 @@ public interface DebeziumPostgresComponentBuilderFactory {
         }
         /**
          * Any optional parameters used by logical decoding plugin. Semi-colon
-         * separated. E.g.
+         * separated. For example:
+
          * 'add-tables=public.table,public.table2;include-lsn=true'.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

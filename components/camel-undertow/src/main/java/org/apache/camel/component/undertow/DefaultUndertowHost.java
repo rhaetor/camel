@@ -105,7 +105,7 @@ public class DefaultUndertowHost implements UndertowHost {
             try {
                 // If there is an exception while starting up, Undertow wraps it
                 // as RuntimeException which leaves the consumer in an inconsistent
-                // state as a subsequent start if the route (i.e. manually) won't
+                // state as a subsequent start if the route (that is, manually) won't
                 // start the Undertow instance as undertow is not null.
                 undertow.start();
             } catch (RuntimeException e) {

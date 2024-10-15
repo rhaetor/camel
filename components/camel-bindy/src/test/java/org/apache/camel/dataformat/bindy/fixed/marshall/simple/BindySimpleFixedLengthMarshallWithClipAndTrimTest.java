@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.dataformat.bindy.fixed.marshall.simple;
+package org.apache.camel.dataformat.bindy.fixed.marshal.simple;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ import org.apache.camel.dataformat.bindy.fixed.BindyFixedLengthDataFormat;
 import org.apache.camel.test.junit5.CamelTestSupport;
 import org.junit.jupiter.api.Test;
 
-public class BindySimpleFixedLengthMarshallWithClipAndTrimTest extends CamelTestSupport {
+public class BindySimpleFixedLengthMarshalWithClipAndTrimTest extends CamelTestSupport {
 
     private List<Map<String, Object>> models = new ArrayList<>();
 
@@ -53,7 +53,7 @@ public class BindySimpleFixedLengthMarshallWithClipAndTrimTest extends CamelTest
     }
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         String expected = "10A9Madame deM    ISINXD12345678BUYShare000002500.45USD01-08-2009\r\n";
         getMockEndpoint("mock:result").expectedBodiesReceived(expected);
 

@@ -89,7 +89,7 @@ public class VertxPlatformHttpsProxyTest {
             // URI of proxy created with platform HTTP component
             final var proxyURI = "http://localhost:" + RestAssured.port;
 
-            // In order to make sure that RestAssured don't perform a CONNECT instead of a GET, we do trick with http
+            // To make sure that RestAssured don't perform a CONNECT instead of a GET, we do trick with http
             // if we want to do test manually from a terminal we use the real HTTPS address
             final var originURI = "http://localhost:" + port;
 

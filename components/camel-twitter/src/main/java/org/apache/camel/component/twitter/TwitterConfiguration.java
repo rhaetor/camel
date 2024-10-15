@@ -72,7 +72,7 @@ public class TwitterConfiguration {
 
     /**
      * Singleton, on demand instances of Twitter4J's Twitter. This should not be created by an endpoint's doStart(),
-     * etc., since instances of twitter can be supplied by the route itself.
+     * and so on, since instances of twitter can be supplied by the route itself.
      */
     private Twitter twitter;
 

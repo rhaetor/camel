@@ -57,7 +57,7 @@ public class DataSetConsumerTest extends ContextTestSupport {
         });
 
         assertEquals(-1, getMockEndpoint(dataSetUri).getExpectedCount(),
-                "expectedMessageCount should be unset(i.e. -1) for a consumer-only endpoint");
+                "expectedMessageCount should be unset(that is, -1) for a consumer-only endpoint");
 
         MockEndpoint result = getMockEndpoint(resultUri);
         result.expectedMessageCount((int) dataSet.getSize());

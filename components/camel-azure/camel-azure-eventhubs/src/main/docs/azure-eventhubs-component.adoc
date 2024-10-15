@@ -78,10 +78,10 @@ as these data already included in the `connectionString`, therefore is the simpl
 
 *TOKEN_CREDENTIAL*:
 
-- Provide an implementation of `com.azure.core.credential.TokenCredential` into the Camel's Registry, e.g., using the `com.azure.identity.DefaultAzureCredentialBuilder().build();` API.
+- Provide an implementation of `com.azure.core.credential.TokenCredential` into the Camel's Registry, for example, using the `com.azure.identity.DefaultAzureCredentialBuilder().build();` API.
 See the documentation https://docs.microsoft.com/en-us/azure/active-directory/authentication/overview-authentication[here about Azure-AD authentication].
 
-AZURE_IDENTITY:
+*AZURE_IDENTITY:*
 - This will use `com.azure.identity.DefaultAzureCredentialBuilder().build();` instance. This will follow the Default Azure Credential Chain.
 See the documentation https://docs.microsoft.com/en-us/azure/active-directory/authentication/overview-authentication[here about Azure-AD authentication].
 
@@ -113,7 +113,7 @@ This allows camel route to consume and produce events asynchronously without blo
 
 == Usage
 
-For example, to consume event from EventHub, use the following snippet:
+For example, to consume events from EventHub, use the following snippet:
 
 [source,java]
 --------------------------------------------------------------------------------
@@ -161,7 +161,7 @@ from("direct:start")
 .to("azure-eventhubs:?connectionString=RAW({{connectionString}})"
 ----
 
-Also, the component supports as well *aggregation* of messages by sending events as *iterable* of either Exchanges/Messages or normal data (e.g.: list of Strings). For example:
+Also, the component supports *aggregation* of messages by sending events as *iterable* of either Exchanges/Messages or normal data (for example, list of Strings). For example:
 
 [source,java]
 ----

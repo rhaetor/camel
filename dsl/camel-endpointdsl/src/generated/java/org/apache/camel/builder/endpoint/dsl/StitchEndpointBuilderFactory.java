@@ -60,7 +60,7 @@ public interface StitchEndpointBuilderFactory {
             return this;
         }
         /**
-         * Stitch account region, e.g: europe.
+         * Stitch account region, for example, europe.
          * 
          * The option is a:
          * &lt;code&gt;org.apache.camel.component.stitch.client.StitchRegion&lt;/code&gt; type.
@@ -77,7 +77,7 @@ public interface StitchEndpointBuilderFactory {
             return this;
         }
         /**
-         * Stitch account region, e.g: europe.
+         * Stitch account region, for example, europe.
          * 
          * The option will be converted to a
          * &lt;code&gt;org.apache.camel.component.stitch.client.StitchRegion&lt;/code&gt; type.

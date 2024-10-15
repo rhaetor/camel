@@ -96,9 +96,9 @@ public abstract class EmbeddedDebeziumConfiguration implements Cloneable {
     // Additional properties
     @UriParam(label = "common", prefix = "additionalProperties.", multiValue = true,
               description = "Additional properties for debezium components in case they can't be set directly "
-                            + "on the camel configurations (e.g: setting Kafka Connect properties needed by Debezium engine, "
+                            + "on the camel configurations (for example, setting Kafka Connect properties needed by Debezium engine, "
                             + "for example setting KafkaOffsetBackingStore), the properties have to be prefixed with "
-                            + "`additionalProperties.`. E.g: `additionalProperties.transactional.id=12345&additionalProperties.schema.registry.url=http://localhost:8811/avro`")
+                            + "`additionalProperties.`. for example, `additionalProperties.transactional.id=12345&additionalProperties.schema.registry.url=http://localhost:8811/avro`")
     private Map<String, Object> additionalProperties = new HashMap<>();
 
     protected EmbeddedDebeziumConfiguration() {
@@ -147,7 +147,7 @@ public abstract class EmbeddedDebeziumConfiguration implements Cloneable {
     public abstract String getConnectorDatabaseType();
 
     /**
-     * Creates a Debezium configuration of type {@link Configuration} in order to be used in the engine.
+     * Creates a Debezium configuration of type {@link Configuration} to be used in the engine.
      *
      * @return {@link Configuration}
      */
@@ -391,8 +391,8 @@ public abstract class EmbeddedDebeziumConfiguration implements Cloneable {
 
     /**
      * Sets additional properties for debezium components in case they can't be set directly on the camel configurations
-     * (e.g: setting Kafka Connect properties needed by Debezium engine, for example setting KafkaOffsetBackingStore),
-     * the properties have to be prefixed with `additionalProperties.`. E.g:
+     * (for example, setting Kafka Connect properties needed by Debezium engine, for example setting KafkaOffsetBackingStore),
+     * the properties have to be prefixed with `additionalProperties.`. For example:
      * `additionalProperties.transactional.id=12345&additionalProperties.schema.registry.url=http://localhost:8811/avro`
      */
     public void setAdditionalProperties(Map<String, Object> additionalProperties) {

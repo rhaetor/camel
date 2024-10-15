@@ -58,10 +58,10 @@ import org.slf4j.LoggerFactory;
  * <p/>
  * This class uses a {@link org.apache.camel.spi.RoutePolicy} as well as a {@link org.apache.camel.spi.EventNotifier}
  * internally to manage the creation and termination of AWS XRay {@link Segment Segments} and {@link Subsegment
- * Subsegments} once an exchange was created, forwarded or closed in order to allow monitoring the lifetime metrics of
+ * Subsegments} once an exchange was created, forwarded or closed to allow monitoring the lifetime metrics of
  * the exchange.
  * <p/>
- * A {@link InterceptStrategy} is used in order to track invocations and durations of EIP patterns used in processed
+ * A {@link InterceptStrategy} is used to track invocations and durations of EIP patterns used in processed
  * routes. If no strategy is passed while configuration via {@link #setTracingStrategy(InterceptStrategy)}, a
  * {@link NoopTracingStrategy} will be used by default which will not monitor any invocations at all.
  * <p/>
@@ -350,7 +350,7 @@ public class XRayTracer extends ServiceSupport implements RoutePolicyFactory, St
     /**
      * A custom {@link org.apache.camel.spi.RoutePolicy RoutePolicy} implementation that will create a new AWS XRay
      * {@link Segment} once a new exchange is being created and the current thread does not know of an active segment
-     * yet. In case the exchange was forwarded within the same thread (i.e. by forwarding to a direct endpoint via
+     * yet. In case the exchange was forwarded within the same thread (that is, by forwarding to a direct endpoint via
      * <code>.to("direct:...)</code>) and a previous exchange already created a {@link Segment} this policy will add a
      * new {@link Subsegment} for the created exchange to the trace.
      * <p/>
@@ -358,7 +358,7 @@ public class XRayTracer extends ServiceSupport implements RoutePolicyFactory, St
      * Subsegments}.
      * <p/>
      * As AWS XRay is designed to manage {@link Segment Segments} in a {@link ThreadLocal} context this policy will
-     * create a new segment for each forward to a new thread i.e. by sending the exchange to a <em>SEDA</em> endpoint.
+     * create a new segment for each forward to a new thread that is, by sending the exchange to a <em>SEDA</em> endpoint.
      */
     private final class XRayRoutePolicy extends RoutePolicySupport {
 

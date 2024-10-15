@@ -40,7 +40,7 @@ public class WhatsAppComponent extends DefaultComponent {
     @Metadata(label = "advanced", description = "Java 11 HttpClient implementation")
     private HttpClient client;
     @Metadata(label = "advanced", defaultValue = API_DEFAULT_URL,
-              description = "Can be used to set an alternative base URI, e.g. when you want to test the component against a mock WhatsApp API")
+              description = "Can be used to set an alternative base URI, for example, when you want to test the component against a mock WhatsApp API")
     private String baseUri = API_DEFAULT_URL;
     @Metadata(label = "advanced", defaultValue = API_DEFAULT_VERSION, description = "WhatsApp Cloud API version")
     private String apiVersion = API_DEFAULT_VERSION;

@@ -44,7 +44,7 @@ public abstract class AbstractLevelDBSerializer implements LevelDBSerializer {
     }
 
     DefaultExchangeHolder createExchangeHolder(Exchange exchange, boolean allowSerializedHeaders) {
-        // use DefaultExchangeHolder to marshal to a serialized object
+        // use DefaultExchangeHolder to marshalto a serialized object
         DefaultExchangeHolder pe = DefaultExchangeHolder.marshal(exchange, false, allowSerializedHeaders);
         // add the aggregated size and timeout property as the only properties we want to retain
         DefaultExchangeHolder.addProperty(pe, Exchange.AGGREGATED_SIZE,

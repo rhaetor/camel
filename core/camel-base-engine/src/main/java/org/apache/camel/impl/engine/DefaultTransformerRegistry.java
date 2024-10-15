@@ -131,7 +131,7 @@ public class DefaultTransformerRegistry extends AbstractDynamicRegistry<Transfor
 
     /**
      * Tra to lazy load transformer either from Camel context as bean reference or via transformer resolver mechanism,
-     * e.g. doing a resource path lookup.
+     * for example, doing a resource path lookup.
      *
      * @param  key the transformer key.
      * @return     lazy loaded transformer or null if not found.
@@ -150,7 +150,7 @@ public class DefaultTransformerRegistry extends AbstractDynamicRegistry<Transfor
                 }
             }
 
-            // Try to lazy load transformer via resolver, e.g. with resource path lookup
+            // Try to lazy load transformer via resolver, for example, with resource path lookup
             answer = transformerResolver.resolve(key, context);
         }
 

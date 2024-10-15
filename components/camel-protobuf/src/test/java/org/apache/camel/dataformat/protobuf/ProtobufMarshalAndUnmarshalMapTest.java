@@ -54,9 +54,9 @@ public class ProtobufMarshalAndUnmarshalMapTest extends CamelTestSupport {
         mock.expectedMessageCount(1);
         mock.message(0).body().isInstanceOf(Person.class);
 
-        Object marshalled = template.requestBody(inURI, input);
+        Object marshaled = template.requestBody(inURI, input);
 
-        template.sendBody(outURI, marshalled);
+        template.sendBody(outURI, marshaled);
 
         mock.assertIsSatisfied();
 

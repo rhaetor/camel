@@ -1018,7 +1018,7 @@ public final class ObjectHelper {
     }
 
     /**
-     * Converts wrapper type like {@link Integer} to its primitive type, i.e. int.
+     * Converts wrapper type like {@link Integer} to its primitive type, that is, int.
      */
     public static Class<?> convertWrapperTypeToPrimitiveType(Class<?> type) {
         Class<?> rc = type;
@@ -1333,7 +1333,7 @@ public final class ObjectHelper {
     }
 
     /**
-     * Checks whether the given string is a valid boolean value (i.e.; either "true" or "false") ignoring its case
+     * Checks whether the given string is a valid boolean value (that is, either "true" or "false") ignoring its case
      *
      * @param  str the string to evaluate
      * @return     true if it is a valid boolean value or false otherwise

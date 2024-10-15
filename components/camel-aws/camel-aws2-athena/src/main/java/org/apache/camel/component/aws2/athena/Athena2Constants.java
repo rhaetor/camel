@@ -104,7 +104,7 @@ public interface Athena2Constants {
     String MAX_ATTEMPTS = "CamelAwsAthenaMaxAttempts";
     @Metadata(label = "startQueryExecution",
               description = "Optional comma separated list of error types to retry the query for.  Use\n" +
-                            "'retryable' to retry all retryable failure conditions (e.g. generic errors and resources exhausted),\n"
+                            "'retryable' to retry all retryable failure conditions (for example, generic errors and resources exhausted),\n"
                             +
                             "'generic' to retry 'GENERIC_INTERNAL_ERROR' failures,\n" +
                             "'exhausted' to retry queries that have exhausted resource limits,\n" +

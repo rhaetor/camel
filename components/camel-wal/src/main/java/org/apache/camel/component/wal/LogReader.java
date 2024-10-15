@@ -156,7 +156,7 @@ public class LogReader implements AutoCloseable {
     }
 
     /**
-     * Reads a data slot (i.e.: containing a key or a value)
+     * Reads a data slot (that is, : containing a key or a value)
      *
      * @return             the data slot
      * @throws IOException if the record is invalid or the data too large for the buffer

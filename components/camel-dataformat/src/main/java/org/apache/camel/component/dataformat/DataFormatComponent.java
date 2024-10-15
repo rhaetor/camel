@@ -41,7 +41,7 @@ public class DataFormatComponent extends DefaultComponent {
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {
         String operation = StringHelper.after(remaining, ":");
         if (!"marshal".equals(operation) && !"unmarshal".equals(operation)) {
-            throw new IllegalArgumentException("Operation must be either marshal or unmarshal, was: " + operation);
+            throw new IllegalArgumentException("Operation must be either marshal or unmarshal , was: " + operation);
         }
 
         // create new data format as it is configured from the given parameters

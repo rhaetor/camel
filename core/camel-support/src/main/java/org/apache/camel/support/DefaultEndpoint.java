@@ -109,7 +109,7 @@ public abstract class DefaultEndpoint extends ServiceSupport implements Endpoint
     }
 
     /**
-     * Constructs a partially-initialized DefaultEndpoint instance. Useful when creating endpoints manually (e.g., as
+     * Constructs a partially-initialized DefaultEndpoint instance. Useful when creating endpoints manually (for example, as
      * beans in Spring).
      * <p/>
      * Please note that the endpoint URI must be set through properties (or overriding {@link #createEndpointUri()} if

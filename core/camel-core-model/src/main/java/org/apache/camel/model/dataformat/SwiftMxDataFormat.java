@@ -101,7 +101,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The specific configuration to use when marshalling a message.
+     * The specific configuration to use when marshaling a message.
      */
     public void setWriteConfig(Object writeConfig) {
         this.writeConfig = writeConfig;
@@ -112,9 +112,9 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The flag indicating that messages must be marshalled in a JSON format.
+     * The flag indicating that messages must be marshaled in a JSON format.
      *
-     * @param writeInJson {@code true} if messages must be marshalled in a JSON format, {@code false} otherwise.
+     * @param writeInJson {@code true} if messages must be marshaled in a JSON format, {@code false} otherwise.
      */
     public void setWriteInJson(String writeInJson) {
         this.writeInJson = writeInJson;
@@ -125,7 +125,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The type of MX message to produce when unmarshalling an input stream. If not set, it will be automatically
+     * The type of MX message to produce when unmarshaling an input stream. If not set, it will be automatically
      * detected from the namespace used.
      */
     public void setReadMessageId(String readMessageId) {
@@ -137,7 +137,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The specific configuration to use when unmarshalling an input stream.
+     * The specific configuration to use when unmarshaling an input stream.
      */
     public void setReadConfig(Object readConfig) {
         this.readConfig = readConfig;
@@ -148,7 +148,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Refers to a specific configuration to use when marshalling a message to lookup from the registry.
+     * Refers to a specific configuration to use when marshaling a message to lookup from the registry.
      */
     public void setWriteConfigRef(String writeConfigRef) {
         this.writeConfigRef = writeConfigRef;
@@ -159,7 +159,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Refers to a specific configuration to use when unmarshalling an input stream to lookup from the registry.
+     * Refers to a specific configuration to use when unmarshaling an input stream to lookup from the registry.
      */
     public void setReadConfigRef(String readConfigRef) {
         this.readConfigRef = readConfigRef;
@@ -179,7 +179,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
         private Object readConfig;
 
         /**
-         * The specific configuration to use when marshalling a message.
+         * The specific configuration to use when marshaling a message.
          */
         public Builder writeConfig(Object writeConfig) {
             this.writeConfig = writeConfig;
@@ -187,9 +187,9 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * The flag indicating that messages must be marshalled in a JSON format.
+         * The flag indicating that messages must be marshaled in a JSON format.
          *
-         * @param writeInJson {@code true} if messages must be marshalled in a JSON format, {@code false} otherwise.
+         * @param writeInJson {@code true} if messages must be marshaled in a JSON format, {@code false} otherwise.
          */
         public Builder writeInJson(String writeInJson) {
             this.writeInJson = writeInJson;
@@ -197,9 +197,9 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * The flag indicating that messages must be marshalled in a JSON format.
+         * The flag indicating that messages must be marshaled in a JSON format.
          *
-         * @param writeInJson {@code true} if messages must be marshalled in a JSON format, {@code false} otherwise.
+         * @param writeInJson {@code true} if messages must be marshaled in a JSON format, {@code false} otherwise.
          */
         public Builder writeInJson(boolean writeInJson) {
             this.writeInJson = Boolean.toString(writeInJson);
@@ -207,7 +207,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * The type of MX message to produce when unmarshalling an input stream. If not set, it will be automatically
+         * The type of MX message to produce when unmarshaling an input stream. If not set, it will be automatically
          * detected from the namespace used.
          */
         public Builder readMessageId(String readMessageId) {
@@ -216,7 +216,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * The specific configuration to use when unmarshalling an input stream.
+         * The specific configuration to use when unmarshaling an input stream.
          */
         public Builder readConfig(Object readConfig) {
             this.readConfig = readConfig;
@@ -224,7 +224,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Refers to a specific configuration to use when marshalling a message to lookup from the registry.
+         * Refers to a specific configuration to use when marshaling a message to lookup from the registry.
          */
         public Builder writeConfigRef(String writeConfigRef) {
             this.writeConfigRef = writeConfigRef;
@@ -232,7 +232,7 @@ public class SwiftMxDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Refers to a specific configuration to use when unmarshalling an input stream to lookup from the registry.
+         * Refers to a specific configuration to use when unmarshaling an input stream to lookup from the registry.
          */
         public Builder readConfigRef(String readConfigRef) {
             this.readConfigRef = readConfigRef;

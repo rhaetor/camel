@@ -33,9 +33,9 @@ public class MavenTest {
     public void masterPasswords() throws Exception {
         PlexusCipher pc = new DefaultPlexusCipher();
         String mp = pc.encrypt("camel", DefaultSecDispatcher.SYSTEM_PROPERTY_SEC_LOCATION);
-        LOG.info("master password: {}", mp); // e.g., "SHrYKy0oCBEH5SHhRcuv0U52J3E908O23QWHDyEiGtQ="
+        LOG.info("master password: {}", mp); // for example, "SHrYKy0oCBEH5SHhRcuv0U52J3E908O23QWHDyEiGtQ="
         String p = pc.encrypt("passw0rd", "camel");
-        LOG.info("password: {}", p); // e.g., "9V4tKIxO4ZsHx63bkn9uy6zsYM9VJyG03sTsPzPDK9c="
+        LOG.info("password: {}", p); // for example, "9V4tKIxO4ZsHx63bkn9uy6zsYM9VJyG03sTsPzPDK9c="
 
         assertEquals("passw0rd", pc.decrypt(p, pc.decrypt(mp, DefaultSecDispatcher.SYSTEM_PROPERTY_SEC_LOCATION)));
         assertEquals("camel", pc.decrypt(mp, DefaultSecDispatcher.SYSTEM_PROPERTY_SEC_LOCATION));

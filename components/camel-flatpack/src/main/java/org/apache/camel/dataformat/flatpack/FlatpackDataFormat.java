@@ -51,9 +51,9 @@ import org.slf4j.LoggerFactory;
  * <p/>
  * This data format supports two operations:
  * <ul>
- * <li>marshal = from <tt>List&lt;Map&lt;String, Object&gt;&gt;</tt> to <tt>OutputStream</tt> (can be converted to
+ * <li>marshal= from <tt>List&lt;Map&lt;String, Object&gt;&gt;</tt> to <tt>OutputStream</tt> (can be converted to
  * String)</li>
- * <li>unmarshal = from <tt>InputStream</tt> (such as a File) to
+ * <li>unmarshal= from <tt>InputStream</tt> (such as a File) to
  * {@link org.apache.camel.component.flatpack.DataSetList}.
  * </ul>
  * <b>Notice:</b> The Flatpack library does currently not support header and trailers for the marshal operation.
@@ -78,11 +78,11 @@ public class FlatpackDataFormat extends ServiceSupport implements DataFormat, Da
     @Override
     @SuppressWarnings("unchecked")
     public void marshal(Exchange exchange, Object graph, OutputStream stream) throws Exception {
-        ObjectHelper.notNull(graph, "The object to marshal must be provided");
+        ObjectHelper.notNull(graph, "The object to marshalmust be provided");
 
         List<Map<String, Object>> data = (List<Map<String, Object>>) graph;
         if (data.isEmpty()) {
-            LOG.warn("No data to marshal as the list is empty");
+            LOG.warn("No data to marshalas the list is empty");
             return;
         }
         Map<String, Object> firstRow = data.get(0);

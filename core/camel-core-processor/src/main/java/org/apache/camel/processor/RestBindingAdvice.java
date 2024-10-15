@@ -233,7 +233,7 @@ public class RestBindingAdvice implements CamelInternalProcessorAdvice<Map<Strin
         String body = null;
         if (exchange.getIn().getBody() != null) {
 
-            // okay we have a binding mode, so need to check for empty body as that can cause the marshaller to fail
+            // okay we have a binding mode, so need to check for empty body as that can cause the marshaler to fail
             // as they assume a non-empty body
             if (isXml || isJson) {
                 // we have binding enabled, so we need to know if there body is empty or not
@@ -424,7 +424,7 @@ public class RestBindingAdvice implements CamelInternalProcessorAdvice<Map<Strin
             }
         }
 
-        // in case we have not yet been able to determine if xml or json, then use the same as in the unmarshaller
+        // in case we have not yet been able to determine if xml or json, then use the same as in the unmarshaler
         if (isXml && isJson) {
             isXml = state.get(STATE_KEY_DO_MARSHAL).equals(STATE_XML);
             isJson = !isXml;
@@ -441,7 +441,7 @@ public class RestBindingAdvice implements CamelInternalProcessorAdvice<Map<Strin
             return;
         }
 
-        // is there any marshaller at all
+        // is there any marshaler at all
         if (jsonMarshal == null && xmlMarshal == null) {
             return;
         }

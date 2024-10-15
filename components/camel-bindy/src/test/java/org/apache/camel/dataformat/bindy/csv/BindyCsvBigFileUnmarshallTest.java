@@ -30,13 +30,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindyCsvBigFileUnmarshallTest {
+public class BindyCsvBigFileUnmarshalTest {
 
     @EndpointInject("mock:result")
     private MockEndpoint resultEndpoint;
 
     @Test
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
         resultEndpoint.expectedMessageCount(1);
         resultEndpoint.assertIsSatisfied();
 

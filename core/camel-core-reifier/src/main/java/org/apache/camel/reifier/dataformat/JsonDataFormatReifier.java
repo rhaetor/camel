@@ -54,7 +54,7 @@ public class JsonDataFormatReifier extends DataFormatReifier<JsonDataFormat> {
         properties.put("moduleRefs", definition.getModuleRefs());
         properties.put("enableFeatures", definition.getEnableFeatures());
         properties.put("disableFeatures", definition.getDisableFeatures());
-        properties.put("allowUnmarshallType", definition.getAllowUnmarshallType());
+        properties.put("allowUnmarshalType", definition.getAllowUnmarshalType());
         if (definition.getLibrary() == JsonLibrary.Jackson) {
             properties.put("schemaResolver", asRef(definition.getSchemaResolver()));
             properties.put("autoDiscoverSchemaResolver", definition.getAutoDiscoverSchemaResolver());

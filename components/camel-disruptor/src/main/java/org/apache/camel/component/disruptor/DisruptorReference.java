@@ -428,7 +428,7 @@ public class DisruptorReference {
      * of the Disruptor, we need to atomically swap the current RingBuffer with a new and fully configured one in order
      * to keep the producers operational without the risk of losing messages. Configuration of a RingBuffer by the
      * Disruptor's start method has a side effect that immediately starts execution of the event processors (consumers)
-     * on the Executor passed as a constructor argument which is stored in a final field. In order to be able to delay
+     * on the Executor passed as a constructor argument which is stored in a final field. To be able to delay
      * actual execution of the event processors until the event processors of the previous RingBuffer are done
      * processing and the thread pool executor has been resized to match the new consumer count, we delay their
      * execution using this class.

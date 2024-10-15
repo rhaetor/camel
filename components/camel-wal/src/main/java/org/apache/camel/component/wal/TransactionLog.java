@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * This represents an in-memory transaction log. It's the source from where the log entries are saved to the channel
- * and, subsequently, flushed to disk. It is backed by a layered circular-buffer (i.e.: a regular circular buffer that
+ * and, subsequently, flushed to disk. It is backed by a layered circular-buffer (that is, : a regular circular buffer that
  * increments a layer index for every loop iteration). The entries are rolled-over whenever the capacity reach its
  * maximum value and updates to those rolled-over records will be silently discarded (even if in-error). The layer
  * information is not persisted to disk as it is relevant only for determining whether to update or discard records.

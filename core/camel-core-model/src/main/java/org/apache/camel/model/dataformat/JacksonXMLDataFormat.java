@@ -51,7 +51,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
     private String unmarshalTypeName;
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean")
-    private String allowUnmarshallType;
+    private String allowUnmarshalType;
     @XmlAttribute(name = "jsonView")
     private String jsonViewTypeName;
     @XmlAttribute
@@ -84,7 +84,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean", defaultValue = "true",
               description = "Whether the data format should set the Content-Type header with the type from the data format."
-                            + " For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON")
+                            + " For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON")
     private String contentTypeHeader;
 
     public JacksonXMLDataFormat() {
@@ -99,7 +99,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
         this.xmlMapper = builder.xmlMapper;
         this.prettyPrint = builder.prettyPrint;
         this.unmarshalTypeName = builder.unmarshalTypeName;
-        this.allowUnmarshallType = builder.allowUnmarshallType;
+        this.allowUnmarshalType = builder.allowUnmarshalType;
         this.jsonViewTypeName = builder.jsonViewTypeName;
         this.include = builder.include;
         this.allowJmsType = builder.allowJmsType;
@@ -143,7 +143,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
     }
 
     /**
-     * Class name of the java type to use when unmarshalling
+     * Class name of the java type to use when unmarshaling
      */
     public void setUnmarshalTypeName(String unmarshalTypeName) {
         this.unmarshalTypeName = unmarshalTypeName;
@@ -154,7 +154,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
     }
 
     /**
-     * Class of the java type to use when unmarshalling
+     * Class of the java type to use when unmarshaling
      */
     public void setUnmarshalType(Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
@@ -165,7 +165,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
     }
 
     /**
-     * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
+     * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
      * can use JSON views to accomplish this. This option is to refer to the class which has @JsonView annotations
      */
     public void setJsonViewTypeName(String jsonViewTypeName) {
@@ -177,7 +177,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
     }
 
     /**
-     * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
+     * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
      * can use JSON views to accomplish this. This option is to refer to the class which has @JsonView annotations
      */
     public void setJsonView(Class<?> jsonView) {
@@ -310,18 +310,18 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
         this.disableFeatures = disableFeatures;
     }
 
-    public String getAllowUnmarshallType() {
-        return allowUnmarshallType;
+    public String getAllowUnmarshalType() {
+        return allowUnmarshalType;
     }
 
     /**
      * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-     * unmarshalling.
+     * unmarshaling.
      * <p/>
      * This should only be enabled when desired to be used.
      */
-    public void setAllowUnmarshallType(String allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public void setAllowUnmarshalType(String allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
     }
 
     public String getContentTypeHeader() {
@@ -337,7 +337,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
     }
 
     /**
-     * If set then Jackson will use the Timezone when marshalling/unmarshalling.
+     * If set then Jackson will use the Timezone when marshaling/unmarshaling.
      */
     public void setTimezone(String timezone) {
         this.timezone = timezone;
@@ -355,7 +355,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
         private String xmlMapper;
         private String prettyPrint;
         private String unmarshalTypeName;
-        private String allowUnmarshallType;
+        private String allowUnmarshalType;
         private String jsonViewTypeName;
         private String include;
         private String allowJmsType;
@@ -398,7 +398,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
         }
 
         /**
-         * Class name of the java type to use when unmarshalling
+         * Class name of the java type to use when unmarshaling
          */
         public Builder unmarshalTypeName(String unmarshalTypeName) {
             this.unmarshalTypeName = unmarshalTypeName;
@@ -406,7 +406,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
         }
 
         /**
-         * Class of the java type to use when unmarshalling
+         * Class of the java type to use when unmarshaling
          */
         public Builder unmarshalType(Class<?> unmarshalType) {
             this.unmarshalType = unmarshalType;
@@ -414,7 +414,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
         }
 
         /**
-         * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
+         * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
          * you can use JSON views to accomplish this. This option is to refer to the class which has @JsonView
          * annotations
          */
@@ -424,7 +424,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
         }
 
         /**
-         * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
+         * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
          * you can use JSON views to accomplish this. This option is to refer to the class which has @JsonView
          * annotations
          */
@@ -557,23 +557,23 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
 
         /**
          * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(String allowUnmarshallType) {
-            this.allowUnmarshallType = allowUnmarshallType;
+        public Builder allowUnmarshalType(String allowUnmarshalType) {
+            this.allowUnmarshalType = allowUnmarshalType;
             return this;
         }
 
         /**
          * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(boolean allowUnmarshallType) {
-            this.allowUnmarshallType = Boolean.toString(allowUnmarshallType);
+        public Builder allowUnmarshalType(boolean allowUnmarshalType) {
+            this.allowUnmarshalType = Boolean.toString(allowUnmarshalType);
             return this;
         }
 
@@ -588,7 +588,7 @@ public class JacksonXMLDataFormat extends DataFormatDefinition implements Conten
         }
 
         /**
-         * If set then Jackson will use the Timezone when marshalling/unmarshalling.
+         * If set then Jackson will use the Timezone when marshaling/unmarshaling.
          */
         public Builder timezone(String timezone) {
             this.timezone = timezone;

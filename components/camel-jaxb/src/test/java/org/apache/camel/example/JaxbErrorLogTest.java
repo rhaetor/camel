@@ -90,7 +90,7 @@ public class JaxbErrorLogTest extends CamelTestSupport {
         }
 
         public String getUhoh() {
-            throw new RuntimeCamelException("Can't marshal this");
+            throw new RuntimeCamelException("Can't marshalthis");
         }
 
         @Override

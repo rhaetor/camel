@@ -161,6 +161,11 @@
             <artifactId>camel-mock</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-rest</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <!-- Entire Maven downloading/resolution support is made using camel-tooling-maven -->
         <dependency>

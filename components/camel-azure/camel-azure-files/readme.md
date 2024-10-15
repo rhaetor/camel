@@ -42,7 +42,7 @@ A set of problems with mvn generate:
   - CAMEL-19385 [Windows] generate Error loading other model. Reason: FirstVersion is not specified.
 
 While cloning the fork in Github Desktop, I had selected "I want to contribute mode",
-and it updated upstream to fork's upstream i.e. https://github.com/apache/camel.git
+and it updated upstream to fork's upstream that is, https://github.com/apache/camel.git
 it's likely at cause of subsequent problems so changing the upstream back
 to https://github.com/pekuz/camel.git
 

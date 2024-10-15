@@ -618,7 +618,7 @@ public class RobotFrameworkCamelConfiguration implements Cloneable {
     }
 
     /**
-     * Executes tests also if the top level test suite is empty. Useful e.g. with --include/--exclude when it is not an
+     * Executes tests also if the top level test suite is empty. Useful for example, with --include/--exclude when it is not an
      * error that no test matches the condition.
      */
     public void setRunEmptySuite(boolean runEmptySuite) {

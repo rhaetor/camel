@@ -61,7 +61,7 @@ public interface PlatformHttpEndpointBuilderFactory {
             return this;
         }
         /**
-         * A comma separated list of HTTP methods to serve, e.g. GET,POST . If
+         * A comma separated list of HTTP methods to serve, for example, GET,POST . If
          * no methods are specified, all methods will be served.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

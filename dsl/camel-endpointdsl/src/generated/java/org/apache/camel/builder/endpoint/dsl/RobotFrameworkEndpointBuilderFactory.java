@@ -602,7 +602,7 @@ public interface RobotFrameworkEndpointBuilderFactory {
             return this;
         }
         /**
-         * Executes tests also if the top level test suite is empty. Useful e.g.
+         * Executes tests also if the top level test suite is empty. Useful for example
          * with --include/--exclude when it is not an error that no test matches
          * the condition.
          * 
@@ -620,7 +620,7 @@ public interface RobotFrameworkEndpointBuilderFactory {
             return this;
         }
         /**
-         * Executes tests also if the top level test suite is empty. Useful e.g.
+         * Executes tests also if the top level test suite is empty. Useful for example
          * with --include/--exclude when it is not an error that no test matches
          * the condition.
          * 
@@ -2226,7 +2226,7 @@ public interface RobotFrameworkEndpointBuilderFactory {
             return this;
         }
         /**
-         * Executes tests also if the top level test suite is empty. Useful e.g.
+         * Executes tests also if the top level test suite is empty. Useful for example
          * with --include/--exclude when it is not an error that no test matches
          * the condition.
          * 
@@ -2244,7 +2244,7 @@ public interface RobotFrameworkEndpointBuilderFactory {
             return this;
         }
         /**
-         * Executes tests also if the top level test suite is empty. Useful e.g.
+         * Executes tests also if the top level test suite is empty. Useful for example
          * with --include/--exclude when it is not an error that no test matches
          * the condition.
          * 
@@ -3212,7 +3212,7 @@ public interface RobotFrameworkEndpointBuilderFactory {
             return this;
         }
         /**
-         * Executes tests also if the top level test suite is empty. Useful e.g.
+         * Executes tests also if the top level test suite is empty. Useful for example
          * with --include/--exclude when it is not an error that no test matches
          * the condition.
          * 
@@ -3230,7 +3230,7 @@ public interface RobotFrameworkEndpointBuilderFactory {
             return this;
         }
         /**
-         * Executes tests also if the top level test suite is empty. Useful e.g.
+         * Executes tests also if the top level test suite is empty. Useful for example
          * with --include/--exclude when it is not an error that no test matches
          * the condition.
          * 

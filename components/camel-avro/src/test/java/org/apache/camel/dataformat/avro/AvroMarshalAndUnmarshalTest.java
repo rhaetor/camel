@@ -67,9 +67,9 @@ public class AvroMarshalAndUnmarshalTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(Value.class);
         mock.message(0).body().isEqualTo(input);
 
-        Object marshalled = template.requestBody(inURI, input);
+        Object marshaled = template.requestBody(inURI, input);
 
-        template.sendBody(outURI, marshalled);
+        template.sendBody(outURI, marshaled);
 
         mock.assertIsSatisfied();
 

@@ -14,7 +14,7 @@
 The Micrometer Observation component is used for performing observability of incoming and
 outgoing Camel messages using https://micrometer.io/docs/observation[Micrometer Observation].
 
-By configuring the `ObservationRegistry` you can add behaviour to your observations such as metrics (e.g., via `Micrometer`) or tracing (e.g., via `OpenTelemetry` or `Brave`) or any custom behaviour.
+By configuring the `ObservationRegistry` you can add behaviour to your observations such as metrics (for example, via `Micrometer`) or tracing (for example, via `OpenTelemetry` or `Brave`) or any custom behaviour.
 
 Events are captured for incoming and outgoing messages being sent to/from Camel.
 

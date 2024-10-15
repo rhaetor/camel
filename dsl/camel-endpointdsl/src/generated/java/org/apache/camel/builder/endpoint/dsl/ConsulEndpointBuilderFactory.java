@@ -865,7 +865,7 @@ public interface ConsulEndpointBuilderFactory {
             return this;
         }
         /**
-         * Default to transform values retrieved from Consul i.e. on KV endpoint
+         * Default to transform values retrieved from Consul that is, on KV endpoint
          * to string.
          * 
          * The option is a: &lt;code&gt;boolean&lt;/code&gt; type.
@@ -882,7 +882,7 @@ public interface ConsulEndpointBuilderFactory {
             return this;
         }
         /**
-         * Default to transform values retrieved from Consul i.e. on KV endpoint
+         * Default to transform values retrieved from Consul that is, on KV endpoint
          * to string.
          * 
          * The option will be converted to a &lt;code&gt;boolean&lt;/code&gt;
@@ -1824,7 +1824,7 @@ public interface ConsulEndpointBuilderFactory {
         }
 
         /**
-         * To transform values retrieved from Consul i.e. on KV endpoint to
+         * To transform values retrieved from Consul that is, on KV endpoint to
          * string.
          * 
          * The option is a: {@code Boolean} type.

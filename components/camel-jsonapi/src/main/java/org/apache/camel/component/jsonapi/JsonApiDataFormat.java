@@ -102,7 +102,7 @@ public class JsonApiDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * The classes (FQN name) to take into account for the marshalling. Multiple class names can be separated by comma.
+     * The classes (FQN name) to take into account for the marshaling. Multiple class names can be separated by comma.
      */
     public void setDataFormatTypes(String dataFormatTypes) {
         this.dataFormatTypes = dataFormatTypes;
@@ -113,7 +113,7 @@ public class JsonApiDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * The classes to take into account for the marshalling.
+     * The classes to take into account for the marshaling.
      */
     public void setDataFormatTypeClasses(Class<?>[] dataFormatTypeClasses) {
         this.dataFormatTypeClasses = dataFormatTypeClasses;
@@ -124,7 +124,7 @@ public class JsonApiDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * The class (FQN name) to take into account while unmarshalling
+     * The class (FQN name) to take into account while unmarshaling
      */
     public void setMainFormatType(String mainFormatType) {
         this.mainFormatType = mainFormatType;
@@ -135,7 +135,7 @@ public class JsonApiDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * The class to take into account while unmarshalling
+     * The class to take into account while unmarshaling
      */
     public void setMainFormatTypeClass(Class<?> mainFormatTypeClass) {
         this.mainFormatTypeClass = mainFormatTypeClass;

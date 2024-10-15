@@ -313,7 +313,7 @@ public class CosmosDbConfiguration implements Cloneable {
      * instances of Cosmos Client in the same JVM interacting to multiple Cosmos accounts, enabling this allows
      * connection sharing in Direct mode if possible between instances of Cosmos Client.
      *
-     * Please note, when setting this option, the connection configuration (e.g., socket timeout config, idle timeout
+     * Please note, when setting this option, the connection configuration (for example, socket timeout config, idle timeout
      * config) of the first instantiated client will be used for all other client instances.
      */
     public boolean isConnectionSharingAcrossClientsEnabled() {

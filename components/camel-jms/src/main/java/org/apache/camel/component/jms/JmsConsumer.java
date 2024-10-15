@@ -276,7 +276,7 @@ public class JmsConsumer extends DefaultConsumer implements Suspendable {
      * See the JMS specification for a detailed definition of selector expressions.
      * <p>
      * Note: The message selector may be replaced at runtime, with the listener container picking up the new selector
-     * value immediately (works e.g. with DefaultMessageListenerContainer, as long as the cache level is less than
+     * value immediately (works for example, with DefaultMessageListenerContainer, as long as the cache level is less than
      * CACHE_CONSUMER). However, this is considered advanced usage; use it with care!
      */
     @ManagedAttribute(description = "Changes the JMS selector, as long the cache level is less than CACHE_CONSUMER.")

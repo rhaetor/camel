@@ -28,13 +28,13 @@ import org.apache.camel.support.DefaultExchangeHolder;
 import org.apache.camel.util.ClassLoadingAwareObjectInputStream;
 
 /**
- * Marshall/unmarshall Exchange to/from a ByteBuffer. Inspired from JdbcCamelCodec.
+ * Marshal/unmarshal Exchange to/from a ByteBuffer. Inspired from JdbcCamelCodec.
  */
 public class CassandraCamelCodec {
 
-    public ByteBuffer marshallExchange(Exchange exchange, boolean allowSerializedHeaders)
+    public ByteBuffer marshalExchange(Exchange exchange, boolean allowSerializedHeaders)
             throws IOException {
-        // use DefaultExchangeHolder to marshal to a serialized object
+        // use DefaultExchangeHolder to marshalto a serialized object
         DefaultExchangeHolder pe = DefaultExchangeHolder.marshal(exchange, false, allowSerializedHeaders);
         // add the aggregated size and timeout property as the only properties
         // we want to retain
@@ -58,7 +58,7 @@ public class CassandraCamelCodec {
         return ByteBuffer.wrap(serialize(pe));
     }
 
-    public Exchange unmarshallExchange(CamelContext camelContext, ByteBuffer buffer, String deserializationFilter)
+    public Exchange unmarshalExchange(CamelContext camelContext, ByteBuffer buffer, String deserializationFilter)
             throws IOException, ClassNotFoundException {
         DefaultExchangeHolder pe
                 = (DefaultExchangeHolder) deserialize(camelContext, new ByteBufferInputStream(buffer), deserializationFilter);

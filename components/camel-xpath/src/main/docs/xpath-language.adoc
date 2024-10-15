@@ -239,7 +239,7 @@ Notice how the namespaces are provided to `xpath` with the `ns` variable
 that are passed in as the second parameter.
 
 Each namespace is a key=value pair, where the prefix is the key.
-In the XPath expression then the namespace is used by its prefix, e.g.:
+In the XPath expression then the namespace is used by its prefix, for example:
 
 [source,xpath]
 ----
@@ -362,8 +362,7 @@ a custom XPathFactory to use.
 
 This unit test shows how this can be done to use Saxon instead:
 
-Camel will log at `INFO` level if it uses a non-default `XPathFactory`
-such as:
+Camel will log at `INFO` level if it uses a non-default `XPathFactory` such as:
 
 [source]
 ----
@@ -380,8 +379,7 @@ To use Apache Xerces, you can configure the system property
 
 === Enabling Saxon from XML DSL
 
-Similarly to Java DSL, to enable Saxon from XML DSL, you have three
-options:
+Similarly to Java DSL, to enable Saxon from XML DSL, you have three options:
 
 Referring to a custom factory:
 
@@ -507,7 +505,7 @@ xmlns:b=[http://apache.org/camelA, http://apache.org/camelB]}
 You can externalize the script and have Apache Camel load it from a resource
 such as `"classpath:"`, `"file:"`, or `"http:"`.
 This is done using the following syntax: `"resource:scheme:location"`,
-e.g., to refer to a file on the classpath you can do:
+for example, to refer to a file on the classpath you can do:
 
 [source,java]
 ----

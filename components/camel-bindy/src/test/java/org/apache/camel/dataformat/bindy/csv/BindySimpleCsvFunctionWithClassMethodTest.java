@@ -46,7 +46,7 @@ public class BindySimpleCsvFunctionWithClassMethodTest extends CamelTestSupport 
     private MockEndpoint mockEndPointUnMarshal2;
 
     @Test
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
 
         mockEndPointMarshal1.expectedMessageCount(1);
         mockEndPointMarshal1

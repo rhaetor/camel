@@ -30,7 +30,7 @@
              please do not use this) 
 		
 		This should be used after iso-dsdl-include.xsl and before the skeleton or
-		meta-stylesheet (e.g. iso-svrl.xsl) . It only requires XSLT 1.
+		meta-stylesheet (for example, iso-svrl.xsl) . It only requires XSLT 1.
 		 
 		Each kind of inclusion can be turned off (or on) on the command line.
 		 

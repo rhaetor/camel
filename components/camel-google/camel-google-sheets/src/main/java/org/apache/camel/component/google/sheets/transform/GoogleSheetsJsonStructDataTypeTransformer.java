@@ -42,7 +42,7 @@ import org.apache.camel.util.ObjectHelper;
 /**
  * Data type supports generic JsonNode representation of Google Sheets row and column values. Transforms generic
  * JsonNode struct to/from a Google Sheets ValueRange object. Supports both inbound and outbound transformation
- * depending on the given message body content. When Google Sheets ValueRange object is given as message body (e.g. as a
+ * depending on the given message body content. When Google Sheets ValueRange object is given as message body (for example, as a
  * result of a get values operation) the transformer will transform into generic Json struct. When generic Json struct
  * is given as a message body transformer will transform into a proper ValueRange object that is ready to be used in an
  * update/append values operation. Implementation also supports splitResults setting where a set of values is split into

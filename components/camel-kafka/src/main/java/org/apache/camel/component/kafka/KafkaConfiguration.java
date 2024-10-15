@@ -675,7 +675,7 @@ public class KafkaConfiguration implements Cloneable, HeaderFilterStrategyAware 
      * A unique identifier of the consumer instance provided by the end user. Only non-empty strings are permitted. If
      * set, the consumer is treated as a static member, which means that only one instance with this ID is allowed in
      * the consumer group at any time. This can be used in combination with a larger session timeout to avoid group
-     * rebalances caused by transient unavailability (e.g., process restarts). If not set, the consumer will join the
+     * rebalances caused by transient unavailability (for example, process restarts). If not set, the consumer will join the
      * group as a dynamic member, which is the traditional behavior.
      */
     public void setGroupInstanceId(String groupInstanceId) {
@@ -877,7 +877,7 @@ public class KafkaConfiguration implements Cloneable, HeaderFilterStrategyAware 
      *
      * Using either the SyncCommitManager or the AsyncCommitManager, the consumer will seek back to the offset of the
      * message that caused a failure, and then re-attempt to process this message. However, this can lead to endless
-     * processing of the same message if it's bound to fail every time, e.g., a poison message. Therefore, it's
+     * processing of the same message if it's bound to fail every time, for example, a poison message. Therefore, it's
      * recommended to deal with that, for example, by using Camel's error handler.
      */
     public void setBreakOnFirstError(boolean breakOnFirstError) {
@@ -1456,7 +1456,7 @@ public class KafkaConfiguration implements Cloneable, HeaderFilterStrategyAware 
      * bound on the delay for batching: once we get batch.size worth of records for a partition, it will be sent
      * immediately regardless of this setting, however, if we have fewer than this many bytes accumulated for this
      * partition, we will 'linger' for the specified time waiting for more records to show up. This setting defaults to
-     * 0 (i.e., no delay). Setting linger.ms=5, for example, would have the effect of reducing the number of requests
+     * 0 (that is, no delay). Setting linger.ms=5, for example, would have the effect of reducing the number of requests
      * sent but would add up to 5ms of latency to records sent in the absence of load.
      */
     public void setLingerMs(Integer lingerMs) {
@@ -1510,7 +1510,7 @@ public class KafkaConfiguration implements Cloneable, HeaderFilterStrategyAware 
     /**
      * The maximum number of unacknowledged requests the client will send on a single connection before blocking. Note
      * that if this setting is set to be greater than 1 and there are failed sends, there is a risk of message
-     * re-ordering due to retries (i.e., if retries are enabled).
+     * re-ordering due to retries (that is, if retries are enabled).
      */
     public void setMaxInFlightRequest(Integer maxInFlightRequest) {
         this.maxInFlightRequest = maxInFlightRequest;
@@ -1794,7 +1794,7 @@ public class KafkaConfiguration implements Cloneable, HeaderFilterStrategyAware 
 
     /**
      * When set to 'true', the producer will ensure that exactly one copy of each message is written in the stream. If
-     * 'false', producer retries due to broker failures, etc., may write duplicates of the retried message in the
+     * 'false', producer retries due to broker failures, and so on, may write duplicates of the retried message in the
      * stream. Note that enabling idempotence requires max.in.flight.requests.per.connection to be less than or equal to
      * 5 (with message ordering preserved for any allowable value), retries to be greater than 0, and acks must be
      * 'all'.
@@ -1862,8 +1862,8 @@ public class KafkaConfiguration implements Cloneable, HeaderFilterStrategyAware 
 
     /**
      * Sets additional properties for either kafka consumer or kafka producer in case they can't be set directly on the
-     * camel configurations (e.g.: new Kafka properties that are not reflected yet in Camel configurations), the
-     * properties have to be prefixed with `additionalProperties.`., e.g.:
+     * camel configurations (for example, new Kafka properties that are not reflected yet in Camel configurations), the
+     * properties have to be prefixed with `additionalProperties.`., for example:
      * `additionalProperties.transactional.id=12345&additionalProperties.schema.registry.url=http://localhost:8811/avro`
      */
     public void setAdditionalProperties(Map<String, Object> additionalProperties) {

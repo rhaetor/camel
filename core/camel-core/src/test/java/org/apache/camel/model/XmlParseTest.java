@@ -305,7 +305,7 @@ public class XmlParseTest extends XmlTestSupport {
         RouteDefinition route = assertOneRoute("routeWithTidyMarkupDataFormatAndAllowNullBody.xml");
         assertFrom(route, "seda:a");
         UnmarshalDefinition unmarshal = assertNthProcessorInstanceOf(UnmarshalDefinition.class, route, 0);
-        assertEquals("true", unmarshal.getAllowNullBody(), "The unmarshaller should allow null body");
+        assertEquals("true", unmarshal.getAllowNullBody(), "The unmarshaler should allow null body");
     }
 
     @Test

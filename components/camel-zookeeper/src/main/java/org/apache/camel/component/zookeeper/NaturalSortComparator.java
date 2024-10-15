@@ -26,7 +26,7 @@ import java.util.Comparator;
  * value nor '-' a negative one. As a result, 12345.12345 will sort higher than 12345.5432 and -12346 will sort higher
  * than 12345.
  * <p>
- * it does work well for sorting software versions e.g. camel-2.2.0 sorting higher than camel-2.1.0
+ * it does work well for sorting software versions for example, camel-2.2.0 sorting higher than camel-2.1.0
  */
 public class NaturalSortComparator implements Comparator<CharSequence> {
 

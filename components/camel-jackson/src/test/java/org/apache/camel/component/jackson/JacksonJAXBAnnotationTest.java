@@ -36,11 +36,11 @@ public class JacksonJAXBAnnotationTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(TestJAXBPojo.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:inPojo", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals("{\"PojoName\":\"Camel\"}", marshalledAsString);
+        Object marshaled = template.requestBody("direct:inPojo", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals("{\"PojoName\":\"Camel\"}", marshaledAsString);
 
-        template.sendBody("direct:backPojo", marshalled);
+        template.sendBody("direct:backPojo", marshaled);
 
         mock.assertIsSatisfied();
     }

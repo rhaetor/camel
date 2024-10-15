@@ -78,7 +78,7 @@ public class JobWorkerMessageTest {
 
     @Test
     public void unmarshalTest() {
-        JobWorkerMessage unmarshalledMessage1
+        JobWorkerMessage unmarshaledMessage1
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_1, JobWorkerMessage.class));
 
         JobWorkerMessage message = new JobWorkerMessage();
@@ -93,9 +93,9 @@ public class JobWorkerMessageTest {
         message.setDeadline(1);
         message.setType("type");
 
-        assertEquals(message, unmarshalledMessage1);
+        assertEquals(message, unmarshaledMessage1);
 
-        JobWorkerMessage unmarshalledMessage2
+        JobWorkerMessage unmarshaledMessage2
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_2, JobWorkerMessage.class));
 
         HashMap<String, Object> variables = new HashMap<>();
@@ -104,9 +104,9 @@ public class JobWorkerMessageTest {
         variables.put("varC", Collections.emptyMap());
         message.setVariables(variables);
 
-        assertEquals(message, unmarshalledMessage2);
+        assertEquals(message, unmarshaledMessage2);
 
-        JobWorkerMessage unmarshalledMessage3
+        JobWorkerMessage unmarshaledMessage3
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_3, JobWorkerMessage.class));
 
         HashMap<String, String> headers = new HashMap<>();
@@ -115,6 +115,6 @@ public class JobWorkerMessageTest {
 
         message.setCustomHeaders(headers);
 
-        assertEquals(message, unmarshalledMessage3);
+        assertEquals(message, unmarshaledMessage3);
     }
 }

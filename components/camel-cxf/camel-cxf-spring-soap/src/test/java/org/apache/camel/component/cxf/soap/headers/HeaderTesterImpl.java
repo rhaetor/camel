@@ -201,7 +201,7 @@ public class HeaderTesterImpl implements HeaderTester {
                     try {
                         JAXBElement<?> job
                                 = (JAXBElement<?>) JAXBContext.newInstance(org.apache.cxf.outofband.header.ObjectFactory.class)
-                                        .createUnmarshaller()
+                                        .createUnmarshaler()
                                         .unmarshal((Node) hdr1.getObject());
                         OutofBandHeader ob = (OutofBandHeader) job.getValue();
                         if ("testOobHeader".equals(ob.getName())

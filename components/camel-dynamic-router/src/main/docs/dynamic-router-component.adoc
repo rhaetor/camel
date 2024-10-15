@@ -43,7 +43,7 @@ control channel.
 router, until a recipient returns `null` to signify routing termination.  This may be an interpretation of the control
 channel feature.
  * *component*: does not provide a re-circulation feature.  If this is the desired behavior, the user will have to
-define and implement this behavior.  E.g., create a simple route to send a response back through the Dynamic Router
+define and implement this behavior. For example. create a simple route to send a response back through the Dynamic Router
 under some condition(s).
 
 For some use cases, the core Dynamic Router will be more appropriate.  In other cases, the Dynamic Router Component will

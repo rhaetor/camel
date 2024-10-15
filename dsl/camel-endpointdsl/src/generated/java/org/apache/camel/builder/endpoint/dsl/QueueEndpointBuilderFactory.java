@@ -264,7 +264,7 @@ public interface QueueEndpointBuilderFactory {
          * How long the message will stay alive in the queue. If unset the value
          * will default to 7 days, if -1 is passed the message will not expire.
          * The time to live must be -1 or any positive number. The format should
-         * be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as 20.345
+         * be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as 20.345
          * seconds, P2D -- parses as 2 days However, in case you are using
          * EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -285,7 +285,7 @@ public interface QueueEndpointBuilderFactory {
          * How long the message will stay alive in the queue. If unset the value
          * will default to 7 days, if -1 is passed the message will not expire.
          * The time to live must be -1 or any positive number. The format should
-         * be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as 20.345
+         * be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as 20.345
          * seconds, P2D -- parses as 2 days However, in case you are using
          * EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -305,7 +305,7 @@ public interface QueueEndpointBuilderFactory {
         /**
          * The timeout period for how long the message is invisible in the
          * queue. The timeout must be between 1 seconds and 7 days. The format
-         * should be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as
+         * should be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as
          * 20.345 seconds, P2D -- parses as 2 days However, in case you are
          * using EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -325,7 +325,7 @@ public interface QueueEndpointBuilderFactory {
         /**
          * The timeout period for how long the message is invisible in the
          * queue. The timeout must be between 1 seconds and 7 days. The format
-         * should be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as
+         * should be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as
          * 20.345 seconds, P2D -- parses as 2 days However, in case you are
          * using EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -1301,7 +1301,7 @@ public interface QueueEndpointBuilderFactory {
          * How long the message will stay alive in the queue. If unset the value
          * will default to 7 days, if -1 is passed the message will not expire.
          * The time to live must be -1 or any positive number. The format should
-         * be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as 20.345
+         * be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as 20.345
          * seconds, P2D -- parses as 2 days However, in case you are using
          * EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -1322,7 +1322,7 @@ public interface QueueEndpointBuilderFactory {
          * How long the message will stay alive in the queue. If unset the value
          * will default to 7 days, if -1 is passed the message will not expire.
          * The time to live must be -1 or any positive number. The format should
-         * be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as 20.345
+         * be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as 20.345
          * seconds, P2D -- parses as 2 days However, in case you are using
          * EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -1342,7 +1342,7 @@ public interface QueueEndpointBuilderFactory {
         /**
          * The timeout period for how long the message is invisible in the
          * queue. The timeout must be between 1 seconds and 7 days. The format
-         * should be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as
+         * should be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as
          * 20.345 seconds, P2D -- parses as 2 days However, in case you are
          * using EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -1362,7 +1362,7 @@ public interface QueueEndpointBuilderFactory {
         /**
          * The timeout period for how long the message is invisible in the
          * queue. The timeout must be between 1 seconds and 7 days. The format
-         * should be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as
+         * should be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as
          * 20.345 seconds, P2D -- parses as 2 days However, in case you are
          * using EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -1684,7 +1684,7 @@ public interface QueueEndpointBuilderFactory {
          * How long the message will stay alive in the queue. If unset the value
          * will default to 7 days, if -1 is passed the message will not expire.
          * The time to live must be -1 or any positive number. The format should
-         * be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as 20.345
+         * be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as 20.345
          * seconds, P2D -- parses as 2 days However, in case you are using
          * EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -1704,7 +1704,7 @@ public interface QueueEndpointBuilderFactory {
          * How long the message will stay alive in the queue. If unset the value
          * will default to 7 days, if -1 is passed the message will not expire.
          * The time to live must be -1 or any positive number. The format should
-         * be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as 20.345
+         * be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as 20.345
          * seconds, P2D -- parses as 2 days However, in case you are using
          * EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -1724,7 +1724,7 @@ public interface QueueEndpointBuilderFactory {
         /**
          * The timeout period for how long the message is invisible in the
          * queue. The timeout must be between 1 seconds and 7 days. The format
-         * should be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as
+         * should be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as
          * 20.345 seconds, P2D -- parses as 2 days However, in case you are
          * using EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.
@@ -1744,7 +1744,7 @@ public interface QueueEndpointBuilderFactory {
         /**
          * The timeout period for how long the message is invisible in the
          * queue. The timeout must be between 1 seconds and 7 days. The format
-         * should be in this form: PnDTnHnMn.nS., e.g: PT20.345S -- parses as
+         * should be in this form: PnDTnHnMn.nS., for example, PT20.345S -- parses as
          * 20.345 seconds, P2D -- parses as 2 days However, in case you are
          * using EndpointDsl/ComponentDsl, you can do something like
          * Duration.ofSeconds() since these Java APIs are typesafe.

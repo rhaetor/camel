@@ -88,7 +88,7 @@ public class TelegramBodyPublisher {
 
             String contentDisposition = "Content-Disposition: form-data; ";
 
-            // this creates the key-pair part of the content disposition (i.e.: name="myName"; file="myFile.doc")
+            // this creates the key-pair part of the content disposition (that is, : name="myName"; file="myFile.doc")
             contentDisposition += headers.entrySet()
                     .stream()
                     .map(e -> e.getKey().toLowerCase() + "=\"" + e.getValue().toString() + "\"")

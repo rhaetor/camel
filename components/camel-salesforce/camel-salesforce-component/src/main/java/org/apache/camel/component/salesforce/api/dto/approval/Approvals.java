@@ -120,7 +120,7 @@ public final class Approvals implements Serializable {
 
     /**
      * Returns approvals by Salesforce object type. You might have approvals for "Account" and "Case" Salesforce
-     * objects, then the resulting map would hold a list of {@link Info} objects keyed by the object type, i.e.:
+     * objects, then the resulting map would hold a list of {@link Info} objects keyed by the object type, that is, :
      *
      * <pre>
      * Approvals approvals = ...;

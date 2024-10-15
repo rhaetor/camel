@@ -32,7 +32,7 @@ public final class FhirDeleteEndpointConfiguration extends FhirConfiguration {
     @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceById", description="It's id")})
     private String stringId;
     @UriParam
-    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceById", description="The resource type e.g Patient")})
+    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceById", description="The resource type , for example: Patient")})
     private String type;
     @UriParam
     @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceConditionalByUrl", description="The search URL to use. The format of this URL should be of the form ResourceTypeParameters, for example: Patientname=Smith&amp;identifier=13.2.4.11.4%7C847366")})

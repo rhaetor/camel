@@ -136,7 +136,7 @@ public class XmlVerifierProcessor extends XmlSignatureProcessor {
             Element signatureNode = (Element) signatureNodes.item(i);
 
             valContext.setNode(signatureNode);
-            final XMLSignature signature = fac.unmarshalXMLSignature(valContext);
+            final XMLSignature signature = fac.Unmarshal XMLSignature(valContext);
 
             if (getConfiguration().getXmlSignatureChecker() != null) {
                 XmlSignatureChecker.Input checkerInput = new CheckerInputBuilder().message(out).messageBodyDocument(doc)

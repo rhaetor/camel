@@ -31,7 +31,7 @@ public interface ExecBinding {
      * The header value overrides the executable of the command, configured in the exec endpoint URI. As executable is
      * considered the remaining of the {@link ExecEndpoint} URI; <br>
      * <br>
-     * e.g. in the URI <i> <code>exec:C:/Program Files/jdk/java.exe</code> </i>, <code>C:/Program
+     * for example, in the URI <i> <code>exec:C:/Program Files/jdk/java.exe</code> </i>, <code>C:/Program
      * Files/jdk/java.exe<code> is the executable.
      */
     @Metadata(label = "in", description = "The name of the system command that will be executed. Overrides\n" +
@@ -53,7 +53,7 @@ public interface ExecBinding {
 
     /**
      * Specifies the file name of a file, created by the executable, that should be considered as output of the
-     * executable, e.g. a log file.
+     * executable, for example, a log file.
      *
      * @see ExecResultConverter#toInputStream(ExecResult)
      */

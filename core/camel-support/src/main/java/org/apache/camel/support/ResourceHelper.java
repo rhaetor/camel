@@ -58,7 +58,7 @@ public final class ResourceHelper {
     }
 
     /**
-     * Determines whether the URI has a scheme (e.g. file:, classpath: or http:)
+     * Determines whether the URI has a scheme (for example, file:, classpath: or http:)
      *
      * @param  uri the URI
      * @return     <tt>true</tt> if the URI starts with a scheme
@@ -73,7 +73,7 @@ public final class ResourceHelper {
     }
 
     /**
-     * Gets the scheme from the URI (e.g. file:, classpath: or http:)
+     * Gets the scheme from the URI (for example, file:, classpath: or http:)
      *
      * @param  uri the uri
      * @return     the scheme, or <tt>null</tt> if no scheme

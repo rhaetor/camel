@@ -12,7 +12,7 @@ can also reload Java source code changes and much more.
 == Using route reloading
 
 You cannot watch for file changes in the Java classpath. It is only possible to watch
-for file changes in the file system (i.e. using `file` and not `classpath`).
+for file changes in the file system (that is, using `file` and not `classpath`).
 
 The route reloading can be configured in Java or with Spring Boot, Quarkus in the following way:
 

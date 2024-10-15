@@ -399,7 +399,7 @@ public class MySqlConnectorEmbeddedDebeziumConfiguration
     /**
      * The size of a look-ahead buffer used by the  binlog reader to decide
      * whether the transaction in progress is going to be committed or rolled
-     * back. Use 0 to disable look-ahead buffering. Defaults to 0 (i.e.
+     * back. Use 0 to disable look-ahead buffering. Defaults to 0 (that is,
      * buffering is disabled).
      */
     public void setBinlogBufferSize(int binlogBufferSize) {
@@ -640,7 +640,7 @@ public class MySqlConnectorEmbeddedDebeziumConfiguration
 
     /**
      * Specify how binlog events that belong to a table missing from internal
-     * schema representation (i.e. internal representation is not consistent
+     * schema representation (that is, internal representation is not consistent
      * with database) should be handled, including: 'fail' (the default) an
      * exception indicating the problematic event and its binlog position is
      * raised, causing the connector to be stopped; 'warn' the problematic event
@@ -1135,7 +1135,7 @@ public class MySqlConnectorEmbeddedDebeziumConfiguration
     }
 
     /**
-     * Specify how failures during deserialization of binlog events (i.e. when
+     * Specify how failures during deserialization of binlog events (that is, when
      * encountering a corrupted event) should be handled, including: 'fail' (the
      * default) an exception indicating the problematic event and its binlog
      * position is raised, causing the connector to be stopped; 'warn' the
@@ -1177,7 +1177,7 @@ public class MySqlConnectorEmbeddedDebeziumConfiguration
     }
 
     /**
-     * Specify how failures during processing of events (i.e. when encountering
+     * Specify how failures during processing of events (that is, when encountering
      * a corrupted event) should be handled, including: 'fail' (the default) an
      * exception indicating the problematic event and its position is raised,
      * causing the connector to be stopped; 'warn' the problematic event and its

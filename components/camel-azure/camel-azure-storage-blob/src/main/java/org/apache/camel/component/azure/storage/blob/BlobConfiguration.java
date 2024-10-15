@@ -191,7 +191,7 @@ public class BlobConfiguration implements Cloneable {
     }
 
     /**
-     * The blob type in order to initiate the appropriate settings for each blob type
+     * The blob type to initiate the appropriate settings for each blob type
      */
     public BlobType getBlobType() {
         return blobType;

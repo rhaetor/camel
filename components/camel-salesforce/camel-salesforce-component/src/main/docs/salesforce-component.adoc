@@ -94,7 +94,7 @@ For each of the flows, different sets of properties need to be set:
 | keystore     | Connected App, Digital Certificate | JWT Bearer Token
 |===
 
-The component auto determines what flow you're trying to configure. In order to be explicit, set the
+The component auto determines what flow you're trying to configure. To be explicit, set the
 `authenticationType` property.
 
 [NOTE]
@@ -348,7 +348,7 @@ Describes the individual metadata for the specified object.
 |===
 | Parameter | Type | Description | Default | Required
 
-| `sObjectName` | `String` | Name of SObject, e.g. `Account`. Alternatively, can be supplied in Body. | | x
+| `sObjectName` | `String` | Name of SObject, for example, `Account`. Alternatively, can be supplied in Body. | | x
 |===
 
 *Output*
@@ -365,7 +365,7 @@ Completely describes the individual metadata at all levels for the specified obj
 |===
 | Parameter | Type | Description | Default | Required
 
-| `sObjectName` | `String` | Name of SObject, e.g. `Account`. Alternatively, can be supplied in Body. | | x
+| `sObjectName` | `String` | Name of SObject, for example, `Account`. Alternatively, can be supplied in Body. | | x
 |===
 
 *Output*
@@ -382,7 +382,7 @@ Accesses record based on the specified object ID. This operation requires the `p
 |===
 | Parameter | Type | Description | Default | Required
 
-| `sObjectName` | `String` | Name of SObject, e.g. `Account` | | x
+| `sObjectName` | `String` | Name of SObject, for example, `Account` | | x
 | `sObjectId` | `String` | Id of record to retrieve. | | x
 | `sObjectFields` | `String` | Comma-separated list of fields to retrieve||
 | Body | `AbstractSObjectBase` | Instance of SObject that is used to query salesforce. If supplied,
@@ -405,7 +405,7 @@ Accesses record based on an External ID value. This operation requires the `pack
 
 | `sObjectIdName` | `String` | Name of External ID field | | x
 | `sObjectIdValue` | `String` | External ID value | | x
-| `sObjectName` | `String` | Name of SObject, e.g. `Account` | | x
+| `sObjectName` | `String` | Name of SObject, for example, `Account` | | x
 | Body | `AbstractSObjectBase` | Instance of SObject that is used to query salesforce. If supplied,
 overrides `sObjectName` and `sObjectIdValue` parameters.  | |
 |===
@@ -425,7 +425,7 @@ Retrieves the specified blob field from an individual record.
 | Parameter | Type | Description | Default | Required
 
 | `sObjectBlobFieldName` | `String`  | SOSL query | |x
-| `sObjectName` | `String`  | Name of SObject, e.g., Account | | Required if SObject not supplied in body
+| `sObjectName` | `String`  | Name of SObject, for example, Account | | Required if SObject not supplied in body
 | `sObjectId` | `String`  | Id of SObject | | Required if SObject not supplied in body
 | Body | `AbstractSObjectBase` | SObject to determine type and Id from. If not supplied, `sObjectId`
 and `sObjectName` parameters will be used. | | Required if `sObjectId`
@@ -447,7 +447,7 @@ Creates a record in salesforce.
 | Parameter | Type | Description | Default | Required
 
 | Body | `AbstractSObjectBase` or `String` | Instance of SObject to create.  | | x
-| `sObjectName` | `String` | Name of SObject, e.g. `Account`. Only used if Camel cannot determine from Body. | | If Body is a `String`
+| `sObjectName` | `String` | Name of SObject, for example, `Account`. Only used if Camel cannot determine from Body. | | If Body is a `String`
 |===
 
 *Output*
@@ -465,7 +465,7 @@ Updates a record in salesforce.
 | Parameter | Type | Description | Default | Required
 
 | Body | `AbstractSObjectBase` or `String` | Instance of SObject to update.  | | x
-| `sObjectName` | `String` | Name of SObject, e.g. `Account`. Only used if Camel cannot determine from Body. | | If Body is a `String`
+| `sObjectName` | `String` | Name of SObject, for example, `Account`. Only used if Camel cannot determine from Body. | | If Body is a `String`
 | `sObjectId` | `String` | Id of record to update. Only used if Camel cannot determine from Body. | | If Body is a `String`
 |===
 
@@ -482,7 +482,7 @@ Upserts a record by External ID.
 | Body | `AbstractSObjectBase` or `String` | SObject to update.  | | x
 | `sObjectIdName` | `String` | External ID field name. ||x
 | `sObjectIdValue` | `String` | External ID value || If Body is a `String`
-| `sObjectName` | `String` | Name of SObject, e.g. `Account`. Only used if Camel cannot determine from Body. | | If Body is a `String`
+| `sObjectName` | `String` | Name of SObject, for example, `Account`. Only used if Camel cannot determine from Body. | | If Body is a `String`
 |===
 
 *Output*
@@ -500,7 +500,7 @@ Deletes a record in salesforce.
 | Parameter | Type | Description | Default | Required
 
 | Body | `AbstractSObjectBase` | Instance of SObject to delete.  | |
-| `sObjectName` | `String` | Name of SObject, e.g. `Account`. Only used if Camel cannot determine from Body. | | If Body is not an `AbstractSObjectBase` instance
+| `sObjectName` | `String` | Name of SObject, for example, `Account`. Only used if Camel cannot determine from Body. | | If Body is not an `AbstractSObjectBase` instance
 | `sObjectId` | `String` | Id of record to delete. | | If Body is not an `AbstractSObjectBase` instance
 |===
 
@@ -517,7 +517,7 @@ Deletes a record in salesforce by External ID.
 | Body | `AbstractSObjectBase` | Instance of SObject to delete.  | |
 | `sObjectIdName` | `String` | Name of External ID field | | If Body is not an `AbstractSObjectBase` instance
 | `sObjectIdValue` | `String` | External ID value | | If Body is not an `AbstractSObjectBase` instance
-| `sObjectName` | `String` | Name of SObject, e.g. `Account`. Only used if Camel cannot determine from Body. | | If Body is not an `AbstractSObjectBase` instance
+| `sObjectName` | `String` | Name of SObject, for example, `Account`. Only used if Camel cannot determine from Body. | | If Body is not an `AbstractSObjectBase` instance
 |===
 
 [[query]]
@@ -533,8 +533,8 @@ the correct `AbstractQueryRecordsBase` sublcass based on the response.
 
 | Body or `sObjectQuery` | `String`  | SOQL query | | x
 | streamQueryResult | `Boolean` | If true, returns a streaming `Iterator` and transparently retrieves all pages as needed. The `sObjectClass` option must reference an `AbstractQueryRecordsBase` subclass. | false |
-| `sObjectClass` | `String` | Fully qualified name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, e.g. `org.my.dto.QueryRecordsAccount`| |
-| `sObjectName` | `String` | Simple name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, e.g. `QueryRecordsAccount`. Requires the `package` option be set.| |
+| `sObjectClass` | `String` | Fully qualified name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, for example, `org.my.dto.QueryRecordsAccount`| |
+| `sObjectName` | `String` | Simple name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, for example, `QueryRecordsAccount`. Requires the `package` option be set.| |
 |===
 
 *Output*
@@ -554,8 +554,8 @@ operations. If neither `sObjectClass` nor `sObjectName` are set, Camel will atte
 | Parameter | Type | Description | Default | Required
 
 | Body or `sObjectQuery` | `String`  | `nextRecords` value. Can be found in a prior query result in the `AbstractQueryRecordsBase.nextRecordsUrl` property | | X
-| `sObjectClass` | `String` | Fully qualified name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, e.g. `org.my.dto.QueryRecordsAccount`| |
-| `sObjectName` | `String` | Simple name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, e.g. `QueryRecordsAccount`. Requires the `package` option be set. | |
+| `sObjectClass` | `String` | Fully qualified name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, for example, `org.my.dto.QueryRecordsAccount`| |
+| `sObjectName` | `String` | Simple name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, for example, `QueryRecordsAccount`. Requires the `package` option be set. | |
 
 |===
 
@@ -578,8 +578,8 @@ response.
 
 | Body or `sObjectQuery` | `String`  | SOQL query | | x
 | streamQueryResult | `Boolean` | If true, returns a streaming `Iterable` and transparently retrieves all pages as needed. The `sObjectClass` option must reference an `AbstractQueryRecordsBase` subclass. | false |
-| `sObjectClass` | `String` | Fully qualified name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, e.g. `org.my.dto.QueryRecordsAccount`| |
-| `sObjectName` | `String` | Simple name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, e.g. `QueryRecordsAccount`. Requires the `package` option be set.| |
+| `sObjectClass` | `String` | Fully qualified name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, for example, `org.my.dto.QueryRecordsAccount`| |
+| `sObjectName` | `String` | Simple name of class to deserialize response to. Usually a subclass of `AbstractQueryRecordsBase`, for example, `QueryRecordsAccount`. Requires the `package` option be set.| |
 |===
 
 *Output*
@@ -709,7 +709,7 @@ Composite API supports only JSON payloads.
 ====
 As with the batch API, the results can vary from API to API so the body of each `SObjectCompositeResult` instance is given as a
 `java.lang.Object`. In most cases the result will be a `java.util.Map` with string keys and values or other
-`java.util.Map` as value. Requests are made in JSON format hold some type information (i.e., it is known what values are
+`java.util.Map` as value. Requests are made in JSON format hold some type information (that is, it is known what values are
 strings and what values are numbers).
 ====
 
@@ -858,7 +858,7 @@ list of responses with the order preserved, so that the n-th requests response i
 [NOTE]
 ====
 The results can vary from API to API so the result of each sub-request (`SObjectBatchResult.result`) is given as a `java.lang.Object`. In most cases
-the result will be a `java.util.Map` with string keys and values or other `java.util.Map` as value. Requests are made in JSON format and hold some type information (i.e., it is known what values are strings and what values are numbers).
+the result will be a `java.util.Map` with string keys and values or other `java.util.Map` as value. Requests are made in JSON format and hold some type information (that is, it is known what values are strings and what values are numbers).
 ====
 
 Let's look at an example:
@@ -917,7 +917,7 @@ Retrieve one or more records of the same object type.
 
 | sObjectIds | List of String or comma-separated string | A list of one or more IDs of the objects to return. All IDs must belong to the same object type. | | x
 | sObjectFields | List of String or comma-separated string | A list of fields to include in the response. The field names you specify must be valid, and you must have read-level permissions to each field. | | x
-| sObjectName | String | Type of SObject, e.g. `Account` | | x
+| sObjectName | String | Type of SObject, for example, `Account` | | x
 | sObjectClass | String | Fully qualified class name of DTO class to use for deserializing the response. | | Required if `sObjectName` parameter does not resolve to a class that exists in the package specified by the `package` option.
 |===
 
@@ -971,7 +971,7 @@ Create or update (upsert) up to 200 records based on an external ID field. Mixed
 
 | Body | List of `SObject` | A list of SObjects to upsert | | x
 | `allOrNone` | `boolean` |  Indicates whether to roll back the entire request when the upsert of any object fails (true) or to continue with the independent upsert of other objects in the request. | false |
-| `sObjectName` | `String` | Type of SObject, e.g. `Account` | | x
+| `sObjectName` | `String` | Type of SObject, for example, `Account` | | x
 | `sObjectIdName` | `String` | Name of External ID field | | x
 |===
 
@@ -1035,7 +1035,7 @@ salesforce:apexCall[/yourApexRestUrl][?options]
 ----
 
 You can supply the apexUrl either in the endpoint (see above), or as the `apexUrl` option as listed in the table below.
-In either case the Apex URL can contain placeholders in the format of `\{headerName}`. E.g., for the Apex URL `MyApexClass/\{id}`,
+In either case the Apex URL can contain placeholders in the format of `\{headerName}`. For example,  for the Apex URL `MyApexClass/\{id}`,
 the value of the header named `id` will be used to replace the placeholder. If `rawPayload` is false and neither
 `sObjectClass` nor `sObjectName` are set, Camel will attempt to determine the correct `AbstractQueryRecordsBase`
 sublcass based on the response.
@@ -1045,11 +1045,11 @@ sublcass based on the response.
 
 | Body | `Map<String, Object>` if `GET`, otherwise `String` or `InputStream`| In the case of a `GET`, the body (`Map` instance)
 is transformed into query parameters. For other HTTP methods, the body is used for the HTTP body. | |
-| `apexUrl` | `String` | The portion of the endpoint URL after `https://instance.salesforce.com/services/apexrest/`, e.g., 'MyApexClass/' | | Yes, unless supplied in endpoint
-| `apexMethod` | `String` | The HTTP method (e.g. `GET`, `POST`) to use. | `GET` |
+| `apexUrl` | `String` | The portion of the endpoint URL after `https://instance.salesforce.com/services/apexrest/`, for example, 'MyApexClass/' | | Yes, unless supplied in endpoint
+| `apexMethod` | `String` | The HTTP method (for example, `GET`, `POST`) to use. | `GET` |
 | `rawPayload` | `Boolean` | If true, Camel will not serialize the request or response bodies. | false |
 | Header: `apexQueryParam.[paramName]` | Object | Headers that override apex parameters passed in the endpoint. |  |
-| `sObjectName` | `String` | Name of sObject (e.g. `Merchandise__c`) used to deserialize the response |  |
+| `sObjectName` | `String` | Name of sObject (for example, `Merchandise__c`) used to deserialize the response |  |
 | `sObjectClass` | `String` | Fully qualified class name used to deserialize the response |  |
 |===
 
@@ -1370,8 +1370,8 @@ to be set in the `queryLocator` parameter on subsequent calls.
 === Bulk (original) API 
 
 Producer endpoints can use the following APIs. All Job data formats,
-i.e. xml, csv, zip/xml, and zip/csv are supported. +
- The request and response have to be marshalled/unmarshalled by the
+that is, xml, csv, zip/xml, and zip/csv are supported. +
+ The request and response have to be marshaled/unmarshaled by the
 route. Usually the request will be some stream source like a CSV file,
  and the response may also be saved to a file to be correlated with the
 request.
@@ -1671,11 +1671,11 @@ For example:
 Because The Pub/Sub API requires that event payloads be serialized in Apache Avro format, Camel will
 attempt to serialize event payloads from the following input types:
 
-* Avro `GenericRecord`. Camel fetches the Avro schema in order to serialize `GenericRecord`
+* Avro `GenericRecord`. Camel fetches the Avro schema to serialize `GenericRecord`
 instances. This option doesn't require ahead-of-time generation of Event classes.
 * Avro `SpecificRecord`. Subclasses of `SpecificRecord` contain properties that are specific to an
 event type. The <<MavenPlugin,maven plugin>> can generate the subclasses automatically.
-* POJO. Camel fetches the Avro schema in order to serialize POJO instances. The POJO's
+* POJO. Camel fetches the Avro schema to serialize POJO instances. The POJO's
 field names must match event field names exactly, including case.
 * `String`. Camel will treat the `String` value as JSON and serialize to Avro. Note that the JSON
 value does not have to be Avro-encoded JSON. It can be arbitrary JSON, but it must be serializable
@@ -1683,7 +1683,7 @@ to Avro based on the Schema associated with the topic you're publishing to. The 
 field names must match event field names exactly, including case.
 * `byte[]`. Camel will not perform any serialization. Value must be the Avro-encoded event payload.
 * `com.salesforce.eventbus.protobuf.ProducerEvent`. Providing a `ProducerEvent` allows full control,
-e.g., setting the `id` property, which can be tied back to the `PublishResult.CorrelationKey`.
+for example, setting the `id` property, which can be tied back to the `PublishResult.CorrelationKey`.
 
 *Output*
 
@@ -1776,7 +1776,7 @@ Type: Class passed via `sObjectName` parameter
 
 ==== Platform Events
 
-To emit a platform event use the <<createSObject,createSObject>> operation, passing an instance of a platform event, e.g. `Order_Event__e`.
+To emit a platform event use the <<createSObject,createSObject>> operation, passing an instance of a platform event, for example, `Order_Event__e`.
 
 The URI format for consuming platform events is:
 ----
@@ -1989,7 +1989,7 @@ header will be automatically set based on the `format` option, but this can be o
 | Parameter | Type | Description| Default| Required
 
 | Body | `String` or `InputStream` | Body of the HTTP request | |
-| `rawPath` | `String` | The portion of the endpoint URL after the domain name, e.g., '/services/data/v51.0/sobjects/Account/' | | x
+| `rawPath` | `String` | The portion of the endpoint URL after the domain name, for example, '/services/data/v51.0/sobjects/Account/' | | x
 | `rawMethod` | `String` | The HTTP method | | x
 | `rawQueryParameters` | `String` | Comma separated list of message headers to include as query parameters. Do not url-encode values as this will be done automatically. | |
 | `rawHttpHeaders` | `String` | Comma separated list of message headers to include as HTTP headers | |

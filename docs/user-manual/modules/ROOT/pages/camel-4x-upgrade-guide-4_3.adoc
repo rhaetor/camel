@@ -154,7 +154,7 @@ the behavior described in the documentation.
 
 Using kebab-case in general has been deprecated, and you will se a WARN logs. Please migrate to camelCase.
 
-The language for exchange property now only supports camelCase style, i.e. `exchange-property` is now `exchangeProperty`.
+The language for exchange property now only supports camelCase style, that is, `exchange-property` is now `exchangeProperty`.
 
 The `camelYamlDsl.json` Schema file has removed `inheritErrorHandler` option for all EIPs where it was not applicable.
 This option is only intended for the Load Balancer EIP. This makes the YAML schema in-line with the XML DSL schema.

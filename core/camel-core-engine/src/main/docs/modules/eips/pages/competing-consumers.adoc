@@ -116,7 +116,7 @@ for the same endpoint?
 And yes, it's _a bit of a hack_, and the route logic code is duplicated.
 And what if we need more, then we need to add a third, a fourth and so on.
 
-What if the processing of the file itself is the bottleneck, i.e., the `calculateBean` is slow?
+What if the processing of the file itself is the bottleneck, that is, the `calculateBean` is slow?
 So how can we process messages with this bean concurrently?
 
 We can use the xref:threads-eip.adoc[Threads EIP], so if we insert it in the route we get:

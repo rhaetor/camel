@@ -166,7 +166,7 @@ public final class MultiCompile {
             }
 
             // This method is called by client code from two levels up the current stack frame
-            // We need a private-access lookup from the class in that stack frame in order to get
+            // We need a private-access lookup from the class in that stack frame to get
             // private-access to any local interfaces at that location.
             int index = 2;
             ByteArrayClassLoader c = new ByteArrayClassLoader(fileManager.classes());

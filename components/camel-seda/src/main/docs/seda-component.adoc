@@ -122,7 +122,7 @@ copies the response to the original message response.
 
 By default, the SEDA endpoint uses a single consumer thread, but you can
 configure it to use concurrent consumer threads. So instead of thread
- pools, you can use:
+pools, you can use:
 
 [source,java]
 ----

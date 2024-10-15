@@ -22,7 +22,7 @@ The Camel K operator will automatically manage and configure this integration.
 In particular the operator takes care on exposing services, configuring health endpoints, providing metrics, updating image streams and much more.
 
 By default, the run command will not wait for the integration to in state running.
-You need to add `-w` or `--wait` option in order to wait for the integration to become ready.
+You need to add `-w` or `--wait` option to wait for the integration to become ready.
 
 The `--logs` option makes the command also print the integration output once the integration Pod is running.
 

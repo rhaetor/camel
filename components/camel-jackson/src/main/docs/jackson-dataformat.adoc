@@ -11,7 +11,7 @@
 
 *Since Camel {since}*
 
-Jackson is a Data Format that uses the
+Jackson is a data format that uses the
 https://github.com/FasterXML/jackson-core[Jackson Library]
 
 [source,java]

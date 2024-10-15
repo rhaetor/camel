@@ -195,7 +195,7 @@ public interface BraintreeEndpointBuilderFactory {
             return this;
         }
         /**
-         * The access token granted by a merchant to another in order to process
+         * The access token granted by a merchant to another to process
          * transactions on their behalf. Used in place of environment, merchant
          * id, public key and private key fields.
          * 

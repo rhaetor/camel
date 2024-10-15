@@ -438,7 +438,7 @@ public interface MongoDbEndpointBuilderFactory {
         /**
          * Indicates what database the tail tracking mechanism will persist to.
          * If not specified, the current database will be picked by default.
-         * Dynamicity will not be taken into account even if enabled, i.e. the
+         * Dynamicity will not be taken into account even if enabled, that is, the
          * tail tracking database will not vary past endpoint initialisation.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -1180,9 +1180,9 @@ public interface MongoDbEndpointBuilderFactory {
         }
         /**
          * A representation of a tag set as a comma-separated list of
-         * colon-separated key-value pairs, e.g. dc:ny,rack:1. Spaces are
+         * colon-separated key-value pairs, for example, dc:ny,rack:1. Spaces are
          * stripped from beginning and end of all keys and values. To specify a
-         * list of tag sets, using multiple readPreferenceTags, e.g.
+         * list of tag sets, using multiple readPreferenceTags, for example
          * readPreferenceTags=dc:ny,rack:1;readPreferenceTags=dc:ny;readPreferenceTags= Note the empty value for the last one, which means match any secondary as a last resort. Order matters when using multiple readPreferenceTags.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -2493,9 +2493,9 @@ public interface MongoDbEndpointBuilderFactory {
         }
         /**
          * A representation of a tag set as a comma-separated list of
-         * colon-separated key-value pairs, e.g. dc:ny,rack:1. Spaces are
+         * colon-separated key-value pairs, for example, dc:ny,rack:1. Spaces are
          * stripped from beginning and end of all keys and values. To specify a
-         * list of tag sets, using multiple readPreferenceTags, e.g.
+         * list of tag sets, using multiple readPreferenceTags, for example
          * readPreferenceTags=dc:ny,rack:1;readPreferenceTags=dc:ny;readPreferenceTags= Note the empty value for the last one, which means match any secondary as a last resort. Order matters when using multiple readPreferenceTags.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -3746,9 +3746,9 @@ public interface MongoDbEndpointBuilderFactory {
         }
         /**
          * A representation of a tag set as a comma-separated list of
-         * colon-separated key-value pairs, e.g. dc:ny,rack:1. Spaces are
+         * colon-separated key-value pairs, for example, dc:ny,rack:1. Spaces are
          * stripped from beginning and end of all keys and values. To specify a
-         * list of tag sets, using multiple readPreferenceTags, e.g.
+         * list of tag sets, using multiple readPreferenceTags, for example
          * readPreferenceTags=dc:ny,rack:1;readPreferenceTags=dc:ny;readPreferenceTags= Note the empty value for the last one, which means match any secondary as a last resort. Order matters when using multiple readPreferenceTags.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -4537,7 +4537,7 @@ public interface MongoDbEndpointBuilderFactory {
 
         /**
          * A document that contains the _id of the document created or modified
-         * by the insert, replace, delete, update operations (i.e. CRUD
+         * by the insert, replace, delete, update operations (that is, CRUD
          * operations). For sharded collections, also displays the full shard
          * key for the document. The _id field is not repeated if it is already
          * a part of the shard key.
@@ -4565,6 +4565,34 @@ public interface MongoDbEndpointBuilderFactory {
          */
         public String mongoDbStreamOperationType() {
             return "CamelMongoDbStreamOperationType";
+        }
+
+        /**
+         * Indicates which document to return, the document before or after an
+         * update and return atomic operation.
+         *
+         * The option is a: {@code com.mongodb.client.model.ReturnDocument}
+         * type.
+         *
+         * Group: producer update one and return
+         *
+         * @return the name of the header {@code MongoDbReturnDocumentType}.
+         */
+        public String mongoDbReturnDocumentType() {
+            return "CamelMongoDbReturnDocumentType";
+        }
+
+        /**
+         * Options to use. When set, options set in the headers will be ignored.
+         *
+         * The option is a: {@code Object} type.
+         *
+         * Group: producer update one and options
+         *
+         * @return the name of the header {@code MongoDbOperationOption}.
+         */
+        public String mongoDbOperationOption() {
+            return "CamelMongoDbOperationOption";
         }
     }
     static MongoDbEndpointBuilder endpointBuilder(

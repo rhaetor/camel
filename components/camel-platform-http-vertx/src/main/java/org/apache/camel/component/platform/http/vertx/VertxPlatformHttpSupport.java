@@ -56,7 +56,7 @@ import static org.apache.camel.util.CollectionHelper.appendEntry;
  * Supporting class for the platform-http-vertx component.
  *
  * Please note that many of the methods in this class are part of the component's hot-path, therefore, please be mindful
- * about the performance implications of the code (i.e.: keep methods small, avoid costly operations, etc).
+ * about the performance implications of the code (that is, : keep methods small, avoid costly operations, etc).
  */
 public final class VertxPlatformHttpSupport {
     private static final Logger LOGGER = LoggerFactory.getLogger(VertxPlatformHttpSupport.class);

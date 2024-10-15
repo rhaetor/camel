@@ -25,8 +25,8 @@ import org.apache.camel.test.spring.junit5.CamelSpringTestSupport;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;
 import org.infinispan.client.hotrod.configuration.ConfigurationBuilder;
-import org.infinispan.client.hotrod.marshall.MarshallerUtil;
-import org.infinispan.query.remote.client.impl.MarshallerRegistration;
+import org.infinispan.client.hotrod.marshal.MarshalerUtil;
+import org.infinispan.query.remote.client.impl.MarshalerRegistration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -62,7 +62,7 @@ public abstract class SpringInfinispanRemoteIdempotentRepositoryTestSupport exte
                 .realm("default");
 
         RemoteCacheManager manager = new RemoteCacheManager(clientBuilder.create());
-        MarshallerRegistration.init(MarshallerUtil.getSerializationContext(manager));
+        MarshalerRegistration.init(MarshalerUtil.getSerializationContext(manager));
         RemoteCache<Object, Object> cache = manager.administration().getOrCreateCache("idempotent", (String) null);
         assertNotNull(cache);
         super.doPreSetup();

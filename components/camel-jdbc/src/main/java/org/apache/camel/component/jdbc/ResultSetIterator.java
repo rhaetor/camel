@@ -103,7 +103,7 @@ public class ResultSetIterator implements Iterator<Map<String, Object>> {
     }
 
     public Set<String> getColumnNames() {
-        // New copy each time in order to ensure immutability
+        // New copy each time to ensure immutability
         Set<String> columnNames = new LinkedHashSet<>(columns.length);
         for (Column column : columns) {
             columnNames.add(column.getName());

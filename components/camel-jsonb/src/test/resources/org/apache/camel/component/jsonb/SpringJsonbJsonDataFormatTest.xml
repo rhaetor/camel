@@ -29,9 +29,9 @@
 
         <!-- we define the json johnzon data formats to be used -->
         <dataFormats>
-            <!-- this uses the default unmarshal type that is a Map based -->
+            <!-- this uses the default unmarshaltype that is a Map based -->
             <json id="jsonb" library="Jsonb"/>
-            <!-- and this one uses our own TestPojo class as unmarshal type -->
+            <!-- and this one uses our own TestPojo class as unmarshaltype -->
             <json id="pojo" library="Jsonb" unmarshalType="org.apache.camel.component.jsonb.TestPojo"/>
         </dataFormats>
 

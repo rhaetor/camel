@@ -262,7 +262,7 @@ public interface StubComponentBuilderFactory {
             return this;
         }
         /**
-         * Sets the default maximum capacity of the SEDA queue (i.e., the number
+         * Sets the default maximum capacity of the SEDA queue (that is, the number
          * of messages it can hold).
          * 
          * The option is a: &lt;code&gt;int&lt;/code&gt; type.

@@ -133,7 +133,7 @@ custom static imports), instead of the default one.
 You can externalize the script and have Camel load it from a resource
 such as `"classpath:"`, `"file:"`, or `"http:"`.
 This is done using the following syntax: `"resource:scheme:location"`,
-e.g., to refer to a file on the classpath you can do:
+for example, to refer to a file on the classpath you can do:
 
 [source,java]
 -------------------------------------------------------------------

@@ -152,6 +152,7 @@ public final class CatalogLoader {
         String camelQuarkusVersion = null;
         CamelCatalog answer = new DefaultCamelCatalog(true);
 
+        // quarkus version must end with .Final
         if (quarkusVersion == null) {
             return answer;
         }

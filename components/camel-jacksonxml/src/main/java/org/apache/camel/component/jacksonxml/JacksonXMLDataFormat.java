@@ -56,7 +56,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * A <a href="http://camel.apache.org/data-format.html">data format</a> ({@link DataFormat}) using
- * <a href="https://github.com/FasterXML/jackson">Jackson</a> to marshal to and from XML.
+ * <a href="https://github.com/FasterXML/jackson">Jackson</a> to marshalto and from XML.
  */
 @Dataformat("jacksonXml")
 public class JacksonXMLDataFormat extends ServiceSupport
@@ -83,7 +83,7 @@ public class JacksonXMLDataFormat extends ServiceSupport
     private String enableFeatures;
     private String disableFeatures;
     private boolean enableJacksonTypeConverter;
-    private boolean allowUnmarshallType;
+    private boolean allowUnmarshalType;
     private boolean contentTypeHeader = true;
     private TimeZone timezone;
 
@@ -95,19 +95,19 @@ public class JacksonXMLDataFormat extends ServiceSupport
     }
 
     /**
-     * Use the default Jackson {@link XmlMapper} and with a custom unmarshal type
+     * Use the default Jackson {@link XmlMapper} and with a custom unmarshaltype
      *
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public JacksonXMLDataFormat(Class<?> unmarshalType) {
         this(unmarshalType, null);
     }
 
     /**
-     * Use the default Jackson {@link XmlMapper} and with a custom unmarshal type and JSON view
+     * Use the default Jackson {@link XmlMapper} and with a custom unmarshaltype and JSON view
      *
-     * @param unmarshalType the custom unmarshal type
-     * @param jsonView      marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType the custom unmarshaltype
+     * @param jsonView      marker class to specify properties to be included during marshaling. See also
      *                      https://github.com/FasterXML/jackson-annotations/blob/master/src/main/java/com/fasterxml/jackson/annotation/JsonView.java
      */
     public JacksonXMLDataFormat(Class<?> unmarshalType, Class<?> jsonView) {
@@ -115,10 +115,10 @@ public class JacksonXMLDataFormat extends ServiceSupport
     }
 
     /**
-     * Use the default Jackson {@link XmlMapper} and with a custom unmarshal type and JSON view
+     * Use the default Jackson {@link XmlMapper} and with a custom unmarshaltype and JSON view
      *
-     * @param unmarshalType              the custom unmarshal type
-     * @param jsonView                   marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType              the custom unmarshaltype
+     * @param jsonView                   marker class to specify properties to be included during marshaling. See also
      *                                   https://github.com/FasterXML/jackson-annotations/blob/master/src/main/java/com/fasterxml/jackson/annotation/JsonView.java
      * @param enableJaxbAnnotationModule if it is true, will enable the JaxbAnnotationModule.
      */
@@ -129,21 +129,21 @@ public class JacksonXMLDataFormat extends ServiceSupport
     }
 
     /**
-     * Use a custom Jackson mapper and and unmarshal type
+     * Use a custom Jackson mapper and and unmarshaltype
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public JacksonXMLDataFormat(XmlMapper mapper, Class<?> unmarshalType) {
         this(mapper, unmarshalType, null);
     }
 
     /**
-     * Use a custom Jackson mapper, unmarshal type and JSON view
+     * Use a custom Jackson mapper, unmarshaltype and JSON view
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
-     * @param jsonView      marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType the custom unmarshaltype
+     * @param jsonView      marker class to specify properties to be included during marshaling. See also
      *                      https://github.com/FasterXML/jackson-annotations/blob/master/src/main/java/com/fasterxml/jackson/annotation/JsonView.java
      */
     public JacksonXMLDataFormat(XmlMapper mapper, Class<?> unmarshalType, Class<?> jsonView) {
@@ -183,10 +183,10 @@ public class JacksonXMLDataFormat extends ServiceSupport
 
     @Override
     public Object unmarshal(Exchange exchange, Object body) throws Exception {
-        // is there a header with the unmarshal type?
+        // is there a header with the unmarshaltype?
         Class<?> clazz = unmarshalType;
         String type = null;
-        if (allowUnmarshallType) {
+        if (allowUnmarshalType) {
             type = exchange.getIn().getHeader(JacksonXMLConstants.UNMARSHAL_TYPE, String.class);
         }
         if (type == null && isAllowJmsType()) {
@@ -368,14 +368,14 @@ public class JacksonXMLDataFormat extends ServiceSupport
     }
 
     /**
-     * Uses {@link java.util.ArrayList} when unmarshalling.
+     * Uses {@link java.util.ArrayList} when unmarshaling.
      */
     public void useList() {
         setCollectionType(ArrayList.class);
     }
 
     /**
-     * Uses {@link java.util.HashMap} when unmarshalling.
+     * Uses {@link java.util.HashMap} when unmarshaling.
      */
     public void useMap() {
         setCollectionType(null);
@@ -407,18 +407,18 @@ public class JacksonXMLDataFormat extends ServiceSupport
         this.enableJacksonTypeConverter = enableJacksonTypeConverter;
     }
 
-    public boolean isAllowUnmarshallType() {
-        return allowUnmarshallType;
+    public boolean isAllowUnmarshalType() {
+        return allowUnmarshalType;
     }
 
     /**
      * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-     * unmarshalling.
+     * unmarshaling.
      * <p/>
      * This should only be enabled when desired to be used.
      */
-    public void setAllowUnmarshallType(boolean allowJacksonUnmarshallType) {
-        this.allowUnmarshallType = allowJacksonUnmarshallType;
+    public void setAllowUnmarshalType(boolean allowJacksonUnmarshalType) {
+        this.allowUnmarshalType = allowJacksonUnmarshalType;
     }
 
     public boolean isContentTypeHeader() {
@@ -426,7 +426,7 @@ public class JacksonXMLDataFormat extends ServiceSupport
     }
 
     /**
-     * If enabled then Jackson will set the Content-Type header to <tt>application/xml</tt> when marshalling.
+     * If enabled then Jackson will set the Content-Type header to <tt>application/xml</tt> when marshaling.
      */
     public void setContentTypeHeader(boolean contentTypeHeader) {
         this.contentTypeHeader = contentTypeHeader;
@@ -437,7 +437,7 @@ public class JacksonXMLDataFormat extends ServiceSupport
     }
 
     /**
-     * If set then Jackson will use the Timezone when marshalling/unmarshalling.
+     * If set then Jackson will use the Timezone when marshaling/unmarshaling.
      */
     public void setTimezone(TimeZone timezone) {
         this.timezone = timezone;

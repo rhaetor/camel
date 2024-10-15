@@ -36,7 +36,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvBooleanUnmarshallTest {
+public class BindySimpleCsvBooleanUnmarshalTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_MOCK_ERROR = "mock:error";
@@ -56,7 +56,7 @@ public class BindySimpleCsvBooleanUnmarshallTest {
     @SuppressWarnings("unchecked")
     @Test
     @DirtiesContext
-    public void testUnMarshallMessageWithBoolean() throws Exception {
+    public void testUnMarshalMessageWithBoolean() throws Exception {
 
         // We suppress the firstName field of the first record
         expected = "andrew,true\r\n" + "andrew,false\r\n";
@@ -80,7 +80,7 @@ public class BindySimpleCsvBooleanUnmarshallTest {
     @SuppressWarnings("unchecked")
     @Test
     @DirtiesContext
-    public void testUnMarshallMessageWithBooleanMissingFields() throws Exception {
+    public void testUnMarshalMessageWithBooleanMissingFields() throws Exception {
 
         // We suppress the firstName field of the first record
         expected = "andrew,true\r\n" + "joseph,false\r\n" + "nicholas,\r\n";

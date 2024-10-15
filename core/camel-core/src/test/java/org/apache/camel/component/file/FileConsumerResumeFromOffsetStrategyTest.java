@@ -125,7 +125,7 @@ public class FileConsumerResumeFromOffsetStrategyTest extends ContextTestSupport
         Assertions.assertFalse(exchangeList.isEmpty(), "It should have received a few messages");
     }
 
-    @DisplayName("Tests whether we can start from the beginning (i.e.: no resume strategy)")
+    @DisplayName("Tests whether we can start from the beginning (that is:  no resume strategy)")
     @Test
     public void testNoResume() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:result");

@@ -1058,7 +1058,7 @@ public interface HttpEndpointBuilderFactory {
         /**
          * The status codes which are considered a success response. The values
          * are inclusive. Multiple ranges can be defined, separated by comma,
-         * e.g. 200-204,209,301-304. Each range must be a single number or
+         * for example, 200-204,209,301-304. Each range must be a single number or
          * from-to with the dash included.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

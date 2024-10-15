@@ -23,7 +23,7 @@ with any bean defined in a Spring ApplicationContext
 * Camel uses Spring Transactions as the default transaction handling in
 components like xref:jms-component.adoc[JMS] and xref:jms-component.adoc[JPA]
 * Camel integrates with various Spring helper classes; such as providing
-Type Converter support for Spring Resources, etc.
+Type Converter support for Spring Resources, and so on.
 * Allows you to reuse the Spring Testing
 framework to simplify your unit and integration testing using
 xref:eips:enterprise-integration-patterns.adoc[Enterprise Integration
@@ -109,7 +109,7 @@ configured by adding tags to the camel context in your spring context
 definition, specifying the packages to be recursively searched for
 `RouteBuilder` implementations. To use this feature, requires a
 `<package></package>` tag specifying a comma-separated list of
-packages that should be searched e.g.
+packages that should be searched for example
 
 [source,xml]
 ----
@@ -119,10 +119,13 @@ packages that should be searched e.g.
 ----
 
 
-WARNING: Use caution when specifying the package name as `org.apache.camel` or a
+[WARNING]
+====
+Use caution when specifying the package name as `org.apache.camel` or a
 subpackage of this.
 This causes Camel to search in its own packages for
 your routes, which could cause problems.
+====
 
 
 [NOTE]
@@ -142,7 +145,7 @@ exclusion of discovered route classes using Ant like path matching. In
 spring this is specified by adding a `<packageScan>` tag. The tag must
 contain one or more 'package' elements, and optionally
 one or more 'includes' or 'excludes' elements specifying patterns to be
-applied to the fully qualified names of the discovered classes. e.g.
+applied to the fully qualified names of the discovered classes. for example
 
 [source,xml]
 --------------------------------------------------------------
@@ -190,7 +193,7 @@ but not match org.simple.PrecludedRoute
 
 === Using contextScan
 
-You can allow Camel to scan the container context, e.g., the Spring
+You can allow Camel to scan the container context, for example, the Spring
 `ApplicationContext` for route builder instances. This allows you to use
 the Spring `<component-scan>` feature and have Camel pickup any
 `RouteBuilder` instances which were created by Spring in its scan process.

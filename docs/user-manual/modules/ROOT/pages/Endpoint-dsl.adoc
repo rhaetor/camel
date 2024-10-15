@@ -154,7 +154,7 @@ If you use Spring Boot, or Quarkus etc then you should use their kind of annotat
 That's not the point of this example, it is the Endpoint DSL to configure the MQTT endpoint (camel-paho).
 The endpoint is configured the same way as before by the type-safe endpoint-dsl by static importing the `paho`,
 and then use its fluent builder methods to configure. Notice how the returned type is `EndpointProducerBuilder`.
-That type is not an `Endpoint` instance as it's not resolved (i.e. it's only a builder for an endpoint).
+That type is not an `Endpoint` instance as it's not resolved (that is, it's only a builder for an endpoint).
 This means that the builder can be code and compiled before `CamelContext` is created and started.
 
 At runtime, we want to use this endpoint to send messages to MQTT server; this is done in the `sendToSensor`

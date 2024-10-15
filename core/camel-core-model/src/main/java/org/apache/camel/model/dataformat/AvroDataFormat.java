@@ -81,7 +81,7 @@ public class AvroDataFormat extends DataFormatDefinition {
     private String disableFeatures;
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean")
-    private String allowUnmarshallType;
+    private String allowUnmarshalType;
     @XmlAttribute
     @Metadata(label = "advanced")
     private String timezone;
@@ -91,7 +91,7 @@ public class AvroDataFormat extends DataFormatDefinition {
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean", defaultValue = "true",
               description = "Whether the data format should set the Content-Type header with the type from the data format."
-                            + " For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON")
+                            + " For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON")
     private String contentTypeHeader;
     @XmlAttribute
     @Metadata(label = "advanced")
@@ -134,7 +134,7 @@ public class AvroDataFormat extends DataFormatDefinition {
         this.moduleRefs = builder.moduleRefs;
         this.enableFeatures = builder.enableFeatures;
         this.disableFeatures = builder.disableFeatures;
-        this.allowUnmarshallType = builder.allowUnmarshallType;
+        this.allowUnmarshalType = builder.allowUnmarshalType;
         this.timezone = builder.timezone;
         this.autoDiscoverObjectMapper = builder.autoDiscoverObjectMapper;
         this.contentTypeHeader = builder.contentTypeHeader;
@@ -147,7 +147,7 @@ public class AvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class name to use for marshal and unmarshalling
+     * Class name to use for marshal and unmarshaling
      */
     public void setInstanceClassName(String instanceClassName) {
         this.instanceClassName = instanceClassName;
@@ -207,7 +207,7 @@ public class AvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class name of the java type to use when unmarshalling
+     * Class name of the java type to use when unmarshaling
      */
     public void setUnmarshalTypeName(String unmarshalTypeName) {
         this.unmarshalTypeName = unmarshalTypeName;
@@ -218,7 +218,7 @@ public class AvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class of the java type to use when unmarshalling
+     * Class of the java type to use when unmarshaling
      */
     public void setUnmarshalType(Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
@@ -229,7 +229,7 @@ public class AvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
+     * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
      * can use JSON views to accomplish this. This option is to refer to the class which has @JsonView annotations
      */
     public void setJsonViewTypeName(String jsonViewTypeName) {
@@ -241,7 +241,7 @@ public class AvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
+     * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
      * can use JSON views to accomplish this. This option is to refer to the class which has @JsonView annotations
      */
     public void setJsonView(Class<?> jsonView) {
@@ -362,18 +362,18 @@ public class AvroDataFormat extends DataFormatDefinition {
         this.disableFeatures = disableFeatures;
     }
 
-    public String getAllowUnmarshallType() {
-        return allowUnmarshallType;
+    public String getAllowUnmarshalType() {
+        return allowUnmarshalType;
     }
 
     /**
      * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-     * unmarshalling.
+     * unmarshaling.
      * <p/>
      * This should only be enabled when desired to be used.
      */
-    public void setAllowUnmarshallType(String allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public void setAllowUnmarshalType(String allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
     }
 
     public String getTimezone() {
@@ -381,7 +381,7 @@ public class AvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * If set then Jackson will use the Timezone when marshalling/unmarshalling.
+     * If set then Jackson will use the Timezone when marshaling/unmarshaling.
      */
     public void setTimezone(String timezone) {
         this.timezone = timezone;
@@ -503,12 +503,12 @@ public class AvroDataFormat extends DataFormatDefinition {
         return this;
     }
 
-    public AvroDataFormat allowUnmarshallType(boolean allowUnmarshallType) {
-        return allowUnmarshallType(Boolean.toString(allowUnmarshallType));
+    public AvroDataFormat allowUnmarshalType(boolean allowUnmarshalType) {
+        return allowUnmarshalType(Boolean.toString(allowUnmarshalType));
     }
 
-    public AvroDataFormat allowUnmarshallType(String allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public AvroDataFormat allowUnmarshalType(String allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
         return this;
     }
 
@@ -545,7 +545,7 @@ public class AvroDataFormat extends DataFormatDefinition {
         private String moduleRefs;
         private String enableFeatures;
         private String disableFeatures;
-        private String allowUnmarshallType;
+        private String allowUnmarshalType;
         private String timezone;
         private String autoDiscoverObjectMapper;
         private String contentTypeHeader;
@@ -553,7 +553,7 @@ public class AvroDataFormat extends DataFormatDefinition {
         private String autoDiscoverSchemaResolver;
 
         /**
-         * Class name to use for marshal and unmarshalling
+         * Class name to use for marshal and unmarshaling
          */
         public Builder instanceClassName(String instanceClassName) {
             this.instanceClassName = instanceClassName;
@@ -608,7 +608,7 @@ public class AvroDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class name of the java type to use when unmarshalling
+         * Class name of the java type to use when unmarshaling
          */
         public Builder unmarshalTypeName(String unmarshalTypeName) {
             this.unmarshalTypeName = unmarshalTypeName;
@@ -616,7 +616,7 @@ public class AvroDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class of the java type to use when unmarshalling
+         * Class of the java type to use when unmarshaling
          */
         public Builder unmarshalType(Class<?> unmarshalType) {
             this.unmarshalType = unmarshalType;
@@ -624,7 +624,7 @@ public class AvroDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
+         * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
          * you can use JSON views to accomplish this. This option is to refer to the class which has @JsonView
          * annotations
          */
@@ -634,7 +634,7 @@ public class AvroDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
+         * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
          * you can use JSON views to accomplish this. This option is to refer to the class which has @JsonView
          * annotations
          */
@@ -749,28 +749,28 @@ public class AvroDataFormat extends DataFormatDefinition {
 
         /**
          * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(String allowUnmarshallType) {
-            this.allowUnmarshallType = allowUnmarshallType;
+        public Builder allowUnmarshalType(String allowUnmarshalType) {
+            this.allowUnmarshalType = allowUnmarshalType;
             return this;
         }
 
         /**
          * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(boolean allowUnmarshallType) {
-            this.allowUnmarshallType = Boolean.toString(allowUnmarshallType);
+        public Builder allowUnmarshalType(boolean allowUnmarshalType) {
+            this.allowUnmarshalType = Boolean.toString(allowUnmarshalType);
             return this;
         }
 
         /**
-         * If set then Jackson will use the Timezone when marshalling/unmarshalling.
+         * If set then Jackson will use the Timezone when marshaling/unmarshaling.
          */
         public Builder timezone(String timezone) {
             this.timezone = timezone;

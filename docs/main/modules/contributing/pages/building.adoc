@@ -115,7 +115,7 @@ The build with deployment will build source jars, javadoc and other artifacts ne
 == Camel 4.x
 
 Starting with Camel 4.0.0, our build system will automatically verify and format the code when doing a full build or
-when running certain phases that trigger it (i.e.; when running `mvn verify`).
+when running certain phases that trigger it (that is, when running `mvn verify`).
 
 == Camel 3.x
 

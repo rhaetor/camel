@@ -249,7 +249,7 @@ public interface MailEndpointBuilderFactory {
         }
         /**
          * Specifies the maximum number of messages to gather per poll. By
-         * default, no maximum is set. Can be used to set a limit of e.g. 1000
+         * default, no maximum is set. Can be used to set a limit of for example, 1000
          * to avoid downloading thousands of files when the server starts up.
          * Set a value of 0 or negative to disable this option.
          * 
@@ -267,7 +267,7 @@ public interface MailEndpointBuilderFactory {
         }
         /**
          * Specifies the maximum number of messages to gather per poll. By
-         * default, no maximum is set. Can be used to set a limit of e.g. 1000
+         * default, no maximum is set. Can be used to set a limit of for example, 1000
          * to avoid downloading thousands of files when the server starts up.
          * Set a value of 0 or negative to disable this option.
          * 

@@ -210,7 +210,7 @@ public interface PropertiesComponent extends StaticService {
     void setIgnoreMissingLocation(boolean ignoreMissingLocation);
 
     /**
-     * Whether to silently ignore if a property cannot be resolved (i.e. all properties is marked as optional), and
+     * Whether to silently ignore if a property cannot be resolved (that is, all properties is marked as optional), and
      * return the value as-is.
      */
     void setIgnoreMissingProperty(boolean ignoreMissingProperty);

@@ -62,9 +62,9 @@ public class FhirDelete {
     }
 
     /**
-     * Deletes the resource by resource type e.g "Patient" and it's id
+     * Deletes the resource by resource type , for example: "Patient" and it's id
      *
-     * @param  type            the resource type e.g "Patient"
+     * @param  type            the resource type , for example: "Patient"
      * @param  stringId        it's id
      * @param  extraParameters see {@link ExtraParameters} for a full list of parameters that can be passed, may be NULL
      * @return                 the {@link MethodOutcome}

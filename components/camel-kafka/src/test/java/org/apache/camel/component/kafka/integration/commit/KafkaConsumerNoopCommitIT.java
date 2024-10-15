@@ -84,7 +84,7 @@ public class KafkaConsumerNoopCommitIT extends BaseManualCommitTestSupport {
 
         to.reset();
 
-        // start a new route in order to rebalance kafka
+        // start a new route to rebalance kafka
         context.getRouteController().startRoute("bar");
         toBar.expectedMessageCount(1);
 

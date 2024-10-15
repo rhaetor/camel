@@ -397,7 +397,7 @@ And to get the 2nd last you can subtract a number, so we can use
 simple("${body.address.lines[last-1]}")
 ---------------------------------------
 
-And the 3rd last is of course:
+And the 3rd last is:
 
 [source,java]
 ---------------------------------------
@@ -818,7 +818,7 @@ type, for example to ensure that it is a String you can do:
 There are a few types which have a shorthand notation, so we can use
 `String` instead of `java.lang.String`. These are:
 `byte[], String, Integer, Long`. All other types must use their FQN
-name, e.g. `org.w3c.dom.Document`.
+name, for example, `org.w3c.dom.Document`.
 
 It is also possible to lookup a value from a header `Map`:
 
@@ -898,7 +898,7 @@ whitespace characters.
 You can externalize the script and have Camel load it from a resource
 such as `"classpath:"`, `"file:"`, or `"http:"`.
 This is done using the following syntax: `"resource:scheme:location"`,
-e.g. to refer to a file on the classpath you can do:
+for example, to refer to a file on the classpath you can do:
 
 [source,java]
 ----

@@ -62,7 +62,7 @@ public class DynamicRouterControlConfiguration {
 
     /**
      * The {@link Predicate} used to evaluate exchanges for subscribers. Only predicates that can be expressed as a
-     * string (e.g., using the Simple language) can be specified via URI param. Other types must be sent as the message
+     * string (for example, using the Simple language) can be specified via URI param. Other types must be sent as the message
      * body, or as a reference to a bean in the registry via {@link #predicateBean}.
      */
     @UriParam(label = "control", description = "The subscription predicate.")
@@ -181,7 +181,7 @@ public class DynamicRouterControlConfiguration {
 
     /**
      * The {@link Predicate} used to evaluate exchanges for subscribers. Only predicates that can be expressed as a
-     * string (e.g., using the Simple language) can be specified via URI param. Other types must be sent as the message
+     * string (for example, using the Simple language) can be specified via URI param. Other types must be sent as the message
      * body, or as a reference to a bean in the registry via {@link #predicateBean}.
      *
      * @return the predicate for evaluating exchanges
@@ -192,7 +192,7 @@ public class DynamicRouterControlConfiguration {
 
     /**
      * The {@link Predicate} used to evaluate exchanges for subscribers. Only predicates that can be expressed as a
-     * string (e.g., using the Simple language) can be specified via URI param. Other types must be sent as the message
+     * string (for example, using the Simple language) can be specified via URI param. Other types must be sent as the message
      * body, or as a reference to a bean in the registry via {@link #predicateBean}.
      *
      * @param predicate the predicate for evaluating exchanges

@@ -23,7 +23,7 @@ import java.lang.annotation.RetentionPolicy;
 /**
  * This annotation represents the root class of the model. When a CSV, fixed-length record must be described in the
  * model we will use this annotation and the separator (for csv record) to know how to split the data during the
- * unmarshal process The separator (mandatory) The name is optional and could be used in the future to bind a property
+ * unmarshalprocess The separator (mandatory) The name is optional and could be used in the future to bind a property
  * which a different name The skipfirstline (optional) allows to skip the first line of the file/content received The
  * generateHeaderColumnNames (optional) allow to add in the CSV generated the header containing names of the columns The
  * crlf (optional) is used to add a new line after a record. By default, the value is WINDOWS The isOrdered (optional)
@@ -42,7 +42,7 @@ public @interface CsvRecord {
      * Separator used to split a record in tokens (mandatory) - can be ',' or ';' or 'anything'. The only whitespace
      * character supported is tab (\t). No other whitespace characters (spaces) are not supported. This value is
      * interpreted as a regular expression. If you want to use a sign which has a special meaning in regular
-     * expressions, e.g. the '\|' sign, then you have to mask it, like '\|'
+     * expressions, for example, the '\|' sign, then you have to mask it, like '\|'
      */
     String separator();
 
@@ -76,7 +76,7 @@ public @interface CsvRecord {
     boolean isOrdered() default false;
 
     /**
-     * Whether to marshal columns with the given quote character (optional) - allow to specify a quote character of the
+     * Whether to marshalcolumns with the given quote character (optional) - allow to specify a quote character of the
      * fields when CSV is generated. This annotation is associated to the root class of the model and must be declared
      * one time.
      */
@@ -115,7 +115,7 @@ public @interface CsvRecord {
     boolean endWithLineBreak() default true;
 
     /**
-     * The remove quotes parameter flags if unmarshalling should try to remove quotes for each field
+     * The remove quotes parameter flags if unmarshaling should try to remove quotes for each field
      */
     boolean removeQuotes() default true;
 

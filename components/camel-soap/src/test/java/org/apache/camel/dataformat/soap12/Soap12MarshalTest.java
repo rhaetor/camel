@@ -43,7 +43,7 @@ public class Soap12MarshalTest extends CamelTestSupport {
     protected ProducerTemplate producer;
 
     /**
-     * Test Soap marshalling by sending a GetCustomerByName object and checking against a xml file.
+     * Test Soap marshaling by sending a GetCustomerByName object and checking against a xml file.
      *
      * @throws java.io.IOException
      * @throws InterruptedException
@@ -60,7 +60,7 @@ public class Soap12MarshalTest extends CamelTestSupport {
     }
 
     /**
-     * Test Soap marshalling by sending a NoSuchCustomerException object and checking against a xml file. We expect to
+     * Test Soap marshaling by sending a NoSuchCustomerException object and checking against a xml file. We expect to
      * receive a SOAP fault here that contains a NoSuchCustomer object as detail.
      *
      * @throws java.io.IOException

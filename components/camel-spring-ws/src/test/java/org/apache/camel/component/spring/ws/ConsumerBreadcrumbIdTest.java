@@ -66,7 +66,7 @@ public class ConsumerBreadcrumbIdTest extends CamelTestSupport {
     public void consumeWebServiceWithPojoRequestWhichIsWithBreadcrumb() throws Exception {
         QuoteRequest request = new QuoteRequest();
         request.setSymbol("GOOG");
-        template.request("direct:webservice-marshall-asin", new Processor() {
+        template.request("direct:webservice-marshal-asin", new Processor() {
             @Override
             public void process(Exchange exchange) throws Exception {
                 assertNotNull(exchange.getIn().getHeader("breadcrumbId"));
@@ -83,7 +83,7 @@ public class ConsumerBreadcrumbIdTest extends CamelTestSupport {
                 JaxbDataFormat jaxb = new JaxbDataFormat(false);
                 jaxb.setContextPath("org.apache.camel.component.spring.ws.jaxb");
                 // request webservice
-                from("direct:webservice-marshall-asin")
+                from("direct:webservice-marshal-asin")
                         .marshal(jaxb)
                         .to("spring-ws:http://localhost/?soapAction=http://www.stockquotes.edu/GetQuoteAsIn&webServiceTemplate=#webServiceTemplate")
                         .convertBodyTo(String.class);

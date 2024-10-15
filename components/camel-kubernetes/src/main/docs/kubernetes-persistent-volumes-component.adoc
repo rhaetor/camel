@@ -54,7 +54,7 @@ from("direct:list").
 
 This operation returns a List of pv from your cluster
 
-- listPersistentVolumesByLabels:  this operation lists the pv by labels on a kubernetes cluster
+- listPersistentVolumesByLabels: this operation lists the pv by labels on a kubernetes cluster
 
 [source,java]
 --------------------------------------------------------------------------------

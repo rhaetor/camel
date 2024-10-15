@@ -45,7 +45,7 @@ public class ThriftDataFormat extends DataFormatDefinition implements ContentTyp
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean", defaultValue = "true",
               description = "Whether the data format should set the Content-Type header with the type from the data format."
-                            + " For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON")
+                            + " For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON")
     private String contentTypeHeader;
 
     public ThriftDataFormat() {
@@ -76,7 +76,7 @@ public class ThriftDataFormat extends DataFormatDefinition implements ContentTyp
     }
 
     /**
-     * Name of class to use when unmarshalling
+     * Name of class to use when unmarshaling
      */
     public void setInstanceClass(String instanceClass) {
         this.instanceClass = instanceClass;
@@ -123,7 +123,7 @@ public class ThriftDataFormat extends DataFormatDefinition implements ContentTyp
         private String contentTypeHeader;
 
         /**
-         * Name of class to use when unmarshalling
+         * Name of class to use when unmarshaling
          */
         public Builder instanceClass(String instanceClass) {
             this.instanceClass = instanceClass;

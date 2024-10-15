@@ -38,7 +38,7 @@ mvel:templateName[?options]
 ---------------------------
 
 Where *templateName* is the classpath-local URI of the template to
-invoke; or the complete URL of the remote template (e.g.: `\file://folder/myfile.mvel`).
+invoke; or the complete URL of the remote template (for example, `\file://folder/myfile.mvel`).
 
 
 // component-configure options: START

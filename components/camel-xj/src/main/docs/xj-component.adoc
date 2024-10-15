@@ -106,7 +106,7 @@ The input:
 }
 ----
 
-Will output:
+This outputs:
 
 [source,xml]
 ----
@@ -136,7 +136,7 @@ As can be seen in the output above, XJ writes some metadata in the resulting xml
 * The parsed JSON type can be found in the xj:type attribute. The above example already contains all possible types.
 * Generated XML elements are always named "object".
 
-Now we can apply a stylesheet, e.g.:
+Now we can apply a stylesheet, for example:
 
 [source,xml]
 ----
@@ -255,7 +255,7 @@ XJ uses the following rules by default:
 * XML elements with text-only-child-nodes will result in the usual key/string-value pair. Mixed content elements
 result in a key/child-object pair as seen in `<state>` above.
 
-Now we can apply again a stylesheet, e.g.:
+Now we can apply again a stylesheet, for example:
 
 [source,xml]
 ----
@@ -354,9 +354,12 @@ and get the following output:
 }
 ----
 
-Note, this transformation resulted in exactly the same json document as we used as input to the _json2xml_ conversion.
+[NOTE]
+====
+This transformation resulted in exactly the same json document as we used as input to the _json2xml_ conversion.
 What did the stylesheet do? We just gave some hints to XJ on how to write the json document. The following XML
 document is that what is passed to XJ after xsl transformation:
+====
 
 [source,xml]
 ----
@@ -438,14 +441,14 @@ This is required when you want to generate key names that contain chars that are
 
 [width="100%",cols="2,4",options="header"]
 |===
-| @xj:type= | Description
-| object | Generate a json object
-| array | Generate a json array
-| string | Generate a json string
-| int | Generate a json number without fractional part
-| float | Generate a json number with fractional part
-| boolean | Generate a json boolean
-| null | Generate an empty value using the word null
+| `@xj:type=` | Description
+| `object` | Generate a json object
+| `array` | Generate a json array
+| `string` | Generate a json string
+| `int` | Generate a json number without fractional part
+| `float` | Generate a json number with fractional part
+| `boolean` | Generate a json boolean
+| `null` | Generate an empty value using the word null
 |===
 
 

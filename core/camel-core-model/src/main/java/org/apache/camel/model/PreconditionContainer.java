@@ -24,13 +24,13 @@ import org.apache.camel.NamedNode;
 public interface PreconditionContainer extends NamedNode {
 
     /**
-     * The predicate of the precondition in simple language to evaluate in order to determine if it should be included
+     * The predicate of the precondition in simple language to evaluate to determine if it should be included
      * or not.
      */
     String getPrecondition();
 
     /**
-     * The predicate of the precondition in simple language to evaluate in order to determine if it should be included
+     * The predicate of the precondition in simple language to evaluate to determine if it should be included
      * or not.
      */
     void setPrecondition(String precondition);

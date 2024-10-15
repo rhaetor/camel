@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  * <li>Filtering results based on a defined {@link Predicate} written in any language, such as XPath, OGNL, Groovy,
  * Simple, etc.</li>
  * <li>Picking specific data elements for aggregation.</li>
- * <li>Accumulating results in any designated {@link Collection} type, e.g. in a HashSet, LinkedList, ArrayList,
+ * <li>Accumulating results in any designated {@link Collection} type, for example, in a HashSet, LinkedList, ArrayList,
  * etc.</li>
  * <li>Storing the output in a specific place in the Exchange: a property, a header or in the body.</li>
  * </ul>

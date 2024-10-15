@@ -274,7 +274,7 @@ public abstract class RedeliveryErrorHandler extends ErrorHandlerSupport
      * </p>
      *
      * <p>
-     * In order to prevent manipulation of the RedeliveryData state, the values of
+     * To prevent manipulation of the RedeliveryData state, the values of
      * {@link RedeliveryTask#redeliveryDelay} and {@link RedeliveryTask#redeliveryCounter} are copied in.
      * </p>
      *

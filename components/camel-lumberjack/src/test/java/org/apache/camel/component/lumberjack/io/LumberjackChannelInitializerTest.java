@@ -44,7 +44,7 @@ public class LumberjackChannelInitializerTest {
             callback.onComplete(true);
         }));
 
-        // When writing the stream byte per byte in order to ensure that we support splits everywhere
+        // When writing the stream byte per byte to ensure that we support splits everywhere
         // It contains 2 windows with compressed messages
         writeResourceBytePerByte(channel, "window10.bin");
         writeResourceBytePerByte(channel, "window15.bin");

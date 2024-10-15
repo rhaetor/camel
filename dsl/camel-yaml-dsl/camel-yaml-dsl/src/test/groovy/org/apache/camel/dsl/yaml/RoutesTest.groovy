@@ -278,6 +278,7 @@ class RoutesTest extends YamlTestSupport {
         }
     }
 
+
     def "load route inlined camelCase"() {
         when:
         loadRoutes '''

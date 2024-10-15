@@ -40,7 +40,7 @@ the pattern property.
 foo:bar?exchangePattern=InOut
 ----
 
-IMPORTANT: This is only possible on endpoints used by consumers (i.e., in `<from>`).
+IMPORTANT: This is only possible on endpoints used by consumers (that is, in `<from>`).
 
 In the example below the message will be forced as a request reply message as the consumer
 is in `InOut` mode.
@@ -120,6 +120,6 @@ indicated by the presence of the `JMSReplyTo` header. This means the JMS compone
 detects whether to use `InOnly` or `InOut` in the consumer.
 
 Likewise, the JMS producer will check the current xref:manual::exchange-pattern.adoc[Exchange Pattern]
-on the xref:manual::exchange.adoc[Exchange] to know whether to use `InOnly` or `InOut` mode (i.e., one-way vs. request/reply messaging)
+on the xref:manual::exchange.adoc[Exchange] to know whether to use `InOnly` or `InOut` mode (that is, one-way vs. request/reply messaging)
 
 

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.dataformat.bindy.fixed.unmarshall.simple.trimfield;
+package org.apache.camel.dataformat.bindy.fixed.unmarshal.simple.trimfield;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -36,7 +36,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleFixedLengthUnmarshallTrimAlignedBFieldTest {
+public class BindySimpleFixedLengthUnmarshalTrimAlignedBFieldTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";
@@ -51,7 +51,7 @@ public class BindySimpleFixedLengthUnmarshallTrimAlignedBFieldTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessageWithTrimBoth() throws Exception {
+    public void testUnMarshalMessageWithTrimBoth() throws Exception {
 
         expected = "10A9 Pauline M    ISINXD12345678BUYShare000002500.45USD01-08-2009  Hello###XXTEST123X";
 
@@ -62,8 +62,8 @@ public class BindySimpleFixedLengthUnmarshallTrimAlignedBFieldTest {
 
         // check the model
 
-        BindySimpleFixedLengthUnmarshallTrimAlignedBFieldTest.Order order = result.getReceivedExchanges().get(0).getIn()
-                .getBody(BindySimpleFixedLengthUnmarshallTrimAlignedBFieldTest.Order.class);
+        BindySimpleFixedLengthUnmarshalTrimAlignedBFieldTest.Order order = result.getReceivedExchanges().get(0).getIn()
+                .getBody(BindySimpleFixedLengthUnmarshalTrimAlignedBFieldTest.Order.class);
         assertEquals(10, order.getOrderNr());
         // the field is not trimmed
         assertEquals("Pauline", order.getFirstName());

@@ -36,7 +36,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvNullMarshallTest {
+public class BindySimpleCsvNullMarshalTest {
 
     private List<Map<String, Object>> models = new ArrayList<>();
     private String result = "1,B2,Keira,Knightley,ISIN,XX23456789,BUY,,450.45,EUR,14-01-2009,\r\n";
@@ -48,7 +48,7 @@ public class BindySimpleCsvNullMarshallTest {
     private MockEndpoint resultEndpoint;
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         resultEndpoint.expectedBodiesReceived(result);
 
         template.sendBody(generateModel());

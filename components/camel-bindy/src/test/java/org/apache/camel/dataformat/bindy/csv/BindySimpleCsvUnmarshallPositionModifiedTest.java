@@ -33,7 +33,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvUnmarshallPositionModifiedTest {
+public class BindySimpleCsvUnmarshalPositionModifiedTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_MOCK_ERROR = "mock:error";
@@ -52,7 +52,7 @@ public class BindySimpleCsvUnmarshallPositionModifiedTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
 
         record = "1,25,Albert,Cartier,ISIN,BE12345678,SELL,Share,1500,EUR,08-01-2009\r\n";
 
@@ -65,7 +65,7 @@ public class BindySimpleCsvUnmarshallPositionModifiedTest {
 
     @Test
     @DirtiesContext
-    public void testUnmarshallErrorMessage() throws Exception {
+    public void testUnmarshalErrorMessage() throws Exception {
         record = "1,25,Albert,Cartier,ISIN,BE12345678,SELL,Share,1500,EUR,08-01-2009-01\r\n";
 
         template.sendBody(record);

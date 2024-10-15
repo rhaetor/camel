@@ -15,7 +15,7 @@
 *{component-header}*
 
 The Cron component is a generic interface component that allows triggering events at a specific time interval
-specified using the Unix cron syntax (e.g. `0/2 * * * * ?` to trigger an event every two seconds).
+specified using the Unix cron syntax (for example, `0/2 * * * * ?` to trigger an event every two seconds).
 
 As an interface component, the Cron component does not contain a default implementation.
 Instead, it requires that the users plug the implementation of their choice.
@@ -90,14 +90,21 @@ XML::
 
 The schedule expression `0/3{plus}10{plus}*{plus}*{plus}*{plus}?` can be also written as `0/3 10 * * * ?` and triggers an event every three seconds only in the tenth minute of each hour.
 
-Breaking down the parts in the schedule expression(in order):
+Breaking down the parts in the schedule expression (in order):
+
+[source,java]
+---------------------------------------------------------
+from("cron:tab?schedule=0/1+*+*+*+*+?")
+.setBody().constant("event")
+.log("${body}");
+---------------------------------------------------------
 
 - Seconds (optional)
 - Minutes
 - Hours
 - Day of month
 - Month
-- Day of the week
+- Day of week
 - Year (optional)
 
 Schedule expressions can be made of five to seven parts. When expressions are composed of six parts, the first items is the _Seconds_ part (and year is considered missing).
@@ -106,5 +113,19 @@ Other valid examples of schedule expressions are:
 
 - `0/2 * * * ?` (Five parts, an event every two minutes)
 - `0 0/2 * * * MON-FRI 2030` (Seven parts, an event every two minutes only in the year 2030)
+
+Routes can also be written using the XML DSL.
+
+[source,xml]
+-------------
+<route>
+    <from uri="cron:tab?schedule=0/1+*+*+*+*+?"/>
+    <setBody>
+      <constant>event</constant>
+    </setBody>
+    <to uri="log:info"/>
+</route>
+-------------
+
 
 include::spring-boot:partial$starter.adoc[]

@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * An annotation used to identify in a POJO which property is link to a key value pair field The tag (mandatory)
- * identifies the key of the key value pair (e.g. 8 equals the begin string in FIX The name (optional) could be used in
+ * identifies the key of the key value pair (for example, 8 equals the begin string in FIX The name (optional) could be used in
  * the future to bind a property which a different name The pattern (optional) allows to define the pattern of the data
  * (useful for Date, BigDecimal ...) The precision (optional) reflects the precision to be used with BigDecimal number
  * The required (optional) field allows to define if the field is required or not. This property is not yet used but

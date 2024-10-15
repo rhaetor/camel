@@ -150,7 +150,7 @@ To use this goal, you can add the following to your Camel application `pom.xml` 
   </build>
 ----
 
-For example to use this with the `maven-assembly-plugin` you can do as below.
+For example, to use this with the `maven-assembly-plugin` you can do as below.
 Remember to specify the class name of *your* main class where it says `com.foo.NameOfMainClass`:
 
 [source,xml]

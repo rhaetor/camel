@@ -552,7 +552,7 @@ public final class TestSupport {
     }
 
     /**
-     * Returns the current major Java version e.g 8.
+     * Returns the current major Java version , for example: 8.
      * <p/>
      * Uses <tt>java.specification.version</tt> from the system properties to determine the major version.
      *

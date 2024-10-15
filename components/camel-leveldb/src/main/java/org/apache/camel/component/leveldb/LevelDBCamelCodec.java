@@ -35,21 +35,21 @@ public final class LevelDBCamelCodec {
         }
     }
 
-    public byte[] marshallKey(String key) throws IOException {
+    public byte[] marshalKey(String key) throws IOException {
         return serializer.serializeKey(key);
     }
 
-    public String unmarshallKey(byte[] buffer) throws IOException {
+    public String unmarshalKey(byte[] buffer) throws IOException {
         return serializer.deserializeKey(buffer);
     }
 
-    public byte[] marshallExchange(CamelContext camelContext, Exchange exchange, boolean allowSerializedHeaders)
+    public byte[] marshalExchange(CamelContext camelContext, Exchange exchange, boolean allowSerializedHeaders)
             throws IOException {
 
         return serializer.serializeExchange(camelContext, exchange, allowSerializedHeaders);
     }
 
-    public Exchange unmarshallExchange(CamelContext camelContext, byte[] buffer) throws IOException {
+    public Exchange unmarshalExchange(CamelContext camelContext, byte[] buffer) throws IOException {
         Exchange answer = serializer.deserializeExchange(camelContext, buffer);
 
         // restore the from endpoint

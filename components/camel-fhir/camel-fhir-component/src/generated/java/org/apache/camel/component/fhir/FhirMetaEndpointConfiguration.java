@@ -32,7 +32,7 @@ public final class FhirMetaEndpointConfiguration extends FhirConfiguration {
     @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "getFromResource", description="The IBaseMetaType class"), @ApiMethod(methodName = "getFromServer", description="The type of the meta datatype for the given FHIR model version (should be MetaDt.class or MetaType.class)"), @ApiMethod(methodName = "getFromType", description="The IBaseMetaType class")})
     private Class<org.hl7.fhir.instance.model.api.IBaseMetaType> metaType;
     @UriParam
-    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "getFromType", description="The resource type e.g Patient")})
+    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "getFromType", description="The resource type , for example: Patient")})
     private String resourceType;
 
     public java.util.Map<org.apache.camel.component.fhir.api.ExtraParameters, Object> getExtraParameters() {

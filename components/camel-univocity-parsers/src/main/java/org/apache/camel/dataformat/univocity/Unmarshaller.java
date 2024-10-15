@@ -28,11 +28,11 @@ import java.util.NoSuchElementException;
 import com.univocity.parsers.common.AbstractParser;
 
 /**
- * This class unmarshalls the exchange body using an uniVocity parser.
+ * This class unmarshals the exchange body using an uniVocity parser.
  *
  * @param <P> Parser class
  */
-final class Unmarshaller<P extends AbstractParser<?>> {
+final class Unmarshaler<P extends AbstractParser<?>> {
     private final boolean lazyLoad;
     private final boolean asMap;
 
@@ -42,18 +42,18 @@ final class Unmarshaller<P extends AbstractParser<?>> {
      * @param lazyLoad whether or not the lines must be lazily read
      * @param asMap    whether or not we must produce maps instead of lists for each row
      */
-    Unmarshaller(boolean lazyLoad, boolean asMap) {
+    Unmarshaler(boolean lazyLoad, boolean asMap) {
         this.lazyLoad = lazyLoad;
         this.asMap = asMap;
     }
 
     /**
-     * Unmarshal from the given reader.
+     * Unmarshalfrom the given reader.
      *
      * @param  reader             reader to read from
      * @param  parser             uniVocity parser to use
      * @param  headerRowProcessor Row processor that retrieves the header
-     * @return                    Unmarshalled data
+     * @return                    Unmarshaled data
      */
     public Object unmarshal(Reader reader, P parser, HeaderRowProcessor headerRowProcessor) {
         parser.beginParsing(reader);
@@ -171,7 +171,7 @@ final class Unmarshaller<P extends AbstractParser<?>> {
          * Creates a new instance
          *
          * @param parser             parser to use
-         * @param headerRowProcessor row processor to use in order to retrieve the headers
+         * @param headerRowProcessor row processor to use to retrieve the headers
          */
         protected MapRowIterator(P parser, HeaderRowProcessor headerRowProcessor) {
             super(parser);

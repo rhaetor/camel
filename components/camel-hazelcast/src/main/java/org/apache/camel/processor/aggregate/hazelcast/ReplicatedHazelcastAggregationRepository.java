@@ -164,7 +164,7 @@ public class ReplicatedHazelcastAggregationRepository extends HazelcastAggregati
             DefaultExchangeHolder holder = DefaultExchangeHolder.marshal(newExchange, true, allowSerializedHeaders);
             final DefaultExchangeHolder misbehaviorHolder = replicatedCache.putIfAbsent(key, holder);
             if (misbehaviorHolder != null) {
-                Exchange misbehaviorEx = unmarshallExchange(camelContext, misbehaviorHolder);
+                Exchange misbehaviorEx = unmarshalExchange(camelContext, misbehaviorHolder);
                 LOG.error(
                         "Optimistic locking failed for exchange with key {}: IMap#putIfAbsend returned Exchange with ID {}, while it's expected no exchanges to be returned",
                         key, misbehaviorEx != null ? misbehaviorEx.getExchangeId() : "<null>");
@@ -195,7 +195,7 @@ public class ReplicatedHazelcastAggregationRepository extends HazelcastAggregati
             l.lock();
             DefaultExchangeHolder newHolder = DefaultExchangeHolder.marshal(exchange, true, allowSerializedHeaders);
             DefaultExchangeHolder oldHolder = replicatedCache.put(key, newHolder);
-            return unmarshallExchange(camelContext, oldHolder);
+            return unmarshalExchange(camelContext, oldHolder);
         } finally {
             LOG.trace("Added an Exchange with ID {} for key {} in a thread-safe manner.", exchange.getExchangeId(), key);
             l.unlock();
@@ -220,12 +220,12 @@ public class ReplicatedHazelcastAggregationRepository extends HazelcastAggregati
     @Override
     public Exchange recover(CamelContext camelContext, String exchangeId) {
         LOG.trace("Recovering an Exchange with ID {}.", exchangeId);
-        return useRecovery ? unmarshallExchange(camelContext, replicatedPersistedCache.get(exchangeId)) : null;
+        return useRecovery ? unmarshalExchange(camelContext, replicatedPersistedCache.get(exchangeId)) : null;
     }
 
     @Override
     public Exchange get(CamelContext camelContext, String key) {
-        return unmarshallExchange(camelContext, replicatedCache.get(key));
+        return unmarshalExchange(camelContext, replicatedCache.get(key));
     }
 
     /**

@@ -224,7 +224,7 @@ public final class LogWriter implements AutoCloseable {
     }
 
     /**
-     * Updates the state of af entry (i.e.: to mark them after they have seen successfully processed)
+     * Updates the state of af entry (that is, : to mark them after they have seen successfully processed)
      *
      * @param  entryInfo   the entry information about the entry being updated
      * @param  state       the state to update the entry to

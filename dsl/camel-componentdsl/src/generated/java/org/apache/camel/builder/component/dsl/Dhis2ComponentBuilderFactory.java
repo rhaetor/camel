@@ -51,7 +51,7 @@ public interface Dhis2ComponentBuilderFactory {
      */
     interface Dhis2ComponentBuilder extends ComponentBuilder<Dhis2Component> {
         /**
-         * DHIS2 server base API URL (e.g.,
+         * DHIS2 server base API URL (for example:
          * https://play.dhis2.org/2.39.1.1/api).
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

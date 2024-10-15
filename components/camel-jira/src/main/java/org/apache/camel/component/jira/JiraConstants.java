@@ -33,7 +33,7 @@ public interface JiraConstants {
     @Metadata(label = "producer", description = "The comma separated list of the issue's components", javaType = "String")
     String ISSUE_COMPONENTS = "IssueComponents";
     String ISSUE_COMMENT = "IssueComment";
-    @Metadata(label = "consumer", description = "The name of the updated field (i.e Status)", javaType = "String")
+    @Metadata(label = "consumer", description = "The name of the updated field (that is, Status)", javaType = "String")
     String ISSUE_CHANGED = "IssueChanged";
     @Metadata(description = "The id of the issue", javaType = "String")
     String ISSUE_KEY = "IssueKey";

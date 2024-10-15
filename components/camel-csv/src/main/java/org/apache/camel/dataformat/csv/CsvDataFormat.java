@@ -61,17 +61,17 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     private Boolean ignoreHeaderCase;
     private Boolean trailingDelimiter;
 
-    // Unmarshal options
+    // Unmarshaloptions
     private boolean captureHeaderRecord;
     private boolean lazyLoad;
     private boolean useMaps;
     private boolean useOrderedMaps;
     private CsvRecordConverter<?> recordConverter;
 
-    private CsvMarshallerFactory marshallerFactory = CsvMarshallerFactory.DEFAULT;
+    private CsvMarshalerFactory marshalerFactory = CsvMarshalerFactory.DEFAULT;
 
-    private volatile CsvMarshaller marshaller;
-    private volatile CsvUnmarshaller unmarshaller;
+    private volatile CsvMarshaler marshaler;
+    private volatile CsvUnmarshaler unmarshaler;
 
     public CsvDataFormat() {
     }
@@ -87,7 +87,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
 
     @Override
     public void marshal(Exchange exchange, Object object, OutputStream outputStream) throws Exception {
-        marshaller.marshal(exchange, object, outputStream);
+        marshaler.marshal(exchange, object, outputStream);
     }
 
     @Override
@@ -97,14 +97,14 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
 
     @Override
     public Object unmarshal(Exchange exchange, Object body) throws Exception {
-        return unmarshaller.unmarshal(exchange, body);
+        return unmarshaler.unmarshal(exchange, body);
     }
 
     @Override
     protected void doInit() throws Exception {
         super.doInit();
-        marshaller = marshallerFactory.create(getActiveFormat(), this);
-        unmarshaller = CsvUnmarshaller.create(getActiveFormat(), this);
+        marshaler = marshalerFactory.create(getActiveFormat(), this);
+        unmarshaler = CsvUnmarshaler.create(getActiveFormat(), this);
     }
 
     @Override
@@ -221,24 +221,24 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Sets the {@link CsvMarshaller} factory. If {@code null}, then {@link CsvMarshallerFactory#DEFAULT} is used
+     * Sets the {@link CsvMarshaler} factory. If {@code null}, then {@link CsvMarshalerFactory#DEFAULT} is used
      * instead.
      *
-     * @param  marshallerFactory
+     * @param  marshalerFactory
      * @return                   Current {@code CsvDataFormat}, fluent API
      */
-    public CsvDataFormat setMarshallerFactory(CsvMarshallerFactory marshallerFactory) {
-        this.marshallerFactory = (marshallerFactory == null) ? CsvMarshallerFactory.DEFAULT : marshallerFactory;
+    public CsvDataFormat setMarshalerFactory(CsvMarshalerFactory marshalerFactory) {
+        this.marshalerFactory = (marshalerFactory == null) ? CsvMarshalerFactory.DEFAULT : marshalerFactory;
         return this;
     }
 
     /**
-     * Returns the used {@link CsvMarshallerFactory}.
+     * Returns the used {@link CsvMarshalerFactory}.
      *
      * @return never {@code null}.
      */
-    public CsvMarshallerFactory getMarshallerFactory() {
-        return marshallerFactory;
+    public CsvMarshalerFactory getMarshalerFactory() {
+        return marshalerFactory;
     }
 
     /**
@@ -664,7 +664,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Indicates whether or not the unmarshalling should capture the header record.
+     * Indicates whether or not the unmarshaling should capture the header record.
      *
      * @return {@code true} for capture header record, {@code false} otherwise
      */
@@ -673,7 +673,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Indicates whether or not the unmarshalling should capture the header record.
+     * Indicates whether or not the unmarshaling should capture the header record.
      *
      * @param  captureHeaderRecord {@code true} for capture header record, {@code false} otherwise
      * @return                     Current {@code CsvDataFormat}, fluent API
@@ -684,7 +684,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Indicates whether or not the unmarshalling should lazily load the records.
+     * Indicates whether or not the unmarshaling should lazily load the records.
      *
      * @return {@code true} for lazy loading, {@code false} otherwise
      */
@@ -693,7 +693,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Indicates whether or not the unmarshalling should lazily load the records.
+     * Indicates whether or not the unmarshaling should lazily load the records.
      *
      * @param  lazyLoad {@code true} for lazy loading, {@code false} otherwise
      * @return          Current {@code CsvDataFormat}, fluent API
@@ -704,7 +704,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Indicates whether or not the unmarshalling should produce maps instead of lists.
+     * Indicates whether or not the unmarshaling should produce maps instead of lists.
      *
      * @return {@code true} for maps, {@code false} for lists
      */
@@ -713,7 +713,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Sets whether or not the unmarshalling should produce maps instead of lists.
+     * Sets whether or not the unmarshaling should produce maps instead of lists.
      *
      * @param  useMaps {@code true} for maps, {@code false} for lists
      * @return         Current {@code CsvDataFormat}, fluent API
@@ -724,7 +724,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Indicates whether or not the unmarshalling should produce ordered maps instead of lists.
+     * Indicates whether or not the unmarshaling should produce ordered maps instead of lists.
      *
      * @return {@code true} for maps, {@code false} for lists
      */
@@ -733,7 +733,7 @@ public class CsvDataFormat extends ServiceSupport implements DataFormat, DataFor
     }
 
     /**
-     * Sets whether or not the unmarshalling should produce ordered maps instead of lists.
+     * Sets whether or not the unmarshaling should produce ordered maps instead of lists.
      *
      * @param  useOrderedMaps {@code true} for maps, {@code false} for lists
      * @return                Current {@code CsvDataFormat}, fluent API

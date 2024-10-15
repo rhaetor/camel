@@ -80,7 +80,7 @@ public final class MongoDbConstants {
     public static final String BULK_ORDERED = "CamelMongoDbBulkOrdered";
     @Metadata(label = "consumer changeStreams",
               description = "A document that contains the _id of the document created or modified by the insert,\n" +
-                            "replace, delete, update operations (i.e. CRUD operations). For sharded collections, also displays the full shard key for\n"
+                            "replace, delete, update operations (that is, CRUD operations). For sharded collections, also displays the full shard key for\n"
                             +
                             "the document. The _id field is not repeated if it is already a part of the shard key.",
               javaType = "org.bson.types.ObjectId")

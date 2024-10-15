@@ -48,9 +48,9 @@ public class JacksonMarshalNamingStrategyTest extends CamelTestSupport {
             }
         });
 
-        Object marshalled = template.requestBody("direct:in", pojoNamingStrategy);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals(expectedJson, marshalledAsString);
+        Object marshaled = template.requestBody("direct:in", pojoNamingStrategy);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals(expectedJson, marshaledAsString);
 
         mock.assertIsSatisfied();
     }

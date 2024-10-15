@@ -152,7 +152,7 @@ public final class EventHubsClientFactory {
         if (ObjectHelper.isEmpty(configuration.getBlobContainerName()) || !isCredentialsSet(configuration)) {
             throw new IllegalArgumentException(
                     "Since there is no provided CheckpointStore, you will need to set blobAccountName, blobAccessName"
-                                               + " or blobContainerName in order to use the default BlobCheckpointStore");
+                                               + " or blobContainerName to use the default BlobCheckpointStore");
         }
 
         // second build the BlobContainerAsyncClient

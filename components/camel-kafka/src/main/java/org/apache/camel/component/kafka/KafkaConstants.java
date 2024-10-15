@@ -24,7 +24,7 @@ public final class KafkaConstants {
     public static final String PARTITION_KEY = "kafka.PARTITION_KEY";
     @Metadata(label = "consumer", description = "The partition where the message was stored", javaType = "Integer")
     public static final String PARTITION = "kafka.PARTITION";
-    @Metadata(description = "*Producer:* The key of the message in order to ensure that all related message goes in the same partition. "
+    @Metadata(description = "*Producer:* The key of the message to ensure that all related message goes in the same partition. "
                             +
                             "*Consumer:* The key of the message if configured",
               javaType = "Object", required = true)

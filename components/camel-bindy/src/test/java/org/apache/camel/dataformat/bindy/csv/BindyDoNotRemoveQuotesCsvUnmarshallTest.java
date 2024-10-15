@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindyDoNotRemoveQuotesCsvUnmarshallTest {
+public class BindyDoNotRemoveQuotesCsvUnmarshalTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";
@@ -46,10 +46,10 @@ public class BindyDoNotRemoveQuotesCsvUnmarshallTest {
     private String expected;
 
     // Without removesQuotes=false annotation on product this will fail to
-    // unmarshall properly
+    // unmarshal properly
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
 
         expected = "apple,\"bright red\" apple,a fruit";
 
@@ -57,15 +57,15 @@ public class BindyDoNotRemoveQuotesCsvUnmarshallTest {
 
         result.expectedMessageCount(1);
         result.assertIsSatisfied();
-        BindyDoNotRemoveQuotesCsvUnmarshallTest.Product product
-                = result.getReceivedExchanges().get(0).getIn().getBody(BindyDoNotRemoveQuotesCsvUnmarshallTest.Product.class);
+        BindyDoNotRemoveQuotesCsvUnmarshalTest.Product product
+                = result.getReceivedExchanges().get(0).getIn().getBody(BindyDoNotRemoveQuotesCsvUnmarshalTest.Product.class);
         assertEquals("apple", product.getName());
         assertEquals("\"bright red\" apple", product.getDescription1());
         assertEquals("a fruit", product.getDescription2());
     }
 
     public static class ContextConfig extends RouteBuilder {
-        BindyCsvDataFormat camelDataFormat = new BindyCsvDataFormat(BindyDoNotRemoveQuotesCsvUnmarshallTest.Product.class);
+        BindyCsvDataFormat camelDataFormat = new BindyCsvDataFormat(BindyDoNotRemoveQuotesCsvUnmarshalTest.Product.class);
 
         @Override
         public void configure() {

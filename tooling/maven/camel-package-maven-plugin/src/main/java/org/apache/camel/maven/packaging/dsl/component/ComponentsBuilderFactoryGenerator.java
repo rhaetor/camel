@@ -30,7 +30,7 @@ import org.apache.camel.tooling.util.srcgen.JavaClass;
 import org.apache.camel.tooling.util.srcgen.Method;
 
 /**
- * Used to generate the main ComponentBuilderFactory which is the main entry of the DSLs. E.g:
+ * Used to generate the main ComponentBuilderFactory which is the main entry of the DSLs. For example:
  * ComponentBuilderFactory.kafka().setBrokers("{{host:port}}").build()
  */
 public final class ComponentsBuilderFactoryGenerator {

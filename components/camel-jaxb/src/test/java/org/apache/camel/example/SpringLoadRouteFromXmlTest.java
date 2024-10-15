@@ -17,7 +17,7 @@
 package org.apache.camel.example;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Unmarshaler;
 
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.model.RoutesDefinition;
@@ -52,10 +52,10 @@ public class SpringLoadRouteFromXmlTest extends CamelSpringTestSupport {
 
         // load bar route from classpath using JAXB
         JAXBContext jaxb = new DefaultModelJAXBContextFactory().newJAXBContext();
-        Unmarshaller unmarshaller = jaxb.createUnmarshaller();
+        Unmarshaler unmarshaler = jaxb.createUnmarshaler();
 
         Resource rs = new ClassPathResource("org/apache/camel/example/BarRoute.xml");
-        Object value = unmarshaller.unmarshal(rs.getInputStream());
+        Object value = unmarshaler.unmarshal(rs.getInputStream());
 
         // it should be a RoutesDefinition (we can have multiple routes in the same XML file)
         RoutesDefinition routes = (RoutesDefinition) value;

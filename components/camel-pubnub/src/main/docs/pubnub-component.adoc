@@ -157,7 +157,7 @@ from("direct:control")
 ----
 
 There are a couple of examples in the test directory that show some of the PubNub features.
-They require a PubNub account, from where you can obtain a publish- and subscribe key.
+They require a PubNub account, from where you can obtain a publish and subscribe key.
  
 The example PubNubSensorExample already contains a subscribe key provided by PubNub, so this is ready to run without an account.
 The example illustrates the PubNub component subscribing to an infinite stream of sensor data.

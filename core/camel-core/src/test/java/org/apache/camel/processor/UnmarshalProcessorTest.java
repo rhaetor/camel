@@ -78,12 +78,12 @@ public class UnmarshalProcessorTest extends TestSupport {
     @Test
     public void testDataFormatReturnsBody() throws Exception {
         Exchange exchange = createExchangeWithBody(new DefaultCamelContext(), "body");
-        Object unmarshalled = new Object();
-        Processor processor = new UnmarshalProcessor(new MyDataFormat(unmarshalled));
+        Object unmarshaled = new Object();
+        Processor processor = new UnmarshalProcessor(new MyDataFormat(unmarshaled));
 
         processor.process(exchange);
-        assertSame(unmarshalled, exchange.getMessage().getBody(),
-                "UnmarshalProcessor did not make use of the returned object being returned while unmarshalling");
+        assertSame(unmarshaled, exchange.getMessage().getBody(),
+                "UnmarshalProcessor did not make use of the returned object being returned while unmarshaling");
     }
 
     @Test
@@ -109,8 +109,8 @@ public class UnmarshalProcessorTest extends TestSupport {
             object = message;
         }
 
-        MyDataFormat(Object unmarshalled) {
-            object = unmarshalled;
+        MyDataFormat(Object unmarshaled) {
+            object = unmarshaled;
         }
 
         @Override

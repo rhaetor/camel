@@ -24,7 +24,7 @@
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
     ">
     
-    <!-- Defining a ServiceInterfaceStrategy for retrieving the element name when marshalling -->
+    <!-- Defining a ServiceInterfaceStrategy for retrieving the element name when marshaling -->
     <bean id="myNameStrategy" class="org.apache.camel.dataformat.soap.name.ServiceInterfaceStrategy">
     	<constructor-arg value="com.example.customerservice.CustomerService"/>
 		<constructor-arg value="true"/>

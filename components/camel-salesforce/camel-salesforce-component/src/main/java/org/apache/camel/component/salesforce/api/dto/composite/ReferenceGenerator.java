@@ -22,7 +22,7 @@ package org.apache.camel.component.salesforce.api.dto.composite;
  * Reference identifiers need to be unique within one SObject tree request and should start with alphanumeric character.
  * <p/>
  * For example you can provide your {@link ReferenceGenerator} implementation that uses identities within your own
- * system as references, i.e. primary keys of records in your database.
+ * system as references, that is, primary keys of records in your database.
  *
  * @see Counter
  */

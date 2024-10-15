@@ -197,7 +197,7 @@ This approach will return the route secret value with version 'bf9b4f4b-8e63-43f
 
 This approach will return the username field of the database secret with version 'bf9b4f4b-8e63-43fd-a73c-3e2d3748b451' or admin in case the secret doesn't exist or the version doesn't exist.
 
-For the moment we are not considering the rotation function if any are applied, but it is in the work to be done.
+For the moment, we are not considering the rotation function if any are applied, but it is in the work to be done.
 
 The only requirement is adding the camel-azure-key-vault jar to your Camel application.
 

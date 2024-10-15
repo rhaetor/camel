@@ -116,12 +116,12 @@ public class JacksonDataFormatDsl {
     def.disableFeatures = disableFeatures
   }
 
-  public fun allowUnmarshallType(allowUnmarshallType: Boolean) {
-    def.allowUnmarshallType = allowUnmarshallType.toString()
+  public fun allowUnmarshalType(allowUnmarshalType: Boolean) {
+    def.allowUnmarshalType = allowUnmarshalType.toString()
   }
 
-  public fun allowUnmarshallType(allowUnmarshallType: String) {
-    def.allowUnmarshallType = allowUnmarshallType
+  public fun allowUnmarshalType(allowUnmarshalType: String) {
+    def.allowUnmarshalType = allowUnmarshalType
   }
 
   public fun timezone(timezone: String) {

@@ -306,7 +306,7 @@ You must *not* throw any exceptions from the `onCompletion` method.
 The `AggregationStrategy` supports checking for the exchange property (`Exchange.AGGREGATION_COMPLETE_CURRENT_GROUP`)
 on the returned `Exchange` that contains a boolean to indicate if the current
 group should be completed. This allows to overrule any existing
-completion predicates / sizes / timeouts etc., and complete the group.
+completion predicates / sizes / timeouts and so on, and complete the group.
 
 For example, the following logic will complete the
 group if the message body size is larger than 5. This is done by setting
@@ -337,7 +337,7 @@ The `AggregationStrategy` checks an exchange property, from the returned exchang
 indicating if all previous groups should be completed.
 
 This allows to overrule any existing
-completion predicates / sizes / timeouts etc., and complete all the existing
+completion predicates / sizes / timeouts and so on, and complete all the existing
 previous group.
 
 The following logic will complete all the
@@ -458,7 +458,7 @@ bean. To use a bean, then a convention must be followed:
 * the method must have two or more parameters
 * the parameters are paired, so the first half is applied to the
 `oldExchange`, and the reminder half is for the `newExchange`.
- Therefore, there must be an equal number of parameters, e.g., 2, 4, 6, etc.
+ Therefore, there must be an equal number of parameters, for example, 2, 4, 6, etc.
 
 The paired methods are expected to be ordered as follows:
 

@@ -289,7 +289,7 @@ public class FileEndpoint extends GenericFileEndpoint<File> {
 
     /**
      * Perform rename operations using a copy and delete strategy. This is primarily used in environments where the
-     * regular rename operation is unreliable (e.g. across different file systems or networks). This option takes
+     * regular rename operation is unreliable (for example, across different file systems or networks). This option takes
      * precedence over the copyAndDeleteOnRenameFail parameter that will automatically fall back to the copy and delete
      * strategy, but only after additional delays.
      */
@@ -340,7 +340,7 @@ public class FileEndpoint extends GenericFileEndpoint<File> {
 
     /**
      * Whether the starting directory has access permissions. Mind that the startingDirectoryMustExist parameter must be
-     * set to true in order to verify that the directory exists. Will thrown an exception if the directory doesn't have
+     * set to true to verify that the directory exists. Will thrown an exception if the directory doesn't have
      * read and write permissions.
      */
     public void setStartingDirectoryMustHaveAccess(boolean startingDirectoryMustHaveAccess) {

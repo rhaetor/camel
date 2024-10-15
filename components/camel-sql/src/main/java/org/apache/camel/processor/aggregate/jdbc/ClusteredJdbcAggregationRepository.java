@@ -136,7 +136,7 @@ public class ClusteredJdbcAggregationRepository extends JdbcAggregationRepositor
             final CamelContext camelContext, final String key, final Exchange exchange,
             final String sql, final Long version, final boolean completed)
             throws Exception {
-        final byte[] data = codec.marshallExchange(exchange, allowSerializedHeaders);
+        final byte[] data = codec.marshalExchange(exchange, allowSerializedHeaders);
         Integer insertCount = super.jdbcTemplate.execute(sql,
                 new AbstractLobCreatingPreparedStatementCallback(getLobHandler()) {
                     @Override

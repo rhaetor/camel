@@ -136,7 +136,7 @@ public class ThymeleafEndpoint extends ResourceEndpoint {
 
     /**
      * <p>
-     * Sets a new (optional) prefix to be added to all template names in order to convert <i>template names</i> into
+     * Sets a new (optional) prefix to be added to all template names to convert <i>template names</i> into
      * <i>resource names</i>.
      * </p>
      *
@@ -152,7 +152,7 @@ public class ThymeleafEndpoint extends ResourceEndpoint {
 
     /**
      * <p>
-     * Sets a new (optional) suffix to be added to all template names in order to convert <i>template names</i> into
+     * Sets a new (optional) suffix to be added to all template names to convert <i>template names</i> into
      * <i>resource names</i>.
      * </p>
      * <p>

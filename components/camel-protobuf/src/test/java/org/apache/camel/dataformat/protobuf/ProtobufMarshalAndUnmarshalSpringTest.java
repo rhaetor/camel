@@ -75,9 +75,9 @@ public class ProtobufMarshalAndUnmarshalSpringTest extends CamelSpringTestSuppor
         mock.message(0).body().isInstanceOf(Person.class);
         mock.message(0).body().isEqualTo(input);
 
-        Object marshalled = template.requestBody(inURI, input);
+        Object marshaled = template.requestBody(inURI, input);
 
-        template.sendBody(outURI, marshalled);
+        template.sendBody(outURI, marshaled);
 
         mock.assertIsSatisfied();
 

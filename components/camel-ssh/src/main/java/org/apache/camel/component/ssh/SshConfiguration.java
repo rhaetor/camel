@@ -178,7 +178,7 @@ public class SshConfiguration implements Cloneable {
 
     /**
      * Sets the command string to send to the remote SSH server during every poll cycle. Only works with camel-ssh
-     * component being used as a consumer, i.e. from("ssh://...") You may need to end your command with a newline, and
+     * component being used as a consumer, that is, from("ssh://...") You may need to end your command with a newline, and
      * that must be URL encoded %0A
      *
      * @param pollCommand String representing the command to send.

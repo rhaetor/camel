@@ -17,14 +17,14 @@ attachments).
 
 The use case for this is to enable the user to send attachments over
 endpoints that do not directly support attachments, either as special
-protocol implementation (e.g. send a MIME-multipart over an HTTP
-endpoint) or as a kind of tunneling solution (e.g. because camel-jms
-does not support attachments but by marshalling the message with
+protocol implementation (for example, send a MIME-multipart over an HTTP
+endpoint) or as a kind of tunneling solution (for example, because camel-jms
+does not support attachments but by marshaling the message with
 attachments into a MIME-Multipart, sending that to a JMS queue,
-receiving the message from the JMS queue and unmarshalling it again
+receiving the message from the JMS queue and unmarshaling it again
 (into a message body with attachments).
 
-The marshal option of the mimeMultipart data format will convert a
+The marshaloption of the mimeMultipart data format will convert a
 message with attachments into a MIME-Multipart message. If the parameter
 `multipartWithoutAttachment` is set to true, it will also marshal
 messages without attachments into a multipart message with a single
@@ -36,10 +36,10 @@ set to true, it will also create a MIME multipart message in any case.  +
 Furthermore, the MIME headers of the multipart are written as part of the
 message body, not as camel headers.
 
-The unmarshal option of the mimeMultipart data format will convert a
+The unmarshaloption of the mimeMultipart data format will convert a
 MIME-Multipart message into a camel message with attachments and leave
 other messages alone. MIME-Headers of the MIME-Multipart message have to
-be set as Camel headers. The unmarshalling will only take place if the
+be set as Camel headers. The unmarshaling will only take place if the
 "Content-Type" header is set to a "multipart" type. If the option
 "headersInline" is set to true, the body is always parsed as a MIME
 message. As a consequence, if the message body is a stream and stream

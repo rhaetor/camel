@@ -152,7 +152,7 @@ public final class SObjectComposite implements Serializable {
     }
 
     /**
-     * Generic way to add requests to composite. Given URL starts from the version, so in order to retrieve SObject
+     * Generic way to add requests to composite. Given URL starts from the version, so to retrieve SObject
      * specify just {@code /sobjects/Account/identifier} which results in
      * {@code /services/data/v37.0/sobjects/Account/identifier}. Note the leading slash.
      *

@@ -1073,11 +1073,11 @@ public class PostgresConnectorEmbeddedDebeziumConfiguration
      * an exception and stop.ALL_TABLES - If no publication exists, the
      * connector will create a new publication for all tables. Note this
      * requires that the configured user has access. If the publication already
-     * exists, it will be used. i.e CREATE PUBLICATION <publication_name> FOR
+     * exists, it will be used. that is, CREATE PUBLICATION <publication_name> FOR
      * ALL TABLES;FILTERED - If no publication exists, the connector will create
      * a new publication for all those tables matchingthe current filter
      * configuration (see table/database include/exclude list properties). If
-     * the publication already exists, it will be used. i.e CREATE PUBLICATION
+     * the publication already exists, it will be used. that is, CREATE PUBLICATION
      * <publication_name> FOR TABLE <tbl1, tbl2, etc>
      */
     public void setPublicationAutocreateMode(String publicationAutocreateMode) {
@@ -1212,7 +1212,7 @@ public class PostgresConnectorEmbeddedDebeziumConfiguration
     }
 
     /**
-     * Specify how failures during processing of events (i.e. when encountering
+     * Specify how failures during processing of events (that is, when encountering
      * a corrupted event) should be handled, including: 'fail' (the default) an
      * exception indicating the problematic event and its position is raised,
      * causing the connector to be stopped; 'warn' the problematic event and its
@@ -1328,7 +1328,7 @@ public class PostgresConnectorEmbeddedDebeziumConfiguration
 
     /**
      * Any optional parameters used by logical decoding plugin. Semi-colon
-     * separated. E.g. 'add-tables=public.table,public.table2;include-lsn=true'
+     * separated. For example, 'add-tables=public.table,public.table2;include-lsn=true'
      */
     public void setSlotStreamParams(String slotStreamParams) {
         this.slotStreamParams = slotStreamParams;

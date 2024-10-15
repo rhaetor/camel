@@ -30,7 +30,7 @@ import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Marshaler;
 
 // TODO: camel4
 import javax.xml.transform.OutputKeys;
@@ -118,11 +118,11 @@ public class JaxbModelToXMLDumper implements ModelToXMLDumper {
             resolveEndpointDslUris(route);
         }
 
-        Marshaller marshaller = jaxbContext.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+        Marshaler marshaler = jaxbContext.createMarshaler();
+        marshaler.setProperty(Marshaler.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        marshaler.setProperty(Marshaler.JAXB_ENCODING, "UTF-8");
         StringWriter buffer = new StringWriter();
-        marshaller.marshal(definition, buffer);
+        marshaler.marshal(definition, buffer);
 
         XmlConverter xmlConverter = newXmlConverter(context);
         String xml = buffer.toString();

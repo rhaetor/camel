@@ -389,7 +389,7 @@ The `camel-kafka` component has removed the options `bridgeEndpoint` and `circul
 
 === Telegram
 
-The `camel-telegram` component has moved the authorization token from uri-path to a query parameter instead, e.g. migrate
+The `camel-telegram` component has moved the authorization token from uri-path to a query parameter instead, for example, migrate
 
     telegram:bots/myTokenHere
 
@@ -538,7 +538,7 @@ The APIs on `CamelContext` has been reduced a bit to focus on relevant API for C
 
 === Checked vs unchecked exceptions
 
-Most of the Camel exception classes have been migrated to be unchecked (e.g. extends `RuntimeException`).
+Most of the Camel exception classes have been migrated to be unchecked (for example, extends `RuntimeException`).
 
 Also the lifecycle of the `start`, `stop` and `suspend`, `resume` methods on `Service` and `SuspendableService` has been changed to not throw checked exceptions.
 

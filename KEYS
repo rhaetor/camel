@@ -831,7 +831,7 @@ sig          B6CD3280 2011-11-11  Udo Schnurpfeil <lofwyr@apache.org>
 sig          F5CBAE6B 2011-11-16  Akitoshi Yoshida (CODE SIGNING KEY) <ay@apache.org>
 sig          0208FC11 2011-11-14  Carlos Sanchez <carlos@apache.org>
 sig          088335A9 2011-11-24  Chris Darroch (CODE SIGNING KEY) <chrisd@apache.org>
-sig          E1303A99 2011-12-02  Marshall I Schor (Code Signing Key 2) <schor@apache.org>
+sig          E1303A99 2011-12-02  Marshal I Schor (Code Signing Key 2) <schor@apache.org>
 sig          791485A8 2011-11-10  Jim Jagielski (Release Signing Key) <jim@apache.org>
 sub   4096R/7501638F 2011-11-01
 sig          2A239C2C 2011-11-01  Christian Mueller (CODE SIGNING KEY) <cmueller@apache.org>

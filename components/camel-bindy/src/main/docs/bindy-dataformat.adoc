@@ -46,10 +46,10 @@ decimal or grouping separators.
 *Format supported*
 
 This first release only supports comma separated values fields and key
-value pair fields (e.g.: _FIX messages_).
+value pair fields (for example, _FIX messages_).
 
 To work with camel-bindy, you must first define your model in a package
-(e.g. `com.acme.model`) and for each model class (e.g., `Order`, `Client`,
+(for example, `com.acme.model`) and for each model class (for example, `Order`, `Client`,
 `Instrument`, ...) add the required annotations (described hereafter) to
 the Class or field.
 
@@ -68,7 +68,7 @@ include::partial$dataformat-options.adoc[]
 The annotations created allow mapping different concept of your model to
 the POJO like:
 
-* Type of record (CSV, key value pair (e.g., _FIX message_), fixed length
+* Type of record (CSV, key value pair (for example, _FIX message_), fixed length
 ...),
 * Link (to link an object in another object),
 * DataField and their properties (int, type, ...),
@@ -103,7 +103,7 @@ to several children's model classes.
 | separator | String | &#10003; |  a| Separator used to split a record in tokens (mandatory) - can be ',' or ';' or 'anything'. The only whitespace
 character supported is tab (\t). No other whitespace characters (spaces) are not supported. This value is
 interpreted as a regular expression. If you want to use a sign which has a special meaning in regular
-expressions, e.g. the '\|' sign, then you have to mask it, like '\|'
+expressions, for example, the '\|' sign, then you have to mask it, like '\|'
 
 | allowEmptyStream | boolean |  | false | The allowEmptyStream parameter will allow to prcoess the unavaiable stream for CSV file.
 
@@ -133,7 +133,7 @@ one time.
 | quotingOnlyWhenNeeded | boolean |  | false a| Indicate if the values should be quoted only when needed (optional) - if enabled then the value is only quoted
 when it contains the configured separator, quote, or crlf characters. The quoting option must also be enabled.
 
-| removeQuotes | boolean |  | true | The remove quotes parameter flags if unmarshalling should try to remove quotes for each field
+| removeQuotes | boolean |  | true | The remove quotes parameter flags if unmarshaling should try to remove quotes for each field
 
 | skipField | boolean |  | false a| The skipField parameter will allow to skip fields of a CSV file. If some fields are not necessary, they can be
 skipped.
@@ -146,7 +146,7 @@ columns definition
 |===
 // annotation options: END
 
-*case 1:separator = ','*
+*case 1: separator = ','*
 
 The separator used to segregate the fields in the CSV record is `,` :
 
@@ -162,7 +162,7 @@ public Class Order {
 }
 ----
 
-*case 2:separator = ';'*
+*case 2: separator = ';'*
 
 Compare to the previous case, the separator here is `;` instead of `,` :
 
@@ -178,7 +178,7 @@ public Class Order {
 }
 ----
 
-*case 3:separator = '|'*
+*case 3: separator = '|'*
 
 Compare to the previous case, the separator here is `|` instead of `;` :
 
@@ -194,7 +194,7 @@ public Class Order {
 }
 ----
 
-*case 4:separator = '\",\"'*
+*case 4: separator = '\",\"'*
 
 *Applies for Camel 2.8.2 or older*
 
@@ -202,7 +202,7 @@ When the field to be parsed of the CSV record contains `,` or `;` which
 is also used as separator, we should find another strategy
 to tell camel bindy how to handle this case. To define the field
 containing the data with a comma, you will use single or double quotes
-as delimiter (e.g.: '10', 'Street 10, NY', 'USA' or "10", "Street 10,
+as delimiter (for example, '10', 'Street 10, NY', 'USA' or "10", "Street 10,
 NY", "USA").
 
 [NOTE]
@@ -223,7 +223,7 @@ public Class Order {
 ----
 
 Bindy automatically detects if the
-record is enclosed with either single or double quotes and automatically removes those quotes when unmarshalling from CSV to Object. Therefore, do
+record is enclosed with either single or double quotes and automatically removes those quotes when unmarshaling from CSV to Object. Therefore, do
 *not* include the quotes in the separator, but do as below:
 
 ----
@@ -250,7 +250,7 @@ public Class Order {
 }
 ----
 
-*case 5:separator & skipFirstLine*
+*case 5: separator & skipFirstLine*
 
 The feature is interesting when the client wants to have in the first
 line of the file, the name of the data fields :
@@ -270,7 +270,7 @@ public Class Order {
 }
 ----
 
-*case 6:generateHeaderColumns*
+*case 6: generateHeaderColumns*
 
 To include at the first line of the CSV generated, the attribute
 `generateHeaderColumns` must be set to true in the annotation like this :
@@ -283,7 +283,7 @@ public Class Order {
 }
 ----
 
-As a result, Bindy during the unmarshalling process will generate CSV
+As a result, Bindy during the unmarshaling process will generate CSV
 like this:
 
 ----
@@ -370,7 +370,7 @@ The link annotation will allow linking objects together.
 
 Only one-to-one relation is allowed as of the current version.
 
-E.g.: If the model class Client is linked to the Order class, then use
+For example: If the model class Client is linked to the Order class, then use
 annotation Link in the Order class like this :
 
 *Property Link*
@@ -435,7 +435,7 @@ has `generateHeaderColumns = true`
 | delimiter | String |  |  | Optional delimiter to be used if the field has a variable length
 
 | groupingSeparator | String |  |  a| Grouping Separator to be used with BigDecimal number when we would like to format/parse to number with grouping
-e.g. 123,456.789
+for example, 123,456.789
 
 | impliedDecimalSeparator | boolean |  | false | Indicates if there is a decimal point implied at a specified location
 
@@ -444,7 +444,7 @@ e.g. 123,456.789
 | lengthPos | int |  | 0 | Identifies a data field in the record that defines the expected fixed length for this field
 
 | method | String |  |  a| Method name to call to apply such customization on DataField. This must be the method on the datafield itself or
-you must provide static fully qualified name of the class's method e.g: see unit test
+you must provide static fully qualified name of the class's method for example, see unit test
 org.apache.camel.dataformat.bindy.csv.BindySimpleCsvFunctionWithExternalMethodTest.replaceToBar
 
 | name | String |  |  | Name of the field (optional)
@@ -464,7 +464,7 @@ parameter.
 | required | boolean |  | false | Indicates if the field is mandatory
 
 | rounding | String |  | CEILING a| Round mode to be used to round/scale a BigDecimal Values : UP, DOWN, CEILING, FLOOR, HALF_UP,
-HALF_DOWN,HALF_EVEN, UNNECESSARY e.g : Number = 123456.789, Precision = 2, Rounding = CEILING Result : 123456.79
+HALF_DOWN,HALF_EVEN, UNNECESSARY , for example: : Number = 123456.789, Precision = 2, Rounding = CEILING Result : 123456.79
 
 | timezone | String |  |  | Timezone to be used.
 
@@ -588,7 +588,7 @@ The position attribute will inform bindy how to place the field in the
 CSV record generated. By default, the position used corresponds to the
 position defined with the attribute `pos`. If the position is different
 (that means that we have an asymmetric process comparing marshaling
-from unmarshalling) then we can use `position` to indicate this.
+from unmarshaling) then we can use `position` to indicate this.
 
 Here is an example:
 
@@ -760,12 +760,12 @@ field, we can then add 'pad' characters.
 | countGrapheme | boolean |  | false | Indicates how chars are counted
 
 | crlf | String |  | WINDOWS a| Character to be used to add a carriage return after each record (optional). Possible values: WINDOWS, UNIX, MAC,
-or custom. This option is used only during marshalling, whereas unmarshalling uses system default JDK provided
+or custom. This option is used only during marshaling, whereas unmarshaling uses system default JDK provided
 line delimiter unless eol is customized.
 
-| eol | String |  |  a| Character to be used to process considering end of line after each record while unmarshalling (optional -
+| eol | String |  |  a| Character to be used to process considering end of line after each record while unmarshaling (optional -
 default: "", which help default JDK provided line delimiter to be used unless any other line delimiter provided)
-This option is used only during unmarshalling, where marshalling uses system default provided line delimiter as
+This option is used only during unmarshaling, where marshaling uses system default provided line delimiter as
 "WINDOWS" unless any other value is provided.
 
 | footer | Class |  | void | Indicates that the record(s) of this type may be followed by a single footer record at the end of the file
@@ -775,7 +775,7 @@ file
 
 | ignoreMissingChars | boolean |  | false | Indicates whether too short lines will be ignored
 
-| ignoreTrailingChars | boolean |  | false a| Indicates that characters beyond the last mapped filed can be ignored when unmarshalling / parsing. This
+| ignoreTrailingChars | boolean |  | false a| Indicates that characters beyond the last mapped filed can be ignored when unmarshaling / parsing. This
 annotation is associated to the root class of the model and must be declared one time.
 
 | length | int |  | 0 a| The fixed length of the record (number of characters). It means that the record will always be that long padded
@@ -785,11 +785,11 @@ with {#paddingChar()}'s
 
 | paddingChar | char |  |   | The char to pad with.
 
-| skipFooter | boolean |  | false a| Configures the data format to skip marshalling / unmarshalling of the footer record. Configure this parameter on
-the primary record (e.g., not the header or footer).
+| skipFooter | boolean |  | false a| Configures the data format to skip marshaling / unmarshaling of the footer record. Configure this parameter on
+the primary record (for example, not the header or footer).
 
-| skipHeader | boolean |  | false a| Configures the data format to skip marshalling / unmarshalling of the header record. Configure this parameter on
-the primary record (e.g., not the header or footer).
+| skipHeader | boolean |  | false a| Configures the data format to skip marshaling / unmarshaling of the header record. Configure this parameter on
+the primary record (for example, not the header or footer).
 
 |===
 // annotation options: END
@@ -1220,14 +1220,14 @@ model and must be declared one time.
 
 | name | String |  |  | Name describing the message (optional)
 
-| type | String |  | FIX | type is used to define the type of the message (e.g. FIX, EMX, ...) (optional)
+| type | String |  | FIX | type is used to define the type of the message (for example, FIX, EMX, ...) (optional)
 
-| version | String |  | 4.1 | version defines the version of the message (e.g. 4.1, ...) (optional)
+| version | String |  | 4.1 | version defines the version of the message (for example, 4.1, ...) (optional)
 
 |===
 // annotation options: END
 
-*case 1:separator = 'u0001'*
+*case 1: separator = 'u0001'*
 
 The separator used to segregate the key value pair fields in a FIX
 message is the ASCII `01` character or in unicode format `\u0001`. This
@@ -1298,7 +1298,7 @@ must be different
 |===
 // annotation options: END
 
-*case 1:tag*
+*case 1: tag*
 
 This parameter represents the key of the field in the message:
 
@@ -1386,7 +1386,7 @@ Only one attribute/parameter exists for this annotation.
 |===
 // annotation options: END
 
-*case 1:Section*
+*case 1: Section*
 
 Definition of the header section:
 
@@ -1691,7 +1691,7 @@ FormattingOptions:
 * ZonedDateTime
 
 The DefaultFormatFactory can be overridden by providing an instance of
-FactoryRegistry in the registry in use (e.g., Spring or JNDI).
+FactoryRegistry in the registry in use (for example, Spring or JNDI).
 
 == Using the Java DSL
 
@@ -1739,7 +1739,7 @@ from("file://inbox")
 ----
 
 Alternatively, you can use a named reference to a data format which can
-then be defined in your registry, e.g., your
+then be defined in your registry, for example, your
 Spring XML file:
 
 [source,java]
@@ -1749,12 +1749,12 @@ from("file://inbox")
   .to("direct:handleOrders");
 ----
 
-The Camel route will pick up files in the inbox directory, unmarshall
+The Camel route will pick up files in the inbox directory, unmarshal
 CSV records into a collection of model objects and send the collection +
  to the route referenced by `handleOrders`.
 
 The collection returned is a *List of Map* objects. Each Map within the
-list contains the model objects marshalled out of each line of
+list contains the model objects marshaled out of each line of
 the CSV. The reason behind this is that _each line can correspond to
 more than one object_. This can be confusing when you expect one
 object to be returned per line.
@@ -1799,8 +1799,8 @@ from("file://inbox")
 ----
 
 Take care of the fact that Bindy uses CHARSET_NAME property or the CHARSET_NAME header as define in the
-Exchange interface to do a characterset conversion of the inputstream received for unmarshalling.
-In some producers, (e.g., file-endpoint) you can define a characterset. This producer
+Exchange interface to do a characterset conversion of the inputstream received for unmarshaling.
+In some producers, (for example, file-endpoint) you can define a characterset. This producer
 can already do the character set conversion. Sometimes you need to remove this property or header from the
 exchange before sending it to the unmarshal. If you don't remove it, the conversion might be done twice,
 which might lead to unwanted results.
@@ -1833,7 +1833,7 @@ shows two routes where the first will pick up records from files,
 unmarshal the content and bind it to their model. The result is then
 send to a pojo (doing nothing special) and place them into a queue.
 
-The second route will extract the pojos from the queue and marshal the
+The second route will extract the pojos from the queue and marshalthe
 content to generate a file containing the CSV record.
 
 *Spring DSL*

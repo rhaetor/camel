@@ -100,7 +100,7 @@ public interface HealthCheckRegistry extends CamelContextAware, StaticService, I
 
     /**
      * Returns an optional {@link HealthCheckRegistry}, by default no registry is present, and it must be explicit
-     * activated. Components can register/unregister health checks in response to life-cycle events (i.e. start/stop).
+     * activated. Components can register/unregister health checks in response to life-cycle events (that is, start/stop).
      *
      * This registry is not used by the camel context, but it is up to the implementation to properly use it, such as: -
      * a RouteController could use the registry to decide to restart a route with failing health checks - spring boot

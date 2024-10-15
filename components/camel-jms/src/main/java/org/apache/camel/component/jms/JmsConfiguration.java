@@ -167,7 +167,7 @@ public class JmsConfiguration implements Cloneable {
                             + " The default setting is CACHE_AUTO. See the Spring documentation and Transactions Cache Levels for more information.")
     private String cacheLevelName;
     @UriParam(defaultValue = "5000", label = "advanced", javaType = "java.time.Duration",
-              description = "Specifies the interval between recovery attempts, i.e. when a connection is being refreshed, in milliseconds."
+              description = "Specifies the interval between recovery attempts, that is, when a connection is being refreshed, in milliseconds."
                             + " The default is 5000 ms, that is, 5 seconds.")
     private long recoveryInterval = 5000;
     @UriParam(defaultValue = "1000", label = "advanced", javaType = "java.time.Duration",
@@ -348,7 +348,7 @@ public class JmsConfiguration implements Cloneable {
     @UriParam(label = "advanced", enums = "default,passthrough",
               description = "Pluggable strategy for encoding and decoding JMS keys so they can be compliant with the JMS specification."
                             + " Camel provides two implementations out of the box: default and passthrough."
-                            + " The default strategy will safely marshal dots and hyphens (. and -). The passthrough strategy leaves the key as is."
+                            + " The default strategy will safely marshaldots and hyphens (. and -). The passthrough strategy leaves the key as is."
                             + " Can be used for JMS brokers which do not care whether JMS header keys contain illegal characters."
                             + " You can provide your own implementation of the org.apache.camel.component.jms.JmsKeyFormatStrategy"
                             + " and refer to it using the # notation.")
@@ -1118,8 +1118,8 @@ public class JmsConfiguration implements Cloneable {
     }
 
     /**
-     * The number of messages per task. -1 is unlimited. If you use a range for concurrent consumers (e.g., min < max),
-     * then this option can be used to set a value to e.g., 100, to control how fast the consumers will shrink when less
+     * The number of messages per task. -1 is unlimited. If you use a range for concurrent consumers (for example, min < max),
+     * then this option can be used to set a value to for example, 100, to control how fast the consumers will shrink when less
      * work is required.
      */
     public void setMaxMessagesPerTask(int maxMessagesPerTask) {
@@ -1155,7 +1155,7 @@ public class JmsConfiguration implements Cloneable {
     }
 
     /**
-     * Specifies the interval between recovery attempts, i.e., when a connection is being refreshed, in milliseconds.
+     * Specifies the interval between recovery attempts, that is, when a connection is being refreshed, in milliseconds.
      * The default is 5000 ms, that is, 5 seconds.
      */
     public void setRecoveryInterval(long recoveryInterval) {
@@ -2123,7 +2123,7 @@ public class JmsConfiguration implements Cloneable {
     }
 
     /**
-     * Only applicable when sending to JMS destination using InOnly (e.g., fire and forget). Enabling this option will
+     * Only applicable when sending to JMS destination using InOnly (for example, fire and forget). Enabling this option will
      * enrich the Camel Exchange with the actual JMSMessageID that was used by the JMS client when the message was sent
      * to the JMS destination.
      */

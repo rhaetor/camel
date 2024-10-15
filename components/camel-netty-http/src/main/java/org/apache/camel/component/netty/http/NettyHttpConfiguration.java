@@ -326,7 +326,7 @@ public class NettyHttpConfiguration extends NettyConfiguration {
     }
 
     /**
-     * The maximum length of the initial line (e.g. {@code "GET / HTTP/1.0"} or {@code "HTTP/1.0 200 OK"}) If the length
+     * The maximum length of the initial line (for example, {@code "GET / HTTP/1.0"} or {@code "HTTP/1.0 200 OK"}) If the length
      * of the initial line exceeds this value, a {@link TooLongFrameException} will be raised.
      *
      * See {@link io.netty.handler.codec.http.HttpObjectDecoder}
@@ -368,7 +368,7 @@ public class NettyHttpConfiguration extends NettyConfiguration {
 
     /**
      * The status codes which are considered a success response. The values are inclusive. Multiple ranges can be
-     * defined, separated by comma, e.g. <tt>200-204,209,301-304</tt>. Each range must be a single number or from-to
+     * defined, separated by comma, for example, <tt>200-204,209,301-304</tt>. Each range must be a single number or from-to
      * with the dash included.
      * <p/>
      * The default range is <tt>200-299</tt>

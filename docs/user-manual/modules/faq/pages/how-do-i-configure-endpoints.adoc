@@ -122,7 +122,7 @@ example you may have a plus sign in the password, which would be decimal
 encoded by default.
 
 So from Camel 2.11 onwards we made this easier as you can denote a
-parameter value to be *raw* using the following syntax `RAW(value)`, e.g.
+parameter value to be *raw* using the following syntax `RAW(value)`, for example
 the value starts with `RAW(` and then ends with the parenthesis `)`.
 Here is a little example:
 
@@ -217,8 +217,8 @@ as shown in the example below:
 
 Sometimes configuring endpoint URIs may have many options, and therefore
 the URI can become long. In Java DSL you can break the URIs into new
-lines as its just Java code, e.g. just concat the `String`. When using XML
-DSL then the URI is an attribute, e.g. `<from uri="bla bla"/>`. From Camel
+lines as its just Java code, for example, just concat the `String`. When using XML
+DSL then the URI is an attribute, for example, `<from uri="bla bla"/>`. From Camel
 2.15 onwards you can configure the endpoint separately, and from the
 routes refer to the endpoints using their shorthand ids. 
 
@@ -261,8 +261,8 @@ as:
 
 Sometimes configuring endpoint URIs may have many options, and therefore
 the URI can become long. In Java DSL you can break the URIs into new
-lines as its just Java code, e.g. just concat the `String`. When using XML
-DSL then the URI is an attribute, e.g. `<from uri="bla bla"/>`. From Camel
+lines as its just Java code, for example, just concat the `String`. When using XML
+DSL then the URI is an attribute, for example, `<from uri="bla bla"/>`. From Camel
 2.15 onwards you can break the URI attribute using new line, such as
 shown below:
 

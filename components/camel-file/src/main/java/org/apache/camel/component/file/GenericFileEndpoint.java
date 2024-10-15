@@ -202,7 +202,7 @@ public abstract class GenericFileEndpoint<T> extends ScheduledPollEndpoint imple
                                                 + "starts to filter, and accept files  to process by Camel. This option is default=false meaning disabled.")
     protected boolean preSort;
     @UriParam(label = "consumer,filter", description = "To define a maximum messages to gather per poll. By default "
-                                                       + "no maximum is set. Can be used to set a limit of e.g. 1000 to avoid when starting up the server that "
+                                                       + "no maximum is set. Can be used to set a limit of for example, 1000 to avoid when starting up the server that "
                                                        + "there are thousands of files. Set a value of 0 or negative to disabled it. Notice: If this option is "
                                                        + "in use then the File and FTP components will limit before any sorting. For example if you have 100000 "
                                                        + "files and use maxMessagesPerPoll=500, then only the first 500 files will be picked up, and then sorted. "
@@ -315,7 +315,7 @@ public abstract class GenericFileEndpoint<T> extends ScheduledPollEndpoint imple
     protected boolean shuffle;
     @UriParam(label = "consumer,lock", defaultValue = "none",
               enums = "none,markerFile,fileLock,rename,changed,idempotent,idempotent-changed,idempotent-rename",
-              description = "Used by consumer, to only poll the files if it has exclusive read-lock on the file (i.e. "
+              description = "Used by consumer, to only poll the files if it has exclusive read-lock on the file (that is, "
                             + "the file is not in-progress or being written). Camel will wait until the file lock is granted. "
                             + "This option provides the build in strategies:<p/>"
                             + " - none - No read lock is in use<p/>"
@@ -1058,7 +1058,7 @@ public abstract class GenericFileEndpoint<T> extends ScheduledPollEndpoint imple
     }
 
     /**
-     * Used by consumer, to only poll the files if it has exclusive read-lock on the file (i.e. the file is not
+     * Used by consumer, to only poll the files if it has exclusive read-lock on the file (that is, the file is not
      * in-progress or being written). Camel will wait until the file lock is granted. This option provides the build in
      * strategies:\n\n - none - No read lock is in use\n - markerFile - Camel creates a marker file (fileName.camelLock)
      * and then holds a lock on it. This option is not available for the FTP component\n - changed - Changed is using
@@ -1361,7 +1361,7 @@ public abstract class GenericFileEndpoint<T> extends ScheduledPollEndpoint imple
     }
 
     /**
-     * To define a maximum messages to gather per poll. By default no maximum is set. Can be used to set a limit of e.g.
+     * To define a maximum messages to gather per poll. By default no maximum is set. Can be used to set a limit of for example
      * 1000 to avoid when starting up the server that there are thousands of files. Set a value of 0 or negative to
      * disabled it. Notice: If this option is in use then the File and FTP components will limit before any sorting. For
      * example if you have 100000 files and use maxMessagesPerPoll=500, then only the first 500 files will be picked up,

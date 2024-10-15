@@ -109,11 +109,11 @@ Complete the following steps to create a new Camel release:
 
 * The release plugin will prompt for a release version, an SCM tag and next release version.
 
-*  Use a three digit release version of the form: `MAJOR.MINOR.PATCH`, e.g. `3.0.0`.
+*  Use a three digit release version of the form: `MAJOR.MINOR.PATCH`, for example, `3.0.0`.
 
-*  For the tag use a string of the form: `camel-MAJOR.MINOR.PATCH`, e.g. `camel-3.0.0`.
+*  For the tag use a string of the form: `camel-MAJOR.MINOR.PATCH`, for example, `camel-3.0.0`.
 
-*  For the next version increase the patch version and append `-SNAPSHOT`, e.g. `3.0.1-SNAPSHOT`.
+*  For the next version increase the patch version and append `-SNAPSHOT`, for example, `3.0.1-SNAPSHOT`.
 
 * Make sure to check the generated signature files:
 
@@ -199,11 +199,11 @@ Change the camel-version property in https://github.com/apache/camel-spring-boot
   
  * The release plugin will prompt for a release version, an SCM tag and next release version.
 
-*  Use a three digit release version of the form: `MAJOR.MINOR.PATCH`, e.g. `3.0.0`.
+*  Use a three digit release version of the form: `MAJOR.MINOR.PATCH`, for example, `3.0.0`.
 
-*  For the tag use a string of the form: `camel-MAJOR.MINOR.PATCH`, e.g. `camel-3.0.0`.
+*  For the tag use a string of the form: `camel-MAJOR.MINOR.PATCH`, for example, `camel-3.0.0`.
 
-*  For the next version increase the patch version and append `-SNAPSHOT`, e.g. `3.0.1-SNAPSHOT`.
+*  For the next version increase the patch version and append `-SNAPSHOT`, for example, `3.0.1-SNAPSHOT`.
 
 * Make sure to check the generated signature files:
 
@@ -289,11 +289,11 @@ Change the camel-version property in https://github.com/apache/camel-karaf/blob/
   
  * The release plugin will prompt for a release version, an SCM tag and next release version.
 
-*  Use a three digit release version of the form: `MAJOR.MINOR.PATCH`, e.g. `3.0.0`.
+*  Use a three digit release version of the form: `MAJOR.MINOR.PATCH`, for example, `3.0.0`.
 
-*  For the tag use a string of the form: `camel-MAJOR.MINOR.PATCH`, e.g. `camel-3.0.0`.
+*  For the tag use a string of the form: `camel-MAJOR.MINOR.PATCH`, for example, `camel-3.0.0`.
 
-*  For the next version increase the patch version and append `-SNAPSHOT`, e.g. `3.0.1-SNAPSHOT`.
+*  For the next version increase the patch version and append `-SNAPSHOT`, for example, `3.0.1-SNAPSHOT`.
 
 * Make sure to check the generated signature files:
 
@@ -380,7 +380,7 @@ This will release the artifacts.
   cd ${CAMEL_ROOT_DIR}/etc/scripts
   ./release-website.sh <Camel version>
 
-. Merge the release branch back into the corresponding base branch (e.g. merge `release/3.2.0` into `camel-3.2.x`)
+. Merge the release branch back into the corresponding base branch (for example, merge `release/3.2.0` into `camel-3.2.x`)
 
   git checkout BASE_BRANCH
   git pull

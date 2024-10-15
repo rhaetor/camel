@@ -407,7 +407,7 @@ public interface ServiceBusEndpointBuilderFactory {
             return this;
         }
         /**
-         * Sets the receiverAsyncClient in order to consume messages by the
+         * Sets the receiverAsyncClient to consume messages by the
          * consumer.
          * 
          * The option is a:
@@ -424,7 +424,7 @@ public interface ServiceBusEndpointBuilderFactory {
             return this;
         }
         /**
-         * Sets the receiverAsyncClient in order to consume messages by the
+         * Sets the receiverAsyncClient to consume messages by the
          * consumer.
          * 
          * The option will be converted to a
@@ -1712,6 +1712,19 @@ public interface ServiceBusEndpointBuilderFactory {
          */
         public String azureServiceBusContentType() {
             return "CamelAzureServiceBusContentType";
+        }
+
+        /**
+         * Gets a correlation identifier.
+         *
+         * The option is a: {@code String} type.
+         *
+         * Group: consumer
+         *
+         * @return the name of the header {@code AzureServiceBusCorrelationId}.
+         */
+        public String azureServiceBusCorrelationId() {
+            return "CamelAzureServiceBusCorrelationId";
         }
 
         /**

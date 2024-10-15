@@ -50,7 +50,7 @@ There are three ways to initialize the Ignite component:
 </bean>
 ------------------------------------------------------------
 
-* By passing in an IgniteConfiguration, either constructed programmatically or through inversion of control (e.g., Spring, Blueprint, etc).
+* By passing in an IgniteConfiguration, either constructed programmatically or through inversion of control (for example, Spring, Blueprint, etc).
 Here's an example using Spring config:
 
 [source,xml]

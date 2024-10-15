@@ -41,12 +41,14 @@ for this component:
 == URI format
 
 .HTTP
+[source, html]
 ----
 undertow:http://hostname[:port][/resourceUri][?options]
 undertow:https://hostname[:port][/resourceUri][?options]
 ----
 
 .WebSocket
+[source, html]
 ----
 undertow:ws://hostname[:port][/resourceUri][?options]
 undertow:wss://hostname[:port][/resourceUri][?options]

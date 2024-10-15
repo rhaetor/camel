@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvRemoveWhitespaceUnmarshallTest {
+public class BindySimpleCsvRemoveWhitespaceUnmarshalTest {
 
     @Produce("direct:start")
     protected ProducerTemplate template;
@@ -44,7 +44,7 @@ public class BindySimpleCsvRemoveWhitespaceUnmarshallTest {
     private MockEndpoint resultEndpoint;
 
     @Test
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
         resultEndpoint.expectedMessageCount(1);
 
         template.sendBody(record);

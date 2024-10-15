@@ -38,7 +38,7 @@ public class BindyEscapedCsvTest extends CamelTestSupport {
     private MockEndpoint mockEndPointUnmarshal;
 
     @Test
-    public void testUnMarshallEscapedMessage() throws Exception {
+    public void testUnMarshalEscapedMessage() throws Exception {
         mockEndPointUnmarshal.expectedMessageCount(1);
 
         String body = """

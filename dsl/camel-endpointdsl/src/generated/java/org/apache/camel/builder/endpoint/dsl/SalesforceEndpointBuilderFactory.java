@@ -2863,7 +2863,7 @@ public interface SalesforceEndpointBuilderFactory {
             return this;
         }
         /**
-         * The portion of the endpoint URL after the domain name. E.g.,
+         * The portion of the endpoint URL after the domain name. For example,
          * '/services/data/v52.0/sobjects/Account/'.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

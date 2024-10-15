@@ -50,29 +50,29 @@ public class OnExceptionUseOriginalMessageStreamTest extends ContextTestSupport 
     }
 
     @Test
-    void unmarshallWithStreamCache() {
-        // Cached stream is closed unmarshalling
+    void unmarshalWithStreamCache() {
+        // Cached stream is closed unmarshaling
         String data = "{\"test\": \"data\"";
         InputStream is = new ByteArrayInputStream(data.getBytes());
-        Object out = template.requestBody("direct:unmarshallWithStreamCache", is, Object.class);
+        Object out = template.requestBody("direct:unmarshalWithStreamCache", is, Object.class);
         Assertions.assertEquals(data, out);
     }
 
     @Test
-    void unmarshallWithoutStreamCache() {
-        // Uncached stream is closed by reading with unmarshaller
+    void unmarshalWithoutStreamCache() {
+        // Uncached stream is closed by reading with unmarshaler
         String data = "{\"test\": \"data\"";
         InputStream is = new ByteArrayInputStream(data.getBytes());
-        Object out = template.requestBody("direct:unmarshallWithoutStreamCache", is, Object.class);
+        Object out = template.requestBody("direct:unmarshalWithoutStreamCache", is, Object.class);
         Assertions.assertEquals(data, out);
     }
 
     @Test
-    void unmarshallInvalidWithoutStreamCache() {
-        // Uncached stream is closed by reading with unmarshaller
+    void unmarshalInvalidWithoutStreamCache() {
+        // Uncached stream is closed by reading with unmarshaler
         String data = "{\"test\": \"data\"";
         InputStream is = new ByteArrayInputStream(data.getBytes());
-        Object out = template.requestBody("direct:convertBodyInvalidUnmarshallWithoutStreamCache", is, Object.class);
+        Object out = template.requestBody("direct:convertBodyInvalidUnmarshalWithoutStreamCache", is, Object.class);
         Assertions.assertEquals(data, out);
     }
 
@@ -117,15 +117,15 @@ public class OnExceptionUseOriginalMessageStreamTest extends ContextTestSupport 
                         .convertBodyTo(String.class)
                         .throwException(new ExceptionOne());
 
-                from("direct:unmarshallWithStreamCache").streamCaching()
+                from("direct:unmarshalWithStreamCache").streamCaching()
                         .unmarshal(new MyDataFormat())
                         .throwException(new ExceptionOne());
 
-                from("direct:unmarshallWithoutStreamCache").noStreamCaching()
+                from("direct:unmarshalWithoutStreamCache").noStreamCaching()
                         .unmarshal(new MyDataFormat())
                         .throwException(new ExceptionOne());
 
-                from("direct:convertBodyInvalidUnmarshallWithoutStreamCache").noStreamCaching()
+                from("direct:convertBodyInvalidUnmarshalWithoutStreamCache").noStreamCaching()
                         .convertBodyTo(String.class)
                         .unmarshal(new MyDataFormat());
 

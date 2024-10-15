@@ -27,7 +27,7 @@ import org.apache.camel.model.DataFormatDefinition;
 import org.apache.camel.spi.Metadata;
 
 /**
- * Unmarshal XML payloads to POJOs and back using JAXB2 XML marshalling standard.
+ * Unmarshal XML payloads to POJOs and back using JAXB2 XML marshaling standard.
  */
 @Metadata(firstVersion = "1.0.0", label = "dataformat,transformation,xml", title = "JAXB")
 @XmlRootElement(name = "jaxb")
@@ -88,7 +88,7 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean", defaultValue = "true",
               description = "Whether the data format should set the Content-Type header with the type from the data format."
-                            + " For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON")
+                            + " For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON")
     private String contentTypeHeader;
     @XmlAttribute
     @Metadata(label = "security", defaultValue = "false")
@@ -193,7 +193,7 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
     }
 
     /**
-     * Whether to allow using ObjectFactory classes to create the POJO classes during marshalling. This only applies to
+     * Whether to allow using ObjectFactory classes to create the POJO classes during marshaling. This only applies to
      * POJO classes that has not been annotated with JAXB and providing jaxb.index descriptor files.
      */
     public void setObjectFactory(String objectFactory) {
@@ -224,9 +224,9 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
     }
 
     /**
-     * To turn on marshalling XML fragment trees. By default JAXB looks for @XmlRootElement annotation on given class to
+     * To turn on marshaling XML fragment trees. By default JAXB looks for @XmlRootElement annotation on given class to
      * operate on whole XML tree. This is useful but not always - sometimes generated code does not have @XmlRootElement
-     * annotation, sometimes you need unmarshall only part of tree. In that case you can use partial unmarshalling. To
+     * annotation, sometimes you need unmarshal only part of tree. In that case you can use partial unmarshaling. To
      * enable this behaviours you need set property partClass. Camel will pass this class to JAXB's unmarshaler.
      */
     public void setFragment(String fragment) {
@@ -290,7 +290,7 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
     }
 
     /**
-     * When marshalling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes, such
+     * When marshaling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes, such
      * as ns2, ns3, ns4 etc. To control this mapping, Camel allows you to refer to a map which contains the desired
      * mapping.
      */
@@ -337,7 +337,7 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
 
     /**
      * Refers to a custom java.util.Map to lookup in the registry containing custom JAXB provider properties to be used
-     * with the JAXB marshaller.
+     * with the JAXB marshaler.
      */
     public void setJaxbProviderProperties(String jaxbProviderProperties) {
         this.jaxbProviderProperties = jaxbProviderProperties;
@@ -471,7 +471,7 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * Whether to allow using ObjectFactory classes to create the POJO classes during marshalling. This only applies
+         * Whether to allow using ObjectFactory classes to create the POJO classes during marshaling. This only applies
          * to POJO classes that has not been annotated with JAXB and providing jaxb.index descriptor files.
          */
         public Builder objectFactory(String objectFactory) {
@@ -480,7 +480,7 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * Whether to allow using ObjectFactory classes to create the POJO classes during marshalling. This only applies
+         * Whether to allow using ObjectFactory classes to create the POJO classes during marshaling. This only applies
          * to POJO classes that has not been annotated with JAXB and providing jaxb.index descriptor files.
          */
         public Builder objectFactory(boolean objectFactory) {
@@ -523,10 +523,10 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * To turn on marshalling XML fragment trees. By default JAXB looks for @XmlRootElement annotation on given
+         * To turn on marshaling XML fragment trees. By default JAXB looks for @XmlRootElement annotation on given
          * class to operate on whole XML tree. This is useful but not always - sometimes generated code does not
-         * have @XmlRootElement annotation, sometimes you need unmarshall only part of tree. In that case you can use
-         * partial unmarshalling. To enable this behaviours you need set property partClass. Camel will pass this class
+         * have @XmlRootElement annotation, sometimes you need unmarshal only part of tree. In that case you can use
+         * partial unmarshaling. To enable this behaviours you need set property partClass. Camel will pass this class
          * to JAXB's unmarshaler.
          */
         public Builder fragment(String fragment) {
@@ -535,10 +535,10 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * To turn on marshalling XML fragment trees. By default JAXB looks for @XmlRootElement annotation on given
+         * To turn on marshaling XML fragment trees. By default JAXB looks for @XmlRootElement annotation on given
          * class to operate on whole XML tree. This is useful but not always - sometimes generated code does not
-         * have @XmlRootElement annotation, sometimes you need unmarshall only part of tree. In that case you can use
-         * partial unmarshalling. To enable this behaviours you need set property partClass. Camel will pass this class
+         * have @XmlRootElement annotation, sometimes you need unmarshal only part of tree. In that case you can use
+         * partial unmarshaling. To enable this behaviours you need set property partClass. Camel will pass this class
          * to JAXB's unmarshaler.
          */
         public Builder fragment(boolean fragment) {
@@ -591,7 +591,7 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * When marshalling using JAXB or SOAP then the JAXB implementation will automatically assign namespace
+         * When marshaling using JAXB or SOAP then the JAXB implementation will automatically assign namespace
          * prefixes, such as ns2, ns3, ns4 etc. To control this mapping, Camel allows you to refer to a map which
          * contains the desired mapping.
          */
@@ -626,7 +626,7 @@ public class JaxbDataFormat extends DataFormatDefinition implements ContentTypeH
 
         /**
          * Refers to a custom java.util.Map to lookup in the registry containing custom JAXB provider properties to be
-         * used with the JAXB marshaller.
+         * used with the JAXB marshaler.
          */
         public Builder jaxbProviderProperties(String jaxbProviderProperties) {
             this.jaxbProviderProperties = jaxbProviderProperties;

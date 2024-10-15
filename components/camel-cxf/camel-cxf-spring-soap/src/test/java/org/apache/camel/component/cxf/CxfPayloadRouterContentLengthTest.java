@@ -83,7 +83,7 @@ public class CxfPayloadRouterContentLengthTest extends CamelSpringTestSupport {
     @BeforeEach
     public void setUp() throws Exception {
         /*
-         * We start a undertow for the service in order to have better control over
+         * We start a undertow for the service to have better control over
          * the response. The response must contain only a Content-Type and a
          * Content-Length but no other header
          */

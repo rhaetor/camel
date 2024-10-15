@@ -48,7 +48,7 @@ public class CassandraCamelCodecTest extends CamelTestSupport {
 
         InputStream is = new ByteArrayInputStream(baos.toByteArray());
         InvalidClassException thrown = Assertions.assertThrows(InvalidClassException.class, () -> {
-            codec.unmarshallExchange(context, ByteBuffer.wrap(is.readAllBytes()), "java.**;org.apache.camel.**;!*");
+            codec.unmarshalExchange(context, ByteBuffer.wrap(is.readAllBytes()), "java.**;org.apache.camel.**;!*");
         });
 
         Assertions.assertEquals("filter status: REJECTED", thrown.getMessage());

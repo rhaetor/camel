@@ -189,7 +189,7 @@ public class VertxHttpConfiguration {
 
     /**
      * The status codes which are considered a success response. The values are inclusive. Multiple ranges can be
-     * defined, separated by comma, e.g. 200-204,209,301-304. Each range must be a single number or from-to with the
+     * defined, separated by comma, for example, 200-204,209,301-304. Each range must be a single number or from-to with the
      * dash included
      */
     public void setOkStatusCodeRange(String okStatusCodeRange) {
@@ -225,7 +225,7 @@ public class VertxHttpConfiguration {
     }
 
     /**
-     * Set whether compression is enabled to handled compressed (E.g gzipped) responses
+     * Set whether compression is enabled to handled compressed (For example, gzipped) responses
      */
     public void setUseCompression(boolean useCompression) {
         this.useCompression = useCompression;

@@ -70,13 +70,13 @@ public abstract class AbstractUniVocityDataFormat<
 
     private volatile CWS writerSettings;
     private final Object writerSettingsToken = new Object();
-    private volatile Marshaller<W> marshaller;
+    private volatile Marshaler<W> marshaler;
 
-    // We're using a ThreadLocal for the parser settings because in order to retrieve the headers we need to change the
+    // We're using a ThreadLocal for the parser settings because to retrieve the headers we need to change the
     // settings each time we're parsing
     private volatile ThreadLocal<CPS> parserSettings;
     private final Object parserSettingsToken = new Object();
-    private volatile Unmarshaller<P> unmarshaller;
+    private volatile Unmarshaler<P> unmarshaler;
 
     /**
      * {@inheritDoc}
@@ -86,7 +86,7 @@ public abstract class AbstractUniVocityDataFormat<
         if (writerSettings == null) {
             synchronized (writerSettingsToken) {
                 if (writerSettings == null) {
-                    marshaller = new Marshaller<>(headers, headers == null);
+                    marshaler = new Marshaler<>(headers, headers == null);
                     writerSettings = createAndConfigureWriterSettings();
                 }
             }
@@ -94,7 +94,7 @@ public abstract class AbstractUniVocityDataFormat<
 
         Writer writer = new OutputStreamWriter(stream, getCharsetName(exchange));
         try {
-            marshaller.marshal(exchange, body, createWriter(writer, writerSettings));
+            marshaler.marshal(exchange, body, createWriter(writer, writerSettings));
         } finally {
             writer.close();
         }
@@ -108,7 +108,7 @@ public abstract class AbstractUniVocityDataFormat<
         if (parserSettings == null) {
             synchronized (parserSettingsToken) {
                 if (parserSettings == null) {
-                    unmarshaller = new Unmarshaller<>(lazyLoad, asMap);
+                    unmarshaler = new Unmarshaler<>(lazyLoad, asMap);
                     parserSettings = new ThreadLocal<CPS>() {
                         @Override
                         protected CPS initialValue() {
@@ -125,7 +125,7 @@ public abstract class AbstractUniVocityDataFormat<
         P parser = createParser(settings);
         // univocity-parsers is responsible for closing the reader, even in case of error
         Reader reader = new InputStreamReader(stream, getCharsetName(exchange));
-        return unmarshaller.unmarshal(reader, parser, headerRowProcessor);
+        return unmarshaler.unmarshal(reader, parser, headerRowProcessor);
     }
 
     /**
@@ -222,7 +222,7 @@ public abstract class AbstractUniVocityDataFormat<
 
     /**
      * Gets whether or not headers are disabled. If {@code true} then it passes {@code null} to
-     * {@link com.univocity.parsers.common.CommonSettings#setHeaders(String...)} in order to disabled them.
+     * {@link com.univocity.parsers.common.CommonSettings#setHeaders(String...)} to disabled them.
      *
      * @return whether or not headers are disabled
      * @see    com.univocity.parsers.common.CommonSettings#getHeaders()
@@ -233,7 +233,7 @@ public abstract class AbstractUniVocityDataFormat<
 
     /**
      * Sets whether or not headers are disabled. If {@code true} then it passes {@code null} to
-     * {@link com.univocity.parsers.common.CommonSettings#setHeaders(String...)} in order to disabled them.
+     * {@link com.univocity.parsers.common.CommonSettings#setHeaders(String...)} to disabled them.
      *
      * @param  headersDisabled whether or not headers are disabled
      * @return                 current data format instance, fluent API
@@ -399,18 +399,18 @@ public abstract class AbstractUniVocityDataFormat<
     }
 
     /**
-     * Gets whether or not the unmarshalling should read lines lazily.
+     * Gets whether or not the unmarshaling should read lines lazily.
      *
-     * @return whether or not the unmarshalling should read lines lazily
+     * @return whether or not the unmarshaling should read lines lazily
      */
     public boolean isLazyLoad() {
         return lazyLoad;
     }
 
     /**
-     * Sets whether or not the unmarshalling should read lines lazily.
+     * Sets whether or not the unmarshaling should read lines lazily.
      *
-     * @param  lazyLoad whether or not the unmarshalling should read lines lazily
+     * @param  lazyLoad whether or not the unmarshaling should read lines lazily
      * @return          current data format instance, fluent API
      */
     public DF setLazyLoad(boolean lazyLoad) {
@@ -419,18 +419,18 @@ public abstract class AbstractUniVocityDataFormat<
     }
 
     /**
-     * Gets whether or not the unmarshalling should produces maps instead of lists.
+     * Gets whether or not the unmarshaling should produces maps instead of lists.
      *
-     * @return whether or not the unmarshalling should produces maps instead of lists
+     * @return whether or not the unmarshaling should produces maps instead of lists
      */
     public boolean isAsMap() {
         return asMap;
     }
 
     /**
-     * Sets whether or not the unmarshalling should produces maps instead of lists.
+     * Sets whether or not the unmarshaling should produces maps instead of lists.
      *
-     * @param  asMap whether or not the unmarshalling should produces maps instead of lists
+     * @param  asMap whether or not the unmarshaling should produces maps instead of lists
      * @return       current data format instance, fluent API
      */
     public DF setAsMap(boolean asMap) {
@@ -577,9 +577,9 @@ public abstract class AbstractUniVocityDataFormat<
     @Override
     protected void doStart() throws Exception {
         writerSettings = null;
-        marshaller = null;
+        marshaler = null;
         parserSettings = null;
-        unmarshaller = null;
+        unmarshaler = null;
     }
 
     @Override

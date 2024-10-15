@@ -25,21 +25,21 @@
 
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route>
-            <from uri="direct:marshall" />
+            <from uri="direct:marshal" />
             <marshal>
                 <jaxb contextPath="org.apache.camel.converter.jaxb.person:org.apache.camel.converter.jaxb.message"
                       schema="classpath:person.xsd,classpath:address.xsd,classpath:message.xsd" accessExternalSchemaProtocols="file" />
             </marshal>
-            <to uri="mock:marshall" />
+            <to uri="mock:marshal" />
         </route>
 
         <route>
-            <from uri="direct:unmarshall" />
+            <from uri="direct:unmarshal" />
             <unmarshal>
                 <jaxb contextPath="org.apache.camel.converter.jaxb.person:org.apache.camel.converter.jaxb.message"
                       schema="classpath:person.xsd,classpath:address.xsd,classpath:message.xsd" accessExternalSchemaProtocols="file" />
             </unmarshal>
-            <to uri="mock:unmarshall" />
+            <to uri="mock:unmarshal" />
         </route>
     </camelContext>
 </beans>

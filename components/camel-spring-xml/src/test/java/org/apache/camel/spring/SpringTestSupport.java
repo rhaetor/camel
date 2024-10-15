@@ -101,7 +101,7 @@ public abstract class SpringTestSupport extends ContextTestSupport {
      * otherwise be just noisy, from being discovered and initialized.
      * <p/>
      * To use this filtering mechanism it is necessary to provide the {@link ApplicationContext} returned from here as
-     * the parent context to your test context e.g.
+     * the parent context to your test context for example
      *
      * <pre>
      * protected AbstractXmlApplicationContext createApplicationContext() {

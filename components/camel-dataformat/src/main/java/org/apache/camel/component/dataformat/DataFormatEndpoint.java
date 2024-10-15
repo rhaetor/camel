@@ -119,12 +119,12 @@ public class DataFormatEndpoint extends DefaultEndpoint {
             dataFormat = getCamelContext().resolveDataFormat(name);
         }
         if (operation.equals("marshal")) {
-            MarshalProcessor marshal = new MarshalProcessor(dataFormat);
+            MarshalProcessor marshal= new MarshalProcessor(dataFormat);
             marshal.setCamelContext(getCamelContext());
 
             processor = marshal;
         } else {
-            UnmarshalProcessor unmarshal = new UnmarshalProcessor(dataFormat);
+            UnmarshalProcessor unmarshal= new UnmarshalProcessor(dataFormat);
             unmarshal.setCamelContext(getCamelContext());
 
             processor = unmarshal;

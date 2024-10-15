@@ -48,7 +48,7 @@ public interface ComponentVerifierExtension extends ComponentExtension {
      * <li><strong>{@link ComponentVerifierExtension.Scope#PARAMETERS}</strong>: to validate that all the mandatory
      * options are provided and syntactically correct.</li>
      * <li><strong>{@link ComponentVerifierExtension.Scope#CONNECTIVITY}</strong>: to validate that the given options
-     * (i.e. credentials, addresses) are correct. Verifying with this scope typically implies reaching out to the
+     * (that is, credentials, addresses) are correct. Verifying with this scope typically implies reaching out to the
      * backend via some sort of network connection.</li>
      * </ul>
      *
@@ -282,7 +282,7 @@ public interface ComponentVerifierExtension extends ComponentExtension {
              */
             StandardCode ILLEGAL_PARAMETER_VALUE = new StandardErrorCode("ILLEGAL_PARAMETER_VALUE");
             /**
-             * A group of parameters is not complete in order to be valid
+             * A group of parameters is not complete to be valid
              */
             StandardCode INCOMPLETE_PARAMETER_GROUP = new StandardErrorCode("INCOMPLETE_PARAMETER_GROUP");
             /**
@@ -339,7 +339,7 @@ public interface ComponentVerifierExtension extends ComponentExtension {
         interface ExceptionAttribute extends Attribute {
             /**
              * The exception object that has been thrown. Note that this can be a complex object and can cause large
-             * content when e.g. serialized as JSON
+             * content when for example, serialized as JSON
              */
             ExceptionAttribute EXCEPTION_INSTANCE = new ExceptionErrorAttribute("EXCEPTION_INSTANCE");
             /**

@@ -132,7 +132,7 @@ public class BindyKeyValuePairFactory extends BindyAbstractFactory implements Bi
         LOG.debug("Key value pairs data : {}", data);
 
         // Separate the key from its value
-        // e.g 8=FIX 4.1 --> key = 8 and Value = FIX 4.1
+        // , for example: 8=FIX 4.1 --> key = 8 and Value = FIX 4.1
         ObjectHelper.notNull(keyValuePairSeparator, "Key Value Pair not defined in the @Message annotation");
 
         // Generate map of key value

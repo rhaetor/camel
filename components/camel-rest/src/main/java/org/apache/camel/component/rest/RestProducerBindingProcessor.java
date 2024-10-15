@@ -64,9 +64,9 @@ public class RestProducerBindingProcessor extends DelegateAsyncProcessor {
         this.camelContext = camelContext;
 
         if (outJsonDataFormat != null) {
-            this.jsonUnmarshal = new UnmarshalProcessor(outJsonDataFormat);
+            this.jsonUnmarshal= new UnmarshalProcessor(outJsonDataFormat);
         } else {
-            this.jsonUnmarshal = null;
+            this.jsonUnmarshal= null;
         }
         if (jsonDataFormat != null) {
             this.jsonMarshal = new MarshalProcessor(jsonDataFormat);
@@ -75,9 +75,9 @@ public class RestProducerBindingProcessor extends DelegateAsyncProcessor {
         }
 
         if (outXmlDataFormat != null) {
-            this.xmlUnmarshal = new UnmarshalProcessor(outXmlDataFormat);
+            this.xmlUnmarshal= new UnmarshalProcessor(outXmlDataFormat);
         } else {
-            this.xmlUnmarshal = null;
+            this.xmlUnmarshal= null;
         }
         if (xmlDataFormat != null) {
             this.xmlMarshal = new MarshalProcessor(xmlDataFormat);
@@ -101,13 +101,13 @@ public class RestProducerBindingProcessor extends DelegateAsyncProcessor {
         if (jsonMarshal instanceof CamelContextAware) {
             ((CamelContextAware) jsonMarshal).setCamelContext(camelContext);
         }
-        if (jsonUnmarshal instanceof CamelContextAware) {
+        if (jsonUnmarshalinstanceof CamelContextAware) {
             ((CamelContextAware) jsonUnmarshal).setCamelContext(camelContext);
         }
         if (xmlMarshal instanceof CamelContextAware) {
             ((CamelContextAware) xmlMarshal).setCamelContext(camelContext);
         }
-        if (xmlUnmarshal instanceof CamelContextAware) {
+        if (xmlUnmarshalinstanceof CamelContextAware) {
             ((CamelContextAware) xmlUnmarshal).setCamelContext(camelContext);
         }
         ServiceHelper.startService(jsonMarshal, jsonUnmarshal, xmlMarshal, xmlUnmarshal);
@@ -259,7 +259,7 @@ public class RestProducerBindingProcessor extends DelegateAsyncProcessor {
         }
 
         private void doDone() {
-            // only unmarshal if there was no exception
+            // only unmarshalif there was no exception
             if (exchange.getException() != null) {
                 return;
             }
@@ -294,7 +294,7 @@ public class RestProducerBindingProcessor extends DelegateAsyncProcessor {
                 }
             }
 
-            // in case we have not yet been able to determine if xml or json, then use the same as in the unmarshaller
+            // in case we have not yet been able to determine if xml or json, then use the same as in the unmarshaler
             if (isXml && isJson) {
                 isXml = wasXml;
                 isJson = !wasXml;
@@ -311,8 +311,8 @@ public class RestProducerBindingProcessor extends DelegateAsyncProcessor {
                 return;
             }
 
-            // is there any unmarshaller at all
-            if (jsonUnmarshal == null && xmlUnmarshal == null) {
+            // is there any unmarshaler at all
+            if (jsonUnmarshal== null && xmlUnmarshal== null) {
                 return;
             }
 
@@ -327,13 +327,13 @@ public class RestProducerBindingProcessor extends DelegateAsyncProcessor {
             contentType = contentType.toLowerCase(Locale.US);
             try {
                 // favor json over xml
-                if (isJson && jsonUnmarshal != null) {
-                    // only marshal if its json content type
+                if (isJson && jsonUnmarshal!= null) {
+                    // only marshalif its json content type
                     if (contentType.contains("json")) {
                         jsonUnmarshal.process(exchange);
                     }
-                } else if (isXml && xmlUnmarshal != null) {
-                    // only marshal if its xml content type
+                } else if (isXml && xmlUnmarshal!= null) {
+                    // only marshalif its xml content type
                     if (contentType.contains("xml")) {
                         xmlUnmarshal.process(exchange);
                     }

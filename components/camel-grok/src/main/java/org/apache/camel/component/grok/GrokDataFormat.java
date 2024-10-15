@@ -93,7 +93,7 @@ public class GrokDataFormat extends ServiceSupport implements DataFormat, DataFo
     }
 
     /**
-     * Whether to capture named expressions only or not (i.e. %{IP:ip} but not ${IP})
+     * Whether to capture named expressions only or not (that is, %{IP:ip} but not ${IP})
      */
     public GrokDataFormat setNamedOnly(boolean namedOnly) {
         this.namedOnly = namedOnly;
@@ -128,7 +128,7 @@ public class GrokDataFormat extends ServiceSupport implements DataFormat, DataFo
 
     @Override
     public void marshal(Exchange exchange, Object graph, OutputStream stream) throws Exception {
-        throw new UnsupportedOperationException("GrokDataFormat does not support marshalling. Use unmarshal instead.");
+        throw new UnsupportedOperationException("GrokDataFormat does not support marshaling. Use unmarshalinstead.");
     }
 
     @Override

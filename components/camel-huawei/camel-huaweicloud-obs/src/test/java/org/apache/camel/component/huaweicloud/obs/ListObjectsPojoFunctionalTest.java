@@ -68,7 +68,7 @@ public class ListObjectsPojoFunctionalTest extends CamelTestSupport {
         MockEndpoint mock = getMockEndpoint("mock:list_objects_result");
         mock.expectedMinimumMessageCount(1);
 
-        // More parameters can be added to the ListObjectsRequest below. E.g. setDelimiter, setMarker, setMaxKeys, setPrefix
+        // More parameters can be added to the ListObjectsRequest below. For example, setDelimiter, setMarker, setMaxKeys, setPrefix
         ListObjectsRequest request = new ListObjectsRequest(BUCKET_NAME);
         template.sendBody("direct:list_objects", request);
         Exchange responseExchange = mock.getExchanges().get(0);

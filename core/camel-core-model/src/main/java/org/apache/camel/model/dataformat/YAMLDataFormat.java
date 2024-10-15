@@ -146,7 +146,7 @@ public class YAMLDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class name of the java type to use when unmarshalling
+     * Class name of the java type to use when unmarshaling
      */
     public void setUnmarshalTypeName(String unmarshalTypeName) {
         this.unmarshalTypeName = unmarshalTypeName;
@@ -245,7 +245,7 @@ public class YAMLDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Set the types SnakeYAML is allowed to un-marshall
+     * Set the types SnakeYAML is allowed to un-marshal
      */
     public void setTypeFilters(List<YAMLTypeFilterDefinition> typeFilters) {
         this.typeFilters = typeFilters;
@@ -315,7 +315,7 @@ public class YAMLDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class name of the java type to use when unmarshalling
+         * Class name of the java type to use when unmarshaling
          */
         public Builder unmarshalTypeName(String unmarshalTypeName) {
             this.unmarshalTypeName = unmarshalTypeName;
@@ -411,7 +411,7 @@ public class YAMLDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Set the types SnakeYAML is allowed to un-marshall
+         * Set the types SnakeYAML is allowed to un-marshal
          */
         public Builder typeFilters(List<YAMLTypeFilterDefinition> typeFilters) {
             this.typeFilters = typeFilters;

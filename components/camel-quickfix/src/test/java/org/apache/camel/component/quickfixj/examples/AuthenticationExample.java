@@ -38,7 +38,7 @@ import quickfix.field.RawDataLength;
 
 /**
  * This example demonstrates several features of the QuickFIX/J component. It uses QFJ session events to synchronize
- * application behavior (e.g., Session logon).
+ * application behavior (for example, Session logon).
  */
 public class AuthenticationExample {
     private static final Logger LOG = LoggerFactory.getLogger(AuthenticationExample.class);

@@ -267,7 +267,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class to use when unmarshalling.", displayName = "Unmarshal Type"),
+                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class to use when unmarshaling.", displayName = "Unmarshal Type"),
                     @YamlProperty(name = "usingIterator", type = "boolean", description = "If the asn1 file has more than one entry, the setting this option to true, allows working with the splitter EIP, to split the data using an iterator in a streaming mode.", displayName = "Using Iterator")
             }
     )
@@ -324,7 +324,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             properties = {
                     @YamlProperty(name = "aggregateController", type = "string", description = "To use a org.apache.camel.processor.aggregate.AggregateController to allow external sources to control this aggregator.", displayName = "Aggregate Controller"),
                     @YamlProperty(name = "aggregationRepository", type = "string", description = "The AggregationRepository to use. Sets the custom aggregate repository to use. Will by default use org.apache.camel.processor.aggregate.MemoryAggregationRepository", displayName = "Aggregation Repository"),
-                    @YamlProperty(name = "aggregationStrategy", type = "string", required = true, description = "The AggregationStrategy to use. For example to lookup a bean with the name foo, the value is simply just #bean:foo. Configuring an AggregationStrategy is required, and is used to merge the incoming Exchange with the existing already merged exchanges. At first call the oldExchange parameter is null. On subsequent invocations the oldExchange contains the merged exchanges and newExchange is of course the new incoming Exchange.", displayName = "Aggregation Strategy"),
+                    @YamlProperty(name = "aggregationStrategy", type = "string", required = true, description = "The AggregationStrategy to use. For example to lookup a bean with the name foo, the value is simply just #bean:foo. Configuring an AggregationStrategy is required, and is used to merge the incoming Exchange with the existing already merged exchanges. At first call the oldExchange parameter is null. On subsequent invocations the oldExchange contains the merged exchanges and newExchange is the new incoming Exchange.", displayName = "Aggregation Strategy"),
                     @YamlProperty(name = "aggregationStrategyMethodAllowNull", type = "boolean", description = "If this option is false then the aggregate method is not used for the very first aggregation. If this option is true then null values is used as the oldExchange (at the very first aggregation), when using beans as the AggregationStrategy.", displayName = "Aggregation Strategy Method Allow Null"),
                     @YamlProperty(name = "aggregationStrategyMethodName", type = "string", description = "This option can be used to explicit declare the method name to use, when using beans as the AggregationStrategy.", displayName = "Aggregation Strategy Method Name"),
                     @YamlProperty(name = "closeCorrelationKeyOnCompletion", type = "number", description = "Closes a correlation key when its complete. Any late received exchanges which has a correlation key that has been closed, it will be defined and a ClosedCorrelationKeyException is thrown.", displayName = "Close Correlation Key On Completion"),
@@ -620,24 +620,24 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "allowJmsType", type = "boolean", description = "Used for JMS users to allow the JMSType header from the JMS spec to specify a FQN classname to use to unmarshal to.", displayName = "Allow Jms Type"),
-                    @YamlProperty(name = "allowUnmarshallType", type = "boolean", description = "If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshalling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshall Type"),
+                    @YamlProperty(name = "allowUnmarshalType", type = "boolean", description = "If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshaling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshal Type"),
                     @YamlProperty(name = "autoDiscoverObjectMapper", type = "boolean", description = "If set to true then Jackson will lookup for an objectMapper into the registry", displayName = "Auto Discover Object Mapper"),
                     @YamlProperty(name = "autoDiscoverSchemaResolver", type = "boolean", description = "When not disabled, the SchemaResolver will be looked up into the registry", displayName = "Auto Discover Schema Resolver"),
                     @YamlProperty(name = "collectionType", type = "string", description = "Refers to a custom collection type to lookup in the registry to use. This option should rarely be used, but allows to use different collection types than java.util.Collection based as default.", displayName = "Collection Type"),
-                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON", displayName = "Content Type Header"),
+                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON", displayName = "Content Type Header"),
                     @YamlProperty(name = "disableFeatures", type = "string", description = "Set of features to disable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Disable Features"),
                     @YamlProperty(name = "enableFeatures", type = "string", description = "Set of features to enable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Enable Features"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "include", type = "string", description = "If you want to marshal a pojo to JSON, and the pojo has some fields with null values. And you want to skip these null values, you can set this option to NON_NULL", displayName = "Include"),
-                    @YamlProperty(name = "instanceClassName", type = "string", description = "Class name to use for marshal and unmarshalling", displayName = "Instance Class Name"),
-                    @YamlProperty(name = "jsonView", type = "string", description = "When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations", displayName = "Json View"),
+                    @YamlProperty(name = "instanceClassName", type = "string", description = "Class name to use for marshal and unmarshaling", displayName = "Instance Class Name"),
+                    @YamlProperty(name = "jsonView", type = "string", description = "When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations", displayName = "Json View"),
                     @YamlProperty(name = "library", type = "enum:ApacheAvro,Jackson", defaultValue = "ApacheAvro", description = "Which Avro library to use.", displayName = "Library"),
                     @YamlProperty(name = "moduleClassNames", type = "string", description = "To use custom Jackson modules com.fasterxml.jackson.databind.Module specified as a String with FQN class names. Multiple classes can be separated by comma.", displayName = "Module Class Names"),
                     @YamlProperty(name = "moduleRefs", type = "string", description = "To use custom Jackson modules referred from the Camel registry. Multiple modules can be separated by comma.", displayName = "Module Refs"),
                     @YamlProperty(name = "objectMapper", type = "string", description = "Lookup and use the existing ObjectMapper with the given id when using Jackson.", displayName = "Object Mapper"),
                     @YamlProperty(name = "schemaResolver", type = "string", description = "Optional schema resolver used to lookup schemas for the data in transit.", displayName = "Schema Resolver"),
-                    @YamlProperty(name = "timezone", type = "string", description = "If set then Jackson will use the Timezone when marshalling/unmarshalling.", displayName = "Timezone"),
-                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshalling", displayName = "Unmarshal Type"),
+                    @YamlProperty(name = "timezone", type = "string", description = "If set then Jackson will use the Timezone when marshaling/unmarshaling.", displayName = "Timezone"),
+                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshaling", displayName = "Unmarshal Type"),
                     @YamlProperty(name = "useDefaultObjectMapper", type = "boolean", description = "Whether to lookup and use default Jackson ObjectMapper from the registry.", displayName = "Use Default Object Mapper"),
                     @YamlProperty(name = "useList", type = "boolean", description = "To unmarshal to a List of Map or a List of Pojo.", displayName = "Use List")
             }
@@ -667,9 +667,9 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     target.setAllowJmsType(val);
                     break;
                 }
-                case "allowUnmarshallType": {
+                case "allowUnmarshalType": {
                     String val = asText(node);
-                    target.setAllowUnmarshallType(val);
+                    target.setAllowUnmarshalType(val);
                     break;
                 }
                 case "autoDiscoverObjectMapper": {
@@ -1403,7 +1403,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "locale", type = "string", description = "To configure a default locale to use, such as us for united states. To use the JVM platform default locale then use the name default", displayName = "Locale"),
                     @YamlProperty(name = "type", type = "enum:Csv,Fixed,KeyValue", description = "Whether to use Csv, Fixed, or KeyValue.", displayName = "Type"),
-                    @YamlProperty(name = "unwrapSingleInstance", type = "boolean", description = "When unmarshalling should a single instance be unwrapped and returned instead of wrapped in a java.util.List.", displayName = "Unwrap Single Instance")
+                    @YamlProperty(name = "unwrapSingleInstance", type = "boolean", description = "When unmarshaling should a single instance be unwrapped and returned instead of wrapped in a java.util.List.", displayName = "Unwrap Single Instance")
             }
     )
     public static class BindyDataFormatDeserializer extends YamlDeserializerBase<BindyDataFormat> {
@@ -1521,14 +1521,14 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "allowJmsType", type = "boolean", description = "Used for JMS users to allow the JMSType header from the JMS spec to specify a FQN classname to use to unmarshal to.", displayName = "Allow Jms Type"),
-                    @YamlProperty(name = "allowUnmarshallType", type = "boolean", description = "If enabled then Jackson CBOR is allowed to attempt to use the CamelCBORUnmarshalType header during the unmarshalling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshall Type"),
+                    @YamlProperty(name = "allowUnmarshalType", type = "boolean", description = "If enabled then Jackson CBOR is allowed to attempt to use the CamelCBORUnmarshalType header during the unmarshaling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshal Type"),
                     @YamlProperty(name = "collectionType", type = "string", description = "Refers to a custom collection type to lookup in the registry to use. This option should rarely be used, but allows to use different collection types than java.util.Collection based as default.", displayName = "Collection Type"),
                     @YamlProperty(name = "disableFeatures", type = "string", description = "Set of features to disable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Disable Features"),
                     @YamlProperty(name = "enableFeatures", type = "string", description = "Set of features to enable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Enable Features"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "objectMapper", type = "string", description = "Lookup and use the existing CBOR ObjectMapper with the given id when using Jackson.", displayName = "Object Mapper"),
                     @YamlProperty(name = "prettyPrint", type = "boolean", description = "To enable pretty printing output nicely formatted. Is by default false.", displayName = "Pretty Print"),
-                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshalling", displayName = "Unmarshal Type"),
+                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshaling", displayName = "Unmarshal Type"),
                     @YamlProperty(name = "useDefaultObjectMapper", type = "boolean", description = "Whether to lookup and use default Jackson CBOR ObjectMapper from the registry.", displayName = "Use Default Object Mapper"),
                     @YamlProperty(name = "useList", type = "boolean", description = "To unmarshal to a List of Map or a List of Pojo.", displayName = "Use List")
             }
@@ -1553,9 +1553,9 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     target.setAllowJmsType(val);
                     break;
                 }
-                case "allowUnmarshallType": {
+                case "allowUnmarshalType": {
                     String val = asText(node);
-                    target.setAllowUnmarshallType(val);
+                    target.setAllowUnmarshalType(val);
                     break;
                 }
                 case "collectionType": {
@@ -2938,7 +2938,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "allowMissingColumnNames", type = "boolean", description = "Whether to allow missing column names.", displayName = "Allow Missing Column Names"),
-                    @YamlProperty(name = "captureHeaderRecord", type = "boolean", description = "Whether the unmarshalling should capture the header record and store it in the message header", displayName = "Capture Header Record"),
+                    @YamlProperty(name = "captureHeaderRecord", type = "boolean", description = "Whether the unmarshaling should capture the header record and store it in the message header", displayName = "Capture Header Record"),
                     @YamlProperty(name = "commentMarker", type = "string", description = "Sets the comment marker of the reference format.", displayName = "Comment Marker"),
                     @YamlProperty(name = "commentMarkerDisabled", type = "boolean", description = "Disables the comment marker of the reference format.", displayName = "Comment Marker Disabled"),
                     @YamlProperty(name = "delimiter", type = "string", description = "Sets the delimiter to use. The default value is , (comma)", displayName = "Delimiter"),
@@ -2952,8 +2952,8 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "ignoreEmptyLines", type = "boolean", description = "Whether to ignore empty lines.", displayName = "Ignore Empty Lines"),
                     @YamlProperty(name = "ignoreHeaderCase", type = "boolean", description = "Sets whether or not to ignore case when accessing header names.", displayName = "Ignore Header Case"),
                     @YamlProperty(name = "ignoreSurroundingSpaces", type = "boolean", description = "Whether to ignore surrounding spaces", displayName = "Ignore Surrounding Spaces"),
-                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must be read at one.", displayName = "Lazy Load"),
-                    @YamlProperty(name = "marshallerFactoryRef", type = "string", description = "Sets the implementation of the CsvMarshallerFactory interface which is able to customize marshalling/unmarshalling behavior by extending CsvMarshaller or creating it from scratch.", displayName = "Marshaller Factory Ref"),
+                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must be read at one.", displayName = "Lazy Load"),
+                    @YamlProperty(name = "marshalerFactoryRef", type = "string", description = "Sets the implementation of the CsvMarshalerFactory interface which is able to customize marshaling/unmarshaling behavior by extending CsvMarshaler or creating it from scratch.", displayName = "Marshaler Factory Ref"),
                     @YamlProperty(name = "nullString", type = "string", description = "Sets the null string", displayName = "Null String"),
                     @YamlProperty(name = "nullStringDisabled", type = "boolean", description = "Used to disable null strings", displayName = "Null String Disabled"),
                     @YamlProperty(name = "quote", type = "string", description = "Sets the quote which by default is", displayName = "Quote"),
@@ -2965,8 +2965,8 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "skipHeaderRecord", type = "boolean", description = "Whether to skip the header record in the output", displayName = "Skip Header Record"),
                     @YamlProperty(name = "trailingDelimiter", type = "boolean", description = "Sets whether or not to add a trailing delimiter.", displayName = "Trailing Delimiter"),
                     @YamlProperty(name = "trim", type = "boolean", description = "Sets whether or not to trim leading and trailing blanks.", displayName = "Trim"),
-                    @YamlProperty(name = "useMaps", type = "boolean", description = "Whether the unmarshalling should produce maps (HashMap)for the lines values instead of lists. It requires to have header (either defined or collected).", displayName = "Use Maps"),
-                    @YamlProperty(name = "useOrderedMaps", type = "boolean", description = "Whether the unmarshalling should produce ordered maps (LinkedHashMap) for the lines values instead of lists. It requires to have header (either defined or collected).", displayName = "Use Ordered Maps")
+                    @YamlProperty(name = "useMaps", type = "boolean", description = "Whether the unmarshaling should produce maps (HashMap)for the lines values instead of lists. It requires to have header (either defined or collected).", displayName = "Use Maps"),
+                    @YamlProperty(name = "useOrderedMaps", type = "boolean", description = "Whether the unmarshaling should produce ordered maps (LinkedHashMap) for the lines values instead of lists. It requires to have header (either defined or collected).", displayName = "Use Ordered Maps")
             }
     )
     public static class CsvDataFormatDeserializer extends YamlDeserializerBase<CsvDataFormat> {
@@ -3069,9 +3069,9 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     target.setLazyLoad(val);
                     break;
                 }
-                case "marshallerFactoryRef": {
+                case "marshalerFactoryRef": {
                     String val = asText(node);
-                    target.setMarshallerFactoryRef(val);
+                    target.setMarshalerFactoryRef(val);
                     break;
                 }
                 case "nullString": {
@@ -5427,7 +5427,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             properties = {
                     @YamlProperty(name = "exception", type = "array:string", description = "A list of class names for specific exceptions to monitor. If no exceptions are configured then all exceptions are monitored", displayName = "Exception"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "maximumFailoverAttempts", type = "string", defaultValue = "-1", description = "A value to indicate after X failover attempts we should exhaust (give up). Use -1 to indicate never give up and continuously try to failover. Use 0 to never failover. And use e.g. 3 to failover at most 3 times before giving up. his option can be used whether or not roundRobin is enabled or not.", displayName = "Maximum Failover Attempts"),
+                    @YamlProperty(name = "maximumFailoverAttempts", type = "string", defaultValue = "-1", description = "A value to indicate after X failover attempts we should exhaust (give up). Use -1 to indicate never give up and continuously try to failover. Use 0 to never failover. And use for example, 3 to failover at most 3 times before giving up. his option can be used whether or not roundRobin is enabled or not.", displayName = "Maximum Failover Attempts"),
                     @YamlProperty(name = "roundRobin", type = "string", description = "Whether or not the failover load balancer should operate in round robin mode or not. If not, then it will always start from the first endpoint when a new message is to be processed. In other words it restart from the top for every message. If round robin is enabled, then it keeps state and will continue with the next endpoint in a round robin fashion. You can also enable sticky mode together with round robin, if so then it will pick the last known good endpoint to use when starting the load balancing (instead of using the next when starting).", displayName = "Round Robin"),
                     @YamlProperty(name = "sticky", type = "string", description = "Whether or not the failover load balancer should operate in sticky mode or not. If not, then it will always start from the first endpoint when a new message is to be processed. In other words it restart from the top for every message. If sticky is enabled, then it keeps state and will continue with the last known good endpoint. You can also enable sticky mode together with round robin, if so then it will pick the last known good endpoint to use when starting the load balancing (instead of using the next when starting).", displayName = "Sticky")
             }
@@ -5608,20 +5608,20 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             types = org.apache.camel.model.dataformat.FhirJsonDataFormat.class,
             order = org.apache.camel.dsl.yaml.common.YamlDeserializerResolver.ORDER_LOWEST - 1,
             displayName = "FHIR JSon",
-            description = "Marshall and unmarshall FHIR objects to/from JSON.",
+            description = "Marshal and unmarshal FHIR objects to/from JSON.",
             deprecated = false,
             properties = {
-                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON", displayName = "Content Type Header"),
+                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON", displayName = "Content Type Header"),
                     @YamlProperty(name = "dontEncodeElements", type = "string", description = "If provided, specifies the elements which should NOT be encoded. Multiple elements can be separated by comma when using String parameter. Valid values for this field would include: Patient - Don't encode patient and all its children Patient.name - Don't encode the patient's name Patient.name.family - Don't encode the patient's family name .text - Don't encode the text element on any resource (only the very first position may contain a wildcard) DSTU2 note: Note that values including meta, such as Patient.meta will work for DSTU2 parsers, but values with subelements on meta such as Patient.meta.lastUpdated will only work in DSTU3 mode.", displayName = "Dont Encode Elements"),
                     @YamlProperty(name = "dontStripVersionsFromReferencesAtPaths", type = "string", description = "If supplied value(s), any resource references at the specified paths will have their resource versions encoded instead of being automatically stripped during the encoding process. This setting has no effect on the parsing process. Multiple elements can be separated by comma when using String parameter. This method provides a finer-grained level of control than setStripVersionsFromReferences(String) and any paths specified by this method will be encoded even if setStripVersionsFromReferences(String) has been set to true (which is the default)", displayName = "Dont Strip Versions From References At Paths"),
                     @YamlProperty(name = "encodeElements", type = "string", description = "If provided, specifies the elements which should be encoded, to the exclusion of all others. Multiple elements can be separated by comma when using String parameter. Valid values for this field would include: Patient - Encode patient and all its children Patient.name - Encode only the patient's name Patient.name.family - Encode only the patient's family name .text - Encode the text element on any resource (only the very first position may contain a wildcard) .(mandatory) - This is a special case which causes any mandatory fields (min 0) to be encoded", displayName = "Encode Elements"),
-                    @YamlProperty(name = "encodeElementsAppliesToChildResourcesOnly", type = "boolean", description = "If set to true (default is false), the values supplied to setEncodeElements(Set) will not be applied to the root resource (typically a Bundle), but will be applied to any sub-resources contained within it (i.e. search result resources in that bundle)", displayName = "Encode Elements Applies To Child Resources Only"),
+                    @YamlProperty(name = "encodeElementsAppliesToChildResourcesOnly", type = "boolean", description = "If set to true (default is false), the values supplied to setEncodeElements(Set) will not be applied to the root resource (typically a Bundle), but will be applied to any sub-resources contained within it (that is, search result resources in that bundle)", displayName = "Encode Elements Applies To Child Resources Only"),
                     @YamlProperty(name = "fhirContext", type = "string", description = "To use a custom fhir context. Reference to object of type ca.uhn.fhir.context.FhirContext", displayName = "Fhir Context"),
                     @YamlProperty(name = "fhirVersion", type = "enum:DSTU2,DSTU2_HL7ORG,DSTU2_1,DSTU3,R4,R5", defaultValue = "R4", description = "The version of FHIR to use. Possible values are: DSTU2,DSTU2_HL7ORG,DSTU2_1,DSTU3,R4,R5", displayName = "Fhir Version"),
                     @YamlProperty(name = "forceResourceId", type = "string", description = "When encoding, force this resource ID to be encoded as the resource ID. Reference to object of type org.hl7.fhir.instance.model.api.IIdType", displayName = "Force Resource Id"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "omitResourceId", type = "boolean", description = "If set to true (default is false) the ID of any resources being encoded will not be included in the output. Note that this does not apply to contained resources, only to root resources. In other words, if this is set to true, contained resources will still have local IDs but the outer/containing ID will not have an ID.", displayName = "Omit Resource Id"),
-                    @YamlProperty(name = "overrideResourceIdWithBundleEntryFullUrl", type = "boolean", description = "If set to true (which is the default), the Bundle.entry.fullUrl will override the Bundle.entry.resource's resource id if the fullUrl is defined. This behavior happens when parsing the source data into a Bundle object. Set this to false if this is not the desired behavior (e.g. the client code wishes to perform additional validation checks between the fullUrl and the resource id).", displayName = "Override Resource Id With Bundle Entry Full Url"),
+                    @YamlProperty(name = "overrideResourceIdWithBundleEntryFullUrl", type = "boolean", description = "If set to true (which is the default), the Bundle.entry.fullUrl will override the Bundle.entry.resource's resource id if the fullUrl is defined. This behavior happens when parsing the source data into a Bundle object. Set this to false if this is not the desired behavior (for example, the client code wishes to perform additional validation checks between the fullUrl and the resource id).", displayName = "Override Resource Id With Bundle Entry Full Url"),
                     @YamlProperty(name = "parserErrorHandler", type = "string", description = "Registers an error handler which will be invoked when any parse errors are found. Reference to object of type ca.uhn.fhir.parser.IParserErrorHandler", displayName = "Parser Error Handler"),
                     @YamlProperty(name = "parserOptions", type = "string", description = "Sets the parser options object which will be used to supply default options to newly created parsers. Reference to object of type ca.uhn.fhir.context.ParserOptions.", displayName = "Parser Options"),
                     @YamlProperty(name = "preferTypes", type = "string", description = "If set (FQN class names), when parsing resources the parser will try to use the given types when possible, in the order that they are provided (from highest to lowest priority). For example, if a custom type which declares to implement the Patient resource is passed in here, and the parser is parsing a Bundle containing a Patient resource, the parser will use the given custom type. Multiple class names can be separated by comma.", displayName = "Prefer Types"),
@@ -5758,20 +5758,20 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             types = org.apache.camel.model.dataformat.FhirXmlDataFormat.class,
             order = org.apache.camel.dsl.yaml.common.YamlDeserializerResolver.ORDER_LOWEST - 1,
             displayName = "FHIR XML",
-            description = "Marshall and unmarshall FHIR objects to/from XML.",
+            description = "Marshal and unmarshal FHIR objects to/from XML.",
             deprecated = false,
             properties = {
-                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON", displayName = "Content Type Header"),
+                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON", displayName = "Content Type Header"),
                     @YamlProperty(name = "dontEncodeElements", type = "string", description = "If provided, specifies the elements which should NOT be encoded. Multiple elements can be separated by comma when using String parameter. Valid values for this field would include: Patient - Don't encode patient and all its children Patient.name - Don't encode the patient's name Patient.name.family - Don't encode the patient's family name .text - Don't encode the text element on any resource (only the very first position may contain a wildcard) DSTU2 note: Note that values including meta, such as Patient.meta will work for DSTU2 parsers, but values with subelements on meta such as Patient.meta.lastUpdated will only work in DSTU3 mode.", displayName = "Dont Encode Elements"),
                     @YamlProperty(name = "dontStripVersionsFromReferencesAtPaths", type = "string", description = "If supplied value(s), any resource references at the specified paths will have their resource versions encoded instead of being automatically stripped during the encoding process. This setting has no effect on the parsing process. Multiple elements can be separated by comma when using String parameter. This method provides a finer-grained level of control than setStripVersionsFromReferences(String) and any paths specified by this method will be encoded even if setStripVersionsFromReferences(String) has been set to true (which is the default)", displayName = "Dont Strip Versions From References At Paths"),
                     @YamlProperty(name = "encodeElements", type = "string", description = "If provided, specifies the elements which should be encoded, to the exclusion of all others. Multiple elements can be separated by comma when using String parameter. Valid values for this field would include: Patient - Encode patient and all its children Patient.name - Encode only the patient's name Patient.name.family - Encode only the patient's family name .text - Encode the text element on any resource (only the very first position may contain a wildcard) .(mandatory) - This is a special case which causes any mandatory fields (min 0) to be encoded", displayName = "Encode Elements"),
-                    @YamlProperty(name = "encodeElementsAppliesToChildResourcesOnly", type = "boolean", description = "If set to true (default is false), the values supplied to setEncodeElements(Set) will not be applied to the root resource (typically a Bundle), but will be applied to any sub-resources contained within it (i.e. search result resources in that bundle)", displayName = "Encode Elements Applies To Child Resources Only"),
+                    @YamlProperty(name = "encodeElementsAppliesToChildResourcesOnly", type = "boolean", description = "If set to true (default is false), the values supplied to setEncodeElements(Set) will not be applied to the root resource (typically a Bundle), but will be applied to any sub-resources contained within it (that is, search result resources in that bundle)", displayName = "Encode Elements Applies To Child Resources Only"),
                     @YamlProperty(name = "fhirContext", type = "string", description = "To use a custom fhir context. Reference to object of type ca.uhn.fhir.context.FhirContext", displayName = "Fhir Context"),
                     @YamlProperty(name = "fhirVersion", type = "enum:DSTU2,DSTU2_HL7ORG,DSTU2_1,DSTU3,R4,R5", defaultValue = "R4", description = "The version of FHIR to use. Possible values are: DSTU2,DSTU2_HL7ORG,DSTU2_1,DSTU3,R4,R5", displayName = "Fhir Version"),
                     @YamlProperty(name = "forceResourceId", type = "string", description = "When encoding, force this resource ID to be encoded as the resource ID. Reference to object of type org.hl7.fhir.instance.model.api.IIdType", displayName = "Force Resource Id"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "omitResourceId", type = "boolean", description = "If set to true (default is false) the ID of any resources being encoded will not be included in the output. Note that this does not apply to contained resources, only to root resources. In other words, if this is set to true, contained resources will still have local IDs but the outer/containing ID will not have an ID.", displayName = "Omit Resource Id"),
-                    @YamlProperty(name = "overrideResourceIdWithBundleEntryFullUrl", type = "boolean", description = "If set to true (which is the default), the Bundle.entry.fullUrl will override the Bundle.entry.resource's resource id if the fullUrl is defined. This behavior happens when parsing the source data into a Bundle object. Set this to false if this is not the desired behavior (e.g. the client code wishes to perform additional validation checks between the fullUrl and the resource id).", displayName = "Override Resource Id With Bundle Entry Full Url"),
+                    @YamlProperty(name = "overrideResourceIdWithBundleEntryFullUrl", type = "boolean", description = "If set to true (which is the default), the Bundle.entry.fullUrl will override the Bundle.entry.resource's resource id if the fullUrl is defined. This behavior happens when parsing the source data into a Bundle object. Set this to false if this is not the desired behavior (for example, the client code wishes to perform additional validation checks between the fullUrl and the resource id).", displayName = "Override Resource Id With Bundle Entry Full Url"),
                     @YamlProperty(name = "parserErrorHandler", type = "string", description = "Registers an error handler which will be invoked when any parse errors are found. Reference to object of type ca.uhn.fhir.parser.IParserErrorHandler", displayName = "Parser Error Handler"),
                     @YamlProperty(name = "parserOptions", type = "string", description = "Sets the parser options object which will be used to supply default options to newly created parsers. Reference to object of type ca.uhn.fhir.context.ParserOptions.", displayName = "Parser Options"),
                     @YamlProperty(name = "preferTypes", type = "string", description = "If set (FQN class names), when parsing resources the parser will try to use the given types when possible, in the order that they are provided (from highest to lowest priority). For example, if a custom type which declares to implement the Patient resource is passed in here, and the parser is parsing a Bundle containing a Patient resource, the parser will use the given custom type. Multiple class names can be separated by comma.", displayName = "Prefer Types"),
@@ -6388,7 +6388,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "allowMultipleMatchesPerLine", type = "boolean", description = "If false, every line of input is matched for pattern only once. Otherwise the line can be scanned multiple times when non-terminal pattern is used.", displayName = "Allow Multiple Matches Per Line"),
                     @YamlProperty(name = "flattened", type = "boolean", description = "Turns on flattened mode. In flattened mode the exception is thrown when there are multiple pattern matches with same key.", displayName = "Flattened"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "namedOnly", type = "boolean", description = "Whether to capture named expressions only or not (i.e. %{IP:ip} but not ${IP})", displayName = "Named Only"),
+                    @YamlProperty(name = "namedOnly", type = "boolean", description = "Whether to capture named expressions only or not (that is, %{IP:ip} but not ${IP})", displayName = "Named Only"),
                     @YamlProperty(name = "pattern", type = "string", required = true, description = "The grok pattern to match lines of input", displayName = "Pattern")
             }
     )
@@ -7400,20 +7400,20 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "allowJmsType", type = "boolean", description = "Used for JMS users to allow the JMSType header from the JMS spec to specify a FQN classname to use to unmarshal to.", displayName = "Allow Jms Type"),
-                    @YamlProperty(name = "allowUnmarshallType", type = "boolean", description = "If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshalling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshall Type"),
+                    @YamlProperty(name = "allowUnmarshalType", type = "boolean", description = "If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshaling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshal Type"),
                     @YamlProperty(name = "collectionType", type = "string", description = "Refers to a custom collection type to lookup in the registry to use. This option should rarely be used, but allows to use different collection types than java.util.Collection based as default.", displayName = "Collection Type"),
-                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON", displayName = "Content Type Header"),
+                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON", displayName = "Content Type Header"),
                     @YamlProperty(name = "disableFeatures", type = "string", description = "Set of features to disable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Disable Features"),
                     @YamlProperty(name = "enableFeatures", type = "string", description = "Set of features to enable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Enable Features"),
                     @YamlProperty(name = "enableJaxbAnnotationModule", type = "boolean", description = "Whether to enable the JAXB annotations module when using jackson. When enabled then JAXB annotations can be used by Jackson.", displayName = "Enable Jaxb Annotation Module"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "include", type = "string", description = "If you want to marshal a pojo to JSON, and the pojo has some fields with null values. And you want to skip these null values, you can set this option to NON_NULL", displayName = "Include"),
-                    @YamlProperty(name = "jsonView", type = "string", description = "When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations", displayName = "Json View"),
+                    @YamlProperty(name = "jsonView", type = "string", description = "When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations", displayName = "Json View"),
                     @YamlProperty(name = "moduleClassNames", type = "string", description = "To use custom Jackson modules com.fasterxml.jackson.databind.Module specified as a String with FQN class names. Multiple classes can be separated by comma.", displayName = "Module Class Names"),
                     @YamlProperty(name = "moduleRefs", type = "string", description = "To use custom Jackson modules referred from the Camel registry. Multiple modules can be separated by comma.", displayName = "Module Refs"),
                     @YamlProperty(name = "prettyPrint", type = "boolean", description = "To enable pretty printing output nicely formatted. Is by default false.", displayName = "Pretty Print"),
-                    @YamlProperty(name = "timezone", type = "string", description = "If set then Jackson will use the Timezone when marshalling/unmarshalling.", displayName = "Timezone"),
-                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshalling", displayName = "Unmarshal Type"),
+                    @YamlProperty(name = "timezone", type = "string", description = "If set then Jackson will use the Timezone when marshaling/unmarshaling.", displayName = "Timezone"),
+                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshaling", displayName = "Unmarshal Type"),
                     @YamlProperty(name = "useList", type = "boolean", description = "To unmarshal to a List of Map or a List of Pojo.", displayName = "Use List"),
                     @YamlProperty(name = "xmlMapper", type = "string", description = "Lookup and use the existing XmlMapper with the given id.", displayName = "Xml Mapper")
             }
@@ -7438,9 +7438,9 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     target.setAllowJmsType(val);
                     break;
                 }
-                case "allowUnmarshallType": {
+                case "allowUnmarshalType": {
                     String val = asText(node);
-                    target.setAllowUnmarshallType(val);
+                    target.setAllowUnmarshalType(val);
                     break;
                 }
                 case "collectionType": {
@@ -7687,23 +7687,23 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             types = org.apache.camel.model.dataformat.JaxbDataFormat.class,
             order = org.apache.camel.dsl.yaml.common.YamlDeserializerResolver.ORDER_LOWEST - 1,
             displayName = "JAXB",
-            description = "Unmarshal XML payloads to POJOs and back using JAXB2 XML marshalling standard.",
+            description = "Unmarshal XML payloads to POJOs and back using JAXB2 XML marshaling standard.",
             deprecated = false,
             properties = {
                     @YamlProperty(name = "accessExternalSchemaProtocols", type = "string", defaultValue = "false", description = "Only in use if schema validation has been enabled. Restrict access to the protocols specified for external reference set by the schemaLocation attribute, Import and Include element. Examples of protocols are file, http, jar:file. false or none to deny all access to external references; a specific protocol, such as file, to give permission to only the protocol; the keyword all to grant permission to all protocols.", displayName = "Access External Schema Protocols"),
-                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON", displayName = "Content Type Header"),
+                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON", displayName = "Content Type Header"),
                     @YamlProperty(name = "contextPath", type = "string", required = true, description = "Package name where your JAXB classes are located.", displayName = "Context Path"),
                     @YamlProperty(name = "contextPathIsClassName", type = "boolean", description = "This can be set to true to mark that the contextPath is referring to a classname and not a package name.", displayName = "Context Path Is Class Name"),
                     @YamlProperty(name = "encoding", type = "string", description = "To overrule and use a specific encoding", displayName = "Encoding"),
                     @YamlProperty(name = "filterNonXmlChars", type = "boolean", description = "To ignore non xml characheters and replace them with an empty space.", displayName = "Filter Non Xml Chars"),
-                    @YamlProperty(name = "fragment", type = "boolean", description = "To turn on marshalling XML fragment trees. By default JAXB looks for XmlRootElement annotation on given class to operate on whole XML tree. This is useful but not always - sometimes generated code does not have XmlRootElement annotation, sometimes you need unmarshall only part of tree. In that case you can use partial unmarshalling. To enable this behaviours you need set property partClass. Camel will pass this class to JAXB's unmarshaler.", displayName = "Fragment"),
+                    @YamlProperty(name = "fragment", type = "boolean", description = "To turn on marshaling XML fragment trees. By default JAXB looks for XmlRootElement annotation on given class to operate on whole XML tree. This is useful but not always - sometimes generated code does not have XmlRootElement annotation, sometimes you need unmarshal only part of tree. In that case you can use partial unmarshaling. To enable this behaviours you need set property partClass. Camel will pass this class to JAXB's unmarshaler.", displayName = "Fragment"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "ignoreJAXBElement", type = "boolean", description = "Whether to ignore JAXBElement elements - only needed to be set to false in very special use-cases.", displayName = "Ignore JAXBElement"),
-                    @YamlProperty(name = "jaxbProviderProperties", type = "string", description = "Refers to a custom java.util.Map to lookup in the registry containing custom JAXB provider properties to be used with the JAXB marshaller.", displayName = "Jaxb Provider Properties"),
+                    @YamlProperty(name = "jaxbProviderProperties", type = "string", description = "Refers to a custom java.util.Map to lookup in the registry containing custom JAXB provider properties to be used with the JAXB marshaler.", displayName = "Jaxb Provider Properties"),
                     @YamlProperty(name = "mustBeJAXBElement", type = "boolean", description = "Whether marhsalling must be java objects with JAXB annotations. And if not then it fails. This option can be set to false to relax that, such as when the data is already in XML format.", displayName = "Must Be JAXBElement"),
-                    @YamlProperty(name = "namespacePrefixRef", type = "string", description = "When marshalling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes, such as ns2, ns3, ns4 etc. To control this mapping, Camel allows you to refer to a map which contains the desired mapping.", displayName = "Namespace Prefix Ref"),
+                    @YamlProperty(name = "namespacePrefixRef", type = "string", description = "When marshaling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes, such as ns2, ns3, ns4 etc. To control this mapping, Camel allows you to refer to a map which contains the desired mapping.", displayName = "Namespace Prefix Ref"),
                     @YamlProperty(name = "noNamespaceSchemaLocation", type = "string", description = "To define the location of the namespaceless schema", displayName = "No Namespace Schema Location"),
-                    @YamlProperty(name = "objectFactory", type = "boolean", description = "Whether to allow using ObjectFactory classes to create the POJO classes during marshalling. This only applies to POJO classes that has not been annotated with JAXB and providing jaxb.index descriptor files.", displayName = "Object Factory"),
+                    @YamlProperty(name = "objectFactory", type = "boolean", description = "Whether to allow using ObjectFactory classes to create the POJO classes during marshaling. This only applies to POJO classes that has not been annotated with JAXB and providing jaxb.index descriptor files.", displayName = "Object Factory"),
                     @YamlProperty(name = "partClass", type = "string", description = "Name of class used for fragment parsing. See more details at the fragment option.", displayName = "Part Class"),
                     @YamlProperty(name = "partNamespace", type = "string", description = "XML namespace to use for fragment parsing. See more details at the fragment option.", displayName = "Part Namespace"),
                     @YamlProperty(name = "prettyPrint", type = "boolean", description = "To enable pretty printing output nicely formatted. Is by default false.", displayName = "Pretty Print"),
@@ -8014,9 +8014,9 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             description = "Marshal and unmarshal JSON:API resources using JSONAPI-Converter library.",
             deprecated = false,
             properties = {
-                    @YamlProperty(name = "dataFormatTypes", type = "string", description = "The classes to take into account for the marshalling. Multiple classes can be separated by comma.", displayName = "Data Format Types"),
+                    @YamlProperty(name = "dataFormatTypes", type = "string", description = "The classes to take into account for the marshaling. Multiple classes can be separated by comma.", displayName = "Data Format Types"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "mainFormatType", type = "string", description = "The class to take into account while unmarshalling.", displayName = "Main Format Type")
+                    @YamlProperty(name = "mainFormatType", type = "string", description = "The class to take into account while unmarshaling.", displayName = "Main Format Type")
             }
     )
     public static class JsonApiDataFormatDeserializer extends YamlDeserializerBase<JsonApiDataFormat> {
@@ -8066,17 +8066,17 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "allowJmsType", type = "boolean", description = "Used for JMS users to allow the JMSType header from the JMS spec to specify a FQN classname to use to unmarshal to.", displayName = "Allow Jms Type"),
-                    @YamlProperty(name = "allowUnmarshallType", type = "boolean", description = "If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshalling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshall Type"),
+                    @YamlProperty(name = "allowUnmarshalType", type = "boolean", description = "If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshaling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshal Type"),
                     @YamlProperty(name = "autoDiscoverObjectMapper", type = "boolean", description = "If set to true then Jackson will look for an objectMapper to use from the registry", displayName = "Auto Discover Object Mapper"),
                     @YamlProperty(name = "autoDiscoverSchemaResolver", type = "boolean", description = "When not disabled, the SchemaResolver will be looked up into the registry", displayName = "Auto Discover Schema Resolver"),
                     @YamlProperty(name = "collectionType", type = "string", description = "Refers to a custom collection type to lookup in the registry to use. This option should rarely be used, but allows using different collection types than java.util.Collection based as default.", displayName = "Collection Type"),
-                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON", displayName = "Content Type Header"),
-                    @YamlProperty(name = "dateFormatPattern", type = "string", description = "To configure the date format while marshall or unmarshall Date fields in JSON using Gson", displayName = "Date Format Pattern"),
+                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON", displayName = "Content Type Header"),
+                    @YamlProperty(name = "dateFormatPattern", type = "string", description = "To configure the date format while marshal or unmarshal Date fields in JSON using Gson", displayName = "Date Format Pattern"),
                     @YamlProperty(name = "disableFeatures", type = "string", description = "Set of features to disable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Disable Features"),
                     @YamlProperty(name = "enableFeatures", type = "string", description = "Set of features to enable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Enable Features"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "include", type = "string", description = "If you want to marshal a pojo to JSON, and the pojo has some fields with null values. And you want to skip these null values, you can set this option to NON_NULL", displayName = "Include"),
-                    @YamlProperty(name = "jsonView", type = "string", description = "When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations", displayName = "Json View"),
+                    @YamlProperty(name = "jsonView", type = "string", description = "When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations", displayName = "Json View"),
                     @YamlProperty(name = "library", type = "enum:Fastjson,Gson,Jackson,Johnzon,Jsonb", defaultValue = "Jackson", description = "Which json library to use.", displayName = "Library"),
                     @YamlProperty(name = "moduleClassNames", type = "string", description = "To use custom Jackson modules com.fasterxml.jackson.databind.Module specified as a String with FQN class names. Multiple classes can be separated by comma.", displayName = "Module Class Names"),
                     @YamlProperty(name = "moduleRefs", type = "string", description = "To use custom Jackson modules referred from the Camel registry. Multiple modules can be separated by comma.", displayName = "Module Refs"),
@@ -8084,8 +8084,8 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "objectMapper", type = "string", description = "Lookup and use the existing ObjectMapper with the given id when using Jackson.", displayName = "Object Mapper"),
                     @YamlProperty(name = "prettyPrint", type = "boolean", description = "To enable pretty printing output nicely formatted. Is by default false.", displayName = "Pretty Print"),
                     @YamlProperty(name = "schemaResolver", type = "string", description = "Optional schema resolver used to lookup schemas for the data in transit.", displayName = "Schema Resolver"),
-                    @YamlProperty(name = "timezone", type = "string", description = "If set then Jackson will use the Timezone when marshalling/unmarshalling. This option will have no effect on the others Json DataFormat, like gson and fastjson.", displayName = "Timezone"),
-                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshalling", displayName = "Unmarshal Type"),
+                    @YamlProperty(name = "timezone", type = "string", description = "If set then Jackson will use the Timezone when marshaling/unmarshaling. This option will have no effect on the others Json DataFormat, like gson and fastjson.", displayName = "Timezone"),
+                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshaling", displayName = "Unmarshal Type"),
                     @YamlProperty(name = "useDefaultObjectMapper", type = "boolean", description = "Whether to lookup and use default Jackson ObjectMapper from the registry.", displayName = "Use Default Object Mapper"),
                     @YamlProperty(name = "useList", type = "boolean", description = "To unmarshal to a List of Map or a List of Pojo.", displayName = "Use List")
             }
@@ -8110,9 +8110,9 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     target.setAllowJmsType(val);
                     break;
                 }
-                case "allowUnmarshallType": {
+                case "allowUnmarshalType": {
                     String val = asText(node);
-                    target.setAllowUnmarshallType(val);
+                    target.setAllowUnmarshalType(val);
                     break;
                 }
                 case "autoDiscoverObjectMapper": {
@@ -10931,10 +10931,10 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             description = "Parquet Avro serialization and de-serialization.",
             deprecated = false,
             properties = {
-                    @YamlProperty(name = "compressionCodecName", type = "enum:UNCOMPRESSED,SNAPPY,GZIP,LZO,BROTLI,LZ4,ZSTD,LZ4_RAW", defaultValue = "GZIP", description = "Compression codec to use when marshalling.", displayName = "Compression Codec Name"),
+                    @YamlProperty(name = "compressionCodecName", type = "enum:UNCOMPRESSED,SNAPPY,GZIP,LZO,BROTLI,LZ4,ZSTD,LZ4_RAW", defaultValue = "GZIP", description = "Compression codec to use when marshaling.", displayName = "Compression Codec Name"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshalling should produce an iterator of records or read all the records at once.", displayName = "Lazy Load"),
-                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class to use when (un)marshalling. If omitted, parquet files are converted into Avro's GenericRecords for unmarshalling and input objects are assumed as GenericRecords for marshalling.", displayName = "Unmarshal Type")
+                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshaling should produce an iterator of records or read all the records at once.", displayName = "Lazy Load"),
+                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class to use when (un)marshaling. If omitted, parquet files are converted into Avro's GenericRecords for unmarshaling and input objects are assumed as GenericRecords for marshaling.", displayName = "Unmarshal Type")
             }
     )
     public static class ParquetAvroDataFormatDeserializer extends YamlDeserializerBase<ParquetAvroDataFormat> {
@@ -11884,25 +11884,25 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "allowJmsType", type = "boolean", description = "Used for JMS users to allow the JMSType header from the JMS spec to specify a FQN classname to use to unmarshal to.", displayName = "Allow Jms Type"),
-                    @YamlProperty(name = "allowUnmarshallType", type = "boolean", description = "If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshalling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshall Type"),
+                    @YamlProperty(name = "allowUnmarshalType", type = "boolean", description = "If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the unmarshaling. This should only be enabled when desired to be used.", displayName = "Allow Unmarshal Type"),
                     @YamlProperty(name = "autoDiscoverObjectMapper", type = "boolean", description = "If set to true then Jackson will lookup for an objectMapper into the registry", displayName = "Auto Discover Object Mapper"),
                     @YamlProperty(name = "autoDiscoverSchemaResolver", type = "boolean", description = "When not disabled, the SchemaResolver will be looked up into the registry", displayName = "Auto Discover Schema Resolver"),
                     @YamlProperty(name = "collectionType", type = "string", description = "Refers to a custom collection type to lookup in the registry to use. This option should rarely be used, but allows to use different collection types than java.util.Collection based as default.", displayName = "Collection Type"),
                     @YamlProperty(name = "contentTypeFormat", type = "enum:native,json", defaultValue = "native", description = "Defines a content type format in which protobuf message will be serialized/deserialized from(to) the Java been. The format can either be native or json for either native protobuf or json fields representation. The default value is native.", displayName = "Content Type Format"),
-                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON", displayName = "Content Type Header"),
+                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON", displayName = "Content Type Header"),
                     @YamlProperty(name = "disableFeatures", type = "string", description = "Set of features to disable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Disable Features"),
                     @YamlProperty(name = "enableFeatures", type = "string", description = "Set of features to enable on the Jackson com.fasterxml.jackson.databind.ObjectMapper. The features should be a name that matches a enum from com.fasterxml.jackson.databind.SerializationFeature, com.fasterxml.jackson.databind.DeserializationFeature, or com.fasterxml.jackson.databind.MapperFeature Multiple features can be separated by comma", displayName = "Enable Features"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "include", type = "string", description = "If you want to marshal a pojo to JSON, and the pojo has some fields with null values. And you want to skip these null values, you can set this option to NON_NULL", displayName = "Include"),
-                    @YamlProperty(name = "instanceClass", type = "string", description = "Name of class to use when unmarshalling", displayName = "Instance Class"),
-                    @YamlProperty(name = "jsonView", type = "string", description = "When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations", displayName = "Json View"),
+                    @YamlProperty(name = "instanceClass", type = "string", description = "Name of class to use when unmarshaling", displayName = "Instance Class"),
+                    @YamlProperty(name = "jsonView", type = "string", description = "When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you can use JSON views to accomplish this. This option is to refer to the class which has JsonView annotations", displayName = "Json View"),
                     @YamlProperty(name = "library", type = "enum:GoogleProtobuf,Jackson", defaultValue = "GoogleProtobuf", description = "Which Protobuf library to use.", displayName = "Library"),
                     @YamlProperty(name = "moduleClassNames", type = "string", description = "To use custom Jackson modules com.fasterxml.jackson.databind.Module specified as a String with FQN class names. Multiple classes can be separated by comma.", displayName = "Module Class Names"),
                     @YamlProperty(name = "moduleRefs", type = "string", description = "To use custom Jackson modules referred from the Camel registry. Multiple modules can be separated by comma.", displayName = "Module Refs"),
                     @YamlProperty(name = "objectMapper", type = "string", description = "Lookup and use the existing ObjectMapper with the given id when using Jackson.", displayName = "Object Mapper"),
                     @YamlProperty(name = "schemaResolver", type = "string", description = "Optional schema resolver used to lookup schemas for the data in transit.", displayName = "Schema Resolver"),
-                    @YamlProperty(name = "timezone", type = "string", description = "If set then Jackson will use the Timezone when marshalling/unmarshalling.", displayName = "Timezone"),
-                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshalling", displayName = "Unmarshal Type"),
+                    @YamlProperty(name = "timezone", type = "string", description = "If set then Jackson will use the Timezone when marshaling/unmarshaling.", displayName = "Timezone"),
+                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshaling", displayName = "Unmarshal Type"),
                     @YamlProperty(name = "useDefaultObjectMapper", type = "boolean", description = "Whether to lookup and use default Jackson ObjectMapper from the registry.", displayName = "Use Default Object Mapper"),
                     @YamlProperty(name = "useList", type = "boolean", description = "To unmarshal to a List of Map or a List of Pojo.", displayName = "Use List")
             }
@@ -11932,9 +11932,9 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     target.setAllowJmsType(val);
                     break;
                 }
-                case "allowUnmarshallType": {
+                case "allowUnmarshalType": {
                     String val = asText(node);
-                    target.setAllowUnmarshallType(val);
+                    target.setAllowUnmarshalType(val);
                     break;
                 }
                 case "autoDiscoverObjectMapper": {
@@ -12484,7 +12484,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "allowRedeliveryWhileStopping", type = "boolean", description = "Controls whether to allow redelivery while stopping/shutting down a route that uses error handling.", displayName = "Allow Redelivery While Stopping"),
-                    @YamlProperty(name = "asyncDelayedRedelivery", type = "boolean", description = "Allow asynchronous delayed redelivery. The route, in particular the consumer's component, must support the Asynchronous Routing Engine (e.g. seda).", displayName = "Async Delayed Redelivery"),
+                    @YamlProperty(name = "asyncDelayedRedelivery", type = "boolean", description = "Allow asynchronous delayed redelivery. The route, in particular the consumer's component, must support the Asynchronous Routing Engine (for example, seda).", displayName = "Async Delayed Redelivery"),
                     @YamlProperty(name = "backOffMultiplier", type = "number", defaultValue = "2.0", description = "Sets the back off multiplier", displayName = "Back Off Multiplier"),
                     @YamlProperty(name = "collisionAvoidanceFactor", type = "number", defaultValue = "0.15", description = "Sets the collision avoidance factor", displayName = "Collision Avoidance Factor"),
                     @YamlProperty(name = "delayPattern", type = "string", description = "Sets the delay pattern with delay intervals.", displayName = "Delay Pattern"),
@@ -15110,7 +15110,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "disabled", type = "boolean", description = "Whether to disable this EIP from the route during build time. Once an EIP has been disabled then it cannot be enabled later at runtime.", displayName = "Disabled"),
                     @YamlProperty(name = "id", type = "string", description = "Sets the id of this node", displayName = "Id"),
                     @YamlProperty(name = "inheritErrorHandler", type = "boolean"),
-                    @YamlProperty(name = "option", type = "array:org.apache.camel.model.PropertyExpressionDefinition", description = "Allows to save properties of the current exchange in order to re-use them in a compensation/completion callback route. Options are usually helpful e.g. to store and retrieve identifiers of objects that should be deleted in compensating actions. Option values will be transformed into input headers of the compensation/completion exchange.", displayName = "Option"),
+                    @YamlProperty(name = "option", type = "array:org.apache.camel.model.PropertyExpressionDefinition", description = "Allows to save properties of the current exchange to re-use them in a compensation/completion callback route. Options are usually helpful for example, to store and retrieve identifiers of objects that should be deleted in compensating actions. Option values will be transformed into input headers of the compensation/completion exchange.", displayName = "Option"),
                     @YamlProperty(name = "propagation", type = "enum:REQUIRED,REQUIRES_NEW,MANDATORY,SUPPORTS,NOT_SUPPORTED,NEVER", defaultValue = "REQUIRED", description = "Set the Saga propagation mode (REQUIRED, REQUIRES_NEW, MANDATORY, SUPPORTS, NOT_SUPPORTED, NEVER).", displayName = "Propagation"),
                     @YamlProperty(name = "sagaService", type = "string", description = "Refers to the id to lookup in the registry for the specific CamelSagaService to use.", displayName = "Saga Service"),
                     @YamlProperty(name = "steps", type = "array:org.apache.camel.model.ProcessorDefinition"),
@@ -16594,7 +16594,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "elementNameStrategyRef", type = "string", description = "Refers to an element strategy to lookup from the registry. An element name strategy is used for two purposes. The first is to find a xml element name for a given object and soap action when marshaling the object into a SOAP message. The second is to find an Exception class for a given soap fault name. The following three element strategy class name is provided out of the box. QNameStrategy - Uses a fixed qName that is configured on instantiation. Exception lookup is not supported TypeNameStrategy - Uses the name and namespace from the XMLType annotation of the given type. If no namespace is set then package-info is used. Exception lookup is not supported ServiceInterfaceStrategy - Uses information from a webservice interface to determine the type name and to find the exception class for a SOAP fault All three classes is located in the package name org.apache.camel.dataformat.soap.name If you have generated the web service stub code with cxf-codegen or a similar tool then you probably will want to use the ServiceInterfaceStrategy. In the case you have no annotated service interface you should use QNameStrategy or TypeNameStrategy.", displayName = "Element Name Strategy Ref"),
                     @YamlProperty(name = "encoding", type = "string", description = "To overrule and use a specific encoding", displayName = "Encoding"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "namespacePrefixRef", type = "string", description = "When marshalling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes, such as ns2, ns3, ns4 etc. To control this mapping, Camel allows you to refer to a map which contains the desired mapping.", displayName = "Namespace Prefix Ref"),
+                    @YamlProperty(name = "namespacePrefixRef", type = "string", description = "When marshaling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes, such as ns2, ns3, ns4 etc. To control this mapping, Camel allows you to refer to a map which contains the desired mapping.", displayName = "Namespace Prefix Ref"),
                     @YamlProperty(name = "schema", type = "string", description = "To validate against an existing schema. Your can use the prefix classpath:, file: or http: to specify how the resource should be resolved. You can separate multiple schema files by using the ',' character.", displayName = "Schema"),
                     @YamlProperty(name = "version", type = "enum:1.1,1.2", defaultValue = "1.1", description = "SOAP version should either be 1.1 or 1.2. Is by default 1.1", displayName = "Version")
             }
@@ -16838,7 +16838,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "shareUnitOfWork", type = "boolean", description = "Shares the org.apache.camel.spi.UnitOfWork with the parent and each of the sub messages. Splitter will by default not share unit of work between the parent exchange and each split exchange. This means each split exchange has its own individual unit of work.", displayName = "Share Unit Of Work"),
                     @YamlProperty(name = "steps", type = "array:org.apache.camel.model.ProcessorDefinition"),
                     @YamlProperty(name = "stopOnException", type = "boolean", description = "Will now stop further processing if an exception or failure occurred during processing of an org.apache.camel.Exchange and the caused exception will be thrown. Will also stop if processing the exchange failed (has a fault message) or an exception was thrown and handled by the error handler (such as using onException). In all situations the splitter will stop further processing. This is the same behavior as in pipeline, which is used by the routing engine. The default behavior is to not stop but continue processing till the end", displayName = "Stop On Exception"),
-                    @YamlProperty(name = "streaming", type = "boolean", description = "When in streaming mode, then the splitter splits the original message on-demand, and each split message is processed one by one. This reduces memory usage as the splitter do not split all the messages first, but then we do not know the total size, and therefore the org.apache.camel.Exchange#SPLIT_SIZE is empty. In non-streaming mode (default) the splitter will split each message first, to know the total size, and then process each message one by one. This requires to keep all the split messages in memory and therefore requires more memory. The total size is provided in the org.apache.camel.Exchange#SPLIT_SIZE header. The streaming mode also affects the aggregation behavior. If enabled then Camel will process replies out-of-order, e.g. in the order they come back. If disabled, Camel will process replies in the same order as the messages was split.", displayName = "Streaming"),
+                    @YamlProperty(name = "streaming", type = "boolean", description = "When in streaming mode, then the splitter splits the original message on-demand, and each split message is processed one by one. This reduces memory usage as the splitter do not split all the messages first, but then we do not know the total size, and therefore the org.apache.camel.Exchange#SPLIT_SIZE is empty. In non-streaming mode (default) the splitter will split each message first, to know the total size, and then process each message one by one. This requires to keep all the split messages in memory and therefore requires more memory. The total size is provided in the org.apache.camel.Exchange#SPLIT_SIZE header. The streaming mode also affects the aggregation behavior. If enabled then Camel will process replies out-of-order, for example, in the order they come back. If disabled, Camel will process replies in the same order as the messages was split.", displayName = "Streaming"),
                     @YamlProperty(name = "synchronous", type = "boolean", description = "Sets whether synchronous processing should be strictly used. When enabled then the same thread is used to continue routing after the split is complete, even if parallel processing is enabled.", displayName = "Synchronous"),
                     @YamlProperty(name = "timeout", type = "string", defaultValue = "0", description = "Sets a total timeout specified in millis, when using parallel processing. If the Splitter hasn't been able to split and process all the sub messages within the given timeframe, then the timeout triggers and the Splitter breaks out and continues. Notice if you provide a TimeoutAwareAggregationStrategy then the timeout method is invoked before breaking out. If the timeout is reached with running tasks still remaining, certain tasks for which it is difficult for Camel to shut down in a graceful manner may continue to run. So use this option with a bit of care.", displayName = "Timeout")
             }
@@ -17397,7 +17397,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "writeInJson", type = "boolean", description = "The flag indicating that messages must be marshalled in a JSON format.", displayName = "Write In Json")
+                    @YamlProperty(name = "writeInJson", type = "boolean", description = "The flag indicating that messages must be marshaled in a JSON format.", displayName = "Write In Json")
             }
     )
     public static class SwiftMtDataFormatDeserializer extends YamlDeserializerBase<SwiftMtDataFormat> {
@@ -17450,10 +17450,10 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "readConfigRef", type = "string", description = "Refers to a specific configuration to use when unmarshalling an input stream to lookup from the registry.", displayName = "Read Config Ref"),
-                    @YamlProperty(name = "readMessageId", type = "string", description = "The type of MX message to produce when unmarshalling an input stream. If not set, it will be automatically detected from the namespace used.", displayName = "Read Message Id"),
-                    @YamlProperty(name = "writeConfigRef", type = "string", description = "Refers to a specific configuration to use when marshalling a message to lookup from the registry.", displayName = "Write Config Ref"),
-                    @YamlProperty(name = "writeInJson", type = "boolean", description = "The flag indicating that messages must be marshalled in a JSON format.", displayName = "Write In Json")
+                    @YamlProperty(name = "readConfigRef", type = "string", description = "Refers to a specific configuration to use when unmarshaling an input stream to lookup from the registry.", displayName = "Read Config Ref"),
+                    @YamlProperty(name = "readMessageId", type = "string", description = "The type of MX message to produce when unmarshaling an input stream. If not set, it will be automatically detected from the namespace used.", displayName = "Read Message Id"),
+                    @YamlProperty(name = "writeConfigRef", type = "string", description = "Refers to a specific configuration to use when marshaling a message to lookup from the registry.", displayName = "Write Config Ref"),
+                    @YamlProperty(name = "writeInJson", type = "boolean", description = "The flag indicating that messages must be marshaled in a JSON format.", displayName = "Write In Json")
             }
     )
     public static class SwiftMxDataFormatDeserializer extends YamlDeserializerBase<SwiftMxDataFormat> {
@@ -17509,7 +17509,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             types = org.apache.camel.model.dataformat.SyslogDataFormat.class,
             order = org.apache.camel.dsl.yaml.common.YamlDeserializerResolver.ORDER_LOWEST - 1,
             displayName = "Syslog",
-            description = "Marshall SyslogMessages to RFC3164 and RFC5424 messages and back.",
+            description = "Marshal SyslogMessages to RFC3164 and RFC5424 messages and back.",
             deprecated = false,
             properties = @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id")
     )
@@ -17878,9 +17878,9 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             deprecated = false,
             properties = {
                     @YamlProperty(name = "contentTypeFormat", type = "enum:binary,json,sjson", defaultValue = "binary", description = "Defines a content type format in which thrift message will be serialized/deserialized from(to) the Java been. The format can either be native or json for either native binary thrift, json or simple json fields representation. The default value is binary.", displayName = "Content Type Format"),
-                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON", displayName = "Content Type Header"),
+                    @YamlProperty(name = "contentTypeHeader", type = "boolean", description = "Whether the data format should set the Content-Type header with the type from the data format. For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON", displayName = "Content Type Header"),
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
-                    @YamlProperty(name = "instanceClass", type = "string", description = "Name of class to use when unmarshalling", displayName = "Instance Class")
+                    @YamlProperty(name = "instanceClass", type = "string", description = "Name of class to use when unmarshaling", displayName = "Instance Class")
             }
     )
     public static class ThriftDataFormatDeserializer extends YamlDeserializerBase<ThriftDataFormat> {
@@ -18879,7 +18879,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             description = "Marshal and unmarshal Java objects from and to CSV (Comma Separated Values) using UniVocity Parsers.",
             deprecated = false,
             properties = {
-                    @YamlProperty(name = "asMap", type = "boolean", description = "Whether the unmarshalling should produce maps for the lines values instead of lists. It requires to have header (either defined or collected). The default value is false", displayName = "As Map"),
+                    @YamlProperty(name = "asMap", type = "boolean", description = "Whether the unmarshaling should produce maps for the lines values instead of lists. It requires to have header (either defined or collected). The default value is false", displayName = "As Map"),
                     @YamlProperty(name = "comment", type = "string", defaultValue = "#", description = "The comment symbol. The default value is #", displayName = "Comment"),
                     @YamlProperty(name = "delimiter", type = "string", defaultValue = ",", description = "The delimiter of values", displayName = "Delimiter"),
                     @YamlProperty(name = "emptyValue", type = "string", description = "The String representation of an empty value.", displayName = "Empty Value"),
@@ -18888,7 +18888,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "ignoreLeadingWhitespaces", type = "boolean", description = "Whether or not the leading white spaces must be ignored. The default value is true", displayName = "Ignore Leading Whitespaces"),
                     @YamlProperty(name = "ignoreTrailingWhitespaces", type = "boolean", description = "Whether or not the trailing white spaces must be ignored. The default value is true", displayName = "Ignore Trailing Whitespaces"),
-                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must be read at once. The default value is false", displayName = "Lazy Load"),
+                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must be read at once. The default value is false", displayName = "Lazy Load"),
                     @YamlProperty(name = "lineSeparator", type = "string", description = "The line separator of the files. The default value is to use the JVM platform line separator", displayName = "Line Separator"),
                     @YamlProperty(name = "normalizedLineSeparator", type = "string", description = "The normalized line separator of the files. The default value is a new line character.", displayName = "Normalized Line Separator"),
                     @YamlProperty(name = "nullValue", type = "string", description = "The string representation of a null value. The default value is null", displayName = "Null Value"),
@@ -19029,7 +19029,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             description = "Marshal and unmarshal Java objects from and to fixed length records using UniVocity Parsers.",
             deprecated = false,
             properties = {
-                    @YamlProperty(name = "asMap", type = "boolean", description = "Whether the unmarshalling should produce maps for the lines values instead of lists. It requires to have header (either defined or collected). The default value is false", displayName = "As Map"),
+                    @YamlProperty(name = "asMap", type = "boolean", description = "Whether the unmarshaling should produce maps for the lines values instead of lists. It requires to have header (either defined or collected). The default value is false", displayName = "As Map"),
                     @YamlProperty(name = "comment", type = "string", defaultValue = "#", description = "The comment symbol. The default value is #", displayName = "Comment"),
                     @YamlProperty(name = "emptyValue", type = "string", description = "The String representation of an empty value.", displayName = "Empty Value"),
                     @YamlProperty(name = "headerExtractionEnabled", type = "boolean", description = "Whether or not the header must be read in the first line of the test document. The default value is false", displayName = "Header Extraction Enabled"),
@@ -19037,7 +19037,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "ignoreLeadingWhitespaces", type = "boolean", description = "Whether or not the leading white spaces must be ignored. The default value is true", displayName = "Ignore Leading Whitespaces"),
                     @YamlProperty(name = "ignoreTrailingWhitespaces", type = "boolean", description = "Whether or not the trailing white spaces must be ignored. The default value is true", displayName = "Ignore Trailing Whitespaces"),
-                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must be read at once. The default value is false", displayName = "Lazy Load"),
+                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must be read at once. The default value is false", displayName = "Lazy Load"),
                     @YamlProperty(name = "lineSeparator", type = "string", description = "The line separator of the files. The default value is to use the JVM platform line separator", displayName = "Line Separator"),
                     @YamlProperty(name = "normalizedLineSeparator", type = "string", description = "The normalized line separator of the files. The default value is a new line character.", displayName = "Normalized Line Separator"),
                     @YamlProperty(name = "nullValue", type = "string", description = "The string representation of a null value. The default value is null", displayName = "Null Value"),
@@ -19221,7 +19221,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             description = "Marshal and unmarshal Java objects from and to TSV (Tab-Separated Values) records using UniVocity Parsers.",
             deprecated = false,
             properties = {
-                    @YamlProperty(name = "asMap", type = "boolean", description = "Whether the unmarshalling should produce maps for the lines values instead of lists. It requires to have header (either defined or collected). The default value is false", displayName = "As Map"),
+                    @YamlProperty(name = "asMap", type = "boolean", description = "Whether the unmarshaling should produce maps for the lines values instead of lists. It requires to have header (either defined or collected). The default value is false", displayName = "As Map"),
                     @YamlProperty(name = "comment", type = "string", defaultValue = "#", description = "The comment symbol. The default value is #", displayName = "Comment"),
                     @YamlProperty(name = "emptyValue", type = "string", description = "The String representation of an empty value.", displayName = "Empty Value"),
                     @YamlProperty(name = "escapeChar", type = "string", defaultValue = "\\", description = "The escape character.", displayName = "Escape Char"),
@@ -19230,7 +19230,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "id", type = "string", description = "The id of this node", displayName = "Id"),
                     @YamlProperty(name = "ignoreLeadingWhitespaces", type = "boolean", description = "Whether or not the leading white spaces must be ignored. The default value is true", displayName = "Ignore Leading Whitespaces"),
                     @YamlProperty(name = "ignoreTrailingWhitespaces", type = "boolean", description = "Whether or not the trailing white spaces must be ignored. The default value is true", displayName = "Ignore Trailing Whitespaces"),
-                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must be read at once. The default value is false", displayName = "Lazy Load"),
+                    @YamlProperty(name = "lazyLoad", type = "boolean", description = "Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must be read at once. The default value is false", displayName = "Lazy Load"),
                     @YamlProperty(name = "lineSeparator", type = "string", description = "The line separator of the files. The default value is to use the JVM platform line separator", displayName = "Line Separator"),
                     @YamlProperty(name = "normalizedLineSeparator", type = "string", description = "The normalized line separator of the files. The default value is a new line character.", displayName = "Normalized Line Separator"),
                     @YamlProperty(name = "nullValue", type = "string", description = "The string representation of a null value. The default value is null", displayName = "Null Value"),
@@ -19350,7 +19350,7 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
             description = "Converts the message data received from the wire into a format that Apache Camel processors can consume",
             deprecated = false,
             properties = {
-                    @YamlProperty(name = "allowNullBody", type = "boolean", description = "Indicates whether null is allowed as value of a body to unmarshall.", displayName = "Allow Null Body"),
+                    @YamlProperty(name = "allowNullBody", type = "boolean", description = "Indicates whether null is allowed as value of a body to unmarshal.", displayName = "Allow Null Body"),
                     @YamlProperty(name = "asn1", type = "object:org.apache.camel.model.dataformat.ASN1DataFormat", oneOf = "dataFormatType"),
                     @YamlProperty(name = "avro", type = "object:org.apache.camel.model.dataformat.AvroDataFormat", oneOf = "dataFormatType"),
                     @YamlProperty(name = "barcode", type = "object:org.apache.camel.model.dataformat.BarcodeDataFormat", oneOf = "dataFormatType"),
@@ -20810,8 +20810,8 @@ public final class ModelDeserializers extends YamlDeserializerSupport {
                     @YamlProperty(name = "prettyFlow", type = "boolean", description = "Force the emitter to produce a pretty YAML document when using the flow style.", displayName = "Pretty Flow"),
                     @YamlProperty(name = "representer", type = "string", description = "Representer to emit outgoing objects.", displayName = "Representer"),
                     @YamlProperty(name = "resolver", type = "string", description = "Resolver to detect implicit type", displayName = "Resolver"),
-                    @YamlProperty(name = "typeFilter", type = "array:org.apache.camel.model.dataformat.YAMLTypeFilterDefinition", description = "Set the types SnakeYAML is allowed to un-marshall", displayName = "Type Filter"),
-                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshalling", displayName = "Unmarshal Type"),
+                    @YamlProperty(name = "typeFilter", type = "array:org.apache.camel.model.dataformat.YAMLTypeFilterDefinition", description = "Set the types SnakeYAML is allowed to un-marshal", displayName = "Type Filter"),
+                    @YamlProperty(name = "unmarshalType", type = "string", description = "Class name of the java type to use when unmarshaling", displayName = "Unmarshal Type"),
                     @YamlProperty(name = "useApplicationContextClassLoader", type = "boolean", description = "Use ApplicationContextClassLoader as custom ClassLoader", displayName = "Use Application Context Class Loader")
             }
     )

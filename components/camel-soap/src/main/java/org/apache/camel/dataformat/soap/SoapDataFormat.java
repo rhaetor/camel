@@ -45,13 +45,13 @@ import org.slf4j.LoggerFactory;
 @Dataformat("soap")
 public class SoapDataFormat extends JaxbDataFormat {
 
-    public static final String SOAP_UNMARSHALLED_HEADER_LIST = "org.apache.camel.dataformat.soap.UNMARSHALLED_HEADER_LIST";
+    public static final String SOAP_UNmarshaled_HEADER_LIST = "org.apache.camel.dataformat.soap.UNmarshaled_HEADER_LIST";
 
     private static final Logger LOG = LoggerFactory.getLogger(SoapDataFormat.class);
 
     private SoapDataFormatAdapter adapter;
     private ElementNameStrategy elementNameStrategy = new TypeNameStrategy();
-    private boolean ignoreUnmarshalledHeaders;
+    private boolean ignoreUnmarshaledHeaders;
     private String version;
 
     /**
@@ -69,7 +69,7 @@ public class SoapDataFormat extends JaxbDataFormat {
 
     /**
      * Initialize the data format. The serviceInterface is necessary to determine the element name and namespace of the
-     * element inside the soap body when marshalling
+     * element inside the soap body when marshaling
      */
     public SoapDataFormat(String contextPath, ElementNameStrategy elementNameStrategy) {
         this(contextPath);
@@ -155,7 +155,7 @@ public class SoapDataFormat extends JaxbDataFormat {
     }
 
     /**
-     * Unmarshal a given SOAP xml stream and return the content of the SOAP body
+     * Unmarshala given SOAP xml stream and return the content of the SOAP body
      */
     @Override
     public Object unmarshal(Exchange exchange, Object body) throws Exception {
@@ -168,14 +168,14 @@ public class SoapDataFormat extends JaxbDataFormat {
             exchange.getOut().setHeader(Exchange.BEAN_METHOD_NAME, methodName);
         }
 
-        // Store soap action for an eventual later marshal step.
+        // Store soap action for an eventual later marshalstep.
         // This is necessary as the soap action in the message may get lost on the way
         if (soapAction != null) {
             exchange.setProperty(Exchange.SOAP_ACTION, soapAction);
         }
 
-        Object unmarshalledObject = super.unmarshal(exchange, body);
-        Object rootObject = JAXBIntrospector.getValue(unmarshalledObject);
+        Object unmarshaledObject = super.unmarshal(exchange, body);
+        Object rootObject = JAXBIntrospector.getValue(unmarshaledObject);
 
         InputStream stream = exchange.getContext().getTypeConverter().mandatoryConvertTo(InputStream.class, exchange, body);
         return adapter.doUnmarshal(exchange, stream, rootObject);
@@ -224,12 +224,12 @@ public class SoapDataFormat extends JaxbDataFormat {
         }
     }
 
-    public boolean isIgnoreUnmarshalledHeaders() {
-        return ignoreUnmarshalledHeaders;
+    public boolean isIgnoreUnmarshaledHeaders() {
+        return ignoreUnmarshaledHeaders;
     }
 
-    public void setIgnoreUnmarshalledHeaders(boolean ignoreUnmarshalledHeaders) {
-        this.ignoreUnmarshalledHeaders = ignoreUnmarshalledHeaders;
+    public void setIgnoreUnmarshaledHeaders(boolean ignoreUnmarshaledHeaders) {
+        this.ignoreUnmarshaledHeaders = ignoreUnmarshaledHeaders;
     }
 
     public String getVersion() {

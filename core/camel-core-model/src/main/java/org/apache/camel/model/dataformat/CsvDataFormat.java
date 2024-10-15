@@ -105,9 +105,9 @@ public class CsvDataFormat extends DataFormatDefinition {
     private String trailingDelimiter;
     @XmlAttribute
     @Metadata(label = "advanced")
-    private String marshallerFactoryRef;
+    private String marshalerFactoryRef;
 
-    // Unmarshall options
+    // Unmarshal options
     @XmlAttribute
     @Metadata(label = "advanced", javaType = "java.lang.Boolean")
     private String lazyLoad;
@@ -163,7 +163,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         this.ignoreHeaderCase = builder.ignoreHeaderCase;
         this.trim = builder.trim;
         this.trailingDelimiter = builder.trailingDelimiter;
-        this.marshallerFactoryRef = builder.marshallerFactoryRef;
+        this.marshalerFactoryRef = builder.marshalerFactoryRef;
         this.lazyLoad = builder.lazyLoad;
         this.useMaps = builder.useMaps;
         this.useOrderedMaps = builder.useOrderedMaps;
@@ -172,22 +172,22 @@ public class CsvDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Sets the implementation of the CsvMarshallerFactory interface which is able to customize
-     * marshalling/unmarshalling behavior by extending CsvMarshaller or creating it from scratch.
+     * Sets the implementation of the CsvMarshalerFactory interface which is able to customize
+     * marshaling/unmarshaling behavior by extending CsvMarshaler or creating it from scratch.
      *
-     * @param marshallerFactoryRef the <code>CsvMarshallerFactory</code> reference.
+     * @param marshalerFactoryRef the <code>CsvMarshalerFactory</code> reference.
      */
-    public void setMarshallerFactoryRef(String marshallerFactoryRef) {
-        this.marshallerFactoryRef = marshallerFactoryRef;
+    public void setMarshalerFactoryRef(String marshalerFactoryRef) {
+        this.marshalerFactoryRef = marshalerFactoryRef;
     }
 
     /**
-     * Returns the <code>CsvMarshallerFactory</code> reference.
+     * Returns the <code>CsvMarshalerFactory</code> reference.
      *
-     * @return the <code>CsvMarshallerFactory</code> or <code>null</code> if none has been specified.
+     * @return the <code>CsvMarshalerFactory</code> or <code>null</code> if none has been specified.
      */
-    public String getMarshallerFactoryRef() {
-        return marshallerFactoryRef;
+    public String getMarshalerFactoryRef() {
+        return marshalerFactoryRef;
     }
 
     public String getFormatRef() {
@@ -418,7 +418,7 @@ public class CsvDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must be
+     * Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must be
      * read at one.
      */
     public void setLazyLoad(String lazyLoad) {
@@ -430,7 +430,7 @@ public class CsvDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Whether the unmarshalling should produce maps (HashMap)for the lines values instead of lists. It requires to have
+     * Whether the unmarshaling should produce maps (HashMap)for the lines values instead of lists. It requires to have
      * header (either defined or collected).
      */
     public void setUseMaps(String useMaps) {
@@ -442,7 +442,7 @@ public class CsvDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Whether the unmarshalling should produce ordered maps (LinkedHashMap) for the lines values instead of lists. It
+     * Whether the unmarshaling should produce ordered maps (LinkedHashMap) for the lines values instead of lists. It
      * requires to have header (either defined or collected).
      */
     public void setUseOrderedMaps(String useOrderedMaps) {
@@ -498,7 +498,7 @@ public class CsvDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Whether the unmarshalling should capture the header record and store it in the message header
+     * Whether the unmarshaling should capture the header record and store it in the message header
      */
     public void setCaptureHeaderRecord(String captureHeaderRecord) {
         this.captureHeaderRecord = captureHeaderRecord;
@@ -532,7 +532,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         private String ignoreHeaderCase;
         private String trim;
         private String trailingDelimiter;
-        private String marshallerFactoryRef;
+        private String marshalerFactoryRef;
         private String lazyLoad;
         private String useMaps;
         private String useOrderedMaps;
@@ -540,13 +540,13 @@ public class CsvDataFormat extends DataFormatDefinition {
         private String captureHeaderRecord;
 
         /**
-         * Sets the implementation of the CsvMarshallerFactory interface which is able to customize
-         * marshalling/unmarshalling behavior by extending CsvMarshaller or creating it from scratch.
+         * Sets the implementation of the CsvMarshalerFactory interface which is able to customize
+         * marshaling/unmarshaling behavior by extending CsvMarshaler or creating it from scratch.
          *
-         * @param marshallerFactoryRef the <code>CsvMarshallerFactory</code> reference.
+         * @param marshalerFactoryRef the <code>CsvMarshalerFactory</code> reference.
          */
-        public Builder marshallerFactoryRef(String marshallerFactoryRef) {
-            this.marshallerFactoryRef = marshallerFactoryRef;
+        public Builder marshalerFactoryRef(String marshalerFactoryRef) {
+            this.marshalerFactoryRef = marshalerFactoryRef;
             return this;
         }
 
@@ -780,7 +780,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must
+         * Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must
          * be read at one.
          */
         public Builder lazyLoad(String lazyLoad) {
@@ -789,7 +789,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must
+         * Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must
          * be read at one.
          */
         public Builder lazyLoad(boolean lazyLoad) {
@@ -798,7 +798,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce maps (HashMap)for the lines values instead of lists. It requires to
+         * Whether the unmarshaling should produce maps (HashMap)for the lines values instead of lists. It requires to
          * have header (either defined or collected).
          */
         public Builder useMaps(String useMaps) {
@@ -807,7 +807,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce maps (HashMap)for the lines values instead of lists. It requires to
+         * Whether the unmarshaling should produce maps (HashMap)for the lines values instead of lists. It requires to
          * have header (either defined or collected).
          */
         public Builder useMaps(boolean useMaps) {
@@ -816,7 +816,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce ordered maps (LinkedHashMap) for the lines values instead of lists.
+         * Whether the unmarshaling should produce ordered maps (LinkedHashMap) for the lines values instead of lists.
          * It requires to have header (either defined or collected).
          */
         public Builder useOrderedMaps(String useOrderedMaps) {
@@ -825,7 +825,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce ordered maps (LinkedHashMap) for the lines values instead of lists.
+         * Whether the unmarshaling should produce ordered maps (LinkedHashMap) for the lines values instead of lists.
          * It requires to have header (either defined or collected).
          */
         public Builder useOrderedMaps(boolean useOrderedMaps) {
@@ -890,7 +890,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should capture the header record and store it in the message header
+         * Whether the unmarshaling should capture the header record and store it in the message header
          */
         public Builder captureHeaderRecord(String captureHeaderRecord) {
             this.captureHeaderRecord = captureHeaderRecord;
@@ -898,7 +898,7 @@ public class CsvDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should capture the header record and store it in the message header
+         * Whether the unmarshaling should capture the header record and store it in the message header
          */
         public Builder captureHeaderRecord(boolean captureHeaderRecord) {
             this.captureHeaderRecord = Boolean.toString(captureHeaderRecord);

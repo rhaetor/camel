@@ -63,7 +63,7 @@ public class ProtobufDataFormatReifier extends DataFormatReifier<ProtobufDataFor
             properties.put("moduleRefs", definition.getModuleRefs());
             properties.put("enableFeatures", definition.getEnableFeatures());
             properties.put("disableFeatures", definition.getDisableFeatures());
-            properties.put("allowUnmarshallType", definition.getAllowUnmarshallType());
+            properties.put("allowUnmarshalType", definition.getAllowUnmarshalType());
             properties.put("schemaResolver", asRef(definition.getSchemaResolver()));
             properties.put("autoDiscoverSchemaResolver", definition.getAutoDiscoverSchemaResolver());
         }

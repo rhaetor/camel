@@ -92,7 +92,7 @@ coordinator of the cluster (and ignore these sent to the "slave" nodes),
 use the `JGroupsFilters.dropNonCoordinatorViews()` filter. This filter
 is particularly useful when you want a single Camel node to become the
 master in the cluster, because messages passing this filter notifies you
- when a given node has become a coordinator of the cluster. The snippet
+when a given node has become a coordinator of the cluster. The snippet
 below demonstrates how to collect only messages received by the master
 node.
 

@@ -505,7 +505,7 @@ XML::
 ----
 ====
 
-You can set `inheritNamsepaceTagName` property to `*` to include the preceding context in each token (i.e., generating each token enclosed in its ancestor elements). It is noted that each token must share the same ancestor elements in this case.
+You can set `inheritNamsepaceTagName` property to `*` to include the preceding context in each token (that is, generating each token enclosed in its ancestor elements). It is noted that each token must share the same ancestor elements in this case.
 The above tokenizer works well on simple structures but has some inherent limitations in handling more complex XML structures.
 
 === Streaming big XML payloads using XML Tokenize language

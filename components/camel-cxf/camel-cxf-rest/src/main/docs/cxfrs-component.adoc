@@ -70,7 +70,6 @@ include::partial$component-endpoint-headers.adoc[]
 You can also configure the CXF REST endpoint through the spring
 configuration.
 
-
 [NOTE]
 ====
 Since there are lots of differences between the CXF REST
@@ -323,9 +322,9 @@ proxy-based client API], with this API you can invoke the remote REST
 service through a proxy. The `camel-cxfrs` producer is based on this
 http://cxf.apache.org/docs/jax-rs-client-api.html#JAX-RSClientAPI-Proxy-basedAPI[proxy
 API].
- You need to specify the operation name in the message header and
-prepare the parameter in the message body, the camel-cxfrs producer will
- generate the right REST request for you.
+You need to specify the operation name in the message header and prepare
+the parameter in the message body, the camel-cxfrs producer will generate
+the right REST request for you.
 
 Here is an example:
 [source,java]

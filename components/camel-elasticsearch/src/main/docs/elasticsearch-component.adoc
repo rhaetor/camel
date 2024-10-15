@@ -277,7 +277,7 @@ List<MultiSearchResponseItem<?>> response = template.requestBody("direct:multiSe
 
 == Document type
 
-For all the search operations, it is possible to indicate the type of document to retrieve to get the result already unmarshalled with the expected type.
+For all the search operations, it is possible to indicate the type of document to retrieve to get the result already unmarshaled with the expected type.
 
 The document type can be set using the header "documentClass" or via the uri parameter of the same name.
 

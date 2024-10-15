@@ -36,7 +36,7 @@ import org.apache.camel.util.json.JsonObject;
 import static org.apache.camel.tooling.util.PackageHelper.loadText;
 
 /**
- * Metadata components registry, used to keep track of the components generated DSLs in order to sync the pom file and
+ * Metadata components registry, used to keep track of the components generated DSLs to sync the pom file and
  * relevant main builder factory file
  */
 public class ComponentsDslMetadataRegistry {

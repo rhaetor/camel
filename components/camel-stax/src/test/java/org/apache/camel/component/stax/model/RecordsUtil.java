@@ -22,7 +22,7 @@ import java.io.IOException;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Marshaler;
 
 public final class RecordsUtil {
 
@@ -48,10 +48,10 @@ public final class RecordsUtil {
             records.getRecord().add(record);
         }
 
-        Marshaller marshaller;
+        Marshaler marshaler;
         try {
             JAXBContext jaxbCtx = JAXBContext.newInstance(Records.class.getPackage().getName());
-            marshaller = jaxbCtx.createMarshaller();
+            marshaler = jaxbCtx.createMarshaler();
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }
@@ -59,7 +59,7 @@ public final class RecordsUtil {
         FileWriter writer = null;
         try {
             writer = new FileWriter(in);
-            marshaller.marshal(records, writer);
+            marshaler.marshal(records, writer);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (JAXBException e) {

@@ -71,7 +71,7 @@ public abstract class AdviceWithRouteBuilder extends RouteBuilder {
 
     /**
      * Whether to log the adviced routes before/after as XML. This is usable to know how the route was adviced and
-     * changed. However marshalling the route model to XML costs CPU resources and you can then turn this off by not
+     * changed. However marshaling the route model to XML costs CPU resources and you can then turn this off by not
      * logging. This is default enabled.
      */
     public boolean isLogRouteAsXml() {
@@ -80,7 +80,7 @@ public abstract class AdviceWithRouteBuilder extends RouteBuilder {
 
     /**
      * Sets whether to log the adviced routes before/after as XML. This is usable to know how the route was adviced and
-     * changed. However marshalling the route model to XML costs CPU resources and you can then turn this off by not
+     * changed. However marshaling the route model to XML costs CPU resources and you can then turn this off by not
      * logging. This is default enabled.
      */
     public void setLogRouteAsXml(boolean logRouteAsXml) {

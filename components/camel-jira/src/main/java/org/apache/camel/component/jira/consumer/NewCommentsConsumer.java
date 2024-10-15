@@ -33,7 +33,7 @@ import org.slf4j.LoggerFactory;
  * NOTE: In your JQL, try to optimize the query as much as possible! For example, the JIRA Toolkit Plugin includes a //
  * "Number of comments" custom field -- use '"Number of comments" > 0' in your query. Also try to minimize based on //
  * state (status=Open), increase the polling delay, etc. We have to do a separate query for *every single* resulting
- * ticket in order to load its comments! For large organizations, the JIRA API can be significantly slow.
+ * ticket to load its comments! For large organizations, the JIRA API can be significantly slow.
  */
 public class NewCommentsConsumer extends AbstractJiraConsumer {
 

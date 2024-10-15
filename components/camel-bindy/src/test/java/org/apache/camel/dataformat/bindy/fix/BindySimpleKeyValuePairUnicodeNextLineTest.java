@@ -44,7 +44,7 @@ public class BindySimpleKeyValuePairUnicodeNextLineTest {
     private MockEndpoint result;
 
     @Test
-    public void testUnmarshallMessage() throws Exception {
+    public void testUnmarshalMessage() throws Exception {
         String sent = "8=FIX.4.1 37=1 38=1 40=\u0085butter";
 
         result.expectedMessageCount(1);

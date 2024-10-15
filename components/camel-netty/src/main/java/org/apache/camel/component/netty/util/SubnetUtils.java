@@ -41,10 +41,10 @@ public class SubnetUtils {
     private boolean inclusiveHostCount;
 
     /**
-     * Constructor that takes a CIDR-notation string, e.g. "192.168.0.1/16"
+     * Constructor that takes a CIDR-notation string, for example, "192.168.0.1/16"
      *
-     * @param  cidrNotation             A CIDR-notation string, e.g. "192.168.0.1/16"
-     * @throws IllegalArgumentException if the parameter is invalid, i.e. does not match n.n.n.n/m where n=1-3 decimal
+     * @param  cidrNotation             A CIDR-notation string, for example, "192.168.0.1/16"
+     * @throws IllegalArgumentException if the parameter is invalid, that is, does not match n.n.n.n/m where n=1-3 decimal
      *                                  digits, m = 1-3 decimal digits in range 1-32
      */
     public SubnetUtils(String cidrNotation) {
@@ -54,9 +54,9 @@ public class SubnetUtils {
     /**
      * Constructor that takes a dotted decimal address and a dotted decimal mask.
      *
-     * @param  address                  An IP address, e.g. "192.168.0.1"
-     * @param  mask                     A dotted decimal netmask e.g. "255.255.0.0"
-     * @throws IllegalArgumentException if the address or mask is invalid, i.e. does not match n.n.n.n where n=1-3
+     * @param  address                  An IP address, for example, "192.168.0.1"
+     * @param  mask                     A dotted decimal netmask for example, "255.255.0.0"
+     * @throws IllegalArgumentException if the address or mask is invalid, that is, does not match n.n.n.n where n=1-3
      *                                  decimal digits and the mask is not all zeros
      */
     public SubnetUtils(String address, String mask) {
@@ -90,7 +90,7 @@ public class SubnetUtils {
      *
      */
     public final class SubnetInfo {
-        /* Mask to convert unsigned int to a long (i.e. keep 32 bits) */
+        /* Mask to convert unsigned int to a long (that is, keep 32 bits) */
         private static final long UNSIGNED_INT_MASK = 0x0FFFFFFFFL;
 
         private SubnetInfo() {
@@ -135,7 +135,7 @@ public class SubnetUtils {
          * Returns true if the parameter <code>address</code> is in the range of usable endpoint addresses for this
          * subnet. This excludes the network and broadcast adresses.
          *
-         * @param  address A dot-delimited IPv4 address, e.g. "192.168.0.1"
+         * @param  address A dot-delimited IPv4 address, for example, "192.168.0.1"
          * @return         True if in range, false otherwise
          */
         public boolean isInRange(String address) {

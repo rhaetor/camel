@@ -26,7 +26,7 @@ import org.apache.camel.util.URISupport;
 /**
  * Helper for Camel endpoint URI strings.
  * <p>
- * In Camel, URIs are most commonly passed as strings and they are flexible e.g. they could contain expressions that
+ * In Camel, URIs are most commonly passed as strings and they are flexible for example, they could contain expressions that
  * prior evaluation could violate URI RFC, ...
  */
 final class FilesURIStrings {

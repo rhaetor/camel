@@ -235,7 +235,7 @@ public interface ConsulComponentBuilderFactory {
             return this;
         }
         /**
-         * Default to transform values retrieved from Consul i.e. on KV endpoint
+         * Default to transform values retrieved from Consul that is, on KV endpoint
          * to string.
          * 
          * The option is a: &lt;code&gt;boolean&lt;/code&gt; type.

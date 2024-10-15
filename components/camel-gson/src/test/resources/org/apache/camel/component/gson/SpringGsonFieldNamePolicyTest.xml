@@ -27,7 +27,7 @@
     <!-- START SNIPPET: e1 -->
     <!-- define the gson data format, where we configure the data format using the properties -->
     <bean id="gson" class="org.apache.camel.component.gson.GsonDataFormat">
-        <!-- we want to unmarshal to person pojo -->
+        <!-- we want to unmarshalto person pojo -->
         <property name="unmarshalType" value="org.apache.camel.component.gson.PersonPojo"/>
         <!-- we want to map fields to use lower case and underscores -->
         <property name="fieldNamingPolicy" value="LOWER_CASE_WITH_UNDERSCORES"/>

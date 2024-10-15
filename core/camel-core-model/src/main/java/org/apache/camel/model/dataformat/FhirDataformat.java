@@ -81,7 +81,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean", defaultValue = "true",
               description = "Whether the data format should set the Content-Type header with the type from the data format."
-                            + " For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON")
+                            + " For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON")
     private String contentTypeHeader;
 
     protected FhirDataformat(String dataFormatName) {
@@ -216,7 +216,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
      * Sets the server's base URL used by this parser. If a value is set, resource references will be turned into
      * relative references if they are provided as absolute URLs but have a base matching the given base.
      *
-     * @param serverBaseUrl The base URL, e.g. "http://example.com/base"
+     * @param serverBaseUrl The base URL, for example, "http://example.com/base"
      */
     public void setServerBaseUrl(String serverBaseUrl) {
         this.serverBaseUrl = serverBaseUrl;
@@ -245,7 +245,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
     /**
      * If set to <code>true</code> (default is false), the values supplied to {@link #setEncodeElements(Set)} will not
      * be applied to the root resource (typically a Bundle), but will be applied to any sub-resources contained within
-     * it (i.e. search result resources in that bundle)
+     * it (that is, search result resources in that bundle)
      */
     public void setEncodeElementsAppliesToChildResourcesOnly(String encodeElementsAppliesToChildResourcesOnly) {
         this.encodeElementsAppliesToChildResourcesOnly = encodeElementsAppliesToChildResourcesOnly;
@@ -380,7 +380,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
     /**
      * If set to <code>true</code> (which is the default), the Bundle.entry.fullUrl will override the
      * Bundle.entry.resource's resource id if the fullUrl is defined. This behavior happens when parsing the source data
-     * into a Bundle object. Set this to <code>false</code> if this is not the desired behavior (e.g. the client code
+     * into a Bundle object. Set this to <code>false</code> if this is not the desired behavior (for example, the client code
      * wishes to perform additional validation checks between the fullUrl and the resource id).
      *
      * @param overrideResourceIdWithBundleEntryFullUrl Set this to <code>false</code> to prevent the parser from
@@ -431,7 +431,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
      * </p>
      *
      * @param dontStripVersionsFromReferencesAtPaths A collection of paths for which the resource versions will not be
-     *                                               removed automatically when serializing, e.g.
+     *                                               removed automatically when serializing, for example
      *                                               "Patient.managingOrganization" or "AuditEvent.object.reference".
      *                                               Note that only resource name and field names with dots separating
      *                                               is allowed here (no repetition indicators, FluentPath expressions,
@@ -453,7 +453,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
      * </p>
      *
      * @param dontStripVersionsFromReferencesAtPaths A collection of paths for which the resource versions will not be
-     *                                               removed automatically when serializing, e.g.
+     *                                               removed automatically when serializing, for example
      *                                               "Patient.managingOrganization" or "AuditEvent.object.reference".
      *                                               Note that only resource name and field names with dots separating
      *                                               is allowed here (no repetition indicators, FluentPath expressions,
@@ -586,7 +586,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
          * Sets the server's base URL used by this parser. If a value is set, resource references will be turned into
          * relative references if they are provided as absolute URLs but have a base matching the given base.
          *
-         * @param serverBaseUrl The base URL, e.g. "http://example.com/base"
+         * @param serverBaseUrl The base URL, for example, "http://example.com/base"
          */
         public T serverBaseUrl(String serverBaseUrl) {
             this.serverBaseUrl = serverBaseUrl;
@@ -622,7 +622,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
         /**
          * If set to <code>true</code> (default is false), the values supplied to {@link #setEncodeElements(Set)} will
          * not be applied to the root resource (typically a Bundle), but will be applied to any sub-resources contained
-         * within it (i.e. search result resources in that bundle)
+         * within it (that is, search result resources in that bundle)
          */
         public T encodeElementsAppliesToChildResourcesOnly(String encodeElementsAppliesToChildResourcesOnly) {
             this.encodeElementsAppliesToChildResourcesOnly = encodeElementsAppliesToChildResourcesOnly;
@@ -632,7 +632,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
         /**
          * If set to <code>true</code> (default is false), the values supplied to {@link #setEncodeElements(Set)} will
          * not be applied to the root resource (typically a Bundle), but will be applied to any sub-resources contained
-         * within it (i.e. search result resources in that bundle)
+         * within it (that is, search result resources in that bundle)
          */
         public T encodeElementsAppliesToChildResourcesOnly(boolean encodeElementsAppliesToChildResourcesOnly) {
             this.encodeElementsAppliesToChildResourcesOnly = Boolean.toString(encodeElementsAppliesToChildResourcesOnly);
@@ -781,7 +781,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
         /**
          * If set to <code>true</code> (which is the default), the Bundle.entry.fullUrl will override the
          * Bundle.entry.resource's resource id if the fullUrl is defined. This behavior happens when parsing the source
-         * data into a Bundle object. Set this to <code>false</code> if this is not the desired behavior (e.g. the
+         * data into a Bundle object. Set this to <code>false</code> if this is not the desired behavior (for example, the
          * client code wishes to perform additional validation checks between the fullUrl and the resource id).
          *
          * @param overrideResourceIdWithBundleEntryFullUrl Set this to <code>false</code> to prevent the parser from
@@ -797,7 +797,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
         /**
          * If set to <code>true</code> (which is the default), the Bundle.entry.fullUrl will override the
          * Bundle.entry.resource's resource id if the fullUrl is defined. This behavior happens when parsing the source
-         * data into a Bundle object. Set this to <code>false</code> if this is not the desired behavior (e.g. the
+         * data into a Bundle object. Set this to <code>false</code> if this is not the desired behavior (for example, the
          * client code wishes to perform additional validation checks between the fullUrl and the resource id).
          *
          * @param overrideResourceIdWithBundleEntryFullUrl Set this to <code>false</code> to prevent the parser from
@@ -857,7 +857,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
          * </p>
          *
          * @param dontStripVersionsFromReferencesAtPaths A collection of paths for which the resource versions will not
-         *                                               be removed automatically when serializing, e.g.
+         *                                               be removed automatically when serializing, for example
          *                                               "Patient.managingOrganization" or
          *                                               "AuditEvent.object.reference". Note that only resource name and
          *                                               field names with dots separating is allowed here (no repetition
@@ -880,7 +880,7 @@ public abstract class FhirDataformat extends DataFormatDefinition implements Con
          * </p>
          *
          * @param dontStripVersionsFromReferencesAtPaths A collection of paths for which the resource versions will not
-         *                                               be removed automatically when serializing, e.g.
+         *                                               be removed automatically when serializing, for example
          *                                               "Patient.managingOrganization" or
          *                                               "AuditEvent.object.reference". Note that only resource name and
          *                                               field names with dots separating is allowed here (no repetition

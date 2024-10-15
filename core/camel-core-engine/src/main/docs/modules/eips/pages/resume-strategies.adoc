@@ -102,7 +102,7 @@ from("some:component")
 Camel comes with a few builtin strategies that can be used to store, retrieve and update the offsets. The following strategies are available:
 
 * `SingleNodeKafkaResumeStrategy`: a resume strategy from the `camel-kafka` component that uses Kafka as the store for the offsets and is suitable for single node integrations.
-* `MultiNodeKafkaResumeStrategy`: a resume strategy from the `camel-kafka` component that uses Kafka as the store for the offsets and is suitable for multi node integrations (i.e.: integrations running on clusters using the xref:components::master-component.adoc[camel-master] component.
+* `MultiNodeKafkaResumeStrategy`: a resume strategy from the `camel-kafka` component that uses Kafka as the store for the offsets and is suitable for multi node integrations (that is:  integrations running on clusters using the xref:components::master-component.adoc[camel-master] component.
 
 === Configuring the Strategies
 

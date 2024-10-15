@@ -22,7 +22,7 @@ import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 /**
- * Class used to test (un)marshalling using Camel JAXB and Camel Spring-WS
+ * Class used to test (un)marshaling using Camel JAXB and Camel Spring-WS
  */
 @XmlRootElement(name = "Quote")
 @XmlAccessorType(XmlAccessType.FIELD)

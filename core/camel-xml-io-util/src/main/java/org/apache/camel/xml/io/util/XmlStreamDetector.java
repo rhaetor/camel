@@ -40,7 +40,7 @@ import javax.xml.stream.XMLStreamReader;
  *
  * <p>
  * While we can have any kind of XML document and the namespaced content may be available at various places in the
- * document, most <em>sane</em> documents can be examined simply by looking at the root element. This can help e.g.,
+ * document, most <em>sane</em> documents can be examined simply by looking at the root element. This can help for example:
  * with <code>jbang run camel@camel run</code> to quickly detect what kind of XML document we're trying to <em>run</em>.
  * This can speed later, full parsing, because we know upfront what's in the doc.
  * </p>

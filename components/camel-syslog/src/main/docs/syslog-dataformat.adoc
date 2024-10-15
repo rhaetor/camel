@@ -2,7 +2,7 @@
 :doctitle: Syslog
 :shortname: syslog
 :artifactid: camel-syslog
-:description: Marshall SyslogMessages to RFC3164 and RFC5424 messages and back.
+:description: Marshal SyslogMessages to RFC3164 and RFC5424 messages and back.
 :since: 2.6
 :supportlevel: Stable
 :tabs-sync-option:
@@ -65,7 +65,7 @@ include::partial$dataformat-options.adoc[]
 To expose a Syslog listener service, we reuse the
 existing xref:ROOT:mina-component.adoc[Mina Component]
 or xref:ROOT:netty-component.adoc[Netty Component] where we just use
-the `SyslogDataFormat` to marshal and unmarshal messages
+the `SyslogDataFormat` to marshal and unmarshalmessages
 
 === Exposing a Syslog listener
 

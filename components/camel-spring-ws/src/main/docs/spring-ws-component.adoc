@@ -34,7 +34,10 @@ for this component:
 </dependency>
 ------------------------------------------------------------
 
-*Be aware* Spring WS version 4.x does not support Axiom anymore (because Axiom does not support Jakarta JEE 9)
+[IMPORTANT]
+====
+Spring WS version 4.x does not support Axiom anymore (because Axiom does not support Jakarta JEE 9)
+====
 
 == URI format
 
@@ -72,7 +75,7 @@ mappings] like `PayloadRootQNameEndpointMapping`,
 |=======================================================================
 
 As a consumer, the *address* should contain a value relevant to the
-specified mapping-type (e.g. a SOAP action, XPath expression). As a
+specified mapping-type (for example, a SOAP action, XPath expression). As a
  producer, the address should be set to the URI of the web service your
 calling upon.
 
@@ -429,10 +432,10 @@ An example of a route using `beanname`:
 <bean id="FutureEndpointDispatcher" class="org.apache.camel.component.spring.ws.bean.CamelEndpointDispatcher" />
 ------------------------------------------------------------------------------------------------------------------------
 
-== POJO (un)marshalling
+== POJO (un)marshaling
 
 Camel's pluggable data formats offer support for
-pojo/xml marshalling using libraries such as JAXB.
+pojo/xml marshaling using libraries such as JAXB.
 You can use these data formats in your route to send and
 receive pojo's, to and from web services.
 
@@ -447,7 +450,7 @@ jaxb.setContextPath("com.example.model");
 from("direct:example").marshal(jaxb).to("spring-ws:http://foo.com/bar").unmarshal(jaxb);
 ----------------------------------------------------------------------------------------
 
-Similarly, when _providing_ web services, you can unmarshal XML requests
+Similarly, when _providing_ web services, you can Unmarshal XML requests
 to POJO's and marshal the response message back to XML:
 
 [source,java]

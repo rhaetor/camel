@@ -34,7 +34,7 @@ public class CamelDefaultTracingObservationHandler extends DefaultTracingObserva
     }
 
     // Current implementation of OpenTelemetry is not doing hyphens
-    // e.g. ServiceB does not become service-b
+    // For example, ServiceB does not become service-b
     @Override
     public String getSpanName(Observation.Context context) {
         String name = context.getName();

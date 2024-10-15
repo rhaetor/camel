@@ -15,7 +15,7 @@
 *{component-header}*
 
 The Camel-Master endpoint provides a way to ensure only a single consumer in a cluster consumes from a given endpoint;
-with automatic fail over if that JVM dies.
+with automatic failover if that JVM dies.
 
 This can be handy if you need to consume from some legacy back end that either doesn't support concurrent
 consumption or due to commercial or stability reasons, you can only have a single connection at any point in time.
@@ -23,7 +23,7 @@ consumption or due to commercial or stability reasons, you can only have a singl
 == Using the master endpoint
 
 Just prefix any camel endpoint with **master:someName:** where _someName_ is a logical name and is
-used to acquire the master lock. e.g.
+used to acquire the master lock. for example
 
 [source,java]
 ----
@@ -37,7 +37,10 @@ this route will be active, and hence only this route will consume messages from 
 In case this route is stopped or unexpectedly terminated, then the master component will detect this,
 and re-elect another node to be active, which will then become active and start consuming messages from `jms:foo`.
 
-TIP: Apache ActiveMQ 5.x has such a feature out of the box called https://activemq.apache.org/exclusive-consumer.html[Exclusive Consumers].
+[TIP]
+====
+Apache ActiveMQ 5.x has such a feature out of the box called https://activemq.apache.org/exclusive-consumer.html[Exclusive Consumers].
+====
 
 == URI format
 
@@ -45,7 +48,7 @@ TIP: Apache ActiveMQ 5.x has such a feature out of the box called https://active
 master:namespace:endpoint[?options]
 ----
 
-Where endpoint is any Camel endpoint, you want to run in master/slave mode.
+Where `endpoint` is any Camel endpoint, you want to run in master/slave mode.
 
 
 // component-configure options: START

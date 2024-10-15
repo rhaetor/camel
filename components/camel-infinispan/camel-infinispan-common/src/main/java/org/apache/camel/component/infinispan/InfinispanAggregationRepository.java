@@ -71,12 +71,12 @@ public abstract class InfinispanAggregationRepository
         LOG.trace("Adding an Exchange with ID {} for key {} in a thread-safe manner.", exchange.getExchangeId(), key);
         DefaultExchangeHolder newHolder = DefaultExchangeHolder.marshal(exchange, true, allowSerializedHeaders);
         DefaultExchangeHolder oldHolder = getCache().put(key, newHolder);
-        return unmarshallExchange(camelContext, oldHolder);
+        return unmarshalExchange(camelContext, oldHolder);
     }
 
     @Override
     public Exchange get(CamelContext camelContext, String key) {
-        return unmarshallExchange(camelContext, getCache().get(key));
+        return unmarshalExchange(camelContext, getCache().get(key));
     }
 
     @Override
@@ -107,7 +107,7 @@ public abstract class InfinispanAggregationRepository
     @Override
     public Exchange recover(CamelContext camelContext, String exchangeId) {
         LOG.trace("Recovering an Exchange with ID {}.", exchangeId);
-        return useRecovery ? unmarshallExchange(camelContext, getCache().get(exchangeId)) : null;
+        return useRecovery ? unmarshalExchange(camelContext, getCache().get(exchangeId)) : null;
     }
 
     @Override
@@ -165,7 +165,7 @@ public abstract class InfinispanAggregationRepository
         }
     }
 
-    protected Exchange unmarshallExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
+    protected Exchange unmarshalExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
         Exchange exchange = null;
         if (holder != null) {
             exchange = new DefaultExchange(camelContext);

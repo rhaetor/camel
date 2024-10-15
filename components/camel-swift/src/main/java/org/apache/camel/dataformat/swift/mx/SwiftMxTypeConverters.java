@@ -23,7 +23,7 @@ import org.apache.camel.Converter;
 
 /**
  * {@code SwiftMxTypeConverters} provide some basic {@link org.apache.camel.TypeConverter}s that could be needed when
- * marshalling/unmarshalling SWIFT MX messages.
+ * marshaling/unmarshaling SWIFT MX messages.
  */
 @Converter(generateLoader = true)
 public final class SwiftMxTypeConverters {

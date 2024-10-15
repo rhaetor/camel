@@ -74,9 +74,9 @@ public class ThriftMarshalAndUnmarshalJsonTest extends CamelTestSupport {
         mock.expectedMessageCount(1);
         mock.message(0).body().isInstanceOf(Work.class);
 
-        Object marshalled = template.requestBody(inURI, WORK_JSON_TEST);
+        Object marshaled = template.requestBody(inURI, WORK_JSON_TEST);
 
-        template.sendBody(outURI, marshalled);
+        template.sendBody(outURI, marshaled);
 
         mock.assertIsSatisfied();
 

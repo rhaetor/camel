@@ -121,7 +121,7 @@ public class WriteAheadResumeStrategy implements ResumeStrategy, CamelContextAwa
     }
 
     /**
-     * Handles the result of an offset update for cached entries (i.e.: those kept on the in-memory transaction log)
+     * Handles the result of an offset update for cached entries (that is, : those kept on the in-memory transaction log)
      *
      * @param entryInfo the information about the entry that was updated
      * @param t         a instance of any throwable class that was thrown by the delegate resume strategy during update,
@@ -144,7 +144,7 @@ public class WriteAheadResumeStrategy implements ResumeStrategy, CamelContextAwa
     }
 
     /**
-     * Handles the result of an offset update for persisted entries (i.e.: those already saved to permanent storage)
+     * Handles the result of an offset update for persisted entries (that is, : those already saved to permanent storage)
      *
      * @param entry the information about the entry that was updated
      * @param t     a instance of any throwable class that was thrown by the delegate resume strategy during update, if

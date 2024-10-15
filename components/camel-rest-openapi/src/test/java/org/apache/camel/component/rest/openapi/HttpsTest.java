@@ -28,7 +28,7 @@ import java.util.Collections;
 import java.util.List;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Marshaler;
 
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
@@ -135,7 +135,7 @@ public abstract class HttpsTest extends CamelTestSupport {
 
                 final JaxbDataFormat jaxb = new JaxbDataFormat(jaxbContext);
 
-                jaxb.setJaxbProviderProperties(Collections.singletonMap(Marshaller.JAXB_FORMATTED_OUTPUT, false));
+                jaxb.setJaxbProviderProperties(Collections.singletonMap(Marshaler.JAXB_FORMATTED_OUTPUT, false));
 
                 from("direct:getPetById").to("petStore:getPetById").unmarshal(jaxb);
             }

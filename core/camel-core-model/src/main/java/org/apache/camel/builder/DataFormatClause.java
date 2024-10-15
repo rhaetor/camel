@@ -1383,7 +1383,7 @@ public class DataFormatClause<T extends ProcessorDefinition<?>> {
     }
 
     /**
-     * Allows {@code null} as value of a body to unmarshall.
+     * Allows {@code null} as value of a body to unmarshal.
      *
      * @return the builder
      */
@@ -1392,9 +1392,9 @@ public class DataFormatClause<T extends ProcessorDefinition<?>> {
     }
 
     /**
-     * Indicates whether {@code null} is allowed as value of a body to unmarshall.
+     * Indicates whether {@code null} is allowed as value of a body to unmarshal.
      *
-     * @param  allowNullBody {@code true} if {@code null} is allowed as value of a body to unmarshall, {@code false}
+     * @param  allowNullBody {@code true} if {@code null} is allowed as value of a body to unmarshal, {@code false}
      *                       otherwise
      * @return               the builder
      */

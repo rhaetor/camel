@@ -207,7 +207,7 @@ THE SOFTWARE.
 <xsl:param name="generate-paths">true</xsl:param>
 <xsl:param name="generate-fired-rule">true</xsl:param>
 <xsl:param name="optimize" />
-<!-- e.g. saxon file.xml file.xsl "sch.exslt.imports=.../string.xsl;.../math.xsl" -->
+<!-- for example, saxon file.xml file.xsl "sch.exslt.imports=.../string.xsl;.../math.xsl" -->
 <xsl:param name="sch.exslt.imports" />
 
 <xsl:param name="terminate" >false</xsl:param>
@@ -217,7 +217,7 @@ THE SOFTWARE.
  
 <xsl:param name="output-encoding"/>
 
-<!-- Set the default for schematron-select-full-path, i.e. the notation for svrl's @location-->
+<!-- Set the default for schematron-select-full-path, that is, the notation for svrl's @location-->
 <xsl:param name="full-path-notation">1</xsl:param>
 
 

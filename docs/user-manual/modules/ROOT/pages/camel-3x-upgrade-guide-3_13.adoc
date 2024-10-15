@@ -93,7 +93,7 @@ The `ScpOperations` class were modified to comply with the API changes on the `c
 
 === camel-kafka
 
-The `KafkaManualCommit` class were modified in order to support async manual commit. Please use the new function `commit()` instead of the old deprecated one `commitSync()`.
+The `KafkaManualCommit` class were modified to support async manual commit. Please use the new function `commit()` instead of the old deprecated one `commitSync()`.
 
 === camel-mllp
 
@@ -109,7 +109,7 @@ their applications when upgrading to ensure this continues to work.
 When using Rest DSL and the `restConfiguration` has a `contextPath` configured, then this value
 is used as leading base path for all API services that are in the generated api-docs.
 
-This is i.e. needed when using `camel-servlet` which runs under a specific `context-path`.
+This is that is, needed when using `camel-servlet` which runs under a specific `context-path`.
 
 Support for rendering api docs by discovering other CamelContext via JMX in the same JVM has been removed.
 Rendering of api docs is now only supported for the same CamelContext.

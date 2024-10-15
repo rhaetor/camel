@@ -37,7 +37,7 @@ public class FieldsToNullPropertyFilter extends SimpleBeanPropertyFilter {
             fieldValue = FieldUtils.readField(pojo, fieldName, true);
         } catch (IllegalArgumentException e) {
             // This happens if the backing field for the getter doesn't match the name provided to @JsonProperty
-            // This is expected to happen in the case of blob fields, e.g., ContentVersion.getVersionDataUrl(),
+            // This is expected to happen in the case of blob fields, for example, ContentVersion.getVersionDataUrl(),
             // whose backing property is specified as @JsonData("VersionData")
             failedToReadFieldValue = true;
         }

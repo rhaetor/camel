@@ -25,7 +25,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * DSL Generator class that generates component specific builder interface that contains the fluent methods, placed as
- * inner of the main component builder factory. E.g: KafkaComponentBuilderFactory.KafkaComponentBuilder
+ * inner of the main component builder factory. for example, KafkaComponentBuilderFactory.KafkaComponentBuilder
  */
 public final class ComponentDslInnerBuilderGenerator {
     private static final String BUILDER_SUFFIX = "Builder";

@@ -134,7 +134,7 @@ public class ContractAdvice implements CamelInternalProcessorAdvice<Object> {
             // Try TypeConverter as a fallback for Java->Java transformation
             convertIfRequired(message, to);
             // If Java->Other transformation required but no transformer matched,
-            // then assume it's already in expected type, i.e. do nothing.
+            // then assume it's already in expected type, that is, do nothing.
             return;
         } else if (applyTransformerChain(message, from, to)) {
             // Other->Other transformation - found a transformer chain

@@ -104,7 +104,7 @@ public class DynamicRouterConfiguration {
     private boolean ignoreInvalidEndpoints;
 
     /**
-     * If enabled, then Camel will process replies out-of-order (e.g., in the order they come back). If disabled, Camel
+     * If enabled, then Camel will process replies out-of-order (for example, in the order they come back). If disabled, Camel
      * will process replies in the same order as defined by the multicast.
      */
     @UriParam(label = "common", defaultValue = "false")

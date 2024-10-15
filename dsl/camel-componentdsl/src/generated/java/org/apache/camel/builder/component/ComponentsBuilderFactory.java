@@ -3805,7 +3805,7 @@ public interface ComponentsBuilderFactory {
     }
     /**
      * Splunk HEC (camel-splunk-hec)
-     * The splunk component allows publishing events in Splunk using the HTTP
+     * The splunk component allows you to publish events in Splunk using the HTTP
      * Event Collector.
      * 
      * Category: monitoring

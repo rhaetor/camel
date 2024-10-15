@@ -319,7 +319,7 @@ public class MongoDbTailableCursorConsumerIT extends AbstractMongoDbITSupport im
         t.join();
         mock.assertIsSatisfied();
         // check that the first received body contains increasing=301 and not
-        // increasing=1, i.e. it's not starting from the top
+        // increasing=1, that is, it's not starting from the top
         Object firstBody = mock.getExchanges().get(0).getIn().getBody();
         assertTrue(firstBody instanceof Document);
         assertEquals(301, (Document.class.cast(firstBody)).get("increasing"));

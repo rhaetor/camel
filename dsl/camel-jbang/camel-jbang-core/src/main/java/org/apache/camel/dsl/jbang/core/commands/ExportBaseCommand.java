@@ -187,7 +187,7 @@ abstract class ExportBaseCommand extends CamelCommand {
                                       "Use false to turn off and not include package name in the Java source files.")
     protected String packageName;
 
-    @CommandLine.Option(names = { "--fresh" }, description = "Make sure we use fresh (i.e. non-cached) resources")
+    @CommandLine.Option(names = { "--fresh" }, description = "Make sure we use fresh (that is, non-cached) resources")
     protected boolean fresh;
 
     @CommandLine.Option(names = { "--download" }, defaultValue = "true",

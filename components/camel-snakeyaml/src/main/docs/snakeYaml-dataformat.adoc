@@ -14,7 +14,7 @@
 YAML is a Data Format to marshal and unmarshal
 Java objects to and from http://www.yaml.org/[YAML].
 
-For YAML to object marshalling, Camel provides integration with three
+For YAML to object marshaling, Camel provides integration with three
 popular YAML libraries:
 
 * The http://www.snakeyaml.org/[SnakeYAML] library

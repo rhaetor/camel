@@ -34,7 +34,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvOneToManyMarshallTest {
+public class BindySimpleCsvOneToManyMarshalTest {
 
     private List<Map<String, Object>> models = new ArrayList<>();
     private String result
@@ -48,7 +48,7 @@ public class BindySimpleCsvOneToManyMarshallTest {
     private MockEndpoint resultEndpoint;
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         resultEndpoint.expectedBodiesReceived(result);
 
         template.sendBody(generateModel());

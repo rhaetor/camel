@@ -34,7 +34,7 @@ public class HeaderValidationHandler extends BasicValidationHandler {
     // in HttpRequest.
     protected final Map<String, String> expectedHeaders;
     // List of headers that are expected to be absent from HttpRequest
-    // (e.g. for testing filtering).
+    // (for example, for testing filtering).
     protected List<String> absentHeaders;
 
     public HeaderValidationHandler(String expectedMethod, String expectedQuery,

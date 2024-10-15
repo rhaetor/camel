@@ -58,7 +58,7 @@ from("direct:list").
 
 This operation returns a List of Deployment Configs from your cluster
 
-- listDeploymentConfigsByLabels:  this operation lists the deployment configs by labels on an Openshift cluster
+- listDeploymentConfigsByLabels: this operation lists the deployment configs by labels on an Openshift cluster
 
 [source,java]
 --------------------------------------------------------------------------------

@@ -70,7 +70,7 @@ public class CMSenderOneMessageImpl implements CMSender {
     }
 
     /**
-     * Sends a message to CM endpoints. 1. CMMessage instance is going to be marshalled to xml. 2. Post request xml
+     * Sends a message to CM endpoints. 1. CMMessage instance is going to be marshaled to xml. 2. Post request xml
      * string to CMEndpoint.
      */
     @Override

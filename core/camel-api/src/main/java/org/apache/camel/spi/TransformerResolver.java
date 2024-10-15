@@ -33,7 +33,7 @@ public interface TransformerResolver<K> {
      * Attempts to resolve the transformer for the given key. Usually uses the factory finder URI to resolve the
      * transformer by its name derived from the given key. Transformer names may use scheme and name as a combination in
      * order to resolve component specific transformers. Usually implements a fallback resolving mechanism when no
-     * matching transformer is found (e.g. search for generic Camel transformers just using the name).
+     * matching transformer is found (for example, search for generic Camel transformers just using the name).
      *
      * @param  key          the transformer key.
      * @param  camelContext the current Camel context.

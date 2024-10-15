@@ -41,7 +41,7 @@ public enum DefaultTaskExecutorType {
      * {@link ThreadPoolExecutor}.
      * </ul>
      * <ul>
-     * {@code maxPoolSize}, default value, i.e. no upper bound (as concurrency should be limited by the endpoint's
+     * {@code maxPoolSize}, default value, that is, no upper bound (as concurrency should be limited by the endpoint's
      * maxConcurrentConsumers, not by the thread pool).
      * </ul>
      * </li>

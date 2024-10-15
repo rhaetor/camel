@@ -106,7 +106,7 @@ public final class RestOpenApiComponent extends DefaultComponent implements SSLC
 
     @Metadata(description = "Scheme hostname and port to direct the HTTP requests to in the form of"
                             + " `http[s]://hostname[:port]`. Can be configured at the endpoint, component or in the corresponding"
-                            + " REST configuration in the Camel Context. If you give this component a name (e.g. `petstore`) that"
+                            + " REST configuration in the Camel Context. If you give this component a name (for example, `petstore`) that"
                             + " REST configuration is consulted first, `rest-openapi` next, and global configuration last. If set"
                             + " overrides any value found in the OpenApi specification, RestConfiguration. Can be overridden in endpoint"
                             + " configuration.",
@@ -124,7 +124,7 @@ public final class RestOpenApiComponent extends DefaultComponent implements SSLC
                             + " specification, but these can be overridden with properties on the component or endpoint level. If not"
                             + " given the component tries to load `openapi.json` resource. Note that the `host` defined on the"
                             + " component and endpoint of this Component should contain the scheme, hostname and optionally the"
-                            + " port in the URI syntax (i.e. `https://api.example.com:8080`). Can be overridden in endpoint"
+                            + " port in the URI syntax (that is, `https://api.example.com:8080`). Can be overridden in endpoint"
                             + " configuration.",
               defaultValue = DEFAULT_SPECIFICATION_URI_STR, label = "producer")
     private URI specificationUri;

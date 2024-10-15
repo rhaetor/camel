@@ -99,7 +99,7 @@ public class GrokDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Whether to capture named expressions only or not (i.e. %{IP:ip} but not ${IP})
+     * Whether to capture named expressions only or not (that is, %{IP:ip} but not ${IP})
      */
     public void setNamedOnly(String namedOnly) {
         this.namedOnly = namedOnly;
@@ -166,7 +166,7 @@ public class GrokDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether to capture named expressions only or not (i.e. %{IP:ip} but not ${IP})
+         * Whether to capture named expressions only or not (that is, %{IP:ip} but not ${IP})
          */
         public Builder namedOnly(String namedOnly) {
             this.namedOnly = namedOnly;
@@ -174,7 +174,7 @@ public class GrokDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether to capture named expressions only or not (i.e. %{IP:ip} but not ${IP})
+         * Whether to capture named expressions only or not (that is, %{IP:ip} but not ${IP})
          */
         public Builder namedOnly(boolean namedOnly) {
             this.namedOnly = Boolean.toString(namedOnly);

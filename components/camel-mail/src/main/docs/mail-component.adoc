@@ -522,7 +522,7 @@ Notice the "now-24h" syntax. See the table below for more details.
 --------------------------------------------------------------------------------------------------
 
 You can have multiple searchTerm in the endpoint uri configuration. They
-would then be combined using the `AND` operator, e.g., so both
+would then be combined using the `AND` operator, for example, so both
 conditions must match. For example, to get the last unseen emails going
 back 24 hours which has Camel in the mail subject you can do:
 

@@ -34,9 +34,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvUnmarshallBadIntegerTest {
+public class BindySimpleCsvUnmarshalBadIntegerTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BindySimpleCsvUnmarshallBadIntegerTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BindySimpleCsvUnmarshalBadIntegerTest.class);
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_MOCK_ERROR = "mock:error";

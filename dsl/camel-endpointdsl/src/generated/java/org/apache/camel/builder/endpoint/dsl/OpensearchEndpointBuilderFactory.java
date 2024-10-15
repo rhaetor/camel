@@ -745,7 +745,7 @@ public interface OpensearchEndpointBuilderFactory {
         }
 
         /**
-         * The full qualified name of the class of the document to unmarshall.
+         * The full qualified name of the class of the document to unmarshal.
          * 
          * The option is a: {@code Class} type.
          * 

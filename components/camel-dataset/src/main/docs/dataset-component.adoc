@@ -164,7 +164,7 @@ If the value is less than the size of the `defaultBodies` list, some of the list
 used.
 If the value is greater than the size of the `defaultBodies` list,
 the payload for the exchange will be selected using the modulus of the
-`CamelDataSetIndex` and the size of the `defaultBodies` list (i.e.,
+`CamelDataSetIndex` and the size of the `defaultBodies` list (that is, ,
 `CamelDataSetIndex % defaultBodies.size()` )
 |===
 

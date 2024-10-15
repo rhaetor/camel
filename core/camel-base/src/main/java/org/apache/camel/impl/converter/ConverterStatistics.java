@@ -35,7 +35,7 @@ interface ConverterStatistics extends TypeConverterRegistry.Statistics {
     void incrementFailed();
 
     /**
-     * Increment the count of noop conversions (i.e.; ones in which a type conversion was not needed)
+     * Increment the count of noop conversions (that is, ones in which a type conversion was not needed)
      */
     void incrementNoop();
 

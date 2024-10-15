@@ -136,7 +136,7 @@ public interface IrcEndpointBuilderFactory {
         }
         /**
          * Sends NAMES command to channel after joining it. onReply has to be
-         * true in order to process the result which will have the header value
+         * true to process the result which will have the header value
          * irc.num = '353'.
          * 
          * The option is a: &lt;code&gt;boolean&lt;/code&gt; type.
@@ -153,7 +153,7 @@ public interface IrcEndpointBuilderFactory {
         }
         /**
          * Sends NAMES command to channel after joining it. onReply has to be
-         * true in order to process the result which will have the header value
+         * true to process the result which will have the header value
          * irc.num = '353'.
          * 
          * The option will be converted to a &lt;code&gt;boolean&lt;/code&gt;
@@ -897,7 +897,7 @@ public interface IrcEndpointBuilderFactory {
         }
         /**
          * Sends NAMES command to channel after joining it. onReply has to be
-         * true in order to process the result which will have the header value
+         * true to process the result which will have the header value
          * irc.num = '353'.
          * 
          * The option is a: &lt;code&gt;boolean&lt;/code&gt; type.
@@ -914,7 +914,7 @@ public interface IrcEndpointBuilderFactory {
         }
         /**
          * Sends NAMES command to channel after joining it. onReply has to be
-         * true in order to process the result which will have the header value
+         * true to process the result which will have the header value
          * irc.num = '353'.
          * 
          * The option will be converted to a &lt;code&gt;boolean&lt;/code&gt;
@@ -1583,7 +1583,7 @@ public interface IrcEndpointBuilderFactory {
         }
         /**
          * Sends NAMES command to channel after joining it. onReply has to be
-         * true in order to process the result which will have the header value
+         * true to process the result which will have the header value
          * irc.num = '353'.
          * 
          * The option is a: &lt;code&gt;boolean&lt;/code&gt; type.
@@ -1600,7 +1600,7 @@ public interface IrcEndpointBuilderFactory {
         }
         /**
          * Sends NAMES command to channel after joining it. onReply has to be
-         * true in order to process the result which will have the header value
+         * true to process the result which will have the header value
          * irc.num = '353'.
          * 
          * The option will be converted to a &lt;code&gt;boolean&lt;/code&gt;

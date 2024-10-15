@@ -25,17 +25,17 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.infinispan.InfinispanOperation;
 import org.apache.camel.component.infinispan.InfinispanQueryBuilder;
 import org.infinispan.client.hotrod.configuration.ConfigurationBuilder;
-import org.infinispan.client.hotrod.marshall.MarshallerUtil;
+import org.infinispan.client.hotrod.marshal.MarshalerUtil;
 import org.infinispan.commons.api.BasicCache;
-import org.infinispan.commons.marshall.ProtoStreamMarshaller;
+import org.infinispan.commons.marshal.ProtoStreamMarshaler;
 import org.infinispan.commons.util.Util;
 import org.infinispan.protostream.FileDescriptorSource;
 import org.infinispan.protostream.SerializationContext;
 import org.infinispan.protostream.sampledomain.User;
-import org.infinispan.protostream.sampledomain.marshallers.GenderMarshaller;
-import org.infinispan.protostream.sampledomain.marshallers.UserMarshaller;
+import org.infinispan.protostream.sampledomain.marshalers.GenderMarshaler;
+import org.infinispan.protostream.sampledomain.marshalers.UserMarshaler;
 import org.infinispan.query.remote.client.ProtobufMetadataManagerConstants;
-import org.infinispan.query.remote.client.impl.MarshallerRegistration;
+import org.infinispan.query.remote.client.impl.MarshalerRegistration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -113,17 +113,17 @@ public class InfinispanRemoteQueryProducerIT extends InfinispanRemoteQueryTestSu
         BasicCache<Object, Object> cache = getCache(ProtobufMetadataManagerConstants.PROTOBUF_METADATA_CACHE_NAME);
         cache.put("sample_bank_account/bank.proto", proto);
 
-        MarshallerRegistration.init(MarshallerUtil.getSerializationContext(cacheContainer));
-        SerializationContext serCtx = MarshallerUtil.getSerializationContext(cacheContainer);
+        MarshalerRegistration.init(MarshalerUtil.getSerializationContext(cacheContainer));
+        SerializationContext serCtx = MarshalerUtil.getSerializationContext(cacheContainer);
         serCtx.registerProtoFiles(FileDescriptorSource.fromResources("/sample_bank_account/bank.proto"));
-        serCtx.registerMarshaller(new UserMarshaller());
-        serCtx.registerMarshaller(new GenderMarshaller());
+        serCtx.registerMarshaler(new UserMarshaler());
+        serCtx.registerMarshaler(new GenderMarshaler());
     }
 
     @Override
     protected ConfigurationBuilder getConfiguration() {
         ConfigurationBuilder builder = super.getConfiguration();
-        builder.marshaller(new ProtoStreamMarshaller());
+        builder.marshaler(new ProtoStreamMarshaler());
 
         return builder;
     }

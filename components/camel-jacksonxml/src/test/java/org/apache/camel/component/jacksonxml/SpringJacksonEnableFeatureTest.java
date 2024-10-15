@@ -29,10 +29,10 @@ public class SpringJacksonEnableFeatureTest extends CamelSpringTestSupport {
     public void testMarshal() {
         TestPojoView in = new TestPojoView();
 
-        Object marshalled = template.requestBody("direct:in", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
+        Object marshaled = template.requestBody("direct:in", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
         // we enable the wrap root type feature so we should have TestPojoView
-        assertEquals("<TestPojoView><age>30</age><height>190</height><weight>70</weight></TestPojoView>", marshalledAsString);
+        assertEquals("<TestPojoView><age>30</age><height>190</height><weight>70</weight></TestPojoView>", marshaledAsString);
     }
 
     @Override

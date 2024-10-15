@@ -407,7 +407,7 @@ metrics:gauge:metricname[?options]
 |subject  |- |Any object to be observed by the gauge
 |=====================================================
 
-If `subject` is not defined it's simply ignored, i.e., the gauge is not registered.
+If `subject` is not defined it's simply ignored, that is, the gauge is not registered.
 
 [source,java]
 ----

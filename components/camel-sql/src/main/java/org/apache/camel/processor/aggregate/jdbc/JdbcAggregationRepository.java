@@ -276,7 +276,7 @@ public class JdbcAggregationRepository extends ServiceSupport
     protected int insertHelper(
             final CamelContext camelContext, final String key, final Exchange exchange, String sql, final Long version)
             throws Exception {
-        final byte[] data = codec.marshallExchange(exchange, allowSerializedHeaders);
+        final byte[] data = codec.marshalExchange(exchange, allowSerializedHeaders);
         Integer insertCount = jdbcTemplate.execute(sql,
                 new AbstractLobCreatingPreparedStatementCallback(getLobHandler()) {
                     @Override
@@ -302,7 +302,7 @@ public class JdbcAggregationRepository extends ServiceSupport
     protected int updateHelper(
             final CamelContext camelContext, final String key, final Exchange exchange, String sql, final Long version)
             throws Exception {
-        final byte[] data = codec.marshallExchange(exchange, allowSerializedHeaders);
+        final byte[] data = codec.marshalExchange(exchange, allowSerializedHeaders);
         Integer updateCount = jdbcTemplate.execute(sql,
                 new AbstractLobCreatingPreparedStatementCallback(getLobHandler()) {
                     @Override
@@ -347,7 +347,7 @@ public class JdbcAggregationRepository extends ServiceSupport
                             String.format("SELECT %1$s, %2$s FROM %3$s WHERE %4$s=?", EXCHANGE, VERSION, repositoryName, ID),
                             new Object[] { key }, new int[] { Types.VARCHAR });
 
-                    byte[] marshalledExchange = (byte[]) columns.get(EXCHANGE);
+                    byte[] marshaledExchange = (byte[]) columns.get(EXCHANGE);
                     long version;
                     Object versionObj = columns.get(VERSION);
                     if (versionObj instanceof BigDecimal) {
@@ -356,7 +356,7 @@ public class JdbcAggregationRepository extends ServiceSupport
                         version = (long) versionObj;
                     }
 
-                    Exchange result = codec.unmarshallExchange(camelContext, marshalledExchange, deserializationFilter);
+                    Exchange result = codec.unmarshalExchange(camelContext, marshaledExchange, deserializationFilter);
                     result.setProperty(VERSION_PROPERTY, version);
                     return result;
 

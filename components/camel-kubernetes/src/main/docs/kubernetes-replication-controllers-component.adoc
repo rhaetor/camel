@@ -59,7 +59,7 @@ from("direct:list").
 
 This operation returns a List of RCs from your cluster
 
-- listReplicationControllersByLabels:  this operation lists the RCs by labels on a kubernetes cluster
+- listReplicationControllersByLabels: this operation lists the RCs by labels on a kubernetes cluster
 
 [source,java]
 --------------------------------------------------------------------------------

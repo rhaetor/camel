@@ -40,12 +40,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ContextConfiguration
 public class BindyConverterTest extends CamelTestSupport {
 
-    public static final String URI_DIRECT_MARSHALL = "direct:marshall";
-    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshall";
+    public static final String URI_DIRECT_MARSHALL = "direct:marshal";
+    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshal";
     public static final String URI_DIRECT_THROUGH = "direct:through";
 
-    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshall-result";
-    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshall-result";
+    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshal-result";
+    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshal-result";
     public static final String URI_MOCK_THROUGH = "mock:through-result";
 
     // *************************************************************************
@@ -76,7 +76,7 @@ public class BindyConverterTest extends CamelTestSupport {
 
     @Test
     @DirtiesContext
-    public void testMarshall() throws Exception {
+    public void testMarshal() throws Exception {
         DataModel rec = new DataModel();
         rec.field1 = "0123456789";
         mresult.expectedBodiesReceived("9876543210\r\n");
@@ -87,7 +87,7 @@ public class BindyConverterTest extends CamelTestSupport {
 
     @Test
     @DirtiesContext
-    public void testUnMarshall() throws Exception {
+    public void testUnMarshal() throws Exception {
         utemplate.sendBody("9876543210\r\n");
 
         uresult.expectedMessageCount(1);

@@ -109,7 +109,7 @@ public class DefaultCxfBinding implements CxfBinding, HeaderFilterStrategyAware 
 
     /**
      * This method is called by {@link CxfProducer#process(Exchange)}. It populates the CXF exchange and invocation
-     * context (i.e. request/response) contexts, it but does not create and populate a CXF message as a ClientImpl's
+     * context (that is, request/response) contexts, it but does not create and populate a CXF message as a ClientImpl's
      * invoke method will create a new CXF Message. That method will put all properties from the CXF exchange and
      * request context to the CXF message.
      */

@@ -25,13 +25,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This class replicates the essential parts of the String class in order to aid proper work for Unicode chars in the
+ * This class replicates the essential parts of the String class to aid proper work for Unicode chars in the
  * presense of UTF-16. So for all operations please see {@link String} with the same signature. This class is equally
  * immutable.
  */
 public class UnicodeHelper implements Serializable {
     /**
-     * Defines how length if a string is defined, i.e how chars are counted.
+     * Defines how length if a string is defined, that is, how chars are counted.
      */
     public enum Method {
         /**

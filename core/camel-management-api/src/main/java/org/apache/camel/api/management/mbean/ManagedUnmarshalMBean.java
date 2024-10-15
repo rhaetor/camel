@@ -29,7 +29,7 @@ public interface ManagedUnmarshalMBean extends ManagedProcessorMBean {
     @ManagedAttribute(description = "Variable to store the received message body (only body, not headers)")
     String getVariableReceive();
 
-    @ManagedAttribute(description = "Whether null is allowed as value of a body to unmarshall")
+    @ManagedAttribute(description = "Whether null is allowed as value of a body to unmarshal")
     boolean isAllowNullBody();
 
 }

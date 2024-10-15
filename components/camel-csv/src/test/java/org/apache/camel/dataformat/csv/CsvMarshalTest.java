@@ -29,7 +29,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * This class tests standard marshalling
+ * This class tests standard marshaling
  */
 public class CsvMarshalTest extends CamelTestSupport {
     @EndpointInject("mock:output")

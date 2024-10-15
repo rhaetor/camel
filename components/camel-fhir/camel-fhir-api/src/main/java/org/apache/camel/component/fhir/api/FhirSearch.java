@@ -38,9 +38,9 @@ public class FhirSearch {
     /**
      * Perform a search directly by URL.
      *
-     * @param  url             The URL to search for. Note that this URL may be complete (e.g.
+     * @param  url             The URL to search for. Note that this URL may be complete (for example
      *                         "http://example.com/base/Patient?name=foo") in which case the client's base URL will be
-     *                         ignored. Or it can be relative (e.g. "Patient?name=foo") in which case the client's base
+     *                         ignored. Or it can be relative (for example, "Patient?name=foo") in which case the client's base
      *                         URL will be used.
      * @param  extraParameters see {@link ExtraParameters} for a full list of parameters that can be passed, may be NULL
      * @return                 the {@link IBaseBundle}

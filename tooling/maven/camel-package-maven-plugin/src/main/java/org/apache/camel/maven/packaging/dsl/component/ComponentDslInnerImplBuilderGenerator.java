@@ -24,7 +24,7 @@ import org.apache.camel.tooling.util.srcgen.JavaClass;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * DSL Generator class that generates component implementation of the component builder interface. E.g: class
+ * DSL Generator class that generates component implementation of the component builder interface. for example, class
  * KafkaComponentBuilderImpl extends AbstractComponentBuilder implements KafkaComponentBuilder
  */
 public final class ComponentDslInnerImplBuilderGenerator {

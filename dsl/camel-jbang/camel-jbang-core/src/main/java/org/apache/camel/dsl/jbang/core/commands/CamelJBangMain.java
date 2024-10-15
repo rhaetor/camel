@@ -162,7 +162,7 @@ public class CamelJBangMain implements Callable<Integer> {
 
     /**
      * Finish this main with given exit code. By default, uses system exit to terminate. Subclasses may want to
-     * overwrite this exit behavior e.g. during unit tests.
+     * overwrite this exit behavior for example, during unit tests.
      *
      * @param exitCode
      */

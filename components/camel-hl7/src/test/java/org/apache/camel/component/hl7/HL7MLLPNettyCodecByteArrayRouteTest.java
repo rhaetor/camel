@@ -131,7 +131,7 @@ public class HL7MLLPNettyCodecByteArrayRouteTest extends HL7TestSupport {
                 // we setup or HL7 listener on port 8888 (using the hl7codec)
                 // and in sync mode so we can return a response
                 from("netty:tcp://127.0.0.1:" + getPort() + "?sync=true&encoders=#hl7encoder&decoders=#hl7decoder")
-                        // we use the HL7 data format to unmarshal from HL7 stream
+                        // we use the HL7 data format to unmarshalfrom HL7 stream
                         // to the HAPI Message model
                         // this ensures that the camel message has been enriched
                         // with hl7 specific headers to
@@ -150,7 +150,7 @@ public class HL7MLLPNettyCodecByteArrayRouteTest extends HL7TestSupport {
                         .otherwise().to("mock:unknown")
                         // end choice block
                         .end()
-                        // marshal response back
+                        // marshalresponse back
                         .marshal(hl7);
                 // END SNIPPET: e1
             }

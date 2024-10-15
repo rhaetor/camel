@@ -83,7 +83,7 @@ public class CassandraAggregationRepository extends ServiceSupport implements Re
      */
     private String[] pkColumns = { "KEY" };
     /**
-     * Exchange marshaller/unmarshaller
+     * Exchange marshaler/unmarshaler
      */
     private final CassandraCamelCodec exchangeCodec = new CassandraCamelCodec();
     /**
@@ -189,8 +189,8 @@ public class CassandraAggregationRepository extends ServiceSupport implements Re
         final Object[] idValues = getPKValues(key);
         LOGGER.debug("Inserting key {} exchange {}", idValues, exchange);
         try {
-            ByteBuffer marshalledExchange = exchangeCodec.marshallExchange(exchange, allowSerializedHeaders);
-            Object[] cqlParams = concat(idValues, new Object[] { exchange.getExchangeId(), marshalledExchange });
+            ByteBuffer marshaledExchange = exchangeCodec.marshalExchange(exchange, allowSerializedHeaders);
+            Object[] cqlParams = concat(idValues, new Object[] { exchange.getExchangeId(), marshaledExchange });
             getSession().execute(insertStatement.bind(cqlParams));
             return exchange;
         } catch (IOException iOException) {
@@ -219,7 +219,7 @@ public class CassandraAggregationRepository extends ServiceSupport implements Re
         Exchange exchange = null;
         if (row != null) {
             try {
-                exchange = exchangeCodec.unmarshallExchange(camelContext, row.getByteBuffer(exchangeColumn),
+                exchange = exchangeCodec.unmarshalExchange(camelContext, row.getByteBuffer(exchangeColumn),
                         deserializationFilter);
             } catch (IOException iOException) {
                 throw new CassandraAggregationException("Failed to read exchange", exchange, iOException);

@@ -124,7 +124,7 @@ public class RedeliveryPolicyDefinition extends IdentifiedType implements Clonea
 
     /**
      * Allow asynchronous delayed redelivery. The route, in particular the consumer's component, must support the
-     * Asynchronous Routing Engine (e.g. seda).
+     * Asynchronous Routing Engine (for example, seda).
      *
      * @return the builder
      */

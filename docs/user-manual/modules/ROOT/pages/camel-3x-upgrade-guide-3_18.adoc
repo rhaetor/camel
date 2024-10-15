@@ -65,7 +65,7 @@ IMPORTANT: The namespace for Apache Camel Karaf (`camel-cxf-blueprint`) has *not
 This module has not been split-up and comes with both SOAP and REST combined as before.
 
 And the `camel-cxf` SOAP component is moved to a new `jaxws` sub-package,
-i.e. `org.apache.camel.component.cxf` is now `org.apache.camel.component.cxf.jaws`.
+that is, `org.apache.camel.component.cxf` is now `org.apache.camel.component.cxf.jaws`.
 
 This means, for example, the `CxfComponent` class is now located
 in `org.apache.camel.component.cxf.jaxws`.

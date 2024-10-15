@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.dataformat.bindy.fixed.marshall.simple;
+package org.apache.camel.dataformat.bindy.fixed.marshal.simple;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ import static org.apache.camel.test.junit5.TestSupport.assertIsInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class BindySimpleFixedLengthMarshallWithNoClipTest extends CamelTestSupport {
+public class BindySimpleFixedLengthMarshalWithNoClipTest extends CamelTestSupport {
 
     private List<Map<String, Object>> models = new ArrayList<>();
 
@@ -56,7 +56,7 @@ public class BindySimpleFixedLengthMarshallWithNoClipTest extends CamelTestSuppo
     }
 
     @Test
-    public void testMarshallMessage() {
+    public void testMarshalMessage() {
         List<Map<String, Object>> model = generateModel();
         Exception ex = assertThrows(CamelExecutionException.class,
                 () -> template.sendBody("direct:start", model));

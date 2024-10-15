@@ -28,8 +28,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Data type converter receives a name and a target type in order to use traditional exchange body conversion mechanisms
- * in order to transform the message body to a given type.
+ * Data type converter receives a name and a target type to use traditional exchange body conversion mechanisms
+ * to transform the message body to a given type.
  */
 public class TypeConverterTransformer extends Transformer {
 

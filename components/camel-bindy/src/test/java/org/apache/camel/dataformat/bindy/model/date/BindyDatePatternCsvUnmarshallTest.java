@@ -41,7 +41,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindyDatePatternCsvUnmarshallTest {
+public class BindyDatePatternCsvUnmarshalTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";
@@ -56,7 +56,7 @@ public class BindyDatePatternCsvUnmarshallTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
         expected = "10,Christian,Mueller,12-24-2013,12-26-2015,01-06-2016 12:14:49,13:15:01,03-23-2017 11:17:43Z,broken";
 
         result.expectedBodiesReceived(expected + "\r\n");

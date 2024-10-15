@@ -54,7 +54,7 @@ public class FhirOperation {
      * @param  useHttpGet          use HTTP GET verb
      * @param  returnType          If this operation returns a single resource body as its return type instead of a
      *                             <code>Parameters</code> resource, use this method to specify that resource type. This
-     *                             is useful for certain operations (e.g. <code>Patient/NNN/$everything</code>) which
+     *                             is useful for certain operations (for example, <code>Patient/NNN/$everything</code>) which
      *                             return a bundle instead of a Parameters resource, may be NULL
      * @param  extraParameters     see {@link ExtraParameters} for a full list of parameters that can be passed, may be
      *                             NULL
@@ -83,7 +83,7 @@ public class FhirOperation {
      * @param  useHttpGet          use HTTP GET verb
      * @param  returnType          If this operation returns a single resource body as its return type instead of a
      *                             <code>Parameters</code> resource, use this method to specify that resource type. This
-     *                             is useful for certain operations (e.g. <code>Patient/NNN/$everything</code>) which
+     *                             is useful for certain operations (for example, <code>Patient/NNN/$everything</code>) which
      *                             return a bundle instead of a Parameters resource, may be NULL
      * @param  extraParameters     see {@link ExtraParameters} for a full list of parameters that can be passed, may be
      *                             NULL
@@ -113,7 +113,7 @@ public class FhirOperation {
      * @param  useHttpGet               use HTTP GET verb
      * @param  returnType               If this operation returns a single resource body as its return type instead of a
      *                                  <code>Parameters</code> resource, use this method to specify that resource type.
-     *                                  This is useful for certain operations (e.g.
+     *                                  This is useful for certain operations (for example
      *                                  <code>Patient/NNN/$everything</code>) which return a bundle instead of a
      *                                  Parameters resource, may be NULL
      * @param  extraParameters          see {@link ExtraParameters} for a full list of parameters that can be passed,
@@ -146,7 +146,7 @@ public class FhirOperation {
      * @param  useHttpGet          use HTTP GET verb
      * @param  returnType          If this operation returns a single resource body as its return type instead of a
      *                             <code>Parameters</code> resource, use this method to specify that resource type. This
-     *                             is useful for certain operations (e.g. <code>Patient/NNN/$everything</code>) which
+     *                             is useful for certain operations (for example, <code>Patient/NNN/$everything</code>) which
      *                             return a bundle instead of a Parameters resource, may be NULL
      * @param  extraParameters     see {@link ExtraParameters} for a full list of parameters that can be passed, may be
      *                             NULL

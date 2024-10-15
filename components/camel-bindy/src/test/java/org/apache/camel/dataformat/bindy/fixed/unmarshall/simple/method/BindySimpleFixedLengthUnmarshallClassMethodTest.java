@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.dataformat.bindy.fixed.unmarshall.simple.method;
+package org.apache.camel.dataformat.bindy.fixed.unmarshal.simple.method;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -36,7 +36,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleFixedLengthUnmarshallClassMethodTest {
+public class BindySimpleFixedLengthUnmarshalClassMethodTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";
@@ -51,7 +51,7 @@ public class BindySimpleFixedLengthUnmarshallClassMethodTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
 
         expected = "10A9  PaulineM    ISINXD12345678BUYShare000002500.45USD01-08-2009Hello     ";
 
@@ -61,8 +61,8 @@ public class BindySimpleFixedLengthUnmarshallClassMethodTest {
         result.assertIsSatisfied();
 
         // check the model
-        BindySimpleFixedLengthUnmarshallClassMethodTest.Order order = result.getReceivedExchanges().get(0).getIn()
-                .getBody(BindySimpleFixedLengthUnmarshallClassMethodTest.Order.class);
+        BindySimpleFixedLengthUnmarshalClassMethodTest.Order order = result.getReceivedExchanges().get(0).getIn()
+                .getBody(BindySimpleFixedLengthUnmarshalClassMethodTest.Order.class);
         assertEquals(10, order.getOrderNr());
         // the field is not trimmed
         assertEquals("  PAULINE", order.getFirstName());

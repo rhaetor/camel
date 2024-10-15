@@ -216,7 +216,7 @@ public interface Route extends RuntimeConfiguration {
     void warmUp();
 
     /**
-     * Gets the last error that happened during changing the route lifecycle, i.e. such as when an exception was thrown
+     * Gets the last error that happened during changing the route lifecycle, that is, such as when an exception was thrown
      * during starting the route.
      * <p/>
      * This is only errors for route lifecycle changes, it is not exceptions thrown during routing exchanges by the
@@ -227,7 +227,7 @@ public interface Route extends RuntimeConfiguration {
     RouteError getLastError();
 
     /**
-     * Sets the last error that happened during changing the route lifecycle, i.e. such as when an exception was thrown
+     * Sets the last error that happened during changing the route lifecycle, that is, such as when an exception was thrown
      * during starting the route.
      * <p/>
      * This is only errors for route lifecycle changes, it is not exceptions thrown during routing exchanges by the

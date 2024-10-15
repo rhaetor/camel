@@ -60,7 +60,7 @@ public class WireTapStreamCachingTest extends ContextTestSupport {
         y.expectedMessageCount(1);
         z.expectedMessageCount(1);
 
-        // the used file should contain more than one character in order to be
+        // the used file should contain more than one character to be
         // streamed into the file system
         template.sendBody("direct:a",
                 this.getClass().getClassLoader().getResourceAsStream("org/apache/camel/processor/twoCharacters.txt"));
@@ -93,7 +93,7 @@ public class WireTapStreamCachingTest extends ContextTestSupport {
             public void configure() {
                 // enable stream caching
                 context.setStreamCaching(true);
-                // set stream threshold to 1, in order to stream into the file
+                // set stream threshold to 1, to stream into the file
                 // system
                 context.getStreamCachingStrategy().setSpoolThreshold(1);
 

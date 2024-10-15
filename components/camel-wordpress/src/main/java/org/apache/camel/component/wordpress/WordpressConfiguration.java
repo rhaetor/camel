@@ -32,7 +32,7 @@ public class WordpressConfiguration {
 
     private URI uri;
 
-    @UriParam(description = "The Wordpress API URL from your site, e.g. http://myblog.com/wp-json/")
+    @UriParam(description = "The Wordpress API URL from your site, for example, http://myblog.com/wp-json/")
     @Metadata(required = true)
     private String url;
     @UriParam(description = "The Wordpress REST API version", defaultValue = WordpressConstants.API_VERSION)
@@ -41,7 +41,7 @@ public class WordpressConfiguration {
     private String user;
     @UriParam(description = "Password from authorized user")
     private String password;
-    @UriParam(description = "The entity ID. Should be passed when the operation performed requires a specific entity, e.g. deleting a post")
+    @UriParam(description = "The entity ID. Should be passed when the operation performed requires a specific entity, for example, deleting a post")
     private Integer id;
     @UriParam(description = "The criteria to use with complex searches.", prefix = "criteria.", multiValue = true)
     private Map<String, Object> criteria;

@@ -24,7 +24,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 
 /*
  * This one is used to avoid exposing methods from this class to the health checker. Fields and methods used
- * used to build an instance of this class, must be made thread-safe (i.e.: most importantly, read fields
+ * used to build an instance of this class, must be made thread-safe (that is, : most importantly, read fields
  * should be marked as volatile).
  */
 public class TaskHealthState {

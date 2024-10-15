@@ -105,7 +105,7 @@ public class CxfRsConsumerSimpleBindingImplTest extends CamelTestSupport {
         get.addHeader("Accept", "text/xml");
         CloseableHttpResponse response = httpclient.execute(get);
         assertEquals(200, response.getCode());
-        Customer entity = (Customer) jaxb.createUnmarshaller().unmarshal(response.getEntity().getContent());
+        Customer entity = (Customer) jaxb.createUnmarshaler().unmarshal(response.getEntity().getContent());
         assertEquals(123, entity.getId());
     }
 
@@ -113,7 +113,7 @@ public class CxfRsConsumerSimpleBindingImplTest extends CamelTestSupport {
     public void testNewCustomerWithQueryParam() throws Exception {
         HttpPost post = new HttpPost("http://localhost:" + PORT_PATH + "/rest/customerservice/customers?age=12");
         StringWriter sw = new StringWriter();
-        jaxb.createMarshaller().marshal(new Customer(123, "Raul"), sw);
+        jaxb.createMarshaler().marshal(new Customer(123, "Raul"), sw);
         post.setEntity(new StringEntity(sw.toString()));
         post.addHeader("Content-Type", "text/xml");
         post.addHeader("Accept", "text/xml");

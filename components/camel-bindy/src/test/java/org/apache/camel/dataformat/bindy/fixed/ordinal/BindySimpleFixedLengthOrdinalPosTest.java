@@ -37,38 +37,38 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * This test validates that fixed length records can be defined and processed using ordinal 'pos' values, and lengths
  * declared for each field. Strict position calculations in FixedLength records is not necessary. The records will be
- * marshalled using the relative the order of the 'pos' values.
+ * marshaled using the relative the order of the 'pos' values.
  */
 public class BindySimpleFixedLengthOrdinalPosTest extends CamelTestSupport {
 
-    public static final String URI_DIRECT_MARSHALL = "direct:marshall";
-    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshall";
-    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshall-result";
-    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshall-result";
+    public static final String URI_DIRECT_MARSHALL = "direct:marshal";
+    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshal";
+    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshal-result";
+    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshal-result";
 
     private static final String TEST_RECORD = "10A9  PaulineM    ISINXD12345678BUYShare000002500.45USD01-08-2009Hello     \r\n";
 
     @EndpointInject(URI_MOCK_MARSHALL_RESULT)
-    private MockEndpoint marshallResult;
+    private MockEndpoint marshalResult;
 
     @EndpointInject(URI_MOCK_UNMARSHALL_RESULT)
-    private MockEndpoint unmarshallResult;
+    private MockEndpoint unmarshalResult;
 
     // *************************************************************************
     // TESTS
     // *************************************************************************
 
     @Test
-    public void testUnmarshallMessage() throws Exception {
+    public void testUnmarshalMessage() throws Exception {
 
-        unmarshallResult.expectedMessageCount(1);
+        unmarshalResult.expectedMessageCount(1);
         template.sendBody(URI_DIRECT_UNMARSHALL, TEST_RECORD);
 
-        unmarshallResult.assertIsSatisfied();
+        unmarshalResult.assertIsSatisfied();
 
         // check the model
         BindySimpleFixedLengthOrdinalPosTest.Order order
-                = (BindySimpleFixedLengthOrdinalPosTest.Order) unmarshallResult.getReceivedExchanges().get(0).getIn().getBody();
+                = (BindySimpleFixedLengthOrdinalPosTest.Order) unmarshalResult.getReceivedExchanges().get(0).getIn().getBody();
         assertEquals(10, order.getOrderNr());
         // the field is not trimmed
         assertEquals("  Pauline", order.getFirstName());
@@ -77,7 +77,7 @@ public class BindySimpleFixedLengthOrdinalPosTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         BindySimpleFixedLengthOrdinalPosTest.Order order = new Order();
         order.setOrderNr(10);
         order.setOrderType("BUY");
@@ -94,10 +94,10 @@ public class BindySimpleFixedLengthOrdinalPosTest extends CamelTestSupport {
         order.setOrderDate(calendar.getTime());
         order.setComment("Hello");
 
-        marshallResult.expectedMessageCount(1);
-        marshallResult.expectedBodiesReceived(Arrays.asList(new String[] { TEST_RECORD }));
+        marshalResult.expectedMessageCount(1);
+        marshalResult.expectedBodiesReceived(Arrays.asList(new String[] { TEST_RECORD }));
         template.sendBody(URI_DIRECT_MARSHALL, order);
-        marshallResult.assertIsSatisfied();
+        marshalResult.assertIsSatisfied();
     }
 
     // *************************************************************************

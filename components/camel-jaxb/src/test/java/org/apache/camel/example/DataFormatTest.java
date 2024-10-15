@@ -85,9 +85,9 @@ public class DataFormatTest extends CamelTestSupport {
                 JaxbDataFormat person = new JaxbDataFormat("org.apache.camel.foo.bar");
                 person.setPrettyPrint(true);
 
-                from("direct:start").marshal(example).to("direct:marshalled");
+                from("direct:start").marshal(example).to("direct:marshaled");
 
-                from("direct:marshalled").unmarshal().jaxb("org.apache.camel.example").to("mock:result");
+                from("direct:marshaled").unmarshal().jaxb("org.apache.camel.example").to("mock:result");
 
                 from("direct:prettyPrint").marshal(person).to("mock:result");
             }

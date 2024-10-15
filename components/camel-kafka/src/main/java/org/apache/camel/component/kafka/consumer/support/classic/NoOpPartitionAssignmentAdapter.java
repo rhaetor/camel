@@ -20,7 +20,7 @@ package org.apache.camel.component.kafka.consumer.support.classic;
 import org.apache.kafka.clients.consumer.Consumer;
 
 /**
- * A NO-OP resume strategy that does nothing (i.e.: no resume)
+ * A NO-OP resume strategy that does nothing (that is, : no resume)
  */
 public class NoOpPartitionAssignmentAdapter implements PartitionAssignmentAdapter {
 

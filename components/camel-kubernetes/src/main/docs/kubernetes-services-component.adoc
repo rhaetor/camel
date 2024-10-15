@@ -56,7 +56,7 @@ from("direct:list").
 
 This operation return a List of services from your cluster
 
-- listServicesByLabels:  this operation list the deployments by labels on a kubernetes cluster
+- listServicesByLabels: this operation list the deployments by labels on a kubernetes cluster
 
 [source,java]
 --------------------------------------------------------------------------------

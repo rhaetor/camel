@@ -12,7 +12,7 @@ InOut means that there is an In message for  the input and an Out for the output
 Other books, posts and reference guides may use the terms In/Out and In/Only for the patterns. In this guide we use InOut and InOnly respectively, as these are the names used within Camel.
 ====
 
-You can also implement support for xref:components:eips:event-message.adoc[Event Messages] with Apache Camel, using the InOnly xref:exchange-pattern.adoc[pattern]. These are often called "fire and forget" (i.e., like sending a JMS message but not waiting for any response).
+You can also implement support for xref:components:eips:event-message.adoc[Event Messages] with Apache Camel, using the InOnly xref:exchange-pattern.adoc[pattern]. These are often called "fire and forget" (that is, like sending a JMS message but not waiting for any response).
 
 Since version 1.5 Camel supports annotations for specifying the message
 exchange pattern on Java methods, classes or interfaces.

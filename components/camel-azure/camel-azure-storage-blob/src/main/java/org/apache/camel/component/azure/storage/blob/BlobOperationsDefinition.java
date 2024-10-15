@@ -77,7 +77,7 @@ public enum BlobOperationsDefinition {
      */
     stageBlockBlobList,
     /**
-     * Writes a blob by specifying the list of block IDs that are to make up the blob. In order to be written as part of
+     * Writes a blob by specifying the list of block IDs that are to make up the blob. To be written as part of
      * a blob, a block must have been successfully written to the server in a prior `stageBlockBlobList` operation. You
      * can call `commitBlobBlockList` to update a blob by uploading only those blocks that have changed, then committing
      * the new and existing blocks together. Any blocks not specified in the block list and permanently deleted.

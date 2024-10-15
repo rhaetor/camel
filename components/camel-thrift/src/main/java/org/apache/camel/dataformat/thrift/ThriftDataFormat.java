@@ -172,7 +172,7 @@ public class ThriftDataFormat extends ServiceSupport
             deserializer = new TDeserializer(new TBinaryProtocol.Factory());
             deserializer.deserialize(defaultInstance, IOUtils.toByteArray(inputStream));
         } else if (contentTypeFormat.equals(CONTENT_TYPE_FORMAT_SIMPLE_JSON)) {
-            throw new CamelException("Simple JSON format is avalable for the message marshalling only");
+            throw new CamelException("Simple JSON format is avalable for the message marshaling only");
         } else {
             throw new CamelException("Invalid thrift content type format: " + contentTypeFormat);
         }

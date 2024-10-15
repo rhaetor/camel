@@ -891,7 +891,7 @@ public interface TelegramEndpointBuilderFactory {
             return this;
         }
         /**
-         * Can be used to set an alternative base URI, e.g. when you want to
+         * Can be used to set an alternative base URI, for example, when you want to
          * test the component against a mock Telegram API.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -1153,7 +1153,7 @@ public interface TelegramEndpointBuilderFactory {
             return this;
         }
         /**
-         * Can be used to set an alternative base URI, e.g. when you want to
+         * Can be used to set an alternative base URI, for example, when you want to
          * test the component against a mock Telegram API.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -1349,7 +1349,7 @@ public interface TelegramEndpointBuilderFactory {
             return (TelegramEndpointBuilder) this;
         }
         /**
-         * Can be used to set an alternative base URI, e.g. when you want to
+         * Can be used to set an alternative base URI, for example, when you want to
          * test the component against a mock Telegram API.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -1499,7 +1499,7 @@ public interface TelegramEndpointBuilderFactory {
         private static final TelegramHeaderNameBuilder INSTANCE = new TelegramHeaderNameBuilder();
 
         /**
-         * This header is used by the producer endpoint in order to resolve the
+         * This header is used by the producer endpoint to resolve the
          * chat id that will receive the message. The recipient chat id can be
          * placed (in order of priority) in message body, in the
          * CamelTelegramChatId header or in the endpoint configuration (chatId

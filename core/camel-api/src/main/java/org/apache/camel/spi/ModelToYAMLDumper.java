@@ -37,7 +37,7 @@ public interface ModelToYAMLDumper {
      * @param  context    the CamelContext
      * @param  definition the definition, such as a {@link NamedNode}
      * @return            the output in YAML (is formatted)
-     * @throws Exception  is throw if error marshalling to YAML
+     * @throws Exception  is throw if error marshaling to YAML
      */
     String dumpModelAsYaml(CamelContext context, NamedNode definition) throws Exception;
 
@@ -50,7 +50,7 @@ public interface ModelToYAMLDumper {
      * @param  uriAsParameters     whether to expand uri into a key/value parameters
      * @param  generatedIds        whether to include auto generated IDs
      * @return                     the output in YAML (is formatted)
-     * @throws Exception           is throw if error marshalling to YAML
+     * @throws Exception           is throw if error marshaling to YAML
      */
     String dumpModelAsYaml(
             CamelContext context, NamedNode definition,
@@ -63,7 +63,7 @@ public interface ModelToYAMLDumper {
      * @param  context   the CamelContext
      * @param  beans     list of beans (RegistryBeanDefinition)
      * @return           the output in YAML (is formatted)
-     * @throws Exception is throw if error marshalling to YAML
+     * @throws Exception is throw if error marshaling to YAML
      */
     String dumpBeansAsYaml(CamelContext context, List<Object> beans) throws Exception;
 

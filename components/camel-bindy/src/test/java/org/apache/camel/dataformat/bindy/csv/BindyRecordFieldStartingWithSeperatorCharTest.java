@@ -36,7 +36,7 @@ public class BindyRecordFieldStartingWithSeperatorCharTest extends CamelTestSupp
     private MockEndpoint mockEndPoint;
 
     @Test
-    public void testUnmarshallCsvRecordFieldStartingWithSeparatorChar() throws Exception {
+    public void testUnmarshalCsvRecordFieldStartingWithSeparatorChar() throws Exception {
 
         mockEndPoint.expectedMessageCount(4);
 

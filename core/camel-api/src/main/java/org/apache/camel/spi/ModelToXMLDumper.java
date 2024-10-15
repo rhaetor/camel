@@ -37,7 +37,7 @@ public interface ModelToXMLDumper {
      * @param  context    the CamelContext
      * @param  definition the definition, such as a {@link org.apache.camel.NamedNode}
      * @return            the output in XML (is formatted)
-     * @throws Exception  is throw if error marshalling to XML
+     * @throws Exception  is throw if error marshaling to XML
      */
     String dumpModelAsXml(CamelContext context, NamedNode definition) throws Exception;
 
@@ -49,7 +49,7 @@ public interface ModelToXMLDumper {
      * @param  resolvePlaceholders whether to resolve property placeholders in the dumped XML
      * @param  generatedIds        whether to include auto generated IDs
      * @return                     the output in XML (is formatted)
-     * @throws Exception           is throw if error marshalling to XML
+     * @throws Exception           is throw if error marshaling to XML
      */
     String dumpModelAsXml(
             CamelContext context, NamedNode definition, boolean resolvePlaceholders, boolean generatedIds)
@@ -61,7 +61,7 @@ public interface ModelToXMLDumper {
      * @param  context   the CamelContext
      * @param  beans     list of beans (RegistryBeanDefinition)
      * @return           the output in XML (is formatted)
-     * @throws Exception is throw if error marshalling to XML
+     * @throws Exception is throw if error marshaling to XML
      */
     String dumpBeansAsXml(CamelContext context, List<Object> beans) throws Exception;
 

@@ -101,7 +101,7 @@ public interface RestOpenApiEndpointBuilderFactory {
          * Scheme hostname and port to direct the HTTP requests to in the form
          * of https://hostname:port. Can be configured at the endpoint,
          * component or in the corresponding REST configuration in the Camel
-         * Context. If you give this component a name (e.g. petstore) that REST
+         * Context. If you give this component a name (for example, petstore) that REST
          * configuration is consulted first, rest-openapi next, and global
          * configuration last. If set overrides any value found in the OpenApi
          * specification, RestConfiguration. Overrides all other configuration.
@@ -336,7 +336,7 @@ public interface RestOpenApiEndpointBuilderFactory {
          * component tries to load openapi.json resource from the classpath.
          * Note that the host defined on the component and endpoint of this
          * Component should contain the scheme, hostname and optionally the port
-         * in the URI syntax (i.e. http://api.example.com:8080). Overrides
+         * in the URI syntax (that is, http://api.example.com:8080). Overrides
          * component configuration. The OpenApi specification can be loaded from
          * different sources by prefixing with file: classpath: http: https:.
          * Support for https is limited to using the JDK installed UrlHandler,
@@ -374,7 +374,7 @@ public interface RestOpenApiEndpointBuilderFactory {
          * component tries to load openapi.json resource from the classpath.
          * Note that the host defined on the component and endpoint of this
          * Component should contain the scheme, hostname and optionally the port
-         * in the URI syntax (i.e. http://api.example.com:8080). Overrides
+         * in the URI syntax (that is, http://api.example.com:8080). Overrides
          * component configuration. The OpenApi specification can be loaded from
          * different sources by prefixing with file: classpath: http: https:.
          * Support for https is limited to using the JDK installed UrlHandler,

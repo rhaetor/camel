@@ -167,7 +167,7 @@ public class Run extends CamelCommand {
             description = "Optional location of Maven settings-security.xml file to decrypt settings.xml")
     String mavenSettingsSecurity;
 
-    @Option(names = { "--fresh" }, description = "Make sure we use fresh (i.e. non-cached) resources")
+    @Option(names = { "--fresh" }, description = "Make sure we use fresh (that is, non-cached) resources")
     boolean fresh;
 
     @Option(names = { "--download" }, defaultValue = "true",

@@ -387,7 +387,7 @@ public class DefaultBulkApiV2Client extends AbstractClientBase implements BulkAp
                 result = objectMapper.readValue(response, resultClass);
             } catch (IOException e) {
                 throw new SalesforceException(
-                        String.format("Error unmarshalling response for {%s:%s} : %s",
+                        String.format("Error unmarshaling response for {%s:%s} : %s",
                                 request.getMethod(), request.getURI(), e.getMessage()),
                         e);
             }
@@ -403,7 +403,7 @@ public class DefaultBulkApiV2Client extends AbstractClientBase implements BulkAp
                 result = objectMapper.readValue(response, typeRef);
             } catch (IOException e) {
                 throw new SalesforceException(
-                        String.format("Error unmarshalling response for {%s:%s} : %s",
+                        String.format("Error unmarshaling response for {%s:%s} : %s",
                                 request.getMethod(), request.getURI(), e.getMessage()),
                         e);
             }

@@ -27,7 +27,7 @@ import org.hisp.dhis.integration.sdk.api.Dhis2Client;
 @UriParams
 @Configurer
 public class Dhis2Configuration {
-    @UriParam(description = "DHIS2 server base API URL (e.g., https://play.dhis2.org/2.39.1.1/api)")
+    @UriParam(description = "DHIS2 server base API URL (for example, https://play.dhis2.org/2.39.1.1/api)")
     private String baseApiUrl;
 
     @UriParam(description = "Username of the DHIS2 user to operate as", secret = true, label = "security")
@@ -40,11 +40,11 @@ public class Dhis2Configuration {
               secret = true, label = "security")
     private String personalAccessToken;
 
-    @UriPath(description = "API operation (e.g., get)")
+    @UriPath(description = "API operation (for example, get)")
     @Metadata(required = true)
     private Dhis2ApiName apiName;
 
-    @UriPath(description = "Subject of the API operation (e.g., resource)")
+    @UriPath(description = "Subject of the API operation (for example, resource)")
     @Metadata(required = true)
     private String methodName;
 

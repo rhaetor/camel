@@ -46,7 +46,7 @@ azure-cosmosdb://[databaseName][/containerName][?options]
 
 In case of the consumer, `databaseName`, `containerName` are required, In case of the producer, it depends on the operation that being
 requested, for example if operation is on a database level, e.b: deleteDatabase, only `databaseName` is required, but in case
-of operation being requested in container level, e.g: readItem, then `databaseName` and `containerName` are required.
+of operation being requested in container level, for example, readItem, then `databaseName` and `containerName` are required.
 
 You can append query options to the URI in the following format, `?options=value&option2=value&`...
 
@@ -370,7 +370,7 @@ from("azure-cosmosdb://myDb/myContainer?leaseDatabaseName=myLeaseDb&createLeaseD
 
 === Development Notes (Important)
 
-When developing on this component, you will need to obtain your Azure accessKey in order to run the integration tests. In addition to the mocked unit tests,
+When developing on this component, you will need to obtain your Azure accessKey to run the integration tests. In addition to the mocked unit tests,
 you *will need to run the integration tests with every change you make or even client upgrade as the Azure client can break things even on minor versions upgrade.*
 To run the integration tests, on this component directory, run the following maven command:
 

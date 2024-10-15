@@ -251,7 +251,7 @@ public class DefaultPackageScanResourceResolver extends BasePackageScanResolver
      * according to the Test. Operates recursively to find classes within a folder structure matching the package
      * structure.
      *
-     * @param parent   the package name up to this directory in the package hierarchy. E.g. if /classes is in the
+     * @param parent   the package name up to this directory in the package hierarchy. For example, if /classes is in the
      *                 classpath and we wish to examine files in /classes/org/apache then the values of <i>parent</i>
      *                 would be <i>org/apache</i>
      * @param location a File object representing a directory

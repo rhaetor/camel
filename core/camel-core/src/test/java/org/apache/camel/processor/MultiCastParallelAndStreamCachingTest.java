@@ -76,7 +76,7 @@ public class MultiCastParallelAndStreamCachingTest extends ContextTestSupport {
         public void process(Exchange exchange) throws Exception {
 
             if (withSleepTime) {
-                // simulate some processing in order to get easier concurrency
+                // simulate some processing to get easier concurrency
                 // effects
                 Thread.sleep(50);
             }

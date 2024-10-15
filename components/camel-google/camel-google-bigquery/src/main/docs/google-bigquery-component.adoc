@@ -21,7 +21,7 @@ the https://developers.google.com/api-client-library/java/apis/bigquery/v2[Googl
 
 The current implementation does not use gRPC.
 
-The current implementation does not support querying BigQuery, i.e., is a producer only.
+The current implementation does not support querying BigQuery, that is, is a producer only.
 
 Maven users will need to add the following dependency to their pom.xml
 for this component:
@@ -111,7 +111,7 @@ Reference: https://cloud.google.com/bigquery/streaming-data-into-bigquery#templa
 
 Templated tables can be specified using the `GoogleBigQueryConstants.TABLE_SUFFIX` header.
 
-I.e. the following route will create tables and insert records sharded on a per-day basis:
+That is, the following route will create tables and insert records sharded on a per-day basis:
 
 [source,java]
 ------------------------------------------------------

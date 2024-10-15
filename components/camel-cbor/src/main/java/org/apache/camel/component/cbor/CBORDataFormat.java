@@ -60,7 +60,7 @@ public class CBORDataFormat extends ServiceSupport implements DataFormat, DataFo
     private String unmarshalTypeName;
     private Class<?> unmarshalType;
     private boolean useDefaultObjectMapper = true;
-    private boolean allowUnmarshallType;
+    private boolean allowUnmarshalType;
     private String collectionTypeName;
     private Class<? extends Collection> collectionType;
     private boolean useList;
@@ -77,9 +77,9 @@ public class CBORDataFormat extends ServiceSupport implements DataFormat, DataFo
     }
 
     /**
-     * Use the default CBOR Jackson {@link ObjectMapper} and with a custom unmarshal type
+     * Use the default CBOR Jackson {@link ObjectMapper} and with a custom unmarshaltype
      *
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public CBORDataFormat(ObjectMapper objectMapper, Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
@@ -100,7 +100,7 @@ public class CBORDataFormat extends ServiceSupport implements DataFormat, DataFo
     public Object unmarshal(Exchange exchange, Object body) throws Exception {
         Class<?> clazz = unmarshalType;
         String type = null;
-        if (allowUnmarshallType) {
+        if (allowUnmarshalType) {
             type = exchange.getIn().getHeader(CBORConstants.UNMARSHAL_TYPE, String.class);
         }
         if (type == null && isAllowJmsType()) {
@@ -179,12 +179,12 @@ public class CBORDataFormat extends ServiceSupport implements DataFormat, DataFo
         this.unmarshalType = unmarshalType;
     }
 
-    public boolean isAllowUnmarshallType() {
-        return allowUnmarshallType;
+    public boolean isAllowUnmarshalType() {
+        return allowUnmarshalType;
     }
 
-    public void setAllowUnmarshallType(boolean allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public void setAllowUnmarshalType(boolean allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
     }
 
     public String getCollectionTypeName() {
@@ -220,14 +220,14 @@ public class CBORDataFormat extends ServiceSupport implements DataFormat, DataFo
     }
 
     /**
-     * Uses {@link java.util.ArrayList} when unmarshalling.
+     * Uses {@link java.util.ArrayList} when unmarshaling.
      */
     public void useList() {
         setCollectionType(ArrayList.class);
     }
 
     /**
-     * Uses {@link java.util.HashMap} when unmarshalling.
+     * Uses {@link java.util.HashMap} when unmarshaling.
      */
     public void useMap() {
         setCollectionType(null);

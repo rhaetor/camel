@@ -59,7 +59,7 @@ public class BarcodeParameters {
     private Integer height = HEIGHT;
 
     /**
-     * The barcode format (e.g. QR-Code, DataMatrix,...).
+     * The barcode format (for example, QR-Code, DataMatrix,...).
      */
     private BarcodeFormat format = FORMAT;
 

@@ -32,7 +32,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvIntegerMarshallTest {
+public class BindySimpleCsvIntegerMarshalTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";
@@ -45,7 +45,7 @@ public class BindySimpleCsvIntegerMarshallTest {
 
     @Test
     @DirtiesContext
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         MyOrder order = new MyOrder();
         order.setInstrument("XX23456789");
         order.setQuantity(12345678);

@@ -69,7 +69,7 @@ public class LevelDBAggregateNotLostTest extends LevelDBTestSupport {
 
         // assert the exchange was not lost and we got all the information still
         assertNotNull(bf);
-        Exchange completed = codec.unmarshallExchange(context, bf);
+        Exchange completed = codec.unmarshalExchange(context, bf);
         assertNotNull(completed);
         // should retain the exchange id
         assertEquals(exchangeId, completed.getExchangeId());

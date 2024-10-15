@@ -59,7 +59,7 @@ public class SimpleBeanFixture {
      */
     private DefaultCamelContext mContext = new DefaultCamelContext();
     /**
-     * registry to store referenced beans (i.e. objectProperties or NotificationFilter)
+     * registry to store referenced beans (that is, objectProperties or NotificationFilter)
      */
     private SimpleRegistry mRegistry = new SimpleRegistry();
     /**
@@ -178,7 +178,7 @@ public class SimpleBeanFixture {
     }
 
     /**
-     * Override this to put stuff into the registry so it's available to be referenced. (i.e. NotificationFilter or
+     * Override this to put stuff into the registry so it's available to be referenced. (that is, NotificationFilter or
      * Hashtable<String,String> for ObjectProperties
      */
     protected void initRegistry() {

@@ -32,7 +32,7 @@ import org.apache.camel.spi.annotations.JdkService;
 /**
  * A simple resume adapter that support caching, deserialization and actions. This is usually suitable for supporting
  * resume operations that have simple cache storage requirements, but delegate the resume action to the integrations
- * (i.e.: such as when resuming from database components, where the resume operation can only be determined by the
+ * (that is:  such as when resuming from database components, where the resume operation can only be determined by the
  * integration itself)
  */
 @JdkService(ResumeAdapter.RESUME_ADAPTER_FACTORY)

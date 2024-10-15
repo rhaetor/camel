@@ -31,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindyComplexCsvUnmarshallEmptyStreamTest {
+public class BindyComplexCsvUnmarshalEmptyStreamTest {
 
     private static final Class<?> TYPE = org.apache.camel.dataformat.bindy.model.complex.twoclassesandonelink.Order.class;
 
@@ -43,7 +43,7 @@ public class BindyComplexCsvUnmarshallEmptyStreamTest {
     private MockEndpoint resultEndpoint;
 
     @Test
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
         resultEndpoint.expectedMessageCount(1);
         resultEndpoint.message(0).body().isInstanceOf(List.class);
 

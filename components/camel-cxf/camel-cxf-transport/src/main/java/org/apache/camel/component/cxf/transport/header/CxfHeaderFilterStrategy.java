@@ -81,7 +81,7 @@ public class CxfHeaderFilterStrategy extends DefaultHeaderFilterStrategy {
 
         // Filter out Content-Length since it can fool Jetty (HttpGenerator) to
         // close response output stream prematurely.  (It occurs when the
-        // message size (e.g. with attachment) is large and response content length
+        // message size (for example, with attachment) is large and response content length
         // is bigger than request content length.)
         getOutFilter().add("Content-Length".toLowerCase());
 

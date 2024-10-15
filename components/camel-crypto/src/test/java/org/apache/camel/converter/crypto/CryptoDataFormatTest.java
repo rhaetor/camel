@@ -269,7 +269,7 @@ public class CryptoDataFormatTest extends CamelTestSupport {
                 // START SNIPPET: key-in-header
                 CryptoDataFormat cryptoFormat = new CryptoDataFormat("DES", null);
                 /**
-                 * Note: the header containing the key should be cleared after marshalling to stop it from leaking by
+                 * Note: the header containing the key should be cleared after marshaling to stop it from leaking by
                  * accident and potentially being compromised. The processor version below is arguably better as the key
                  * is left in the header when you use the DSL leaks the fact that camel encryption was used.
                  */

@@ -587,7 +587,7 @@ public interface NettyHttpEndpointBuilderFactory {
             return this;
         }
         /**
-         * Password setting to use in order to encrypt/decrypt payloads sent
+         * Password setting to use to encrypt/decrypt payloads sent
          * using SSH.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -1398,7 +1398,7 @@ public interface NettyHttpEndpointBuilderFactory {
             return this;
         }
         /**
-         * The maximum length of the initial line (e.g. {code GET / HTTP/1.0} or
+         * The maximum length of the initial line (for example, {code GET / HTTP/1.0} or
          * {code HTTP/1.0 200 OK}) If the length of the initial line exceeds
          * this value, a TooLongFrameException will be raised. See
          * io.netty.handler.codec.http.HttpObjectDecoder.
@@ -1417,7 +1417,7 @@ public interface NettyHttpEndpointBuilderFactory {
             return this;
         }
         /**
-         * The maximum length of the initial line (e.g. {code GET / HTTP/1.0} or
+         * The maximum length of the initial line (for example, {code GET / HTTP/1.0} or
          * {code HTTP/1.0 200 OK}) If the length of the initial line exceeds
          * this value, a TooLongFrameException will be raised. See
          * io.netty.handler.codec.http.HttpObjectDecoder.
@@ -2954,7 +2954,7 @@ public interface NettyHttpEndpointBuilderFactory {
             return this;
         }
         /**
-         * Password setting to use in order to encrypt/decrypt payloads sent
+         * Password setting to use to encrypt/decrypt payloads sent
          * using SSH.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -3300,7 +3300,7 @@ public interface NettyHttpEndpointBuilderFactory {
         /**
          * The status codes which are considered a success response. The values
          * are inclusive. Multiple ranges can be defined, separated by comma,
-         * e.g. 200-204,209,301-304. Each range must be a single number or
+         * for example, 200-204,209,301-304. Each range must be a single number or
          * from-to with the dash included. The default range is 200-299.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -4660,7 +4660,7 @@ public interface NettyHttpEndpointBuilderFactory {
             return this;
         }
         /**
-         * Password setting to use in order to encrypt/decrypt payloads sent
+         * Password setting to use to encrypt/decrypt payloads sent
          * using SSH.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -5744,7 +5744,7 @@ public interface NettyHttpEndpointBuilderFactory {
 
         /**
          * Any query parameters, such as foo=bar&amp;beer=yes. Stored in the raw
-         * form, as they arrived to the consumer (i.e. before URL decoding).
+         * form, as they arrived to the consumer (that is, before URL decoding).
          * 
          * The option is a: {@code String} type.
          * 

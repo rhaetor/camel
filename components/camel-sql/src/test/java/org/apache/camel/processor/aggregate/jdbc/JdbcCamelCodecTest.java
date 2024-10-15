@@ -47,7 +47,7 @@ public class JdbcCamelCodecTest extends CamelTestSupport {
 
         InputStream is = new ByteArrayInputStream(baos.toByteArray());
         InvalidClassException thrown = Assertions.assertThrows(InvalidClassException.class, () -> {
-            codec.unmarshallExchange(context, is, "java.**;org.apache.camel.**;!*");
+            codec.unmarshalExchange(context, is, "java.**;org.apache.camel.**;!*");
         });
 
         Assertions.assertEquals("filter status: REJECTED", thrown.getMessage());

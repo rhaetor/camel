@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
 
 /**
  * This annotation can be used on static methods to provide their own customized Camel context instance. This can be
- * useful when mixing different types of contexts in the same class hierarchy (i.e., for instance, given an AbstractTest
+ * useful when mixing different types of contexts in the same class hierarchy (that is, for instance, given an AbstractTest
  * test with 2 subclasses DefaultContextTest and SpringContextTest, each one running the same tests, but using different
  * contexts).
  */

@@ -80,7 +80,7 @@ To be able to write, you must have an authorized user credentials (see Authentic
 
 == Authentication
 
-Producers that perform write operations, e.g., creating a new post,
+Producers that perform write operations, for example, creating a new post,
 https://developer.wordpress.org/rest-api/using-the-rest-api/authentication/[must have an authenticated user] to do so.
 The standard authentication mechanism used by WordPress is cookie.
 Unfortunately,

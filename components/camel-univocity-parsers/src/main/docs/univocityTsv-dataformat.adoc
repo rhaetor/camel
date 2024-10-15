@@ -55,16 +55,16 @@ include::partial$dataformat-options.adoc[]
 
 
 
-== Marshalling usages
+== Marshaling usages
 
-The marshalling accepts either:
+The marshaling accepts either:
 
 * A list of maps (`List<Map<String, ?>>`), one for each line
 * A single map (`Map<String, ?>`), for a single line
 
 Any other body will throws an exception.
 
-=== Usage example: marshalling a Map into CSV format
+=== Usage example: marshaling a Map into CSV format
 
 [source,xml]
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,7 +77,7 @@ Any other body will throws an exception.
 </route>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-=== Usage example: marshalling a Map into fixed-width format
+=== Usage example: marshaling a Map into fixed-width format
 
 [source,xml]
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ Any other body will throws an exception.
 </route>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-=== Usage example: marshalling a Map into TSV format
+=== Usage example: marshaling a Map into TSV format
 
 [source,xml]
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -107,9 +107,9 @@ Any other body will throws an exception.
 </route>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-== Unmarshalling usages
+== Unmarshaling usages
 
-The unmarshalling uses an `InputStream` in order to read the data.
+The unmarshaling uses an `InputStream` to read the data.
 
 Each row produces either:
 
@@ -122,7 +122,7 @@ All the rows can either:
 * be collected at once into a list (`lazyLoad` option with `false`);
 * be read on the fly using an iterator (`lazyLoad` option with `true`).
 
-=== Usage example: unmarshalling a CSV format into maps with automatic headers
+=== Usage example: unmarshaling a CSV format into maps with automatic headers
 
 [source,xml]
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -135,7 +135,7 @@ All the rows can either:
 </route>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-=== Usage example: unmarshalling a fixed-width format into lists
+=== Usage example: unmarshaling a fixed-width format into lists
 
 [source,xml]
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------

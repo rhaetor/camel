@@ -46,7 +46,7 @@ public class BindySimpleCsvContainingMultiQuoteCharEscapeTrueTest extends CamelT
     private MockEndpoint mockEndPointUnMarshal2;
 
     @Test
-    public void testMarshallCsvRecordFieldContainingMultiEscapedQuoteChar() throws Exception {
+    public void testMarshalCsvRecordFieldContainingMultiEscapedQuoteChar() throws Exception {
 
         mockEndPointMarshal1.expectedMessageCount(1);
         mockEndPointMarshal1.expectedBodiesReceived(
@@ -69,7 +69,7 @@ public class BindySimpleCsvContainingMultiQuoteCharEscapeTrueTest extends CamelT
     }
 
     @Test
-    public void testMarshallCsvRecordFieldContainingMultiNonEscapedQuoteChar() throws Exception {
+    public void testMarshalCsvRecordFieldContainingMultiNonEscapedQuoteChar() throws Exception {
 
         mockEndPointMarshal2.expectedMessageCount(1);
         mockEndPointMarshal2

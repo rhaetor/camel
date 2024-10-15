@@ -33,20 +33,20 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
 /**
- * This class unmarshal CSV into lists or maps depending on the configuration.
+ * This class unmarshalCSV into lists or maps depending on the configuration.
  */
-abstract class CsvUnmarshaller {
+abstract class CsvUnmarshaler {
     protected final CSVFormat format;
     protected final CsvDataFormat dataFormat;
     protected final CsvRecordConverter<?> converter;
 
-    private CsvUnmarshaller(CSVFormat format, CsvDataFormat dataFormat) {
+    private CsvUnmarshaler(CSVFormat format, CsvDataFormat dataFormat) {
         this.format = format;
         this.dataFormat = dataFormat;
         this.converter = extractConverter(dataFormat);
     }
 
-    public static CsvUnmarshaller create(CSVFormat format, CsvDataFormat dataFormat) {
+    public static CsvUnmarshaler create(CSVFormat format, CsvDataFormat dataFormat) {
         // If we want to capture the header record, thus the header must be either fixed or automatic
         if (dataFormat.isCaptureHeaderRecord() && format.getHeader() == null) {
             format = format.withHeader();
@@ -61,9 +61,9 @@ abstract class CsvUnmarshaller {
         }
 
         if (dataFormat.isLazyLoad()) {
-            return new StreamCsvUnmarshaller(format, dataFormat);
+            return new StreamCsvUnmarshaler(format, dataFormat);
         }
-        return new BulkCsvUnmarshaller(format, dataFormat);
+        return new BulkCsvUnmarshaler(format, dataFormat);
     }
 
     /**
@@ -71,8 +71,8 @@ abstract class CsvUnmarshaller {
      *
      * @param  exchange  Exchange (used for accessing type converter)
      * @param  body      the input
-     * @return           Unmarshalled CSV
-     * @throws Exception if error during unmarshalling
+     * @return           Unmarshaled CSV
+     * @throws Exception if error during unmarshaling
      */
     public abstract Object unmarshal(Exchange exchange, Object body) throws Exception;
 
@@ -93,8 +93,8 @@ abstract class CsvUnmarshaller {
     /**
      * This class reads all the CSV into one big list.
      */
-    private static final class BulkCsvUnmarshaller extends CsvUnmarshaller {
-        private BulkCsvUnmarshaller(CSVFormat format, CsvDataFormat dataFormat) {
+    private static final class BulkCsvUnmarshaler extends CsvUnmarshaler {
+        private BulkCsvUnmarshaler(CSVFormat format, CsvDataFormat dataFormat) {
             super(format, dataFormat);
         }
 
@@ -131,9 +131,9 @@ abstract class CsvUnmarshaller {
      * This class streams the content of the CSV
      */
     @SuppressWarnings("unchecked")
-    private static final class StreamCsvUnmarshaller extends CsvUnmarshaller {
+    private static final class StreamCsvUnmarshaler extends CsvUnmarshaler {
 
-        private StreamCsvUnmarshaller(CSVFormat format, CsvDataFormat dataFormat) {
+        private StreamCsvUnmarshaler(CSVFormat format, CsvDataFormat dataFormat) {
             super(format, dataFormat);
         }
 

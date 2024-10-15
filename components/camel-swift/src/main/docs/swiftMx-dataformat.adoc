@@ -81,7 +81,7 @@ In Spring DSL:
 
 == Unmarshal
 
-The unmarshaller converts the input data into the concrete class of type `com.prowidesoftware.swift.model.mx.AbstractMX` that best matches with the content of the message.
+The unmarshaler converts the input data into the concrete class of type `com.prowidesoftware.swift.model.mx.AbstractMX` that best matches with the content of the message.
 
 In this example, we unmarshal the content of a file to get SWIFT MX
 objects before processing them with the `newOrder` processor.

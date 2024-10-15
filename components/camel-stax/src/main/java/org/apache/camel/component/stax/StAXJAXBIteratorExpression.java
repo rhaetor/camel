@@ -24,7 +24,7 @@ import java.util.Map;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Unmarshaler;
 
 import javax.xml.XMLConstants;
 import javax.xml.stream.XMLEventReader;
@@ -153,7 +153,7 @@ public class StAXJAXBIteratorExpression<T> extends ExpressionAdapter {
         private final InputStream inputStream;
         private final Class<T> clazz;
         private final String name;
-        private final Unmarshaller unmarshaller;
+        private final Unmarshaler unmarshaler;
         private T element;
 
         StAXJAXBIterator(Class<T> clazz, XMLEventReader reader, InputStream inputStream) throws JAXBException {
@@ -163,8 +163,8 @@ public class StAXJAXBIteratorExpression<T> extends ExpressionAdapter {
 
             name = getTagName(clazz);
             JAXBContext jaxb = jaxbContext(clazz);
-            // unmarshaller is not thread safe so we need to create a new instance per iterator
-            unmarshaller = jaxb.createUnmarshaller();
+            // unmarshaler is not thread safe so we need to create a new instance per iterator
+            unmarshaler = jaxb.createUnmarshaler();
         }
 
         @Override
@@ -213,7 +213,7 @@ public class StAXJAXBIteratorExpression<T> extends ExpressionAdapter {
             }
 
             try {
-                return unmarshaller.unmarshal(reader, clazz).getValue();
+                return unmarshaler.unmarshal(reader, clazz).getValue();
             } catch (JAXBException e) {
                 throw new RuntimeCamelException(e);
             }

@@ -277,7 +277,7 @@ public class AggregateDefinition extends OutputDefinition<AggregateDefinition>
      * <p/>
      * Configuring an AggregationStrategy is required, and is used to merge the incoming Exchange with the existing
      * already merged exchanges. At first call the oldExchange parameter is null. On subsequent invocations the
-     * oldExchange contains the merged exchanges and newExchange is of course the new incoming Exchange.
+     * oldExchange contains the merged exchanges and newExchange is the new incoming Exchange.
      */
     public void setAggregationStrategy(AggregationStrategy aggregationStrategy) {
         this.aggregationStrategyBean = aggregationStrategy;
@@ -294,7 +294,7 @@ public class AggregateDefinition extends OutputDefinition<AggregateDefinition>
      * <p/>
      * Configuring an AggregationStrategy is required, and is used to merge the incoming Exchange with the existing
      * already merged exchanges. At first call the oldExchange parameter is null. On subsequent invocations the
-     * oldExchange contains the merged exchanges and newExchange is of course the new incoming Exchange.
+     * oldExchange contains the merged exchanges and newExchange is the new incoming Exchange.
      */
     public void setAggregationStrategy(String aggregationStrategy) {
         this.aggregationStrategy = aggregationStrategy;

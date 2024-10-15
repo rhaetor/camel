@@ -209,7 +209,10 @@ It can then infer the locations of the property placeholder as it assumes that i
 
 In the next examples, since the test class is `com.somecompany.SomeTest` and the file name of the property placeholder is `custom-application.properties` , the actual possible locations of the property placeholder are `classpath:com/somecompany/custom-application.properties;optional=true,classpath:custom-application.properties;optional=true` which means that for each property to find, it tries to get it first from the properties file of the same package if it exists and if it cannot be found, it tries to get it from the properties file with the same name but in the default package if it exists.
 
-NOTE: Since the properties files are declared as optional, no exception is raised if they are both absent.
+[NOTE]
+====
+Since the properties files are declared as optional, no exception is raised if they are both absent.
+====
 
 [tabs]
 ====

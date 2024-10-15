@@ -88,7 +88,7 @@ public class ASN1DataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class to use when unmarshalling.
+     * Class to use when unmarshaling.
      */
     public void setUnmarshalTypeName(String unmarshalTypeName) {
         this.unmarshalTypeName = unmarshalTypeName;
@@ -99,7 +99,7 @@ public class ASN1DataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class to use when unmarshalling.
+     * Class to use when unmarshaling.
      */
     public void setUnmarshalType(Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
@@ -134,7 +134,7 @@ public class ASN1DataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class to use when unmarshalling.
+         * Class to use when unmarshaling.
          */
         public Builder unmarshalTypeName(String unmarshalTypeName) {
             this.unmarshalTypeName = unmarshalTypeName;
@@ -142,7 +142,7 @@ public class ASN1DataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class to use when unmarshalling.
+         * Class to use when unmarshaling.
          */
         public Builder unmarshalType(Class<?> unmarshalType) {
             this.unmarshalType = unmarshalType;

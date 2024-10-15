@@ -36,40 +36,40 @@ public class JacksonAvroDataFormat extends AbstractJacksonDataFormat {
     }
 
     /**
-     * Use the default Jackson {@link AvroMapper} and with a custom unmarshal type
+     * Use the default Jackson {@link AvroMapper} and with a custom unmarshaltype
      *
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public JacksonAvroDataFormat(Class<?> unmarshalType) {
         super(unmarshalType);
     }
 
     /**
-     * Use the default Jackson {@link AvroMapper} and with a custom unmarshal type and JSON view
+     * Use the default Jackson {@link AvroMapper} and with a custom unmarshaltype and JSON view
      *
-     * @param unmarshalType the custom unmarshal type
-     * @param jsonView      marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType the custom unmarshaltype
+     * @param jsonView      marker class to specify properties to be included during marshaling. See also
      */
     public JacksonAvroDataFormat(Class<?> unmarshalType, Class<?> jsonView) {
         super(unmarshalType, jsonView);
     }
 
     /**
-     * Use a custom Jackson {@link AvroMapper} and and unmarshal type
+     * Use a custom Jackson {@link AvroMapper} and and unmarshaltype
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public JacksonAvroDataFormat(AvroMapper mapper, Class<?> unmarshalType) {
         super(mapper, unmarshalType);
     }
 
     /**
-     * Use a custom Jackson {@link AvroMapper}, unmarshal type and JSON view
+     * Use a custom Jackson {@link AvroMapper}, unmarshaltype and JSON view
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
-     * @param jsonView      marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType the custom unmarshaltype
+     * @param jsonView      marker class to specify properties to be included during marshaling. See also
      */
     public JacksonAvroDataFormat(AvroMapper mapper, Class<?> unmarshalType, Class<?> jsonView) {
         super(mapper, unmarshalType, jsonView);

@@ -40,11 +40,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class JaxbDataFormatSchemaValidationWithObjectFactoryTest extends CamelTestSupport {
 
-    @EndpointInject("mock:marshall")
-    private MockEndpoint mockMarshall;
+    @EndpointInject("mock:marshal")
+    private MockEndpoint mockMarshal;
 
-    @EndpointInject("mock:unmarshall")
-    private MockEndpoint mockUnmarshall;
+    @EndpointInject("mock:unmarshal")
+    private MockEndpoint mockUnmarshal;
 
     private JAXBContext jbCtx;
 
@@ -61,10 +61,10 @@ public class JaxbDataFormatSchemaValidationWithObjectFactoryTest extends CamelTe
     }
 
     @Test
-    public void testMarshallOfNonRootElementWithValidationException() {
+    public void testMarshalOfNonRootElementWithValidationException() {
         Message message = new Message();
         Exception ex = Assertions.assertThrows(CamelExecutionException.class,
-                () -> template.sendBody("direct:marshall", message));
+                () -> template.sendBody("direct:marshal", message));
 
         Throwable cause = ex.getCause();
         assertIsInstanceOf(IOException.class, cause);
@@ -74,17 +74,17 @@ public class JaxbDataFormatSchemaValidationWithObjectFactoryTest extends CamelTe
     }
 
     @Test
-    public void testUnmarshallOfNonRootWithValidationException() throws Exception {
+    public void testUnmarshalOfNonRootWithValidationException() throws Exception {
         JAXBElement<Message> message = new ObjectFactory().createMessage(new Message());
 
         String xml;
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
-            jbCtx.createMarshaller().marshal(message, baos);
+            jbCtx.createMarshaler().marshal(message, baos);
             xml = new String(baos.toByteArray(), "UTF-8");
         }
 
         Exception ex = Assertions.assertThrows(CamelExecutionException.class,
-                () -> template.sendBody("direct:unmarshall", xml));
+                () -> template.sendBody("direct:unmarshal", xml));
 
         Throwable cause = ex.getCause();
         assertIsInstanceOf(IOException.class, cause);
@@ -102,16 +102,16 @@ public class JaxbDataFormatSchemaValidationWithObjectFactoryTest extends CamelTe
                 jaxbDataFormat.setContextPath(Message.class.getPackage().getName());
                 jaxbDataFormat.setSchema("classpath:message.xsd");
                 // if the following is removed the lookup of an object factory method which can create the element
-                // won't be done and the object won'T get marshalled
+                // won't be done and the object won'T get marshaled
                 jaxbDataFormat.setObjectFactory(true);
 
-                from("direct:marshall")
+                from("direct:marshal")
                         .marshal(jaxbDataFormat)
-                        .to("mock:marshall");
+                        .to("mock:marshal");
 
-                from("direct:unmarshall")
+                from("direct:unmarshal")
                         .unmarshal(jaxbDataFormat)
-                        .to("mock:unmarshall");
+                        .to("mock:unmarshal");
             }
         };
     }

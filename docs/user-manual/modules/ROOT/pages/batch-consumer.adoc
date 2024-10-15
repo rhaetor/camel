@@ -32,7 +32,7 @@ The `BatchConsumer` supports the following options:
 |=======================================================================
 |Option |Description
 |`maxMessagesPerPoll` |An integer to define a maximum messages to gather per poll. By default,
-no maximum is set. Can be used to set a limit of e.g. 1000 to avoid when
+no maximum is set. Can be used to set a limit of for example, 1000 to avoid when
 starting up the server that there are thousands of files. Set a value of
 0 or negative to disabled it as unlimited.
 |=======================================================================

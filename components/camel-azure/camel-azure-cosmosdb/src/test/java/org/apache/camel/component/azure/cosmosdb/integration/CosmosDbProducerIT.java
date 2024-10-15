@@ -42,9 +42,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @EnabledIfSystemProperties({
         @EnabledIfSystemProperty(named = "endpoint", matches = ".*",
-                                 disabledReason = "Make sure you supply CosmosDB endpoint, e.g: mvn clean install -Dendpoint="),
+                                 disabledReason = "Make sure you supply CosmosDB endpoint, for example, mvn clean install -Dendpoint="),
         @EnabledIfSystemProperty(named = "accessKey", matches = ".*",
-                                 disabledReason = "Make sure you supply CosmosDB accessKey, e.g: mvn clean install -DaccessKey=")
+                                 disabledReason = "Make sure you supply CosmosDB accessKey, for example, mvn clean install -DaccessKey=")
 })
 public class CosmosDbProducerIT extends BaseCamelCosmosDbTestSupport {
     @EndpointInject

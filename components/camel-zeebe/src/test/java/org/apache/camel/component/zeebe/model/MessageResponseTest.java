@@ -52,7 +52,7 @@ public class MessageResponseTest {
 
     @Test
     public void unmarshalTest() {
-        MessageResponse unmarshalledMessage1
+        MessageResponse unmarshaledMessage1
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_1, MessageResponse.class));
 
         MessageResponse message = new MessageResponse();
@@ -60,15 +60,15 @@ public class MessageResponseTest {
         message.setCorrelationKey("testKey");
         message.setSuccess(true);
 
-        assertEquals(message, unmarshalledMessage1);
+        assertEquals(message, unmarshaledMessage1);
 
-        MessageResponse unmarshalledMessage2
+        MessageResponse unmarshaledMessage2
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_2, MessageResponse.class));
 
         message.setSuccess(false);
         message.setErrorMessage("Test Error");
         message.setErrorCode("TestCode");
 
-        assertEquals(message, unmarshalledMessage2);
+        assertEquals(message, unmarshaledMessage2);
     }
 }

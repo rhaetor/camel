@@ -67,7 +67,7 @@ We appreciate all reproducers, but there are a few tips that can make us appreci
 * Reproducers provided as tests to Camel Core code base are easier for the community to work with than external applications.
 ** Make sure to check the "Making a good contribution" section below for more details.
 * When an external application is required, reduce debugging friction:
-** Use the plain Camel Core (i.e.: if it's a problem on Camel Core, avoid creating a reproducer based on Camel Quarkus, Camel Spring Boot and others).
+** Use the plain Camel Core (that is:  if it's a problem on Camel Core, avoid creating a reproducer based on Camel Quarkus, Camel Spring Boot and others).
 ** Use Java: the Camel Core is written in Java and that's the language the community is most familiar with.
 * Reproducers using Camel JBang are also highly helpful.
 
@@ -178,7 +178,7 @@ You can find more details about building Camel on the xref:contributing:building
 == Testing the changes
 
 If you need to implement tests for your changes (highly recommended!), you will probably need to handle 3 separate things:
-- simulate the infrastructure required for the test (i.e.; JMS brokers, Kafka, etc),
+- simulate the infrastructure required for the test (that is, JMS brokers, Kafka, etc),
 - writing testable code,
 - the test logic itself.
 
@@ -238,7 +238,7 @@ CAMEL-9999: Some message goes here
 === Making a good contribution
 
 * Less is more:
-** Avoid creating unnecessary Maven profiles (i.e.; to enable/disable tests)
+** Avoid creating unnecessary Maven profiles (that is, to enable/disable tests)
 ** Avoid creating custom surefire/failsafe configurations (use defaults as much as possible)
 * Ensure that the unit tests include proper assertions.
 * Avoid simply outputting changes to the standard output/error or just logging (tests **must** have assertions).
@@ -311,7 +311,7 @@ Some operations may also be done using the user interfaces provided by IDEs such
 ==== Rebase the code
 
 A common request is for the user to rebase the code. Reviewers typically ask for this when the HEAD (last commit) used for
-creating the contribution (i.e.; the code on your fork) is too outdated compared to the current version in the Camel upstream repository.
+creating the contribution (that is, the code on your fork) is too outdated compared to the current version in the Camel upstream repository.
 
 You can usually do this by running the following set of commands:
 

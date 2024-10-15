@@ -31,10 +31,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BindyMarshallUnmarshallWithDefaultValueTest extends CamelTestSupport {
+public class BindyMarshalUnmarshalWithDefaultValueTest extends CamelTestSupport {
 
     @Test
-    public void testUnMarshallMessage() {
+    public void testUnMarshalMessage() {
         MockEndpoint mock = getMockEndpoint("mock:resultUnmarshal");
         template.sendBody("direct:unmarshal", "10A9              ISINXD12345678BUYShare000002500.45USD01-08-2009Hello     ");
 
@@ -48,7 +48,7 @@ public class BindyMarshallUnmarshallWithDefaultValueTest extends CamelTestSuppor
     }
 
     @Test
-    public void testUnMarshallMessageWithEol() {
+    public void testUnMarshalMessageWithEol() {
         MockEndpoint mock = getMockEndpoint("mock:resultUnmarshalEol");
         template.sendBody("direct:unmarshaleol",
                 "10A9              ISINXD12345678BUYShare000002500.45USD01-08-2009Hello     QWERTY");
@@ -63,7 +63,7 @@ public class BindyMarshallUnmarshallWithDefaultValueTest extends CamelTestSuppor
     }
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:resultMarshal");
 
         mock.expectedBodiesReceived("10A9     JohnDoe  ISINXD12345678BUYShare000002500.45USD01-08-2009          \r\n");
@@ -73,7 +73,7 @@ public class BindyMarshallUnmarshallWithDefaultValueTest extends CamelTestSuppor
     }
 
     @Test
-    public void testMarshallMessageWithEol() throws Exception {
+    public void testMarshalMessageWithEol() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:resultMarshalEol");
 
         mock.expectedBodiesReceived("10A9     JohnDoe  ISINXD12345678BUYShare000002500.45USD01-08-2009          \r\n");

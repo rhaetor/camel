@@ -42,7 +42,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Marshal and unmarshal between POJOs and fixed field length format using Camel Bindy
+ * Marshal and unmarshalbetween POJOs and fixed field length format using Camel Bindy
  */
 @Dataformat("bindyFixed")
 public class BindyFixedLengthDataFormat extends BindyAbstractDataFormat {
@@ -121,7 +121,7 @@ public class BindyFixedLengthDataFormat extends BindyAbstractDataFormat {
                 // only use the header factory if the row is the header
                 if (headerFactory.supportsModel(modelClassNames)) {
                     if (factory.skipHeader()) {
-                        LOG.info("Skipping marshal of header row; 'skipHeader=true'");
+                        LOG.info("Skipping marshalof header row; 'skipHeader=true'");
                         continue;
                     } else {
                         result = headerFactory.unbind(getCamelContext(), model);
@@ -133,7 +133,7 @@ public class BindyFixedLengthDataFormat extends BindyAbstractDataFormat {
                 // only use the header factory if the row is the header
                 if (footerFactory.supportsModel(modelClassNames)) {
                     if (factory.skipFooter()) {
-                        LOG.info("Skipping marshal of footer row; 'skipFooter=true'");
+                        LOG.info("Skipping marshalof footer row; 'skipFooter=true'");
                         continue;
                     } else {
                         result = footerFactory.unbind(getCamelContext(), model);
@@ -142,7 +142,7 @@ public class BindyFixedLengthDataFormat extends BindyAbstractDataFormat {
             }
 
             if (result == null) {
-                // marshal as a normal / default row
+                // marshalas a normal / default row
                 result = factory.unbind(getCamelContext(), model);
             }
 
@@ -158,8 +158,8 @@ public class BindyFixedLengthDataFormat extends BindyAbstractDataFormat {
      * Check if the body is already parsed.
      * Bindy expects a list containing Map<String, Object> entries
      * where each Map contains only one entry where the key is the class
-     * name of the object to be marshalled, and the value is the
-     * object to be marshalled.
+     * name of the object to be marshaled, and the value is the
+     * object to be marshaled.
      */
     private boolean isPreparedList(Object object) {
         if (List.class.isAssignableFrom(object.getClass())) {

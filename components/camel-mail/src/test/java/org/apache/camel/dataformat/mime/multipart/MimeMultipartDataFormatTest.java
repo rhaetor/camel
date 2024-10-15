@@ -444,7 +444,7 @@ public class MimeMultipartDataFormatTest extends CamelTestSupport {
     }
 
     /*
-     * This test will only work of stream caching is enabled on the route. In order to find out whether the body
+     * This test will only work of stream caching is enabled on the route. To find out whether the body
      * is a multipart or not the stream has to be read, and if the underlying data is a stream (but not a stream cache)
      * there is no way back
      */

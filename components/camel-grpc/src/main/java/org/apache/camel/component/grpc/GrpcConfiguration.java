@@ -430,7 +430,7 @@ public class GrpcConfiguration {
     }
 
     /**
-     * Setting the server interceptors on the netty channel in order to intercept incoming calls before they are
+     * Setting the server interceptors on the netty channel to intercept incoming calls before they are
      * received by the server.
      */
     public void setServerInterceptors(List<ServerInterceptor> serverInterceptors) {
@@ -454,7 +454,7 @@ public class GrpcConfiguration {
     }
 
     /**
-     * Setting the client interceptors on the netty channel in order to intercept outgoing calls before they are
+     * Setting the client interceptors on the netty channel to intercept outgoing calls before they are
      * dispatched by the channel.
      */
     public void setClientInterceptors(List<ClientInterceptor> clientInterceptors) {

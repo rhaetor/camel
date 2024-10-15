@@ -54,7 +54,7 @@ public class ProcessDeploymentResponseTest {
 
     @Test
     public void unmarshalTest() {
-        ProcessDeploymentResponse unmarshalledMessage1
+        ProcessDeploymentResponse unmarshaledMessage1
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_1, ProcessDeploymentResponse.class));
 
         ProcessDeploymentResponse message = new ProcessDeploymentResponse();
@@ -64,15 +64,15 @@ public class ProcessDeploymentResponseTest {
         message.setVersion(2);
         message.setSuccess(true);
 
-        assertEquals(message, unmarshalledMessage1);
+        assertEquals(message, unmarshaledMessage1);
 
-        ProcessDeploymentResponse unmarshalledMessage2
+        ProcessDeploymentResponse unmarshaledMessage2
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_2, ProcessDeploymentResponse.class));
 
         message.setSuccess(false);
         message.setErrorMessage("Test Error");
         message.setErrorCode("TestCode");
 
-        assertEquals(message, unmarshalledMessage2);
+        assertEquals(message, unmarshaledMessage2);
     }
 }

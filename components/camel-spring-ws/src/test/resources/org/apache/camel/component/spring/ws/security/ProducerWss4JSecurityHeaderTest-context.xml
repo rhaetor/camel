@@ -68,11 +68,11 @@
         </bean>
       </list>
     </property>
-    <property name="marshaller" ref="marshaller"/>
-    <property name="unmarshaller" ref="marshaller"/>
+    <property name="marshaler" ref="marshaler"/>
+    <property name="unmarshaler" ref="marshaler"/>
   </bean>
 
-  <bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+  <bean id="marshaler" class="org.springframework.oxm.jaxb.Jaxb2Marshaler">
     <property name="contextPath" value="net.javacrumbs.calc.model"/>
   </bean>
 

@@ -109,7 +109,7 @@ when a message should be considered stale and thus shouldn't be processed?
 |===
 a|image::eip/ContentBasedRouterIcon.gif[image]
 |xref:choice-eip.adoc[Content-Based Router] |How do we handle
-a situation where the implementation of a single logical function (e.g.,
+a situation where the implementation of a single logical function (for example:
 inventory check) is spread across multiple physical systems?
 
 a|image::eip/MessageFilterIcon.gif[image]

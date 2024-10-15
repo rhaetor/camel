@@ -27,11 +27,11 @@ import org.springframework.test.context.ContextConfiguration;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ContextConfiguration
-public class BindySimpleKeyValuePairUnmarshallTest extends CommonBindyTest {
+public class BindySimpleKeyValuePairUnmarshalTest extends CommonBindyTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
         result.expectedMessageCount(1);
         result.assertIsSatisfied();
 

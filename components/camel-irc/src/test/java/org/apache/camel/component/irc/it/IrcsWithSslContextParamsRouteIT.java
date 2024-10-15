@@ -31,7 +31,7 @@ public class IrcsWithSslContextParamsRouteIT extends IrcRouteIT {
     // 2) Copy the contents of the src/test/unrealircd folder into the installation
     //    folder of UnrealIRCd.
     // 3) Start UnrealIRCd and execute this test.  Often the test executes quicker than
-    //    the IRC server responds and the assertion will fail.  In order to get the test to
+    //    the IRC server responds and the assertion will fail.  To get the test to
     //    pass reliably, you may need to set a break point in IrcEndpoint#joinChanel in order
     //    to slow the route creation down enough for the event listener to be in place
     //    when camel-con joins the room.

@@ -310,7 +310,7 @@ public class TypeConverterLoaderGeneratorMojo extends AbstractGeneratorMojo {
      * This resolves the method to be called for conversion. There are 2 possibilities here: either it calls a static
      * method, in which case we can refer to it directly ... Or it uses one of the converter classes to do so. In this
      * case, we do a bit of hacking "by convention" to call the getter of said converter and use it to call the
-     * converter method (i.e.; getDomConverter().myConverter method). There are some cases (like when dealing with jaxp
+     * converter method (that is, getDomConverter().myConverter method). There are some cases (like when dealing with jaxp
      * that require this)
      *
      * @param  method The converter method

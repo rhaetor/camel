@@ -3107,7 +3107,7 @@ public class ModelWriter extends BaseWriter {
             throws IOException {
         startElement(name);
         doWriteIdentifiedTypeAttributes(def);
-        doWriteAttribute("allowUnmarshallType", def.getAllowUnmarshallType());
+        doWriteAttribute("allowUnmarshalType", def.getAllowUnmarshalType());
         doWriteAttribute("include", def.getInclude());
         doWriteAttribute("contentTypeHeader", def.getContentTypeHeader());
         doWriteAttribute("unmarshalType", def.getUnmarshalTypeName());
@@ -3187,7 +3187,7 @@ public class ModelWriter extends BaseWriter {
             throws IOException {
         startElement(name);
         doWriteIdentifiedTypeAttributes(def);
-        doWriteAttribute("allowUnmarshallType", def.getAllowUnmarshallType());
+        doWriteAttribute("allowUnmarshalType", def.getAllowUnmarshalType());
         doWriteAttribute("useDefaultObjectMapper", def.getUseDefaultObjectMapper());
         doWriteAttribute("prettyPrint", def.getPrettyPrint());
         doWriteAttribute("objectMapper", def.getObjectMapper());
@@ -3248,7 +3248,7 @@ public class ModelWriter extends BaseWriter {
         doWriteAttribute("ignoreHeaderCase", def.getIgnoreHeaderCase());
         doWriteAttribute("recordSeparatorDisabled", def.getRecordSeparatorDisabled());
         doWriteAttribute("captureHeaderRecord", def.getCaptureHeaderRecord());
-        doWriteAttribute("marshallerFactoryRef", def.getMarshallerFactoryRef());
+        doWriteAttribute("marshalerFactoryRef", def.getMarshalerFactoryRef());
         doWriteAttribute("recordSeparator", def.getRecordSeparator());
         doWriteList(null, "header", def.getHeader(), this::doWriteString);
         endElement(name);
@@ -3422,7 +3422,7 @@ public class ModelWriter extends BaseWriter {
         startElement(name);
         doWriteIdentifiedTypeAttributes(def);
         doWriteAttribute("include", def.getInclude());
-        doWriteAttribute("allowUnmarshallType", def.getAllowUnmarshallType());
+        doWriteAttribute("allowUnmarshalType", def.getAllowUnmarshalType());
         doWriteAttribute("contentTypeHeader", def.getContentTypeHeader());
         doWriteAttribute("prettyPrint", def.getPrettyPrint());
         doWriteAttribute("unmarshalType", def.getUnmarshalTypeName());
@@ -3493,7 +3493,7 @@ public class ModelWriter extends BaseWriter {
         doWriteAttribute("enableFeatures", def.getEnableFeatures());
         doWriteAttribute("library", toString(def.getLibrary()));
         doWriteAttribute("autoDiscoverObjectMapper", def.getAutoDiscoverObjectMapper());
-        doWriteAttribute("allowUnmarshallType", def.getAllowUnmarshallType());
+        doWriteAttribute("allowUnmarshalType", def.getAllowUnmarshalType());
         doWriteAttribute("include", def.getInclude());
         doWriteAttribute("prettyPrint", def.getPrettyPrint());
         doWriteAttribute("unmarshalType", def.getUnmarshalTypeName());
@@ -3578,7 +3578,7 @@ public class ModelWriter extends BaseWriter {
         doWriteAttribute("enableFeatures", def.getEnableFeatures());
         doWriteAttribute("library", toString(def.getLibrary()));
         doWriteAttribute("autoDiscoverObjectMapper", def.getAutoDiscoverObjectMapper());
-        doWriteAttribute("allowUnmarshallType", def.getAllowUnmarshallType());
+        doWriteAttribute("allowUnmarshalType", def.getAllowUnmarshalType());
         doWriteAttribute("include", def.getInclude());
         doWriteAttribute("unmarshalType", def.getUnmarshalTypeName());
         doWriteAttribute("autoDiscoverSchemaResolver", def.getAutoDiscoverSchemaResolver());

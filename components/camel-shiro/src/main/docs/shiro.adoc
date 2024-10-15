@@ -112,7 +112,7 @@ A ShiroSecurityPolicy object is instantiated as follows
 |`iniResourcePath or ini` |`none` |Resource String or Ini Object |A mandatory Resource String for the iniResourcePath or an instance of an
 Ini object must be passed to the security policy. Resources can be
 acquired from the file system, classpath, or URLs when prefixed with
-"file:, classpath:, or url:" respectively. For e.g., `classpath:shiro.ini`
+"file:, classpath:, or url:" respectively. For for example, `classpath:shiro.ini`
 
 |`passPhrase` |`An AES 128 based key` |byte[] |A passPhrase to decrypt ShiroSecurityToken(s) sent along with Message
 Exchanges
@@ -122,14 +122,14 @@ to false, the user is authenticated and locked such than only requests
 from the same user going forward are authenticated.
 
 |`permissionsList` |`none` |List<Permission> |A List of permissions required in order for an authenticated user to be
-authorized to perform further action i.e., continue further on the route.
+authorized to perform further action that is, continue further on the route.
 If no Permissions list or Roles List (see below) is provided to the
 ShiroSecurityPolicy object, then authorization is deemed as not
 required. Note that the default is that authorization is granted if any
 of the Permission Objects in the list are applicable.
 
 |`rolesList` |`none` |List<String> |A List of roles required in order for an authenticated
-user to be authorized to perform further action i.e., continue further on
+user to be authorized to perform further action that is, continue further on
 the route. If no roles list or permissions list (see above) is provided
 to the ShiroSecurityPolicy object, then authorization is deemed as not
 required. Note that the default is that authorization is granted if any

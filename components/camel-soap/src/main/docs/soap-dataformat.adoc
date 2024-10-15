@@ -18,7 +18,7 @@ basic features of Apache CXF without the need for the CXF Stack.
 *Namespace prefix mapping*
 
 See xref:jaxb-dataformat.adoc[JAXB] for details how you can control namespace
-prefix mappings when marshalling using SOAP data format.
+prefix mappings when marshaling using SOAP data format.
 
 == SOAP Options
 
@@ -32,7 +32,7 @@ include::partial$dataformat-options.adoc[]
 == ElementNameStrategy
 
 An element name strategy is used for two purposes. The first is to find
- an XML element name for a given object and soap action when marshaling
+an XML element name for a given object and soap action when marshaling
 the object into a SOAP message. The second is to find an Exception class
 for a given soap fault name.
 
@@ -63,7 +63,7 @@ configured with the package `com.example.customerservice` to initialize
 the
 http://java.sun.com/javase/6/docs/api/javax/xml/bind/JAXBContext.html[JAXBContext].
 The second parameter is the `ElementNameStrategy`. The route is able to
-marshal normal objects as well as exceptions.
+marshalnormal objects as well as exceptions.
 
 [NOTE]
 ====
@@ -108,7 +108,7 @@ When using XML DSL, there is a version attribute you can set on the
 
 [source,xml]
 -----------------------------------------------------------------------------------------------------
-    <!-- Defining a ServiceInterfaceStrategy for retrieving the element name when marshalling -->
+    <!-- Defining a ServiceInterfaceStrategy for retrieving the element name when marshaling -->
     <bean id="myNameStrategy" class="org.apache.camel.dataformat.soap.name.ServiceInterfaceStrategy">
         <constructor-arg value="com.example.customerservice.CustomerService"/>
     <constructor-arg value="true"/>
@@ -159,13 +159,13 @@ object for `In/Out` and `Out` parameters. You may use an instance of the
 parameterized-type directly. The camel-soap DataFormat marshals Holder
 values in accordance with the JAXB mapping for the class of the
 ``Holder``'s value. No mapping is provided for `Holder` objects in an
-unmarshalled response.
+unmarshaled response.
 
 == Examples
 
 === Webservice client
 
-The following route supports marshalling the request and unmarshalling a
+The following route supports marshaling the request and unmarshaling a
 response or fault.
 
 [source,java]

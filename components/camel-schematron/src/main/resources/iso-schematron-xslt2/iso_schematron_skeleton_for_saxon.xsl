@@ -549,7 +549,7 @@ which require a preprocess.
 <xsl:param name="select-contexts" select="''"/>
 
 
-<!-- e.g. saxon file.xml file.xsl "sch.exslt.imports=.../string.xsl;.../math.xsl" -->
+<!-- for example, saxon file.xml file.xsl "sch.exslt.imports=.../string.xsl;.../math.xsl" -->
 <xsl:param name="sch.exslt.imports"/>
 
 <xsl:param name="debug">false</xsl:param>
@@ -557,7 +557,7 @@ which require a preprocess.
 <!-- Set the language code for messages -->
 <xsl:param name="langCode">default</xsl:param>
 
-<!-- Set the default for schematron-select-full-path, i.e. the notation for svrl's @location-->
+<!-- Set the default for schematron-select-full-path, that is, the notation for svrl's @location-->
 <xsl:param name="full-path-notation">1</xsl:param>
 
 <xsl:param name="terminate">false</xsl:param>
@@ -1161,7 +1161,7 @@ which require a preprocess.
 	     So there are some versions of the Schematron skeleton for XT that strip out all
 	     key elements.
 	     
-	     Xalan (e.g. Xalan4C 1.0 and a Xalan4J) also had a funny. A fix involved making 
+	     Xalan (for example, Xalan4C 1.0 and a Xalan4J) also had a funny. A fix involved making
 	     a top-level parameter called $hiddenKey and then using that instead of matching
 	     "key". This has been removed.
 	     
@@ -2203,7 +2203,7 @@ which require a preprocess.
 		themselves, of course. Nor does it apply to messages in metastylesheets.)
 		
 		Stylesheets have a parameter $langCode which can be used to select the
-		language code (e.g. from the command line)
+		language code (for example, from the command line)
 		
 		The default value of $langCode is "default". When this is used, the
 		message text is taken from the strings below. We use XHTML, to provide
@@ -2264,7 +2264,7 @@ which require a preprocess.
 	
 <xhtml:div class="ErrorMessages">	
 	<!-- Where the error message contains dynamic information, the message has been split into an "a" and a "b" section.
-	     This has been done even when the English does not require it, in order to accomodate different language grammars
+	     This has been done even when the English does not require it, to accomodate different language grammars
 	     that might position the dynamic information differently.
 	-->
 	<xhtml:p id="sch-message-1">Schema error: Schematron elements in old and new namespaces found</xhtml:p>

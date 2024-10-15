@@ -41,7 +41,7 @@ import org.apache.camel.util.concurrent.ThreadHelper;
  * <p>
  * The resequencer remembers the last-delivered element. If an element arrives which is the immediate successor of the
  * last-delivered element it is <i>ready-for-delivery</i> immediately. After delivery the last-delivered element is
- * adjusted accordingly. If the last-delivered element is <code>null</code> i.e. the resequencer was newly created the
+ * adjusted accordingly. If the last-delivered element is <code>null</code> that is, the resequencer was newly created the
  * first arriving element needs <code>timeout</code> milliseconds in any case for becoming <i>ready-for-delivery</i>.
  * <p>
  */
@@ -95,7 +95,7 @@ public class ResequencerEngine<E> {
     }
 
     /**
-     * Stops this resequencer (i.e. this resequencer's {@link Timer} instance).
+     * Stops this resequencer (that is, this resequencer's {@link Timer} instance).
      */
     public void stop() {
         timer.cancel();

@@ -318,7 +318,7 @@ public class SplitDefinition extends OutputExpressionNode implements ExecutorSer
      * more memory. The total size is provided in the {@link org.apache.camel.Exchange#SPLIT_SIZE} header.
      * <p/>
      * The streaming mode also affects the aggregation behavior. If enabled then Camel will process replies
-     * out-of-order, e.g. in the order they come back. If disabled, Camel will process replies in the same order as the
+     * out-of-order, for example, in the order they come back. If disabled, Camel will process replies in the same order as the
      * messages was split.
      *
      * @return the builder
@@ -337,7 +337,7 @@ public class SplitDefinition extends OutputExpressionNode implements ExecutorSer
      * more memory. The total size is provided in the {@link org.apache.camel.Exchange#SPLIT_SIZE} header.
      * <p/>
      * The streaming mode also affects the aggregation behavior. If enabled then Camel will process replies
-     * out-of-order, e.g. in the order they come back. If disabled, Camel will process replies in the same order as the
+     * out-of-order, for example, in the order they come back. If disabled, Camel will process replies in the same order as the
      * messages was split.
      *
      * @return the builder
@@ -356,7 +356,7 @@ public class SplitDefinition extends OutputExpressionNode implements ExecutorSer
      * more memory. The total size is provided in the {@link org.apache.camel.Exchange#SPLIT_SIZE} header.
      * <p/>
      * The streaming mode also affects the aggregation behavior. If enabled then Camel will process replies
-     * out-of-order, e.g. in the order they come back. If disabled, Camel will process replies in the same order as the
+     * out-of-order, for example, in the order they come back. If disabled, Camel will process replies in the same order as the
      * messages was split.
      *
      * @return the builder

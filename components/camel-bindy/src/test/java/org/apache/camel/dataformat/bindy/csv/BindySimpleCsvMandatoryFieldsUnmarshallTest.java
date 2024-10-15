@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvMandatoryFieldsUnmarshallTest {
+public class BindySimpleCsvMandatoryFieldsUnmarshalTest {
 
     @EndpointInject("mock:result1")
     protected MockEndpoint resultEndpoint1;

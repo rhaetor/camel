@@ -28,8 +28,11 @@ Where `name` is the name of the `Timer` object, which is created and
 shared across endpoints. So if you use the same name for all your timer
 endpoints, only one `Timer` object and thread will be used.
 
-NOTE: The _IN_ body of the generated exchange is `null`.
+[NOTE]
+====
+The _IN_ body of the generated exchange is `null`.
 Therefore, calling `exchange.getIn().getBody()` returns `null`.
+====
 
 [TIP]
 ====

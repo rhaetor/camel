@@ -215,7 +215,7 @@ public class PGPDataFormat extends PGPKeyAccessDataFormat implements PGPPublicKe
     }
 
     /**
-     * Alternative way to provide the passphrases. Especially useful for the unmarshal (decryption) case . If no
+     * Alternative way to provide the passphrases. Especially useful for the unmarshal(decryption) case . If no
      * passphrase can be found from the parameter <tt>password</tt> or <tt>signaturePassword</tt> or from the header
      * {@link #SIGNATURE_KEY_PASSWORD} or {@link #KEY_PASSWORD} then we try to get the password from the passphrase
      * accessor. This is especially useful in the decrypt case, where we chose the private key according to the key Id

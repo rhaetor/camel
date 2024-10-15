@@ -36,9 +36,9 @@ include::partial$component-endpoint-options.adoc[]
 include::partial$component-endpoint-headers.adoc[]
 // component headers: END
 
-== Examples:
+== Examples
 
-=== Recursive watch all events (file creation, file deletion, file modification):
+=== Recursive watch all events (file creation, file deletion, file modification)
 
 [source,java]
 ----
@@ -46,7 +46,7 @@ from("file-watch://some-directory")
     .log("File event: ${header.CamelFileEventType} occurred on file ${header.CamelFileName} at ${header.CamelFileLastModified}");
 ----
 
-=== Recursive watch for creation and deletion of txt files:
+=== Recursive watch for creation and deletion of txt files
 
 [source,java]
 ----
@@ -54,7 +54,7 @@ from("file-watch://some-directory?events=DELETE,CREATE&antInclude=**/*.txt")
     .log("File event: ${header.CamelFileEventType} occurred on file ${header.CamelFileName} at ${header.CamelFileLastModified}");
 ----
 
-=== Create a snapshot of file when modified:
+=== Create a snapshot of file when modified
 
 [source,java]
 ----

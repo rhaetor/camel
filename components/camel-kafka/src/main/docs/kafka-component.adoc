@@ -178,7 +178,7 @@ camelContext.addRoutes(new RouteBuilder() {
 
 === Producing messages to Kafka
 
-Here is the minimal route you need in order to write messages to Kafka.
+Here is the minimal route you need to write messages to Kafka.
 
 [source,java]
 ----
@@ -245,7 +245,7 @@ camelContext.addRoutes(new RouteBuilder() {
 
 The `camel-kafka` library provides a Kafka topic-based idempotent repository. This repository stores broadcasts all changes to idempotent state (add/remove) in a Kafka topic, and populates a local in-memory cache for each repository's process instance through event sourcing.
 The topic used must be unique per idempotent repository instance. The mechanism does not have any requirements about the number of topic partitions, as the repository consumes from all partitions at the same time. It also does not have any requirements about the replication factor of the topic.
-Each repository instance that uses the topic, (e.g., typically on different machines running in parallel) controls its own consumer group, so in a cluster of 10 Camel processes using the same topic, each will control its own offset.
+Each repository instance that uses the topic, (for example, typically on different machines running in parallel) controls its own consumer group, so in a cluster of 10 Camel processes using the same topic, each will control its own offset.
 On startup, the instance subscribes to the topic, rewinds the offset to the beginning and rebuilds the cache to the latest state. The cache will not be considered warmed up until one poll of `pollDurationMs` in length returns 0 records. Startup will not be completed until either the cache has warmed up, or 30 seconds go by; if the latter happens, the idempotent repository may be in an inconsistent state until its consumer catches up to the end of the topic.
 Be mindful of the format of the header used for the uniqueness check. By default, it uses Strings as the data types. When using primitive numeric formats, the header must be deserialized accordingly. Check the samples below for examples.
 
@@ -539,7 +539,7 @@ public void configure() {
 
 When using automatic commits, Camel will not commit records if there is a failure in processing. Because of this, there is a risk that records could be reprocessed multiple times.
 
-It is recommended to implement appropriate error handling mechanisms and patterns (i.e.; such as dead-letter queues), to prevent failed records from blocking processing progress.
+It is recommended to implement appropriate error handling mechanisms and patterns (that is, ; such as dead-letter queues), to prevent failed records from blocking processing progress.
 
 The code below provides an example of handling errors with automatic commits:
 
@@ -632,6 +632,35 @@ public void configure() {
 
     // route setup ...
 }
+----
+
+== Interoperability
+
+=== JMS
+
+When interoperating Kafka and JMS, it may be necessary to coerce the JMS headers into their expected type.
+
+For instance, when consuming messages from Kafka carrying JMS headers and then sending them to a JMS broker, those headers are
+first deserialized into a byte array. Then, the `camel-jms` component tries to coerce this byte array into the
+specific type used by.
+However, both the origin endpoint as well as how this was setup on the code itsef may affect how the data is serialized and
+deserialized. As such, it is not feasible to naively assume the data type of the byte array.
+
+To address this issue, we provide a custom header deserializer to force Kafka to de-serialize the JMS data according to
+the JMS specification. This approach ensures that the headers are properly interpreted and processed by the camel-jms component.
+
+Due to the inherent complexity of each possible system and endpoint, it may not be possible for this deserializer to cover all
+possible scenarios. As such, it is provided as model that can be modified and/or adapted for the specific needs of each application.
+
+To utilize this solution, you need to modify the route URI on the consumer end of the pipeline by including the
+`headerDeserializer` option.
+For example:
+
+[source,java]
+.Route snippet
+----
+from("kafka:topic?headerDeserializer=#class:org.apache.camel.component.kafka.consumer.support.interop.JMSDeserializer")
+    .to("...");
 ----
 
 include::spring-boot:partial$starter.adoc[]

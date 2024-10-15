@@ -72,18 +72,18 @@ public class GsonDataFormat extends ServiceSupport
     }
 
     /**
-     * Use the default Gson {@link Gson} and with a custom unmarshal type
+     * Use the default Gson {@link Gson} and with a custom unmarshaltype
      *
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public GsonDataFormat(Class<?> unmarshalType) {
         this(null, unmarshalType);
     }
 
     /**
-     * Use the default Gson {@link Gson} and with a custom unmarshal type and {@link ExclusionStrategy}
+     * Use the default Gson {@link Gson} and with a custom unmarshaltype and {@link ExclusionStrategy}
      *
-     * @param      unmarshalType       the custom unmarshal type
+     * @param      unmarshalType       the custom unmarshaltype
      * @param      exclusionStrategies one or more custom ExclusionStrategy implementations
      * @deprecated                     use the setter instead
      */
@@ -94,10 +94,10 @@ public class GsonDataFormat extends ServiceSupport
     }
 
     /**
-     * Use a custom Gson mapper and and unmarshal type
+     * Use a custom Gson mapper and and unmarshaltype
      *
      * @param gson          the custom mapper
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public GsonDataFormat(Gson gson, Class<?> unmarshalType) {
         this.gson = gson;
@@ -105,19 +105,19 @@ public class GsonDataFormat extends ServiceSupport
     }
 
     /**
-     * Use the default Gson {@link Gson} and with a custom unmarshal generic type
+     * Use the default Gson {@link Gson} and with a custom unmarshalgeneric type
      *
-     * @param unmarshalGenericType the custom unmarshal generic type
+     * @param unmarshalGenericType the custom unmarshalgeneric type
      */
     public GsonDataFormat(Type unmarshalGenericType) {
         this(null, unmarshalGenericType);
     }
 
     /**
-     * Use a custom Gson mapper and and unmarshal token type
+     * Use a custom Gson mapper and and unmarshaltoken type
      *
      * @param gson                 the custom mapper
-     * @param unmarshalGenericType the custom unmarshal generic type
+     * @param unmarshalGenericType the custom unmarshalgeneric type
      */
     public GsonDataFormat(Gson gson, Type unmarshalGenericType) {
         this.gson = gson;
@@ -356,7 +356,7 @@ public class GsonDataFormat extends ServiceSupport
     }
 
     /**
-     * If enabled then Gson will set the Content-Type header to <tt>application/json</tt> when marshalling.
+     * If enabled then Gson will set the Content-Type header to <tt>application/json</tt> when marshaling.
      */
     public void setContentTypeHeader(boolean contentTypeHeader) {
         this.contentTypeHeader = contentTypeHeader;

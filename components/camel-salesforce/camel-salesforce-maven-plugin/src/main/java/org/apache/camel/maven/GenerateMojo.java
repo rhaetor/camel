@@ -72,14 +72,14 @@ public class GenerateMojo extends AbstractSalesforceMojo {
 
     /**
      * Names of specific picklist/multipicklist fields, which should be converted to Enum (default case) if property
-     * {@link this#useStringsForPicklists} is set to true. Format: SObjectApiName.FieldApiName (e.g. Account.DataSource)
+     * {@link this#useStringsForPicklists} is set to true. Format: SObjectApiName.FieldApiName (for example, Account.DataSource)
      */
     @Parameter
     String[] picklistToEnums;
 
     /**
      * Names of specific picklist/multipicklist fields, which should be converted to String if property
-     * {@link this#useStringsForPicklists} is set to false. Format: SObjectApiName.FieldApiName (e.g.
+     * {@link this#useStringsForPicklists} is set to false. Format: SObjectApiName.FieldApiName (for example
      * Account.DataSource)
      */
     @Parameter

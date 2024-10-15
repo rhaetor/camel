@@ -98,7 +98,7 @@ That is not all, you also need to use a JTA transaction implementation such as:
 - A JEE Application Server with JTA
 
 And all of this must be configured correctly to have JTA transaction working.
-You may also need to do special configuration from the vendors of the resources (i.e., database or messaging system)
+You may also need to do special configuration from the vendors of the resources (that is, database or messaging system)
 to have this work properly with JTA/XA transactions. Consult the documentation of those systems for more details.
 
 === About Spring Transactions

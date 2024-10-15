@@ -39,14 +39,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /**
- * This class tests the unmarshalling of {@link UniVocityFixedDataFormat}.
+ * This class tests the unmarshaling of {@link UniVocityFixedDataFormat}.
  */
 public final class UniVocityFixedDataFormatUnmarshalTest extends CamelTestSupport {
     @EndpointInject("mock:result")
     MockEndpoint result;
 
     /**
-     * Tests that we can unmarshal fixed-width with the default configuration.
+     * Tests that we can unmarshalfixed-width with the default configuration.
      */
     @Test
     public void shouldUnmarshalWithDefaultConfiguration() throws Exception {
@@ -63,7 +63,7 @@ public final class UniVocityFixedDataFormatUnmarshalTest extends CamelTestSuppor
     }
 
     /**
-     * Tests that we can unmarshal fixed-width and produce maps for each row
+     * Tests that we can unmarshalfixed-width and produce maps for each row
      */
     @Test
     public void shouldUnmarshalAsMap() throws Exception {
@@ -79,7 +79,7 @@ public final class UniVocityFixedDataFormatUnmarshalTest extends CamelTestSuppor
     }
 
     /**
-     * Tests that we can unmarshal fixed-width and produce maps for each row with the given header
+     * Tests that we can unmarshalfixed-width and produce maps for each row with the given header
      */
     @Test
     public void shouldUnmarshalAsMapWithHeaders() throws Exception {
@@ -95,7 +95,7 @@ public final class UniVocityFixedDataFormatUnmarshalTest extends CamelTestSuppor
     }
 
     /**
-     * Tests that we can unmarshal fixed-width and produce an Iterator that lazily reads the input
+     * Tests that we can unmarshalfixed-width and produce an Iterator that lazily reads the input
      */
     @Test
     public void shouldUnmarshalUsingIterator() throws Exception {
@@ -135,7 +135,7 @@ public final class UniVocityFixedDataFormatUnmarshalTest extends CamelTestSuppor
     }
 
     /**
-     * Tests that we can unmarshal fixed-width that has lots of configuration options
+     * Tests that we can unmarshalfixed-width that has lots of configuration options
      */
     @Test
     public void shouldUnmarshalUsingAdvancedConfiguration() throws Exception {

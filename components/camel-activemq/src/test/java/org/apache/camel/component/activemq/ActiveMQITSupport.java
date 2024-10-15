@@ -46,7 +46,7 @@ public abstract class ActiveMQITSupport implements ConfigurableContext, Configur
         return new MessagingLocalContainerService<>(container, c -> container.defaultEndpoint());
     }
 
-    /* We don't want topic advisories here: they may cause publication issues (i.e.:
+    /* We don't want topic advisories here: they may cause publication issues (that is, :
      * jakarta.jms.InvalidDestinationException: Cannot publish to a deleted Destination) with
      * spring JMS. So, we disable them ...
      */

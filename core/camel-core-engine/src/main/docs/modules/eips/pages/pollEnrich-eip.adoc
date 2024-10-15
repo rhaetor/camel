@@ -70,7 +70,7 @@ The timeout values are in milliseconds.
 
 === Using Poll Enrich
 
-The content enricher (`pollEnrich`) retrieves additional data from a _resource endpoint_ in order to enrich an incoming message (contained in the _original exchange_).
+The content enricher (`pollEnrich`) retrieves additional data from a _resource endpoint_ to enrich an incoming message (contained in the _original exchange_).
 
 An `AggregationStrategy` is used to combine the original exchange and the _resource exchange_. The first parameter of the `AggregationStrategy.aggregate(Exchange, Exchange)` method corresponds to the original exchange, the second parameter the resource exchange.
 

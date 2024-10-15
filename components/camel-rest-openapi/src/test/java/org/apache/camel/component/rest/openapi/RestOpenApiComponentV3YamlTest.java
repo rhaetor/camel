@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Marshaler;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import org.apache.camel.CamelContext;
@@ -223,7 +223,7 @@ public class RestOpenApiComponentV3YamlTest extends CamelTestSupport {
 
                 final JaxbDataFormat jaxb = new JaxbDataFormat(jaxbContext);
 
-                jaxb.setJaxbProviderProperties(Collections.singletonMap(Marshaller.JAXB_FORMATTED_OUTPUT, false));
+                jaxb.setJaxbProviderProperties(Collections.singletonMap(Marshaler.JAXB_FORMATTED_OUTPUT, false));
 
                 from("direct:getPetById").to("petStore:getPetById").unmarshal(jaxb);
 

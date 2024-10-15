@@ -944,7 +944,7 @@ public class GenerateYamlDeserializersMojo extends GenerateYamlSupportMojo {
                 List<Type> arguments = adapterClassInfo.superClassType().asParameterizedType().arguments();
                 if (arguments.size() == 2) {
                     // this is for extends XmlAdapter<BeanPropertiesDefinition, Map<String, Object>>
-                    // we can't use JaxbUnmarshaller here (as in XML DSL) and we have to convert to map directly
+                    // we can't use JaxbUnmarshaler here (as in XML DSL) and we have to convert to map directly
                     Type type = arguments.get(1);
                     if (type.name().toString().equals("java.util.Map")) {
                         cb.addStatement("$L val = asMap(node)", field.type().name().toString());

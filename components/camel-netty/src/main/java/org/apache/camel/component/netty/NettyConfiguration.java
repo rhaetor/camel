@@ -451,7 +451,7 @@ public class NettyConfiguration extends NettyServerBootstrapConfiguration implem
     }
 
     /**
-     * Adds a custom ChannelHandler class that can be used to perform special marshalling of outbound payloads.
+     * Adds a custom ChannelHandler class that can be used to perform special marshaling of outbound payloads.
      */
     public void addEncoder(ChannelHandler encoder) {
         if (!encodersList.contains(encoder)) {
@@ -460,7 +460,7 @@ public class NettyConfiguration extends NettyServerBootstrapConfiguration implem
     }
 
     /**
-     * Adds a custom ChannelHandler class that can be used to perform special marshalling of inbound payloads.
+     * Adds a custom ChannelHandler class that can be used to perform special marshaling of inbound payloads.
      */
     public void addDecoder(ChannelHandler decoder) {
         if (!decodersList.contains(decoder)) {

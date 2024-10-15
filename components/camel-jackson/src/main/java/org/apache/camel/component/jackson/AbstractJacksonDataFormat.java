@@ -81,7 +81,7 @@ public abstract class AbstractJacksonDataFormat extends ServiceSupport
     private String enableFeatures;
     private String disableFeatures;
     private boolean enableJacksonTypeConverter;
-    private boolean allowUnmarshallType;
+    private boolean allowUnmarshalType;
     private boolean contentTypeHeader = true;
     private TimeZone timezone;
     private boolean autoDiscoverObjectMapper;
@@ -97,19 +97,19 @@ public abstract class AbstractJacksonDataFormat extends ServiceSupport
     }
 
     /**
-     * Use the default Jackson {@link ObjectMapper} and with a custom unmarshal type
+     * Use the default Jackson {@link ObjectMapper} and with a custom unmarshaltype
      *
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     protected AbstractJacksonDataFormat(Class<?> unmarshalType) {
         this(unmarshalType, null);
     }
 
     /**
-     * Use the default Jackson {@link ObjectMapper} and with a custom unmarshal type and JSON view
+     * Use the default Jackson {@link ObjectMapper} and with a custom unmarshaltype and JSON view
      *
-     * @param unmarshalType the custom unmarshal type
-     * @param jsonView      marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType the custom unmarshaltype
+     * @param jsonView      marker class to specify properties to be included during marshaling. See also
      *                      https://github.com/FasterXML/jackson-annotations/blob/master/src/main/java/com/fasterxml/jackson/annotation/JsonView.java
      */
     protected AbstractJacksonDataFormat(Class<?> unmarshalType, Class<?> jsonView) {
@@ -118,21 +118,21 @@ public abstract class AbstractJacksonDataFormat extends ServiceSupport
     }
 
     /**
-     * Use a custom Jackson mapper and and unmarshal type
+     * Use a custom Jackson mapper and and unmarshaltype
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     protected AbstractJacksonDataFormat(ObjectMapper mapper, Class<?> unmarshalType) {
         this(mapper, unmarshalType, null);
     }
 
     /**
-     * Use a custom Jackson mapper, unmarshal type and JSON view
+     * Use a custom Jackson mapper, unmarshaltype and JSON view
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
-     * @param jsonView      marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType the custom unmarshaltype
+     * @param jsonView      marker class to specify properties to be included during marshaling. See also
      *                      https://github.com/FasterXML/jackson-annotations/blob/master/src/main/java/com/fasterxml/jackson/annotation/JsonView.java
      */
     protected AbstractJacksonDataFormat(ObjectMapper mapper, Class<?> unmarshalType, Class<?> jsonView) {
@@ -175,10 +175,10 @@ public abstract class AbstractJacksonDataFormat extends ServiceSupport
         if (this.schemaResolver != null) {
             schema = this.schemaResolver.resolve(exchange);
         }
-        // is there a header with the unmarshal type?
+        // is there a header with the unmarshaltype?
         Class<?> clazz = unmarshalType;
         String type = null;
-        if (allowUnmarshallType) {
+        if (allowUnmarshalType) {
             type = exchange.getIn().getHeader(JacksonConstants.UNMARSHAL_TYPE, String.class);
         }
         if (type == null && isAllowJmsType()) {
@@ -368,14 +368,14 @@ public abstract class AbstractJacksonDataFormat extends ServiceSupport
     }
 
     /**
-     * Uses {@link ArrayList} when unmarshalling.
+     * Uses {@link ArrayList} when unmarshaling.
      */
     public void useList() {
         setCollectionType(ArrayList.class);
     }
 
     /**
-     * Uses {@link HashMap} when unmarshalling.
+     * Uses {@link HashMap} when unmarshaling.
      */
     public void useMap() {
         setCollectionType(null);
@@ -407,18 +407,18 @@ public abstract class AbstractJacksonDataFormat extends ServiceSupport
         this.enableJacksonTypeConverter = enableJacksonTypeConverter;
     }
 
-    public boolean isAllowUnmarshallType() {
-        return allowUnmarshallType;
+    public boolean isAllowUnmarshalType() {
+        return allowUnmarshalType;
     }
 
     /**
      * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-     * unmarshalling.
+     * unmarshaling.
      * <p/>
      * This should only be enabled when desired to be used.
      */
-    public void setAllowUnmarshallType(boolean allowJacksonUnmarshallType) {
-        this.allowUnmarshallType = allowJacksonUnmarshallType;
+    public void setAllowUnmarshalType(boolean allowJacksonUnmarshalType) {
+        this.allowUnmarshalType = allowJacksonUnmarshalType;
     }
 
     public boolean isContentTypeHeader() {
@@ -426,7 +426,7 @@ public abstract class AbstractJacksonDataFormat extends ServiceSupport
     }
 
     /**
-     * If enabled then Jackson will set the Content-Type header to the correct mime type when marshalling.
+     * If enabled then Jackson will set the Content-Type header to the correct mime type when marshaling.
      */
     public void setContentTypeHeader(boolean contentTypeHeader) {
         this.contentTypeHeader = contentTypeHeader;
@@ -437,7 +437,7 @@ public abstract class AbstractJacksonDataFormat extends ServiceSupport
     }
 
     /**
-     * If set then Jackson will use the Timezone when marshalling/unmarshalling.
+     * If set then Jackson will use the Timezone when marshaling/unmarshaling.
      */
     public void setTimezone(TimeZone timezone) {
         this.timezone = timezone;

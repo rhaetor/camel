@@ -102,7 +102,7 @@ public final class XmlLineNumberParser {
      *                        camelContext to start parsing when Camel is discovered. Multiple names can be defined
      *                        separated by comma
      * @param  forceNamespace an optional namespaces to force assign to each node. This may be needed for JAXB
-     *                        unmarshalling from XML -> POJO.
+     *                        unmarshaling from XML -> POJO.
      * @return                the DOM model
      * @throws Exception      is thrown if error parsing
      */

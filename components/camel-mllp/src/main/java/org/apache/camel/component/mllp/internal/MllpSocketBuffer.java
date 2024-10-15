@@ -511,13 +511,13 @@ public class MllpSocketBuffer {
 
             if (buffer.length >= maxBufferSize) {
                 final String exceptionMessageFormat = "Cannot increase the buffer size from <%d> to <%d>"
-                                                      + " in order to increase the available capacity from <%d> to <%d> because the buffer is already the maximum size <%d>";
+                                                      + " to increase the available capacity from <%d> to <%d> because the buffer is already the maximum size <%d>";
                 throw new IllegalStateException(
                         String.format(exceptionMessageFormat, buffer.length, requiredBufferSize, currentAvailableCapacity,
                                 requiredAvailableCapacity, maxBufferSize));
             } else if (requiredBufferSize > maxBufferSize) {
                 final String exceptionMessageFormat = "Cannot increase the buffer size <%d>"
-                                                      + " in order to increase the available capacity from <%d> to <%d> because the required buffer size <%d> exceeds the maximum buffer size <%d>";
+                                                      + " to increase the available capacity from <%d> to <%d> because the required buffer size <%d> exceeds the maximum buffer size <%d>";
                 throw new IllegalStateException(
                         String.format(exceptionMessageFormat, buffer.length, currentAvailableCapacity,
                                 requiredAvailableCapacity, requiredBufferSize, maxBufferSize));

@@ -20,7 +20,7 @@ import java.io.StringWriter;
 import java.util.List;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Marshaler;
 
 import org.apache.camel.ContextTestSupport;
 import org.apache.camel.builder.RouteBuilder;
@@ -38,16 +38,16 @@ public class GenerateXmFromCamelContextTest extends ContextTestSupport {
 
         log.info("Found route: {}", routeType);
 
-        // now lets marshall it!
+        // now lets marshal it!
         dump(routeType);
     }
 
     protected void dump(Object object) throws Exception {
         JAXBContext jaxbContext = XmlTestSupport.createJaxbContext();
-        Marshaller marshaller = jaxbContext.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        Marshaler marshaler = jaxbContext.createMarshaler();
+        marshaler.setProperty(Marshaler.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         StringWriter buffer = new StringWriter();
-        marshaller.marshal(object, buffer);
+        marshaler.marshal(object, buffer);
         log.info("Created: {}", buffer);
         assertNotNull(buffer);
         String out = buffer.toString();

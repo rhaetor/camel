@@ -76,7 +76,7 @@ public class VersionList extends CamelCommand {
     @CommandLine.Option(names = { "--lts" }, description = "Only show LTS supported releases")
     boolean lts;
 
-    @CommandLine.Option(names = { "--fresh" }, description = "Make sure we use fresh (i.e. non-cached) resources")
+    @CommandLine.Option(names = { "--fresh" }, description = "Make sure we use fresh (that is, non-cached) resources")
     boolean fresh;
 
     @CommandLine.Option(names = { "--sort" },

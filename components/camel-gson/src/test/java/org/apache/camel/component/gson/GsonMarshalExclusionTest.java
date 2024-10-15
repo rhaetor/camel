@@ -42,13 +42,13 @@ public class GsonMarshalExclusionTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(TestPojoExclusion.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:inPojoExcludeWeight", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertTrue(marshalledAsString.contains("\"height\":190"));
-        assertTrue(marshalledAsString.contains("\"age\":30"));
-        assertFalse(marshalledAsString.contains("\"weight\":70"));
+        Object marshaled = template.requestBody("direct:inPojoExcludeWeight", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertTrue(marshaledAsString.contains("\"height\":190"));
+        assertTrue(marshaledAsString.contains("\"age\":30"));
+        assertFalse(marshaledAsString.contains("\"weight\":70"));
 
-        template.sendBody("direct:backPojoExcludeWeight", marshalled);
+        template.sendBody("direct:backPojoExcludeWeight", marshaled);
 
         mock.assertIsSatisfied();
     }
@@ -63,13 +63,13 @@ public class GsonMarshalExclusionTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(TestPojoExclusion.class);
         mock.message(0).body().isEqualTo(in);
 
-        Object marshalled = template.requestBody("direct:inPojoExcludeAge", in);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertTrue(marshalledAsString.contains("\"height\":190"));
-        assertTrue(marshalledAsString.contains("\"weight\":70"));
-        assertFalse(marshalledAsString.contains("\"age\":30"));
+        Object marshaled = template.requestBody("direct:inPojoExcludeAge", in);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertTrue(marshaledAsString.contains("\"height\":190"));
+        assertTrue(marshaledAsString.contains("\"weight\":70"));
+        assertFalse(marshaledAsString.contains("\"age\":30"));
 
-        template.sendBody("direct:backPojoExcludeAge", marshalled);
+        template.sendBody("direct:backPojoExcludeAge", marshaled);
 
         mock.assertIsSatisfied();
     }

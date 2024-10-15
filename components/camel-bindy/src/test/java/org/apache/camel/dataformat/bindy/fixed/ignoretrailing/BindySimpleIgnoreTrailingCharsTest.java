@@ -38,35 +38,35 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  */
 public class BindySimpleIgnoreTrailingCharsTest extends CamelTestSupport {
 
-    public static final String URI_DIRECT_MARSHALL = "direct:marshall";
-    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshall";
-    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshall-result";
-    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshall-result";
+    public static final String URI_DIRECT_MARSHALL = "direct:marshal";
+    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshal";
+    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshal-result";
+    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshal-result";
 
     private static final String TEST_RECORD
             = "10A9  PaulineM    ISINXD12345678BUYShare000002500.45USD01-08-2009Hello     xxx\r\n";
 
     @EndpointInject(URI_MOCK_MARSHALL_RESULT)
-    private MockEndpoint marshallResult;
+    private MockEndpoint marshalResult;
 
     @EndpointInject(URI_MOCK_UNMARSHALL_RESULT)
-    private MockEndpoint unmarshallResult;
+    private MockEndpoint unmarshalResult;
 
     // *************************************************************************
     // TESTS
     // *************************************************************************
 
     @Test
-    public void testUnmarshallMessage() throws Exception {
+    public void testUnmarshalMessage() throws Exception {
 
-        unmarshallResult.expectedMessageCount(1);
+        unmarshalResult.expectedMessageCount(1);
         template.sendBody(URI_DIRECT_UNMARSHALL, TEST_RECORD);
 
-        unmarshallResult.assertIsSatisfied();
+        unmarshalResult.assertIsSatisfied();
 
         // check the model
         BindySimpleIgnoreTrailingCharsTest.Order order
-                = (BindySimpleIgnoreTrailingCharsTest.Order) unmarshallResult.getReceivedExchanges().get(0).getIn().getBody();
+                = (BindySimpleIgnoreTrailingCharsTest.Order) unmarshalResult.getReceivedExchanges().get(0).getIn().getBody();
         assertEquals(10, order.getOrderNr());
         // the field is not trimmed
         assertNull(order.getFirstName());

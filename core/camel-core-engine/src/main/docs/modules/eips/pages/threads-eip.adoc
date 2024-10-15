@@ -105,7 +105,7 @@ When the worker queue gets full, the task is rejected.
 You can customize how to react upon this using the `rejectedPolicy` and
 `callerRunsWhenRejected` options. The latter is used to easily switch
 between the two most common and recommended settings. Either let the
-current caller thread execute the task (i.e. it will become synchronous),
+current caller thread execute the task (that is, it will become synchronous),
 but also give time for the thread pool to process its current tasks,
 without adding more tasks (self throttling). This is the default
 behavior.

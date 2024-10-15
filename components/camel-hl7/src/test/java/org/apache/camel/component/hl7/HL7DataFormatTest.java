@@ -167,7 +167,7 @@ public class HL7DataFormatTest extends CamelTestSupport {
         mock.expectedHeaderReceived(HL7Constants.HL7_CHARSET, null);
         mock.expectedHeaderReceived(Exchange.CHARSET_NAME, charset);
 
-        // Message without explicit encoding in MSH-18, but the unmarshaller "guesses"
+        // Message without explicit encoding in MSH-18, but the unmarshaler "guesses"
         // this time that it is Big5
         byte[] body = createHL7AsString().getBytes(Charset.forName(charset));
         template.sendBody("direct:unmarshalBig5", new ByteArrayInputStream(body));

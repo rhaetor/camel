@@ -121,10 +121,10 @@ public final class Strings {
     }
 
     /**
-     * Returns the base class name, i.e. without package and generic related information.
+     * Returns the base class name, that is, without package and generic related information.
      *
      * @param  className The class name which base class is to be computed.
-     * @return           the base class name, i.e. without package and generic related information.
+     * @return           the base class name, that is, without package and generic related information.
      */
     public static String getClassShortName(String className) {
         if (className != null) {

@@ -62,7 +62,7 @@ Install the Warehouse package, tested with _Spring 2013_ (version 1.2) that can 
  - create new ApexClass named `MerchandiseRestResource` with the content of `MerchandiseRestResource.apxc`
  - deactivate the `Contact Duplicate Rule` in salesforce configuration
  - add `Account` to selected entities for change data capture in the _Integrations/Change Data Capture_ menu
- - add the `Hard Delete Permission Set` to the CamelSalesforceIntegrationTests Connected App (e.g. Setup/ConnectedApp/ManagePermissionSets)
+ - add the `Hard Delete Permission Set` to the CamelSalesforceIntegrationTests Connected App (for example, Setup/ConnectedApp/ManagePermissionSets)
 
 You'll need to access a Merchandise record and run a `Test Report` in order for them to appear in _Recent Items_ and _Recent Reports_. Do this by accessing _Warehouse_ application from the menu in the top right, and selecting _Merchandise_ click _Go!_ (preselected is View: _All_) and click on the single Merchandise item available. Next go to Reports and select and run _Test Report_ from _Test Reports_. This is needed by the integration tests as they access recent items and recently run reports.
 

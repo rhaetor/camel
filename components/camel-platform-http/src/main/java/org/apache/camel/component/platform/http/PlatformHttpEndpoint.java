@@ -47,7 +47,7 @@ public class PlatformHttpEndpoint extends DefaultEndpoint implements AsyncEndpoi
               description = "Whether or not the consumer should try to find a target consumer "
                             + "by matching the URI prefix if no exact match is found.")
     private boolean matchOnUriPrefix;
-    @UriParam(label = "consumer", description = "A comma separated list of HTTP methods to serve, e.g. GET,POST ."
+    @UriParam(label = "consumer", description = "A comma separated list of HTTP methods to serve, for example, GET,POST ."
                                                 + " If no methods are specified, all methods will be served.")
     private String httpMethodRestrict;
     @UriParam(label = "consumer", description = "The content type this endpoint accepts as an input, such as"

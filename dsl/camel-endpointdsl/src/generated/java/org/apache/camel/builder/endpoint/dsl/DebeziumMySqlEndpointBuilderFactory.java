@@ -46,10 +46,10 @@ public interface DebeziumMySqlEndpointBuilderFactory {
         }
         /**
          * Additional properties for debezium components in case they can't be
-         * set directly on the camel configurations (e.g: setting Kafka Connect
+         * set directly on the camel configurations (for example, setting Kafka Connect
          * properties needed by Debezium engine, for example setting
          * KafkaOffsetBackingStore), the properties have to be prefixed with
-         * additionalProperties.. E.g:
+         * additionalProperties.. For example:
          * additionalProperties.transactional.id=12345&amp;amp;additionalProperties.schema.registry.url=http://localhost:8811/avro.
          * 
          * The option is a: &lt;code&gt;java.util.Map&amp;lt;java.lang.String,
@@ -72,10 +72,10 @@ public interface DebeziumMySqlEndpointBuilderFactory {
         }
         /**
          * Additional properties for debezium components in case they can't be
-         * set directly on the camel configurations (e.g: setting Kafka Connect
+         * set directly on the camel configurations (for example, setting Kafka Connect
          * properties needed by Debezium engine, for example setting
          * KafkaOffsetBackingStore), the properties have to be prefixed with
-         * additionalProperties.. E.g:
+         * additionalProperties.. For example:
          * additionalProperties.transactional.id=12345&amp;amp;additionalProperties.schema.registry.url=http://localhost:8811/avro.
          * 
          * The option is a: &lt;code&gt;java.util.Map&amp;lt;java.lang.String,
@@ -375,7 +375,7 @@ public interface DebeziumMySqlEndpointBuilderFactory {
          * The size of a look-ahead buffer used by the binlog reader to decide
          * whether the transaction in progress is going to be committed or
          * rolled back. Use 0 to disable look-ahead buffering. Defaults to 0
-         * (i.e. buffering is disabled).
+         * (that is, buffering is disabled).
          * 
          * The option is a: &lt;code&gt;int&lt;/code&gt; type.
          * 
@@ -394,7 +394,7 @@ public interface DebeziumMySqlEndpointBuilderFactory {
          * The size of a look-ahead buffer used by the binlog reader to decide
          * whether the transaction in progress is going to be committed or
          * rolled back. Use 0 to disable look-ahead buffering. Defaults to 0
-         * (i.e. buffering is disabled).
+         * (that is, buffering is disabled).
          * 
          * The option will be converted to a &lt;code&gt;int&lt;/code&gt; type.
          * 
@@ -1036,7 +1036,7 @@ public interface DebeziumMySqlEndpointBuilderFactory {
             return this;
         }
         /**
-         * Specify how failures during deserialization of binlog events (i.e.
+         * Specify how failures during deserialization of binlog events (that is,
          * when encountering a corrupted event) should be handled, including:
          * 'fail' (the default) an exception indicating the problematic event
          * and its binlog position is raised, causing the connector to be
@@ -1058,7 +1058,7 @@ public interface DebeziumMySqlEndpointBuilderFactory {
             return this;
         }
         /**
-         * Specify how failures during processing of events (i.e. when
+         * Specify how failures during processing of events (that is, when
          * encountering a corrupted event) should be handled, including: 'fail'
          * (the default) an exception indicating the problematic event and its
          * position is raised, causing the connector to be stopped; 'warn' the
@@ -1352,7 +1352,7 @@ public interface DebeziumMySqlEndpointBuilderFactory {
         }
         /**
          * Specify how binlog events that belong to a table missing from
-         * internal schema representation (i.e. internal representation is not
+         * internal schema representation (that is, internal representation is not
          * consistent with database) should be handled, including: 'fail' (the
          * default) an exception indicating the problematic event and its binlog
          * position is raised, causing the connector to be stopped; 'warn' the

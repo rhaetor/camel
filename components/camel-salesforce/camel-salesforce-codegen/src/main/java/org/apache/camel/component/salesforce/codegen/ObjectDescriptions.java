@@ -97,7 +97,7 @@ public final class ObjectDescriptions {
             final SObjectDescription description = mapper.readValue(callback.getResponse(), SObjectDescription.class);
 
             // remove some of the unused used metadata
-            // properties in order to minimize the code size
+            // properties to minimize the code size
             // for CAMEL-11310
             return description.prune();
         } catch (InterruptedException e) {

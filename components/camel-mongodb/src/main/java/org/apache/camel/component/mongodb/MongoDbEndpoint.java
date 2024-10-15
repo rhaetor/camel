@@ -579,7 +579,7 @@ public class MongoDbEndpoint extends DefaultEndpoint {
 
     /**
      * Indicates what database the tail tracking mechanism will persist to. If not specified, the current database will
-     * be picked by default. Dynamicity will not be taken into account even if enabled, i.e. the tail tracking database
+     * be picked by default. Dynamicity will not be taken into account even if enabled, that is, the tail tracking database
      * will not vary past endpoint initialisation.
      *
      * @param tailTrackDb database name
@@ -1042,9 +1042,9 @@ public class MongoDbEndpoint extends DefaultEndpoint {
     }
 
     /**
-     * A representation of a tag set as a comma-separated list of colon-separated key-value pairs, e.g. "dc:ny,rack:1".
+     * A representation of a tag set as a comma-separated list of colon-separated key-value pairs, for example, "dc:ny,rack:1".
      * Spaces are stripped from beginning and end of all keys and values. To specify a list of tag sets, using multiple
-     * readPreferenceTags, e.g. readPreferenceTags=dc:ny,rack:1;readPreferenceTags=dc:ny;readPreferenceTags= Note the
+     * readPreferenceTags, for example, readPreferenceTags=dc:ny,rack:1;readPreferenceTags=dc:ny;readPreferenceTags= Note the
      * empty value for the last one, which means match any secondary as a last resort. Order matters when using multiple
      * readPreferenceTags.
      *

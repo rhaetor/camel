@@ -1140,13 +1140,13 @@ public interface SpringWebserviceEndpointBuilderFactory {
          * the option to map web service requests based on the qualified name of
          * the root element contained in the message. soapaction - Used to map
          * web service requests based on the SOAP action specified in the header
-         * of the message. uri - In order to map web service requests that
+         * of the message. uri - To map web service requests that
          * target a specific URI. xpathresult - Used to map web service requests
          * based on the evaluation of an XPath expression against the incoming
          * message. The result of the evaluation should match the XPath result
          * specified in the endpoint URI. beanname - Allows you to reference an
          * org.apache.camel.component.spring.ws.bean.CamelEndpointDispatcher
-         * object in order to integrate with existing (legacy) endpoint mappings
+         * object to integrate with existing (legacy) endpoint mappings
          * like PayloadRootQNameEndpointMapping, SoapActionEndpointMapping, etc
          * There are 8 enums and the value can be one of: ROOT_QNAME, ACTION,
          * TO, SOAP_ACTION, XPATHRESULT, URI, URI_PATH, BEANNAME
@@ -1179,13 +1179,13 @@ public interface SpringWebserviceEndpointBuilderFactory {
          * the option to map web service requests based on the qualified name of
          * the root element contained in the message. soapaction - Used to map
          * web service requests based on the SOAP action specified in the header
-         * of the message. uri - In order to map web service requests that
+         * of the message. uri - To map web service requests that
          * target a specific URI. xpathresult - Used to map web service requests
          * based on the evaluation of an XPath expression against the incoming
          * message. The result of the evaluation should match the XPath result
          * specified in the endpoint URI. beanname - Allows you to reference an
          * org.apache.camel.component.spring.ws.bean.CamelEndpointDispatcher
-         * object in order to integrate with existing (legacy) endpoint mappings
+         * object to integrate with existing (legacy) endpoint mappings
          * like PayloadRootQNameEndpointMapping, SoapActionEndpointMapping, etc
          * There are 8 enums and the value can be one of: ROOT_QNAME, ACTION,
          * TO, SOAP_ACTION, XPATHRESULT, URI, URI_PATH, BEANNAME

@@ -199,7 +199,7 @@ This format is unsuitable in some cases, perhaps because you need to...
 * ... filter the headers and properties that are printed, to strike a
 balance between insight and verbosity.
 * ... adjust the log message to whatever you deem most readable.
-* ... tailor log messages for digestion by log mining systems, e.g.
+* ... tailor log messages for digestion by log mining systems, for example
 Splunk.
 * ... print specific body types differently.
 * ... etc.
@@ -247,7 +247,7 @@ When using a custom log formatter, you
 can specify parameters in the log uri, which gets configured on the
 custom log formatter. Though when you do that, you should define the
 "logFormatter" as prototype scoped, so it's not shared if you have
-different parameters, e.g.:
+different parameters, for example:
 
 [source,xml]
 ----

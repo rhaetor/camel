@@ -71,7 +71,7 @@ applied on the route followed by the *`xmlSecurity()`* tag.
 
 == Examples
 
-Given below are several examples of how marshalling could be performed
+Given below are several examples of how marshaling could be performed
 at the Document, Element, and Content levels.
 
 === Full Payload encryption/decryption
@@ -159,7 +159,7 @@ attribute of the `xmlSecurity` element.
             <marshal>
                 <xmlSecurity secureTag="//cheese:cheesesites/italy"
                            secureTagContents="true"/>
-            </marshal> 
+            </marshal>
             ...
 ---------------------------------------------------------------------------------
 
@@ -185,7 +185,7 @@ Spring XML Sender
                            keyCipherAlgorithm="http://www.w3.org/2001/04/xmlenc#rsa-1_5"
                            recipientKeyAlias="recipient"
                            keyOrTrustStoreParametersRef="trustStoreParams"/>
-            </marshal> 
+            </marshal>
             ...
 --------------------------------------------------------------------------------------------------
 

@@ -8,7 +8,7 @@ xref:manual::exchange.adoc[Exchange]'s' while they are being routed.
 Camel supports three kinds of interceptors:
 
 * <<Intercept-Intercept, `intercept`>> that intercepts every processing step as they happen during routing
-* <<Intercept-InterceptFrom, `interceptFrom`>> that intercepts only the incoming step (i.e., xref:from-eip.adoc[from])
+* <<Intercept-InterceptFrom, `interceptFrom`>> that intercepts only the incoming step (that is, xref:from-eip.adoc[from])
 * <<Intercept-InterceptSendToEndpoint, `interceptSendToEndpoint`>> that intercepts only when an
 xref:manual::exchange.adoc[Exchange] is about to be sent to the given xref:message-endpoint.adoc[endpoint].
 

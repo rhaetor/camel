@@ -831,13 +831,19 @@ public class RestDefinition extends OptionalIdentifiedDefinition<RestDefinition>
         // be dynamically be loaded by the classloader thus this workaround
         // that for nested classes generates a class name that does not respect
         // any JLS convention.
+        //
+        // TODO: this probably needs to be revisited
 
         String type;
 
-        if (classType.isArray()) {
-            type = classType.getComponentType().getName() + "[]";
+        if (!classType.isPrimitive()) {
+            if (classType.isArray()) {
+                type = StringHelper.between(classType.getName(), "[L", ";") + "[]";
+            } else {
+                type = classType.getName();
+            }
         } else {
-            type = classType.getName();
+            type = classType.getCanonicalName();
         }
 
         return type;

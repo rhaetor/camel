@@ -47,7 +47,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * <b>Camel</b> based test cases for {@link CsvDataFormat}.
  */
-public class CsvMarshalHeaderWithCustomMarshallFactoryTest extends CamelTestSupport {
+public class CsvMarshalHeaderWithCustomMarshalFactoryTest extends CamelTestSupport {
 
     @TempDir
     public File folder;
@@ -99,11 +99,11 @@ public class CsvMarshalHeaderWithCustomMarshallFactoryTest extends CamelTestSupp
         dataFormat.setTrim(true);
         dataFormat.setIgnoreSurroundingSpaces(true);
         dataFormat.setHeader(Arrays.asList("first_name", "last_name").toArray(new String[0]));
-        dataFormat.setMarshallerFactory(new CsvMarshallerFactory() {
+        dataFormat.setMarshalerFactory(new CsvMarshalerFactory() {
 
             @Override
-            public CsvMarshaller create(CSVFormat format, CsvDataFormat dataFormat) {
-                return new SinglePrinterCsvMarshaller(format);
+            public CsvMarshaler create(CSVFormat format, CsvDataFormat dataFormat) {
+                return new SinglePrinterCsvMarshaler(format);
             }
         });
         return dataFormat;
@@ -113,11 +113,11 @@ public class CsvMarshalHeaderWithCustomMarshallFactoryTest extends CamelTestSupp
     // Helper classes
     //
 
-    private static final class SinglePrinterCsvMarshaller extends CsvMarshaller {
+    private static final class SinglePrinterCsvMarshaler extends CsvMarshaler {
 
         private final CSVPrinter printer;
 
-        private SinglePrinterCsvMarshaller(CSVFormat format) {
+        private SinglePrinterCsvMarshaler(CSVFormat format) {
             super(format);
             printer = createPrinter(format);
         }

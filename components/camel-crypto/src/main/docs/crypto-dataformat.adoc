@@ -13,9 +13,9 @@
 
 The Crypto Data Format integrates the Java
 Cryptographic Extension into Camel, allowing simple and flexible
-encryption and decryption of messages using Camel's familiar marshall
+encryption and< decryption of messages using Camel's familiar marshal
 and unmarshal formatting mechanism. It assumes marshaling to mean
-encryption to cyphertext and unmarshalling to mean decryption back to
+encryption to cyphertext and unmarshaling to mean decryption back to
 the original plaintext. This data format implements only symmetric
 (shared-key) encryption and decyption.
 
@@ -93,7 +93,7 @@ A list of the available algorithms in Java 17 is available via the https://docs.
 
 Some crypto algorithms, particularly block algorithms, require configuration with an initial block of data known as an Initialization Vector.
 In the JCE this is passed as an AlgorithmParameterSpec when the Cipher is initialized.
-To use such a vector with the CryptoDataFormat, you can configure it with a byte[] containing the required data, e.g.
+To use such a vector with the CryptoDataFormat, you can configure it with a byte[] containing the required data, for example
 
 [source,java]
 ----------------------------------------------------------

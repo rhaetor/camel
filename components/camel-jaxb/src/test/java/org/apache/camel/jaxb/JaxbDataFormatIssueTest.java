@@ -31,7 +31,7 @@ import org.junit.jupiter.api.Test;
 public class JaxbDataFormatIssueTest extends CamelTestSupport {
 
     @Test
-    public void testJaxbMarshalling() throws InterruptedException {
+    public void testJaxbMarshaling() throws InterruptedException {
         MockEndpoint mock = getMockEndpoint("mock:result");
         mock.expectedMessageCount(1);
         mock.message(0).body().endsWith("<foo><bar>Hello Bar</bar></foo>");

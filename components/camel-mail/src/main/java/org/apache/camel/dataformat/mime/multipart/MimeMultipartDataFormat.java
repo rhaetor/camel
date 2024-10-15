@@ -254,7 +254,7 @@ public class MimeMultipartDataFormat extends DefaultDataFormat {
                 content = dh.getContent();
             }
         } catch (MessagingException e) {
-            LOG.warn("cannot parse message, no unmarshalling done");
+            LOG.warn("cannot parse message, no unmarshaling done");
         }
         if (content instanceof MimeMultipart) {
             MimeMultipart mp = (MimeMultipart) content;

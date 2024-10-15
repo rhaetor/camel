@@ -33,7 +33,7 @@ import org.apache.camel.support.service.ServiceHelper;
  * MultiRestConsumer allows to bind the webhook to multiple local rest endpoints. It is useful for services that need to
  * respond to multiple kinds of requests.
  * <p>
- * E.g. some webhook providers operate over POST but they do require that a specific endpoint replies also to GET
+ * For example, some webhook providers operate over POST but they do require that a specific endpoint replies also to GET
  * requests during handshake.
  */
 public class MultiRestConsumer extends DefaultConsumer {

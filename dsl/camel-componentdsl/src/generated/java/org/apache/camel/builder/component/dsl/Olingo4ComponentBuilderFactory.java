@@ -148,7 +148,7 @@ public interface Olingo4ComponentBuilderFactory {
             return this;
         }
         /**
-         * Target OData service base URI, e.g.
+         * Target OData service base URI, for example
          * http://services.odata.org/OData/OData.svc.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

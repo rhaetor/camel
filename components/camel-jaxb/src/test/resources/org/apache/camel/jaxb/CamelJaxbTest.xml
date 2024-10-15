@@ -39,14 +39,14 @@
       <from uri="direct:getJAXBElement"/>
       <unmarshal>
         <jaxb ignoreJAXBElement="false" contextPath="org.apache.camel.foo.bar"/>
-      </unmarshal>          
+      </unmarshal>
       <to uri="mock:result"/>
     </route>
     <route>
       <from uri="direct:marshal"/>
       <marshal>
         <jaxb contextPath="org.apache.camel.foo.bar" schemaLocation="person.xsd"/>
-      </marshal>          
+      </marshal>
       <to uri="mock:result"/>
     </route>
     <route>
@@ -60,14 +60,14 @@
       <from uri="direct:unmarshalFilteringEnabled"/>
       <unmarshal>
         <jaxb filterNonXmlChars="true" contextPath="org.apache.camel.foo.bar"/>
-      </unmarshal>          
+      </unmarshal>
       <to uri="mock:result"/>
     </route>
     <route>
       <from uri="direct:marshalFilteringEnabled"/>
       <marshal>
         <jaxb filterNonXmlChars="true"  contextPath="org.apache.camel.foo.bar"/>
-      </marshal>          
+      </marshal>
       <to uri="mock:result"/>
     </route>
 
@@ -87,7 +87,7 @@
       </route>
 
     <route>
-      <from uri="direct:unmarshall"/>
+      <from uri="direct:unmarshal"/>
       <unmarshal>
         <jaxb contextPath="org.apache.camel.foo.bar"/>
       </unmarshal>

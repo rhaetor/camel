@@ -66,7 +66,7 @@ public class KubernetesLockConfiguration implements Cloneable {
     private Map<String, String> clusterLabels = new HashMap<>();
 
     /**
-     * A jitter factor to apply in order to prevent all pods to call Kubernetes APIs in the same instant.
+     * A jitter factor to apply to prevent all pods to call Kubernetes APIs in the same instant.
      */
     private double jitterFactor = DEFAULT_JITTER_FACTOR;
 

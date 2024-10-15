@@ -80,7 +80,7 @@ The component will use the following constants found in the headers of the excha
 
 |=======================================================================
 
-Note that the AWS XRay `Entity` (i.e., `Segment` and `Subsegment`) are not serializable and therefore should not get passed to other JVM processes.
+Note that the AWS XRay `Entity` (that is, `Segment` and `Subsegment`) are not serializable and therefore should not get passed to other JVM processes.
 
 == Example
 

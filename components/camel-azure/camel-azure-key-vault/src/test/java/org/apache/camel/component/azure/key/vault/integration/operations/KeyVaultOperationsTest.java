@@ -30,13 +30,13 @@ import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 
 @EnabledIfSystemProperty(named = "vaultName", matches = ".*",
-                         disabledReason = "Make sure to supply azure key vault Vault Name, e.g:  mvn verify -DvaultName=string")
+                         disabledReason = "Make sure to supply azure key vault Vault Name, for example, mvn verify -DvaultName=string")
 @EnabledIfSystemProperty(named = "clientId", matches = ".*",
-                         disabledReason = "Make sure to supply azure key vault Client Id, e.g:  mvn verify -DclientId=string")
+                         disabledReason = "Make sure to supply azure key vault Client Id, for example, mvn verify -DclientId=string")
 @EnabledIfSystemProperty(named = "clientSecret", matches = ".*",
-                         disabledReason = "Make sure to supply azure key vault Client Secret, e.g:  mvn verify -DclientSecret=string")
+                         disabledReason = "Make sure to supply azure key vault Client Secret, for example, mvn verify -DclientSecret=string")
 @EnabledIfSystemProperty(named = "tenantId", matches = ".*",
-                         disabledReason = "Make sure to supply azure key vault Tenant Id, e.g:  mvn verify -DtenantId=string")
+                         disabledReason = "Make sure to supply azure key vault Tenant Id, for example, mvn verify -DtenantId=string")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class KeyVaultOperationsTest extends CamelTestSupport {
 

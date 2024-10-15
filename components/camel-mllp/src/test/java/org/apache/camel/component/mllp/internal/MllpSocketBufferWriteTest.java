@@ -312,7 +312,7 @@ public class MllpSocketBufferWriteTest extends SocketBufferTestSupport {
             fail("Should have thrown an exception");
         } catch (IllegalStateException expectedEx) {
             String expectedMessage
-                    = "Cannot increase the buffer size <2048> in order to increase the available capacity from <2048> to <2147483647>"
+                    = "Cannot increase the buffer size <2048> to increase the available capacity from <2048> to <2147483647>"
                       + " because the required buffer size <2147483647> exceeds the maximum buffer size <1073741824>";
             assertEquals(expectedMessage, expectedEx.getMessage());
         }
@@ -322,7 +322,7 @@ public class MllpSocketBufferWriteTest extends SocketBufferTestSupport {
             fail("Should have thrown an exception");
         } catch (IllegalStateException expectedEx) {
             String expectedMessage
-                    = "Cannot increase the buffer size <2048> in order to increase the available capacity from <2048> to <1073741825>"
+                    = "Cannot increase the buffer size <2048> to increase the available capacity from <2048> to <1073741825>"
                       + " because the required buffer size <1073741825> exceeds the maximum buffer size <1073741824>";
             assertEquals(expectedMessage, expectedEx.getMessage());
         }
@@ -331,7 +331,7 @@ public class MllpSocketBufferWriteTest extends SocketBufferTestSupport {
         IllegalStateException expectedEx = assertThrows(IllegalStateException.class,
                 () -> instance.ensureCapacity(MAX_BUFFER_SIZE));
         String expectedMessage
-                = "Cannot increase the buffer size <2048> in order to increase the available capacity from <2044> to <1073741824>"
+                = "Cannot increase the buffer size <2048> to increase the available capacity from <2044> to <1073741824>"
                   + " because the required buffer size <1073741828> exceeds the maximum buffer size <1073741824>";
         assertEquals(expectedMessage, expectedEx.getMessage());
     }
@@ -349,7 +349,7 @@ public class MllpSocketBufferWriteTest extends SocketBufferTestSupport {
         IllegalStateException expectedEx = assertThrows(IllegalStateException.class,
                 () -> instance.ensureCapacity(MAX_BUFFER_SIZE + 1));
         String expectedMessage
-                = "Cannot increase the buffer size from <1073741824> to <1073741825> in order to increase the available capacity"
+                = "Cannot increase the buffer size from <1073741824> to <1073741825> to increase the available capacity"
                   + " from <1073741824> to <1073741825> because the buffer is already the maximum size <1073741824>";
         assertEquals(expectedMessage, expectedEx.getMessage());
     }

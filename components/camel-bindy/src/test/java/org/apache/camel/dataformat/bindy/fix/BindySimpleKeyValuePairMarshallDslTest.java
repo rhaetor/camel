@@ -36,7 +36,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleKeyValuePairMarshallDslTest {
+public class BindySimpleKeyValuePairMarshalDslTest {
 
     private List<Map<String, Object>> models = new ArrayList<>();
     private String result = "1=BE.CHM.00111=CHM0001-0122=448=BE0001245678"
@@ -49,7 +49,7 @@ public class BindySimpleKeyValuePairMarshallDslTest {
     private MockEndpoint resultEndpoint;
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         resultEndpoint.expectedBodiesReceived(result);
         template.sendBody(generateModel());
 

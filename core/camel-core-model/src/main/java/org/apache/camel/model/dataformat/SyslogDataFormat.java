@@ -26,7 +26,7 @@ import org.apache.camel.model.DataFormatDefinition;
 import org.apache.camel.spi.Metadata;
 
 /**
- * Marshall SyslogMessages to RFC3164 and RFC5424 messages and back.
+ * Marshal SyslogMessages to RFC3164 and RFC5424 messages and back.
  */
 @Metadata(firstVersion = "2.6.0", label = "dataformat,transformation,monitoring", title = "Syslog")
 @XmlRootElement(name = "syslog")

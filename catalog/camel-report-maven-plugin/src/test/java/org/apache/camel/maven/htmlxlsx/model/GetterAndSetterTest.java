@@ -113,7 +113,7 @@ public abstract class GetterAndSetterTest<T> {
      * Creates an instance of {@link GetterAndSetterTest} with the default ignore fields.
      *
      * @param customMappers Any custom mappers for a given class type.
-     * @param ignoreFields  The getters which should be ignored (e.g., "getId" or "isActive").
+     * @param ignoreFields  The getters which should be ignored (for example, "getId" or "isActive").
      */
     protected GetterAndSetterTest(Map<Class<?>, Supplier<?>> customMappers, Set<String> ignoreFields) {
 

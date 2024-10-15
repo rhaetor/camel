@@ -126,7 +126,7 @@ public interface WhatsappComponentBuilderFactory {
             return this;
         }
         /**
-         * Can be used to set an alternative base URI, e.g. when you want to
+         * Can be used to set an alternative base URI, for example, when you want to
          * test the component against a mock WhatsApp API.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

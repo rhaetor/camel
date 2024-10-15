@@ -32,7 +32,7 @@
       <from uri="direct:marshal"/>
       <marshal>
         <jaxb contextPath="org.apache.camel.foo.bar" noNamespaceSchemaLocation="person-no-namespace.xsd"/>
-      </marshal>          
+      </marshal>
       <to uri="mock:result"/>
     </route>
 

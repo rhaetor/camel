@@ -35,14 +35,14 @@
         <simple>Camel</simple>
       </setVariable>
       <to uri="mock:before"/>
-      <marshal variableSend="hello">
+      <marshalvariableSend="hello">
         <custom ref="myDF"/>
       </marshal>
       <to uri="mock:result"/>
     </route>
     <route>
       <from uri="direct:receive"/>
-      <marshal variableReceive="bye">
+      <marshalvariableReceive="bye">
         <custom ref="myDF"/>
       </marshal>
       <to uri="mock:after"/>
@@ -57,7 +57,7 @@
         <simple>Camel</simple>
       </setVariable>
       <to uri="mock:before"/>
-      <marshal variableSend="hello" variableReceive="bye">
+      <marshalvariableSend="hello" variableReceive="bye">
         <custom ref="myDF"/>
       </marshal>
       <to uri="mock:result"/>

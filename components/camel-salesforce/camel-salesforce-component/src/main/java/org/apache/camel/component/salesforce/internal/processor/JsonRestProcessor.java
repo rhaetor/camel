@@ -146,7 +146,7 @@ public class JsonRestProcessor extends AbstractRestProcessor {
         if (request == null) {
             AbstractDTOBase dto = in.getBody(AbstractDTOBase.class);
             if (dto != null) {
-                // marshall the DTO
+                // marshal the DTO
                 request = getRequestStream(in, dto);
             } else {
                 // if all else fails, get body as String
@@ -196,7 +196,7 @@ public class JsonRestProcessor extends AbstractRestProcessor {
                     out.setBody(null);
                 }
             } else if (responseEntity != null) {
-                // do we need to un-marshal a response
+                // do we need to un-marshala response
                 final Object response;
                 Class<?> responseClass = exchange.getProperty(RESPONSE_CLASS, Class.class);
                 if (responseClass == null && exchange.getProperty(RESPONSE_CLASS_DEFERRED, false, Boolean.class)) {
@@ -279,7 +279,7 @@ public class JsonRestProcessor extends AbstractRestProcessor {
                     out.setBody(null);
                 }
             } else if (responseEntity != null) {
-                // do we need to un-marshal a response
+                // do we need to un-marshala response
                 final AbstractQueryRecordsBase<?> response;
                 Class<?> responseClass = exchange.getProperty(RESPONSE_CLASS, Class.class);
                 response = (AbstractQueryRecordsBase<?>) objectMapper.readValue(responseEntity, responseClass);

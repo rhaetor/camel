@@ -178,7 +178,7 @@ public class SoapDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * When marshalling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes, such
+     * When marshaling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes, such
      * as ns2, ns3, ns4 etc. To control this mapping, Camel allows you to refer to a map which contains the desired
      * mapping.
      */
@@ -287,7 +287,7 @@ public class SoapDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * When marshalling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes,
+         * When marshaling using JAXB or SOAP then the JAXB implementation will automatic assign namespace prefixes,
          * such as ns2, ns3, ns4 etc. To control this mapping, Camel allows you to refer to a map which contains the
          * desired mapping.
          */

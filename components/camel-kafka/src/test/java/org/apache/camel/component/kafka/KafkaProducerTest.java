@@ -370,7 +370,7 @@ public class KafkaProducerTest {
         in.setHeader(KafkaConstants.OVERRIDE_TOPIC, "anotherTopic");
         in.setHeader(KafkaConstants.KEY, "someKey");
 
-        // we add our exchanges in order to aggregate
+        // we add our exchanges to aggregate
         final List<Exchange> nestedExchanges
                 = createListOfExchangesWithTopics(Arrays.asList("overridenTopic1", "overridenTopic2", "overridenTopic3"));
 
@@ -398,7 +398,7 @@ public class KafkaProducerTest {
         in.setHeader(KafkaConstants.OVERRIDE_TOPIC, "anotherTopic");
         in.setHeader(KafkaConstants.KEY, "someKey");
 
-        // we add our exchanges in order to aggregate
+        // we add our exchanges to aggregate
         final List<Exchange> nestedExchanges
                 = createListOfExchangesWithTopics(Arrays.asList("overridenTopic1", "overridenTopic2", "overridenTopic3"));
 
@@ -429,7 +429,7 @@ public class KafkaProducerTest {
         in.setHeader(KafkaConstants.KEY, "someKey");
         in.setHeader(SOME_INDIVIDUAL_HEADER, "default");
 
-        // we add our exchanges in order to aggregate
+        // we add our exchanges to aggregate
         final List<Exchange> nestedExchanges
                 = createListOfExchangesWithTopics(Arrays.asList("overridenTopic1", "overridenTopic2", "overridenTopic3"));
 
@@ -459,7 +459,7 @@ public class KafkaProducerTest {
         in.setHeader(KafkaConstants.OVERRIDE_TOPIC, "anotherTopic");
         in.setHeader(KafkaConstants.KEY, "someKey");
 
-        // we add our exchanges in order to aggregate
+        // we add our exchanges to aggregate
         final List<Exchange> nestedExchanges
                 = createListOfExchangesWithTopics(Arrays.asList("overridenTopic1", "overridenTopic2", "overridenTopic3"));
 

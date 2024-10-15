@@ -94,7 +94,7 @@ public class BlobClientWrapper {
 
         final BlobInputStream blobInputStream = client.openInputStream(blobRange, blobRequestConditions);
 
-        // Hack to fold the response in order to ease the mocking in the unit tests
+        // Hack to fold the response to ease the mocking in the unit tests
         final Map<String, Object> results = new HashMap<>();
         results.put("inputStream", blobInputStream);
         results.put("properties", blobInputStream.getProperties());

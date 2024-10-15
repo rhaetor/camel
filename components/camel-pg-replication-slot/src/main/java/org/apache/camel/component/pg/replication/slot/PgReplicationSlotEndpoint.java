@@ -187,7 +187,7 @@ public class PgReplicationSlotEndpoint extends ScheduledPollEndpoint {
     }
 
     /**
-     * Output plugin name (e.g. test_decoding, wal2json)
+     * Output plugin name (for example, test_decoding, wal2json)
      */
     public void setOutputPlugin(String outputPlugin) {
         this.outputPlugin = outputPlugin;

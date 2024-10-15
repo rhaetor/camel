@@ -24,7 +24,7 @@ enough, sparingly documented, a few users reported it was working
 in their environment, and it is ready for wider feedback. 
 ====
 
-When consuming from remote files server, make sure you read the section titled _Consuming Files_
+When consuming from a remote file server, make sure you read the section titled _Consuming Files_
 further below for details related to consuming files.
 
 Maven users will need to add the following dependency to their `pom.xml`
@@ -65,7 +65,7 @@ You can append query options to the URI in the following format
 
 To use this component, you have multiple options to provide the required Azure authentication information:
 
-- Via Azure Identity, when specifying `credentialType=AZURE_IDENTITY` and providing required https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/identity/azure-identity#environment-variables[environment variables]. This enables service principal (e.g. app registration) authentication with secret/certificate as well as username password. 
+- Via Azure Identity, when specifying `credentialType=AZURE_IDENTITY` and providing required https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/identity/azure-identity#environment-variables[environment variables]. This enables service principal (for example, app registration) authentication with secret/certificate as well as username password.
 - Via shared storage account key, when specifying `credentialType=SHARED_ACCOUNT_KEY` and providing `sharedKey` for your Azure account, this is the simplest way to get started. The sharedKey can be generated through your Azure portal.
 - Via Azure SAS, when specifying `credentialType=AZURE_SAS` and providing a SAS Token parameter through the `token` parameter.
 
@@ -304,7 +304,7 @@ Unlike FTP component that features a special combination of options:
   - `ignoreFileNotFoundOrPermissionError=true`
 
 to optimize _the single file using a fixed name_ use case,
-it is necessary to fall back to regular filters (i.e. the list
+it is necessary to fall back to regular filters (that is, the list
 permission is needed). 
 
 

@@ -51,7 +51,7 @@ XML::
 
 ====
 
-In the default mode, the fail-over load balancer will always start with the first processor (i.e., "http:service1").
+In the default mode, the fail-over load balancer will always start with the first processor (that is, "http:service1").
 And in case this fails, then try the next, until either it succeeded or all of them failed.
 If all failed, then Camel will throw the caused exception which means the Exchange is failed.
 

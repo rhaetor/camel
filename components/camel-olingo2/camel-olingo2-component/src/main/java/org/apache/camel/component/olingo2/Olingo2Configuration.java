@@ -103,7 +103,7 @@ public class Olingo2Configuration {
     }
 
     /**
-     * Target OData service base URI, e.g. http://services.odata.org/OData/OData.svc
+     * Target OData service base URI, for example, http://services.odata.org/OData/OData.svc
      */
     public void setServiceUri(String serviceUri) {
         this.serviceUri = serviceUri;

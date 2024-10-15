@@ -38,7 +38,7 @@ import org.apache.camel.spi.Transformer;
 import org.apache.camel.util.ObjectHelper;
 
 /**
- * Data type able to unmarshal Exchange body to Java object. Supports both Json schema types and uses Jackson object
+ * Data type able to unmarshalExchange body to Java object. Supports both Json schema types and uses Jackson object
  * mapper implementation for the unmarshal operation. Requires proper setting of content schema, class and schema type
  * in Exchange properties (usually resolved via Json schema resolver).
  */

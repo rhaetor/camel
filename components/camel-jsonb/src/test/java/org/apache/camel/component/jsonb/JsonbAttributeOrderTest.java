@@ -47,11 +47,11 @@ public class JsonbAttributeOrderTest extends CamelTestSupport {
         mock.message(0).body().isInstanceOf(NumberPojo.class);
         mock.message(0).body().isEqualTo(nc);
 
-        Object marshalled = template.requestBody("direct:in", nc);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals(expectedJson, marshalledAsString);
+        Object marshaled = template.requestBody("direct:in", nc);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals(expectedJson, marshaledAsString);
 
-        template.sendBody("direct:back", marshalled);
+        template.sendBody("direct:back", marshaled);
 
         mock.assertIsSatisfied();
     }

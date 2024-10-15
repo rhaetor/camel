@@ -260,7 +260,7 @@ public class RunMojo extends AbstractExecMojo {
     /**
      * This defines the number of milliseconds to wait for daemon threads to quit following their interruption.<br/>
      * This is only taken into account if {@link #cleanupDaemonThreads} is <code>true</code>. A value &lt;=0 means to
-     * not timeout (i.e. wait indefinitely for threads to finish). Following a timeout, a warning will be logged.
+     * not timeout (that is, wait indefinitely for threads to finish). Following a timeout, a warning will be logged.
      * <p>
      * Note: properly coded threads <i>should</i> terminate upon interruption but some threads may prove problematic: as
      * the VM does interrupt daemon threads, some code may not have been written to handle interruption properly. For

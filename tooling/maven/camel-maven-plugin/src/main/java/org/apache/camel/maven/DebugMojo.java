@@ -40,7 +40,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.plugins.annotations.ResolutionScope;
 
 /**
- * The maven goal allowing to automatically set up the Camel application in order to debug the Camel routes thanks to
+ * The maven goal allowing to automatically set up the Camel application to debug the Camel routes thanks to
  * the Camel textual Route Debugger.
  */
 @Mojo(name = "debug", defaultPhase = LifecyclePhase.PREPARE_PACKAGE,

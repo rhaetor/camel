@@ -45,7 +45,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Marshal and unmarshal between POJOs and key-value pair (KVP) format using Camel Bindy
+ * Marshal and unmarshalbetween POJOs and key-value pair (KVP) format using Camel Bindy
  */
 @Dataformat("bindyKvp")
 public class BindyKeyValuePairDataFormat extends BindyAbstractDataFormat {

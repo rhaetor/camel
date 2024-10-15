@@ -35,7 +35,7 @@ public class TelegramComponent extends HealthCheckComponent {
     private HttpClient client;
 
     @Metadata(label = "advanced", defaultValue = BOT_API_DEFAULT_URL,
-              description = "Can be used to set an alternative base URI, e.g. when you want to test the component against a mock Telegram API")
+              description = "Can be used to set an alternative base URI, for example, when you want to test the component against a mock Telegram API")
     private String baseUri = BOT_API_DEFAULT_URL;
 
     public TelegramComponent() {
@@ -97,7 +97,7 @@ public class TelegramComponent extends HealthCheckComponent {
     }
 
     /**
-     * Set an alternative base URI, e.g. when you want to test the component against a mock Telegram API.
+     * Set an alternative base URI, for example, when you want to test the component against a mock Telegram API.
      */
     public void setBaseUri(String telegramBaseUri) {
         this.baseUri = telegramBaseUri;

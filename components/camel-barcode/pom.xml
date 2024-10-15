@@ -30,7 +30,7 @@
     <artifactId>camel-barcode</artifactId>
     <packaging>jar</packaging>
     <name>Camel :: Barcode</name>
-    <description>Camel Barcode (e.g. QRcode, PDF417, DataMatrix) support</description>
+    <description>Camel Barcode (for example, QRcode, PDF417, DataMatrix) support</description>
 
     <properties>
         <camel.surefire.parallel>true</camel.surefire.parallel>

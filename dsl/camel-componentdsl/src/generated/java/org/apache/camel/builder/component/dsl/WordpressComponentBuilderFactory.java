@@ -114,7 +114,7 @@ public interface WordpressComponentBuilderFactory {
         }
         /**
          * The entity ID. Should be passed when the operation performed requires
-         * a specific entity, e.g. deleting a post.
+         * a specific entity, for example, deleting a post.
          * 
          * The option is a: &lt;code&gt;java.lang.Integer&lt;/code&gt; type.
          * 
@@ -158,7 +158,7 @@ public interface WordpressComponentBuilderFactory {
             return this;
         }
         /**
-         * The Wordpress API URL from your site, e.g.
+         * The Wordpress API URL from your site, for example
          * http://myblog.com/wp-json/.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

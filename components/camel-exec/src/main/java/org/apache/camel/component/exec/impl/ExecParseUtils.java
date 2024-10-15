@@ -37,7 +37,7 @@ public final class ExecParseUtils {
      * Splits the input line string by {@link #WHITESPACE}. Supports quoting the white-spaces with a
      * {@link #QUOTE_CHAR}. A quote itself can also be enclosed within #{@link #QUOTE_CHAR}#{@link #QUOTE_CHAR}. More
      * than two double-quotes in a sequence is not allowed. Nested quotes are not allowed.<br>
-     * E.g. The string <code>"arg 1"  arg2<code> will return the tokens <code>arg 1</code>, <code>arg2</code><br>
+     * For example, The string <code>"arg 1"  arg2<code> will return the tokens <code>arg 1</code>, <code>arg2</code><br>
      * The string <code>""arg 1""  "arg2" arg 3<code> will return the tokens <code>"arg 1"</code> ,
      * <code>arg2</code>,<code>arg</code> and <code>3</code> <br>
      *

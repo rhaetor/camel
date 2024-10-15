@@ -30,6 +30,6 @@
   </camelContext>
 
   <bean
-    class="org.apache.camel.dataformat.bindy.csv.BindySingleQuotesWithDoubleQuotesInFieldCsvUnmarshallTest$ContextConfig" id="myBuilder"/>
+    class="org.apache.camel.dataformat.bindy.csv.BindySingleQuotesWithDoubleQuotesInFieldCsvUnmarshalTest$ContextConfig" id="myBuilder"/>
 
 </beans>

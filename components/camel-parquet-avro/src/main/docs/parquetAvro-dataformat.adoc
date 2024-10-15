@@ -12,7 +12,7 @@
 *Since Camel {since}*
 
 The ParquetAvro Data Format is a Camel Framework's data format implementation based on the parquet-avro library for (de)/serialization purposes.
-Messages can be unmarshalled to Avro's GenericRecords or plain Java objects (POJOs).
+Messages can be unmarshaled to Avro's GenericRecords or plain Java objects (POJOs).
 With the help of Camel's routing engine and data transformations, you can then play with them and apply customised formatting and call other Camel Components to convert and send messages to upstream systems.
 
 == Parquet Data Format Options
@@ -34,7 +34,7 @@ from("direct:unmarshal").unmarshal(parquet).to("mock:unmarshal");
 
 == Marshal
 
-Marshalling is the reverse process of unmarshalling, so when you have your GenericRecord or POJO and marshal it, you will get the parquet-formatted output stream on your producer endpoint.
+Marshaling is the reverse process of unmarshaling, so when you have your GenericRecord or POJO and marshalit, you will get the parquet-formatted output stream on your producer endpoint.
 
 [source,java]
 -----------------------------------------------------------------------

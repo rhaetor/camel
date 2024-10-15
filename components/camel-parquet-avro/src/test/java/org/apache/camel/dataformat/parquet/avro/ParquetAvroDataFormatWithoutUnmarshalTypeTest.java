@@ -37,10 +37,10 @@ public class ParquetAvroDataFormatWithoutUnmarshalTypeTest extends CamelTestSupp
                 new Pojo(1, "airport"),
                 new Pojo(2, "penguin"),
                 new Pojo(3, "verb"));
-        MockEndpoint unmarshalMock = getMockEndpoint("mock:unmarshalled");
+        MockEndpoint unmarshalMock = getMockEndpoint("mock:unmarshaled");
         unmarshalMock.expectedMessageCount(1);
 
-        MockEndpoint marshalMock = getMockEndpoint("mock:marshalled");
+        MockEndpoint marshalMock = getMockEndpoint("mock:marshaled");
         marshalMock.expectedMessageCount(1);
 
         template.sendBody("direct:in", in);
@@ -55,8 +55,8 @@ public class ParquetAvroDataFormatWithoutUnmarshalTypeTest extends CamelTestSupp
             assertEquals(in.get(i).getData(), record.get("data").toString());
         }
 
-        byte[] marshalled = marshalMock.getExchanges().get(0).getIn().getBody(byte[].class);
-        ParquetInputStream inputStream = new ParquetInputStream(new DefaultUuidGenerator().generateUuid(), marshalled);
+        byte[] marshaled = marshalMock.getExchanges().get(0).getIn().getBody(byte[].class);
+        ParquetInputStream inputStream = new ParquetInputStream(new DefaultUuidGenerator().generateUuid(), marshaled);
         try (ParquetFileReader reader = new ParquetFileReader(inputStream, ParquetReadOptions.builder().build())) {
             assertEquals(in.size(), reader.getRecordCount());
         }
@@ -71,13 +71,13 @@ public class ParquetAvroDataFormatWithoutUnmarshalTypeTest extends CamelTestSupp
                 // First we get a Parquet data from POJO using reflection as preparation
                 ParquetAvroDataFormat format = new ParquetAvroDataFormat();
                 format.setUnmarshalType(Pojo.class);
-                from("direct:in").marshal(format).to("direct:marshalled");
+                from("direct:in").marshal(format).to("direct:marshaled");
 
-                // Then we ensure that data can be unmarshalled and marshalled again with Avro's GenericRecord
+                // Then we ensure that data can be unmarshaled and marshaled again with Avro's GenericRecord
                 ParquetAvroDataFormat formatWithoutUnmarshalType = new ParquetAvroDataFormat();
-                from("direct:marshalled")
-                        .unmarshal(formatWithoutUnmarshalType).to("mock:unmarshalled")
-                        .marshal(formatWithoutUnmarshalType).to("mock:marshalled");
+                from("direct:marshaled")
+                        .unmarshal(formatWithoutUnmarshalType).to("mock:unmarshaled")
+                        .marshal(formatWithoutUnmarshalType).to("mock:marshaled");
             }
         };
     }

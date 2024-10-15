@@ -72,7 +72,7 @@ XML::
 
 === Setting variable with the current message body
 
-It is of course also possible to set a variable with a value
+It is also possible to set a variable with a value
 from anything on the `Exchange` such as the message body:
 
 [tabs]

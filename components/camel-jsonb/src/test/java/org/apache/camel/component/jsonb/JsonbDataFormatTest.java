@@ -51,7 +51,7 @@ public class JsonbDataFormatTest {
 
     private void testJson(String json, Object expected, Class<?> unmarshalType, JohnzonParameterizedType customType)
             throws Exception {
-        Object unmarshalled;
+        Object unmarshaled;
         JsonbDataFormat jsonbDataFormat = null;
 
         try {
@@ -62,9 +62,9 @@ public class JsonbDataFormatTest {
             }
             jsonbDataFormat.doStart();
             try (InputStream in = new ByteArrayInputStream(json.getBytes())) {
-                unmarshalled = jsonbDataFormat.unmarshal(new DefaultExchange(new DefaultCamelContext()), in);
+                unmarshaled = jsonbDataFormat.unmarshal(new DefaultExchange(new DefaultCamelContext()), in);
             }
-            assertEquals(expected.toString(), unmarshalled.toString());
+            assertEquals(expected.toString(), unmarshaled.toString());
         } finally {
             if (jsonbDataFormat != null) {
                 jsonbDataFormat.close();

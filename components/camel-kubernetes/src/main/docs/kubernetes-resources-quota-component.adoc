@@ -57,7 +57,7 @@ from("direct:list").
 
 This operation returns a List of Resource Quotas from your cluster
 
-- listResourcesQuotaByLabels:  this operation lists the Resource Quotas by labels on a kubernetes cluster
+- listResourcesQuotaByLabels: this operation lists the Resource Quotas by labels on a kubernetes cluster
 
 [source,java]
 --------------------------------------------------------------------------------

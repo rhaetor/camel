@@ -206,7 +206,7 @@ The `findAll` operation returns all documents matching a query, or none
 at all, in which case all documents contained in the collection are
 returned.  *The query object is extracted `CamelMongoDbCriteria` header*.
 if the CamelMongoDbCriteria header is null the query object is extracted 
-message body, i.e. it should be of type `Bson` or convertible to `Bson`.
+message body, that is, it should be of type `Bson` or convertible to `Bson`.
 It can be a JSON String or a Hashmap.
 See <<Type conversions>> for more info.
 
@@ -270,7 +270,7 @@ assertTrue("Result is not of type Long", result instanceof Long);
 You can provide a query
 *The query object is extracted `CamelMongoDbCriteria` header*.
 if the CamelMongoDbCriteria header is null the query object is extracted 
-message body, i.e. it should be of type `Bson` or convertible to
+message body, that is, it should be of type `Bson` or convertible to
 `Bson`., and
 operation will return the amount of documents matching this criteria.  
 
@@ -754,7 +754,7 @@ start consuming from the top again.
 The Camel MongoDB tailable cursor consumer takes care of all these tasks
 for you. You will just need to provide the key to some field in your
 data of increasing nature, which will act as a marker to position your
-cursor every time it is regenerated, e.g. a timestamp, a sequential ID,
+cursor every time it is regenerated, for example, a timestamp, a sequential ID,
 etc. It can be of any datatype supported by MongoDB. Date, Strings and
 Integers are found to work well. We call this mechanism "tail tracking"
 in the context of this component.

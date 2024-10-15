@@ -29,7 +29,7 @@
 
         <!-- we define the json jackson data formats to be used -->
         <dataFormats>
-            <!-- and this one uses our own TestPojo class as unmarshal type -->
+            <!-- and this one uses our own TestPojo class as unmarshaltype -->
             <jacksonXml id="pojo" useList="true" unmarshalType="org.apache.camel.component.jacksonxml.TestPojo"/>
         </dataFormats>
 

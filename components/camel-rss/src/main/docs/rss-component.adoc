@@ -30,7 +30,10 @@ for this component:
 </dependency>
 ------------------------------------------------------------
 
-NOTE: The component currently only supports consuming feeds.
+[NOTE]
+====
+The component currently only supports consuming feeds.
+====
 
 == URI format
 

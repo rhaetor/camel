@@ -29,7 +29,7 @@ import org.apache.camel.spi.TypeConvertible;
  * conversion, so that the correct TypeConverter can be used. This is a helper class to CoreTypeConverterRegistry.
  * <p>
  * In the CoreTypeConverterRegistry class, the registry of types if maintained in a ConcurrentMap that associates a type
- * pair with the resolver for it (i.e.: it associates pair representing a conversion from String to Integer to a type
+ * pair with the resolver for it (that is:  it associates pair representing a conversion from String to Integer to a type
  * converter - such as CamelBaseBulkConverterLoader).
  * <p>
  * NOTE 1: a lot of this code is in the hot path of the core engine, so change with extreme caution to prevent
@@ -97,7 +97,7 @@ final class TypeResolverHelper {
     }
 
     /**
-     * Try the base converters. That is, those matching a direct conversion (i.e.: when the from and to types requested
+     * Try the base converters. That is, those matching a direct conversion (that is:  when the from and to types requested
      * do exist on the converters' map OR when the from and to types requested match for a _primitive type).
      * <p>
      * For instance: From String.class, To: int.class (would match a method such as myConverter(String, Integer) or

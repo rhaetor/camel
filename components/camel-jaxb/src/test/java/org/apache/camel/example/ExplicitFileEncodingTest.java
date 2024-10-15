@@ -19,7 +19,7 @@ package org.apache.camel.example;
 import java.nio.file.Path;
 
 import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Unmarshaler;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
@@ -51,8 +51,8 @@ public class ExplicitFileEncodingTest extends CamelTestSupport {
         MockEndpoint.assertIsSatisfied(context);
 
         JAXBContext jaxbContext = JAXBContext.newInstance("org.apache.camel.example");
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        PurchaseOrder obj = (PurchaseOrder) unmarshaller.unmarshal(testDirectory.resolve("output.txt").toFile());
+        Unmarshaler unmarshaler = jaxbContext.createUnmarshaler();
+        PurchaseOrder obj = (PurchaseOrder) unmarshaler.unmarshal(testDirectory.resolve("output.txt").toFile());
         assertEquals(obj.getName(), name);
     }
 

@@ -39,10 +39,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @CamelSpringTest
 public class BindyNumberTest {
 
-    public static final String URI_DIRECT_MARSHALL = "direct:marshall";
-    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshall";
-    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshall-result";
-    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshall-result";
+    public static final String URI_DIRECT_MARSHALL = "direct:marshal";
+    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshal";
+    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshal-result";
+    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshal-result";
 
     // *************************************************************************
     //
@@ -66,7 +66,7 @@ public class BindyNumberTest {
 
     @Test
     @DirtiesContext
-    public void testMarshall() throws Exception {
+    public void testMarshal() throws Exception {
         DataModel rec = new DataModel();
         rec.field1 = new BigDecimal(123.45);
         rec.field2 = new BigDecimal(10.00);
@@ -82,7 +82,7 @@ public class BindyNumberTest {
 
     @Test
     @DirtiesContext
-    public void testUnMarshall() throws Exception {
+    public void testUnMarshal() throws Exception {
 
         utemplate.sendBody("1234510.00   1010.00   10");
 

@@ -41,7 +41,7 @@ public interface AWS2S3Constants {
     String CONTENT_DISPOSITION = "CamelAwsS3ContentDisposition";
     @Metadata(description = "The *optional* Content-Encoding HTTP header specifying what content\n" +
                             "encodings have been applied to the object and what decoding mechanisms\n" +
-                            "must be applied in order to obtain the media-type referenced by the\n" +
+                            "must be applied to obtain the media-type referenced by the\n" +
                             "Content-Type field.",
               javaType = "String")
     String CONTENT_ENCODING = "CamelAwsS3ContentEncoding";

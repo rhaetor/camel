@@ -108,7 +108,7 @@ BusFactory.setDefaultBus(bus);
 
 The elements used to configure a Camel transport endpoint are defined
 in the namespace `\http://cxf.apache.org/transports/camel`. It is
-commonly referred to using the prefix `camel`. In order to use the Camel
+commonly referred to using the prefix `camel`. To use the Camel
 transport configuration elements, you will need to add the lines shown
 below to the beans element of your endpoint's configuration file. In
 addition, you will need to add the configuration elements' namespace to

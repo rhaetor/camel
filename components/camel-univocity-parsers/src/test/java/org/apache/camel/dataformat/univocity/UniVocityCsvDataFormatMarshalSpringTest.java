@@ -31,7 +31,7 @@ import static org.apache.camel.test.junit5.TestSupport.assertIsInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * This class tests the marshalling of {@link org.apache.camel.dataformat.univocity.UniVocityCsvDataFormat} using the
+ * This class tests the marshaling of {@link org.apache.camel.dataformat.univocity.UniVocityCsvDataFormat} using the
  * Spring DSL.
  */
 public final class UniVocityCsvDataFormatMarshalSpringTest extends CamelSpringTestSupport {
@@ -39,7 +39,7 @@ public final class UniVocityCsvDataFormatMarshalSpringTest extends CamelSpringTe
     MockEndpoint result;
 
     /**
-     * Tests that we can marshal CSV with the default configuration.
+     * Tests that we can marshalCSV with the default configuration.
      */
     @Test
     public void shouldMarshalWithDefaultConfiguration() throws Exception {
@@ -69,7 +69,7 @@ public final class UniVocityCsvDataFormatMarshalSpringTest extends CamelSpringTe
     }
 
     /**
-     * Tests that the marshalling adds new columns on the fly and keep its order
+     * Tests that the marshaling adds new columns on the fly and keep its order
      */
     @Test
     public void shouldMarshalAndAddNewColumns() throws Exception {
@@ -85,7 +85,7 @@ public final class UniVocityCsvDataFormatMarshalSpringTest extends CamelSpringTe
     }
 
     /**
-     * Tests that we can marshal CSV with specific headers
+     * Tests that we can marshalCSV with specific headers
      */
     @Test
     public void shouldMarshalWithSpecificHeaders() throws Exception {
@@ -101,7 +101,7 @@ public final class UniVocityCsvDataFormatMarshalSpringTest extends CamelSpringTe
     }
 
     /**
-     * Tests that we can marshal CSV using and advanced configuration
+     * Tests that we can marshalCSV using and advanced configuration
      */
     @Test
     public void shouldMarshalUsingAdvancedConfiguration() throws Exception {

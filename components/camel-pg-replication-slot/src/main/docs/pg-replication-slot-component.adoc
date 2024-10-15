@@ -62,12 +62,12 @@ from("pg-replication-slot://localhost:5432/finance/sync_slot:test_decoding?user=
 
 == Tips
 
-PostgreSQL can generate a huge number of empty transactions on certain operations (e.g. `VACUUM`). These transactions can congest
+PostgreSQL can generate a huge number of empty transactions on certain operations (for example, `VACUUM`). These transactions can congest
 your route. Using `greedy=true` query parameter can help with this problem. It will help your route filter out empty transactions quickly
 without waiting for the `delay`*`timeUnit` parameter between each exchange.
 
 The order of the messages is guaranteed, but the same message might come more than once. So, for example, if you're using
-this component to sync data from PostgreSQL to another database, make sure your operations are idempotent (e.g., use `UPSERT`
+this component to sync data from PostgreSQL to another database, make sure your operations are idempotent (for example, use `UPSERT`
 instead of `INSERT`, etc). This will make sure repeated messages won't affect your system negatively.
 
 

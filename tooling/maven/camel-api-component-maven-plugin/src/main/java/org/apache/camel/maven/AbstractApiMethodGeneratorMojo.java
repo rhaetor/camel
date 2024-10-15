@@ -134,7 +134,7 @@ public abstract class AbstractApiMethodGeneratorMojo extends AbstractApiMethodBa
         mergeTemplate(getEndpointContext(models), getConfigurationFile(), "/api-endpoint-config.vm");
 
         // generate junit test if it doesn't already exist under test source directory
-        // i.e. it may have been generated then moved there and populated with test values
+        // that is, it may have been generated then moved there and populated with test values
         final String testFilePath = getTestFilePath();
         if (!new File(project.getBuild().getTestSourceDirectory(), testFilePath).exists()) {
             mergeTemplate(getApiTestContext(models), new File(generatedTestDir, testFilePath), "/api-route-test.vm");

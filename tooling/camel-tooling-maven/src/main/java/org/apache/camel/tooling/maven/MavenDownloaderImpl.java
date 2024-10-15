@@ -731,7 +731,7 @@ public class MavenDownloaderImpl extends ServiceSupport implements MavenDownload
      * Configure the transport related requirements of {@link RepositorySystem} in {@link DIRegistry}
      */
     private static void transportConfiguration(DIRegistry registry, Properties systemProperties) {
-        // in order to resolve the artifacts we need some connector factories
+        // to resolve the artifacts we need some connector factories
         registry.bind(RepositoryConnectorFactory.class, BasicRepositoryConnectorFactory.class);
         // repository connectory factory needs transporter provider(s)
         registry.bind(TransporterProvider.class, DefaultTransporterProvider.class);

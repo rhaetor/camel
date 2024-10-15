@@ -248,7 +248,7 @@ from("netty-http:http://0.0.0.0:8123?matchOnUriPrefix=true").to("mock:foo");
 === Using multiple routes with same port
 
 In the same CamelContext you can have multiple
-routes from Netty HTTP that shares the same port (e.g., a
+routes from Netty HTTP that shares the same port (for example, a
 `io.netty.bootstrap.ServerBootstrap` instance). Doing this requires a
 number of bootstrap options to be identical in the routes, as the routes
 will share the same `io.netty.bootstrap.ServerBootstrap` instance. The
@@ -371,6 +371,80 @@ void processResponse(final Exchange exchange) {
     ByteBufUtil.writeUtf8(buf, string.toUpperCase(Locale.US));
 }
 ------------------------------------------------------------------------------------------
+
+== Using HTTP Basic Authentication
+
+The Netty HTTP consumer supports HTTP basic authentication by specifying
+the security realm name to use, as shown below
+
+[source,java]
+------------------------------------------------------------------------------------------
+<route>
+   <from uri="netty-http:http://0.0.0.0:{{port}}/foo?securityConfiguration.realm=karaf"/>
+   ...
+</route>
+------------------------------------------------------------------------------------------
+
+The realm name is mandatory to enable basic authentication. By default
+the JAAS based authenticator is used, which will use the realm name
+specified (karaf in the example above) and use the JAAS realm and the
+JAAS \{\{LoginModule}}s of this realm for authentication.
+
+End user of Apache Karaf / ServiceMix has a karaf realm out of the box,
+and hence why the example above would work out of the box in these
+containers.
+
+=== Specifying ACL on web resources
+
+The `org.apache.camel.component.netty.http.SecurityConstraint` allows
+to define constrains on web resources. And the
+`org.apache.camel.component.netty.http.SecurityConstraintMapping` is
+provided out of the box, allowing to easily define inclusions and
+exclusions with roles.
+
+For example, as shown below in the XML DSL, we define the constraint
+bean:
+
+[source,xml]
+-------------------------------------------------------------------------------------------------
+  <bean id="constraint" class="org.apache.camel.component.netty.http.SecurityConstraintMapping">
+    <!-- inclusions defines url -> roles restrictions -->
+    <!-- a * should be used for any role accepted (or even no roles) -->
+    <property name="inclusions">
+      <map>
+        <entry key="/*" value="*"/>
+        <entry key="/admin/*" value="admin"/>
+        <entry key="/guest/*" value="admin,guest"/>
+      </map>
+    </property>
+    <!-- exclusions is used to define public urls, which requires no authentication -->
+    <property name="exclusions">
+      <set>
+        <value>/public/*</value>
+      </set>
+    </property>
+  </bean>
+-------------------------------------------------------------------------------------------------
+
+The constraint above is define so that
+
+* access to /* is restricted and any roles is accepted (also if user has
+no roles)
+* access to /admin/* requires the admin role
+* access to /guest/* requires the admin or guest role
+* access to /public/* is an exclusion which means no authentication is
+needed, and is therefore public for everyone without logging in
+
+To use this constraint we just need to refer to the bean id as shown
+below:
+
+[source,xml]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<route>
+   <from uri="netty-http:http://0.0.0.0:{{port}}/foo?matchOnUriPrefix=true&amp;securityConfiguration.realm=karaf&amp;securityConfiguration.securityConstraint=#constraint"/>
+   ...
+</route>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

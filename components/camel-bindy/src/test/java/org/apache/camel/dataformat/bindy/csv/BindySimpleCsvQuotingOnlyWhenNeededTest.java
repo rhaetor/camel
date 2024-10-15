@@ -36,18 +36,18 @@ public class BindySimpleCsvQuotingOnlyWhenNeededTest extends CamelTestSupport {
         body.setaNumber(10.5);
         body.setaBoolean(true);
 
-        String marshalled = template.requestBody("direct:marshal1", body, String.class);
-        assertEquals("123,\"He said \"\"lets go to Hawaii!\"\"\",10.5,true\r\n", marshalled);
+        String marshaled = template.requestBody("direct:marshal1", body, String.class);
+        assertEquals("123,\"He said \"\"lets go to Hawaii!\"\"\",10.5,true\r\n", marshaled);
     }
 
     @Test
     public void testUnmarshalFieldWhenContainingDoubleQuote() {
         String body = "123,\"He said \"\"lets go to Hawaii!\"\"\",10.5,true\r\n";
-        BindyCsvRowFormat191431 unmarshalled = template.requestBody("direct:unmarshal1", body, BindyCsvRowFormat191431.class);
-        assertEquals("123", unmarshalled.getFirstField());
-        assertEquals("He said \"lets go to Hawaii!\"", unmarshalled.getSecondField());
-        assertEquals(10.5, unmarshalled.getaNumber());
-        assertEquals(true, unmarshalled.getaBoolean());
+        BindyCsvRowFormat191431 unmarshaled = template.requestBody("direct:unmarshal1", body, BindyCsvRowFormat191431.class);
+        assertEquals("123", unmarshaled.getFirstField());
+        assertEquals("He said \"lets go to Hawaii!\"", unmarshaled.getSecondField());
+        assertEquals(10.5, unmarshaled.getaNumber());
+        assertEquals(true, unmarshaled.getaBoolean());
     }
 
     @Test
@@ -58,18 +58,18 @@ public class BindySimpleCsvQuotingOnlyWhenNeededTest extends CamelTestSupport {
         body.setaNumber(10.5);
         body.setaBoolean(true);
 
-        String marshalled = template.requestBody("direct:marshal2", body, String.class);
-        assertEquals("123,'He said \\'lets go to Hawaii!\\'',10.5,true\r\n", marshalled);
+        String marshaled = template.requestBody("direct:marshal2", body, String.class);
+        assertEquals("123,'He said \\'lets go to Hawaii!\\'',10.5,true\r\n", marshaled);
     }
 
     @Test
     public void testUnmarshalFieldWhenContainingOtherConfiguredQuoteCharacter() {
         String body = "123,'He said \\'lets go to Hawaii!\\'',10.5,true\r\n";
-        BindyCsvRowFormat191432 unmarshalled = template.requestBody("direct:unmarshal2", body, BindyCsvRowFormat191432.class);
-        assertEquals("123", unmarshalled.getFirstField());
-        assertEquals("He said 'lets go to Hawaii!'", unmarshalled.getSecondField());
-        assertEquals(10.5, unmarshalled.getaNumber());
-        assertEquals(true, unmarshalled.getaBoolean());
+        BindyCsvRowFormat191432 unmarshaled = template.requestBody("direct:unmarshal2", body, BindyCsvRowFormat191432.class);
+        assertEquals("123", unmarshaled.getFirstField());
+        assertEquals("He said 'lets go to Hawaii!'", unmarshaled.getSecondField());
+        assertEquals(10.5, unmarshaled.getaNumber());
+        assertEquals(true, unmarshaled.getaBoolean());
     }
 
     @Test
@@ -80,18 +80,18 @@ public class BindySimpleCsvQuotingOnlyWhenNeededTest extends CamelTestSupport {
         body.setaNumber(10.5);
         body.setaBoolean(true);
 
-        String marshalled = template.requestBody("direct:marshal1", body, String.class);
-        assertEquals("123,\"Then, lets go to Hawaii!\",10.5,true\r\n", marshalled);
+        String marshaled = template.requestBody("direct:marshal1", body, String.class);
+        assertEquals("123,\"Then, lets go to Hawaii!\",10.5,true\r\n", marshaled);
     }
 
     @Test
     public void testUnmarshalFieldWhenContainingComma() {
         String body = "123,\"Then, lets go to Hawaii!\",10.5,true\r\n";
-        BindyCsvRowFormat191431 unmarshalled = template.requestBody("direct:unmarshal1", body, BindyCsvRowFormat191431.class);
-        assertEquals("123", unmarshalled.getFirstField());
-        assertEquals("Then, lets go to Hawaii!", unmarshalled.getSecondField());
-        assertEquals(10.5, unmarshalled.getaNumber());
-        assertEquals(true, unmarshalled.getaBoolean());
+        BindyCsvRowFormat191431 unmarshaled = template.requestBody("direct:unmarshal1", body, BindyCsvRowFormat191431.class);
+        assertEquals("123", unmarshaled.getFirstField());
+        assertEquals("Then, lets go to Hawaii!", unmarshaled.getSecondField());
+        assertEquals(10.5, unmarshaled.getaNumber());
+        assertEquals(true, unmarshaled.getaBoolean());
     }
 
     @Test
@@ -102,18 +102,18 @@ public class BindySimpleCsvQuotingOnlyWhenNeededTest extends CamelTestSupport {
         body.setaNumber(10.5);
         body.setaBoolean(true);
 
-        String marshalled = template.requestBody("direct:marshal3", body, String.class);
-        assertEquals("123;\"Then; lets go to Hawaii!\";10.5;true\r\n", marshalled);
+        String marshaled = template.requestBody("direct:marshal3", body, String.class);
+        assertEquals("123;\"Then; lets go to Hawaii!\";10.5;true\r\n", marshaled);
     }
 
     @Test
     public void testUnmarshalFieldWhenContainingOtherConfiguredSeparator() {
         String body = "123;\"Then; lets go to Hawaii!\";10.5;true\r\n";
-        BindyCsvRowFormat191433 unmarshalled = template.requestBody("direct:unmarshal3", body, BindyCsvRowFormat191433.class);
-        assertEquals("123", unmarshalled.getFirstField());
-        assertEquals("Then; lets go to Hawaii!", unmarshalled.getSecondField());
-        assertEquals(10.5, unmarshalled.getaNumber());
-        assertEquals(true, unmarshalled.getaBoolean());
+        BindyCsvRowFormat191433 unmarshaled = template.requestBody("direct:unmarshal3", body, BindyCsvRowFormat191433.class);
+        assertEquals("123", unmarshaled.getFirstField());
+        assertEquals("Then; lets go to Hawaii!", unmarshaled.getSecondField());
+        assertEquals(10.5, unmarshaled.getaNumber());
+        assertEquals(true, unmarshaled.getaBoolean());
     }
 
     @Test
@@ -124,8 +124,8 @@ public class BindySimpleCsvQuotingOnlyWhenNeededTest extends CamelTestSupport {
         body.setaNumber(10.5);
         body.setaBoolean(true);
 
-        String marshalled = template.requestBody("direct:marshal1", body, String.class);
-        assertEquals("123,\"Then\r\n lets go to Hawaii!\",10.5,true\r\n", marshalled);
+        String marshaled = template.requestBody("direct:marshal1", body, String.class);
+        assertEquals("123,\"Then\r\n lets go to Hawaii!\",10.5,true\r\n", marshaled);
     }
 
     @Test
@@ -136,8 +136,8 @@ public class BindySimpleCsvQuotingOnlyWhenNeededTest extends CamelTestSupport {
         body.setaNumber(10.5);
         body.setaBoolean(true);
 
-        String marshalled = template.requestBody("direct:marshal4", body, String.class);
-        assertEquals("123,\"Then\n lets go to Hawaii!\",10.5,true\n", marshalled);
+        String marshaled = template.requestBody("direct:marshal4", body, String.class);
+        assertEquals("123,\"Then\n lets go to Hawaii!\",10.5,true\n", marshaled);
     }
 
     @Override

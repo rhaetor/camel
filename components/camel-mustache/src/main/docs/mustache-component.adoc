@@ -38,7 +38,7 @@ mustache:templateName[?options]
 -------------------------------
 
 Where *templateName* is the classpath-local URI of the template to
-invoke; or the complete URL of the remote template (e.g.:
+invoke; or the complete URL of the remote template (for example:
 `\file://folder/myfile.mustache`).
 
 // component-configure options: START

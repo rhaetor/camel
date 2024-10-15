@@ -161,7 +161,7 @@ public class CamelMicroProfileHealthCheckRegistry extends DefaultHealthCheckRegi
                 if (registerEagerly(repository)) {
                     // Eagerly register routes, components & consumers HealthCheckRepository since
                     // routes may be supervised
-                    // and added with an initial delay. E.g repository.stream() may be empty
+                    // and added with an initial delay. For example, repository.stream() may be empty
                     // initially but will eventually
                     // return some results
                     getReadinessRegistry().register(repository.getId(), repositoryHealthCheck);

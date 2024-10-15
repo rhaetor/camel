@@ -38,7 +38,7 @@ import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @EnabledIfSystemProperty(named = "connectionString", matches = ".*",
-                         disabledReason = "Make sure to supply azure servicebus connectionString, e.g:  mvn verify -DconnectionString=string")
+                         disabledReason = "Make sure to supply azure servicebus connectionString, for example, mvn verify -DconnectionString=string")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ServiceBusProducerTest extends BaseCamelServiceBusTestSupport {
 

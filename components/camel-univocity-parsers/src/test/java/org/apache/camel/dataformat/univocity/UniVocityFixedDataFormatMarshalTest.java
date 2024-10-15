@@ -33,14 +33,14 @@ import static org.apache.camel.test.junit5.TestSupport.assertIsInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * This class tests the marshalling of {@link UniVocityFixedDataFormat}.
+ * This class tests the marshaling of {@link UniVocityFixedDataFormat}.
  */
 public final class UniVocityFixedDataFormatMarshalTest extends CamelTestSupport {
     @EndpointInject("mock:result")
     MockEndpoint result;
 
     /**
-     * Tests that we can marshal fixed-width with the default configuration.
+     * Tests that we can marshalfixed-width with the default configuration.
      */
     @Test
     public void shouldMarshalWithDefaultConfiguration() throws Exception {
@@ -70,7 +70,7 @@ public final class UniVocityFixedDataFormatMarshalTest extends CamelTestSupport 
     }
 
     /**
-     * Tests that the marshalling adds new columns on the fly and keep its order
+     * Tests that the marshaling adds new columns on the fly and keep its order
      */
     @Test
     public void shouldMarshalAndAddNewColumns() throws Exception {
@@ -86,7 +86,7 @@ public final class UniVocityFixedDataFormatMarshalTest extends CamelTestSupport 
     }
 
     /**
-     * Tests that we can marshal fixed-width with specific headers
+     * Tests that we can marshalfixed-width with specific headers
      */
     @Test
     public void shouldMarshalWithSpecificHeaders() throws Exception {
@@ -102,7 +102,7 @@ public final class UniVocityFixedDataFormatMarshalTest extends CamelTestSupport 
     }
 
     /**
-     * Tests that we can marshal fixed-width using and advanced configuration
+     * Tests that we can marshalfixed-width using and advanced configuration
      */
     @Test
     public void shouldMarshalUsingAdvancedConfiguration() throws Exception {

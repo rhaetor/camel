@@ -159,7 +159,7 @@ public abstract class CamelSpringTestSupport extends CamelTestSupport {
      * <p/>
      * To use this filtering mechanism it is necessary to provide the
      * {@link org.springframework.context.ApplicationContext} returned from here as the parent context to your test
-     * context e.g.
+     * context for example
      *
      * <pre>
      * protected AbstractXmlApplicationContext createApplicationContext() {

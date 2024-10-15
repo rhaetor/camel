@@ -119,7 +119,7 @@ public class DefaultJmsMessageListenerContainer extends DefaultMessageListenerCo
         executor.setCorePoolSize(endpoint.getConcurrentConsumers());
         // Direct hand-off mode. Do not queue up tasks: assign it to a thread immediately.
         // We set no upper-bound on the thread pool (no maxPoolSize) as it's already implicitly constrained by
-        // maxConcurrentConsumers on the DMLC itself (i.e. DMLC will only grow up to a level of concurrency as
+        // maxConcurrentConsumers on the DMLC itself (that is, DMLC will only grow up to a level of concurrency as
         // defined by maxConcurrentConsumers).
         executor.setQueueCapacity(0);
         executor.initialize();

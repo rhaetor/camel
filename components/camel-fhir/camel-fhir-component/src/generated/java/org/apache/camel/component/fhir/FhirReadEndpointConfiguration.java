@@ -35,10 +35,10 @@ public final class FhirReadEndpointConfiguration extends FhirConfiguration {
     @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceById", description="The resource ID")})
     private Long longId;
     @UriParam
-    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceById", description="The resource to read (e.g. Patient)"), @ApiMethod(methodName = "resourceByUrl", description="The resource to read (e.g. Patient)")})
+    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceById", description="The resource to read (for example, Patient)"), @ApiMethod(methodName = "resourceByUrl", description="The resource to read (for example, Patient)")})
     private Class<org.hl7.fhir.instance.model.api.IBaseResource> resource;
     @UriParam
-    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceById", description="The resource to read (e.g. Patient)"), @ApiMethod(methodName = "resourceByUrl", description="The resource to read (e.g. Patient.class)")})
+    @ApiParam(optional = false, apiMethods = {@ApiMethod(methodName = "resourceById", description="The resource to read (for example, Patient)"), @ApiMethod(methodName = "resourceByUrl", description="The resource to read (for example, Patient.class)")})
     private String resourceClass;
     @UriParam
     @ApiParam(optional = true, apiMethods = {@ApiMethod(methodName = "resourceById", description="Return null if version matches"), @ApiMethod(methodName = "resourceById", description="Return null if version matches"), @ApiMethod(methodName = "resourceById", description="Return null if version matches"), @ApiMethod(methodName = "resourceById", description="Return null if version matches"), @ApiMethod(methodName = "resourceById", description="Return null if version matches"), @ApiMethod(methodName = "resourceById", description="Return null if version matches"), @ApiMethod(methodName = "resourceByUrl", description="Return null if version matches"), @ApiMethod(methodName = "resourceByUrl", description="Return null if version matches"), @ApiMethod(methodName = "resourceByUrl", description="Return null if version matches"), @ApiMethod(methodName = "resourceByUrl", description="Return null if version matches")})

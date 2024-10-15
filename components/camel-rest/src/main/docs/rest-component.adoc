@@ -66,10 +66,10 @@ define the REST context path using support for parameters.
 
 [TIP]
 ====
-If no uriTemplate is configured then `path` option works the same way.
+If no `uriTemplate` is configured then `path` option works the same way.
 
 It does not matter if you configure only `path` or if you configure both
-options. Though configuring both a path and uriTemplate is a more common
+options. Though configuring both a path and `uriTemplate` is a more common
 practice with REST.
 ====
 
@@ -180,10 +180,10 @@ Then when calling the REST service using the REST producer, it will automaticall
 ----
 
 In the example above we send a POJO instance `UserPojo` as the message body. And because we have turned on JSON binding
-in the REST configuration, then the POJO will be marshalled from POJO to JSON before calling the REST service.
+in the REST configuration, then the POJO will be marshaled from POJO to JSON before calling the REST service.
 
-However, if you want to also perform binding for the response message (e.g., what the REST service sends back, as response) you
-would need to configure the `outType` option to specify what is the class name of the POJO to unmarshal from JSON to POJO.
+However, if you want to also perform binding for the response message (for example, what the REST service sends back, as response) you
+would need to configure the `outType` option to specify what is the class name of the POJO to unmarshalfrom JSON to POJO.
 
 For example, if the REST service returns a JSON payload that binds to `com.foo.MyResponsePojo` you can configure this as shown:
 

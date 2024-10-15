@@ -25,7 +25,7 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
 /**
- * Checks that a given character sequence (e.g. string) is a valid E164 formatted phonenumber.
+ * Checks that a given character sequence (for example, string) is a valid E164 formatted phonenumber.
  * https://www.cmtelecom.com/newsroom/how-to-format-international-telephone- numbers
  * https://github.com/googlei18n/libphonenumber
  */

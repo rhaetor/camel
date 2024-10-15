@@ -29,6 +29,6 @@
 		<routeBuilder ref="myBuilder" /> 
 	</camelContext>
 	
-	<bean id="myBuilder" class="org.apache.camel.dataformat.bindy.fixed.unmarshall.simple.trimfield.BindySimpleFixedLengthUnmarshallTrimFieldTest$ContextConfig"/>
+	<bean id="myBuilder" class="org.apache.camel.dataformat.bindy.fixed.unmarshal.simple.trimfield.BindySimpleFixedLengthUnmarshalTrimFieldTest$ContextConfig"/>
 	
 </beans>

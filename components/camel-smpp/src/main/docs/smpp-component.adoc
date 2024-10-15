@@ -62,7 +62,7 @@ authenticated in any other part of the network.  Some operators allow
 staff in retail outlets or call centres to browse through the SMS
 message histories of their customers.  Message sender identity can be
 easily forged.  Regulators and even the mobile telephone industry itself
- have cautioned against the use of SMS in two-factor authentication
+have cautioned against the use of SMS in two-factor authentication
 schemes and other purposes where security is important.
 
 While the Camel component makes it as easy as possible to send messages
@@ -139,7 +139,7 @@ is completed automatically.
 
 If the GSM 3.38 alphabet is used, the component will pack up to 160
 characters into the 140-byte message body.
-If an 8-bit character set is used (e.g., ISO-8859-1 for Western Europe), then 140 characters will be
+If an 8-bit character set is used (for example, ISO-8859-1 for Western Europe), then 140 characters will be
 allowed within the 140-byte message body.
 If 16 bit UCS-2 encoding is
  used, then just 70 characters fit into each 140-byte message.
@@ -204,7 +204,7 @@ When the SMPP consumer receives a `DeliverSm` or
 can also throw a `ProcessRequestException` instead of handle the
 failure. In this case, this exception is forwarded to the underlying
 http://jsmpp.org[JSMPP library] which will return the included error
-code to the SMSC. This feature is useful to e.g., instruct the SMSC to
+code to the SMSC. This feature is useful to for example, instruct the SMSC to
 resend the short message at a later time. This could be done with the
 following lines of code:
 

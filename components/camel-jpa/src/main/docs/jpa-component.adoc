@@ -51,7 +51,7 @@ endpoint to perform the necessary conversion first.
 You can use `query`, `namedQuery` or `nativeQuery`
 for the producer as well. Also in the value of the `parameters`, you can use
 Simple expression which allows you to retrieve parameter values from Message body, header,
-etc. Those query can be used for retrieving a set of data with using `SELECT`
+and so on. Those query can be used for retrieving a set of data with using `SELECT`
 JPQL/SQL statement as well as executing bulk update/delete with using `UPDATE`/`DELETE`
 JPQL/SQL statement. Please note that you need to specify `useExecuteUpdate` to `true`
 if you execute `UPDATE`/`DELETE` with `namedQuery` as Camel doesn't look into the

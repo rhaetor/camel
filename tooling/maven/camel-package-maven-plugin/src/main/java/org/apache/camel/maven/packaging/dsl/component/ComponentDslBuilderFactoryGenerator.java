@@ -28,7 +28,7 @@ import org.apache.camel.tooling.util.srcgen.JavaClass;
 import org.apache.camel.tooling.util.srcgen.Method;
 
 /**
- * DSL Generator class that generates main component specific builder factory, e.g: KafkaComponentBuilderFactory
+ * DSL Generator class that generates main component specific builder factory, for example, KafkaComponentBuilderFactory
  */
 public final class ComponentDslBuilderFactoryGenerator {
     private static final String BUILDER_FACTORY_SUFFIX = "BuilderFactory";

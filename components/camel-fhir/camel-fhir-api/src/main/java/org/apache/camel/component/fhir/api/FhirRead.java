@@ -42,7 +42,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by id
      *
-     * @param resource         The resource to read (e.g. Patient)
+     * @param resource         The resource to read (for example, Patient)
      * @param id               the {@link IIdType} referencing the resource
      * @param ifVersionMatches a version to match against the newest version on the server.
      * @param returnNull       return null if version matches
@@ -62,7 +62,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by id
      *
-     * @param resourceClass    the resource to read (e.g. Patient.class)
+     * @param resourceClass    the resource to read (for example, Patient.class)
      * @param id               the {@link IIdType} referencing the resource
      * @param ifVersionMatches a version to match against the newest version on the server.
      * @param returnNull       return null if version matches
@@ -81,7 +81,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by id
      *
-     * @param resource         The resource to read (e.g. Patient)
+     * @param resource         The resource to read (for example, Patient)
      * @param stringId         The resource ID
      * @param version          the resource version
      * @param ifVersionMatches a version to match against the newest version on the server.
@@ -103,7 +103,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by id
      *
-     * @param resourceClass    the resource to read (e.g. Patient.class)
+     * @param resourceClass    the resource to read (for example, Patient.class)
      * @param stringId         The resource ID
      * @param version          the resource version
      * @param ifVersionMatches a version to match against the newest version on the server.
@@ -125,7 +125,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by id
      *
-     * @param resource         The resource to read (e.g. Patient)
+     * @param resource         The resource to read (for example, Patient)
      * @param longId           The resource ID
      * @param ifVersionMatches a version to match against the newest version on the server.
      * @param returnNull       return null if version matches
@@ -145,7 +145,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by id
      *
-     * @param resourceClass    the resource to read (e.g. Patient)
+     * @param resourceClass    the resource to read (for example, Patient)
      * @param longId           The resource ID
      * @param ifVersionMatches a version to match against the newest version on the server.
      * @param returnNull       return null if version matches
@@ -164,7 +164,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by url
      *
-     * @param resource         The resource to read (e.g. Patient)
+     * @param resource         The resource to read (for example, Patient)
      * @param iUrl             the {@link IIdType} referencing the resource by absolute url
      * @param ifVersionMatches a version to match against the newest version on the server.
      * @param returnNull       return null if version matches
@@ -184,7 +184,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by url
      *
-     * @param resourceClass    the resource to read (e.g. Patient.class)
+     * @param resourceClass    the resource to read (for example, Patient.class)
      * @param iUrl             the {@link IIdType} referencing the resource by absolute url
      * @param ifVersionMatches a version to match against the newest version on the server.
      * @param returnNull       return null if version matches
@@ -203,7 +203,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by url
      *
-     * @param resource         The resource to read (e.g. Patient)
+     * @param resource         The resource to read (for example, Patient)
      * @param url              referencing the resource by absolute url
      * @param ifVersionMatches a version to match against the newest version on the server.
      * @param returnNull       return null if version matches
@@ -223,7 +223,7 @@ public class FhirRead {
     /**
      * Reads a {@link IBaseResource} on the server by url
      *
-     * @param resourceClass    the resource to read (e.g. Patient.class)
+     * @param resourceClass    the resource to read (for example, Patient.class)
      * @param url              referencing the resource by absolute url
      * @param ifVersionMatches a version to match against the newest version on the server.
      * @param returnNull       return null if version matches

@@ -238,7 +238,7 @@ you should implement and hook into the WorkManager.
 
 === ExecutorServiceManager
 
-To hook in custom thread pool providers (e.g. for J2EE servers) a
+To hook in custom thread pool providers (for example, for J2EE servers) a
 `ThreadPoolFactory` interface can be implemented. The implementation can
 be set in the `ExecutorServiceManager`.
 

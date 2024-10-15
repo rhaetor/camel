@@ -39,7 +39,7 @@ class OnCamelContextLifecycleStrategy extends LifecycleStrategySupport {
         for (OnCamelContextInitializing handler : context.getRegistry().findByType(OnCamelContextInitializing.class)) {
             // RoutesBuilder should register them-self to the camel context
             // to avoid invoking them multiple times if routes are discovered
-            // from the registry (i.e. camel-main)
+            // from the registry (that is, camel-main)
             if (!(handler instanceof RoutesBuilder)) {
                 handler.onContextInitializing(context);
             }
@@ -51,7 +51,7 @@ class OnCamelContextLifecycleStrategy extends LifecycleStrategySupport {
         for (OnCamelContextInitialized handler : context.getRegistry().findByType(OnCamelContextInitialized.class)) {
             // RoutesBuilder should register them-self to the camel context
             // to avoid invoking them multiple times if routes are discovered
-            // from the registry (i.e. camel-main)
+            // from the registry (that is, camel-main)
             if (!(handler instanceof RoutesBuilder)) {
                 handler.onContextInitialized(context);
             }
@@ -63,7 +63,7 @@ class OnCamelContextLifecycleStrategy extends LifecycleStrategySupport {
         for (OnCamelContextStarting handler : context.getRegistry().findByType(OnCamelContextStarting.class)) {
             // RoutesBuilder should register them-self to the camel context
             // to avoid invoking them multiple times if routes are discovered
-            // from the registry (i.e. camel-main)
+            // from the registry (that is, camel-main)
             if (!(handler instanceof RoutesBuilder)) {
                 handler.onContextStarting(context);
             }
@@ -75,7 +75,7 @@ class OnCamelContextLifecycleStrategy extends LifecycleStrategySupport {
         for (OnCamelContextStarted handler : context.getRegistry().findByType(OnCamelContextStarted.class)) {
             // RoutesBuilder should register them-self to the camel context
             // to avoid invoking them multiple times if routes are discovered
-            // from the registry (i.e. camel-main)
+            // from the registry (that is, camel-main)
             if (!(handler instanceof RoutesBuilder)) {
                 handler.onContextStarted(context);
             }
@@ -87,7 +87,7 @@ class OnCamelContextLifecycleStrategy extends LifecycleStrategySupport {
         for (OnCamelContextStopping handler : context.getRegistry().findByType(OnCamelContextStopping.class)) {
             // RoutesBuilder should register them-self to the camel context
             // to avoid invoking them multiple times if routes are discovered
-            // from the registry (i.e. camel-main)
+            // from the registry (that is, camel-main)
             if (!(handler instanceof RoutesBuilder)) {
                 handler.onContextStopping(context);
             }
@@ -99,7 +99,7 @@ class OnCamelContextLifecycleStrategy extends LifecycleStrategySupport {
         for (OnCamelContextStopped handler : context.getRegistry().findByType(OnCamelContextStopped.class)) {
             // RoutesBuilder should register them-self to the camel context
             // to avoid invoking them multiple times if routes are discovered
-            // from the registry (i.e. camel-main)
+            // from the registry (that is, camel-main)
             if (!(handler instanceof RoutesBuilder)) {
                 handler.onContextStopped(context);
             }

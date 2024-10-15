@@ -60,7 +60,7 @@ public class CsvUnmarshalSkipFirstLineSpringTest extends CamelSpringTestSupport 
         result.expectedMessageCount(1);
 
         // the first line contains a data row but as we set skipFirstLine
-        // to true the first line gets simply skipped and not unmarshalled
+        // to true the first line gets simply skipped and not unmarshaled
         template.sendBody("direct:start", "124|ActiveMQ in Action|2\n123|Camel in Action|1");
 
         MockEndpoint.assertIsSatisfied(context);

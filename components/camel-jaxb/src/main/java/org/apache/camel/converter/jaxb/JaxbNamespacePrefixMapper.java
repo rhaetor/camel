@@ -19,7 +19,7 @@ package org.apache.camel.converter.jaxb;
 import java.util.Map;
 
 /**
- * A prefix mapper for namespaces to control namespaces during JAXB marshalling.
+ * A prefix mapper for namespaces to control namespaces during JAXB marshaling.
  */
 public interface JaxbNamespacePrefixMapper {
 

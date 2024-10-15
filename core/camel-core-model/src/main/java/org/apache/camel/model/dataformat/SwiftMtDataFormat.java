@@ -57,9 +57,9 @@ public class SwiftMtDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The flag indicating that messages must be marshalled in a JSON format.
+     * The flag indicating that messages must be marshaled in a JSON format.
      *
-     * @param writeInJson {@code true} if messages must be marshalled in a JSON format, {@code false} otherwise.
+     * @param writeInJson {@code true} if messages must be marshaled in a JSON format, {@code false} otherwise.
      */
     public void setWriteInJson(String writeInJson) {
         this.writeInJson = writeInJson;
@@ -74,9 +74,9 @@ public class SwiftMtDataFormat extends DataFormatDefinition {
         private String writeInJson;
 
         /**
-         * The flag indicating that messages must be marshalled in a JSON format.
+         * The flag indicating that messages must be marshaled in a JSON format.
          *
-         * @param writeInJson {@code true} if messages must be marshalled in a JSON format, {@code false} otherwise.
+         * @param writeInJson {@code true} if messages must be marshaled in a JSON format, {@code false} otherwise.
          */
         public Builder writeInJson(String writeInJson) {
             this.writeInJson = writeInJson;
@@ -84,9 +84,9 @@ public class SwiftMtDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * The flag indicating that messages must be marshalled in a JSON format.
+         * The flag indicating that messages must be marshaled in a JSON format.
          *
-         * @param writeInJson {@code true} if messages must be marshalled in a JSON format, {@code false} otherwise.
+         * @param writeInJson {@code true} if messages must be marshaled in a JSON format, {@code false} otherwise.
          */
         public Builder writeInJson(boolean writeInJson) {
             this.writeInJson = Boolean.toString(writeInJson);

@@ -333,7 +333,7 @@ public class JMXConsumer extends DefaultConsumer implements NotificationListener
             });
 
         } catch (NotificationFormatException e) {
-            getExceptionHandler().handleException("Failed to marshal notification", e);
+            getExceptionHandler().handleException("Failed to marshalnotification", e);
         }
     }
 

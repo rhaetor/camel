@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.dataformat.bindy.fixed.marshall.simple;
+package org.apache.camel.dataformat.bindy.fixed.marshal.simple;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleFixedLengthMarshallTest {
+public class BindySimpleFixedLengthMarshalTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_MOCK_ERROR = "mock:error";
@@ -58,7 +58,7 @@ public class BindySimpleFixedLengthMarshallTest {
 
     @Test
     @DirtiesContext
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
 
         expected = "10A9  PaulineM    ISINXD12345678BUYShare000002500.45USD01-08-2009\r\n";
         result.expectedBodiesReceived(expected);

@@ -130,7 +130,7 @@ public class BindyDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * When unmarshalling should a single instance be unwrapped and returned instead of wrapped in a
+     * When unmarshaling should a single instance be unwrapped and returned instead of wrapped in a
      * <tt>java.util.List</tt>.
      */
     public void setUnwrapSingleInstance(String unwrapSingleInstance) {
@@ -264,7 +264,7 @@ public class BindyDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * When unmarshalling should a single instance be unwrapped and returned instead of wrapped in a
+         * When unmarshaling should a single instance be unwrapped and returned instead of wrapped in a
          * <tt>java.util.List</tt>.
          */
         public Builder unwrapSingleInstance(String unwrapSingleInstance) {
@@ -273,7 +273,7 @@ public class BindyDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * When unmarshalling should a single instance be unwrapped and returned instead of wrapped in a
+         * When unmarshaling should a single instance be unwrapped and returned instead of wrapped in a
          * <tt>java.util.List</tt>.
          */
         public Builder unwrapSingleInstance(boolean unwrapSingleInstance) {

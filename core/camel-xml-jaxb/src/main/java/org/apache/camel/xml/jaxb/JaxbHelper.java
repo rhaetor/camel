@@ -28,7 +28,7 @@ import java.util.Map;
 import jakarta.xml.bind.Binder;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Unmarshaler;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
@@ -470,8 +470,8 @@ public final class JaxbHelper {
      *
      * @param  context     the Camel context from which the JAXBContext is extracted
      * @param  inputStream the input stream to unmarshal
-     * @return             the content unmarshalled as a {@link TemplatedRoutesDefinition}.
-     * @throws Exception   if an exception occurs while unmarshalling
+     * @return             the content unmarshaled as a {@link TemplatedRoutesDefinition}.
+     * @throws Exception   if an exception occurs while unmarshaling
      */
     public static TemplatedRoutesDefinition loadTemplatedRoutesDefinition(CamelContext context, InputStream inputStream)
             throws Exception {
@@ -528,8 +528,8 @@ public final class JaxbHelper {
         if (!CAMEL_NS.equals(dom.getDocumentElement().getNamespaceURI())) {
             addNamespaceToDom(dom);
         }
-        Unmarshaller unmarshaller = getJAXBContext(context).createUnmarshaller();
-        Object result = unmarshaller.unmarshal(dom);
+        Unmarshaler unmarshaler = getJAXBContext(context).createUnmarshaler();
+        Object result = unmarshaler.unmarshal(dom);
 
         if (result == null) {
             throw new IOException("Cannot unmarshal to rests using JAXB from input stream: " + inputStream);
@@ -558,8 +558,8 @@ public final class JaxbHelper {
         if (!CAMEL_NS.equals(dom.getDocumentElement().getNamespaceURI())) {
             addNamespaceToDom(dom);
         }
-        Unmarshaller unmarshaller = getJAXBContext(context).createUnmarshaller();
-        Object result = unmarshaller.unmarshal(dom);
+        Unmarshaler unmarshaler = getJAXBContext(context).createUnmarshaler();
+        Object result = unmarshaler.unmarshal(dom);
 
         if (result == null) {
             throw new IOException("Cannot unmarshal to rest configuration using JAXB from input stream: " + inputStream);

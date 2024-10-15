@@ -140,7 +140,7 @@ public class BraintreeConfiguration {
     }
 
     /**
-     * The access token granted by a merchant to another in order to process transactions on their behalf. Used in place
+     * The access token granted by a merchant to another to process transactions on their behalf. Used in place
      * of environment, merchant id, public key and private key fields.
      */
     public void setAccessToken(String accessToken) {

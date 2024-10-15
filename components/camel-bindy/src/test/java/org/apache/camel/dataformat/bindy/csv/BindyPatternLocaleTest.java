@@ -41,7 +41,7 @@ public class BindyPatternLocaleTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshalling1() throws Exception {
+    public void testMarshaling1() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:marshal");
         mock.expectedMessageCount(1);
         mock.expectedBodiesReceived("050,010\r\n");
@@ -55,7 +55,7 @@ public class BindyPatternLocaleTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshalling2() throws Exception {
+    public void testMarshaling2() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:marshal");
         mock.expectedMessageCount(1);
         mock.expectedBodiesReceived("080,001\r\n");
@@ -69,7 +69,7 @@ public class BindyPatternLocaleTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshalling3() throws Exception {
+    public void testMarshaling3() throws Exception {
         MockEndpoint mock = getMockEndpoint("mock:marshal");
         mock.expectedMessageCount(1);
         mock.expectedBodiesReceived("000,000\r\n");

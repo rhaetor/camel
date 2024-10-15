@@ -46,7 +46,7 @@ azure-storage-blob://accountName[/containerName][?options]
 
 In the case of a consumer, `accountName`, `containerName` are required.
 
-In the case of a producer, it depends on the operation that is being requested, for example, if operation is on a container level, e.b: createContainer, accountName and containerName are only required, but in case of operation being requested in blob level, e.g: getBlob, accountName, containerName and blobName are required.
+In the case of a producer, it depends on the operation that is being requested, for example, if operation is on a container level, e.b: createContainer, accountName and containerName are only required, but in case of operation being requested in blob level, for example, getBlob, accountName, containerName and blobName are required.
 
 The blob will be created if it does not already exist.
 You can append query options to the URI in the following format, `?options=value&option2=value&...`
@@ -69,9 +69,9 @@ include::partial$component-endpoint-options.adoc[]
 
 To use this component, you have multiple options to provide the required Azure authentication information:
 
-- By providing your own https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobServiceClient.html[BlobServiceClient] instance which can be injected into `blobServiceClient`. Note: You don't need to create a specific client, e.g.: BlockBlobClient, the BlobServiceClient represents the upper level which
+- By providing your own https://azuresdkdocs.blob.core.windows.net/$web/java/azure-storage-blob/12.0.0/com/azure/storage/blob/BlobServiceClient.html[BlobServiceClient] instance which can be injected into `blobServiceClient`. Note: You don't need to create a specific client, for example, BlockBlobClient, the BlobServiceClient represents the upper level which
 can be used to retrieve lower level clients.
-- Via Azure Identity, when specifying `credentialType=AZURE_IDENTITY` and providing required https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/identity/azure-identity#environment-variables[environment variables]. This enables service principal (e.g. app registration) authentication with secret/certificate as well as username password. Note that this is the default authentication strategy.
+- Via Azure Identity, when specifying `credentialType=AZURE_IDENTITY` and providing required https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/identity/azure-identity#environment-variables[environment variables]. This enables service principal (for example, app registration) authentication with secret/certificate as well as username password. Note that this is the default authentication strategy.
 - Via shared storage account key, when specifying `credentialType=SHARED_ACCOUNT_KEY` and providing `accountName` and `accessKey` for your Azure account, this is the simplest way to get started. The accessKey can be generated through your Azure portal.
 - Via shared storage account key, when specifying `credentialType=SHARED_KEY_CREDENTIAL` and providing a https://azuresdkartifacts.blob.core.windows.net/azure-sdk-for-java/staging/apidocs/com/azure/storage/common/StorageSharedKeyCredential.html[StorageSharedKeyCredential] instance which can be injected into `credentials` option.
 - Via Azure SAS, when specifying `credentialType=AZURE_SAS` and providing a SAS Token parameter through the `sasToken` parameter.
@@ -214,7 +214,7 @@ from("direct:start")
   .process(exchange -> {
     // set the header you want the producer to evaluate, refer to the previous
     // section to learn about the headers that can be set
-    // e.g.:
+    // For example:
     exchange.getIn().setHeader(BlobConstants.LIST_BLOB_CONTAINERS_OPTIONS, new ListBlobContainersOptions().setMaxResultsPerPage(10));
   })
   .to("azure-storage-blob://camelazure?operation=listBlobContainers&client&serviceClient=#client")
@@ -229,7 +229,7 @@ from("direct:start")
   .process(exchange -> {
     // set the header you want the producer to evaluate, refer to the previous
     // section to learn about the headers that can be set
-    // e.g.:
+    // For example:
     exchange.getIn().setHeader(BlobConstants.BLOB_CONTAINER_NAME, "newContainerName");
   })
   .to("azure-storage-blob://camelazure/container1?operation=createBlobContainer&serviceClient=#client")
@@ -244,7 +244,7 @@ from("direct:start")
   .process(exchange -> {
     // set the header you want the producer to evaluate, refer to the previous
     // section to learn about the headers that can be set
-    // e.g.:
+    // For example:
     exchange.getIn().setHeader(BlobConstants.BLOB_CONTAINER_NAME, "overridenName");
   })
   .to("azure-storage-blob://camelazure/container1?operation=deleteBlobContainer&serviceClient=#client")
@@ -259,7 +259,7 @@ from("direct:start")
   .process(exchange -> {
     // set the header you want the producer to evaluate, refer to the previous
     // section to learn about the headers that can be set
-    // e.g.:
+    // For example:
     exchange.getIn().setHeader(BlobConstants.BLOB_CONTAINER_NAME, "overridenName");
   })
   .to("azure-storage-blob://camelazure/container1?operation=listBlobs&serviceClient=#client")
@@ -269,7 +269,7 @@ from("direct:start")
 
 - `getBlob`:
 
-We can either set an `outputStream` in the exchange body and write the data to it. E.g.:
+We can either set an `outputStream` in the exchange body and write the data to it. For example:
 [source,java]
 --------------------------------------------------------------------------------
 
@@ -277,7 +277,7 @@ from("direct:start")
   .process(exchange -> {
     // set the header you want the producer to evaluate, refer to the previous
     // section to learn about the headers that can be set
-    // e.g.:
+    // For example:
     exchange.getIn().setHeader(BlobConstants.BLOB_CONTAINER_NAME, "overridenName");
 
     // set our body
@@ -312,7 +312,7 @@ from("direct:start")
   .process(exchange -> {
     // set the header you want the producer to evaluate, refer to the previous
     // section to learn about the headers that can be set
-    // e.g.:
+    // For example:
     exchange.getIn().setHeader(BlobConstants.BLOB_NAME, "overridenName");
   })
   .to("azure-storage-blob://camelazure/container1?blobName=blob&operation=deleteBlob&serviceClient=#client")
@@ -328,7 +328,7 @@ from("direct:start")
   .process(exchange -> {
     // set the header you want the producer to evaluate, refer to the previous
     // section to learn about the headers that can be set
-    // e.g.:
+    // For example:
     exchange.getIn().setHeader(BlobConstants.BLOB_NAME, "overridenName");
   })
   .to("azure-storage-blob://camelazure/container1?blobName=blob&operation=downloadBlobToFile&fileDir=/var/mydir&serviceClient=#client")
@@ -358,7 +358,7 @@ from("direct:start")
   .process(exchange -> {
     // set the header you want the producer to evaluate, refer to the previous
     // section to learn about the headers that can be set
-    // e.g.:
+    // For example:
     exchange.getIn().setHeader(BlobConstants.BLOB_NAME, "overridenName");
     exchange.getIn().setBody("Block Blob");
   })

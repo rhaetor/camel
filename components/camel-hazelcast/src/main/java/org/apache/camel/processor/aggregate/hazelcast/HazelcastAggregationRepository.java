@@ -197,7 +197,7 @@ public class HazelcastAggregationRepository extends ServiceSupport
             DefaultExchangeHolder holder = DefaultExchangeHolder.marshal(newExchange, true, allowSerializedHeaders);
             final DefaultExchangeHolder misbehaviorHolder = cache.putIfAbsent(key, holder);
             if (misbehaviorHolder != null) {
-                Exchange misbehaviorEx = unmarshallExchange(camelContext, misbehaviorHolder);
+                Exchange misbehaviorEx = unmarshalExchange(camelContext, misbehaviorHolder);
                 LOG.error(
                         "Optimistic locking failed for exchange with key {}: IMap#putIfAbsend returned Exchange with ID {}, while it's expected no exchanges to be returned",
                         key, misbehaviorEx != null ? misbehaviorEx.getExchangeId() : "<null>");
@@ -228,7 +228,7 @@ public class HazelcastAggregationRepository extends ServiceSupport
             l.lock();
             DefaultExchangeHolder newHolder = DefaultExchangeHolder.marshal(exchange, true, allowSerializedHeaders);
             DefaultExchangeHolder oldHolder = cache.put(key, newHolder);
-            return unmarshallExchange(camelContext, oldHolder);
+            return unmarshalExchange(camelContext, oldHolder);
         } finally {
             LOG.trace("Added an Exchange with ID {} for key {} in a thread-safe manner.", exchange.getExchangeId(), key);
             l.unlock();
@@ -253,7 +253,7 @@ public class HazelcastAggregationRepository extends ServiceSupport
     @Override
     public Exchange recover(CamelContext camelContext, String exchangeId) {
         LOG.trace("Recovering an Exchange with ID {}.", exchangeId);
-        return useRecovery ? unmarshallExchange(camelContext, persistedCache.get(exchangeId)) : null;
+        return useRecovery ? unmarshalExchange(camelContext, persistedCache.get(exchangeId)) : null;
     }
 
     @Override
@@ -303,7 +303,7 @@ public class HazelcastAggregationRepository extends ServiceSupport
 
     @Override
     public Exchange get(CamelContext camelContext, String key) {
-        return unmarshallExchange(camelContext, cache.get(key));
+        return unmarshalExchange(camelContext, cache.get(key));
     }
 
     /**
@@ -447,7 +447,7 @@ public class HazelcastAggregationRepository extends ServiceSupport
         }
     }
 
-    protected Exchange unmarshallExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
+    protected Exchange unmarshalExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
         Exchange exchange = null;
         if (holder != null) {
             exchange = new DefaultExchange(camelContext);

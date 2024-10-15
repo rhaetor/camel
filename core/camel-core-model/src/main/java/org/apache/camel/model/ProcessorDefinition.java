@@ -3875,7 +3875,7 @@ public abstract class ProcessorDefinition<Type extends ProcessorDefinition<Type>
      * {@link DataFormat} and sets the output on the out message body.
      *
      * @param  dataFormatType the dataformat
-     * @param  allowNullBody  {@code true} if {@code null} is allowed as value of a body to unmarshall, {@code false}
+     * @param  allowNullBody  {@code true} if {@code null} is allowed as value of a body to unmarshal, {@code false}
      *                        otherwise
      * @return                the builder
      */
@@ -3900,7 +3900,7 @@ public abstract class ProcessorDefinition<Type extends ProcessorDefinition<Type>
      * {@link DataFormat} and sets the output on the out message body.
      *
      * @param  dataFormat    the dataformat
-     * @param  allowNullBody {@code true} if {@code null} is allowed as value of a body to unmarshall, {@code false}
+     * @param  allowNullBody {@code true} if {@code null} is allowed as value of a body to unmarshal, {@code false}
      *                       otherwise
      * @return               the builder
      */

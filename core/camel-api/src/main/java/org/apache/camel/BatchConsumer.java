@@ -26,7 +26,7 @@ public interface BatchConsumer extends Consumer {
     /**
      * Sets a maximum number of messages as a limit to poll at each polling.
      * <p/>
-     * Can be used to limit e.g. to 100 to avoid reading thousands or more messages within the first polling at startup.
+     * Can be used to limit for example, to 100 to avoid reading thousands or more messages within the first polling at startup.
      * <p/>
      * Is default unlimited, but use 0 or negative number to disable it as unlimited.
      *

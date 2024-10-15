@@ -34,13 +34,13 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
-public class BindySimpleKeyValuePairSortedMarshallTest extends CommonBindyTest {
+public class BindySimpleKeyValuePairSortedMarshalTest extends CommonBindyTest {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BindySimpleKeyValuePairSortedMarshallTest.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BindySimpleKeyValuePairSortedMarshalTest.class);
 
     @Test
     @DirtiesContext
-    public void testMarshallMessage() {
+    public void testMarshalMessage() {
 
         String message
                 = "8=FIX 4.19=2035=034=149=INVMGR56=BRKR1=BE.CHM.00122=411=CHM0001-0148=BE000124567854=158=this is a camel - bindy test10=220\r\n";

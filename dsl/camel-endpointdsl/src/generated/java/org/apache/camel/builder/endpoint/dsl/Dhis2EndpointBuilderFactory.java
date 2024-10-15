@@ -46,7 +46,7 @@ public interface Dhis2EndpointBuilderFactory {
             return (AdvancedDhis2EndpointConsumerBuilder) this;
         }
         /**
-         * DHIS2 server base API URL (e.g.,
+         * DHIS2 server base API URL (for example:
          * https://play.dhis2.org/2.39.1.1/api).
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -851,7 +851,7 @@ public interface Dhis2EndpointBuilderFactory {
             return (AdvancedDhis2EndpointProducerBuilder) this;
         }
         /**
-         * DHIS2 server base API URL (e.g.,
+         * DHIS2 server base API URL (for example:
          * https://play.dhis2.org/2.39.1.1/api).
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -1033,7 +1033,7 @@ public interface Dhis2EndpointBuilderFactory {
             return (AdvancedDhis2EndpointBuilder) this;
         }
         /**
-         * DHIS2 server base API URL (e.g.,
+         * DHIS2 server base API URL (for example:
          * https://play.dhis2.org/2.39.1.1/api).
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -1169,12 +1169,12 @@ public interface Dhis2EndpointBuilderFactory {
          * Syntax: <code>dhis2:apiName/methodName</code>
          * 
          * Path parameter: apiName (required)
-         * API operation (e.g., get)
+         * API operation (for example, get)
          * There are 5 enums and the value can be one of: POST, RESOURCE_TABLES,
          * GET, DELETE, PUT
          * 
          * Path parameter: methodName (required)
-         * Subject of the API operation (e.g., resource)
+         * Subject of the API operation (for example, resource)
          * 
          * @param path apiName/methodName
          * @return the dsl builder
@@ -1194,12 +1194,12 @@ public interface Dhis2EndpointBuilderFactory {
          * Syntax: <code>dhis2:apiName/methodName</code>
          * 
          * Path parameter: apiName (required)
-         * API operation (e.g., get)
+         * API operation (for example, get)
          * There are 5 enums and the value can be one of: POST, RESOURCE_TABLES,
          * GET, DELETE, PUT
          * 
          * Path parameter: methodName (required)
-         * Subject of the API operation (e.g., resource)
+         * Subject of the API operation (for example, resource)
          * 
          * @param componentName to use a custom component name for the endpoint
          * instead of the default name

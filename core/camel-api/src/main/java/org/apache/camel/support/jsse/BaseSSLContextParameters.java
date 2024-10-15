@@ -280,7 +280,7 @@ public abstract class BaseSSLContextParameters extends JsseParameters {
     }
 
     /**
-     * Returns the list of configurers to apply to an {@link SSLEngine} in order to fully configure it in compliance
+     * Returns the list of configurers to apply to an {@link SSLEngine} to fully configure it in compliance
      * with the provided configuration options. The configurers are to be applied in the order in which they appear in
      * the list.
      *
@@ -377,7 +377,7 @@ public abstract class BaseSSLContextParameters extends JsseParameters {
     }
 
     /**
-     * Returns the list of configurers to apply to an {@link SSLSocketFactory} in order to fully configure it in
+     * Returns the list of configurers to apply to an {@link SSLSocketFactory} to fully configure it in
      * compliance with the provided configuration options. The configurers are to be applied in the order in which they
      * appear in the list.
      * <p/>
@@ -411,7 +411,7 @@ public abstract class BaseSSLContextParameters extends JsseParameters {
     }
 
     /**
-     * Returns the list of configurers to apply to an {@link SSLServerSocketFactory} in order to fully configure it in
+     * Returns the list of configurers to apply to an {@link SSLServerSocketFactory} to fully configure it in
      * compliance with the provided configuration options. The configurers are to be applied in the order in which they
      * appear in the list.
      * <p/>
@@ -446,7 +446,7 @@ public abstract class BaseSSLContextParameters extends JsseParameters {
     }
 
     /**
-     * Returns the list of configurers to apply to an {@link SSLSocket} in order to fully configure it in compliance
+     * Returns the list of configurers to apply to an {@link SSLSocket} to fully configure it in compliance
      * with the provided configuration options. These configurers are intended for sockets produced by a
      * {@link SSLSocketFactory}, see {@link #getSSLServerSocketFactorySSLServerSocketConfigurers(SSLContext)} for
      * configurers related to sockets produced by a {@link SSLServerSocketFactory}. The configurers are to be applied in
@@ -548,7 +548,7 @@ public abstract class BaseSSLContextParameters extends JsseParameters {
     }
 
     /**
-     * Returns the list of configurers to apply to an {@link SSLServerSocket} in order to fully configure it in
+     * Returns the list of configurers to apply to an {@link SSLServerSocket} to fully configure it in
      * compliance with the provided configuration options. These configurers are intended for sockets produced by a
      * {@link SSLServerSocketFactory}, see {@link #getSSLSocketFactorySSLSocketConfigurers(SSLContext)} for configurers
      * related to sockets produced by a {@link SSLSocketFactory}. The configurers are to be applied in the order in

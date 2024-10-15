@@ -84,7 +84,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
     private String disableFeatures;
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean")
-    private String allowUnmarshallType;
+    private String allowUnmarshalType;
     @XmlAttribute
     @Metadata(label = "advanced")
     private String timezone;
@@ -101,10 +101,10 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean", defaultValue = "true",
               description = "Whether the data format should set the Content-Type header with the type from the data format."
-                            + " For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON")
+                            + " For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON")
     private String contentTypeHeader;
     @XmlAttribute
-    @Metadata(description = "To configure the date format while marshall or unmarshall Date fields in JSON using Gson")
+    @Metadata(description = "To configure the date format while marshal or unmarshal Date fields in JSON using Gson")
     private String dateFormatPattern;
 
     public JsonDataFormat() {
@@ -136,7 +136,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         this.moduleRefs = builder.moduleRefs;
         this.enableFeatures = builder.enableFeatures;
         this.disableFeatures = builder.disableFeatures;
-        this.allowUnmarshallType = builder.allowUnmarshallType;
+        this.allowUnmarshalType = builder.allowUnmarshalType;
         this.timezone = builder.timezone;
         this.schemaResolver = builder.schemaResolver;
         this.autoDiscoverSchemaResolver = builder.autoDiscoverSchemaResolver;
@@ -207,7 +207,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
     }
 
     /**
-     * Class name of the java type to use when unmarshalling
+     * Class name of the java type to use when unmarshaling
      */
     public void setUnmarshalTypeName(String unmarshalTypeName) {
         this.unmarshalTypeName = unmarshalTypeName;
@@ -218,7 +218,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
     }
 
     /**
-     * Class of the java type to use when unmarshalling
+     * Class of the java type to use when unmarshaling
      */
     public void setUnmarshalType(Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
@@ -240,7 +240,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
     }
 
     /**
-     * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
+     * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
      * can use JSON views to accomplish this. This option is to refer to the class which has @JsonView annotations
      */
     public void setJsonViewTypeName(String jsonViewTypeName) {
@@ -252,7 +252,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
     }
 
     /**
-     * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
+     * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
      * can use JSON views to accomplish this. This option is to refer to the class which has @JsonView annotations
      */
     public void setJsonView(Class<?> jsonView) {
@@ -373,18 +373,18 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         this.disableFeatures = disableFeatures;
     }
 
-    public String getAllowUnmarshallType() {
-        return allowUnmarshallType;
+    public String getAllowUnmarshalType() {
+        return allowUnmarshalType;
     }
 
     /**
      * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-     * unmarshalling.
+     * unmarshaling.
      * <p/>
      * This should only be enabled when desired to be used.
      */
-    public void setAllowUnmarshallType(String allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public void setAllowUnmarshalType(String allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
     }
 
     public String getTimezone() {
@@ -392,7 +392,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
     }
 
     /**
-     * If set then Jackson will use the Timezone when marshalling/unmarshalling. This option will have no effect on the
+     * If set then Jackson will use the Timezone when marshaling/unmarshaling. This option will have no effect on the
      * others Json DataFormat, like gson and fastjson.
      */
     public void setTimezone(String timezone) {
@@ -544,12 +544,12 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         return this;
     }
 
-    public JsonDataFormat allowUnmarshallType(boolean allowUnmarshallType) {
-        return allowUnmarshallType(Boolean.toString(allowUnmarshallType));
+    public JsonDataFormat allowUnmarshalType(boolean allowUnmarshalType) {
+        return allowUnmarshalType(Boolean.toString(allowUnmarshalType));
     }
 
-    public JsonDataFormat allowUnmarshallType(String allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public JsonDataFormat allowUnmarshalType(String allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
         return this;
     }
 
@@ -596,7 +596,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         private String moduleRefs;
         private String enableFeatures;
         private String disableFeatures;
-        private String allowUnmarshallType;
+        private String allowUnmarshalType;
         private String timezone;
         private String schemaResolver;
         private String autoDiscoverSchemaResolver;
@@ -606,7 +606,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
 
         /**
          * Whether the data format should set the Content-Type header with the type from the data format. For example
-         * application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON
+         * application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON
          */
         public Builder contentTypeHeader(String contentTypeHeader) {
             this.contentTypeHeader = contentTypeHeader;
@@ -615,7 +615,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
 
         /**
          * Whether the data format should set the Content-Type header with the type from the data format. For example
-         * application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON
+         * application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON
          */
         public Builder contentTypeHeader(boolean contentTypeHeader) {
             this.contentTypeHeader = Boolean.toString(contentTypeHeader);
@@ -623,7 +623,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * To configure the date format while marshall or unmarshall Date fields in JSON using Gson.
+         * To configure the date format while marshal or unmarshal Date fields in JSON using Gson.
          */
         public Builder dateFormatPattern(String dateFormatPattern) {
             this.dateFormatPattern = dateFormatPattern;
@@ -675,7 +675,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * Class name of the java type to use when unmarshalling
+         * Class name of the java type to use when unmarshaling
          */
         public Builder unmarshalTypeName(String unmarshalTypeName) {
             this.unmarshalTypeName = unmarshalTypeName;
@@ -683,7 +683,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * Class of the java type to use when unmarshalling
+         * Class of the java type to use when unmarshaling
          */
         public Builder unmarshalType(Class<?> unmarshalType) {
             this.unmarshalType = unmarshalType;
@@ -699,7 +699,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
+         * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
          * you can use JSON views to accomplish this. This option is to refer to the class which has @JsonView
          * annotations
          */
@@ -709,7 +709,7 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
         }
 
         /**
-         * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
+         * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
          * you can use JSON views to accomplish this. This option is to refer to the class which has @JsonView
          * annotations
          */
@@ -824,28 +824,28 @@ public class JsonDataFormat extends DataFormatDefinition implements ContentTypeH
 
         /**
          * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(String allowUnmarshallType) {
-            this.allowUnmarshallType = allowUnmarshallType;
+        public Builder allowUnmarshalType(String allowUnmarshalType) {
+            this.allowUnmarshalType = allowUnmarshalType;
             return this;
         }
 
         /**
          * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(boolean allowUnmarshallType) {
-            this.allowUnmarshallType = Boolean.toString(allowUnmarshallType);
+        public Builder allowUnmarshalType(boolean allowUnmarshalType) {
+            this.allowUnmarshalType = Boolean.toString(allowUnmarshalType);
             return this;
         }
 
         /**
-         * If set then Jackson will use the Timezone when marshalling/unmarshalling. This option will have no effect on
+         * If set then Jackson will use the Timezone when marshaling/unmarshaling. This option will have no effect on
          * the others Json DataFormat, like gson and fastjson.
          */
         public Builder timezone(String timezone) {

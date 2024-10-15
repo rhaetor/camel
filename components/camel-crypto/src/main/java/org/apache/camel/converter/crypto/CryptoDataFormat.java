@@ -299,7 +299,7 @@ public class CryptoDataFormat extends ServiceSupport implements DataFormat, Data
     }
 
     /**
-     * Sets the name of the JCE provider e.g. SUN or BC for Bouncy
+     * Sets the name of the JCE provider for example, SUN or BC for Bouncy
      */
     public void setCryptoProvider(String cryptoProvider) {
         this.cryptoProvider = cryptoProvider;

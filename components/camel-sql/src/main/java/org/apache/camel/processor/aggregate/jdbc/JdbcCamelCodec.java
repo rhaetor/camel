@@ -32,17 +32,17 @@ import org.apache.camel.util.IOHelper;
  */
 public class JdbcCamelCodec {
 
-    public byte[] marshallExchange(Exchange exchange, boolean allowSerializedHeaders)
+    public byte[] marshalExchange(Exchange exchange, boolean allowSerializedHeaders)
             throws IOException {
         ByteArrayOutputStream bytesOut = new ByteArrayOutputStream();
-        marshallExchange(exchange, allowSerializedHeaders, bytesOut);
+        marshalExchange(exchange, allowSerializedHeaders, bytesOut);
         return bytesOut.toByteArray();
     }
 
-    public void marshallExchange(
+    public void marshalExchange(
             Exchange exchange, boolean allowSerializedHeaders, OutputStream outputStream)
             throws IOException {
-        // use DefaultExchangeHolder to marshal to a serialized object
+        // use DefaultExchangeHolder to marshalto a serialized object
         DefaultExchangeHolder pe = DefaultExchangeHolder.marshal(exchange, false, allowSerializedHeaders);
         // add the aggregated size and timeout property as the only properties we want to retain
         DefaultExchangeHolder.addProperty(pe, Exchange.AGGREGATED_SIZE,
@@ -67,12 +67,12 @@ public class JdbcCamelCodec {
         encode(pe, outputStream);
     }
 
-    public Exchange unmarshallExchange(CamelContext camelContext, byte[] buffer, String deserializationFilter)
+    public Exchange unmarshalExchange(CamelContext camelContext, byte[] buffer, String deserializationFilter)
             throws IOException, ClassNotFoundException {
-        return unmarshallExchange(camelContext, new ByteArrayInputStream(buffer), deserializationFilter);
+        return unmarshalExchange(camelContext, new ByteArrayInputStream(buffer), deserializationFilter);
     }
 
-    public Exchange unmarshallExchange(CamelContext camelContext, InputStream inputStream, String deserializationFilter)
+    public Exchange unmarshalExchange(CamelContext camelContext, InputStream inputStream, String deserializationFilter)
             throws IOException, ClassNotFoundException {
         DefaultExchangeHolder pe = decode(camelContext, inputStream, deserializationFilter);
         Exchange answer = new DefaultExchange(camelContext);

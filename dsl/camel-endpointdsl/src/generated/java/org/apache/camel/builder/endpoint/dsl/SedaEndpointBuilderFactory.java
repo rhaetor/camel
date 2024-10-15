@@ -44,7 +44,7 @@ public interface SedaEndpointBuilderFactory {
             return (AdvancedSedaEndpointConsumerBuilder) this;
         }
         /**
-         * The maximum capacity of the SEDA queue (i.e., the number of messages
+         * The maximum capacity of the SEDA queue (that is, the number of messages
          * it can hold). Will by default use the defaultSize set on the SEDA
          * component.
          * 
@@ -61,7 +61,7 @@ public interface SedaEndpointBuilderFactory {
             return this;
         }
         /**
-         * The maximum capacity of the SEDA queue (i.e., the number of messages
+         * The maximum capacity of the SEDA queue (that is, the number of messages
          * it can hold). Will by default use the defaultSize set on the SEDA
          * component.
          * 
@@ -442,7 +442,7 @@ public interface SedaEndpointBuilderFactory {
             return (AdvancedSedaEndpointProducerBuilder) this;
         }
         /**
-         * The maximum capacity of the SEDA queue (i.e., the number of messages
+         * The maximum capacity of the SEDA queue (that is, the number of messages
          * it can hold). Will by default use the defaultSize set on the SEDA
          * component.
          * 
@@ -459,7 +459,7 @@ public interface SedaEndpointBuilderFactory {
             return this;
         }
         /**
-         * The maximum capacity of the SEDA queue (i.e., the number of messages
+         * The maximum capacity of the SEDA queue (that is, the number of messages
          * it can hold). Will by default use the defaultSize set on the SEDA
          * component.
          * 
@@ -847,7 +847,7 @@ public interface SedaEndpointBuilderFactory {
             return (AdvancedSedaEndpointBuilder) this;
         }
         /**
-         * The maximum capacity of the SEDA queue (i.e., the number of messages
+         * The maximum capacity of the SEDA queue (that is, the number of messages
          * it can hold). Will by default use the defaultSize set on the SEDA
          * component.
          * 
@@ -864,7 +864,7 @@ public interface SedaEndpointBuilderFactory {
             return this;
         }
         /**
-         * The maximum capacity of the SEDA queue (i.e., the number of messages
+         * The maximum capacity of the SEDA queue (that is, the number of messages
          * it can hold). Will by default use the defaultSize set on the SEDA
          * component.
          * 

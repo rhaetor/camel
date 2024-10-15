@@ -18,7 +18,7 @@
 # This script runs a quick test for modified components
 # It receives a starting and end commit IDs and verifies if any component was modified between them.
 # It iterates through the list of components, running a unit and integration tests with -Psourcecheck
-# The result and other important data is saved on log files (i.e.: test log, the PR number and the result message).
+# The result and other important data is saved on log files (that is:  test log, the PR number and the result message).
 # The log file is archived by the action (see: action.yaml file)
 
 echo "Using MVND_OPTS=$MVND_OPTS"

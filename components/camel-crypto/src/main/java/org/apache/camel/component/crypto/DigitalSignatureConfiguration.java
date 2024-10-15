@@ -474,7 +474,7 @@ public class DigitalSignatureConfiguration implements Cloneable, CamelContextAwa
     }
 
     /**
-     * Set the Crypto operation from that supplied after the crypto scheme in the endpoint uri e.g. crypto:sign sets
+     * Set the Crypto operation from that supplied after the crypto scheme in the endpoint uri for example, crypto:sign sets
      * sign as the operation.
      *
      * @param operation the operation supplied after the crypto scheme

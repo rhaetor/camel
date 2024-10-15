@@ -36,7 +36,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Represents a contract between a Camel published and an external subscriber. It manages backpressure in order to deal
+ * Represents a contract between a Camel published and an external subscriber. It manages backpressure to deal
  * with slow subscribers.
  */
 public class CamelSubscription implements Subscription {

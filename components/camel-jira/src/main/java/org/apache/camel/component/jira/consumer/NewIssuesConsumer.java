@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Consumes new JIRA issues.
  *
- * NOTE: We manually add "ORDER BY key desc" to the JQL in order to optimize startup (the latest issues one at a time),
+ * NOTE: We manually add "ORDER BY key desc" to the JQL to optimize startup (the latest issues one at a time),
  * rather than having to index everything.
  */
 public class NewIssuesConsumer extends AbstractJiraConsumer {

@@ -60,9 +60,9 @@ public class JsonbDataFormat extends ServiceSupport implements DataFormat, DataF
     }
 
     /**
-     * Use the default JSON-B {@link Jsonb} and with a custom unmarshal type
+     * Use the default JSON-B {@link Jsonb} and with a custom unmarshaltype
      *
-     * @param customType the custom unmarshal type
+     * @param customType the custom unmarshaltype
      */
     public JsonbDataFormat(Type customType) {
         this.customType = customType;
@@ -77,10 +77,10 @@ public class JsonbDataFormat extends ServiceSupport implements DataFormat, DataF
     }
 
     /**
-     * Use a custom JSON-B instance and unmarshal type
+     * Use a custom JSON-B instance and unmarshaltype
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public JsonbDataFormat(Jsonb mapper, Class<?> unmarshalType) {
         this.objectMapper = mapper;
@@ -191,9 +191,9 @@ public class JsonbDataFormat extends ServiceSupport implements DataFormat, DataF
 
     @Override
     public Object unmarshal(Exchange exchange, Object body) throws Exception {
-        // is there a header with the unmarshal type?
+        // is there a header with the unmarshaltype?
         Class<?> expectedType = unmarshalType;
-        String type = exchange.getIn().getHeader("CamelJsonbUnmarshallType", String.class);
+        String type = exchange.getIn().getHeader("CamelJsonbUnmarshalType", String.class);
         if (type != null) {
             expectedType = exchange.getContext().getClassResolver().resolveMandatoryClass(type);
         }

@@ -29,6 +29,6 @@
 		<routeBuilder ref="myBuilder" /> 
 	</camelContext>
 	
-	<bean id="myBuilder" class="org.apache.camel.dataformat.bindy.fix.BindySimpleKeyValuePairNullMarshallTest$ContextConfig"/>
+	<bean id="myBuilder" class="org.apache.camel.dataformat.bindy.fix.BindySimpleKeyValuePairNullMarshalTest$ContextConfig"/>
 	
 </beans>

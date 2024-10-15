@@ -52,7 +52,7 @@ public class UserProducer extends DefaultProducer {
         }
 
         /*
-         * Support the InOut exchange pattern in order to provide access to
+         * Support the InOut exchange pattern to provide access to
          * the unique identifier for the published tweet which is returned in the response
          * by the Twitter REST API: https://dev.twitter.com/docs/api/1/post/statuses/update
          *

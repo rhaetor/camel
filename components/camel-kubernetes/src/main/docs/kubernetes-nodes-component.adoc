@@ -58,7 +58,7 @@ from("direct:list").
 
 This operation returns a List of Nodes from your cluster
 
-- listNodesByLabels:  this operation lists the nodes by labels on a kubernetes cluster
+- listNodesByLabels: this operation lists the nodes by labels on a kubernetes cluster
 
 [source,java]
 --------------------------------------------------------------------------------

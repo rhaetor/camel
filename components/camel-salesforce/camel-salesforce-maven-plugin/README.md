@@ -20,7 +20,7 @@ The plugin configuration has the following properties.
 * version - Salesforce Rest API version, defaults to 25.0
 * outputDirectory - Directory where to place generated DTOs, defaults to ${project.build.directory}/generated-sources/camel-salesforce
 * includes - List of SObject types to include
-* topics - List of topics to include, .e.g., `/event/BatchApexErrorEvent`. This property only applies to the `generatePubSub` goal.
+* topics - List of topics to include, .for example, `/event/BatchApexErrorEvent`. This property only applies to the `generatePubSub` goal.
 * excludes - List of SObject types to exclude
 * includePattern - Java RegEx for SObject types to include
 * excludePattern - Java RegEx for SObject types to exclude
@@ -31,7 +31,7 @@ The plugin configuration has the following properties.
 has a lookup field with the same name as its Child Relationship Name. If setting to something other 
 than default, "List" is a sensible value.
 * enumerationOverrideProperties - Override picklist enum value generation via a java.util.Properties instance. 
-Property name format: `SObject.FieldName.PicklistValue`. Property value is the desired enum value. E.g.:
+Property name format: `SObject.FieldName.PicklistValue`. Property value is the desired enum value. For example: 
     ```
     <enumerationOverrideProperties>
       <property>
@@ -113,17 +113,17 @@ The plugin should be configured for the rest of the properties, and can be execu
 
 The generated DTOs use Jackson. All Salesforce field types are supported. Date and time fields are mapped to java.time.ZonedDateTime, and picklist fields are mapped to generated Java Enumerations.
 
-Relationship fields, e.g. `Contact.Account`, will be strongly typed if the referenced SObject type is listed in `includes`. Otherwise, the type of the reference object will be `AbstractDescribedSObjectBase`. Some useful but non-obvious SObjects to include are `RecordType`, `User`, `Group`, and `Name`.  
+Relationship fields, for example, `Contact.Account`, will be strongly typed if the referenced SObject type is listed in `includes`. Otherwise, the type of the reference object will be `AbstractDescribedSObjectBase`. Some useful but non-obvious SObjects to include are `RecordType`, `User`, `Group`, and `Name`.  
 
 [Polymorphic relationship fields](https://developer.salesforce.com/docs/atlas.en-us.232.0.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_relationships_and_polymorph_keys.htm) will have the type `AbstractDescribedSObjectBase`, however at runtime, query results
 will be serialized to the specific type if that type was in `includes` and a DTO was generated for it. Note that 
-the query must be written to return type-specific fields, e.g.:
+the query must be written to return type-specific fields, for example: 
 
 ```
 SELECT Id, Name, Typeof Owner WHEN User Then FirstName, LastName, Username End FROM Line_Item__c
 ```
 
-You can customize types, i.e. use java.time.LocalDateTime instead of the default java.time.ZonedDateTime by specifying the `customTypes` property like:
+You can customize types, that is, use java.time.LocalDateTime instead of the default java.time.ZonedDateTime by specifying the `customTypes` property like:
 
 ```xml
 <plugin>

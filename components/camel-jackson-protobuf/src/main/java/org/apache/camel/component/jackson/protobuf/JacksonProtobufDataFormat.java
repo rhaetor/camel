@@ -37,40 +37,40 @@ public class JacksonProtobufDataFormat extends AbstractJacksonDataFormat {
     }
 
     /**
-     * Use the default Jackson {@link ProtobufMapper} and with a custom unmarshal type
+     * Use the default Jackson {@link ProtobufMapper} and with a custom unmarshaltype
      *
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public JacksonProtobufDataFormat(Class<?> unmarshalType) {
         super(unmarshalType);
     }
 
     /**
-     * Use the default Jackson {@link ProtobufMapper} and with a custom unmarshal type and JSON view
+     * Use the default Jackson {@link ProtobufMapper} and with a custom unmarshaltype and JSON view
      *
-     * @param unmarshalType the custom unmarshal type
-     * @param jsonView      marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType the custom unmarshaltype
+     * @param jsonView      marker class to specify properties to be included during marshaling. See also
      */
     public JacksonProtobufDataFormat(Class<?> unmarshalType, Class<?> jsonView) {
         super(unmarshalType, jsonView);
     }
 
     /**
-     * Use a custom Jackson {@link ProtobufMapper} and and unmarshal type
+     * Use a custom Jackson {@link ProtobufMapper} and and unmarshaltype
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
+     * @param unmarshalType the custom unmarshaltype
      */
     public JacksonProtobufDataFormat(ProtobufMapper mapper, Class<?> unmarshalType) {
         super(mapper, unmarshalType);
     }
 
     /**
-     * Use a custom Jackson {@link ProtobufMapper}, unmarshal type and JSON view
+     * Use a custom Jackson {@link ProtobufMapper}, unmarshaltype and JSON view
      *
      * @param mapper        the custom mapper
-     * @param unmarshalType the custom unmarshal type
-     * @param jsonView      marker class to specify properties to be included during marshalling. See also
+     * @param unmarshalType the custom unmarshaltype
+     * @param jsonView      marker class to specify properties to be included during marshaling. See also
      */
     public JacksonProtobufDataFormat(ProtobufMapper mapper, Class<?> unmarshalType, Class<?> jsonView) {
         super(mapper, unmarshalType, jsonView);

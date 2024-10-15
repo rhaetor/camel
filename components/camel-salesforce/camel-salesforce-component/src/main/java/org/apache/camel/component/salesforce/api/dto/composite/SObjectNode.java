@@ -112,7 +112,7 @@ public final class SObjectNode implements Serializable {
 
     /**
      * Add a child that does not contain the required metadata to the this node. You need to specify the plural form of
-     * the child (e.g. `Account` its `Accounts`).
+     * the child (for example, `Account` its `Accounts`).
      *
      * @param  labelPlural plural form
      * @param  child       to add
@@ -145,7 +145,7 @@ public final class SObjectNode implements Serializable {
 
     /**
      * Add a child that does not contain the required metadata to the this node. You need to specify the plural form of
-     * the child (e.g. `Account` its `Accounts`).
+     * the child (for example, `Account` its `Accounts`).
      *
      * @param labelPlural plural form
      * @param first       first child to add
@@ -174,7 +174,7 @@ public final class SObjectNode implements Serializable {
     /**
      * Returns all children of this node (one level deep) of certain type (in plural form).
      *
-     * @param  type type of child requested in plural form (e.g for `Account` is `Accounts`)
+     * @param  type type of child requested in plural form (, for example: for `Account` is `Accounts`)
      * @return      children of this node of specified type
      */
     public Stream<SObjectNode> getChildNodesOfType(final String type) {
@@ -196,7 +196,7 @@ public final class SObjectNode implements Serializable {
     /**
      * Returns child SObjects of this node (one level deep) of certain type (in plural form)
      *
-     * @param  type type of child requested in plural form (e.g for `Account` is `Accounts`)
+     * @param  type type of child requested in plural form (, for example: for `Account` is `Accounts`)
      * @return      child SObjects of this node
      */
     public Stream<AbstractSObjectBase> getChildrenOfType(final String type) {

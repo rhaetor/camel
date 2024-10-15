@@ -64,7 +64,7 @@ public final class DmsMeta {
                 LocationType.Body,
                 FieldExistence.NON_NULL_NON_EMPTY,
                 CreateInstanceRequestBody.class,
-                f -> f.withMarshaller(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
+                f -> f.withMarshaler(CreateInstanceRequest::getBody, CreateInstanceRequest::setBody));
 
         return builder.build();
     }
@@ -82,7 +82,7 @@ public final class DmsMeta {
                 LocationType.Path,
                 FieldExistence.NON_NULL_NON_EMPTY,
                 String.class,
-                f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
+                f -> f.withMarshaler(DeleteInstanceRequest::getInstanceId, DeleteInstanceRequest::setInstanceId));
 
         return builder.build();
     }
@@ -100,7 +100,7 @@ public final class DmsMeta {
                 LocationType.Query,
                 FieldExistence.NULL_IGNORE,
                 String.class,
-                f -> f.withMarshaller(ListInstancesRequest::getEngine, ListInstancesRequest::setEngine));
+                f -> f.withMarshaler(ListInstancesRequest::getEngine, ListInstancesRequest::setEngine));
 
         return builder.build();
     }
@@ -118,7 +118,7 @@ public final class DmsMeta {
                 LocationType.Path,
                 FieldExistence.NON_NULL_NON_EMPTY,
                 String.class,
-                f -> f.withMarshaller(QueryInstanceRequest::getInstanceId, QueryInstanceRequest::setInstanceId));
+                f -> f.withMarshaler(QueryInstanceRequest::getInstanceId, QueryInstanceRequest::setInstanceId));
 
         return builder.build();
     }
@@ -136,13 +136,13 @@ public final class DmsMeta {
                 LocationType.Path,
                 FieldExistence.NON_NULL_NON_EMPTY,
                 String.class,
-                f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, UpdateInstanceRequest::setInstanceId));
+                f -> f.withMarshaler(UpdateInstanceRequest::getInstanceId, UpdateInstanceRequest::setInstanceId));
 
         builder.withRequestField("body",
                 LocationType.Body,
                 FieldExistence.NON_NULL_NON_EMPTY,
                 UpdateInstanceRequestBody.class,
-                f -> f.withMarshaller(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
+                f -> f.withMarshaler(UpdateInstanceRequest::getBody, UpdateInstanceRequest::setBody));
 
         return builder.build();
     }

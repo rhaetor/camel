@@ -32,7 +32,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BindyBigDecimalGroupingUnmarshallTest extends CamelTestSupport {
+public class BindyBigDecimalGroupingUnmarshalTest extends CamelTestSupport {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";

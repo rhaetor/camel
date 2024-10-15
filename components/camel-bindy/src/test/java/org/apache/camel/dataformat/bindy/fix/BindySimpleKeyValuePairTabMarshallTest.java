@@ -32,11 +32,11 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
-public class BindySimpleKeyValuePairTabMarshallTest extends CommonBindyTest {
+public class BindySimpleKeyValuePairTabMarshalTest extends CommonBindyTest {
 
     @Test
     @DirtiesContext
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
 
         String message
                 = "1=BE.CHM.001\t8=FIX 4.1\t9=20\t10=220\t11=CHM0001-01\t22=4\t34=1\t35=0\t48=BE0001245678\t49=INVMGR\t54=1\t56=BRKR\t58=this is a camel - bindy test\t\r\n";

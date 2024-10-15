@@ -21,7 +21,7 @@ import java.util.Arrays;
 import java.util.Locale;
 
 /**
- * Supported set of file resource and URL schemes that may be used to resolve an integration resource (e.g. source
+ * Supported set of file resource and URL schemes that may be used to resolve an integration resource (for example, source
  * file).
  */
 public enum SourceScheme {

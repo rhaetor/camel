@@ -9,7 +9,7 @@ The camel-mllp component is specifically designed to handle the nuances of the M
 the functionality required by Healthcare providers to communicate with other systems using the MLLP protocol.
 
 The component uses byte[] payloads, and relies on the Camel type conversion system for converting other payload
-types to/from byte[].  This allows using other HL7 Libraries (i.e. HAPI) to parse the messages.  The component
+types to/from byte[].  This allows using other HL7 Libraries (that is, HAPI) to parse the messages.  The component
 provides a 'charset' URI option that will cause the endpoint to set the CamelCharsetName property on the exchange
 which allows the proper conversion of byte[] to String payloads for Consumers.
 
@@ -22,7 +22,7 @@ MLLP-Consumers:
 
 MLLP-Producers also interrogate the HL7 Acknowledgment received from the external system and if a negative acknowledgment
 is received, the producer sets an exception on the exchange indicating the type of negative acknowledgement that was
-received (i.e. a HL7 Application Reject Acknowledgement, Application Error Acknowledgement, 
+received (that is, a HL7 Application Reject Acknowledgement, Application Error Acknowledgement, 
 Commit Reject Acknowledgement and Commit Error Acknowledgement).  This enables the use of Camel Redelivery 
 Policies to configure redelivery attempts and routing erroneous messages to alternate endpoints for analysis.
 
@@ -83,7 +83,7 @@ partial/incomplete acknowledgement.
 
 # MLLP Background
 The MLLP protocol is inherently synchronous because external systems almost always require the order of messages to be
-maintained (i.e. FIFO delivery).
+maintained (that is, FIFO delivery).
 
 When a MLLP-Producer sends a message to an external system, it is required to wait for 
 an HL7 Acknowledgement before sending the next message.  Additionally, the content of the acknowlegement must be examined
@@ -104,7 +104,7 @@ attempt to resend the message.
 
 NOTE:  Some external systems do not handle HL7 NACKS ( HL7 Application Reject Acknowledgments and HL7 Application Error
 Acknowledgements) - they do not interrogate the HL7 Acknowledgment to determine if it is a negative acknowledgement and 
-assume any acknowledgement received is an HL7 ACK (HL7 Application Accept Acknowledgement).  In order to prevent message 
+assume any acknowledgement received is an HL7 ACK (HL7 Application Accept Acknowledgement).  To prevent message 
 loss when dealing with external systems that behave in this fashion, the MLLP-Consumer must be capable of closing the 
 TCP connection in lew of sending and HL7 NACK, which will force the external system to resend the message.  Additionally,
 the MLLP-Consumer may be required to behave differently for each type of HL7 NACK - it may need to close the TCP connection

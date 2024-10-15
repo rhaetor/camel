@@ -38,7 +38,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @EnabledIfSystemProperty(named = "accountName", matches = ".*",
-                         disabledReason = "Make sure to supply azure accessKey or accountName, e.g:  mvn verify -DaccountName=myacc -DaccessKey=mykey")
+                         disabledReason = "Make sure to supply azure accessKey or accountName, for example, mvn verify -DaccountName=myacc -DaccessKey=mykey")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class QueueServiceOperationsIT {
 

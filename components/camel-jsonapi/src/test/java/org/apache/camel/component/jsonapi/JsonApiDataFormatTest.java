@@ -73,7 +73,7 @@ public class JsonApiDataFormatTest extends CamelTestSupport {
     }
 
     @Test
-    public void testJsonApiUnmarshall() throws Exception {
+    public void testJsonApiUnmarshal() throws Exception {
         Class<?>[] formats = { MyBook.class, MyAuthor.class };
         JsonApiDataFormat jsonApiDataFormat = new JsonApiDataFormat(MyBook.class, formats);
 

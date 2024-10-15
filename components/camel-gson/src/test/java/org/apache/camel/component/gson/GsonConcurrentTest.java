@@ -66,9 +66,9 @@ public class GsonConcurrentTest extends CamelTestSupport {
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-                from("direct:start").marshal().json(JsonLibrary.Gson).to("log:marshalled").to("direct:marshalled");
+                from("direct:start").marshal().json(JsonLibrary.Gson).to("log:marshaled").to("direct:marshaled");
 
-                from("direct:marshalled").unmarshal().json(JsonLibrary.Gson, TestPojo.class).to("mock:result");
+                from("direct:marshaled").unmarshal().json(JsonLibrary.Gson, TestPojo.class).to("mock:result");
             }
         };
     }

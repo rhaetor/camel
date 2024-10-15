@@ -33,23 +33,23 @@ public class JaxbDataFormatPartClassHeaderTest extends CamelTestSupport {
 
     private static final Logger LOG = LoggerFactory.getLogger(JaxbDataFormatPartClassHeaderTest.class);
 
-    @EndpointInject("mock:marshall")
-    private MockEndpoint mockMarshall;
+    @EndpointInject("mock:marshal")
+    private MockEndpoint mockMarshal;
 
     @Test
-    public void testMarshallIfPartClassSetInHeaders() throws Exception {
-        mockMarshall.expectedMessageCount(1);
+    public void testMarshalIfPartClassSetInHeaders() throws Exception {
+        mockMarshal.expectedMessageCount(1);
 
         Address address = new Address();
         address.setStreet("Main Street");
         address.setStreetNumber("3a");
         address.setZip("65843");
         address.setCity("Sulzbach");
-        template.sendBody("direct:marshall", address);
+        template.sendBody("direct:marshal", address);
 
         MockEndpoint.assertIsSatisfied(context);
 
-        String payload = mockMarshall.getExchanges().get(0).getIn().getBody(String.class);
+        String payload = mockMarshal.getExchanges().get(0).getIn().getBody(String.class);
         LOG.info(payload);
 
         assertTrue(payload.startsWith("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"));
@@ -76,12 +76,12 @@ public class JaxbDataFormatPartClassHeaderTest extends CamelTestSupport {
                         new QName("http://www.camel.apache.org/jaxb/example/address/123", "addressToBeOverriden"));
                 jaxbDataFormat.setPrettyPrint(true);
 
-                from("direct:marshall")
+                from("direct:marshal")
                         .setHeader(JaxbConstants.JAXB_PART_CLASS, simple("org.apache.camel.example.Address"))
                         .setHeader(JaxbConstants.JAXB_PART_NAMESPACE,
                                 simple("{http://www.camel.apache.org/jaxb/example/address/1}address"))
                         .marshal(jaxbDataFormat)
-                        .to("mock:marshall");
+                        .to("mock:marshal");
             }
         };
     }

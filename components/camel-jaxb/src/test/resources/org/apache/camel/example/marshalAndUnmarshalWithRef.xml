@@ -33,10 +33,10 @@
     <route>
       <from uri="direct:start"/>
       <marshal><custom ref="myJaxb"/></marshal>
-      <to uri="direct:marshalled"/>
+      <to uri="direct:marshaled"/>
     </route>
     <route>
-      <from uri="direct:marshalled"/>
+      <from uri="direct:marshaled"/>
       <unmarshal><custom ref="myJaxb"/></unmarshal>
       <to uri="mock:result"/>
     </route>

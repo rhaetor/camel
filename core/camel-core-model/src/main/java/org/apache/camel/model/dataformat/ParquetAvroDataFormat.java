@@ -73,7 +73,7 @@ public class ParquetAvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Compression codec to use when marshalling.
+     * Compression codec to use when marshaling.
      */
     public void setCompressionCodecName(String compressionCodecName) {
         this.compressionCodecName = compressionCodecName;
@@ -88,15 +88,15 @@ public class ParquetAvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Class to use when unmarshalling.
+     * Class to use when unmarshaling.
      */
     public void setUnmarshalType(Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
     }
 
     /**
-     * Class to use when (un)marshalling. If omitted, parquet files are converted into Avro's GenericRecords for
-     * unmarshalling and input objects are assumed as GenericRecords for marshalling.
+     * Class to use when (un)marshaling. If omitted, parquet files are converted into Avro's GenericRecords for
+     * unmarshaling and input objects are assumed as GenericRecords for marshaling.
      */
     public void setUnmarshalTypeName(String unmarshalTypeName) {
         this.unmarshalTypeName = unmarshalTypeName;
@@ -111,7 +111,7 @@ public class ParquetAvroDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Whether the unmarshalling should produce an iterator of records or read all the records at once.
+     * Whether the unmarshaling should produce an iterator of records or read all the records at once.
      */
     public void setLazyLoad(String lazyLoad) {
         this.lazyLoad = lazyLoad;
@@ -129,7 +129,7 @@ public class ParquetAvroDataFormat extends DataFormatDefinition {
         private String lazyLoad;
 
         /**
-         * Compression codec to use when marshalling.
+         * Compression codec to use when marshaling.
          */
         public Builder compressionCodecName(String compressionCodecName) {
             this.compressionCodecName = compressionCodecName;
@@ -137,7 +137,7 @@ public class ParquetAvroDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class to use when unmarshalling.
+         * Class to use when unmarshaling.
          */
         public Builder unmarshalTypeName(String unmarshalTypeName) {
             this.unmarshalTypeName = unmarshalTypeName;
@@ -145,7 +145,7 @@ public class ParquetAvroDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Class to use when unmarshalling.
+         * Class to use when unmarshaling.
          */
         public Builder unmarshalType(Class<?> unmarshalType) {
             this.unmarshalType = unmarshalType;
@@ -153,7 +153,7 @@ public class ParquetAvroDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce an iterator of records or read all the records at once.
+         * Whether the unmarshaling should produce an iterator of records or read all the records at once.
          */
         public Builder lazyLoad(String lazyLoad) {
             this.lazyLoad = lazyLoad;
@@ -161,7 +161,7 @@ public class ParquetAvroDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce an iterator of records or read all the records at once.
+         * Whether the unmarshaling should produce an iterator of records or read all the records at once.
          */
         public Builder lazyLoad(boolean lazyLoad) {
             this.lazyLoad = Boolean.toString(lazyLoad);

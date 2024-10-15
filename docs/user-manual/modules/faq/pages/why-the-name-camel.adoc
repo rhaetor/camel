@@ -1,6 +1,6 @@
 = Why did you choose the name Camel?
 
-* it stands for Concise Application Message Exchange Language (i.e. the
+* it stands for Concise Application Message Exchange Language (that is, the
 Java xref:ROOT:dsl.adoc[DSL] for routing)
 * a Camel can carry 4 times the load of other beasts of burden
 * a Camel can travel for great distances without water; similarly a

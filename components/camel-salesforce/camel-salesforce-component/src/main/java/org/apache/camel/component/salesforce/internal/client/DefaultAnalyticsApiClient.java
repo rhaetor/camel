@@ -258,7 +258,7 @@ public class DefaultAnalyticsApiClient extends AbstractClientBase implements Ana
         final int statusCode = response.getStatus();
         try {
             if (responseContent != null) {
-                // unmarshal RestError
+                // unmarshalRestError
                 final List<RestError> errors = readErrorsFrom(responseContent, objectMapper);
 
                 if (statusCode == HttpStatus.NOT_FOUND_404) {

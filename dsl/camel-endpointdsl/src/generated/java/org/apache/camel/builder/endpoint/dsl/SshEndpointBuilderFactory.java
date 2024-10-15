@@ -129,7 +129,7 @@ public interface SshEndpointBuilderFactory {
         /**
          * Sets the command string to send to the remote SSH server during every
          * poll cycle. Only works with camel-ssh component being used as a
-         * consumer, i.e. from(ssh://...) You may need to end your command with
+         * consumer, that is, from(ssh://...) You may need to end your command with
          * a newline, and that must be URL encoded %0A.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

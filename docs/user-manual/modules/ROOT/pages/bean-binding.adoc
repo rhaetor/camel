@@ -45,7 +45,7 @@ By default, the return value is set in the outbound message body.
 
 == Asynchronous processing
 
-You can return a `CompletionStage` implementation (e.g. `CompletableFuture`)
+You can return a `CompletionStage` implementation (for example, `CompletableFuture`)
 to implement asynchronous processing.
 
 Please be sure to properly complete the CompletionStage with the result
@@ -94,7 +94,7 @@ The following Camel-specific types are automatically bound:
 So, if you declare any of these types, they will be provided by Camel.
 *Note that `Exception` will bind to the caught exception in the
 xref:exchange.adoc[Exchange]* - so it's often usable if you employ a
-xref:components::bean-component.adoc[Bean] to handle, e.g., an `onException` route.
+xref:components::bean-component.adoc[Bean] to handle, for example, an `onException` route.
 
 What is most interesting is that Camel will also try to bind the body of
 the xref:exchange.adoc[Exchange] to the first parameter of the method
@@ -218,7 +218,7 @@ the method option
 * The value is a String enclosed with either single or double quotes
 * The value is null which denotes a `null` value
 * It can be evaluated using the xref:components:languages:simple-language.adoc[Simple] language, which
-means you can use, e.g., `$\{body}`, `${header.foo}` and others
+means you can use, for example, `$\{body}`, `${header.foo}` and others
 xref:components:languages:simple-language.adoc[Simple] tokens. Notice the tokens must be enclosed with
 `${ }`.
 * The value ends with `.class` then it's a type declaration instead - see the
@@ -358,7 +358,7 @@ the method with 2 parameters we do:
     .to("mock:result");
 ----
 
-By default, Camel will match the type name using the simple name, e.g.
+By default, Camel will match the type name using the simple name, for example
 any leading package name will be disregarded. However, if you want to
 match using the FQN, then specify the FQN type and Camel will leverage
 that. So if you have a parameter of type `com.foo.MyOrder` and you want to match against

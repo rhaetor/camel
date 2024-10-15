@@ -754,7 +754,7 @@ public interface NettyEndpointBuilderFactory {
             return this;
         }
         /**
-         * Password setting to use in order to encrypt/decrypt payloads sent
+         * Password setting to use to encrypt/decrypt payloads sent
          * using SSH.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -2553,7 +2553,7 @@ public interface NettyEndpointBuilderFactory {
             return this;
         }
         /**
-         * Password setting to use in order to encrypt/decrypt payloads sent
+         * Password setting to use to encrypt/decrypt payloads sent
          * using SSH.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
@@ -4297,7 +4297,7 @@ public interface NettyEndpointBuilderFactory {
             return this;
         }
         /**
-         * Password setting to use in order to encrypt/decrypt payloads sent
+         * Password setting to use to encrypt/decrypt payloads sent
          * using SSH.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.

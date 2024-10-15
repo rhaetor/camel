@@ -154,7 +154,7 @@ parameters must be provided in a header with the
 key `SqlConstants.SQL_PARAMETERS`. This allows the SQL component to work
 more dynamically as the SQL query is from the message body. Use templating
 (such as xref:components::velocity-component.adoc[Velocity], xref:components::freemarker-component.adoc[Freemarker])
-for conditional processing, e.g., to include or exclude `where` clauses
+for conditional processing, for example, to include or exclude `where` clauses
 depending on the presence of query parameters.
 
 == Result of the query
@@ -446,7 +446,7 @@ This repository has two additional configuration parameters
 [cols="1,1"]
 |===
 |Parameter | Description
-|lockMaxAgeMillis | This refers to the duration after which the lock is considered orphaned, i.e., if the currentTimestamp - createdAt >= lockMaxAgeMillis then lock is orphaned.
+|lockMaxAgeMillis | This refers to the duration after which the lock is considered orphaned, that is, if the currentTimestamp - createdAt >= lockMaxAgeMillis then lock is orphaned.
 |lockKeepAliveIntervalMillis | The frequency at which keep-alive updates are done to createdAt Timestamp column.
 |===
 
@@ -583,7 +583,7 @@ the `currentThread` one. The benefit is to be able to load classes
 exposed by other bundles. This allows the exchange body and headers to
 have custom types object references.
 
-While deserializing, it's important to notice that the decode function and the unmarshallExchange method will allow only all java packages and subpackages
+While deserializing, it's important to notice that the decode function and the unmarshalExchange method will allow only all java packages and subpackages
 and org.apache.camel packages and subpackages. The remaining classes will be blacklisted. So you'll need to change the filter in case of a need.
 This could be accomplished by changing the deserializationFilter field in the repository.
 
@@ -707,7 +707,7 @@ JdbcAggregationRepository does not provide recovery in a clustered environment.
 
 You may use ClusteredJdbcAggregationRepository that provides a limited support for recovery in a clustered environment:
 recovery mechanism is dealt separately by members of the cluster,
-i.e., a member may only recover exchanges that it completed itself.
+that is, a member may only recover exchanges that it completed itself.
 
 To enable this behavior, property `recoverByInstance` must be set to true, and `instanceId` property must be defined using a unique identifier (a string) for each member of the cluster.
 

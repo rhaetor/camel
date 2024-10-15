@@ -32,7 +32,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /*
  * On most tests we evaluate a range or task count executions within the time budget because:
- * very fast systems may be able to kick off the task very quickly (i.e.: at the 0th millisecond). Combined
+ * very fast systems may be able to kick off the task very quickly (that is:  at the 0th millisecond). Combined
  * with the time drift and limits in time precision for different platforms, as well as scheduler differences
  * between scheduler behavior for each OS, this means that an execution may happen at the last second (i.e:
  * at 0th, 1st, 2nd, 3rd and 4th).

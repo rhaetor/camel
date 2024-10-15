@@ -64,7 +64,7 @@ public interface ConsulConstants {
     String CONSUL_RESULT = "CamelConsulResult";
     @Metadata(description = "The session id", javaType = "String")
     String CONSUL_SESSION = "CamelConsulSession";
-    @Metadata(label = "producer", description = "To transform values retrieved from Consul i.e. on KV endpoint to string.",
+    @Metadata(label = "producer", description = "To transform values retrieved from Consul that is, on KV endpoint to string.",
               javaType = "Boolean")
     String CONSUL_VALUE_AS_STRING = "CamelConsulValueAsString";
     @Metadata(label = "producer", description = "The node", javaType = "String")

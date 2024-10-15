@@ -615,7 +615,7 @@ public class CxfMessageHeadersRelayTest {
                 try {
                     JAXBElement<?> job = (JAXBElement<?>) JAXBContext
                             .newInstance(org.apache.cxf.outofband.header.ObjectFactory.class)
-                            .createUnmarshaller().unmarshal((Node) hdr1.getObject());
+                            .createUnmarshaler().unmarshal((Node) hdr1.getObject());
                     hdrToTest = (OutofBandHeader) job.getValue();
                 } catch (JAXBException ex) {
                     LOG.warn("JAXB error: {}", ex.getMessage(), ex);
@@ -672,7 +672,7 @@ public class CxfMessageHeadersRelayTest {
                 try {
                     JAXBElement<?> job = (JAXBElement<?>) JAXBContext
                             .newInstance(org.apache.cxf.outofband.header.ObjectFactory.class)
-                            .createUnmarshaller().unmarshal((Node) hdr1.getObject());
+                            .createUnmarshaler().unmarshal((Node) hdr1.getObject());
                     hdrToTest.add((OutofBandHeader) job.getValue());
                 } catch (JAXBException ex) {
                     LOG.warn("JAXB error: {}", ex.getMessage(), ex);

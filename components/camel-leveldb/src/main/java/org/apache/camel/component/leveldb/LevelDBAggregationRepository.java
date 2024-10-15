@@ -104,7 +104,7 @@ public class LevelDBAggregationRepository extends ServiceSupport implements Reco
         LOG.debug("Adding key [{}] -> {}", key, exchange);
         try {
             byte[] lDbKey = keyBuilder(repositoryName, key);
-            final byte[] exchangeBuffer = codec().marshallExchange(camelContext, exchange, allowSerializedHeaders);
+            final byte[] exchangeBuffer = codec().marshalExchange(camelContext, exchange, allowSerializedHeaders);
 
             byte[] rc = null;
             if (isReturnOldExchange()) {
@@ -121,7 +121,7 @@ public class LevelDBAggregationRepository extends ServiceSupport implements Reco
 
             // only return old exchange if enabled
             if (isReturnOldExchange()) {
-                return codec().unmarshallExchange(camelContext, rc);
+                return codec().unmarshalExchange(camelContext, rc);
             }
         } catch (IOException e) {
             throw new RuntimeCamelException("Error adding to repository " + repositoryName + " with key " + key, e);
@@ -140,7 +140,7 @@ public class LevelDBAggregationRepository extends ServiceSupport implements Reco
             byte[] rc = levelDBFile.getDb().get(lDbKey);
 
             if (rc != null) {
-                answer = codec().unmarshallExchange(camelContext, rc);
+                answer = codec().unmarshalExchange(camelContext, rc);
             }
         } catch (IOException e) {
             throw new RuntimeCamelException("Error getting key " + key + " from repository " + repositoryName, e);
@@ -157,7 +157,7 @@ public class LevelDBAggregationRepository extends ServiceSupport implements Reco
         try {
             byte[] lDbKey = keyBuilder(repositoryName, key);
             final String exchangeId = exchange.getExchangeId();
-            final byte[] exchangeBuffer = codec().marshallExchange(camelContext, exchange, allowSerializedHeaders);
+            final byte[] exchangeBuffer = codec().marshalExchange(camelContext, exchange, allowSerializedHeaders);
 
             // remove the exchange
             byte[] rc = levelDBFile.getDb().get(lDbKey);
@@ -287,7 +287,7 @@ public class LevelDBAggregationRepository extends ServiceSupport implements Reco
             byte[] rc = levelDBFile.getDb().get(completedLDBKey);
 
             if (rc != null) {
-                answer = codec().unmarshallExchange(camelContext, rc);
+                answer = codec().unmarshalExchange(camelContext, rc);
             }
         } catch (IOException e) {
             throw new RuntimeCamelException(

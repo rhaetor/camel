@@ -36,7 +36,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class JaxbDataFormatMustBeJAXBElementTest extends CamelTestSupport {
 
     @Test
-    public void testJaxbMarshalling() throws InterruptedException {
+    public void testJaxbMarshaling() throws InterruptedException {
         MockEndpoint mock = getMockEndpoint("mock:result");
         mock.expectedMessageCount(1);
         mock.message(0).body().endsWith("<foo><bar>Hello Bar</bar></foo>");
@@ -47,7 +47,7 @@ public class JaxbDataFormatMustBeJAXBElementTest extends CamelTestSupport {
     }
 
     @Test
-    public void testJaxbMarshalling2() throws InterruptedException {
+    public void testJaxbMarshaling2() throws InterruptedException {
         getMockEndpoint("mock:result").expectedMessageCount(0);
 
         try {

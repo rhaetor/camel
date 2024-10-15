@@ -60,7 +60,7 @@ public final class NettyHttpConstants {
               javaType = "String")
     public static final String HTTP_PATH = Exchange.HTTP_PATH;
     @Metadata(description = "Any query parameters, such as `foo=bar&beer=yes`. Stored in the raw\n" +
-                            "form, as they arrived to the consumer (i.e. before URL decoding).",
+                            "form, as they arrived to the consumer (that is, before URL decoding).",
               javaType = "String")
     public static final String HTTP_RAW_QUERY = Exchange.HTTP_RAW_QUERY;
     @Metadata(description = "The URL including protocol, host and port, etc: \n" +

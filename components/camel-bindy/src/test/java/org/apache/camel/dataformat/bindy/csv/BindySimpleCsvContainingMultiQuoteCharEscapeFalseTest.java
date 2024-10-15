@@ -46,7 +46,7 @@ public class BindySimpleCsvContainingMultiQuoteCharEscapeFalseTest extends Camel
     private MockEndpoint mockEndPointUnMarshal2;
 
     @Test
-    public void testMarshallCsvRecordFieldContainingMultiEscapedQuoteChar() throws Exception {
+    public void testMarshalCsvRecordFieldContainingMultiEscapedQuoteChar() throws Exception {
 
         mockEndPointMarshal1.expectedMessageCount(1);
         mockEndPointMarshal1
@@ -69,7 +69,7 @@ public class BindySimpleCsvContainingMultiQuoteCharEscapeFalseTest extends Camel
     }
 
     @Test
-    public void testMarshallCsvRecordFieldContainingMultiNonEscapedQuoteChar() throws Exception {
+    public void testMarshalCsvRecordFieldContainingMultiNonEscapedQuoteChar() throws Exception {
 
         mockEndPointMarshal2.expectedMessageCount(1);
         mockEndPointMarshal2.expectedBodiesReceived("'123','''foo''','10'" + ConverterUtils.getStringCarriageReturn("WINDOWS"));

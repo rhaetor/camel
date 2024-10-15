@@ -43,7 +43,7 @@ Most documentation is generated directly from the generated json files for each 
 camel-kamelets::: Only `docs/modules/ROOT/pages/index.adoc` is editable.
 All other documentation is generated from the kamelet yaml descriptors.
 camel-quarkus::: Editable pages are under `docs`.
-Pages under `docs/modules/ROOT/pages/reference/components` and `docs/modules/ROOT/pages/reference/extensions` are generated, including optional snippets from e.g. `extensions/activemq/src/main/doc`.
+Pages under `docs/modules/ROOT/pages/reference/components` and `docs/modules/ROOT/pages/reference/extensions` are generated, including optional snippets from for example, `extensions/activemq/src/main/doc`.
 camel-quarkus-examples::: Editable pages are under `docs`.
 
 [#_local_build_instructions]
@@ -119,16 +119,16 @@ Note that if the page source starts with a comment that the page is copied or ge
 Please do not use this method if you are changing any xrefs or making significant changes to format; instead follow the procedure below.
 
 . Fork/clone the appropriate repository from GitHub and switch to the branch you are working with.
-. Create a branch for your work with a name starting with the original branch name, e.g. `git switch -c main-doc-fix`
+. Create a branch for your work with a name starting with the original branch name, for example, `git switch -c main-doc-fix`
 . Edit the `.adoc` sources as needed.
 Preview your work in the Intellij Asciidoc plugin preview or in a browser with an Asciidoctor extension installed.
 . Do a xref:#_local_build_instructions[local website build with your changes].
 //=== The following workflow may be usable after https://gitlab.com/antora/antora/-/issues/831 is implemented, perhaps with the aid of an Antora extension.
 //. Commit and push your work and create a PR in the (sub)project repository.
-//Note the PR number, e.g. #456
-//. Fork/clone the camel-website repository, and create an appropriate branch, e.g. `git switch -c camel-quarkus-main-456`.
+//Note the PR number, for example, #456
+//. Fork/clone the camel-website repository, and create an appropriate branch, for example, `git switch -c camel-quarkus-main-456`.
 //. Locate the project you are working with in the `antora-playbook.yml` under `sources`, and locate the branch you have altered under the appropriate `-url`.
-//Leaving the original branch as a comment, alter the branch to e.g. `- pull/456` using the PR number you noted earlier.
+//Leaving the original branch as a comment, alter the branch to for example, `- pull/456` using the PR number you noted earlier.
 //. Commit the change to the playbook, push it to your `camel-website` fork, and open a PR against `camel-website`.
 //CI will build your change and, if successful, will deploy a preview on Netlify.
 //There will be an email with the preview URL.
@@ -138,7 +138,7 @@ Preview your work in the Intellij Asciidoc plugin preview or in a browser with a
 //
 //=== Currently usable workflow
 . Commit and push your work and create a PR in the (sub)project repository.
-. Fork/clone the camel-website repository, and create an appropriate branch, e.g. `git switch -c camel-quarkus-main-456`.
+. Fork/clone the camel-website repository, and create an appropriate branch, for example, `git switch -c camel-quarkus-main-456`.
 The following process will work for any number of doc PRs against any number of source repositories: usually you will have one subproject repo and one branch.
 . Locate the `- url` of the project(s) you are working with in the `antora-playbook.yml` under `sources`, and locate the branch(es) you have altered under that `- url`.
 . Add something like this to the end of the  `antora-playbook.yml`:
@@ -206,7 +206,7 @@ Furthermore the content may not appear in the normal Antora structure but may be
 === xrefs within an (Antora) component
 
 Generally there will never be a reason to refer from one version of a component to another version.
-To assure this happens without maintenance issues, leave out the version and component segments from the xref, e.g. in the `components` component
+To assure this happens without maintenance issues, leave out the version and component segments from the xref, for example, in the `components` component
 
 [source,adoc,subs=+attributes]
 xref{blank}:eips:enterprise-integration-patterns.adoc[]
@@ -220,7 +220,7 @@ Do this no matter how many locations the component is distributed over.
 
 An xref within the same module can leave out the module segment, although it does no harm.
 
-Do not specify the component name: if you do, the link will be to the `latest` (non-prerelease, i.e., non-`next`) version, not the current version.
+Do not specify the component name: if you do, the link will be to the `latest` (non-prerelease, that is, non-`next`) version, not the current version.
 
 === Links to the user manual
 
@@ -259,7 +259,7 @@ asciidoc:
 
 NOTE: Setting these up is WIP
 
-Use these attributes to refer to documentation for the related subproject, e.g.
+Use these attributes to refer to documentation for the related subproject, for example
 
 [source,adoc]
 xref{blank}:{camel-version}@components:eips:enterprise-integration-patterns.adoc[]

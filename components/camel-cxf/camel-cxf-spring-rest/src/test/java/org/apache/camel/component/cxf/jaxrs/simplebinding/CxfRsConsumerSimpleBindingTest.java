@@ -214,7 +214,7 @@ public class CxfRsConsumerSimpleBindingTest extends CamelTestSupport {
         get.addHeader("Accept", "text/xml");
         CloseableHttpResponse response = httpclient.execute(get);
         assertEquals(200, response.getCode());
-        Customer entity = (Customer) jaxb.createUnmarshaller().unmarshal(response.getEntity().getContent());
+        Customer entity = (Customer) jaxb.createUnmarshaler().unmarshal(response.getEntity().getContent());
         assertEquals(123, entity.getId());
     }
 
@@ -230,7 +230,7 @@ public class CxfRsConsumerSimpleBindingTest extends CamelTestSupport {
     public void testUpdateCustomerBodyAndHeaders() throws Exception {
         HttpPut put = new HttpPut("http://localhost:" + PORT_PATH + "/rest/customerservice/customers/123");
         StringWriter sw = new StringWriter();
-        jaxb.createMarshaller().marshal(new Customer(123, "Raul"), sw);
+        jaxb.createMarshaler().marshal(new Customer(123, "Raul"), sw);
         put.setEntity(new StringEntity(sw.toString()));
         put.addHeader("Content-Type", "text/xml");
         put.addHeader("Accept", "text/xml");
@@ -242,7 +242,7 @@ public class CxfRsConsumerSimpleBindingTest extends CamelTestSupport {
     public void testNewCustomerOnlyBody() throws Exception {
         HttpPost post = new HttpPost("http://localhost:" + PORT_PATH + "/rest/customerservice/customers");
         StringWriter sw = new StringWriter();
-        jaxb.createMarshaller().marshal(new Customer(123, "Raul"), sw);
+        jaxb.createMarshaler().marshal(new Customer(123, "Raul"), sw);
         post.setEntity(new StringEntity(sw.toString()));
         post.addHeader("Content-Type", "text/xml");
         post.addHeader("Accept", "text/xml");
@@ -257,7 +257,7 @@ public class CxfRsConsumerSimpleBindingTest extends CamelTestSupport {
         get.addHeader("Accept", "text/xml");
         CloseableHttpResponse response = httpclient.execute(get);
         assertEquals(200, response.getCode());
-        CustomerList cl = (CustomerList) jaxb.createUnmarshaller()
+        CustomerList cl = (CustomerList) jaxb.createUnmarshaler()
                 .unmarshal(new StringReader(EntityUtils.toString(response.getEntity())));
         List<Customer> vips = cl.getCustomers();
         assertEquals(2, vips.size());
@@ -269,7 +269,7 @@ public class CxfRsConsumerSimpleBindingTest extends CamelTestSupport {
     public void testUpdateVipCustomer() throws Exception {
         HttpPut put = new HttpPut("http://localhost:" + PORT_PATH + "/rest/customerservice/customers/vip/gold/123");
         StringWriter sw = new StringWriter();
-        jaxb.createMarshaller().marshal(new Customer(123, "Raul2"), sw);
+        jaxb.createMarshaler().marshal(new Customer(123, "Raul2"), sw);
         put.setEntity(new StringEntity(sw.toString()));
         put.addHeader("Content-Type", "text/xml");
         put.addHeader("Accept", "text/xml");
@@ -315,7 +315,7 @@ public class CxfRsConsumerSimpleBindingTest extends CamelTestSupport {
         builder.addBinaryBody("part2", new File(this.getClass().getClassLoader().getResource("java.jpg").toURI()),
                 ContentType.create("image/jpeg"), "java.jpg");
         StringWriter sw = new StringWriter();
-        jaxb.createMarshaller().marshal(new Customer(123, "Raul"), sw);
+        jaxb.createMarshaler().marshal(new Customer(123, "Raul"), sw);
         builder.addTextBody("body", sw.toString(), ContentType.TEXT_XML);
         post.setEntity(builder.build());
         CloseableHttpResponse response = httpclient.execute(post);
@@ -332,7 +332,7 @@ public class CxfRsConsumerSimpleBindingTest extends CamelTestSupport {
         builder.addBinaryBody("part2", new File(this.getClass().getClassLoader().getResource("java.jpg").toURI()),
                 ContentType.create("image/jpeg"), "java.jpg");
         StringWriter sw = new StringWriter();
-        jaxb.createMarshaller().marshal(new Customer(123, "Raul"), sw);
+        jaxb.createMarshaler().marshal(new Customer(123, "Raul"), sw);
         builder.addTextBody("body", sw.toString(), ContentType.TEXT_XML);
         post.setEntity(builder.build());
         CloseableHttpResponse response = httpclient.execute(post);

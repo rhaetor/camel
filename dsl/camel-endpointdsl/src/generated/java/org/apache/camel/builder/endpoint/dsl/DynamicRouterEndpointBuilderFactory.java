@@ -529,7 +529,7 @@ public interface DynamicRouterEndpointBuilderFactory {
             return this;
         }
         /**
-         * If enabled, then Camel will process replies out-of-order (e.g., in
+         * If enabled, then Camel will process replies out-of-order (for example, in
          * the order they come back). If disabled, Camel will process replies in
          * the same order as defined by the multicast.
          * 
@@ -546,7 +546,7 @@ public interface DynamicRouterEndpointBuilderFactory {
             return this;
         }
         /**
-         * If enabled, then Camel will process replies out-of-order (e.g., in
+         * If enabled, then Camel will process replies out-of-order (for example, in
          * the order they come back). If disabled, Camel will process replies in
          * the same order as defined by the multicast.
          * 

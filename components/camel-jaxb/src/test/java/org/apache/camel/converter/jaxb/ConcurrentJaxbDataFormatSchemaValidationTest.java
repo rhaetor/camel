@@ -36,18 +36,18 @@ public class ConcurrentJaxbDataFormatSchemaValidationTest extends CamelTestSuppo
 
     private static final Logger LOG = LoggerFactory.getLogger(ConcurrentJaxbDataFormatSchemaValidationTest.class);
 
-    @EndpointInject("mock:marshall")
-    private MockEndpoint mockMarshall;
+    @EndpointInject("mock:marshal")
+    private MockEndpoint mockMarshal;
 
-    @EndpointInject("mock:unmarshall")
-    private MockEndpoint mockUnmarshall;
+    @EndpointInject("mock:unmarshal")
+    private MockEndpoint mockUnmarshal;
 
     private int testCount = 1000;
     private int concurrencyLevel = 10;
 
     @Test
-    public void concurrentMarshallSuccess() throws Exception {
-        mockMarshall.expectedMessageCount(testCount);
+    public void concurrentMarshalSuccess() throws Exception {
+        mockMarshal.expectedMessageCount(testCount);
 
         Address address = new Address();
         address.setAddressLine1("Hauptstr. 1; 01129 Entenhausen");
@@ -59,13 +59,13 @@ public class ConcurrentJaxbDataFormatSchemaValidationTest extends CamelTestSuppo
 
         StopWatch watch = new StopWatch();
         for (int i = 0; i < testCount; i++) {
-            template.sendBody("seda:marshall", person);
+            template.sendBody("seda:marshal", person);
         }
 
         MockEndpoint.assertIsSatisfied(context);
         LOG.info("Validation of {} messages took {} ms", testCount, watch.taken());
 
-        String payload = mockMarshall.getExchanges().get(0).getIn().getBody(String.class);
+        String payload = mockMarshal.getExchanges().get(0).getIn().getBody(String.class);
         LOG.info(payload);
 
         assertTrue(payload.startsWith("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"));
@@ -81,8 +81,8 @@ public class ConcurrentJaxbDataFormatSchemaValidationTest extends CamelTestSuppo
     }
 
     @Test
-    public void concurrentUnmarshall() throws Exception {
-        mockUnmarshall.expectedMessageCount(testCount);
+    public void concurrentUnmarshal() throws Exception {
+        mockUnmarshal.expectedMessageCount(testCount);
 
         String xml = new StringBuilder("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>")
                 .append("<person xmlns=\"person.jaxb.converter.camel.apache.org\" xmlns:ns2=\"address.jaxb.converter.camel.apache.org\">")
@@ -97,13 +97,13 @@ public class ConcurrentJaxbDataFormatSchemaValidationTest extends CamelTestSuppo
 
         StopWatch watch = new StopWatch();
         for (int i = 0; i < testCount; i++) {
-            template.sendBody("seda:unmarshall", xml);
+            template.sendBody("seda:unmarshal", xml);
         }
 
         MockEndpoint.assertIsSatisfied(context, 20, TimeUnit.SECONDS);
         LOG.info("Validation of {} messages took {} ms", testCount, watch.taken());
 
-        Person person = mockUnmarshall.getExchanges().get(0).getIn().getBody(Person.class);
+        Person person = mockUnmarshal.getExchanges().get(0).getIn().getBody(Person.class);
 
         assertEquals("Christian", person.getFirstName());
         assertEquals("Mueller", person.getLastName());
@@ -119,13 +119,13 @@ public class ConcurrentJaxbDataFormatSchemaValidationTest extends CamelTestSuppo
                 jaxbDataFormat.setSchema("classpath:person.xsd,classpath:address.xsd");
                 jaxbDataFormat.setAccessExternalSchemaProtocols("file");
 
-                from("seda:marshall?concurrentConsumers=" + concurrencyLevel)
+                from("seda:marshal?concurrentConsumers=" + concurrencyLevel)
                         .marshal(jaxbDataFormat)
-                        .to("mock:marshall");
+                        .to("mock:marshal");
 
-                from("seda:unmarshall?concurrentConsumers=" + concurrencyLevel)
+                from("seda:unmarshal?concurrentConsumers=" + concurrencyLevel)
                         .unmarshal(jaxbDataFormat)
-                        .to("mock:unmarshall");
+                        .to("mock:unmarshal");
             }
         };
     }

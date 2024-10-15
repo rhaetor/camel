@@ -79,7 +79,7 @@ the rest of the route:
 from("zookeeper://localhost:39913/somepath/somenode").to("mock:result");
 ----
 
-If the node does not yet exist, then a flag can be supplied to have the
+If the node does not yet exist, then you can supply a flag to have the
 endpoint await its creation:
 
 [source,java]

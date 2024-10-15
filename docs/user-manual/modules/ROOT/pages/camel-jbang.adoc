@@ -162,7 +162,7 @@ You can also mix different xref:dsl.adoc[DSLs] such as yaml and Java:
 camel run one.yaml hello.java
 ----
 
-You can also use wildcards (i.e. `*`) to match multiple files, such as running all the yaml files:
+You can also use wildcards (that is, `*`) to match multiple files, such as running all the yaml files:
 
 [source,bash]
 ----
@@ -336,7 +336,7 @@ You can then simulate sending messages to Camel with the `cmd send` command:
 camel cmd send --body='Something here'
 ----
 
-Which then will send the message to the incoming endpoint in the route, i.e. `jms:inbox` which has been stubbed.
+Which then will send the message to the incoming endpoint in the route, that is, `jms:inbox` which has been stubbed.
 
 You can also stub a specific endpoint by providing the full uri, such as:
 
@@ -544,7 +544,7 @@ To use a profile, you specify as command line option `--profile` such as:
 camel run hello.java --profile=local
 ----
 
-You can only specify one profile name, i.e. `--profile=local,two` is not valid.
+You can only specify one profile name, that is, `--profile=local,two` is not valid.
 
 In the `properties` files you can configure all
 the configurations from xref:components:others:main.adoc[Camel Main].
@@ -752,7 +752,7 @@ then copy the URL from the browser window and run the example with Camel JBang:
 camel run https://github.com/apache/camel-kamelets-examples/tree/main/jbang/hello-java
 ----
 
-You can also use wildcards (i.e. `*`) to match multiple files, such as running all the groovy files:
+You can also use wildcards (that is, `*`) to match multiple files, such as running all the groovy files:
 
 [source,bash]
 ----
@@ -1141,7 +1141,7 @@ The `mqtt` argument is the name of the existing running Camel integration. You c
 So what happens is that Camel will let the existing integration send the message.
 
 Because the existing integration only have 1 route, then the `send` command will automatic pick
-the _from_ endpoint, i.e. `kamelet:mqtt5-source` with all its configuration. If there are multiple routes,
+the _from_ endpoint, that is, `kamelet:mqtt5-source` with all its configuration. If there are multiple routes,
 then you can filter which route/endpoint by the `--endpoint` option:
 
 For example to pick the first route by _route id_:
@@ -1349,7 +1349,7 @@ It is also possible to find and highlight keywords from the log using `--find`, 
 camel log chuck --find=invoice
 ----
 
-You can find multiple items by repeating the option, i.e.:
+You can find multiple items by repeating the option, that is:
 
 [source,bash]
 ----
@@ -1579,7 +1579,7 @@ camel get circuit-breaker
  56033  mycb  resilience4j  route1  circuitBreaker1  HALF_OPEN        5        2     3       0
 ----
 
-Here we can see the circuit breaker is in _half open_ state, i.e. a state where the breaker is attempting
+Here we can see the circuit breaker is in _half open_ state, that is, a state where the breaker is attempting
 to transition back to closed, if the failures start to drop.
 
 TIP: You can run the command with watch to keep showing the latest state `watch camel get circuit-breaker`.
@@ -3195,7 +3195,7 @@ camel export --runtime=quarkus --gav=com.foo:acme:1.0-SNAPSHOT --deps=camel:mana
 === Exporting with Camel CLI included
 
 Usually when exporting to Spring Boot, Quarkus or Camel Main, then Camel JBang CLI is not included out of the box.
-To be able to continue to use Camel CLI (i.e. `camel`), you need to add `camel:cli-connector` in the `--deps` option, as shown below:
+To be able to continue to use Camel CLI (that is, `camel`), you need to add `camel:cli-connector` in the `--deps` option, as shown below:
 
 [source,bash]
 ----

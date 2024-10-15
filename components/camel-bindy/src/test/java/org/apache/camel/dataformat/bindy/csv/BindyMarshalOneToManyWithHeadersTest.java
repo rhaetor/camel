@@ -49,7 +49,7 @@ public class BindyMarshalOneToManyWithHeadersTest {
 
     @Test
     @DirtiesContext
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         expected = "orderNumber,customerName,sku,quantity,unitPrice\r\n"
                    + "11111,Joe Blow,abc,1,3\r\n"
                    + "11111,Joe Blow,cde,3,2\r\n";

@@ -132,7 +132,7 @@ public abstract class HttpCommonEndpoint extends DefaultEndpoint implements Head
     boolean mapHttpMessageFormUrlEncodedBody = true;
     @UriParam(label = "producer,advanced", defaultValue = "200-299",
               description = "The status codes which are considered a success response. The values are inclusive. Multiple ranges can be"
-                            + " defined, separated by comma, e.g. 200-204,209,301-304. Each range must be a single number or from-to with the dash included.")
+                            + " defined, separated by comma, for example, 200-204,209,301-304. Each range must be a single number or from-to with the dash included.")
     private String okStatusCodeRange = "200-299";
     @UriParam(label = "consumer", defaultValue = "false",
               description = "Configure the consumer to work in async mode")
@@ -530,7 +530,7 @@ public abstract class HttpCommonEndpoint extends DefaultEndpoint implements Head
 
     /**
      * The status codes which are considered a success response. The values are inclusive. Multiple ranges can be
-     * defined, separated by comma, e.g. <tt>200-204,209,301-304</tt>. Each range must be a single number or from-to
+     * defined, separated by comma, for example, <tt>200-204,209,301-304</tt>. Each range must be a single number or from-to
      * with the dash included.
      * <p/>
      * The default range is <tt>200-299</tt>

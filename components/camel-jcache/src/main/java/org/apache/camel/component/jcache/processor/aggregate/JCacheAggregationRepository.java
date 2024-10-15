@@ -115,7 +115,7 @@ public class JCacheAggregationRepository extends ServiceSupport
             DefaultExchangeHolder newHolder = DefaultExchangeHolder.marshal(newExchange, true, allowSerializedHeaders);
             DefaultExchangeHolder oldHolder = cache.getAndPut(key, newHolder);
             if (oldHolder != null) {
-                Exchange exchange = unmarshallExchange(camelContext, oldHolder);
+                Exchange exchange = unmarshalExchange(camelContext, oldHolder);
                 LOG.error(
                         "Optimistic locking failed for exchange with key {}: IMap#putIfAbsend returned Exchange with ID {}, while it's expected no exchanges to be returned",
                         key,
@@ -145,12 +145,12 @@ public class JCacheAggregationRepository extends ServiceSupport
         LOG.trace("Adding an Exchange with ID {} for key {} in a thread-safe manner.", exchange.getExchangeId(), key);
         DefaultExchangeHolder newHolder = DefaultExchangeHolder.marshal(exchange, true, allowSerializedHeaders);
         DefaultExchangeHolder oldHolder = cache.getAndPut(key, newHolder);
-        return unmarshallExchange(camelContext, oldHolder);
+        return unmarshalExchange(camelContext, oldHolder);
     }
 
     @Override
     public Exchange get(CamelContext camelContext, String key) {
-        return unmarshallExchange(camelContext, cache.get(key));
+        return unmarshalExchange(camelContext, cache.get(key));
     }
 
     @Override
@@ -205,7 +205,7 @@ public class JCacheAggregationRepository extends ServiceSupport
         cacheManager.close();
     }
 
-    protected Exchange unmarshallExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
+    protected Exchange unmarshalExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
         Exchange exchange = null;
         if (holder != null) {
             exchange = new DefaultExchange(camelContext);

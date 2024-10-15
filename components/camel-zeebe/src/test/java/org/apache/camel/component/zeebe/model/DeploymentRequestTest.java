@@ -42,13 +42,13 @@ public class DeploymentRequestTest {
 
     @Test
     public void unmarshalTest() {
-        DeploymentRequest unmarshalledMessage1
+        DeploymentRequest unmarshaledMessage1
                 = assertDoesNotThrow(() -> objectMapper.readValue(MARSHAL_TEST_RESULT_1, DeploymentRequest.class));
 
         DeploymentRequest message = new DeploymentRequest();
         message.setName("test.bpmn");
         message.setContent("test content".getBytes());
 
-        assertEquals(message, unmarshalledMessage1);
+        assertEquals(message, unmarshaledMessage1);
     }
 }

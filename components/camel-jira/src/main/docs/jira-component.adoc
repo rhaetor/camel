@@ -148,7 +148,7 @@ automatically set the JQL as:
 * append `ORDER BY key desc` to your JQL
 * prepend `id > latestIssueId` to retrieve issues added after the camel route was started.
 
-This is in order to optimize startup processing, rather than having to index every single
+This is to optimize startup processing, rather than having to index every single
 issue in the project.
 
 Another note is that, similarly, the newComments consumer will have to
@@ -237,13 +237,13 @@ Required:
 
 == WatchUpdates (consumer)
 
-* `watchedFields` Comma separated list of fields to watch for changes i.e. `Status,Priority,Assignee,Components` etc.
+* `watchedFields` Comma separated list of fields to watch for changes that is, `Status,Priority,Assignee,Components` etc.
 * `sendOnlyUpdatedField` By default, only the changed field is sent as the body.
 
 All messages also contain the following headers that add additional info about the change:
 
 * `issueKey`: Key of the updated issue
-* `changed`: name of the updated field (i.e., Status)
+* `changed`: name of the updated field (that is, Status)
 * `watchedIssues`: list of all issue keys that are watched in the time of update
 
 

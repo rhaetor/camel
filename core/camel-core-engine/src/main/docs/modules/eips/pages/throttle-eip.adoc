@@ -64,7 +64,7 @@ YAML::
 ====
 
 To use 10-seconds window, we set the `timePeriodMillis` to ten-thousand.
-The default value is 1000 (i.e., 1 second),
+The default value is 1000 (that is, 1 second),
 meaning that setting just `throttle(3)` has the effect of setting the maximum number of requests per second.
 
 To throttle by 50 requests per second, it would look like this:

@@ -189,7 +189,7 @@ public class UnmarshalDefinition extends NoOutputDefinition<UnmarshalDefinition>
     }
 
     /**
-     * Indicates whether {@code null} is allowed as value of a body to unmarshall.
+     * Indicates whether {@code null} is allowed as value of a body to unmarshal.
      */
     public void setAllowNullBody(String allowNullBody) {
         this.allowNullBody = allowNullBody;
@@ -223,9 +223,9 @@ public class UnmarshalDefinition extends NoOutputDefinition<UnmarshalDefinition>
     }
 
     /**
-     * Indicates whether {@code null} is allowed as value of a body to unmarshall.
+     * Indicates whether {@code null} is allowed as value of a body to unmarshal.
      *
-     * @param  allowNullBody {@code true} if {@code null} is allowed as value of a body to unmarshall, {@code false}
+     * @param  allowNullBody {@code true} if {@code null} is allowed as value of a body to unmarshal, {@code false}
      *                       otherwise
      * @return               the builder
      */

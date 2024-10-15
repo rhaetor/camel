@@ -34,7 +34,7 @@ public class WhatsAppConfiguration {
     private String phoneNumberId;
 
     @UriParam(label = "advanced",
-              description = "Can be used to set an alternative base URI, e.g. when you want to test the component against a mock WhatsApp API")
+              description = "Can be used to set an alternative base URI, for example, when you want to test the component against a mock WhatsApp API")
     private String baseUri;
 
     @UriParam(description = "Facebook graph api version.", label = "advanced")

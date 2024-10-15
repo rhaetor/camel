@@ -71,9 +71,9 @@ public class JaxbConcurrentDataFormatTest extends CamelTestSupport {
             public void configure() {
                 DataFormat jaxb = new JaxbDataFormat("org.apache.camel.example");
 
-                from("direct:start").marshal(jaxb).to("direct:marshalled");
+                from("direct:start").marshal(jaxb).to("direct:marshaled");
 
-                from("direct:marshalled").unmarshal(jaxb).to("mock:result");
+                from("direct:marshaled").unmarshal(jaxb).to("mock:result");
             }
         };
     }

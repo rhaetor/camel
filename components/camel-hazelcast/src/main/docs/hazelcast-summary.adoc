@@ -141,7 +141,7 @@ of hazelcast across all bundles in the same container. You can publish
 the instance as an OSGI service and bundles using the cache al need is
 to reference the service in the hazelcast endpoint.
 
-=== Bundle A create an instance and publish it as an OSGI service
+=== Bundle A: create an instance and publish it as an OSGI service
 
 [source,xml]
 --------------------------------------------------------------------------------------------------------
@@ -157,7 +157,7 @@ to reference the service in the hazelcast endpoint.
 <service ref="hazelcastInstance" interface="com.hazelcast.core.HazelcastInstance" />
 --------------------------------------------------------------------------------------------------------
 
-=== Bundle B uses the instance
+=== Bundle B: use the instance
 
 [source,xml]
 --------------------------------------------------------------------------------------

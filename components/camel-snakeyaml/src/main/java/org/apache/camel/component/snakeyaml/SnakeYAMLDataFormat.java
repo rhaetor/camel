@@ -335,7 +335,7 @@ public final class SnakeYAMLDataFormat extends ServiceSupport implements DataFor
     }
 
     /**
-     * Set the types SnakeYAML is allowed to un-marshall
+     * Set the types SnakeYAML is allowed to un-marshal
      */
     public void setTypeFilters(List<TypeFilter> typeFilters) {
         this.typeFilters = new CopyOnWriteArrayList<>(typeFilters);

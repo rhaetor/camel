@@ -30,7 +30,7 @@ import org.apache.camel.component.jackson.transform.JsonPojoDataTypeTransformer;
 import org.apache.camel.spi.DataTypeTransformer;
 
 /**
- * Data type able to unmarshal Exchange body to Java object. Supports both Protobuf schema types and uses Jackson
+ * Data type able to unmarshalExchange body to Java object. Supports both Protobuf schema types and uses Jackson
  * Protobuf object mapper implementation for the unmarshal operation. Requires proper setting of content schema, class
  * and schema type in Exchange properties (usually resolved via Json schema resolver).
  */

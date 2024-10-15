@@ -29,7 +29,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvMarshallTrimClipTest {
+public class BindySimpleCsvMarshalTrimClipTest {
 
     private static final String URI_MOCK_RESULT = "mock:result";
     private static final String URI_DIRECT_START = "direct:start";
@@ -44,7 +44,7 @@ public class BindySimpleCsvMarshallTrimClipTest {
 
     @Test
     @DirtiesContext
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
         expected = "Mr,John,Doeeeeeeee,Cityyyyyyy\r\n";
         result.expectedBodiesReceived(expected);
 

@@ -103,7 +103,7 @@ YAML::
 ====
 
 Instead of passing the name of the reference to the bean (so that Camel will
-look up for it in the registry), you can provide the bean:
+look for it in the registry), you can provide the bean:
 
 [tabs]
 ====

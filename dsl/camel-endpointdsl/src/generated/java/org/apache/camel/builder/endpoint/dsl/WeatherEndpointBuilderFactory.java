@@ -380,7 +380,7 @@ public interface WeatherEndpointBuilderFactory {
             return this;
         }
         /**
-         * Zip-code, e.g. 94040,us.
+         * Zip-code, for example, 94040,us.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
          * 
@@ -1492,7 +1492,7 @@ public interface WeatherEndpointBuilderFactory {
             return this;
         }
         /**
-         * Zip-code, e.g. 94040,us.
+         * Zip-code, for example, 94040,us.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
          * 
@@ -2014,7 +2014,7 @@ public interface WeatherEndpointBuilderFactory {
             return this;
         }
         /**
-         * Zip-code, e.g. 94040,us.
+         * Zip-code, for example, 94040,us.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
          * 

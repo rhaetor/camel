@@ -34,9 +34,9 @@ public class SpringJacksonJsonDataFormatNamingStrategyTest extends CamelSpringTe
 
         MockEndpoint mock = getMockEndpoint("mock:result");
         mock.expectedMessageCount(1);
-        Object marshalled = template.requestBody("direct:in", pojoNamingStrategy);
-        String marshalledAsString = context.getTypeConverter().convertTo(String.class, marshalled);
-        assertEquals("{\"field.one\":\"test\",\"field.two\":\"supertest\"}", marshalledAsString);
+        Object marshaled = template.requestBody("direct:in", pojoNamingStrategy);
+        String marshaledAsString = context.getTypeConverter().convertTo(String.class, marshaled);
+        assertEquals("{\"field.one\":\"test\",\"field.two\":\"supertest\"}", marshaledAsString);
 
         mock.assertIsSatisfied();
     }

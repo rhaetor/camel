@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
  * when registering new tasks for execution.
  * <p/>
  * Instances of {@link RejectableFutureTask} are required to handle {@link ThreadPoolRejectedPolicy#Abort} policies
- * correctly, e.g. notify {@link Callable} and {@link Runnable} tasks when they are rejected. To be notified of
+ * correctly, for example, notify {@link Callable} and {@link Runnable} tasks when they are rejected. To be notified of
  * rejection tasks have to implement {@link Rejectable} interface: <br/>
  * <code><pre>
  * public class RejectableTask implements Runnable, Rejectable {

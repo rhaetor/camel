@@ -83,7 +83,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
     private String disableFeatures;
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean")
-    private String allowUnmarshallType;
+    private String allowUnmarshalType;
     @XmlAttribute
     @Metadata(label = "advanced")
     private String timezone;
@@ -99,7 +99,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
     @XmlAttribute
     @Metadata(javaType = "java.lang.Boolean", defaultValue = "true",
               description = "Whether the data format should set the Content-Type header with the type from the data format."
-                            + " For example application/xml for data formats marshalling to XML, or application/json for data formats marshalling to JSON")
+                            + " For example application/xml for data formats marshaling to XML, or application/json for data formats marshaling to JSON")
     private String contentTypeHeader;
 
     public ProtobufDataFormat() {
@@ -143,7 +143,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         this.moduleRefs = builder.moduleRefs;
         this.enableFeatures = builder.enableFeatures;
         this.disableFeatures = builder.disableFeatures;
-        this.allowUnmarshallType = builder.allowUnmarshallType;
+        this.allowUnmarshalType = builder.allowUnmarshalType;
         this.timezone = builder.timezone;
         this.schemaResolver = builder.schemaResolver;
         this.autoDiscoverSchemaResolver = builder.autoDiscoverSchemaResolver;
@@ -162,7 +162,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
     }
 
     /**
-     * Name of class to use when unmarshalling
+     * Name of class to use when unmarshaling
      */
     public void setInstanceClass(String instanceClass) {
         this.instanceClass = instanceClass;
@@ -235,7 +235,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
     }
 
     /**
-     * Class name of the java type to use when unmarshalling
+     * Class name of the java type to use when unmarshaling
      */
     public void setUnmarshalTypeName(String unmarshalTypeName) {
         this.unmarshalTypeName = unmarshalTypeName;
@@ -246,7 +246,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
     }
 
     /**
-     * Class of the java type to use when unmarshalling
+     * Class of the java type to use when unmarshaling
      */
     public void setUnmarshalType(Class<?> unmarshalType) {
         this.unmarshalType = unmarshalType;
@@ -257,7 +257,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
     }
 
     /**
-     * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
+     * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
      * can use JSON views to accomplish this. This option is to refer to the class which has @JsonView annotations
      */
     public void setJsonViewTypeName(String jsonViewTypeName) {
@@ -269,7 +269,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
     }
 
     /**
-     * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
+     * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson you
      * can use JSON views to accomplish this. This option is to refer to the class which has @JsonView annotations
      */
     public void setJsonView(Class<?> jsonView) {
@@ -390,18 +390,18 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         this.disableFeatures = disableFeatures;
     }
 
-    public String getAllowUnmarshallType() {
-        return allowUnmarshallType;
+    public String getAllowUnmarshalType() {
+        return allowUnmarshalType;
     }
 
     /**
      * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-     * unmarshalling.
+     * unmarshaling.
      * <p/>
      * This should only be enabled when desired to be used.
      */
-    public void setAllowUnmarshallType(String allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public void setAllowUnmarshalType(String allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
     }
 
     public String getTimezone() {
@@ -409,7 +409,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
     }
 
     /**
-     * If set then Jackson will use the Timezone when marshalling/unmarshalling.
+     * If set then Jackson will use the Timezone when marshaling/unmarshaling.
      */
     public void setTimezone(String timezone) {
         this.timezone = timezone;
@@ -525,12 +525,12 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         return this;
     }
 
-    public ProtobufDataFormat allowUnmarshallType(boolean allowUnmarshallType) {
-        return allowUnmarshallType(Boolean.toString(allowUnmarshallType));
+    public ProtobufDataFormat allowUnmarshalType(boolean allowUnmarshalType) {
+        return allowUnmarshalType(Boolean.toString(allowUnmarshalType));
     }
 
-    public ProtobufDataFormat allowUnmarshallType(String allowUnmarshallType) {
-        this.allowUnmarshallType = allowUnmarshallType;
+    public ProtobufDataFormat allowUnmarshalType(String allowUnmarshalType) {
+        this.allowUnmarshalType = allowUnmarshalType;
         return this;
     }
 
@@ -567,7 +567,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         private String moduleRefs;
         private String enableFeatures;
         private String disableFeatures;
-        private String allowUnmarshallType;
+        private String allowUnmarshalType;
         private String timezone;
         private String schemaResolver;
         private String autoDiscoverSchemaResolver;
@@ -575,7 +575,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         private String contentTypeHeader;
 
         /**
-         * Name of class to use when unmarshalling
+         * Name of class to use when unmarshaling
          */
         public Builder instanceClass(String instanceClass) {
             this.instanceClass = instanceClass;
@@ -640,7 +640,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         }
 
         /**
-         * Class name of the java type to use when unmarshalling
+         * Class name of the java type to use when unmarshaling
          */
         public Builder unmarshalTypeName(String unmarshalTypeName) {
             this.unmarshalTypeName = unmarshalTypeName;
@@ -648,7 +648,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         }
 
         /**
-         * Class of the java type to use when unmarshalling
+         * Class of the java type to use when unmarshaling
          */
         public Builder unmarshalType(Class<?> unmarshalType) {
             this.unmarshalType = unmarshalType;
@@ -656,7 +656,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         }
 
         /**
-         * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
+         * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
          * you can use JSON views to accomplish this. This option is to refer to the class which has @JsonView
          * annotations
          */
@@ -666,7 +666,7 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
         }
 
         /**
-         * When marshalling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
+         * When marshaling a POJO to JSON you might want to exclude certain fields from the JSON output. With Jackson
          * you can use JSON views to accomplish this. This option is to refer to the class which has @JsonView
          * annotations
          */
@@ -781,28 +781,28 @@ public class ProtobufDataFormat extends DataFormatDefinition implements ContentT
 
         /**
          * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(String allowUnmarshallType) {
-            this.allowUnmarshallType = allowUnmarshallType;
+        public Builder allowUnmarshalType(String allowUnmarshalType) {
+            this.allowUnmarshalType = allowUnmarshalType;
             return this;
         }
 
         /**
          * If enabled then Jackson is allowed to attempt to use the CamelJacksonUnmarshalType header during the
-         * unmarshalling.
+         * unmarshaling.
          * <p/>
          * This should only be enabled when desired to be used.
          */
-        public Builder allowUnmarshallType(boolean allowUnmarshallType) {
-            this.allowUnmarshallType = Boolean.toString(allowUnmarshallType);
+        public Builder allowUnmarshalType(boolean allowUnmarshalType) {
+            this.allowUnmarshalType = Boolean.toString(allowUnmarshalType);
             return this;
         }
 
         /**
-         * If set then Jackson will use the Timezone when marshalling/unmarshalling.
+         * If set then Jackson will use the Timezone when marshaling/unmarshaling.
          */
         public Builder timezone(String timezone) {
             this.timezone = timezone;

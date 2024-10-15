@@ -61,7 +61,7 @@ public class JsonApiDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The classes to take into account for the marshalling. Multiple classes can be separated by comma.
+     * The classes to take into account for the marshaling. Multiple classes can be separated by comma.
      */
     public void setDataFormatTypes(String dataFormatTypes) {
         this.dataFormatTypes = dataFormatTypes;
@@ -72,7 +72,7 @@ public class JsonApiDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The classes to take into account for the marshalling.
+     * The classes to take into account for the marshaling.
      */
     public void setDataFormatTypeClasses(Class<?>[] dataFormatTypeClasses) {
         this.dataFormatTypeClasses = dataFormatTypeClasses;
@@ -83,7 +83,7 @@ public class JsonApiDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The class to take into account while unmarshalling.
+     * The class to take into account while unmarshaling.
      */
     public void setMainFormatType(String mainFormatType) {
         this.mainFormatType = mainFormatType;
@@ -94,7 +94,7 @@ public class JsonApiDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * The classes to take into account while unmarshalling.
+     * The classes to take into account while unmarshaling.
      */
     public void setMainFormatTypeClass(Class<?> mainFormatTypeClass) {
         this.mainFormatTypeClass = mainFormatTypeClass;
@@ -112,7 +112,7 @@ public class JsonApiDataFormat extends DataFormatDefinition {
         private Class<?> mainFormatTypeClass;
 
         /**
-         * The classes to take into account for the marshalling,
+         * The classes to take into account for the marshaling,
          */
         public Builder dataFormatTypes(Class<?>[] dataFormatTypes) {
             this.dataFormatTypeClasses = dataFormatTypes;
@@ -120,7 +120,7 @@ public class JsonApiDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * The classes (FQN name) to take into account for the marshalling. Multiple class names can be separated by
+         * The classes (FQN name) to take into account for the marshaling. Multiple class names can be separated by
          * comma.
          */
         public Builder dataFormatTypes(String dataFormatTypes) {
@@ -129,7 +129,7 @@ public class JsonApiDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * The classes to take into account while unmarshalling,
+         * The classes to take into account while unmarshaling,
          */
         public Builder mainFormatType(Class<?> mainFormatType) {
             this.mainFormatTypeClass = mainFormatType;
@@ -137,7 +137,7 @@ public class JsonApiDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * The class (FQN name) to take into account while unmarshalling,
+         * The class (FQN name) to take into account while unmarshaling,
          */
         public Builder mainFormatType(String mainFormatType) {
             this.mainFormatType = mainFormatType;

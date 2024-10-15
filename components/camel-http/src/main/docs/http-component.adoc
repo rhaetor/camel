@@ -88,10 +88,9 @@ the following System Properties, and it will use it:
 
 == Response code
 
-Camel will handle, according to the HTTP response code:
+Camel will handle according to the HTTP response code:
 
-* Response code is in the range 100..299, Camel regards it as a success
-response.
+* Response code is in the range 100..299, Camel regards it as a success response.
 * Response code is in the range 300..399, Camel regards it as a
 redirection response and will throw a `HttpOperationFailedException`
 with the information.

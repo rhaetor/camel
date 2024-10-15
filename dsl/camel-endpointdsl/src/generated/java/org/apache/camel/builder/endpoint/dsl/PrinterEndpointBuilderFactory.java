@@ -118,7 +118,7 @@ public interface PrinterEndpointBuilderFactory {
          * Sets the stationary as defined by enumeration names in the
          * javax.print.attribute.standard.MediaSizeName API. The default setting
          * is to use North American Letter sized stationary. The value's case is
-         * ignored, e.g. values of iso_a4 and ISO_A4 may be used.
+         * ignored, for example, values of iso_a4 and ISO_A4 may be used.
          * 
          * The option is a: &lt;code&gt;java.lang.String&lt;/code&gt; type.
          * 

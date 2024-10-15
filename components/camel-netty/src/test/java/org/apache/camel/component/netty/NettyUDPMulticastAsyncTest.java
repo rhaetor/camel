@@ -29,9 +29,9 @@ import org.junit.jupiter.api.Test;
 /**
  * To run this test manually through Maven first remove the {@link Disabled} annotation below, then make sure you've got
  * a network interface with the name <code>en0</code> as given by the route below. If this is not the case run your OS
- * specific command to find out which network interfaces you've got supporting IPv4 (e.g. on OS-X that would be the
+ * specific command to find out which network interfaces you've got supporting IPv4 (for example, on OS-X that would be the
  * {@code ifconfig -a} command. Next you need to enable UDP multicast on your OS for the given multicast address of this
- * test ({@code 224.1.2.3}). For this purpose e.g. on OS-X follow the steps being described
+ * test ({@code 224.1.2.3}). For this purpose for example, on OS-X follow the steps being described
  * <a href= "http://blogs.agilefaqs.com/2009/11/08/enabling-multicast-on-your-macos-unix/" >here</a>. Now running the
  * test manually should succeed (<b>but only</b> when using Java7+):
  *

@@ -53,7 +53,7 @@ public class ValidationTest extends ContextTestSupport {
         } catch (RuntimeCamelException e) {
             // the expected empty catch block here is not intended for this
             // class itself but the subclasses
-            // e.g. ValidationWithErrorInHandleAndFinallyBlockTest where
+            // For example, ValidationWithErrorInHandleAndFinallyBlockTest where
             // noErrorHandler() is being installed.
             // this's also why there's no fail("Should have thrown an
             // exception") call here right after

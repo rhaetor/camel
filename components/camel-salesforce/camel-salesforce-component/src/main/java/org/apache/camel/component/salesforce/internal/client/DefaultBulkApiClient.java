@@ -28,8 +28,8 @@ import java.util.Map;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Marshaler;
+import jakarta.xml.bind.Unmarshaler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
@@ -439,7 +439,7 @@ public class DefaultBulkApiClient extends AbstractClientBase implements BulkApiC
 
     private <T> T unmarshalResponse(InputStream response, Request request, Class<T> resultClass) throws SalesforceException {
         try {
-            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Unmarshaler unmarshaler = context.createUnmarshaler();
 
             // Disable XXE
             SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -455,7 +455,7 @@ public class DefaultBulkApiClient extends AbstractClientBase implements BulkApiC
             }
             Source xmlSource = new SAXSource(spf.newSAXParser().getXMLReader(), new InputSource(response));
 
-            JAXBElement<T> result = unmarshaller.unmarshal(xmlSource, resultClass);
+            JAXBElement<T> result = unmarshaler.unmarshal(xmlSource, resultClass);
             return result.getValue();
         } catch (JAXBException | SAXException | ParserConfigurationException e) {
             throw new SalesforceException(
@@ -472,9 +472,9 @@ public class DefaultBulkApiClient extends AbstractClientBase implements BulkApiC
 
     private void marshalRequest(Object input, Request request, String contentType) throws SalesforceException {
         try {
-            Marshaller marshaller = context.createMarshaller();
+            Marshaler marshaler = context.createMarshaler();
             ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
-            marshaller.marshal(input, byteStream);
+            marshaler.marshal(input, byteStream);
 
             request.body(new BytesRequestContent(contentType, byteStream.toByteArray()));
         } catch (Exception e) {

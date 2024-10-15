@@ -67,7 +67,7 @@ public class ListObjectsJsonFunctionalTest extends CamelTestSupport {
         MockEndpoint mock = getMockEndpoint("mock:list_objects_result");
         mock.expectedMinimumMessageCount(1);
 
-        // More parameters can be added to the Json string below. E.g. delimiter, marker, maxKeys, prefix
+        // More parameters can be added to the Json string below. For example, delimiter, marker, maxKeys, prefix
         String request = "{\"bucketName\":\"" + BUCKET_NAME + "\"}";
         template.sendBody("direct:list_objects", request);
         Exchange responseExchange = mock.getExchanges().get(0);

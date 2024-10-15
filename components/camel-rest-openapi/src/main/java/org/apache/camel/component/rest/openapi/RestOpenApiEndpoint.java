@@ -124,7 +124,7 @@ public final class RestOpenApiEndpoint extends DefaultEndpoint {
 
     @UriParam(description = "Scheme hostname and port to direct the HTTP requests to in the form of"
                             + " `http[s]://hostname[:port]`. Can be configured at the endpoint, component or in the corresponding"
-                            + " REST configuration in the Camel Context. If you give this component a name (e.g. `petstore`) that"
+                            + " REST configuration in the Camel Context. If you give this component a name (for example, `petstore`) that"
                             + " REST configuration is consulted first, `rest-openapi` next, and global configuration last. If set"
                             + " overrides any value found in the OpenApi specification, RestConfiguration. Overrides all other "
                             + " configuration.",
@@ -145,7 +145,7 @@ public final class RestOpenApiEndpoint extends DefaultEndpoint {
                            + " specification, but these can be overridden with properties on the component or endpoint level. If not"
                            + " given the component tries to load `openapi.json` resource from the classpath. Note that the `host` defined on the"
                            + " component and endpoint of this Component should contain the scheme, hostname and optionally the"
-                           + " port in the URI syntax (i.e. `http://api.example.com:8080`). Overrides component configuration."
+                           + " port in the URI syntax (that is, `http://api.example.com:8080`). Overrides component configuration."
                            + " The OpenApi specification can be loaded from different sources by prefixing with file: classpath: http: https:."
                            + " Support for https is limited to using the JDK installed UrlHandler, and as such it can be cumbersome to setup"
                            + " TLS/SSL certificates for https (such as setting a number of javax.net.ssl JVM system properties)."
@@ -484,7 +484,7 @@ public final class RestOpenApiEndpoint extends DefaultEndpoint {
         }
 
         // pass properties that might be applied if the delegate component is
-        // created, i.e. if it's not
+        // created, that is, if it's not
         // present in the Camel Context already
         final Map<String, Object> componentParameters = new HashMap<>();
 
@@ -805,7 +805,7 @@ public final class RestOpenApiEndpoint extends DefaultEndpoint {
         File tmpFileToDelete = null;
         try {
             Resource resource = ResourceHelper.resolveMandatoryResource(camelContext, uriAsString);
-            //if location can not be used in Swagger API (e.g. in case of "bean;")
+            //if location can not be used in Swagger API (for example, in case of "bean;")
             // the content of the resource has to be copied into a tmp file for swagger API.
             String locationToSearch;
             if ("bean:".equals(ResourceHelper.getScheme(uriAsString))) {

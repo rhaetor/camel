@@ -49,7 +49,7 @@ import org.slf4j.LoggerFactory;
  * A resequencer that re-orders a (continuous) stream of {@link Exchange}s. The algorithm implemented by
  * {@link ResequencerEngine} is based on the detection of gaps in a message stream rather than on a fixed batch size.
  * Gap detection in combination with timeouts removes the constraint of having to know the number of messages of a
- * sequence (i.e. the batch size) in advance.
+ * sequence (that is, the batch size) in advance.
  * <p>
  * Messages must contain a unique sequence number for which a predecessor and a successor is known. For example a
  * message with the sequence number 3 has a predecessor message with the sequence number 2 and a successor message with

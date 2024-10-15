@@ -239,7 +239,7 @@ https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/athena
 in the body plus the NextToken value as a header (`CamelAwsAthenaNextToken`), which can be used to manually page
 through the results 1,000 rows at a time.
 
-`S3Pointer` - return an S3 path (e.g. `s3://bucket/path/`) pointing to the results:
+`S3Pointer` - return an S3 path (for example, `s3://bucket/path/`) pointing to the results:
 
 [source,java]
 --------------------------------------------------------------------------------
@@ -251,7 +251,7 @@ from("direct:start")
 --------------------------------------------------------------------------------
 
 The preceding example will return an
-S3 path (e.g. `s3://bucket/path/`) in the body pointing to the results.  The path will also be set in a header
+S3 path (for example, `s3://bucket/path/`) in the body pointing to the results.  The path will also be set in a header
 (`CamelAwsAthenaOutputLocation`).
 
 - listQueryExecutions: this operation returns a list of query execution IDs

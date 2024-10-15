@@ -41,7 +41,7 @@ public class FhirUpdate {
     /**
      * Updates a {@link IBaseResource} on the server by id
      *
-     * @param resource        The resource to update (e.g. Patient)
+     * @param resource        The resource to update (for example, Patient)
      * @param id              the {@link IIdType} referencing the resource
      * @param preferReturn    whether the server include or suppress the resource body as a part of the result
      * @param extraParameters see {@link ExtraParameters} for a full list of parameters that can be passed, may be NULL
@@ -73,7 +73,7 @@ public class FhirUpdate {
     /**
      * Updates a {@link IBaseResource} on the server by id
      *
-     * @param resource        The resource to update (e.g. Patient)
+     * @param resource        The resource to update (for example, Patient)
      * @param stringId        the ID referencing the resource
      * @param preferReturn    whether the server include or suppress the resource body as a part of the result
      * @param extraParameters see {@link ExtraParameters} for a full list of parameters that can be passed, may be NULL
@@ -107,7 +107,7 @@ public class FhirUpdate {
     /**
      * Updates a {@link IBaseResource} on the server by search url
      *
-     * @param resource        The resource to update (e.g. Patient)
+     * @param resource        The resource to update (for example, Patient)
      * @param url             Specifies that the update should be performed as a conditional create against a given
      *                        search URL.
      * @param preferReturn    whether the server include or suppress the resource body as a part of the result

@@ -157,7 +157,7 @@ public class XmlSignerConfiguration extends XmlSignatureConfiguration {
     }
 
     /**
-     * In order to protect the KeyInfo element from tampering you can add a reference to the signed info element so that
+     * To protect the KeyInfo element from tampering you can add a reference to the signed info element so that
      * it is protected via the signature value. The default value is <tt>true</tt>.
      * <p>
      * Only relevant when a KeyInfo is returned by {@link KeyAccessor}. and {@link KeyInfo#getId()} is not

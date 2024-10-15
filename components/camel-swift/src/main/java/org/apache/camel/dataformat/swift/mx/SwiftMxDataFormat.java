@@ -41,22 +41,22 @@ import org.apache.camel.support.service.ServiceSupport;
 @Metadata(firstVersion = "3.20.0", title = "SWIFT MX")
 public class SwiftMxDataFormat extends ServiceSupport implements DataFormat, DataFormatName {
     /**
-     * The specific configuration to use when marshalling a message. Ignored if {@code writeInJson} is set to
+     * The specific configuration to use when marshaling a message. Ignored if {@code writeInJson} is set to
      * {@code true}.
      */
     private MxWriteConfiguration writeConfig;
     /**
-     * The flag indicating that messages must be marshalled in a JSON format. If {@code true}, the value of
+     * The flag indicating that messages must be marshaled in a JSON format. If {@code true}, the value of
      * {@code writeConfig} is ignored.
      */
     private boolean writeInJson;
     /**
-     * The type of MX message to produce when unmarshalling an input stream. If not set, it will be automatically
+     * The type of MX message to produce when unmarshaling an input stream. If not set, it will be automatically
      * detected from the namespace used.
      */
     private MxId readMessageId;
     /**
-     * The specific configuration to use when unmarshalling an input stream.
+     * The specific configuration to use when unmarshaling an input stream.
      */
     private MxReadConfiguration readConfig;
 
@@ -69,10 +69,10 @@ public class SwiftMxDataFormat extends ServiceSupport implements DataFormat, Dat
     /**
      * Constructs a {@code SwiftMxDataFormat} with the given parameters.
      *
-     * @param writeInJson   the flag indicating that messages must be marshalled in a JSON format.
-     * @param readMessageId the type of MX message to produce when unmarshalling an input stream. If not set, it will be
+     * @param writeInJson   the flag indicating that messages must be marshaled in a JSON format.
+     * @param readMessageId the type of MX message to produce when unmarshaling an input stream. If not set, it will be
      *                      automatically detected from the namespace used.
-     * @param readConfig    the specific configuration to use when unmarshalling an input stream.
+     * @param readConfig    the specific configuration to use when unmarshaling an input stream.
      */
     public SwiftMxDataFormat(boolean writeInJson, MxId readMessageId, MxReadConfiguration readConfig) {
         this.writeInJson = writeInJson;
@@ -83,10 +83,10 @@ public class SwiftMxDataFormat extends ServiceSupport implements DataFormat, Dat
     /**
      * Constructs a {@code SwiftMxDataFormat} with the given parameters.
      *
-     * @param writeConfig   the specific configuration to use when marshalling a message.
-     * @param readMessageId the type of MX message to produce when unmarshalling an input stream. If not set, it will be
+     * @param writeConfig   the specific configuration to use when marshaling a message.
+     * @param readMessageId the type of MX message to produce when unmarshaling an input stream. If not set, it will be
      *                      automatically detected from the namespace used.
-     * @param readConfig    the specific configuration to use when unmarshalling an input stream.
+     * @param readConfig    the specific configuration to use when unmarshaling an input stream.
      */
     public SwiftMxDataFormat(MxWriteConfiguration writeConfig, MxId readMessageId, MxReadConfiguration readConfig) {
         this.writeConfig = writeConfig;
@@ -129,7 +129,7 @@ public class SwiftMxDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * @return the specific configuration to use when marshalling a message. Ignored if {@code writeInJson} is set to
+     * @return the specific configuration to use when marshaling a message. Ignored if {@code writeInJson} is set to
      *         {@code true}.
      */
     public MxWriteConfiguration getWriteConfig() {
@@ -149,7 +149,7 @@ public class SwiftMxDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * @return the type of MX message to produce when unmarshalling an input stream. If not set, it will be
+     * @return the type of MX message to produce when unmarshaling an input stream. If not set, it will be
      *         automatically detected from the namespace used.
      */
     public MxId getReadMessageId() {
@@ -161,7 +161,7 @@ public class SwiftMxDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * @return the specific configuration to use when unmarshalling an input stream.
+     * @return the specific configuration to use when unmarshaling an input stream.
      */
     public MxReadConfiguration getReadConfig() {
         return readConfig;
@@ -180,7 +180,7 @@ public class SwiftMxDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * @return {@code true} if messages must be marshalled in a JSON format, {@code false} otherwise.
+     * @return {@code true} if messages must be marshaled in a JSON format, {@code false} otherwise.
      */
     public boolean isWriteInJson() {
         return writeInJson;

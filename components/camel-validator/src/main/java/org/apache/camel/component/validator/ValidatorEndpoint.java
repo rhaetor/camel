@@ -76,7 +76,7 @@ public class ValidatorEndpoint extends DefaultEndpoint {
     private String headerName;
 
     /**
-     * We need a one-to-one relation between endpoint and schema reader in order to be able to clear the cached schema
+     * We need a one-to-one relation between endpoint and schema reader to be able to clear the cached schema
      * in the schema reader. See method {@link #clearCachedSchema}.
      */
     private final SchemaReader schemaReader;

@@ -72,7 +72,7 @@ crypto:verify:name[?options]
 * `crypto:sign` creates the signature and stores it in the Header keyed
 by the constant
 `org.apache.camel.component.crypto.DigitalSignatureConstants.SIGNATURE`,
-i.e., `"CamelDigitalSignature"`.
+that is, `"CamelDigitalSignature"`.
 * `crypto:verify` will read in the contents of this header and do the
 verification calculation.
 

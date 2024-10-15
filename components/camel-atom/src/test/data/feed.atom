@@ -129,7 +129,7 @@
       understand Java these days, its pretty universal - whereas most complex graphical tools require a fair amount of
       learning to get used to them.&lt;br /&gt;&lt;br /&gt;Personally I totally prefer writing in Java rather than XML
       or using visual tooling but one of the main requirements of Camel is that you can configure and specify routes in
-      any way you like - via a graphical IDE (e.g. Cimero) or via XML or Java or Groovy or Ruby or one day hopefully a
+      any way you like - via a graphical IDE (for example, Cimero) or via XML or Java or Groovy or Ruby or one day hopefully a
       real DSL. Using XML is quite useful as you can just drop your routing rules inside a spring XML file such as
       inside the &lt;span style="text-decoration: underline;"&gt;&lt;/span&gt;&lt;span class="nobr"&gt;&lt;a
       href="http://activemq.apache.org/" title="Visit page outside Confluence" rel="nofollow"&gt;Apache ActiveMQ&lt;/a&gt;&lt;/span&gt;.&lt;br
@@ -152,7 +152,7 @@
       in a declarative way- I have data at A that needs to get to B, on it's way I need to perform transformation,
       validation, logging etc. (indeed the EIP book itself does this) . However Camel has taken a very Java centric
       approach and I think this increases it's complexity unnecessarily.&lt;br /&gt;&lt;/blockquote&gt;We are actually
-      trying to be as declarative as possible - don't let the fact that you can use Java as the DSL confuse you. e.g.
+      trying to be as declarative as possible - don't let the fact that you can use Java as the DSL confuse you. for example
       here's what you just described in Camel using a single line of Java code...&lt;br /&gt;&lt;blockquote&gt;from(a).&lt;br
       /&gt;to("xsd:org/cheese/something.xsd").&lt;br /&gt;to("xslt:com/acme/mytransform.xsl").&lt;br /&gt;to("log:com.acme.MyLogger").&lt;br
       /&gt;to(b);&lt;br /&gt;&lt;/blockquote&gt;Its hard to be more concise than that in Java code. But sure - you could

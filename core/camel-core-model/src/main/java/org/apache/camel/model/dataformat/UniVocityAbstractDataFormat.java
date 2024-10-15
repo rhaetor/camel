@@ -259,7 +259,7 @@ public abstract class UniVocityAbstractDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must be
+     * Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must be
      * read at once.
      * <p/>
      * The default value is false
@@ -273,7 +273,7 @@ public abstract class UniVocityAbstractDataFormat extends DataFormatDefinition {
     }
 
     /**
-     * Whether the unmarshalling should produce maps for the lines values instead of lists. It requires to have header
+     * Whether the unmarshaling should produce maps for the lines values instead of lists. It requires to have header
      * (either defined or collected).
      * <p/>
      * The default value is false
@@ -480,7 +480,7 @@ public abstract class UniVocityAbstractDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must
+         * Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must
          * be read at once.
          * <p/>
          * The default value is false
@@ -491,7 +491,7 @@ public abstract class UniVocityAbstractDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce an iterator that reads the lines on the fly or if all the lines must
+         * Whether the unmarshaling should produce an iterator that reads the lines on the fly or if all the lines must
          * be read at once.
          * <p/>
          * The default value is false
@@ -502,7 +502,7 @@ public abstract class UniVocityAbstractDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce maps for the lines values instead of lists. It requires to have
+         * Whether the unmarshaling should produce maps for the lines values instead of lists. It requires to have
          * header (either defined or collected).
          * <p/>
          * The default value is false
@@ -513,7 +513,7 @@ public abstract class UniVocityAbstractDataFormat extends DataFormatDefinition {
         }
 
         /**
-         * Whether the unmarshalling should produce maps for the lines values instead of lists. It requires to have
+         * Whether the unmarshaling should produce maps for the lines values instead of lists. It requires to have
          * header (either defined or collected).
          * <p/>
          * The default value is false

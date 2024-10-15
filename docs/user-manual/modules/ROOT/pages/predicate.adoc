@@ -123,7 +123,7 @@ you can combine predicates *from different Expression Languages* based on logica
 
 Additionally, with `PredicateBuilder` you can create regular expressions
 and use them as predicates, applying them to the result of an
-expression, e.g.
+expression, for example
 
 [source,java]
 ----
@@ -131,7 +131,7 @@ PredicateBuilder.regex(header("foo"), "\d\{4}");
 ----
 applies the regular expression to the foo header.
 
-Combining different Expression Languages is also possible, e.g.:
+Combining different Expression Languages is also possible, for example:
 
 [source,java]
 ----

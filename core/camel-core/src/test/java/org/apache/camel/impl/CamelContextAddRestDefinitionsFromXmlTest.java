@@ -21,7 +21,7 @@ import java.util.List;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.Unmarshaler;
 
 import org.apache.camel.ContextTestSupport;
 import org.apache.camel.Route;
@@ -57,10 +57,10 @@ public class CamelContextAddRestDefinitionsFromXmlTest extends ContextTestSuppor
     }
 
     protected Object parseUri(String uri) throws JAXBException {
-        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        Unmarshaler unmarshaler = jaxbContext.createUnmarshaler();
         URL resource = getClass().getResource(uri);
         assertNotNull(resource, "Cannot find resource on the classpath: " + uri);
-        return unmarshaller.unmarshal(resource);
+        return unmarshaler.unmarshal(resource);
     }
 
     protected RestDefinition loadRest(String uri) throws Exception {

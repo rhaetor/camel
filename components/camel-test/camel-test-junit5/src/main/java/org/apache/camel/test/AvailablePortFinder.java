@@ -167,7 +167,7 @@ public final class AvailablePortFinder {
      * Gets the next available port in the given range.
      *
      * @param  portNumber            port number start range.
-     * @param  failurePayload        handover data in case port allocation fails (i.e.: a default one to use)
+     * @param  failurePayload        handover data in case port allocation fails (that is, : a default one to use)
      * @param  failureHandler        a handler in case the requested port is not available
      *
      * @throws IllegalStateException if there are no ports available

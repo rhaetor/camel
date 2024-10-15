@@ -77,7 +77,7 @@ abstract class BaseManualCommitTestSupport extends BaseEmbeddedKafkaTestSupport 
         to.reset();
 
         // Fourth step: We start again our route, since we have been committing the offsets from the first step,
-        // we will expect to consume from the latest committed offset (e.g.: from offset 5()
+        // we will expect to consume from the latest committed offset (for example, from offset 5()
         contextExtension.getContext().getRouteController().startRoute("foo");
         setupPostExecutionExpectations();
 
@@ -111,7 +111,7 @@ abstract class BaseManualCommitTestSupport extends BaseEmbeddedKafkaTestSupport 
         to.reset();
 
         // Fourth step: We start again our route, since we have been committing the offsets from the first step,
-        // we will expect to consume from the latest committed offset (e.g.: from offset 5)
+        // we will expect to consume from the latest committed offset (for example, from offset 5)
         contextExtension.getContext().getRouteController().startRoute("foo");
         setupPostExecutionExpectations();
 

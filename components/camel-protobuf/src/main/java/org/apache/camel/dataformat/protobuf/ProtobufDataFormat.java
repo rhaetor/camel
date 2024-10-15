@@ -45,7 +45,7 @@ import org.apache.commons.io.IOUtils;
 @Dataformat("protobuf")
 @Metadata(excludeProperties = "library,objectMapper,useDefaultObjectMapper,jsonViewTypeName,jsonView,include,allowJmsType," +
                               "collectionTypeName,collectionType,useList,moduleClassNames,moduleRefs,enableFeatures," +
-                              "disableFeatures,allowUnmarshallType,timezone,autoDiscoverObjectMapper," +
+                              "disableFeatures,allowUnmarshalType,timezone,autoDiscoverObjectMapper," +
                               "schemaResolver,autoDiscoverSchemaResolver,unmarshalType,unmarshalTypeName")
 public class ProtobufDataFormat extends ServiceSupport
         implements DataFormat, DataFormatName, DataFormatContentTypeHeader, CamelContextAware {

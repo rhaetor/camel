@@ -19,7 +19,7 @@ a time series database.
 The native body type for this component is `Point` (the native InfluxDB class).
 However, it can also accept `Map<String, Object>` as message body, and it will get converted to `Point.class`, please note that the map must contain an element with `InfluxDbConstants.MEASUREMENT_NAME` as key.
 
-Additionally, you may register your own Converters to your data type to `Point`, or use the (un)marshalling tools provided by Camel.
+Additionally, you may register your own Converters to your data type to `Point`, or use the (un)marshaling tools provided by Camel.
 
 Maven users will need to add the following dependency to their `pom.xml`
 for this component:

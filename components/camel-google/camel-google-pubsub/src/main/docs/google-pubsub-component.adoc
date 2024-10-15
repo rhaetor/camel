@@ -100,7 +100,7 @@ again after the ack deadline.
 == Message Body
 
 The consumer endpoint returns the content of the message as `byte[]`. Exactly as the underlying system sends it.
-It is up for the route to convert/unmarshall the contents.
+It is up for the route to convert/unmarshal the contents.
 
 == Authentication Configuration
 
@@ -117,7 +117,7 @@ Google provides an API to extend the deadline for a message.
 
 More information in https://cloud.google.com/pubsub/docs/subscriber#ack_deadline[Google PubSub Documentation]
 
-So, rollback is effectively a deadline extension API call with zero value - i.e., deadline is reached now, and the message can
+So, rollback is effectively a deadline extension API call with zero value - that is, deadline is reached now, and the message can
 be redelivered to the next consumer.
 
 It is possible to delay the message redelivery by setting the acknowledgement deadline explicitly for the rollback by

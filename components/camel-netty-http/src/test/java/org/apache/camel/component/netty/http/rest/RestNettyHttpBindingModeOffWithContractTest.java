@@ -64,7 +64,7 @@ public class RestNettyHttpBindingModeOffWithContractTest extends BaseNettyTest {
 
                 JsonDataFormat jsondf = new JsonDataFormat()
                         .library(JsonLibrary.Jackson)
-                        .allowUnmarshallType(true)
+                        .allowUnmarshalType(true)
                         .unmarshalType(UserPojoEx.class);
                 transformer()
                         .fromType("json")

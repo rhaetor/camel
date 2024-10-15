@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.camel.clock.Clock;
 
 /**
- * A clock that increases monotonically (i.e.: does not go back in time)
+ * A clock that increases monotonically (that is:  does not go back in time)
  */
 public final class MonotonicClock implements Clock {
     private final long createdNano;

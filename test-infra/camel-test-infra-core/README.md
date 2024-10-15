@@ -2,7 +2,7 @@
 
 ## Converting projects that manage the CamelContext directly
 
-This section describe how to convert projects that create and manage a `CamelContext` directly (i.e.; not relying on `CamelTestSupport`).
+This section describe how to convert projects that create and manage a `CamelContext` directly (that is, not relying on `CamelTestSupport`).
 
 1. Add the dependency that brings the CamelContext JUnit 5 extension
 

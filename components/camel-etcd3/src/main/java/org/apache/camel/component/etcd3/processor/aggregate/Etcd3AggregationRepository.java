@@ -126,7 +126,7 @@ public class Etcd3AggregationRepository extends ServiceSupport
                 } else {
                     DefaultExchangeHolder misbehaviorHolder
                             = (DefaultExchangeHolder) convertFromEtcd3Format(keyValues.get(0).getValue());
-                    Exchange misbehaviorEx = unmarshallExchange(camelContext, misbehaviorHolder);
+                    Exchange misbehaviorEx = unmarshalExchange(camelContext, misbehaviorHolder);
                     LOG.warn(
                             "Optimistic locking failed for exchange with key {}: kvClient.get returned Exchange with ID {}, while it's expected no exchanges to be returned",
                             key, misbehaviorEx != null ? misbehaviorEx.getExchangeId() : "<null>");
@@ -194,7 +194,7 @@ public class Etcd3AggregationRepository extends ServiceSupport
             LOG.error(e.getMessage(), e);
             throw new RuntimeCamelException(e.getMessage(), e);
         }
-        return unmarshallExchange(camelContext, newHolder);
+        return unmarshalExchange(camelContext, newHolder);
     }
 
     @Override
@@ -237,7 +237,7 @@ public class Etcd3AggregationRepository extends ServiceSupport
             GetResponse getResponse = completableResponse.get();
             DefaultExchangeHolder holder
                     = (DefaultExchangeHolder) convertFromEtcd3Format(getResponse.getKvs().get(0).getValue());
-            return useRecovery ? unmarshallExchange(camelContext, holder) : null;
+            return useRecovery ? unmarshalExchange(camelContext, holder) : null;
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             LOG.error(e.getMessage(), e);
@@ -343,7 +343,7 @@ public class Etcd3AggregationRepository extends ServiceSupport
             if (!getResponse.getKvs().isEmpty()) {
                 holder = (DefaultExchangeHolder) convertFromEtcd3Format(getResponse.getKvs().get(0).getValue());
             }
-            return unmarshallExchange(camelContext, holder);
+            return unmarshalExchange(camelContext, holder);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             LOG.error(e.getMessage(), e);
@@ -536,7 +536,7 @@ public class Etcd3AggregationRepository extends ServiceSupport
         }
     }
 
-    protected Exchange unmarshallExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
+    protected Exchange unmarshalExchange(CamelContext camelContext, DefaultExchangeHolder holder) {
         Exchange exchange = null;
         if (holder != null) {
             exchange = new DefaultExchange(camelContext);

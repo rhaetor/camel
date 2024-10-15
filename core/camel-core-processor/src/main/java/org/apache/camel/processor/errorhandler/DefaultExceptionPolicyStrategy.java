@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
  * <b>Fine grained matching:</b> <br/>
  * If the {@link ExceptionPolicyKey} has a when defined with an expression the type is also matches against the current
  * exchange using the {@link #matchesWhen(ExceptionPolicyKey, org.apache.camel.Exchange)} method. This can be used to
- * for more fine grained matching, so you can e.g. define multiple sets of exception types with the same exception
+ * for more fine grained matching, so you can for example, define multiple sets of exception types with the same exception
  * class(es) but have a predicate attached to select which to select at runtime.
  */
 public class DefaultExceptionPolicyStrategy implements ExceptionPolicyStrategy {

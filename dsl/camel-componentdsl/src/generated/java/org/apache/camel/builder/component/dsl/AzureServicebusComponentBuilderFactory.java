@@ -272,7 +272,7 @@ public interface AzureServicebusComponentBuilderFactory {
             return this;
         }
         /**
-         * Sets the receiverAsyncClient in order to consume messages by the
+         * Sets the receiverAsyncClient to consume messages by the
          * consumer.
          * 
          * The option is a:

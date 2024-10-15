@@ -106,7 +106,7 @@ public abstract class AbstractSalesforceMojo extends AbstractMojo {
     String httpProxyUsername;
 
     /**
-     * Is HTTP Proxy secure, i.e. using secure sockets, true by default.
+     * Is HTTP Proxy secure, that is, using secure sockets, true by default.
      */
     @Parameter(property = "camelSalesforce.isHttpProxySecure")
     boolean isHttpProxySecure = true;

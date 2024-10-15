@@ -71,7 +71,7 @@ public class FhirMeta {
      *
      * @param  <T>             extends {@link IBaseMetaType}
      * @param  metaType        the {@link IBaseMetaType} class
-     * @param  resourceType    the resource type e.g "Patient"
+     * @param  resourceType    the resource type , for example: "Patient"
      * @param  extraParameters see {@link ExtraParameters} for a full list of parameters that can be passed, may be NULL
      * @return                 the {@link IBaseMetaType}
      */

@@ -39,25 +39,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
- * This test validates that header and footer records are successfully marshalled / unmarshalled in conjunction with the
+ * This test validates that header and footer records are successfully marshaled / unmarshaled in conjunction with the
  * primary data records defined for the bindy data format.
  */
 public class BindySimpleFixedLengthHeaderFooterTest extends CamelTestSupport {
 
-    public static final String URI_DIRECT_MARSHALL = "direct:marshall";
-    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshall";
-    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshall-result";
-    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshall-result";
+    public static final String URI_DIRECT_MARSHALL = "direct:marshal";
+    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshal";
+    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshal-result";
+    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshal-result";
 
     private static final String TEST_HEADER = "101-08-2009\r\n";
     private static final String TEST_RECORD = "10A9  PaulineM    ISINXD12345678BUYShare000002500.45USD01-08-2009\r\n";
     private static final String TEST_FOOTER = "9000000001\r\n";
 
     @EndpointInject(URI_MOCK_MARSHALL_RESULT)
-    private MockEndpoint marshallResult;
+    private MockEndpoint marshalResult;
 
     @EndpointInject(URI_MOCK_UNMARSHALL_RESULT)
-    private MockEndpoint unmarshallResult;
+    private MockEndpoint unmarshalResult;
 
     // *************************************************************************
     // TESTS
@@ -65,19 +65,19 @@ public class BindySimpleFixedLengthHeaderFooterTest extends CamelTestSupport {
 
     @SuppressWarnings("unchecked")
     @Test
-    public void testUnmarshallMessage() throws Exception {
+    public void testUnmarshalMessage() throws Exception {
 
         StringBuilder sb = new StringBuilder();
         sb.append(TEST_HEADER).append(TEST_RECORD).append(TEST_FOOTER);
 
-        unmarshallResult.expectedMessageCount(1);
+        unmarshalResult.expectedMessageCount(1);
 
         template.sendBody(URI_DIRECT_UNMARSHALL, sb.toString());
 
-        unmarshallResult.assertIsSatisfied();
+        unmarshalResult.assertIsSatisfied();
 
         // check the model
-        Exchange exchange = unmarshallResult.getReceivedExchanges().get(0);
+        Exchange exchange = unmarshalResult.getReceivedExchanges().get(0);
         Order order = (Order) exchange.getIn().getBody();
         assertEquals(10, order.getOrderNr());
         // the field is not trimmed
@@ -110,10 +110,10 @@ public class BindySimpleFixedLengthHeaderFooterTest extends CamelTestSupport {
     }
 
     /**
-     * Verifies that header & footer provided as part of message body are marshalled successfully
+     * Verifies that header & footer provided as part of message body are marshaled successfully
      */
     @Test
-    public void testMarshallMessageWithDirectHeaderAndFooterInput() throws Exception {
+    public void testMarshalMessageWithDirectHeaderAndFooterInput() throws Exception {
         Order order = new Order();
         order.setOrderNr(10);
         order.setOrderType("BUY");
@@ -136,19 +136,19 @@ public class BindySimpleFixedLengthHeaderFooterTest extends CamelTestSupport {
         input.add(bodyRow);
         input.add(createFooterRow());
 
-        marshallResult.expectedMessageCount(1);
+        marshalResult.expectedMessageCount(1);
         StringBuilder sb = new StringBuilder();
         sb.append(TEST_HEADER).append(TEST_RECORD).append(TEST_FOOTER);
-        marshallResult.expectedBodiesReceived(Arrays.asList(new String[] { sb.toString() }));
+        marshalResult.expectedBodiesReceived(Arrays.asList(new String[] { sb.toString() }));
         template.sendBody(URI_DIRECT_MARSHALL, input);
-        marshallResult.assertIsSatisfied();
+        marshalResult.assertIsSatisfied();
     }
 
     /**
-     * Verifies that header & footer provided via message headers are marshalled successfully
+     * Verifies that header & footer provided via message headers are marshaled successfully
      */
     @Test
-    public void testMarshallMessageWithIndirectHeaderAndFooterInput() throws Exception {
+    public void testMarshalMessageWithIndirectHeaderAndFooterInput() throws Exception {
         Order order = new Order();
         order.setOrderNr(10);
         order.setOrderType("BUY");
@@ -174,13 +174,13 @@ public class BindySimpleFixedLengthHeaderFooterTest extends CamelTestSupport {
         headers.put(BindyFixedLengthDataFormat.CAMEL_BINDY_FIXED_LENGTH_HEADER, createHeaderRow());
         headers.put(BindyFixedLengthDataFormat.CAMEL_BINDY_FIXED_LENGTH_FOOTER, createFooterRow());
 
-        marshallResult.reset();
-        marshallResult.expectedMessageCount(1);
+        marshalResult.reset();
+        marshalResult.expectedMessageCount(1);
         StringBuilder sb = new StringBuilder();
         sb.append(TEST_HEADER).append(TEST_RECORD).append(TEST_FOOTER);
-        marshallResult.expectedBodiesReceived(Arrays.asList(new String[] { sb.toString() }));
+        marshalResult.expectedBodiesReceived(Arrays.asList(new String[] { sb.toString() }));
         template.sendBodyAndHeaders(URI_DIRECT_MARSHALL, input, headers);
-        marshallResult.assertIsSatisfied();
+        marshalResult.assertIsSatisfied();
     }
 
     private Map<String, Object> createHeaderRow() {

@@ -38,7 +38,7 @@ freemarker:templateName[?options]
 ---------------------------------
 
 Where *templateName* is the classpath-local URI of the template to
-invoke; or the complete URL of the remote template (e.g.:
+invoke; or the complete URL of the remote template (for example:
 `\file://folder/myfile.ftl`).
 
 
@@ -149,7 +149,7 @@ from("activemq:My.Queue").
   to("activemq:Another.Queue");
 -------------------------------------------
 
-And to disable the content cache, e.g., for development usage where the
+And to disable the content cache, for example, for development usage where the
 `.ftl` template should be hot reloaded:
 
 [source,java]

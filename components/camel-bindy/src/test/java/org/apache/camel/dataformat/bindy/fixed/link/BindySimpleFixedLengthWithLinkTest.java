@@ -33,38 +33,38 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * This test validates that header and footer records are successfully marshalled / unmarshalled in conjunction with the
+ * This test validates that header and footer records are successfully marshaled / unmarshaled in conjunction with the
  * primary data records defined for the bindy data format.
  */
 public class BindySimpleFixedLengthWithLinkTest extends CamelTestSupport {
 
-    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshall";
-    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshall-result";
-    public static final String URI_DIRECT_MARSHALL = "direct:marshall";
-    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshall-result";
+    public static final String URI_DIRECT_UNMARSHALL = "direct:unmarshal";
+    public static final String URI_MOCK_UNMARSHALL_RESULT = "mock:unmarshal-result";
+    public static final String URI_DIRECT_MARSHALL = "direct:marshal";
+    public static final String URI_MOCK_MARSHALL_RESULT = "mock:marshal-result";
 
     private static final String TEST_RECORD = "AAABBBCCC\r\n";
 
     @EndpointInject(URI_MOCK_UNMARSHALL_RESULT)
-    private MockEndpoint unmarshallResult;
+    private MockEndpoint unmarshalResult;
     @EndpointInject(URI_MOCK_MARSHALL_RESULT)
-    private MockEndpoint marshallResult;
+    private MockEndpoint marshalResult;
 
     // *************************************************************************
     // TESTS
     // *************************************************************************
 
     @Test
-    public void testUnmarshallMessage() throws Exception {
+    public void testUnmarshalMessage() throws Exception {
 
-        unmarshallResult.expectedMessageCount(1);
+        unmarshalResult.expectedMessageCount(1);
 
         template.sendBody(URI_DIRECT_UNMARSHALL, TEST_RECORD);
 
-        unmarshallResult.assertIsSatisfied();
+        unmarshalResult.assertIsSatisfied();
 
         // check the model
-        Exchange exchange = unmarshallResult.getReceivedExchanges().get(0);
+        Exchange exchange = unmarshalResult.getReceivedExchanges().get(0);
         Order order = exchange.getIn().getBody(Order.class);
 
         assertEquals("AAA", order.fieldA);
@@ -73,9 +73,9 @@ public class BindySimpleFixedLengthWithLinkTest extends CamelTestSupport {
     }
 
     @Test
-    public void testMarshallMessage() throws Exception {
+    public void testMarshalMessage() throws Exception {
 
-        marshallResult.expectedMessageCount(1);
+        marshalResult.expectedMessageCount(1);
 
         Order order = new Order();
         order.setFieldA("AAA");
@@ -86,10 +86,10 @@ public class BindySimpleFixedLengthWithLinkTest extends CamelTestSupport {
 
         template.sendBody(URI_DIRECT_MARSHALL, order);
 
-        marshallResult.assertIsSatisfied();
+        marshalResult.assertIsSatisfied();
 
         // check the model
-        Exchange exchange = marshallResult.getReceivedExchanges().get(0);
+        Exchange exchange = marshalResult.getReceivedExchanges().get(0);
         String asString = exchange.getIn().getBody(String.class);
         assertThat(asString, is("AAABBBCCC\r\n"));
     }

@@ -55,7 +55,7 @@ public final class SnakeYAMLTypeFilterHelper {
                 () -> template.sendBody(
                         "direct:type-constructor",
                         "!!org.apache.camel.component.snakeyaml.model.UnsafePojo {name: Camel}"),
-                "As SnakeYAML filters class is can unmarshall, UnsafePojo should not be allowed");
+                "As SnakeYAML filters class is can unmarshal, UnsafePojo should not be allowed");
 
         // Wrapped by SnakeYAML
         assertTrue(ex.getCause() instanceof ConstructorException);
@@ -86,7 +86,7 @@ public final class SnakeYAMLTypeFilterHelper {
                 () -> template.sendBody(
                         "direct:type-constructor-strdef",
                         "!!org.apache.camel.component.snakeyaml.model.UnsafePojo {name: Camel}"),
-                "As SnakeYAML filters class is can unmarshall, UnsafePojo should not be allowed");
+                "As SnakeYAML filters class is can unmarshal, UnsafePojo should not be allowed");
 
         // Wrapped by SnakeYAML
         assertTrue(ex.getCause() instanceof ConstructorException);

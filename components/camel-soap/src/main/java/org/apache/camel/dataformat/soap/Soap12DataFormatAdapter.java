@@ -85,9 +85,9 @@ public class Soap12DataFormatAdapter implements SoapDataFormatAdapter {
             bodyContent = new ArrayList<>();
             bodyContent.add(createFaultFromException(exception));
         } else {
-            if (!dataFormat.isIgnoreUnmarshalledHeaders()) {
+            if (!dataFormat.isIgnoreUnmarshaledHeaders()) {
                 List<Object> inboundSoapHeaders
-                        = (List<Object>) exchange.getIn().getHeader(SoapDataFormat.SOAP_UNMARSHALLED_HEADER_LIST);
+                        = (List<Object>) exchange.getIn().getHeader(SoapDataFormat.SOAP_UNmarshaled_HEADER_LIST);
                 if (null != inboundSoapHeaders) {
                     headerContent.addAll(inboundSoapHeaders);
                 }
@@ -163,7 +163,7 @@ public class Soap12DataFormatAdapter implements SoapDataFormatAdapter {
         if (header != null) {
             List<Object> returnHeaders;
             List<Object> anyHeaderElements = envelope.getHeader().getAny();
-            if (null != anyHeaderElements && !(getDataFormat().isIgnoreUnmarshalledHeaders())) {
+            if (null != anyHeaderElements && !(getDataFormat().isIgnoreUnmarshaledHeaders())) {
                 if (getDataFormat().isIgnoreJAXBElement()) {
                     returnHeaders = new ArrayList<>();
                     for (Object headerEl : anyHeaderElements) {
@@ -172,7 +172,7 @@ public class Soap12DataFormatAdapter implements SoapDataFormatAdapter {
                 } else {
                     returnHeaders = anyHeaderElements;
                 }
-                exchange.getOut().setHeader(SoapDataFormat.SOAP_UNMARSHALLED_HEADER_LIST, returnHeaders);
+                exchange.getOut().setHeader(SoapDataFormat.SOAP_UNmarshaled_HEADER_LIST, returnHeaders);
             }
         }
 

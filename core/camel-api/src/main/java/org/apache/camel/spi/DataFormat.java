@@ -33,8 +33,8 @@ public interface DataFormat extends Service {
      * Marshals the object to the given Stream.
      *
      * @param  exchange  the current exchange
-     * @param  graph     the object to be marshalled
-     * @param  stream    the output stream to write the marshalled result to
+     * @param  graph     the object to be marshaled
+     * @param  stream    the output stream to write the marshaled result to
      * @throws Exception can be thrown
      */
     void marshal(Exchange exchange, Object graph, OutputStream stream) throws Exception;
@@ -49,8 +49,8 @@ public interface DataFormat extends Service {
      * well which will be used as the OUT message of <tt>exchange</tt>.
      *
      * @param  exchange  the current exchange
-     * @param  stream    the input stream with the object to be unmarshalled
-     * @return           the unmarshalled object
+     * @param  stream    the input stream with the object to be unmarshaled
+     * @return           the unmarshaled object
      * @throws Exception can be thrown
      * @see              #unmarshal(Exchange, Object)
      */
@@ -74,8 +74,8 @@ public interface DataFormat extends Service {
      * not invoke this method.
      *
      * @param  exchange  the current exchange
-     * @param  body      the input object to be unmarshalled
-     * @return           the unmarshalled object
+     * @param  body      the input object to be unmarshaled
+     * @return           the unmarshaled object
      * @throws Exception can be thrown
      */
     default Object unmarshal(Exchange exchange, Object body) throws Exception {

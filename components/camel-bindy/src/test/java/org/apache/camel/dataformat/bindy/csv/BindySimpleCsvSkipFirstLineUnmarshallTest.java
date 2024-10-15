@@ -27,7 +27,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration
 @CamelSpringTest
-public class BindySimpleCsvSkipFirstLineUnmarshallTest {
+public class BindySimpleCsvSkipFirstLineUnmarshalTest {
 
     @Produce("direct:start")
     protected ProducerTemplate template;
@@ -51,7 +51,7 @@ public class BindySimpleCsvSkipFirstLineUnmarshallTest {
     private MockEndpoint resultEndpoint;
 
     @Test
-    public void testUnMarshallMessage() throws Exception {
+    public void testUnMarshalMessage() throws Exception {
         template.sendBody(record);
         resultEndpoint.expectedMessageCount(1);
         resultEndpoint.assertIsSatisfied();

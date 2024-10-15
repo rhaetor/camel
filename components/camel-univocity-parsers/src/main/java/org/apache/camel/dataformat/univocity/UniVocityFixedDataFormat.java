@@ -192,7 +192,7 @@ public class UniVocityFixedDataFormat
         // Ensure that the field lengths have been defined.
         if (fieldLengths == null) {
             throw new IllegalArgumentException(
-                    "The fieldLengths must have been defined in order to use the fixed-width format.");
+                    "The fieldLengths must have been defined to use the fixed-width format.");
         }
 
         // If there's no header then we only use their length
@@ -203,14 +203,14 @@ public class UniVocityFixedDataFormat
         // Use both headers and field lengths (same size and no duplicate headers)
         if (fieldLengths.length != headers.length) {
             throw new IllegalArgumentException(
-                    "The headers and fieldLengths must have the same number of element in order to use the fixed-width format.");
+                    "The headers and fieldLengths must have the same number of element to use the fixed-width format.");
         }
         LinkedHashMap<String, Integer> fields = new LinkedHashMap<>();
         for (int i = 0; i < headers.length; i++) {
             fields.put(headers[i], fieldLengths[i]);
         }
         if (fields.size() != headers.length) {
-            throw new IllegalArgumentException("The headers cannot have duplicates in order to use the fixed-width format.");
+            throw new IllegalArgumentException("The headers cannot have duplicates to use the fixed-width format.");
         }
         return new FixedWidthFields(fields);
     }

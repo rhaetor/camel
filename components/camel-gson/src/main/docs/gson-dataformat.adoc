@@ -11,7 +11,7 @@
 
 *Since Camel {since}*
 
-Gson is a Data Format that uses the
+Gson is a data format that uses the
 https://github.com/google/gson[Gson Library]
 
 [source,java]
@@ -27,6 +27,7 @@ from("activemq:My.Queue").
 // dataformat options: START
 include::partial$dataformat-options.adoc[]
 // dataformat options: END
+
 
 
 == Dependencies

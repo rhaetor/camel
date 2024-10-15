@@ -52,7 +52,7 @@ We'll start this guide by creating a simple integration. You need to have https:
 
 [NOTE]
 ====
-We strongly recommend you use an LTS version of Java (i.e., 11 or 17). We regularly test Camel in our continuous integration (CI) environment using Java's LTS versions.
+We strongly recommend you use an LTS version of Java (that is, 11 or 17). We regularly test Camel in our continuous integration (CI) environment using Java's LTS versions.
 ====
 
 === Generating the project
@@ -68,7 +68,7 @@ mvn archetype:generate -B -DarchetypeGroupId=org.apache.camel.archetypes -Darche
 
 If you have never used archetypes before, the command looks lengthy. We'll explain the relevant arguments:
 
-* `-DarchetypeArtifactId`: this is the ID of the archetype to use (i.e., which of the templates from Camel Core to use - `camel-archetype-java` in this case)
+* `-DarchetypeArtifactId`: this is the ID of the archetype to use (that is, which of the templates from Camel Core to use - `camel-archetype-java` in this case)
 * `-DarchetypeVersion`: this is the version of the archetype to use. It is also the same version of Camel to use for the example. We are using `3.18.4` in this example.
 * `-Dpackage`: the package name for the project you are creating. We'll use `org.apache.camel.learn` in all this guide.
 * `-DgroupId`: the group ID for the project you are creating. We'll use `org.apache.camel.learn` in all this guide.
@@ -243,7 +243,7 @@ Some Camel methods take a parameter that is a https://en.wikipedia.org/wiki/Unif
 
 Most people are familiar with _URLs_ (uniform resource locators), such as `\http://...`, `\ftp://...`, `\mailto:...:`. A URL specifies the _location_ of a resource.
 
-A URN is a wrapper for different "unique identifier" schemes. The syntax of a URN is `urn:<scheme-name>:<unique-identifier>`. A URN uniquely identifies a _resource_ (i.e.:, a book, person, or piece of equipment). By itself, a URN does not specify the _location_ of the resource.
+A URN is a wrapper for different "unique identifier" schemes. The syntax of a URN is `urn:<scheme-name>:<unique-identifier>`. A URN uniquely identifies a _resource_ (that is: , a book, person, or piece of equipment). By itself, a URN does not specify the _location_ of the resource.
 
 A _URI_ (uniform resource identifier) is a URL _or_ a URN.
 
@@ -302,7 +302,7 @@ public class MainApp {
 }
 ----
 
-We start by creating a xref:components:others:main.adoc[_Main_] component that we configure to include the route (`main.configure().addRoutesBuilder(new MyRouteBuilder());`). Then we start the execution of the main application by running it with the `run` method that will create the _CamelContext_ and execute the integration in the foreground until we terminate it (i.e., with `Ctrl + C`).
+We start by creating a xref:components:others:main.adoc[_Main_] component that we configure to include the route (`main.configure().addRoutesBuilder(new MyRouteBuilder());`). Then we start the execution of the main application by running it with the `run` method that will create the _CamelContext_ and execute the integration in the foreground until we terminate it (that is, with `Ctrl + C`).
 
 You don’t interact directly with the _CamelContext_ in this example, but it is a fundamental part of Camel. We will talk about it in the next section.
 

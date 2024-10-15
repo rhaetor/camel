@@ -20,7 +20,7 @@ import com.univocity.parsers.common.ParsingContext;
 import com.univocity.parsers.common.processor.RowProcessor;
 
 /**
- * This class is used by the unmarshaller in order to retrieve the headers.
+ * This class is used by the unmarshaler to retrieve the headers.
  */
 final class HeaderRowProcessor implements RowProcessor {
     private String[] headers;

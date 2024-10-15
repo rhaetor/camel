@@ -55,10 +55,10 @@ import org.slf4j.LoggerFactory;
  * A Kafka topic-based implementation of {@link org.apache.camel.spi.IdempotentRepository}. Uses a local cache of
  * previously seen Message IDs. Mutations that come in via the ({@link #add(String)}), or {@link #remove(String)} method
  * will update the local cache and broadcast the change in state on a Kafka topic to other instances. The cache is
- * back-filled from the topic by a Kafka consumer. The topic used must be unique per logical repository (i.e. two routes
+ * back-filled from the topic by a Kafka consumer. The topic used must be unique per logical repository (that is, two routes
  * de-duplicate using different repositories, and different topics). This class makes no assumptions about the number of
  * partitions (it is designed to consume from all at the same time), or replication factor of the topic. Each repository
- * instance that uses the topic (e.g. typically on different machines running in parallel) controls its own consumer
+ * instance that uses the topic (for example, typically on different machines running in parallel) controls its own consumer
  * group, so in a cluster of 10 Camel processes using the same topic each will control its own offset. On startup, the
  * instance consumes the full content of the topic, rebuilding the cache to the latest state. To use, this repository
  * must be placed in the Camel registry, either manually or by registration as a bean in Spring/Blueprint, as it is

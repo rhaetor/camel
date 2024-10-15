@@ -252,7 +252,7 @@
         <jaxp-ri-version>1.4.5</jaxp-ri-version>
         <jboss-el-api_3.0_spec-version>2.0.0.Final</jboss-el-api_3.0_spec-version>
         <jboss-logging-version>3.5.3.Final</jboss-logging-version>
-        <jboss-marshalling-version>1.4.10.Final</jboss-marshalling-version>
+        <jboss-marshaling-version>1.4.10.Final</jboss-marshaling-version>
         <jboss-transaction-spi.version>7.6.1.Final</jboss-transaction-spi.version>
         <jboss-xnio-version>3.3.8.Final</jboss-xnio-version>
         <jcache-version>1.1.1</jcache-version>

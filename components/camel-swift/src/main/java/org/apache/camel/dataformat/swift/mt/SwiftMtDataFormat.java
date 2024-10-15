@@ -38,7 +38,7 @@ import org.apache.camel.support.service.ServiceSupport;
 public class SwiftMtDataFormat extends ServiceSupport implements DataFormat, DataFormatName {
 
     /**
-     * The flag indicating that messages must be marshalled in a JSON format.
+     * The flag indicating that messages must be marshaled in a JSON format.
      */
     private boolean writeInJson;
 
@@ -51,7 +51,7 @@ public class SwiftMtDataFormat extends ServiceSupport implements DataFormat, Dat
     /**
      * Constructs a {@code SwiftMtDataFormat} with the given parameter.
      *
-     * @param writeInJson the flag indicating that messages must be marshalled in a JSON format.
+     * @param writeInJson the flag indicating that messages must be marshaled in a JSON format.
      */
     public SwiftMtDataFormat(boolean writeInJson) {
         this.writeInJson = writeInJson;
@@ -77,7 +77,7 @@ public class SwiftMtDataFormat extends ServiceSupport implements DataFormat, Dat
     }
 
     /**
-     * @return {@code true} if messages must be marshalled in a JSON format, {@code false} otherwise.
+     * @return {@code true} if messages must be marshaled in a JSON format, {@code false} otherwise.
      */
     public boolean isWriteInJson() {
         return writeInJson;
